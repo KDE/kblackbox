@@ -59,23 +59,20 @@ KBBGame::KBBGame() : KTopLevelWidget()
   QPopupMenu *file    = new QPopupMenu;
   sizesm  = new QPopupMenu;
   ballsm  = new QPopupMenu;
-  QPopupMenu *help = new QPopupMenu;
   options = new QPopupMenu;
  
   CHECK_PTR( file );
   CHECK_PTR( game );
-  CHECK_PTR( help );
   CHECK_PTR( sizesm );
   CHECK_PTR( ballsm );
   CHECK_PTR( options );
   CHECK_PTR( menu );
 
-  help->insertItem( trans->translate("&Help"), ID_HELP );
-  help->setAccel( CTRL+Key_H, ID_HELP );
-  help->insertSeparator();
-  help->insertItem( trans->translate("&About KBlackBox"), ID_ABOUT );
-  help->setAccel( CTRL+Key_A, ID_ABOUT );
-  help->insertItem( trans->translate("About &Qt"), ID_ABOUT_QT );
+  QString about;
+  about.sprintf(i18n("KBlackBox logical game\n"
+                     "author: Robert Cimrman\n"
+                     "e-mail: cimrman3@students.zcu.cz"));
+  QPopupMenu *help = kapp->getHelpMenu(TRUE, about);
 
 		    
   file->insertItem( trans->translate("&Quit"), ID_QUIT );
@@ -104,7 +101,6 @@ KBBGame::KBBGame() : KTopLevelWidget()
   options->setCheckable( TRUE );
 
   connect( file, SIGNAL(activated(int)), SLOT(callBack(int)) );
-  connect( help, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( game, SIGNAL(activated(int)), SLOT(callBack(int)) );
  
   menu->insertItem( trans->translate("&File"), file );
@@ -278,15 +274,6 @@ KBBGame::~KBBGame()
 void KBBGame::callBack( int witch )
 {
   switch (witch) {
-  case ID_HELP:
-    help();
-    break;
-  case ID_ABOUT:
-    about();
-    break;
-  case ID_ABOUT_QT:
-    aboutQt();
-    break;
   case ID_QUIT:
     kapp->quit();
     break;
@@ -421,28 +408,6 @@ void KBBGame::tutorialSwitch()
 {
   tutorial = !tutorial;
   options->setItemChecked( tut1id, tutorial );
-}
-
-/*
-  Display various infos.
-*/
-
-void KBBGame::about()
-{
-  QMessageBox::information( 0, trans->translate("About"), 
-			    trans->translate(
-            "KBlackBox logical game\nauthor: Robert Cimrman\ne-mail: cimrman3@students.zcu.cz"), "OK" );
-}
-
-void KBBGame::aboutQt()
-{
-  QMessageBox::aboutQt( 0, trans->translate("Qt information") );
-}
-
-void KBBGame::help()
-{
-  //  QMessageBox::message( "Help", "Read the file \"help.txt\", please.", "OK" );
-  KApplication::getKApplication()->invokeHTMLHelp("", "");
 }
 
 /*

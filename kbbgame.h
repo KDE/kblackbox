@@ -85,10 +85,6 @@ private slots:
   void tutorialSwitch();
   
   void newGame();
-  void about();
-//  void aboutKDE();
-  void aboutQt();
-  void help();
 
   bool setSize( int w, int h );
   bool setBalls( int n );

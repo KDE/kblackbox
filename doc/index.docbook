@@ -377,7 +377,7 @@ authors.</para></listitem>
 <term><menuchoice>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>A</accel>bout KBlackBox</guimenuitem></menuchoice></term>
 <listitem>
-<para>This will displays version and author information</para>
+<para>This will display version and author information</para>
 </listitem>
 </varlistentry>
 

@@ -20,8 +20,6 @@
 #include <qlabel.h>
 #include <qpushbutton.h>
 
-#include <ktopwidget.h>
-
 /*
    Types of the boxes (used f.e.g. in the traceRay() method)
 */
@@ -58,7 +56,7 @@
 #define SRUN   2
 #define SSIZE  3
 
-class KBBGame : public KTopLevelWidget
+class KBBGame : public KTMainWindow
 {
   Q_OBJECT
 public:

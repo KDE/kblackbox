@@ -52,7 +52,7 @@ const char *pFNames[NROFTYPES] = {
    Creates the KBBGame widget and sets saved options (if any).
 */
 
-KBBGame::KBBGame() : KTopLevelWidget()     
+KBBGame::KBBGame() : KTMainWindow()     
 {
   int i;
 
@@ -306,7 +306,7 @@ void KBBGame::callBack( int witch )
 
 void KBBGame::resizeEvent( QResizeEvent *e )
 {
-  KTopLevelWidget::resizeEvent(e);
+  KTMainWindow::resizeEvent(e);
 }
 
 

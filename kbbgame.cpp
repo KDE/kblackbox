@@ -8,6 +8,8 @@
 // The implementation of the KBBGame widget
 // 
 
+#include <config.h>
+
 #include <qpopmenu.h>
 #include <qkeycode.h>
 #include <qlabel.h>
@@ -656,11 +658,11 @@ void KBBGame::randomBalls( int n )
 {
   int i;
   for (i = 0; i < n; i++) {
-    srand( (int) time( NULL ) );
+    srandom( (int) time( NULL ) );
     int x=0, y=0; // there is OUTERBBT...
     while (gameBoard->get( x, y ) != INNERBBT ) {
-      x =  2 + rand() % gameBoard->width() - 3;
-      y =  2 + rand() % gameBoard->height() - 3;
+      x =  2 + random() % gameBoard->width() - 3;
+      y =  2 + random() % gameBoard->height() - 3;
     }
     gameBoard->set( x, y, BALLBBT );
   }

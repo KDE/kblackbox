@@ -8,5 +8,5 @@ data_DATA = index.html index-1.html index-2.html index-3.html\
 datadir = $(kde_htmldir)/en/kblackbox
 
 # extra files for "make dist"
-EXTRA_DIST += $(data_DATA)
+EXTRA_DIST = $(data_DATA)
 

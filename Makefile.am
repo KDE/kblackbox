@@ -38,7 +38,7 @@ kblackbox_LDADD   = $(LIB_KDEUI)
 noinst_HEADERS = kbbgfx.h kbbgame.h util.h version.h
 
 # extra files for "make dist"
-EXTRA_DIST += VERSION CHANGES kblackbox.kdelnk kblackbox.xpm mini-kblackbox.xpm
+EXTRA_DIST = VERSION CHANGES kblackbox.kdelnk kblackbox.xpm mini-kblackbox.xpm
 
 # if you "make distclean", this files get removed. If you want to remove
 # them while "make clean", use CLEANFILES

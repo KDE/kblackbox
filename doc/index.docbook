@@ -128,15 +128,15 @@ red.</para></listitem>
 
 <varlistentry>
 <term><interface>Brown squares</interface></term>
-<listitem><para>Marking colour</para></listitem>
+<listitem><para>Marking color</para></listitem>
 </varlistentry>
 </variablelist>
 
-<note><para>The names of colours are used just for identifying the different
+<note><para>The names of colors are used just for identifying the different
 types of the fields in this text. They <emphasis>might not</emphasis> be in any
-relation with the actual colour of the fields. Simply said: the black box is in
+relation with the actual color of the fields. Simply said: the black box is in
 the centre, around are the lasers and around them is the border. Remap the
-colours yourself :-). </para></note>
+colors yourself :-). </para></note>
 
 </sect1>
 

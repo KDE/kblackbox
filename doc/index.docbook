@@ -1,23 +1,28 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
-  <!ENTITY kappname "&kblackbox;">
-  <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
-  
-  
+ <!ENTITY kappname "&kblackbox;">
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
 
 <book lang="&language;">
 
 <bookinfo>
 <title>&kblackbox; Game Manual</title>
-
+    
 <authorgroup>
 <author>
 <firstname>Robert</firstname>
 <surname>Cimrman</surname>
 <affiliation>
 <address><email>cimrman3@students.zcu.cz</email></address>
+</affiliation>
+</author>
+
+<author>
+<firstname>Philip</firstname>
+<surname>Rodrigues</surname>
+<affiliation><address><email>phil.rod@ntlworld.com</email></address>
 </affiliation>
 </author>
 
@@ -33,7 +38,7 @@
 <othercredit role="reviewer">
 <firstname>Lauri</firstname>
 <surname>Watts</surname>
-<affiliation><address><email>vampyr@atconnex.net</email></address></affiliation>
+<affiliation><address><email>lauri@kde.org</email></address></affiliation>
 <contrib>Reviewer</contrib>
 </othercredit>
 
@@ -46,13 +51,18 @@
 <holder>Robert Cimrman</holder>
 </copyright>
 
+<copyright>
+<year>2001</year>
+<holder>Philip Rodrigues</holder>
+</copyright>
+
 <legalnotice>&FDLNotice;</legalnotice>
-    
-<date>2000-12-15</date>
+
+<date>2001-05-31</date>
 <releaseinfo>0.03.00</releaseinfo>
 
-<abstract><para>&kblackbox; is a superb graphical logical game, inspired by the
-<application>emacs</application> blackbox.</para></abstract>
+<abstract><para>&kblackbox; is a superb graphical logical game, inspired
+by the <application>emacs</application> blackbox.</para></abstract>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -67,41 +77,44 @@
 <chapter id="what-is-kblackbox">
 <title>What is &kblackbox;?</title>
 
-<para>&kblackbox; is a superb :-) graphical logical game, inspired by the
-<application>emacs</application> blackbox. Major part of this help file is based
-on the original emacs's help. </para> 
+<para>&kblackbox; is a superb :-) graphical logical game, inspired by
+the <application>emacs</application> blackbox. Major part of this help
+file is based on the original <application>emacs</application>'s
+help. </para>
 
-<para>&kblackbox; is a game of hide and seek played on an grid of boxes. Your
-opponent (the Random number generator, in this case) has hidden several balls
-within this box. By shooting rays into the box and observing where they emerge
-it is possible to deduce the positions of the hidden balls. The fewer rays you
-use to find the balls, the better (the lower) your score.</para>
+<para>&kblackbox; is a game of hide and seek played on an grid of
+boxes. Your opponent (the Random number generator, in this case) has
+hidden several balls within this box. By shooting rays into the box and
+observing where they emerge it is possible to deduce the positions of
+the hidden balls. The fewer rays you use to find the balls, the better
+(the lower) your score.</para>
 
 </chapter>
 
 <chapter id="game-description">
 <title>Game description</title>
 
-<para>In the first part of this section a description of the game board will be
-given.  The second part deals with user interaction with the game board and
-finally in the third part the actual game rules are explained.</para>
+<para>In the first part of this section a description of the game board
+will be given.  The second part deals with user interaction with the
+game board and finally in the third part the actual game rules are
+explained.</para>
 
 <sect1 id="game-board-descritpion">
-<title>Game board descritpion</title>
+<title>Game board description</title>
 
-<para>The folloving types of fields are found on the game board: </para>
+<para>The following types of fields are found on the game board: </para>
 
 <variablelist>
 <varlistentry>
 <term><interface>Black squares</interface></term>
-<listitem><para>The black box.  Here you must mark the squares you think a ball
-is in.</para></listitem>
+<listitem><para>The black box.  Here you must mark the squares you think
+a ball is in.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><interface>Green squares</interface></term>
-<listitem><para>These are the lasers, shooting rays of light when switched
-on.</para></listitem>
+<listitem><para>These are the lasers, shooting rays of light when
+switched on.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -112,8 +125,8 @@ border.</para></listitem>
 
 <varlistentry>
 <term><interface>Blue balls</interface></term>
-<listitem><para>&quot;There must be one!&quot; you think.  These mark where you
-suspect a ball is placed in the black box.</para></listitem>
+<listitem><para><quote>There must be one!</quote> you think.  These mark
+where you suspect a ball is placed in the black box.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -123,8 +136,8 @@ suspect a ball is placed in the black box.</para></listitem>
 
 <varlistentry>
 <term><interface>Red balls</interface></term>
-<listitem><para>Incorrectly positioned balls you have marked are indicated in
-red.</para></listitem>
+<listitem><para>Incorrectly positioned balls you have marked are
+indicated in red.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -133,28 +146,31 @@ red.</para></listitem>
 </varlistentry>
 </variablelist>
 
-<note><para>The names of colors are used just for identifying the different
-types of the fields in this text. They <emphasis>might not</emphasis> be in any
-relation with the actual color of the fields. Simply said: the black box is in
-the centre, around are the lasers and around them is the border. Remap the
-colors yourself :-). </para></note>
+<note><para>The names of colors are used just for identifying the
+different types of the fields in this text. They <emphasis>might
+not</emphasis> be in any relation with the actual color of the
+fields. Simply said: the black box is in the centre, around are the
+lasers and around them is the border. Remap the colors yourself
+:-). </para></note>
 
 </sect1>
 
 <sect1 id="user-interaction">
 <title>User Interaction</title>
 
-<para>The cursor (a circle) can be moved around the box with the standard cursor
-movement keys or the mouse. Switching of lasers or marking of black boxes is
-done by the <mousebutton>left</mousebutton> mouse button, or by pressing
-<keycap>Return</keycap> or <keycap>Enter</keycap> keys.</para>
+<para>The cursor (a circle) can be moved around the box with the
+standard cursor movement keys or the mouse. Switching of lasers or
+marking of black boxes is done by the <mousebutton>left</mousebutton>
+mouse button, or by pressing <keycap>Return</keycap> or
+<keycap>Enter</keycap> keys.</para>
 
-<para>You can mark the fields, where a ball can't be, too. Just press the
-<mousebutton>right</mousebutton> mouse button. It often helps you to find an
-area, where a ball could possibly be. To clear any marks (blue or brown) press
-the <mousebutton>left</mousebutton> mouse button. Brown marks can't overwrite
-blue marks. This way you can't erase the blue marks (guessed balls) by accident
-when playing with the <mousebutton>right</mousebutton> mouse button. </para>
+<para>You can mark the fields, where a ball can't be, too. Just press
+the <mousebutton>right</mousebutton> mouse button. It often helps you to
+find an area, where a ball could possibly be. To clear any marks (blue
+or brown) press the <mousebutton>left</mousebutton> mouse button. Brown
+marks can't overwrite blue marks. This way you can't erase the blue
+marks (guessed balls) by accident when playing with the
+<mousebutton>right</mousebutton> mouse button. </para>
 
 <para>When you think the configuration of balls you have placed is
 correct, press the <mousebutton>middle</mousebutton> mouse button. You
@@ -169,25 +185,25 @@ and their actual positions indicated with cyan fields.</para>
 <sect1 id="game-rules">
 <title>Game rules</title>
 
-<para>You have to find balls hidden in the black box. Your means are limited -
-you can just fire lasers which are around the box. There are three possible
-outcomes for each ray you send into the box: </para>
+<para>You have to find balls hidden in the black box. Your means are
+limited - you can just fire lasers which are around the box. There are
+three possible outcomes for each ray you send into the box: </para>
 
 <anchor id="detour"/>
 <variablelist>
 
 <varlistentry>
-<term>Detour</term>
-<listitem><para>The ray is deflected and emerges somewhere other than where
-you sent it in. On the playfield, detours are denoted by matching pairs
-of numbers - one where the ray went in, and the other where it came
-out.</para></listitem>
+<term>Detour</term> 
+<listitem><para>The ray is deflected and emerges somewhere other than
+where you sent it in. On the playfield, detours are denoted by matching
+pairs of numbers - one where the ray went in, and the other where it
+came out.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term>Reflection</term>
-<listitem><para>The ray is reflected and emerges in the same place it was sent
-in. On the playfield, reflections are denoted by the letter
+<listitem><para>The ray is reflected and emerges in the same place it
+was sent in. On the playfield, reflections are denoted by the letter
 <guilabel>R</guilabel>.</para></listitem>
 </varlistentry>
 
@@ -202,63 +218,67 @@ emerge from the box. On the playfield, hits are denoted by the letter
 <para>The rules for how balls deflect rays are simple and are best shown by
 example.</para>
 
-<para>As a ray approaches a ball it is deflected ninety degrees. Rays can be
-deflected multiple times. In the diagrams below, the dashes represent empty box
-locations and the letter &quot;O&quot; represents a ball. The entrance and exit
-points of each ray are marked with numbers as described under <link
-linkend="detour">Detour</link> above. Note that the entrance and exit points
-are always interchangeable. &quot;*&quot; denotes the path taken by the
+<para>As a ray approaches a ball it is deflected ninety degrees. Rays
+can be deflected multiple times. In the diagrams below, the dashes
+represent empty box locations and the letter <guilabel>O</guilabel>
+represents a ball. The entrance and exit points of each ray are marked
+with numbers as described under <link linkend="detour">Detour</link>
+above. Note that the entrance and exit points are always
+interchangeable. <guilabel>*</guilabel> denotes the path taken by the
 ray.</para>
 
-<para>Note carefully the relative positions of the ball and the ninety degree
-deflection it causes.</para>
+<para>Note carefully the relative positions of the ball and the ninety
+degree deflection it causes.</para>
 
 <screen>
-           1                                            
-         - * - - - - - -         - - - - - - - -         - - - - - - - -       
-         - * - - - - - -         - - - - - - - -         - - - - - - - -       
-       1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
-         - - O - - - - -         - - O - - - - -         - - * * * * - -
-         - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
-         - - - - - - - -         - - - * - - - -         - - - O - * - -      
-         - - - - - - - -         - - - * - - - -         - - - - * * - -       
-         - - - - - - - -         - - - * - - - -         - - - - * - O -       
-                                       2                         3</screen>
+1                                            
+- * - - - - - -         - - - - - - - -         - - - - - - - -       
+- * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+- - O - - - - -         - - O - - - - -         - - * * * * - -
+- - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+- - - - - - - -         - - - * - - - -         - - - O - * - -      
+- - - - - - - -         - - - * - - - -         - - - - * * - -       
+- - - - - - - -         - - - * - - - -         - - - - * - O -       
+2                         3
+</screen>
 
-<para>As mentioned above, a reflection occurs when a ray emerges from the same
-point it was sent in. This can happen in several ways:</para>
+<para>
+As mentioned above, a reflection occurs when a ray emerges from the same
+point it was sent in. This can happen in several ways:
+</para>
 
 <screen>
-         - - - - - - - -         - - - - - - - -          - - - - - - - -
-         - - - - O - - -         - - O - O - - -          - - - - - - - -
-       R * * * * - - - -         - - - * - - - -          O - - - - - - -
-         - - - - O - - -         - - - * - - - -        R - - - - - - - -
-         - - - - - - - -         - - - * - - - -          - - - - - - - -
-         - - - - - - - -         - - - * - - - -          - - - - - - - -
-         - - - - - - - -       R * * * * - - - -          - - - - - - - -
-         - - - - - - - -         - - - - O - - -          - - - - - - - -</screen>
+- - - - - - - -         - - - - - - - -          - - - - - - - -
+- - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+- - - - O - - -         - - - * - - - -        R - - - - - - - -
+- - - - - - - -         - - - * - - - -          - - - - - - - -
+- - - - - - - -         - - - * - - - -          - - - - - - - -
+- - - - - - - -       R * * * * - - - -          - - - - - - - -
+- - - - - - - -         - - - - O - - -          - - - - - - - -</screen>
 
-<para>In the first example, the ray is deflected downwards by the upper ball,
-then left by the lower ball, and finally retraces its path to its point of
-origin. The second example is similar. The third example is a bit anomalous but
-can be rationalized by realizing the ray never gets a chance to get into the
-box. Alternatively, the ray can be thought of as being deflected downwards and
-immediately emerging from the box.</para>
+<para>In the first example, the ray is deflected downwards by the upper
+ball, then left by the lower ball, and finally retraces its path to its
+point of origin. The second example is similar. The third example is a
+bit anomalous but can be rationalized by realizing the ray never gets a
+chance to get into the box. Alternatively, the ray can be thought of as
+being deflected downwards and immediately emerging from the box.</para>
 
 <para>A hit occurs when a ray runs straight into a ball:</para>
 
 <screen>
-         - - - - - - - -         - - - - - - - -          - - - - - - - -
-         - - - - - - - -         - - - - - - - -          - - - - O - - -
-         - - - - - - - -         - - - - O - - -        H * * * * - - - -
-         - - - - - - - -       H * * * * O - - -          - - - * - - - -
-         - - - - - - - -         - - - - O - - -          - - - O - - - -
-       H * * * O - - - -         - - - - - - - -          - - - - - - - -
-         - - - - - - - -         - - - - - - - -          - - - - - - - -
-         - - - - - - - -         - - - - - - - -          - - - - - - - -</screen>
+- - - - - - - -         - - - - - - - -          - - - - - - - -
+- - - - - - - -         - - - - - - - -          - - - - O - - -
+- - - - - - - -         - - - - O - - -        H * * * * - - - -
+- - - - - - - -       H * * * * O - - -          - - - * - - - -
+- - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+- - - - - - - -         - - - - - - - -          - - - - - - - -
+- - - - - - - -         - - - - - - - -          - - - - - - - -</screen>
 
-<para>Be sure to compare the second example of a hit with the first example of a
-reflection.</para>
+<para>Be sure to compare the second example of a hit with the first
+example of a reflection.</para>
 
 </sect1>
 </chapter>
@@ -295,14 +315,14 @@ function. </para></listitem>
 <term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
 <guimenuitem><accel>R</accel>esize</guimenuitem></menuchoice></term>
 <listitem><para>Resizes the main window, so that it fits perfectly its
-contents. This is useful, when you accidentaly change the size of the
+contents. This is useful, when you accidentally change the size of the
 window...</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
 <guimenuitem><accel>Q</accel>uit</guimenuitem></menuchoice></term>
-<listitem><para>Quit's &kblackbox;</para></listitem>
+<listitem><para>Quits &kblackbox;</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -333,8 +353,8 @@ or <guimenuitem>8</guimenuitem>.</para>
 <varlistentry>
 <term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
 <guimenuitem><accel>T</accel>utorial</guimenuitem></menuchoice></term>
-<listitem><para>Switches on or off the tutorial mode.  In tutorial mode, you can
-see where the balls actually are.</para></listitem>
+<listitem><para>Switches on or off the tutorial mode.  In tutorial mode,
+you can see where the balls actually are.</para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -350,8 +370,8 @@ see where the balls actually are.</para></listitem>
 <shortcut><keycap>F1</keycap></shortcut>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>C</accel>ontents</guimenuitem></menuchoice></term>
 <listitem>
-<para>This invokes the KDE help system starting at the &kblackbox; help pages (this
-document).</para>
+<para>This invokes the &kde; help system starting at the &kblackbox;
+help pages (this document).</para>
 </listitem>
 </varlistentry>
 
@@ -361,8 +381,9 @@ document).</para>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem>What's <accel>T</accel>his?</guimenuitem></menuchoice></term>
 <listitem>
 <para>This changes the mouse cursor to a combination arrow and question mark.
-Clicking on items within &kblackbox; with this arrow will open a help window (if
-one exists for the particular item) explaining the item's function.</para>
+Clicking on items within &kblackbox; with this arrow will open a help
+window (if one exists for the particular item) explaining the item's
+function.</para>
 </listitem>
 </varlistentry>
 
@@ -385,14 +406,26 @@ authors.</para></listitem>
 <term><menuchoice>
 <guimenu><accel>H</accel>elp</guimenu><guimenuitem>About <accel>K</accel>DE</guimenuitem></menuchoice></term>
 <listitem>
-<para>This displays the KDE version and other basic information.</para>
+<para>This displays the &kde; version and other basic information.</para>
 </listitem>
 </varlistentry>
 </variablelist>
 </sect1>
 
 <sect1 id="toolbar">
-<title>The Tool bar</title>
+<title>The Toolbar</title>
+
+<screenshot>
+<screeninfo>&kblackbox;'s toolbar</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="kblackboxtbar.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para>The &kblackbox; toolbar offers quick access to the most commonly used
+&kblackbox; functions. From left to right, the icons are:</para>
 
 <variablelist>
 <varlistentry>
@@ -429,8 +462,12 @@ function. </para></listitem>
 <para>Copyright 1998-2000 Robert Cimrman,
 <email>cimrman3@students.zcu.cz</email></para>
 
-<para>Documentation by Robert Cimrman.  Updated and converted to Docbook for KDE
-2.0 by Lauri Watts <email>vampyr@atconnex.net</email></para>
+<para>Documentation by Robert Cimrman.  Updated and converted to Docbook
+for KDE 2.0 by Lauri Watts <email>lauri@kde.org</email></para>
+
+<para>
+Current maintainer Philip Rodrigues <email>phil.rod@ntlworld.com</email>
+</para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
@@ -444,18 +481,18 @@ function. </para></listitem>
 <title>Installation</title>
 
 <para>
-&kblackbox; is part of the KDE project
-<ulink url="http://www.kde.org">http://www.kde.org</ulink>.
-&kblackbox; can be found in the kdegames package on
-<ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
-main ftp site of the KDE project. </para>
+&kblackbox; is part of the &kde; project <ulink
+url="http://www.kde.org">http://www.kde.org</ulink>.  &kblackbox; can be
+found in the kdegames package on <ulink
+url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
+main &FTP; site of the &kde; project. </para>
 
 <sect1 id="compilation">
 <title>Compilation and installation</title>
 
 <para>
-In order to compile and install &kblackbox; on your system, type the following in the base
-directory of the kdegames distribution:</para>
+In order to compile and install &kblackbox; on your system, type the
+following in the base directory of the kdegames distribution:</para>
 <screen width="40">
 <prompt>%</prompt> <command>./configure</command>
 <prompt>%</prompt> <command>make</command>
@@ -465,7 +502,7 @@ directory of the kdegames distribution:</para>
 
 <para>Since &kblackbox; uses <application>autoconf</application> and
 <application>automake</application> you should have not trouble compiling
-it. Should you run into problems please report them to the KDE mailing
+it. Should you run into problems please report them to the &kde; mailing
 lists.</para> 
 
 </sect1>

@@ -16,12 +16,9 @@
 </MenuBar>
 
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
-	<Action name="game_quit"/>
 	<Action name="game_new"/>
 	<Action name="game_giveup"/>
 	<Action name="game_done"/>
-	<Separator/>
-	<Action name="help_contents"/>
 </ToolBar>
 
 </kpartgui>

@@ -354,7 +354,8 @@ or <guimenuitem>8</guimenuitem>.</para>
 <term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
 <guimenuitem><accel>T</accel>utorial</guimenuitem></menuchoice></term>
 <listitem><para>Switches on or off the tutorial mode.  In tutorial mode,
-you can see where the balls actually are.</para></listitem>
+you can see where the balls actually are. Note that you have to start a new
+game for this </para></listitem>change to take effect.
 </varlistentry>
 
 </variablelist>

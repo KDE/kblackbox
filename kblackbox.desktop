@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 GenericName=Logic Game
-GenericName[af]=logika speletjie
+GenericName[af]=Logika Speletjie
 GenericName[ar]=لعبة تكتيكية
 GenericName[be]=Лягічная гульня
 GenericName[bg]=Логическа Игра
@@ -46,7 +46,7 @@ GenericName[zh_TW]=智力遊戲
 GenericName[zu]=Umdlalo Onengqondo
 Exec=kblackbox %i %m -caption "%c"
 Name=KBlackBox
-Name[af]=kblackbox
+Name[af]=Kblackbox
 Name[bg]=КЧернаКутия
 Name[eo]=Nigra kesto
 Name[hu]=Fekete doboz

@@ -1,11 +1,12 @@
 SUBDIRS = pics
 
 INCLUDES = -I$(top_srcdir)/libkdegames $(all_includes)
-LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = $(LIB_KDEGAMES)
 
 bin_PROGRAMS = kblackbox
 kblackbox_SOURCES = kbbgfx.cpp kbbgame.cpp util.cpp main.cpp
+kblackbox_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+kblackbox_LDADD = $(LIB_KDEGAMES)
+
 METASOURCES = AUTO
 KDE_ICON = kblackbox
 

@@ -13,34 +13,25 @@
     
 <authorgroup>
 <author>
-<firstname>Robert</firstname>
-<surname>Cimrman</surname>
-<affiliation>
-<address><email>cimrman3@students.zcu.cz</email></address>
-</affiliation>
+&Robert.Cimrman; &Robert.Cimrman.mail;
 </author>
 
 <author>
-<firstname>Philip</firstname>
-<surname>Rodrigues</surname>
-<affiliation><address><email>phil.rod@ntlworld.com</email></address>
-</affiliation>
+&Philip.Rodrigues; &Philip.Rodrigues.mail;
 </author>
 
 <othercredit role="developer">
-<firstname>Robert</firstname>
-<surname>Cimrman</surname>
-<affiliation>
-<address><email>cimrman3@students.zcu.cz</email></address>
-</affiliation>
+&Robert.Cimrman; &Robert.Cimrman.mail;
+<!-- Uncomment this when xslt bug is fixed!
 <contrib>Developer</contrib>
+-->
 </othercredit>
 
 <othercredit role="reviewer">
-<firstname>Lauri</firstname>
-<surname>Watts</surname>
-<affiliation><address><email>lauri@kde.org</email></address></affiliation>
+&Lauri.Watts; &Lauri.Watts.mail;
+<!-- Uncomment this when xslt bug is fixed!
 <contrib>Reviewer</contrib>
+-->
 </othercredit>
 
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -53,17 +44,17 @@
 </copyright>
 
 <copyright>
-<year>2001</year><year>2002</year>
+<year>2001-2003</year>
 <holder>Philip Rodrigues</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2002-02-15</date>
-<releaseinfo>0.03.00</releaseinfo>
+<date>2003-09-18</date>
+<releaseinfo>0.3.0</releaseinfo>
 
 <abstract><para>&kblackbox; is a superb graphical logical game, inspired
-by the <application>emacs</application> blackbox.</para></abstract>
+by the <application>emacs</application> blackbox game.</para></abstract>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -79,8 +70,8 @@ by the <application>emacs</application> blackbox.</para></abstract>
 <title>What is &kblackbox;?</title>
 
 <para>&kblackbox; is a superb :-) graphical logical game, inspired by
-the <application>emacs</application> blackbox. Major part of this help
-file is based on the original <application>emacs</application>'s
+the <application>emacs</application> blackbox game. A major part of this help
+file is based on the original <application>emacs</application>
 help. </para>
 
 <para>&kblackbox; is a game of hide and seek played on an grid of
@@ -126,7 +117,7 @@ border :-).</para></listitem>
 
 <varlistentry>
 <term><interface>Blue balls</interface></term>
-<listitem><para><quote>There must be one!</quote> you think.  These mark
+<listitem><para><quote>There must be one there!</quote> you think.  These mark
 where you suspect a ball is placed in the black box.</para></listitem>
 </varlistentry>
 
@@ -161,20 +152,18 @@ lasers and around them is the border. Remap the colors yourself
 
 <para>The cursor can be moved around the box with the
 standard cursor movement keys or the mouse. Switching of lasers or
-marking of black boxes is done by the <mousebutton>left</mousebutton>
-mouse button, or by pressing <keycap>Return</keycap> or
-<keycap>Enter</keycap> keys.</para>
+marking of black boxes is done with the &LMB;, or by pressing the
+<keycap>Return</keycap> or &Enter; key.</para>
 
 <para>You can mark the fields where you think a ball can't be, too. Just press
-the <mousebutton>right</mousebutton> mouse button. It often helps you to
-find an area where a ball could possibly be. To clear any marks (blue
-or brown) press the <mousebutton>left</mousebutton> mouse button. Brown
-marks can't overwrite blue marks. This way you can't erase the blue
-marks (guessed balls) by accident when playing with the
-<mousebutton>right</mousebutton> mouse button. </para>
+the &RMB;. It often helps you to find an area where a ball could possibly
+be. To clear any marks (blue or brown) press the
+&LMB;. Brown marks can't overwrite blue
+marks. This way you can't erase the blue marks (guessed balls) by accident when
+playing with the &RMB;. </para>
 
 <para>When you think the configuration of balls you have placed is
-correct, press the <mousebutton>middle</mousebutton> mouse button. You
+correct, press the &MMB;. You
 will be informed whether you are correct or not, and be given your
 score. Your score is the number of letters and numbers around the
 outside of the box plus five for each incorrectly placed ball. If you
@@ -257,7 +246,9 @@ R * * * * - - - -         - - - * - - - -          O - - - - - - -
   - - - - - - - -         - - - * - - - -          - - - - - - - -
   - - - - - - - -         - - - * - - - -          - - - - - - - -
   - - - - - - - -       R * * * * - - - -          - - - - - - - -
-  - - - - - - - -         - - - - O - - -          - - - - - - - -</screen>
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
 
 <para>In the first example, the ray is deflected downwards by the upper
 ball, then left by the lower ball, and finally retraces its path to its
@@ -276,7 +267,9 @@ being deflected downwards and immediately emerging from the box.</para>
   - - - - - - - -         - - - - O - - -          - - - O - - - -
 H * * * O - - - -         - - - - - - - -          - - - - - - - -
   - - - - - - - -         - - - - - - - -          - - - - - - - -
-  - - - - - - - -         - - - - - - - -          - - - - - - - -</screen>
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
 
 <para>Be sure to compare the second example of a hit with the first
 example of a reflection.</para>
@@ -315,8 +308,7 @@ function. </para></listitem>
 <varlistentry>
 <term><menuchoice><guimenu>Game</guimenu>
 <guimenuitem>Resize</guimenuitem></menuchoice></term>
-<listitem><para>Resizes the main window, so that it fits perfectly its
-contents. This is useful, when you accidentally change the size of the
+<listitem><para>Resizes the main window, so that its contents fit perfectly. This is useful when you accidentally change the size of the
 window...</para></listitem>
 </varlistentry>
 
@@ -354,10 +346,19 @@ or <guimenuitem>8</guimenuitem>.</para>
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu>
 <guimenuitem>Tutorial</guimenuitem></menuchoice></term>
-<listitem><para>Switches on or off the tutorial mode.  In tutorial mode,
+<listitem><para>Switches the tutorial mode on or off.  In tutorial mode,
 you can see where the balls actually are. Note that you have to start a new
 game for this change to take effect.</para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice></term>
+<listitem><para>Displays a standard &kde; shortcut configuration dialog, in
+which you can change the keyboard shortcuts used by &kblackbox;.</para></listitem>
+</varlistentry>
+
+
 </variablelist>
 
 </sect1>
@@ -407,6 +408,15 @@ the current game, computes the final score and indicates real positions of
 the balls. The <mousebutton>middle</mousebutton> mouse button has the same
 function. </para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><guiicon>&kblackbox; Handbook</guiicon></term>
+<listitem>
+<para>Displays this document in &khelpcenter;.</para>
+</listitem>
+</varlistentry>
+
+
 </variablelist>
 </sect1>
 </chapter>
@@ -416,14 +426,13 @@ function. </para></listitem>
 
 <para>&kblackbox;</para>
 
-<para>Copyright 1998-2000 Robert Cimrman,
-<email>cimrman3@students.zcu.cz</email></para>
+<para>Program Copyright 1998-2000 &Robert.Cimrman; &Robert.Cimrman.mail;</para>
 
 <para>Documentation by Robert Cimrman.  Updated and converted to Docbook
-for KDE 2.0 by Lauri Watts <email>lauri@kde.org</email></para>
+for KDE 2.0 by &Lauri.Watts; &Lauri.Watts.mail;</para>
 
 <para>
-Current maintainer Philip Rodrigues <email>phil.rod@ntlworld.com</email>
+Current maintainer &Philip.Rodrigues; &Philip.Rodrigues.mail;
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->

@@ -19,6 +19,7 @@
 #include <qmenubar.h> 
 #include <qlabel.h>
 #include <qpushbutton.h>
+#include <ktmainwindow.h>
 
 /*
    Types of the boxes (used f.e.g. in the traceRay() method)

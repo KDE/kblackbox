@@ -28,7 +28,6 @@
 #include <khelpmenu.h>
 #include <kaction.h>
 #include <kstdaction.h>
-#include <klocale.h>
 
 #include "kbbgame.h"
 #include "util.h"

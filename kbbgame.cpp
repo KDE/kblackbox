@@ -194,28 +194,30 @@ KBBGame::KBBGame() : KTopLevelWidget()
   kConf->setGroup( "KBlackBox Setup" );
   if (kConf->hasKey( "Balls" )) {
     i = kConf->readNumEntry( "Balls" );
-    setBalls( i );
+    balls = i;
     switch (i) {
     case 4: ballsm->setItemChecked( balls1id, TRUE ); break;
     case 6: ballsm->setItemChecked( balls2id, TRUE ); break;
     case 8: ballsm->setItemChecked( balls3id, TRUE ); break;
     }
   } else {
-    setBalls( 4 );
+    balls = 4;
     ballsm->setItemChecked( balls1id, TRUE );
   }
   if ((kConf->hasKey( "Width" )) &&
       (kConf->hasKey( "Balls" ))) {
     i = kConf->readNumEntry( "Width" );
     j = kConf->readNumEntry( "Height" );
-    setSize( i, j );
+    gr->setSize( i+4, j+4 ); // +4 is the space for "lasers" and an edge...
+    gameBoard = new RectOnArray( gr->numC(), gr->numR() );
     switch (i) {
     case 8: sizesm->setItemChecked( sizes1id, TRUE ); break;
     case 10: sizesm->setItemChecked( sizes2id, TRUE ); break;
     case 12: sizesm->setItemChecked( sizes3id, TRUE ); break;
     }
   } else {
-    setSize( 8, 8 );
+    gr->setSize( 8+4, 8+4 ); // +4 is the space for "lasers" and an edge...
+    gameBoard = new RectOnArray( gr->numC(), gr->numR() );
     sizesm->setItemChecked( sizes1id, TRUE );
   }
   if (kConf->hasKey( "tutorial" )) {
@@ -614,11 +616,8 @@ bool KBBGame::setSize( int w, int h )
       gameResize();
       if (gameBoard != NULL) delete gameBoard;
       gameBoard = new RectOnArray( gr->numC(), gr->numR() );
-      if (running) {
-	abortGame();
-	newGame();
-      }
-      else updateStats();
+      if (running) abortGame();
+      newGame();
       //      gr->repaint( TRUE );
     }
   }
@@ -643,7 +642,7 @@ bool KBBGame::setBalls( int n )
     if (ok) {
       balls = n;
       if (running) abortGame();
-      else updateStats();
+      newGame();
     }
   }
   return ok;

@@ -103,7 +103,7 @@ explained.</para>
 <sect1 id="game-board-descritpion">
 <title>Game board description</title>
 
-<para>The following types of fields are found on the game board: </para>
+<para>The following types of field are found on the game board: </para>
 
 <variablelist>
 <varlistentry>
@@ -121,7 +121,7 @@ switched on.</para></listitem>
 <varlistentry>
 <term><interface>Light Grey squares</interface></term>
 <listitem><para>Nothing here of interest, this is just a
-border.</para></listitem>
+border :-).</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -165,9 +165,9 @@ marking of black boxes is done by the <mousebutton>left</mousebutton>
 mouse button, or by pressing <keycap>Return</keycap> or
 <keycap>Enter</keycap> keys.</para>
 
-<para>You can mark the fields, where a ball can't be, too. Just press
+<para>You can mark the fields where you think a ball can't be, too. Just press
 the <mousebutton>right</mousebutton> mouse button. It often helps you to
-find an area, where a ball could possibly be. To clear any marks (blue
+find an area where a ball could possibly be. To clear any marks (blue
 or brown) press the <mousebutton>left</mousebutton> mouse button. Brown
 marks can't overwrite blue marks. This way you can't erase the blue
 marks (guessed balls) by accident when playing with the

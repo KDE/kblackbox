@@ -65,8 +65,8 @@ public:
   int numR();
   int width();
   int height();
-  int wHint();
-  int hHint();
+  int wHint() const;
+  int hHint() const;
   void setCellWidth( int w );
   void setCellHeight( int h );
   void setNumRows( int rows );
@@ -87,6 +87,7 @@ signals:
   void endMouseClicked();
 
 protected:
+  virtual QSize sizeHint() const;
   void paintEvent( QPaintEvent* );
   void mousePressEvent( QMouseEvent* );
   void mouseMoveEvent( QMouseEvent* );

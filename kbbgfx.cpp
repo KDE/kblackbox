@@ -135,8 +135,9 @@ int KBBGraphic::numC() { return numCols; }
 int KBBGraphic::numR() { return numRows; }
 int KBBGraphic::width() { return cellW * numRows; }
 int KBBGraphic::height() { return cellH * numCols; }
-int KBBGraphic::wHint() { return minW; }
-int KBBGraphic::hHint() { return minH; }
+int KBBGraphic::wHint() const { return minW; }
+int KBBGraphic::hHint() const { return minH; }
+QSize KBBGraphic::sizeHint() const { return QSize(wHint(), hHint()); }
 
 /*
    Returns a pointer to graphicBoard

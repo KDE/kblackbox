@@ -144,18 +144,17 @@ KBBGame::KBBGame()
   } else tutorial = FALSE;
   tutorialAction->setChecked(tutorial);
 
-  QString s, s1;
-  int pos;
-  slotResize();
-	setupGUI();
-
+  setCentralWidget( gr );
+  
   setScore( 0 );
   ballsPlaced = 0;
-  updateStats();
-
-  setCentralWidget( gr );
+  
+	updateStats();
 
   newGame();
+	setMinSize();
+
+  setupGUI();
 }
 
 /*
@@ -235,10 +234,10 @@ void KBBGame::slotBalls()
           break;
       case 1:
           ok = setBalls( 6 );
-	  break;
+    break;
         case 2:
           ok = setBalls( 8 );
-	  break;
+    break;
   }
   if (!ok) {
     switch (balls) {
@@ -267,7 +266,7 @@ void KBBGame::newGame()
   if (running) {
     bool cancel;
     cancel = KMessageBox::warningYesNo(0,
-	       i18n("Do you really want to give up this game?"))
+         i18n("Do you really want to give up this game?"))
       == KMessageBox::No;
     if (cancel)
       return;

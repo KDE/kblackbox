@@ -36,6 +36,8 @@
 <contrib>Reviewer</contrib>
 </othercredit>
 
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
 </authorgroup>
 
 <copyright>
@@ -426,6 +428,8 @@ function. </para></listitem>
 
 <para>Documentation by Robert Cimrman.  Updated and converted to Docbook for KDE
 2.0 by Lauri Watts <email>vampyr@atconnex.net</email></para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
 &underGPL;

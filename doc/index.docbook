@@ -488,7 +488,7 @@ url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
 main &FTP; site of the &kde; project. </para>
 
 <sect1 id="compilation">
-<title>Compilation and installation</title>
+<title>Compilation and Installation</title>
 
 <para>
 In order to compile and install &kblackbox; on your system, type the

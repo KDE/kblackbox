@@ -54,21 +54,15 @@ CLEANFILES = $(kblackbox_METASOURCES)
 messages:
 	$(XGETTEXT) -C -ktranslate $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
 
-# just install datas here. Use install-exec-data for scripts and etc.
-# the binary itself is already installed from automake
-# use mkinstalldirs, not "install -d"
-# don't install a list of file. Just one file per install.
-# if you have more of them, create a subdirectory with an extra Makefile 
+kde_icon_DATA = kblackbox.xpm
+
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) kblackbox.kdelnk $(APPSDIR)
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kblackbox.xpm $(kde_icondir)
+	$(INSTALL_DATA) $(srcdir)/kblackbox.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kblackbox.xpm $(kde_minidir)/kblackbox.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kblackbox.xpm $(kde_minidir)/kblackbox.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
 	-rm -f $(APPSDIR)/kblackbox.kdelnk
-	-rm -f $(kde_icondir)/kblackbox.xpm
 	-rm -f $(kde_minidir)/kblackbox.xpm

@@ -117,7 +117,7 @@ KBBGame::KBBGame() : KTopLevelWidget()
   setMenu( menu );
 
   KIconLoader *loader = kapp->getIconLoader();
-  QPixmap *pix[] = new (QPixmap *) [NROFTYPES];
+  QPixmap **pix = new (QPixmap *) [NROFTYPES];
   pix[0] = new QPixmap();
   *pix[0] = loader->loadIcon( pFNames[0] );
   if (!pix[0]->isNull()) {

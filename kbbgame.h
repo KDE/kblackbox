@@ -14,10 +14,12 @@
 
 #include "kbbgfx.h"
 #include "util.h"
+
 #include <qwidget.h>
 #include <qmenubar.h> 
 #include <qlabel.h>
 #include <qpushbutton.h>
+
 #include <ktopwidget.h>
 
 /*
@@ -42,8 +44,6 @@
  * Menu & toolbar IDs.
  */
 #define ID_HELP     0
-#define ID_ABOUT    1
-#define ID_ABOUT_QT 2
 #define ID_QUIT     3
 #define ID_NEW      4
 #define ID_GIVEUP   5
@@ -83,12 +83,10 @@ private slots:
   void balls3();
 
   void tutorialSwitch();
+
+  void help();
   
   void newGame();
-  void about();
-//  void aboutKDE();
-  void aboutQt();
-  void help();
 
   bool setSize( int w, int h );
   bool setBalls( int n );

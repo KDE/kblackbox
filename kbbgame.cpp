@@ -61,24 +61,20 @@ KBBGame::KBBGame() : KTopLevelWidget()
   QPopupMenu *file    = new QPopupMenu;
   sizesm  = new QPopupMenu;
   ballsm  = new QPopupMenu;
-  QPopupMenu *help = new QPopupMenu;
+  QPopupMenu *help = 0;
   options = new QPopupMenu;
  
   CHECK_PTR( file );
   CHECK_PTR( game );
-  CHECK_PTR( help );
   CHECK_PTR( sizesm );
   CHECK_PTR( ballsm );
   CHECK_PTR( options );
   CHECK_PTR( menu );
 
-  help->insertItem( i18n("&Help"), ID_HELP );
-  help->setAccel( CTRL+Key_H, ID_HELP );
-  help->insertSeparator();
-  help->insertItem( i18n("&About KBlackBox"), ID_ABOUT );
-  help->setAccel( CTRL+Key_A, ID_ABOUT );
-  help->insertItem( i18n("About &Qt"), ID_ABOUT_QT );
-
+  help = kapp->getHelpMenu(false, i18n(
+            "KBlackBox logical game\n"
+	    "author: Robert Cimrman\n"
+	    "e-mail: cimrman3@students.zcu.cz"));
 		    
   file->insertItem( i18n("&Quit"), ID_QUIT );
   file->setAccel( CTRL+Key_Q, ID_QUIT );
@@ -284,12 +280,6 @@ void KBBGame::callBack( int witch )
   case ID_HELP:
     help();
     break;
-  case ID_ABOUT:
-    about();
-    break;
-  case ID_ABOUT_QT:
-    aboutQt();
-    break;
   case ID_QUIT:
     kapp->quit();
     break;
@@ -403,21 +393,8 @@ void KBBGame::tutorialSwitch()
   Display various infos.
 */
 
-void KBBGame::about()
-{
-  QMessageBox::information( 0, i18n("About"), 
-			    i18n(
-            "KBlackBox logical game\nauthor: Robert Cimrman\ne-mail: cimrman3@students.zcu.cz"), i18n("OK") );
-}
-
-void KBBGame::aboutQt()
-{
-  QMessageBox::aboutQt( 0, i18n("Qt information") );
-}
-
 void KBBGame::help()
 {
-  //  QMessageBox::message( "Help", "Read the file \"help.txt\", please.", "OK" );
   KApplication::getKApplication()->invokeHTMLHelp("", "");
 }
 
@@ -573,7 +550,7 @@ void KBBGame::updateStats()
   else
     s += i18n("No");
   stat->changeItem( (const char *) s, SRUN );
-  s = QString( "%s: %2d x %2d", i18n( "Size" ).ascii(),
+  s.sprintf( "%s: %2d x %2d", i18n( "Size" ).ascii(),
 	       gr->numC()-4, gr->numR()-4 );
   stat->changeItem( (const char *) s, SSIZE );
   s.sprintf( "%s: %2d / %2d", i18n("Placed").ascii(),

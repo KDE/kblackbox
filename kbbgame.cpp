@@ -72,22 +72,22 @@ KBBGame::KBBGame() : KTopLevelWidget()
   CHECK_PTR( options );
   CHECK_PTR( menu );
 
-  help->insertItem( trans->translate("&Help"), ID_HELP );
+  help->insertItem( i18n("&Help"), ID_HELP );
   help->setAccel( CTRL+Key_H, ID_HELP );
   help->insertSeparator();
-  help->insertItem( trans->translate("&About KBlackBox"), ID_ABOUT );
+  help->insertItem( i18n("&About KBlackBox"), ID_ABOUT );
   help->setAccel( CTRL+Key_A, ID_ABOUT );
-  help->insertItem( trans->translate("About &Qt"), ID_ABOUT_QT );
+  help->insertItem( i18n("About &Qt"), ID_ABOUT_QT );
 
 		    
-  file->insertItem( trans->translate("&Quit"), ID_QUIT );
+  file->insertItem( i18n("&Quit"), ID_QUIT );
   file->setAccel( CTRL+Key_Q, ID_QUIT );
 
-  game->insertItem( trans->translate("&New"), ID_NEW );
-  game->insertItem( trans->translate("&Give up"), ID_GIVEUP );
-  game->insertItem( trans->translate("&Done"), ID_DONE );
+  game->insertItem( i18n("&New"), ID_NEW );
+  game->insertItem( i18n("&Give up"), ID_GIVEUP );
+  game->insertItem( i18n("&Done"), ID_DONE );
   game->insertSeparator();
-  game->insertItem( trans->translate("&Resize"), ID_RESIZE );
+  game->insertItem( i18n("&Resize"), ID_RESIZE );
 
   sizes1id = sizesm->insertItem( "  8 x 8  ", this, SLOT(size1()) );
   sizes2id = sizesm->insertItem( " 10 x 10 ", this, SLOT(size2()) );
@@ -99,9 +99,9 @@ KBBGame::KBBGame() : KTopLevelWidget()
   balls3id = ballsm->insertItem( " 8 ", this, SLOT(balls3()) );
   ballsm->setCheckable( TRUE );
 
-  options->insertItem( trans->translate("&Size"), sizesm );  
-  options->insertItem( trans->translate("&Balls"), ballsm );
-  tut1id = options->insertItem( trans->translate("&Tutorial"),
+  options->insertItem( i18n("&Size"), sizesm );  
+  options->insertItem( i18n("&Balls"), ballsm );
+  tut1id = options->insertItem( i18n("&Tutorial"),
 				this, SLOT(tutorialSwitch()) );
   options->setCheckable( TRUE );
 
@@ -109,11 +109,11 @@ KBBGame::KBBGame() : KTopLevelWidget()
   connect( help, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( game, SIGNAL(activated(int)), SLOT(callBack(int)) );
  
-  menu->insertItem( trans->translate("&File"), file );
-  menu->insertItem( trans->translate("&Game"), game );
-  menu->insertItem( trans->translate("&Options"), options );
+  menu->insertItem( i18n("&File"), file );
+  menu->insertItem( i18n("&Game"), game );
+  menu->insertItem( i18n("&Options"), options );
   menu->insertSeparator();
-  menu->insertItem( trans->translate("&Help"), help );
+  menu->insertItem( i18n("&Help"), help );
 
   menu->show(); 
   setMenu( menu );
@@ -151,7 +151,7 @@ KBBGame::KBBGame() : KTopLevelWidget()
 	  this, SLOT(gameFinished()) );
   
   /*
-  QToolTip::add( doneButton, trans->translate(
+  QToolTip::add( doneButton, i18n(
 		 "Click here when you think you placed all the balls.") );
 		 */
 
@@ -169,16 +169,16 @@ KBBGame::KBBGame() : KTopLevelWidget()
 
   tool = new KToolBar( this );
   tool->insertButton( loader->loadIcon("exit.xpm"),
-		      ID_QUIT, TRUE, trans->translate("Quit") );
+		      ID_QUIT, TRUE, i18n("Quit") );
   tool->insertButton( loader->loadIcon("reload.xpm"),
-		      ID_NEW, TRUE, trans->translate("New") );
+		      ID_NEW, TRUE, i18n("New") );
   tool->insertButton( loader->loadIcon("giveup.xpm"),
-		      ID_GIVEUP, TRUE, trans->translate("Give up") );
+		      ID_GIVEUP, TRUE, i18n("Give up") );
   tool->insertButton( loader->loadIcon("done.xpm"),
-		      ID_DONE, TRUE, trans->translate("Done") );
+		      ID_DONE, TRUE, i18n("Done") );
   tool->insertSeparator();
   tool->insertButton( loader->loadIcon("help.xpm"), ID_HELP, TRUE,
-		      trans->translate("Help") );
+		      i18n("Help") );
   connect( tool, SIGNAL(clicked(int)), SLOT(callBack(int)) );
   addToolBar( tool );
   tool->setBarPos( KToolBar::Top );
@@ -405,14 +405,14 @@ void KBBGame::tutorialSwitch()
 
 void KBBGame::about()
 {
-  QMessageBox::information( 0, trans->translate("About"), 
-			    trans->translate(
-            "KBlackBox logical game\nauthor: Robert Cimrman\ne-mail: cimrman3@students.zcu.cz"), trans->translate("OK") );
+  QMessageBox::information( 0, i18n("About"), 
+			    i18n(
+            "KBlackBox logical game\nauthor: Robert Cimrman\ne-mail: cimrman3@students.zcu.cz"), i18n("OK") );
 }
 
 void KBBGame::aboutQt()
 {
-  QMessageBox::aboutQt( 0, trans->translate("Qt information") );
+  QMessageBox::aboutQt( 0, i18n("Qt information") );
 }
 
 void KBBGame::help()
@@ -431,11 +431,11 @@ void KBBGame::newGame()
 
   if (running) {
     bool ok;
-    ok = QMessageBox::warning(0, trans->translate("Warning!"), 
-			    trans->translate(
+    ok = QMessageBox::warning(0, i18n("Warning!"), 
+			    i18n(
 			    "Do you really want to give up this game?"), 
-			    trans->translate("Yes, I'm burnt out."),
-			    trans->translate("No, not yet...") );
+			    i18n("Yes, I'm burnt out."),
+			    i18n("No, not yet...") );
     if (!ok) {
       abortGame();
     } else return;
@@ -486,16 +486,15 @@ void KBBGame::gameFinished()
     if (ballsPlaced == balls) {
       getResults();
       abortGame();
-      s.sprintf( trans->translate("Your final score is: %d."), score );
+      s = i18n("Your final score is: %1.").arg(score);
       if (score <= (balls*3))
-	mb.setButtonText( trans->translate("Wow!") );
+	mb.setButtonText( QMessageBox::Ok, i18n("Wow!") );
       else
-	mb.setButtonText( trans->translate("Damned!") );
+	mb.setButtonText( QMessageBox::Ok, i18n("Damned!") );
     } else {
-      s.sprintf( trans->translate(
-                 "You should place %d balls!\nYou have placed %d."),
-		balls, ballsPlaced );
-      mb.setButtonText( trans->translate("D'accord") );
+      s = i18n( "You should place %1 balls!\nYou have placed %1.").arg(balls).
+	arg(ballsPlaced);
+      mb.setButtonText( QMessageBox::Ok, i18n("D'accord") );
     }
     mb.setText( s );
     mb.show();  
@@ -550,11 +549,11 @@ void KBBGame::giveUp()
 {
   if (running) {
     bool ok;
-    ok = QMessageBox::warning(0, trans->translate("Warning!"), 
-			    trans->translate(
+    ok = QMessageBox::warning(0, i18n("Warning!"), 
+			    i18n(
 			    "Do you really want to give up this game?"), 
-			    trans->translate("Yes, I'm burnt out."),
-			    trans->translate("No, not yet...") );
+			    i18n("Yes, I'm burnt out."),
+			    i18n("No, not yet...") );
     if (!ok) {
       getResults();
       abortGame();
@@ -574,10 +573,10 @@ void KBBGame::updateStats()
   else
     s += i18n("No");
   stat->changeItem( (const char *) s, SRUN );
-  s.sprintf( "%s: %2d x %2d", trans->translate( "Size" ).ascii(),
+  s.sprintf( "%s: %2d x %2d", i18n( "Size" ).ascii(),
 	       gr->numC()-4, gr->numR()-4 );
   stat->changeItem( (const char *) s, SSIZE );
-  s.sprintf( "%s: %2d / %2d", trans->translate("Placed").ascii(),
+  s.sprintf( "%s: %2d / %2d", i18n("Placed").ascii(),
 	     ballsPlaced, balls );
   stat->changeItem( (const char *) s, SBALLS );
 }
@@ -590,7 +589,7 @@ void KBBGame::setScore( int n )
 {
   score = n;
   QString s;
-  s.sprintf( "%s: %d", trans->translate("Score").ascii(), n );
+  s.sprintf( "%s: %d", i18n("Score").ascii(), n );
   stat->changeItem( (const char *) s, SSCORE );
 }
 
@@ -603,11 +602,11 @@ bool KBBGame::setSize( int w, int h )
   bool ok = FALSE;
   if (((w+4) != gr->numC()) || ((h+4) != gr->numR())) {
     if (running) {
-      ok = !QMessageBox::warning(0, trans->translate("Warning!"), 
-			      trans->translate(
+      ok = !QMessageBox::warning(0, i18n("Warning!"), 
+			      i18n(
 			      "This will be the end of the current game!"), 
-			      trans->translate("Never mind..."),
-			      trans->translate("Oh, no!") );
+			      i18n("Never mind..."),
+			      i18n("Oh, no!") );
     } else ok = TRUE;
     if (ok) {
       gr->setSize( w+4, h+4 ); // +4 is the space for "lasers" and an edge...
@@ -632,11 +631,11 @@ bool KBBGame::setBalls( int n )
   bool ok = FALSE;
   if (balls != n) {
     if (running) {
-      ok = !QMessageBox::warning(0, trans->translate("Warning!"), 
-			      trans->translate(
+      ok = !QMessageBox::warning(0, i18n("Warning!"), 
+			      i18n(
 			      "This will be the end of the current game!"), 
-			      trans->translate("Never mind..."),
-			      trans->translate("Oh, no!") );
+			      i18n("Never mind..."),
+			      i18n("Oh, no!") );
     } else ok = TRUE;
     if (ok) {
       balls = n;

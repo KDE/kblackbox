@@ -1,54 +1,24 @@
-# this 10 paths are KDE specific. Use them:
-# kde_htmldir       Where your docs should go to. (contains lang subdirs)
-# kde_appsdir       Where your application file (.desktop) should go to. 
-# kde_icondir       Where your icon should go to.
-# kde_minidir       Where your mini icon should go to.
-# kde_datadir       Where you install application data. (Use a subdir)
-# kde_locale        Where translation files should go to.(contains lang subdirs)
-# kde_cgidir        Where cgi-bin executables should go to.
-# kde_confdir       Where config files should go to.
-# kde_mimedir       Where mimetypes should go to.
-# kde_toolbardir    Where general toolbar icons should go to.
-# kde_wallpaperdir  Where general wallpapers should go to.
-
-# just set the variable
-appsdir = $(kde_appsdir)/Games/Board
-# set the include path for X, qt and KDE
-INCLUDES= $(all_includes)
-# claim, which subdirectories you want to install
 SUBDIRS = pics
 
-####### This part is very kblackbox specific
-# you can add here more. This one gets installed 
-bin_PROGRAMS = 	kblackbox
+INCLUDES = $(all_includes)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD = $(LIB_KDEGAMES)
 
-# Which sources should be compiled for kblackbox.
+bin_PROGRAMS = kblackbox
 kblackbox_SOURCES = kbbgfx.cpp kbbgame.cpp util.cpp main.cpp
+METASOURCES = AUTO
+KDE_ICON = kblackbox
 
-kblackbox_METASOURCES = AUTO
-
-# the library search path. 
-kblackbox_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-
-# the libraries to link against. Be aware of the order. First the libraries,
-# that depend on the following ones.
-kblackbox_LDADD   = $(LIB_KDEGAMES)
-
-# this option you can leave out. Just, if you use "make dist", you need it
-noinst_HEADERS = kbbgfx.h kbbgame.h util.h version.h
-
+appsdir = $(kde_appsdir)/Games/Board
 apps_DATA = kblackbox.desktop
 
-# extra files for "make dist"
 EXTRA_DIST = VERSION CHANGES $(apps_DATA)
 
 rcdir = $(kde_datadir)/kblackbox
 rc_DATA = kblackboxui.rc
 
 messages: rc.cpp
-	$(XGETTEXT) rc.cpp $(kblackbox_SOURCES) -o $(podir)/kblackbox.pot
-
-KDE_ICON = kblackbox
+	$(XGETTEXT) *.cpp -o $(podir)/kblackbox.pot
 
 install-data-local:
 	rm -rf $(DESTDIR)$(kde_appsdir)/Games/kblackbox.desktop

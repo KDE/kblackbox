@@ -716,7 +716,7 @@ void KBBGame::initKAction()
   (void)new KAction( i18n("&Give Up"), SmallIcon("giveup"), 0, this, SLOT(giveUp()), actionCollection(), "game_giveup" );
   (void)new KAction( i18n("&Done"), SmallIcon("done"), 0, this, SLOT(gameFinished()), actionCollection(), "game_done" );
   (void)new KAction( i18n("&Resize"), 0, this, SLOT(slotResize()), actionCollection(), "game_resize" );
-  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
+  KStdGameAction::quit(this, SLOT(close()), actionCollection());
 
 
 // settings

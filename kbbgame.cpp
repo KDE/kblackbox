@@ -464,7 +464,7 @@ bool KBBGame::setSize( int w, int h )
       gr->setSize( w+4, h+4 ); // +4 is the space for "lasers" and an edge...
       setMinSize();
       gameResize();
-      if (gameBoard != NULL) delete gameBoard;
+      delete gameBoard;
       gameBoard = new RectOnArray( gr->numC(), gr->numR() );
       if (running) abortGame();
       newGame();

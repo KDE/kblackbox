@@ -3,15 +3,15 @@
 // KBlackBox
 //
 // A simple game inspired by an emacs module
-// 
+//
 // File: kbbgfx.cpp
 //
 // The implementation of the KBBGraphic widget
-// 
+//
 
 #include <qpainter.h>
 #include <qpixmap.h>
-#include <qcolor.h> 
+#include <qcolor.h>
 #include <qkeycode.h>
 #include <qwmatrix.h>
 
@@ -33,7 +33,7 @@ KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent, const char* name )
   setCellWidth( CELLW );		// set width of cell in pixels
   setCellHeight( CELLH );		// set height of cell in pixels
   setMouseTracking( FALSE );
-  
+
   pix = p;
   if (pix == NULL) pixScaled = NULL;
   else {
@@ -56,18 +56,18 @@ KBBGraphic::~KBBGraphic()
 
   if (pix != NULL) {
     for (i = 0; i < NROFTYPES; i++) {
-      if (pix[i] != NULL) delete pix[i];
+      delete pix[i];
     }
     delete pix;
   }
   if (pixScaled != NULL) {
     for (i = 0; i < NROFTYPES; i++) {
-      if (pixScaled[i] != NULL) delete pixScaled[i];
+      delete pixScaled[i];
     }
     delete pixScaled;
   }
-  if (graphicBoard != NULL) delete graphicBoard;
-  if (drawBuffer != NULL) delete drawBuffer;
+  delete graphicBoard;
+  delete drawBuffer;
 }
 
 /*
@@ -77,7 +77,7 @@ KBBGraphic::~KBBGraphic()
 void KBBGraphic::setSize( int w, int h )
 {
   if ((w != numCols) || (h != numRows)) {
-    if (graphicBoard != NULL) delete graphicBoard;
+    delete graphicBoard;
     graphicBoard = new RectOnArray( w, h );
     graphicBoard->fill( OUTERBBG );
     setNumCols( w );
@@ -167,7 +167,7 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
 
   switch (type = graphicBoard->get( col, row )) {
   case MARK1BBG: pm = *pixScaled[MARK1BBG]; break;
-  case OUTERBBG: pm = *pixScaled[OUTERBBG]; break;  
+  case OUTERBBG: pm = *pixScaled[OUTERBBG]; break;
   case INNERBBG: pm = *pixScaled[INNERBBG]; break;
   case LASERBBG: pm = *pixScaled[LASERBBG]; break;
   case LFIREBBG: pm = *pixScaled[LFIREBBG]; break;
@@ -188,9 +188,9 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
     p->drawLine( 0, 0, x2, 0 );
     p->drawLine( 0, 0, 0, y2 );
   }
-   
+
   /*
-     Extra drawings for boxes aroud lasers. 
+     Extra drawings for boxes aroud lasers.
   */
   QString s;
   switch (type) {
@@ -235,7 +235,7 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
 
   switch (type = graphicBoard->get( col, row )) {
   case MARK1BBG: color = darkRed; break;
-  case OUTERBBG: color = white; break;  
+  case OUTERBBG: color = white; break;
   case INNERBBG: color = gray; break;
   case LASERBBG: color = darkGreen; break;
   case LFIREBBG: color = green; break;
@@ -249,9 +249,9 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
   p->setPen( black );
   p->drawLine( x2, 0, x2, y2 );		// draw vertical line on right
   p->drawLine( 0, y2, x2, y2 );		// draw horiz. line at bottom
-  
+
   /*
-     Extra drawings for boxes aroud lasers. 
+     Extra drawings for boxes aroud lasers.
   */
   QString s;
   switch (type) {
@@ -328,7 +328,7 @@ void KBBGraphic::resizeEvent( QResizeEvent*  )
   setCellWidth( wNew );
   setCellHeight( hNew );
 
-  if (drawBuffer != NULL) delete drawBuffer;
+  delete drawBuffer;
   drawBuffer = new QPixmap( cellW * numRows, cellH * numCols );
 }
 
@@ -352,7 +352,7 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
     curCol = pos.x() / cellW;
     //kdDebug() << e->state() << " " << LeftButton << " " << e->state()&LeftButton << endl;
     updateElement( oldCol, oldRow );
-    emit inputAt( curCol, curRow, e->button() ); 
+    emit inputAt( curCol, curRow, e->button() );
   }
 }
 
@@ -374,7 +374,7 @@ void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
       curRow = movRow;
       curCol = movCol;
       updateElement( oldCol, oldRow );
-      emit inputAt( curCol, curRow, e->state() ); 
+      emit inputAt( curCol, curRow, e->state() );
     }
   }
 }
@@ -383,7 +383,7 @@ void KBBGraphic::slotUp()
 {
   if( curRow > 0 ) {
     moveSelection( -1, 0 );
-  } 
+  }
 }
 
 void KBBGraphic::slotDown()
@@ -412,7 +412,7 @@ void KBBGraphic::slotInput()
   if ( !inputAccepted ) {
     return;
   }
-  emit inputAt( curCol, curRow, LeftButton ); 
+  emit inputAt( curCol, curRow, LeftButton );
 //  updateElement( curCol, curRow );
 }
 
@@ -434,7 +434,7 @@ void KBBGraphic::moveSelection(int drow, int dcol)
 void KBBGraphic::focusInEvent( QFocusEvent* )
 {
   repaint( FALSE );
-}    
+}
 
 
 /*
@@ -444,7 +444,7 @@ void KBBGraphic::focusInEvent( QFocusEvent* )
 void KBBGraphic::focusOutEvent( QFocusEvent* )
 {
   repaint( FALSE );
-}    
+}
 
 /*
    Sets whether user input is processed or not.
@@ -455,7 +455,7 @@ void KBBGraphic::setInputAccepted( bool b )
   inputAccepted = b;
   if (b) setFocusPolicy( StrongFocus );
   else setFocusPolicy( NoFocus );
-}    
+}
 
 /*
    Updates the cell at (col,row).

@@ -12,7 +12,7 @@
 # kde_wallpaperdir  Where general wallpapers should go to.
 
 # just set the variable
-APPSDIR = $(kde_appsdir)/Games
+appsdir = $(kde_appsdir)/Games
 # set the include path for X, qt and KDE
 INCLUDES= $(all_includes)
 # claim, which subdirectories you want to install
@@ -37,26 +37,14 @@ kblackbox_LDADD   = $(LIB_KDEUI)
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = kbbgfx.h kbbgame.h util.h version.h
 
-# extra files for "make dist"
-EXTRA_DIST = VERSION CHANGES kblackbox.desktop kblackbox.xpm mini-kblackbox.xpm
+apps_DATA = kblackbox.desktop
 
-# if you "make distclean", this files get removed. If you want to remove
-# them while "make clean", use CLEANFILES
-CLEANFILES = $(kblackbox_METASOURCES)
+# extra files for "make dist"
+EXTRA_DIST = VERSION CHANGES $(apps_DATA)
 
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
 
-kde_icon_DATA = kblackbox.xpm
+KDE_ICON = kblackbox
 
-install-data-local: 
-	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) $(srcdir)/kblackbox.desktop $(APPSDIR)
-	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) $(srcdir)/mini-kblackbox.xpm $(kde_minidir)/kblackbox.xpm
-
-# remove ALL you have installed in install-data-local or install-exec-local
-uninstall-local:
-	-rm -f $(APPSDIR)/kblackbox.desktop
-	-rm -f $(kde_minidir)/kblackbox.xpm

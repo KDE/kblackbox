@@ -44,15 +44,9 @@ EXTRA_DIST = VERSION CHANGES kblackbox.kdelnk kblackbox.xpm mini-kblackbox.xpm
 # them while "make clean", use CLEANFILES
 CLEANFILES = $(kblackbox_METASOURCES)
 
-
-# make messages.po. Move this one to ../po/ and "make merge" in po
-# the -x is for skipping messages already translated in kdelibs
-#messages:
-#	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
-
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
-	$(XGETTEXT) -C -ktranslate $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
+	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
 
 kde_icon_DATA = kblackbox.xpm
 

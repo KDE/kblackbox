@@ -24,8 +24,6 @@
 #include <ktopwidget.h>
 #include <kmenubar.h>
 #include <kiconloader.h>
-#include <klocale.h>
-#define trans klocale   
 
 #include "kbbgame.h"
 #include "util.h"

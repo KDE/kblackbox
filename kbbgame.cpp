@@ -82,6 +82,11 @@ KBBGame::KBBGame()
   }
   gr = new KBBGraphic( pix, this, "KBBGraphic" );
 
+  statusBar()->insertItem(i18n("Score: 0000"), SSCORE);
+  statusBar()->insertItem(i18n("Placed: 00 / 00"), SBALLS);
+  statusBar()->insertItem(i18n("Run: yesno"), SRUN);
+  statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
+
   initKAction();
 
   connect( gr, SIGNAL(inputAt(int,int,int)),
@@ -95,11 +100,6 @@ KBBGame::KBBGame()
   QToolTip::add( doneButton, i18n(
 		 "Click here when you think you placed all the balls.") );
 		 */
-
-  statusBar()->insertItem(i18n("Score: 0000"), SSCORE);
-  statusBar()->insertItem(i18n("Placed: 00 / 00"), SBALLS);
-  statusBar()->insertItem(i18n("Run: yesno"), SRUN);
-  statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
 
   /*
      Game initializations
@@ -733,8 +733,8 @@ void KBBGame::initKAction()
   list.append(i18n(" 8 "));
   ballsAction->setItems(list);
   tutorialAction = new KToggleAction( i18n("&Tutorial"), 0, this, SLOT(tutorialSwitch()), actionCollection(), "options_tutorial" );
-  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
-actionCollection());
+//  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
+//actionCollection());
 
 // keyboard only
   (void)new KAction( i18n("Move Down"), Qt::Key_Down, gr, SLOT(slotDown()), actionCollection(), "move_down" );
@@ -743,7 +743,7 @@ actionCollection());
   (void)new KAction( i18n("Move Right"), Qt::Key_Right, gr, SLOT(slotRight()), actionCollection(), "move_right" );
   (void)new KAction( i18n("Trigger Action"), Qt::Key_Return, gr, SLOT(slotInput()), actionCollection(), "move_trigger" );
 
-  createGUI();
+  setupGUI();
 }
 
 void KBBGame::slotResize()

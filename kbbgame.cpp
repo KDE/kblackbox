@@ -16,8 +16,8 @@
 #include <qpushbutton.h>
 #include <qtooltip.h> 
 #include <qstring.h>
-#include <qmessagebox.h> 
 
+#include <kmessagebox.h> 
 #include <kapp.h>
 #include <klocale.h>
 #include <kconfig.h>
@@ -406,15 +406,14 @@ void KBBGame::newGame()
   int i, j;
 
   if (running) {
-    bool ok;
-    ok = QMessageBox::warning(0, i18n("Warning!"), 
-			    i18n(
-			    "Do you really want to give up this game?"), 
-			    i18n("Yes, I'm burnt out."),
-			    i18n("No, not yet...") );
-    if (!ok) {
-      abortGame();
-    } else return;
+    bool cancel;
+    cancel = KMessageBox::warningYesNo(0,
+	       i18n("Do you really want to give up this game?"))
+      == KMessageBox::No;
+    if (cancel)
+      return;
+
+    abortGame();
   }
 
   gameBoard->fill( INNERBBT );
@@ -457,23 +456,27 @@ void KBBGame::newGame()
 void KBBGame::gameFinished()
 {
   if (running) {
-    QMessageBox mb;
     QString s;
     if (ballsPlaced == balls) {
       getResults();
       abortGame();
-      s = i18n("Your final score is: %1.").arg(score);
       if (score <= (balls*3))
-	mb.setButtonText( QMessageBox::Ok, i18n("Wow!") );
+	s = i18n("Your final score is: %1\n"
+		 "You did really well!");
       else
-	mb.setButtonText( QMessageBox::Ok, i18n("Damned!") );
+	s = i18n("Your final socre is: %1\n"
+		 "I guess you need more practice.");
+
+      KMessageBox::information(this,
+			     s.arg(KGlobal::locale()->formatNumber(score, 0)));
     } else {
-      s = i18n( "You should place %1 balls!\nYou have placed %1.").arg(balls).
-	arg(ballsPlaced);
-      mb.setButtonText( QMessageBox::Ok, i18n("D'accord") );
+      s = i18n( "You should place %1 balls!\n"
+		"You have placed %2.")
+	.arg(KGlobal::locale()->formatNumber(balls, 0))
+	.arg(KGlobal::locale()->formatNumber(ballsPlaced, 0));
+
+      KMessageBox::sorry(this, s);
     }
-    mb.setText( s );
-    mb.show();  
   }
 }
 
@@ -524,13 +527,13 @@ void KBBGame::abortGame()
 void KBBGame::giveUp()
 {
   if (running) {
-    bool ok;
-    ok = QMessageBox::warning(0, i18n("Warning!"), 
+    bool stop;
+    stop = KMessageBox::warningYesNo(0,
 			    i18n(
-			    "Do you really want to give up this game?"), 
-			    i18n("Yes, I'm burnt out."),
-			    i18n("No, not yet...") );
-    if (!ok) {
+			    "Do you really want to give up this game?"))
+      == KMessageBox::Yes;
+
+    if (stop) {
       getResults();
       abortGame();
     }
@@ -579,11 +582,11 @@ bool KBBGame::setSize( int w, int h )
   bool ok = FALSE;
   if (((w+4) != gr->numC()) || ((h+4) != gr->numR())) {
     if (running) {
-      ok = !QMessageBox::warning(0, i18n("Warning!"), 
+      ok = KMessageBox::warningYesNo(0,
 			      i18n(
-			      "This will be the end of the current game!"), 
-			      i18n("Never mind..."),
-			      i18n("Oh, no!") );
+			      "This will be the end of the current game!"))
+	== KMessageBox::Yes;
+
     } else ok = TRUE;
     if (ok) {
       gr->setSize( w+4, h+4 ); // +4 is the space for "lasers" and an edge...
@@ -608,11 +611,9 @@ bool KBBGame::setBalls( int n )
   bool ok = FALSE;
   if (balls != n) {
     if (running) {
-      ok = !QMessageBox::warning(0, i18n("Warning!"), 
-			      i18n(
-			      "This will be the end of the current game!"), 
-			      i18n("Never mind..."),
-			      i18n("Oh, no!") );
+      ok = KMessageBox::warningYesNo(0,
+			 i18n("This will be the end of the current game!"))
+	== KMessageBox::Yes;
     } else ok = TRUE;
     if (ok) {
       balls = n;

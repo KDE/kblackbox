@@ -2,11 +2,11 @@
 // KBlackbox
 //
 // A simple game inspired by an emacs module
-// 
+//
 // File: kbbgame.cpp
 //
 // The implementation of the KBBGame widget
-// 
+//
 
 #include <config.h>
 
@@ -14,10 +14,10 @@
 #include <qkeycode.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
-#include <qtooltip.h> 
+#include <qtooltip.h>
 #include <qstring.h>
 
-#include <kmessagebox.h> 
+#include <kmessagebox.h>
 #include <kdebug.h>
 #include <kapp.h>
 #include <klocale.h>
@@ -50,7 +50,7 @@ const char *pFNames[NROFTYPES] = {
    Creates the KBBGame widget and sets saved options (if any).
 */
 
-KBBGame::KBBGame() : KMainWindow(0)     
+KBBGame::KBBGame() : KMainWindow(0)
 {
   int i;
 
@@ -63,7 +63,7 @@ KBBGame::KBBGame() : KMainWindow(0)
   ballsm  = new QPopupMenu;
   QPopupMenu *help = 0;
   options = new QPopupMenu;
- 
+
   CHECK_PTR( file );
   CHECK_PTR( game );
   CHECK_PTR( sizesm );
@@ -75,7 +75,7 @@ KBBGame::KBBGame() : KMainWindow(0)
                                     "KBlackBox logical game\n"
                                     "author: Robert Cimrman\n"
                                     "e-mail: cimrman3@students.zcu.cz"));
-		    
+
   file->insertItem( i18n("E&xit"), ID_QUIT );
   file->setAccel( CTRL+Key_Q, ID_QUIT );
 
@@ -95,7 +95,7 @@ KBBGame::KBBGame() : KMainWindow(0)
   balls3id = ballsm->insertItem( " 8 ", this, SLOT(balls3()) );
   ballsm->setCheckable( TRUE );
 
-  options->insertItem( i18n("&Size"), sizesm );  
+  options->insertItem( i18n("&Size"), sizesm );
   options->insertItem( i18n("&Balls"), ballsm );
   tut1id = options->insertItem( i18n("&Tutorial"),
 				this, SLOT(tutorialSwitch()) );
@@ -104,14 +104,14 @@ KBBGame::KBBGame() : KMainWindow(0)
   connect( file, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( help, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( game, SIGNAL(activated(int)), SLOT(callBack(int)) );
- 
+
   menu->insertItem( i18n("&File"), file );
   menu->insertItem( i18n("&Game"), game );
   menu->insertItem( i18n("&Options"), options );
   menu->insertSeparator();
   menu->insertItem( i18n("&Help"), help );
 
-  menu->show(); 
+  menu->show();
 
   QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
@@ -135,14 +135,14 @@ KBBGame::KBBGame() : KMainWindow(0)
     delete pix;
     pix = NULL;
   }
-  gr = new KBBGraphic( pix, this );
+  gr = new KBBGraphic( pix, this, "KBBGraphic" );
   connect( gr, SIGNAL(inputAt(int,int,int)),
 	  this, SLOT(gotInputAt(int,int,int)) );
   connect( this, SIGNAL(gameRuns(bool)),
 	  gr, SLOT(setInputAccepted(bool)) );
   connect( gr, SIGNAL(endMouseClicked()),
 	  this, SLOT(gameFinished()) );
-  
+
   /*
   QToolTip::add( doneButton, i18n(
 		 "Click here when you think you placed all the balls.") );
@@ -175,7 +175,7 @@ KBBGame::KBBGame() : KMainWindow(0)
 
   tool->setBarPos( KToolBar::Top );
   tool->show();
-  
+
   /*
      Game initializations
   */
@@ -244,7 +244,7 @@ KBBGame::KBBGame() : KMainWindow(0)
 }
 
 /*
-   Saves the options and destroys the KBBGame widget. 
+   Saves the options and destroys the KBBGame widget.
 */
 
 KBBGame::~KBBGame()
@@ -260,11 +260,9 @@ KBBGame::~KBBGame()
   kConf->writeEntry( "tutorial", (int) tutorial );
   s = QString("%1 x %2").arg(this->width()).arg(this->height() );
   kConf->writeEntry( "appsize", s );
-  
-  delete gr;
-  if (gameBoard != NULL) delete gameBoard;
-  delete stat;
-  delete tool;
+
+  delete gameBoard;
+  // All the rest has "this" for parent so it doesn't need to be deleted.
 }
 
 /*
@@ -325,8 +323,8 @@ void KBBGame::setMinSize()
    Settings of various options.
 */
 
-void KBBGame::size1() 
-{ 
+void KBBGame::size1()
+{
   if (setSize( 8, 8 )) {
     sizesm->setItemChecked( sizes1id, TRUE );
     sizesm->setItemChecked( sizes2id, FALSE );
@@ -344,7 +342,7 @@ void KBBGame::size2()
 }
 
 void KBBGame::size3()
-{ 
+{
   if (setSize( 12, 12 )) {
     sizesm->setItemChecked( sizes3id, TRUE );
     sizesm->setItemChecked( sizes2id, FALSE );
@@ -353,7 +351,7 @@ void KBBGame::size3()
 }
 
 void KBBGame::balls1()
-{ 
+{
   if (setBalls( 4 )) {
     ballsm->setItemChecked( balls1id, TRUE );
     ballsm->setItemChecked( balls2id, FALSE );
@@ -362,7 +360,7 @@ void KBBGame::balls1()
 }
 
 void KBBGame::balls2()
-{ 
+{
   if (setBalls( 6 )) {
     ballsm->setItemChecked( balls2id, TRUE );
     ballsm->setItemChecked( balls1id, FALSE );
@@ -371,7 +369,7 @@ void KBBGame::balls2()
 }
 
 void KBBGame::balls3()
-{ 
+{
   if (setBalls( 8 )) {
     ballsm->setItemChecked( balls3id, TRUE );
     ballsm->setItemChecked( balls2id, FALSE );
@@ -398,7 +396,7 @@ void KBBGame::help()
    Creates a new game.
 */
 
-void KBBGame::newGame() 
+void KBBGame::newGame()
 {
   int i, j;
 
@@ -717,7 +715,7 @@ int KBBGame::traceRay( int startX, int startY, int *endX, int *endY )
     // turn to the right
     if (refl == 1) d = (d + 1) % 4;
     // turn to the left
-    if (refl == 2) if ((d -= 1) < 0) d += 4; 
+    if (refl == 2) if ((d -= 1) < 0) d += 4;
     // turn back -- no need to trace again the same way
     if (refl == 3) break;
     if (!directionChanged) {
@@ -765,7 +763,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
     switch (type) {
     case WBALLBBG: // because of the tutorial mode
     case INNERBBG:
-      r->set( col, row, TBALLBBG ); 
+      r->set( col, row, TBALLBBG );
       ballsPlaced++;
       break;
     case MARK1BBG:
@@ -823,10 +821,10 @@ void KBBGame::gotInputAt( int col, int row, int state )
   } else if (state & RightButton) {
     switch (type) {
     case INNERBBG:
-      r->set( col, row, MARK1BBG ); 
+      r->set( col, row, MARK1BBG );
       break;
       /*case MARK1BBG:
-	r->set( col, row, INNERBBG ); 
+	r->set( col, row, INNERBBG );
       break;*/
     }
   }

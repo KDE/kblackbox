@@ -159,7 +159,7 @@ namely, in the mentioned order:
 <para>In the first part of this section a description of the game board will be given.
 The second part deals with user interaction with the game board and finally in
 the third part the actual game rules are explained.</para>
-<sect1>
+<sect1 id="game-board-descritpion">
 <title>Game board descritpion</title>
 <para>The folloving types of fields are found on the game board: </para>
 <para><itemizedlist>
@@ -191,7 +191,7 @@ of the fields in this text. They <emphasis>might not</emphasis> be in any relati
 actual colour of the fields. Simply said: the black box is in the centre, around are
 the lasers and around them is the border. Remap the colours yourself :-). </para>
 </sect1>
-<sect1>
+<sect1 id="user-interaction">
 <title>User Interaction</title>
 <para>The cursor (a circle) can be moved around the box with the standard cursor
 movement keys. Switching of lasers or marking of black boxes is done by the left
@@ -208,7 +208,7 @@ outside of the box plus five for each incorrectly placed ball. If you placed any
 balls incorrectly, they will be indicated with red fields, and their actual
 positions indicated with cyan fields.</para>
 </sect1>
-<sect1>
+<sect1 id="game-rules">
 <title>Game rules</title>
 <para>You have to find balls hidden in the black box. Your means are limited - you can
 just fire lasers which are around the box. There are three possible outcomes for
@@ -278,12 +278,12 @@ reflection.</para>
 </chapter>
 <chapter id="Epilogue">
 <title>Epilogue</title>
-<sect1>
+<sect1 id="author">
 <title>Author</title>
 <para> 
 <literal remap="tt">Robert Cimrman, <ulink url="mailto:cimrman3@students.zcu.cz">cimrman3@students.zcu.cz</ulink></literal></para>
 </sect1>
-<sect1>
+<sect1 id="copyright">
 <title>Copyright</title>
 <para>KBblackBox is released under the GPL License.</para>
 </sect1>

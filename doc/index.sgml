@@ -2,7 +2,7 @@
 
 <article>
 <title>KBlackBox Game Manual
-<author>Robert Cimrman
+<author><htmlurl name="Robert Cimrman" url="mailto:cimrman3@students.zcu.cz">
 <date>v0.2.3, 10. February 1998 
 <abstract>This document contains the installation guide and a brief description
 of the KBlackBox game.
@@ -72,7 +72,7 @@ You may need to be root when doing make install.
   <item><bf/Help/
       <itemize>
     <item><bf/Help/ - Displays this help. 
-    <item><bf/About/ - Displays the "About" dialog.
+    <item><bf/About/ - Displays the &quot;About&quot; dialog.
     <item><bf/About Qt/ - Displays the information dialog about the Qt GUI library. 
     </itemize>
   </itemize>
@@ -98,13 +98,13 @@ the third part the actual game rules are explained.
 The folloving types of fields are found on the game board: 
 
 <itemize>
-<item><bf/"gray"/ - The black box. Here you mark the fields, where the balls probably are. 
-<item><bf/"green"/ - These are lasers, shooting rays of light when switched on. 
-<item><bf/"white"/ - Nothing of interest - it's just a border. 
-<item><bf/"blue"/ - "There must be one!", you think. 
-<item><bf/"cyan"/ - Correct positions of balls are indicated by this type. 
-<item><bf/"red"/ - Wrong positions of balls are indicated by this type. 
-<item><bf/"brown"/ - Marking colour. 
+<item><bf/&quot;gray&quot;/ - The black box. Here you mark the fields, where the balls probably are. 
+<item><bf/&quot;green&quot;/ - These are lasers, shooting rays of light when switched on. 
+<item><bf/&quot;white&quot;/ - Nothing of interest - it's just a border. 
+<item><bf/&quot;blue&quot;/ - &quot;There must be one!&quot;, you think. 
+<item><bf/&quot;cyan&quot;/ - Correct positions of balls are indicated by this type. 
+<item><bf/&quot;red&quot;/ - Wrong positions of balls are indicated by this type. 
+<item><bf/&quot;brown&quot;/ - Marking colour. 
 </itemize>
 
 <bf/NOTE:/ The names of colours are used just for identifying the different types
@@ -116,7 +116,7 @@ the lasers and around them is the border. Remap the colours yourself :-).
 <p>
 The cursor (a circle) can be moved around the box with the standard cursor
 movement keys. Switching of lasers or marking of black boxes is done by the left
-mouse button, or by pressing "Return" or "Enter" keys. You can mark the fields,
+mouse button, or by pressing &quot;Return&quot; or &quot;Enter&quot; keys. You can mark the fields,
 where a ball can't be, too. Just press the right mouse button. It often helps
 you to find an area, where a ball could possibly be. To clear any marks (blue or
 brown) press the left mouse button. Brown marks can't overwrite blue marks. This
@@ -151,9 +151,9 @@ The rules for how balls deflect rays are simple and are best shown by example.
 As a ray approaches a ball it is deflected ninety degrees. Rays can be deflected
 multiple times. In the diagrams below, the dashes represent empty box locations
 and the letter `O' represents a ball. The entrance and exit points of each ray
-are marked with numbers as described under "Detour" above. Note that the
-entrance and exit points are always interchangeable. `*' denotes the path taken
-by the ray.
+are marked with numbers as described under &quot;Detour&quot; above. Note that the
+entrance and exit points are always interchangeable. &quot;*&quot; denotes the
+path taken by the ray.
 
 Note carefully the relative positions of the ball and the ninety degree deflection it causes.
 <verb>
@@ -204,8 +204,9 @@ reflection.
 <p>
 <sect1>Author
 <p> 
-<tt><htmlurl url="mailto:cimrman3@students.zcu.cz" 
-name="Robert Cimrman"></tt><p>
+<tt>Robert Cimrman, <htmlurl url="mailto:cimrman3@students.zcu.cz" 
+name="cimrman3@students.zcu.cz">
+</tt><p>
 
 <sect1>Copyright
 <p>

@@ -157,13 +157,13 @@ KBBGame::KBBGame() : KTopLevelWidget()
 
   QString tmps;
   stat = new KStatusBar( this );
-  tmps.sprintf( "aaaaaaaa" );
+  tmps.sprintf( i18n("Score: 0000") );
   stat->insertItem( (const char *) tmps, SSCORE );
-  tmps.sprintf( "aaaaaaaaaaa" );
+  tmps.sprintf( i18n("Placed: 00 / 00") );
   stat->insertItem( (const char *) tmps, SBALLS );
-  tmps.sprintf( "aaaaaaa" );
+  tmps.sprintf( i18n("Run: yesno") );
   stat->insertItem( (const char *) tmps, SRUN );
-  tmps.sprintf( "aaaaaaaaaa" );
+  tmps.sprintf( i18n("Size: 00 x 00") );
   stat->insertItem( (const char *) tmps, SSIZE );
   setStatusBar( stat );
 

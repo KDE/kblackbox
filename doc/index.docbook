@@ -119,7 +119,7 @@ switched on.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><interface>Light Grey squares</interface></term>
+<term><interface>Light Gray squares</interface></term>
 <listitem><para>Nothing here of interest, this is just a
 border :-).</para></listitem>
 </varlistentry>
@@ -150,7 +150,7 @@ indicated in red.</para></listitem>
 <note><para>The names of colors are used just for identifying the
 different types of the fields in this text. They <emphasis>might
 not</emphasis> be in any relation with the actual color of the
-fields. Simply said: the black box is in the centre, around are the
+fields. Simply said: the black box is in the center, around are the
 lasers and around them is the border. Remap the colors yourself
 :-). </para></note>
 

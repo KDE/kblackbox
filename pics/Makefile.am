@@ -8,5 +8,5 @@ data_DATA = blue.xpm brown.xpm cyan.xpm gray.xpm green.xpm red.xpm white.xpm\
 datadir = $(kde_datadir)/kblackbox/pics
 
 # extra files for "make dist"
-EXTRA_DIST += $(data_DATA)
+EXTRA_DIST = $(data_DATA)
 

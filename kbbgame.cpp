@@ -73,10 +73,10 @@ KBBGame::KBBGame() : KTMainWindow()
   CHECK_PTR( options );
   CHECK_PTR( menu );
 
-  help = kapp->getHelpMenu(false, i18n(
-            "KBlackBox logical game\n"
-	    "author: Robert Cimrman\n"
-	    "e-mail: cimrman3@students.zcu.cz"));
+  help = kapp->helpMenu(false, i18n(
+                                    "KBlackBox logical game\n"
+                                    "author: Robert Cimrman\n"
+                                    "e-mail: cimrman3@students.zcu.cz"));
 		    
   file->insertItem( i18n("E&xit"), ID_QUIT );
   file->setAccel( CTRL+Key_Q, ID_QUIT );
@@ -189,7 +189,7 @@ KBBGame::KBBGame() : KTMainWindow()
 
   KConfig *kConf;
   int j;
-  kConf = KApplication::getKApplication()->getConfig();
+  kConf = KApplication::kApplication()->config();
   kConf->setGroup( "KBlackBox Setup" );
   if (kConf->hasKey( "Balls" )) {
     i = kConf->readNumEntry( "Balls" );
@@ -257,7 +257,7 @@ KBBGame::~KBBGame()
   KConfig *kConf;
   QString s;
 
-  kConf = KApplication::getKApplication()->getConfig();
+  kConf = KApplication::kApplication()->config();
   kConf->setGroup( "KBlackBox Setup" );
   kConf->writeEntry( "Balls", balls );
   kConf->writeEntry( "Width", gr->numC() - 4);
@@ -396,7 +396,7 @@ void KBBGame::tutorialSwitch()
 
 void KBBGame::help()
 {
-  KApplication::getKApplication()->invokeHTMLHelp("", "");
+  KApplication::kApplication()->invokeHTMLHelp("", "");
 }
 
 /*

@@ -325,9 +325,10 @@ between <guimenuitem>8 x 8</guimenuitem>, <guimenuitem>10 x 10</guimenuitem> and
 <term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
 <guisubmenu><accel>B</accel>alls</guisubmenu></menuchoice></term>
 <listitem><para>Sets the number of balls in the black box. You may choose
-between <guimenuitem>4</guimenuitem> (the default) </para>
+between <guimenuitem>4</guimenuitem> (the default), <guimenuitem>6</guimenuitem>
+or <guimenuitem>8</guimenuitem>.</para>
 </listitem>
-	</varlistentry>
+</varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>

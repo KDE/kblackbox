@@ -12,7 +12,7 @@
 # kde_wallpaperdir  Where general wallpapers should go to.
 
 # just set the variable
-appsdir = $(kde_appsdir)/Games
+appsdir = $(kde_appsdir)/Games/Board
 # set the include path for X, qt and KDE
 INCLUDES= $(all_includes)
 # claim, which subdirectories you want to install

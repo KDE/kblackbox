@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
  <!ENTITY kappname "&kblackbox;">
+ <!ENTITY package "kdegames">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
@@ -290,21 +291,21 @@ example of a reflection.</para>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
-<guimenuitem><accel>N</accel>ew</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu>Game</guimenu>
+<guimenuitem>New</guimenuitem></menuchoice></term>
 <listitem><para>Starts a new game (and abandons the current, if
 any.)</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
-<guimenuitem><accel>G</accel>ive Up</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu>Game</guimenu>
+<guimenuitem>Give Up</guimenuitem></menuchoice></term>
 <listitem><para>Shows you positions of the balls.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
-<guimenuitem><accel>D</accel>one</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu>Game</guimenu>
+<guimenuitem>Done</guimenuitem></menuchoice></term>
 <listitem><para>Checks whether all balls are placed. If yes, it terminates
 the current game, computes the final score and indicates real positions of
 the balls. The <mousebutton>middle</mousebutton> mouse button has the same
@@ -312,16 +313,16 @@ function. </para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
-<guimenuitem><accel>R</accel>esize</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu>Game</guimenu>
+<guimenuitem>Resize</guimenuitem></menuchoice></term>
 <listitem><para>Resizes the main window, so that it fits perfectly its
 contents. This is useful, when you accidentally change the size of the
 window...</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
-<guimenuitem><accel>Q</accel>uit</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu>Game</guimenu>
+<guimenuitem>Quit</guimenuitem></menuchoice></term>
 <listitem><para>Quits &kblackbox;</para></listitem>
 </varlistentry>
 </variablelist>
@@ -333,8 +334,8 @@ window...</para></listitem>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
-<guisubmenu><accel>S</accel>ize</guisubmenu></menuchoice></term>
+<term><menuchoice><guimenu>Settings</guimenu>
+<guisubmenu>Size</guisubmenu></menuchoice></term>
 <listitem><para>Sets the size of the game field (black box.)  You may choose
 between <guimenuitem>8 x 8</guimenuitem>, <guimenuitem>10 x 10</guimenuitem> and
 <guimenuitem>12 x 12</guimenuitem>.  The default is <guimenuitem>8 x
@@ -342,8 +343,8 @@ between <guimenuitem>8 x 8</guimenuitem>, <guimenuitem>10 x 10</guimenuitem> and
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
-<guisubmenu><accel>B</accel>alls</guisubmenu></menuchoice></term>
+<term><menuchoice><guimenu>Settings</guimenu>
+<guisubmenu>Balls</guisubmenu></menuchoice></term>
 <listitem><para>Sets the number of balls in the black box. You may choose
 between <guimenuitem>4</guimenuitem> (the default), <guimenuitem>6</guimenuitem>
 or <guimenuitem>8</guimenuitem>.</para>
@@ -351,8 +352,8 @@ or <guimenuitem>8</guimenuitem>.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
-<guimenuitem><accel>T</accel>utorial</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Tutorial</guimenuitem></menuchoice></term>
 <listitem><para>Switches on or off the tutorial mode.  In tutorial mode,
 you can see where the balls actually are. Note that you have to start a new
 game for this change to take effect.</para></listitem>
@@ -364,52 +365,8 @@ game for this change to take effect.</para></listitem>
 <sect1 id="help">
 <title>The <guimenuitem>Help</guimenuitem> Menu</title>
 
-<variablelist>
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycap>F1</keycap></shortcut>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>C</accel>ontents</guimenuitem></menuchoice></term>
-<listitem>
-<para>This invokes the &kde; help system starting at the &kblackbox;
-help pages (this document).</para>
-</listitem>
-</varlistentry>
+&help.menu.documentation;
 
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo action="simul"><keycap>Shift</keycap><keycap>F1</keycap></keycombo></shortcut>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem>What's <accel>T</accel>his?</guimenuitem></menuchoice></term>
-<listitem>
-<para>This changes the mouse cursor to a combination arrow and question mark.
-Clicking on items within &kblackbox; with this arrow will open a help
-window (if one exists for the particular item) explaining the item's
-function.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu><accel>H</accel>elp</guimenu>
-<guimenuitem><accel>R</accel>eport Bug</guimenuitem></menuchoice></term>
-<listitem><para>Report a bug or a wishlist item to &kblackbox;'s
-authors.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>A</accel>bout KBlackBox</guimenuitem></menuchoice></term>
-<listitem>
-<para>This will display version and author information</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu><accel>H</accel>elp</guimenu><guimenuitem>About <accel>K</accel>DE</guimenuitem></menuchoice></term>
-<listitem>
-<para>This displays the &kde; version and other basic information.</para>
-</listitem>
-</varlistentry>
-</variablelist>
 </sect1>
 
 <sect1 id="toolbar">
@@ -480,30 +437,12 @@ Current maintainer Philip Rodrigues <email>phil.rod@ntlworld.com</email>
 <appendix id="installation">
 <title>Installation</title>
 
-<para>
-&kblackbox; is part of the &kde; project <ulink
-url="http://www.kde.org">http://www.kde.org</ulink>.  &kblackbox; can be
-found in the kdegames package on <ulink
-url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
-main &FTP; site of the &kde; project. </para>
+&install.intro.documentation;
 
 <sect1 id="compilation">
 <title>Compilation and Installation</title>
 
-<para>
-In order to compile and install &kblackbox; on your system, type the
-following in the base directory of the kdegames distribution:</para>
-<screen width="40">
-<prompt>%</prompt> <command>./configure</command>
-<prompt>%</prompt> <command>make</command>
-<prompt>%</prompt> <command>make install</command>
-</screen>
-
-
-<para>Since &kblackbox; uses <application>autoconf</application> and
-<application>automake</application> you should have not trouble compiling
-it. Should you run into problems please report them to the &kde; mailing
-lists.</para> 
+&install.compile.documentation;
 
 </sect1>
 </appendix>

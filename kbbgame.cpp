@@ -24,7 +24,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <ktopwidget.h>
+#include <ktmainwindow.h>
 #include <kmenubar.h>
 #include <kiconloader.h>
 

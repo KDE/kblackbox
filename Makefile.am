@@ -16,7 +16,7 @@ APPSDIR = $(kde_appsdir)/Games
 # set the include path for X, qt and KDE
 INCLUDES= $(all_includes)
 # claim, which subdirectories you want to install
-SUBDIRS = doc pics
+SUBDIRS = pics
 
 ####### This part is very kblackbox specific
 # you can add here more. This one gets installed 

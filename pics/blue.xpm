@@ -1,144 +1,193 @@
 /* XPM */
 static char *blue[] = {
 /* width height num_colors chars_per_pixel */
-"    48    48       82            2",
+"    48    48      138            2",
 /* colors */
-".. c #020204",
-".# c #1e263c",
-".a c #162e9c",
-".b c #162664",
-".c c #16161c",
-".d c #161e2c",
-".e c #1a2e6c",
-".f c #161e44",
-".g c #163ed4",
-".h c #323234",
-".i c #22262c",
-".j c #1e1e24",
-".k c #162e84",
-".l c #1636ac",
-".m c #16265c",
-".n c #162a7c",
-".o c #161a34",
-".p c #161a1c",
-".q c #161e34",
-".r c #1646f4",
-".s c #163294",
-".t c #1a2a64",
-".u c #162254",
-".v c #2a2e2c",
-".w c #1636bc",
-".x c #1642ec",
-".y c #1e2234",
-".z c #1e2a54",
-".A c #16329c",
-".B c #1a2e7c",
-".C c #162244",
-".D c #162e94",
-".E c #161a2c",
-".F c #16223c",
-".G c #120e14",
-".H c #1a264c",
-".I c #1642e4",
-".J c #2a262c",
-".K c #1e222c",
-".L c #1a2a5c",
-".M c #1a1a1c",
-".N c #162a74",
-".O c #163abc",
-".P c #1632ac",
-".Q c #162674",
-".R c #1a161c",
-".S c #1a1e24",
-".T c #163ee4",
-".U c #1636b4",
-".V c #1a2654",
-".W c #1a2234",
-".X c #163acc",
-".Y c #0a0a0c",
-".Z c #1e2644",
-".0 c #16266c",
-".1 c #161624",
-".2 c #161e4c",
-".3 c #163edc",
-".4 c #323634",
-".5 c #222634",
-".6 c #221e24",
-".7 c #162e8c",
-".8 c #1a36a4",
-".9 c #162a84",
-"#. c #161a3c",
-"## c #161a24",
-"#a c #161e3c",
-"#b c #1646fc",
-"#c c #1a2a6c",
-"#d c #16225c",
-"#e c #1642f4",
-"#f c #1e2a5c",
-"#g c #1632a4",
-"#h c #1a327c",
-"#i c #16224c",
-"#j c #121214",
-"#k c #2a2a2c",
-"#l c #222224",
-"#m c #1a2e8c",
-"#n c #163ac4",
-"#o c #1a3294",
-"#p c #1a223c",
+".. c #04021c",
+".# c #7476fc",
+".a c #3c3e3c",
+".b c #040284",
+".c c #2422bc",
+".d c #1412a4",
+".e c #acaefc",
+".f c #3c3edc",
+".g c #242224",
+".h c #3432cc",
+".i c #5c5afc",
+".j c #0402a4",
+".k c #04024c",
+".l c #1412bc",
+".m c #4c4ef4",
+".n c #9492fc",
+".o c #2c2ac4",
+".p c #cccafc",
+".q c #0c0aa4",
+".r c #141214",
+".s c #3432e4",
+".t c #1c1abc",
+".u c #0c0a9c",
+".v c #2422cc",
+".w c #8486fc",
+".x c #040294",
+".y c #1c1ab4",
+".z c #bcbefc",
+".A c #3c3eec",
+".B c #343234",
+".C c #6c6afc",
+".D c #04026c",
+".E c #a4a2fc",
+".F c #dcdafc",
+".G c #0c0ab4",
+".H c #040234",
+".I c #3c3adc",
+".J c #2c2ad4",
+".K c #1c1acc",
+".L c #4c4a4c",
+".M c #1412b4",
+".N c #3432dc",
+".O c #0406b4",
+".P c #4c4aec",
+".Q c #7c7efc",
+".R c #b4b6fc",
+".S c #2c2a2c",
+".T c #6462fc",
+".U c #0406a4",
+".V c #04025c",
+".W c #1416bc",
+".X c #5456fc",
+".Y c #9c9afc",
+".Z c #d4d2fc",
+".0 c #0c0ea4",
+".1 c #1c1a1c",
+".2 c #3c3ae4",
+".3 c #1c1ebc",
+".4 c #2426cc",
+".5 c #040694",
+".6 c #4442ec",
+".7 c #04022c",
+".8 c #444644",
+".9 c #04068c",
+"#. c #1416ac",
+"## c #4442e4",
+"#a c #3436d4",
+"#b c #2c2ecc",
+"#c c #4446f4",
+"#d c #8c8efc",
+"#e c #c4c6fc",
+"#f c #3c3a3c",
+"#g c #7472fc",
+"#h c #04027c",
+"#i c #acaafc",
+"#j c #e4e2fc",
+"#k c #0c0eb4",
+"#l c #040244",
+"#m c #2c2ed4",
+"#n c #040224",
+"#o c #7c7afc",
+"#p c #444244",
+"#q c #04028c",
+"#r c #2422c4",
+"#s c #1412ac",
+"#t c #3c3ee4",
+"#u c #242624",
+"#v c #3432d4",
+"#w c #5c5efc",
+"#x c #0402ac",
+"#y c #040254",
+"#z c #1412c4",
+"#A c #4c4efc",
+"#B c #9496fc",
+"#C c #2c2acc",
+"#D c #cccefc",
+"#E c #4446ec",
+"#F c #0c0aac",
+"#G c #141614",
+"#H c #3436e4",
+"#I c #1c1ac4",
+"#J c #0c0e9c",
+"#K c #2422d4",
+"#L c #8c8afc",
+"#M c #04029c",
+"#N c #1c1eb4",
+"#O c #c4c2fc",
+"#P c #3c3ef4",
+"#Q c #343634",
+"#R c #6c6efc",
+"#S c #040274",
+"#T c #a4a6fc",
+"#U c #dcdefc",
+"#V c #04023c",
+"#W c #1c1ecc",
+"#X c #4c4e4c",
+"#Y c #1416b4",
+"#Z c #3436dc",
+"#0 c #4c4af4",
+"#1 c #8482fc",
+"#2 c #2426c4",
+"#3 c #bcbafc",
+"#4 c #2c2e2c",
+"#5 c #6466fc",
+"#6 c #0406ac",
+"#7 c #9c9efc",
+"#8 c #d4d6fc",
+"#9 c #1c1e1c",
+"a. c #040264",
+"a# c #1416c4",
+"aa c #0c0eac",
+"ab c #3c3aec",
+"ac c #1c1ec4",
+"ad c #2426d4",
+"ae c #04069c",
+"af c #4442f4",
+"ag c #0c0ebc",
+"ah c #2c2edc",
 /* pixels */
-".R.R.M.Y.G.J#l..#l#l.6#l.J.v.R.M.J.5#f.B#o.l.U.w.U.l.A#m.e.z.5#k.h.h.J.v.h#k#k.v.h.J#l.R#j.G#j#l",
-"#l#l.M.G.c.i.j..#k#k.j.j.j.j.c#c.A#n#n#n.X#n#n#n.O.w.w.U.P#g#g.k.V#l.c#l#k#l#l#k#k.J#l.M.J.v.i.v",
-".4.h.h.p.J.v.M..#l#k.p.M.i#h.O.X.X.g.g.X.X.X#n.X#n.O.w.w.U.P#g#g.A.D#f.i#k.6.p#l.i.6.6.j#l.J.M.h",
-".J#l.j.G#j#l.R.Y#l#k.M#c.O#n.X.X.g.X.X.g.X.g.X.X.X.w.O.w.w.U.P.l#g.A.a.7.H#k#l.i#k#l#l.J#l.J.6.v",
-".v.M.R.Y.G.6.G.G#k.5.8.w.X.g.g.g.3.3.3.3.X.3.g.X.g.X#n.w.w.U.P.P#g.A.a.D.7#c.i.6.v#l#k#k#k.v.J.h",
-".G.R#j.R.J.v#k.M.z.O.w.X.X.X.g.3.3.3.T.I.I.3.g.3.X.X#n#n.O.O.U.l.P#g.A.s.7.k.n.5.v#k#k#k.j#k.6#j",
-".6.6.R#l.J.J.J#f.w#n.X.X.g.X.3.T.I.I.T.T.T.T.3.3.g.g.X#n.w.w.U.l#g#g.a.A.D.7.9.n.Z.h.v.i.6#k#l.6",
-"#k.v.J.h.h#k#f.U#n#n.X.3.X.3.T.I.x.T.x.x.x.x.I.T.3.X.g.X#n.O.w.U.l#g#g.a.D.9.7.n.N.W.R#j.R#l.R.c",
-".i#l.6.J#k.z.U.w.w#n.X.g.3.3.T.T#e#e#e#e.x.x.I.T.3.X.X.X.X.w.w.U.l#g.A.A.s.7.7.9.n.N.#.J.J.j.6.J",
-"#l.6.j.i.#.P.U.w#n.X.X.g.3.T.I.x.r.r#b#b#e#e.x.I.I.3.g.X#n#n.w.U.P.l#g.a.D.D.9.n.n.Q.b#l.J.J#k.i",
-".G.R.M.6#h.l.U.O#n.X.X.3.3.T.x.x#e#b#b#b#b#e.x.T.I.3.g.X#n.O.w.U.P.P#g.A.D.D.7.k.n.N.0.m#l.j#k#j",
-".G.J.J#f.P.U.w.w#n.X.g.g.3.T.I#e.r#e#b#b#e#e.x.x.T.3.g.X.X#n.w.U.l.l#g.a.D.7.k.9.n.Q.N.b.W.6.M..",
-".i.h.i.A.P.l.w.w#n#n.X.g.3.T.T.x.r#e#b#b#b#e.x.T.T.3.g.X#n#n.w.U.P#g#g.A.s.D.9.9.n.Q.0.b.b#l.6.6",
-"#k.4.t#g.P.l.U.w#n.X.X.g.g.T.x.T#e#e#e.r#e.x.x.I.3.3.X.X.X.w.O.U.l.l.A.a.D.7.7.k.n.N.0.0#d#p.G.M",
-".c.c.D#g.P.l.U.w.w.X.X.g.g.3.I.T#e#e#e.x.x.T.T.I.3.g.g.X#n.w.w.P.P.l#g.a.D.7.9.k.n.N.0.0.m#d.R.M",
-".i.L.A.A#g.P.l.U.O#n.X.X.g.3.T.T.I.I.T.x.x.I.I.T.X.X.X#n#n.w.w.U.l#g.A.A.D.7.k.9.Q.Q.N.0#d.u.y.j",
-".j.N.s.A#g.l.U.w.w.w.X.X.X.g.g.3.T.I.T.T.T.3.3.3.3.X.X.w#n.O.U.P#g#g.A.s.D.9.9.9.n.Q.0.b.b#d.C.J",
-"#l.7.D.A#g.P.P.P.U.O#n#n.g.X.3.X.3.3.3.3.3.3.X.g.X.g.X#n.w.U.U.l#g#g.a.a.7.7.k.n.N.0.0.0#d.u.u#k",
-".H.7.D.A.A#g.l.U.U.w.O.w.X.X.g.g.X.3.g.g.3.g.X.g.X#n#n.O.w.U.P.P#g.A.D.D.7.9.k.n.N.0.b.b#d.u#i.W",
-".L.7.D.D.a#g#g.P.U.U.w#n#n#n.X.X.g.g.g.X.X.X.X.X.w#n.w.w.U.l.l.l.a.a.s.D.7.k.n.n.Q.Q#d#d.m#d.2.W",
-".0.9.7.s.A.A#g#g.l.U.U.w.O.w#n#n#n#n.X.X.X.X.w#n.w#n.U.U.P.P#g#g.A.a.7.9.9.9.n.N.N.0.0#d#d.u.2.C",
-".N.7.7.D.D.a.A#g.P.P.U.U.w.w.w.w.w.w#n#n#n#n#n#n.w.U.U.U.l.P#g.A.s.D.D.7.k.9.Q.N.0.0#d#d.u.u#i#a",
-".N.9.9.7.D.a.a.A#g#g.l.U.U.w.w#n#n#n.w.w.O.w.w.w.U.U.P.P.l#g.A.a.s.D.7.9.9.n.Q.Q.0.0.b#d.u.2.2.f",
-".Q.n.9.7.7.s.s.a#g#g#g.P.l.l.U.U.U.U.w.w.w.U.U.U.U.P.l.l#g.A.a.D.D.7.9.9.n.n.N.0.b.b#d#d.2#i.2#a",
-".Q.n.n.k.9.D.D.D.a.A#g#g.P.l.P.P.P.U.l.P.l.l.l.P.l#g#g.A.a.A.A.7.9.7.k.n.n.Q.N.0#d.b#d.u.2.2.f#a",
-".N.n.n.9.7.9.7.D.s.a.A.a#g#g#g.P.l.l.l.l.P.P#g#g#g#g.a.a.A.D.D.9.7.9.9.n.Q.N.0.0.b#d.u.u#i.f.f#.",
-".b.Q.N.n.k.k.7.9.D.D.A.A.a#g.A#g#g#g#g#g#g#g#g.A.A.A.A.D.D.D.7.9.9.9.n.N.Q.0.b.b#d#d.u.2.2.f#a.q",
-".m.N.Q.N.n.9.9.7.7.D.7.D.s.s.A.a.a.a#g.A.A.A.A.a.a.D.D.D.7.9.7.k.n.n.N.N.0.0.b#d#d#d.2.2.2#.#a.o",
-".C.0.Q.Q.N.n.n.9.k.7.7.D.D.D.s.s.s.D.A.a.a.D.D.D.s.7.7.7.7.9.9.9.N.n.Q.N.b.b.b.m.u.u#i.C.f#..q.d",
-".F.b.0.0.Q.N.n.n.9.9.9.9.9.7.7.D.D.D.D.D.7.D.D.7.9.7.7.k.9.9.n.n.Q.0.0.b.0#d#d#d.u.2.2.f.f#a.o.S",
-"#k#d.b.0.0.Q.N.N.n.n.9.k.9.9.9.9.7.9.7.7.7.k.7.7.9.9.9.n.n.n.N.N.Q.0.0#d.b#d.u.u.u.2.f#a#..o.o.j",
-".i.m.b.b.0.0.0.Q.Q.n.n.n.9.9.9.k.9.k.9.9.k.9.9.n.k.9.n.n.N.Q.Q.Q.0.0#d.b#d#d.2.2.f.f#.#..o.o.d.i",
-".i.F.u.m#d.0.0.N.0.N.Q.N.n.n.n.n.9.n.9.n.9.n.n.n.n.N.n.N.N.N.b.b.b.b#d#d.u.u.u.2.2.f.f#a.o.1.S.4",
-".i.d#d#d.b#d.b#d.0.0.Q.Q.N.N.Q.n.N.n.n.Q.N.n.n.Q.Q.Q.0.0.0.b.0.0#d#d#d#d.u#i.2.f.f#a.o.o.E.E.4.v",
-"#j.c.F.u#d#d.b.b.b.b.b.0.0.Q.0.Q.N.N.N.N.N.0.Q.N.0.0.0.b#d.b.m.b#d#d.u.u.2.f.2#a#.#..o.o.E##.K.M",
-".p.c.p.2.u.u#d#d#d.b.0#d.0.b.0.0.b.0.0.0.0.0.b.0.b.0.0#d.b#d#d.u.u.u.2.2.2.f#a#.#..o.o.E.c.M.M.j",
-"#k#k.v.F#i#i.u#d.u#d.m#d.b.b.b#d#d.0#d#d.0.b#d.0#d#d.b#d#d#d#d.u#i#i.2.f.f.f#a.q.o.E#j.o.d#k.h.4",
-"#l#l.i.i.f.2.2.u.2.u.u#d#d#d#d.b.b#d.b.b.m.b.m#d.b#d#d#d.u.u.2#i.2.2.f.f.f.o#..o.o.1##.p#k#l.v.v",
-".j#l.i#l.S.f.f#i.u.2.u.u.u#d.u.u#d#d.u#d#d#d.u.u.u.2.u.u.2#i.2.2.f.f#a#.#a.o.o.o.E.1#j#j.p.M.M.6",
-".h.v#k.i.p.F.f.2.f.2.2.2.2.2.2.u.u.u#d.2.2.2.u.2.u.u.2.2.2.2.f.f#a#.#..q.o.E.o#j.1###j.G.R.R#j.J",
-".v.j.J.i#l.h.d#a.f.f.f.2#i#i.2.2.2.2#i.u.u.2#i.2.2.C.f.f.f#a#a#.#a.q.o.E.o#j.q.E#j.d.i#l.J#l.v.4",
-".v.Y.j.J.6.i.i.d#a#a#a.f#..f.f.f.f.f.2.f.f.2.f.f.f#..f#a#.#.#..q.o#..1.1.E.E#j.1.v.h.h#l.4.h#k.h",
-"#l.Y.6#l.G.j#l.S.d.o.q#a#.#.#a#a.f#a.f#a#a#.#a#a.f#.#a#..o.o.o.E#j#a.E.1#j.E#j.i.h.4.v.c#k.v.i#k",
-"#l.M.J.v.M.v#k.S.i.d.o.o.o#a#.#..o#.#.#.#a#a#.#..o.o.o.o.o.o.1.o.o#j.1.1##.p.i.i#l#l.c.c#k.i.6.i",
-"#l.R#l.h.i.h#k.j.v#k.i.d.E.E.o.o.o.o.o.o.o.o.o.o.o.o.E.E.E.E#j.o###j.E#j.W#k.i.J#l#k.J.j.h#l.M.J",
-".J.R.v.v.J.i.j.p.i#l.d.v.i.d.E.E.E.E.o#j.E.E.E.E.o#j##.E.1#j##.1#j.p.i.v.i#k.J.i.6.i.h.J.v.R.6.i",
-".v.J.h.h#l#k#l.J.h.v#k.i.i.v.v.d.p.E.E#j.o#j.E#j.E.1.1#j.E#j.1.p#j.v.i#l.6#k.6.p#k.i.J.J.v#j#l.4",
-".v.6.v.6.G.v.J#j#l#l.v.v.v.v#l.i.##j#j.d##.E#j#####j.1##.i.#.v.v.h.v.J#k.J#l.6.6.v.v#k.R#j.Y#j#k"
+".a.a#f#Q.B#4#4#4.B#Q.L.8.8.8#p.L.8#4.S#4.B#f#f.B#u#u#u.S#4#4#4.S.g#u#u.1.1#9.g.g#9#9.1#G.r.1#9#u",
+"#4#f#Q.B#4#4.S#u#9.S#p.a#Q#f#f.a#f#u#u#4.B#Q#Q.S#9.g.S.S#Q#Q.B#4.S.S#4.S#u.S.S#u.g.r.r.r.r.1.g.g",
+".S#4.S.S.S.S#4#4.S#u#4.B.B.B#Q.B#u.g.g#4#Q#Q#4.1.1#u#u.S#Q#p.B#Q#4#4#Q#4.B#Q.B#4#u.1#G#G#G#u#u#u",
+".g#G.1.1#9.S.B.B#4.S.S#4.B#Q#f#4#u.g.ka.#S.b#q.x#q.b#q.b.b#h.V.B#Q#Q#Q#f#4#f#Q#Q#4.S#u#9.S#u.S#4",
+".1.r#G.r#9.S#4#p#f#4#4.B#Q.a.a#4a..D.D#h#h.b.D#S#S#h.b#q.x.b#q#q.b#Q#f.B#4#Q.8#p#Q.S.S.S.S.S#u#u",
+".1.r.r.1#u#Q#f.8.8#f#Q#Q.a.8.V#S.b.b.x.x#M#M.x#M#M#M.x.x.b.b#q#M.x#q.b#f.S#p#X.8#f#4#4#4#4.S.g#9",
+".1.r#G#9.B#Q#f#p#X.L.a#f.k.D#S#S#q#q#q#h#h.b.x#M#M.j#6#x.j#q.b.x.j.j.x#h.b#p.L.L#f.B#4#4#4#u.1#G",
+"#9.r#G.B#Q.B.B#p.8#X.L.k#Sa.#S#S#h#h#h.b.b.b.b.b.b.b.j#6.O.j.j.b#x#x#M.j#M#q#X.8#Q#4.B#4.S#9.r.1",
+".g#9#G.B#Q.B#4#f#p.L#y.Da..D#S#h.b.b#q.b#q#q#q#q.xag#W#K#z#x#M#q#qag.O#M.j#M.b.8#f#4#4.S#G.r#G#9",
+".B#9.1.g#Q#Q.B.a.L#y#S.D#S#S#h#h.b#q#q#q#q#q#q#M.Jaf.s.W#x#M.x#q#M.jag#x#x.j#M.b.a#f#4.1#G.r#9#4",
+"#Q#u.g#u#4.B#Q#p#la.#h#S#h#h.b.b.x.x.x#q.x.x.j#6#w#R.G#M#M#x.jag.J.Ga#ag#x#M#M#M.b#p.a.S.r#G.S#Q",
+"#4.g#u.S.B#Q#4#l.k.V.D#S#h.b#q#q.x.x.x#6#Y#I.2#R.J#M.j#1.R#w#5ab#w#H#Ka#.O#x#M#M.x.D#X#Q.1.1#4.B",
+"#u#9#u.B.B#4#4#y#y.k#S#h.b#q#q.x.x#M.U#Y#2#v.m.j.j#x#w.z#W#W.Oad.##Rahag#k#x#x.j.x#q.L#f#u.1.g#4",
+".B.g.g#u#4.S#y.V.Da.#S#S.b.b.b#q#Mae.U#M.j.j#6#H.Q#d#3ag.j#M#M#x#x#P#0a##z#k.O.j#M.b#S#f#4#9#9#u",
+".a.S.g#u#4#4#l.Da.#S#S#h.b#q#q#q.xae.j#k.v#C#m#2.c#t#Aag.Gag#x.j#M#W.T.Ja##I.O.j.x#q.b.a#Q#u.g.g",
+".L#4.S.S.S.H.k.V.D#h.b#h.b.x.x.xae.q.U#C#s#Y.y.3#r#mab#K#o.R.F#H#M.j.Q.s#Ia#.O.j#M#q#q#S.a.S.S.S",
+".L.a#4.S#u#ya..V#h.b.b.b#q.x#M#M.U#F#F.4#.ae#Y.c.J#H.s.Q#8#O#8#g#M#Maf.A#k#F.G#M.x.x#q.b.a#f#Q.B",
+"#X.a.B#4.H.ka.a.#h.b#q#h#qae#M.U.U.W#C.3#J.q.d.3.2.X.i.E#j#D.R.z#x.ja#.l.O#k.l.j.x.x.b#qa..a#Q#Q",
+".L.a.B#4.k#l.V.D#h.b#q.b#q#q.U#..t#N#m.y.u#.#t#o.#.C#7#e#3#7#i#T.K.O#I.G#6.lag#6.x.x.b.b.D#Q#Q#f",
+".8.8#f.B#y#ya..D#S#h#h.b#q.b#qae.0#s#N.c#a#v.i.p#O#R.p.F.e#3#D.E#A.W.K#k.G.U.j.O.x.x.x#q.b#f#p#Q",
+".a#p.a#Q#y.D.Va..D#S#S#q#q.b.5.5.u#J#s.c.##L#B.z.w#3#O#8#j#U.Z.e#A.K.G#x#x#M.j.j.j#M#M.x#h.a#f#4",
+"#f.a#p.a#V.k#ya.a..D#S#h.b.xae.M.y#s#J#s#N#w#i#B#7#3#T.R.p#3.Z.F.wa#.O.j.j.j.x.x#q#M.x.x.b.B.S#u",
+"#f#f#f.B#V#V#ya.a..D#S.b#q#Maa#Z#c.P.0.0#N#2#3#B#i.w.C#7#i#B#U#T#L#H.Gag.j#M#M#q.b.j.b.b.b.S#u#u",
+"#Q.B#4#9.H.k#l.Va.a.#h.b#q.q.A#g.Q#w.d.u.y#..e.Y.n#o#5.p#U.w.Y#D.p.E#g.#ac.j#q.b#h#q#h.D.b.g#9.g",
+"#4.g.r.r#n#y#l#y.V#y.D#S#q#k.c#5#1#L#sae#J###3.Y.m.m#7.p.F#L.P#t#E.I.X.N.M.x.x#q.b.b#h.V#h#4#u.S",
+"#u.r.r.r..#y#l#l.k#y.V#S#q#sae.c#B.w#g#w#1#B#R.f.h#L.R.Z.Q#c#b#r.3.t#Y.q#M.x.x.b.b.b#h.D.D#f.B.B",
+".g#G.r#G.7a.#l#V.k.k#ya..b.x.xae.c#0.m##.P#m#N.y.C#1.#.w#5.N#E#E#v#maa#M.x#q#q.b.b#q#h.b#q#p.a.a",
+"#u#G.r.r#la.#l.H#y#y.Va..b.5.b.b#q.9#q.u.0.d#.#a#H#a.y#2.X.T.T#w#H.N#k#M#M#q#q#q.x.x.x.b#h.8#p#p",
+"#u#9#G#G#l#l.V#V#l.Va..V#Sae.b.b#h.b.b#q#q#s.c#C.4#2.y#..o.6.2.qae.q#k#6.j.x#M.x#M#q.x#h.D.8.L.8",
+".S.g#9.r#n.H#y#l#ya..V.V.D.U.b.b#h.b#q.9ae#2.3.y#v#C.y.y#2#.ae#q.x.x#q.x#M.x#M.x#M#M#q#h.V.L.8.8",
+".S#u.g#G.r.7.k#y.Va..V#y.x.0.5#S#h#h#q#s.3.cae.5.u#.#2#r#..q#q#M#kae.x.b#q.x.x.x.x.x#h.D#Q#p.L.8",
+"#u.g#u#9#9.7.k#y#y.V.Va.#q#q.b.Da.#h.x.0.u.5.b.5#q.5#J.0.q.0.U.M.t.W#6.x#q#q.x.x.x#q#S.V#4.a.8#p",
+"#u#u.S.S.S#u#V#y.V#ya..D#S#h.Da..D#h#q.x.5.b#q.u#sae.b.x.q#saaaaaa.M#F#q#h.x#q#q.b.D#S#u.B#f.8#p",
+".1#u#4.B.a#Q.7#V.k.Va..D.Da..D.Da.#S.b#q.0.x#h.b#s#Y.0.q.0.q.q.U#Mae.x#h#h#q.b#h.Da.a..S.S.B.a.a",
+".g.g#u#Q.8.8#f#V.H#l.Va.a..Va..Da.#S#h.b.5.5#S#qae.q.q.Uaeae.x.b#h#q#S.D#h#h#Sa.a.#y.1#9#4#u.B.B",
+"#Q#4#f#p.L#X.L.H.7#V#V#y#y#ya.#S#S.b.b.b#q.b#S#Sae.uaeae#M.x#h#S#S#S.D.D#S#S.V.V.V.k#G.1#9#u.g.S",
+"#p#f.B#Q#4.B.8.8.H.H.H#l.k.k.V.D#S#S#h#S#S#S#S#hae.qaeaeae#M#S#S#S#S.Da..D.D#ya.#y.r#G#G.g.g.g#4",
+"#p#Q.S#4.g#4#f#Q#Q..#l#V#l#y.V.Va.a..D.D#S#S.D#h#q.qae.xaeae#M.x#q.Da.a.#S#h.V.V.r.r.r.r#9.g#4#4",
+".a.S#u.S.S#4#4.S#u#u.7#V.k.k#y#ya.a.a..D.D#S#S#S#h.x.x#h.b#q.b.x#q#qa.a.#S#S.V.1.r#G#G.r#9#u#Q.B",
+".S.1#u#u#u.S#u.g.g#9.g...H#V.k#y.Va..D.Da.#S#h#q.b#h.V.Va.a.a.#h.b#h#ya..k#y#u#9#9.r#G#G.g.S.B#4",
+".1#G.r#9.g#u#u.g#9#9.S#u#n.H#V#l.V.Va.a..D.D.V#y.k#y.k#y.k#y.k#S.b.V.k#l.H#9.S.S.S#9#G#9#9.g#4.B",
+"#G.r.r.1.g.g.g.g#9#9.g#u#4#4#n#l#l#y.V.V#l#l.k.V#y.V.V#y#y.k#l.Da..k.H#G.g#u#4#u.S#u.g#9#9#G.S#Q",
+".g#G#G#9#u#9#9#9.g#9.g#9.g#4.a.8.H#l.H.H.H#V#la..D.V.k#y.k#V.V.k#V#G#G#9#u.S#4#4.g#u#u.g#9#9.S#4",
+"#4.g#G.1.g.g.g.g.1#G.S#u#4.a#p.8.L.L#n...H.k.H#V.k#V#l#V.H#V.H.r#9.g.g.S#4.B#4#u#9.g#u#u.g#9.g.S",
+"#f#4#9#u#u#u.g#G#G.1#9.S.B.B#p.8#X.8.8#Q.B#4#9#G#G#G.1#G#9#G.r#9#u#4#Q#p.8#p#f.g#9.g.S.S.S#u.g#u",
+".a#f#u#u.S#4#9.r.r.1.1.g#4.B.a.8.L.L.L#f#Q.S#9.r.1#9#u#4.S#u#9.g#4#Q#f#p.8#p.B#u#4.S.B#Q#f.B.S.g",
+"#p#f#4.B#4#f.g.r#G.r#G.S#4.B#Q#f.8#X.L.a#f#Q#4.g#u#u#4.B.B.B.S#Q#f#f#f#Q.a#Q#4#Q#p#Q#Q.8.L.8.a#4",
+".a#Q.B#4.B#Q#Q#9.r#9#9.g.S.B#Q#Q.a.8#X.L.8#p#Q.B#4.B.B.B.B.B#Q.a.a#p#Q#Q.B.S#f.a.8#p#p.L#X.L#p.B"
 };
-SIMPLE  =                    T                                                  BITPIX  =                    8                                                  NAXIS   =                    2                                                  NAXIS1  =                   48                                                  NAXIS2  =                   48                                                  HISTORY Written by XV 3.10a                                                     COMMENT Made with GIMP                                                          END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             , , ,("",,,,"%&%&,,2,(*("  ,,*
-*,(22"*"(2,*%%,,,%" * *%((,"4(,,(%%",%%,%*(% %2(, %""2%2*,*%"*%("*(2"("(,,*%%%""*% %"
- ""!!!%24,*,%*,
-( %%!!!!!!"!!"!!!!,22"42*2,(%"2!!!"$$""""$%%"$""#!!!%"(",42,*%!!"!""""""%%%&"""%"%%""""!!("%"!!$%"%%%&%%&&%&&&%%%"%%"$""!! ""%%!""%"%%&&&&**&**(*(&*&&&%%"$""!!!*",,**,!$$%&%&(&***&&+&&+*&+&&*&&&&%$$"!!!*24"%%&&&*+&+*++*+++++*+*++&*&&%%%"""!!%&&*****++,+,.....+,.+++*&*(*&&%%"!""%&&*&*&++,,..,/.//,.//,,,+++*++&&&&%$"!!4,%!%(&++.+.,.////1/1/1////./...****&&%%%""!!4%(**+++,,///11131311311/31//.,,,++&*&&""!!%*&*++,..//13111141444344111///..,++&*&%%%"!!*++,.//1111144555554554144311//,++*+&&&%""!!#+,,.//1344555777586655574444111./,.***(%%$#!(.,./1144545778666:8888665554143//..++*&&&"""*,./334155886:8::::::::88885554111/.,+**&&%""!.//141457686:::;====;;::::668551411/,.++*&%%$!!,//3155568::;=;;;>=;===;=::86884143//,.+&*&%""!,/144776:::;==>>>>???>>>>;==:8655411//.+**&&"$".1145668::=>>??CCC??A???>>;;=:8675411/,,++*&%""!.445568:;;>>??????CCCCCC?>>>=;:8755431,.++&&%%$+14788::=>>?A?CCCCDDDD?C?C>>;;::864111/..++&&%"#,4556::;>>?CCCDDGGGDDDDD?C??>===667543//,,&&(&""'4588:=>>?A?DDGGDHGGHGDGDCCA?>;;:855413/.+**&%$""458:;;;>ACCGDHDHHHHHHDGDGDC?>>=::66443/.+++&%%*.78:=>???DDDGGHJLJJJHHHHDD?CA>;::875111/,+**&#(%,88:;=>ACDDGHJJLLJMMLLJDDDCC??>=:885431,,.+&%#5:;=>??DDGGHLJNNNMMJJLHGGDC??;;=:65413/.++(&*4-:;=>?CDDGGJMJNNNPNMMLHHDDD?A>==865443/.++&#%2%8;=??CCDGHJJMPNQQQNMJJHGDCC?>;::87511/,+**"  ((-;>??CDGGHJLNPNQQNNMMJHGDDC?>==:65431/,.*"  5=>ACDDHHJMMNQQQQNMJLHGDCA?>;;:85543/.+("*" %&;>?CDDGHJLMPPQQNNMLLHGDCC?>;=:6551//,*"((*%%" (*,>??CDGHHJJNNNNMMLJHDDDD??>=:887441/.&(( (*,(22*->CCDHDHJLMJMMMMLJHDGDCA?>=::6514/.""  "(((-?CDDGDHJLLJJJJHHGGDC??>=::68541/'2,% *" (,*,A?DDDGHHHJLLHGHDDCCAA>=;:8743/&,**** ,
- *&=?DGGGHHHHDHGDGDC??>;;:8654.% ,"***,(2(""
-"*.ACDDGDDGDGDDD?A??>;=:864'*"%*""("( ,422(,"*%5ADDGGDDDCDCA??>;::85-%* "%  "(2""%**.8CCCDCCCA??>;::3)""*""**("(,%,
-(""" "(,(&-39=>?>=850,&*22(,2**,2(""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

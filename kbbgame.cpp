@@ -229,12 +229,12 @@ KBBGame::KBBGame() : KTopLevelWidget()
   gameResize();
   if (kConf->hasKey( "appsize" )) {
     s = kConf->readEntry( "appsize" );
-    debug("%s", (const char *) s);
+    debug("%s", s.ascii());
     pos = s.find( 'x' );
     s1 = s.right( s.length() - pos - 1 );
     s.truncate( pos - 1 );
-    //    debug("%s", (const char *) s);
-    //    debug("%s", (const char *) s1);
+    //    debug("%s", s.ascii());
+    //    debug("%s", s1.ascii());
     resize( s.toInt(), s1.toInt() );
   }
 

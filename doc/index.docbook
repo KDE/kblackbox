@@ -446,7 +446,7 @@ function. </para></listitem>
 <para>
 &kblackbox; is part of the KDE project
 <ulink url="http://www.kde.org">http://www.kde.org</ulink>.
-&kblackbox; can be found in the kdeutils package on
+&kblackbox; can be found in the kdegames package on
 <ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
 main ftp site of the KDE project. </para>
 

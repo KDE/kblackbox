@@ -22,6 +22,7 @@
 
 #include <kapp.h>
 #include <klocale.h>
+#include <kglobal.h>
 #include <ktopwidget.h>
 #include <kmenubar.h>
 #include <kiconloader.h>
@@ -114,15 +115,14 @@ KBBGame::KBBGame() : KTopLevelWidget()
   menu->show(); 
   setMenu( menu );
 
-  KIconLoader *loader = kapp->getIconLoader();
-  QPixmap **pix = new (QPixmap *) [NROFTYPES];
+  QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
-  *pix[0] = loader->loadIcon( pFNames[0] );
+  *pix[0] = ICON( pFNames[0] );
   if (!pix[0]->isNull()) {
     debug( "Pixmap \"%s\" loaded.", pFNames[0] );
     for (i = 1; i < NROFTYPES; i++) {
       pix[i] = new QPixmap;
-      *pix[i] = loader->loadIcon( pFNames[i] );
+      *pix[i] = ICON( pFNames[i] );
       if (!pix[i]->isNull()) {
 	debug( "Pixmap \"%s\" loaded.", pFNames[i] );
       } else {
@@ -164,16 +164,16 @@ KBBGame::KBBGame() : KTopLevelWidget()
   setStatusBar( stat );
 
   tool = new KToolBar( this );
-  tool->insertButton( loader->loadIcon("exit.xpm"),
+  tool->insertButton( ICON("exit.xpm"),
 		      ID_QUIT, TRUE, i18n("Quit") );
-  tool->insertButton( loader->loadIcon("reload.xpm"),
+  tool->insertButton( ICON("reload.xpm"),
 		      ID_NEW, TRUE, i18n("New") );
-  tool->insertButton( loader->loadIcon("giveup.xpm"),
+  tool->insertButton( ICON("giveup.xpm"),
 		      ID_GIVEUP, TRUE, i18n("Give up") );
-  tool->insertButton( loader->loadIcon("done.xpm"),
+  tool->insertButton( ICON("done.xpm"),
 		      ID_DONE, TRUE, i18n("Done") );
   tool->insertSeparator();
-  tool->insertButton( loader->loadIcon("help.xpm"), ID_HELP, TRUE,
+  tool->insertButton( ICON("help.xpm"), ID_HELP, TRUE,
 		      i18n("Help") );
   connect( tool, SIGNAL(clicked(int)), SLOT(callBack(int)) );
   addToolBar( tool );

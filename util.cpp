@@ -13,9 +13,9 @@
 
 RectOnArray::RectOnArray( int newWidth, int newHeight ) 
 {
-  array = new ArrayType[w*h];
   w = newWidth;
   h = newHeight;
+  array = new ArrayType[w*h];
 }
 
 RectOnArray::~RectOnArray() 

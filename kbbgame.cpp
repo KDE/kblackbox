@@ -38,14 +38,14 @@
 */
 
 const char *pFNames[NROFTYPES] = {
-  "white.xpm",
-  "gray.xpm",
-  "green.xpm",
-  "red.xpm",
-  "blue.xpm",
-  "cyan.xpm",
-  "brown.xpm",
-  "green2.xpm"
+  "white",
+  "gray",
+  "green",
+  "red",
+  "blue",
+  "cyan",
+  "brown",
+  "green2"
 };
 
 /*
@@ -118,12 +118,12 @@ KBBGame::KBBGame() : KTopLevelWidget()
 
   QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
-  *pix[0] = ICON( pFNames[0] );
+  *pix[0] = BarIcon( pFNames[0] );
   if (!pix[0]->isNull()) {
     debug( "Pixmap \"%s\" loaded.", pFNames[0] );
     for (i = 1; i < NROFTYPES; i++) {
       pix[i] = new QPixmap;
-      *pix[i] = ICON( pFNames[i] );
+      *pix[i] = BarIcon( pFNames[i] );
       if (!pix[i]->isNull()) {
 	debug( "Pixmap \"%s\" loaded.", pFNames[i] );
       } else {
@@ -165,16 +165,16 @@ KBBGame::KBBGame() : KTopLevelWidget()
   setStatusBar( stat );
 
   tool = new KToolBar( this );
-  tool->insertButton( ICON("exit.xpm"),
+  tool->insertButton( BarIcon("exit"),
 		      ID_QUIT, TRUE, i18n("Exit") );
-  tool->insertButton( ICON("reload.xpm"),
+  tool->insertButton( BarIcon("reload"),
 		      ID_NEW, TRUE, i18n("New") );
-  tool->insertButton( ICON("giveup.xpm"),
+  tool->insertButton( BarIcon("giveup"),
 		      ID_GIVEUP, TRUE, i18n("Give up") );
-  tool->insertButton( ICON("done.xpm"),
+  tool->insertButton( BarIcon("done"),
 		      ID_DONE, TRUE, i18n("Done") );
   tool->insertSeparator();
-  tool->insertButton( ICON("help.xpm"), ID_HELP, TRUE,
+  tool->insertButton( BarIcon("help"), ID_HELP, TRUE,
 		      i18n("Help") );
   connect( tool, SIGNAL(clicked(int)), SLOT(callBack(int)) );
   addToolBar( tool );

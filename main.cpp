@@ -20,7 +20,7 @@
 
 int main( int argc, char **argv )
 {
-  KApplication a(argc,argv);			
+  KApplication a(argc,argv, "kblackbox");
   KBBGame v;
   
   a.setMainWidget( &v );

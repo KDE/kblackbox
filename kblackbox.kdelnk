@@ -3,14 +3,15 @@
 BinaryPattern=kblackbox;
 Protocols=
 MimeType=
-Comment=A little logical game
 Exec=kblackbox
 Name=KBlackBox
+Name[es]=Caja negra
 Name[cs]=KBlackBox
 Name[pt_BR]=Caixa Preta
 TerminalOptions=
 Icon=kblackbox.xpm
 Comment=A little logical game
+Comment[es]=Un pequeño juego de lógica
 Comment[cs]=Mala logicka hra
 Comment[pt_BR]=Um pequeno jogo de lógica
 Path=

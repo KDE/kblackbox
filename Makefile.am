@@ -6,6 +6,7 @@ bin_PROGRAMS = kblackbox
 kblackbox_SOURCES = kbbgfx.cpp kbbgame.cpp util.cpp main.cpp
 kblackbox_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kblackbox_LDADD = $(LIB_KDEGAMES)
+kblackbox_la_DEPENDENCIES = $(LIB_KDEGAMES_DEP)
 
 METASOURCES = AUTO
 KDE_ICON = kblackbox

@@ -100,7 +100,6 @@ KBBGame::KBBGame() : KMainWindow(0)
 				this, SLOT(tutorialSwitch()) );
   options->setCheckable( TRUE );
 
-  connect( help, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( game, SIGNAL(activated(int)), SLOT(callBack(int)) );
 
   menu->insertItem( i18n("&Game"), game );

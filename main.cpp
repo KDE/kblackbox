@@ -12,10 +12,10 @@
 #include <kapplication.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
+#include <kaboutdata.h>
 
 #include "kbbgame.h"
 #include "version.h"
-#include <kaboutdata.h>
 
 
 static const char *description = I18N_NOOP("KDE Blackbox Game");
@@ -33,9 +33,14 @@ int main( int argc, char **argv )
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication a;
-  KBBGame *v = new KBBGame;
+  KGlobal::locale()->insertCatalogue("libkdegames");
 
-  a.setMainWidget( v );
-  v->show();
+  if (a.isRestored())
+      RESTORE(KBBGame)
+  else {
+      KBBGame *w = new KBBGame;
+      a.setMainWidget(w);
+      w->show();
+  }
   return a.exec();
 }

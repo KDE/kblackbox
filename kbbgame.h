@@ -3,11 +3,11 @@
 // KBlackBox
 //
 // A simple game inspired by an emacs module
-// 
+//
 // File: kbbgame.h
 //
 // The definition of the KBBGame widget
-// 
+//
 
 #ifndef KBBGAME_H
 #define KBBGAME_H
@@ -15,18 +15,17 @@
 #include "kbbgfx.h"
 #include "util.h"
 
-#include <qwidget.h>
-#include <qmenubar.h> 
-#include <qlabel.h>
-#include <qpushbutton.h>
 #include <kmainwindow.h>
 #include <krandomsequence.h>
+
+class KSelectAction;
+class KToggleAction;
 
 /*
    Types of the boxes (used f.e.g. in the traceRay() method)
 */
 
-#define OUTERBBT 0  
+#define OUTERBBT 0
 #define INNERBBT 1
 #define LASERBBT 2
 #define BALLBBT  3
@@ -58,17 +57,12 @@ public:
 signals:
   void gameRuns( bool );
 
-protected:
-  void resizeEvent( QResizeEvent * );
-
 private slots:
   void slotSize();
   void slotBalls();
 
   void tutorialSwitch();
 
-  void help();
-  
   void newGame();
 
   bool setSize( int w, int h );
@@ -84,7 +78,6 @@ private slots:
   void giveUp();
   void gotInputAt( int col, int row, int state );
 
-  void slotQuit();
   void slotKeyBindings();
 
 private:
@@ -101,11 +94,13 @@ private:
   RectOnArray *gameBoard;
   KBBGraphic *gr;
 
-  KStatusBar *stat;
   int score;
   /*  QLabel *scoreText;
   QLabel *statusText;*/
   KRandomSequence random;
+
+  KSelectAction *ballsAction, *sizeAction;
+  KToggleAction *tutorialAction;
 };
 
 #endif // KBBGAME_H

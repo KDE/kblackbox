@@ -1,11 +1,12 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kblackbox" version="4">
+<kpartgui name="kblackbox" version="5">
+
 <MenuBar>
   <Menu name="game"><text>&amp;Game</text>
-	<Action name="game_giveup"/>
-	<Action name="game_done"/>
+	<Action name="game_giveup" append="new_merge"/>
+	<Action name="game_done" append="new_merge"/>
 	<Separator/>
-	<Action name="game_resize"/>
+	<Action name="game_resize" append="misc_merge"/>
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
 	<Action name="options_size" append="save_merge"/>
@@ -13,7 +14,8 @@
 	<Action name="options_tutorial" append="save_merge"/>
   </Menu>
 </MenuBar>
-<ToolBar name="mainToolBar"><text>Main Toolbar</text>
+
+<ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
 	<Action name="game_quit"/>
 	<Action name="game_new"/>
 	<Action name="game_giveup"/>
@@ -21,4 +23,5 @@
 	<Separator/>
 	<Action name="help_contents"/>
 </ToolBar>
+
 </kpartgui>

@@ -29,11 +29,12 @@
 #include <kaction.h>
 #include <kstdaction.h>
 #include <kkeydialog.h>
+#include <kstatusbar.h>
+#include <kstdgameaction.h>
 
 #include "kbbgame.h"
 #include "util.h"
 #include "version.h"
-#include <kstatusbar.h>
 
 /*
   Names of pixmap files.
@@ -54,11 +55,9 @@ const char *pFNames[NROFTYPES] = {
    Creates the KBBGame widget and sets saved options (if any).
 */
 
-KBBGame::KBBGame() : KMainWindow(0)
+KBBGame::KBBGame()
 {
   int i;
-
-  setCaption(QString("KBlackBox ")+KBVERSION);
 
   QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
@@ -98,16 +97,10 @@ KBBGame::KBBGame() : KMainWindow(0)
 		 "Click here when you think you placed all the balls.") );
 		 */
 
-  QString tmps;
-  stat = new KStatusBar( this );
-  tmps = i18n("Score: 0000");
-  stat->insertItem( tmps, SSCORE );
-  tmps = i18n("Placed: 00 / 00");
-  stat->insertItem( tmps, SBALLS );
-  tmps = i18n("Run: yesno");
-  stat->insertItem( tmps, SRUN );
-  tmps = i18n("Size: 00 x 00");
-  stat->insertItem( tmps, SSIZE );
+  statusBar()->insertItem(i18n("Score: 0000"), SSCORE);
+  statusBar()->insertItem(i18n("Placed: 00 / 00"), SBALLS);
+  statusBar()->insertItem(i18n("Run: yesno"), SRUN);
+  statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
 
   /*
      Game initializations
@@ -117,19 +110,19 @@ KBBGame::KBBGame() : KMainWindow(0)
 
   KConfig *kConf;
   int j;
-  kConf = KApplication::kApplication()->config();
+  kConf = kapp->config();
   kConf->setGroup( "KBlackBox Setup" );
   if (kConf->hasKey( "Balls" )) {
     i = kConf->readNumEntry( "Balls" );
     balls = i;
     switch (i) {
-    case 4: ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(0); break;
-    case 6: ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(1); break;
-    case 8: ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(2); break;
+    case 4: ballsAction->setCurrentItem(0); break;
+    case 6: ballsAction->setCurrentItem(1); break;
+    case 8: ballsAction->setCurrentItem(2); break;
     }
   } else {
     balls = 4;
-    ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(0);
+    ballsAction->setCurrentItem(0);
   }
   if ((kConf->hasKey( "Width" )) &&
       (kConf->hasKey( "Balls" ))) {
@@ -138,19 +131,19 @@ KBBGame::KBBGame() : KMainWindow(0)
     gr->setSize( i+4, j+4 ); // +4 is the space for "lasers" and an edge...
     gameBoard = new RectOnArray( gr->numC(), gr->numR() );
     switch (i) {
-    case 8: ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(0); break;
-    case 10: ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(1); break;
-    case 12: ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(2); break;
+    case 8: sizeAction->setCurrentItem(0); break;
+    case 10: sizeAction->setCurrentItem(1); break;
+    case 12: sizeAction->setCurrentItem(2); break;
     }
   } else {
     gr->setSize( 8+4, 8+4 ); // +4 is the space for "lasers" and an edge...
     gameBoard = new RectOnArray( gr->numC(), gr->numR() );
-    ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(0);
+    sizeAction->setCurrentItem(0);
   }
   if (kConf->hasKey( "tutorial" )) {
     tutorial = (bool) kConf->readNumEntry( "tutorial" );
   } else tutorial = FALSE;
-  ((KToggleAction*)actionCollection()->action("options_tutorial"))->setChecked(tutorial);
+  tutorialAction->setChecked(tutorial);
 
   QString s, s1;
   int pos;
@@ -185,7 +178,7 @@ KBBGame::~KBBGame()
   KConfig *kConf;
   QString s;
 
-  kConf = KApplication::kApplication()->config();
+  kConf = kapp->config();
   kConf->setGroup( "KBlackBox Setup" );
   kConf->writeEntry( "Balls", balls );
   kConf->writeEntry( "Width", gr->numC() - 4);
@@ -198,29 +191,19 @@ KBBGame::~KBBGame()
   // All the rest has "this" for parent so it doesn't need to be deleted.
 }
 
-/*
-   Resize event of the KBBGame widget.
-*/
-
-void KBBGame::resizeEvent( QResizeEvent *e )
-{
-  KMainWindow::resizeEvent(e);
-}
-
 
 /*
    Resizes yourself to fit the contents perfectly, from menu.
 */
-
 void KBBGame::gameResize()
 {
-  resize( gr->wHint(), gr->hHint() + menuBar()->height() + stat->height() +
+  resize( gr->wHint(), gr->hHint() + menuBar()->height() + statusBar()->height() +
       toolBar()->height() );
 }
 
 void KBBGame::setMinSize()
 {
-  setMinimumSize( gr->wHint(), gr->hHint() + menuBar()->height() + stat->height() +
+  setMinimumSize( gr->wHint(), gr->hHint() + menuBar()->height() + statusBar()->height() +
       toolBar()->height() );
 }
 
@@ -229,7 +212,7 @@ void KBBGame::setMinSize()
 */
 void KBBGame::slotSize()
 {
-  int i = ((KSelectAction*)actionCollection()->action("options_size"))->currentItem();
+  int i = sizeAction->currentItem();
   bool ok = false;
   switch (i) {
     case 0:
@@ -246,22 +229,22 @@ void KBBGame::slotSize()
   if (!ok) {
     switch(gr->numR() - 4) {
       case 8:
-        ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(0); break;
+        sizeAction->setCurrentItem(0); break;
       case 10:
-        ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(1); break;
+        sizeAction->setCurrentItem(1); break;
       case 12:
-        ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(2); break;
+        sizeAction->setCurrentItem(2); break;
     }
   }
 }
 
 void KBBGame::slotBalls()
 {
-  int i = ((KSelectAction*)actionCollection()->action("options_balls"))->currentItem();
+  int i = ballsAction->currentItem();
   bool ok = false;
   switch (i) {
       case 0:
-          ok = setBalls( 4 ); 
+          ok = setBalls( 4 );
           break;
       case 1:
           ok = setBalls( 6 );
@@ -273,11 +256,11 @@ void KBBGame::slotBalls()
   if (!ok) {
     switch (balls) {
       case 4:
-        ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(0); break;
+        ballsAction->setCurrentItem(0); break;
       case 6:
-        ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(1); break;
+        ballsAction->setCurrentItem(1); break;
       case 8:
-        ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(2); break;
+        ballsAction->setCurrentItem(2); break;
     }
   }
 }
@@ -288,18 +271,8 @@ void KBBGame::tutorialSwitch()
 }
 
 /*
-  Display various infos.
-*/
-
-void KBBGame::help()
-{
-  KApplication::kApplication()->invokeHelp();
-}
-
-/*
    Creates a new game.
 */
-
 void KBBGame::newGame()
 {
   int i, j;
@@ -451,15 +424,15 @@ void KBBGame::updateStats()
     s += i18n("Yes");
   else
     s += i18n("No");
-  stat->changeItem( s, SRUN );
+  statusBar()->changeItem( s, SRUN );
   s = i18n( "Size: " );
   s += tmp.sprintf( "%2d x %2d",
 	       gr->numC()-4, gr->numR()-4 );
-  stat->changeItem( s, SSIZE );
+  statusBar()->changeItem( s, SSIZE );
   s = i18n( "Placed: " );
   s += tmp.sprintf( "%2d / %2d",
 	     ballsPlaced, balls );
-  stat->changeItem( s, SBALLS );
+  statusBar()->changeItem( s, SBALLS );
 }
 
 /*
@@ -469,7 +442,7 @@ void KBBGame::updateStats()
 void KBBGame::setScore( int n )
 {
   score = n;
-  stat->changeItem( i18n("Score: %1").arg(n), SSCORE );
+  statusBar()->changeItem( i18n("Score: %1").arg(n), SSCORE );
 }
 
 /*
@@ -739,28 +712,28 @@ void KBBGame::gotInputAt( int col, int row, int state )
 void KBBGame::initKAction()
 {
 // game
-  KStdAction::openNew( this, SLOT(newGame()), actionCollection(), "game_new" );
+  KStdGameAction::gameNew(this, SLOT(newGame()), actionCollection());
   (void)new KAction( i18n("&Give Up"), SmallIcon("giveup"), 0, this, SLOT(giveUp()), actionCollection(), "game_giveup" );
   (void)new KAction( i18n("&Done"), SmallIcon("done"), 0, this, SLOT(gameFinished()), actionCollection(), "game_done" );
   (void)new KAction( i18n("&Resize"), 0, this, SLOT(slotResize()), actionCollection(), "game_resize" );
-  KStdAction::quit( this, SLOT(slotQuit()), actionCollection(), "game_quit" );
+  KStdGameAction::quit(kapp, SLOT(quit()), actionCollection());
 
 
 // settings
-  KSelectAction* s = new KSelectAction( i18n("&Size"), 0, this, SLOT(slotSize()), actionCollection(), "options_size");
+  sizeAction = new KSelectAction( i18n("&Size"), 0, this, SLOT(slotSize()), actionCollection(), "options_size");
   QStringList list;
   list.append(i18n("  8 x  8 "));
   list.append(i18n(" 10 x 10 "));
   list.append(i18n(" 12 x 12 "));
-  s->setItems(list);
+  sizeAction->setItems(list);
 
-  s = new KSelectAction( i18n("&Balls"), 0, this, SLOT(slotBalls()), actionCollection(), "options_balls");
+  ballsAction = new KSelectAction( i18n("&Balls"), 0, this, SLOT(slotBalls()), actionCollection(), "options_balls");
   list.clear();
   list.append(i18n(" 4 "));
   list.append(i18n(" 6 "));
   list.append(i18n(" 8 "));
-  s->setItems(list);
-  (void)new KToggleAction( i18n("&Tutorial"), 0, this, SLOT(tutorialSwitch()), actionCollection(), "options_tutorial" );
+  ballsAction->setItems(list);
+  tutorialAction = new KToggleAction( i18n("&Tutorial"), 0, this, SLOT(tutorialSwitch()), actionCollection(), "options_tutorial" );
   KStdAction::keyBindings(this, SLOT(slotKeyBindings()), actionCollection());
 
 // keyboard only
@@ -770,7 +743,7 @@ void KBBGame::initKAction()
   (void)new KAction( i18n("Move Right"), Qt::Key_Right, gr, SLOT(slotRight()), actionCollection(), "move_right" );
   (void)new KAction( i18n("Trigger Action"), Qt::Key_Return, gr, SLOT(slotInput()), actionCollection(), "move_trigger" );
 
-  createGUI("kblackboxui.rc");
+  createGUI();
 }
 
 void KBBGame::slotResize()
@@ -778,9 +751,6 @@ void KBBGame::slotResize()
     setMinSize();
     gameResize();
 }
-
-void KBBGame::slotQuit()
-{ kapp->quit(); }
 
 void KBBGame::slotKeyBindings()
 {

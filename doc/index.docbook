@@ -1,407 +1,242 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN">
-<book lang="de" id="KBlackbox">
+<book lang="en">
 <bookinfo>
-<title>Das KBlackBox Handbuch</title>
+<title>KBlackBox Game Manual</title>
 <authorgroup>
 <author>
 <surname></surname>
 </author>
 </authorgroup>
-<date>10/21/1999</date>
-<releaseinfo>0.2.3</releaseinfo>
+<date>version 0.2.3, 10. February 1998 </date>
+<releaseinfo><!-- information about this particular version --></releaseinfo>
 <revhistory>
 <revision>
 <revnumber></revnumber>
 <date></date>
 </revision>
 </revhistory>
-
 <abstract>
-<para>
-Dieses Dokument enth&auml;lt Installationsanweisungen sowie eine kurze
-Beschreibung des Spiels <application>KBlackBox</application>.
-</para>
-<para>
-<application>KBlackBox</application> ist ein graphisches Logikspiel, das
-vom Spiel Blackbox des <application>Emacs</application> inspiriert wurde.
-</para>
-</abstract>
-
+<para>This document contains the installation guide and a brief description
+of the KBlackBox game.</para>
+<para>KBlackBox is a superb graphical logical game, inspired by emacs' blackbox.</para><!-- Merge this with the previous paragraph; it comes from <META NAME="description" CONTENT="..."> --></abstract>
 <keywordset>
 <keyword>KBlackBox</keyword>
-<keyword>Spiel</keyword>
-<keyword>KDE</keyword>
+<keyword>play</keyword>
+<keyword>kde</keyword>
 <keyword>blackbox</keyword>
+<keyword>game</keyword>
 <keyword>K Desktop environment</keyword>
 </keywordset>
 </bookinfo>
-
-
-
 <chapter id="WhatisKBlackBox">
-<title>Was ist KBlackBox?</title>
-<para>
-<application>KBlackBox</application> ist ein graphisches Logikspiel, das
-vom Spiel Blackbox des <application>Emacs</application> inspiriert wurde.
-<application>KBlackbox</application> steht unter der GPL. Der gr&ouml;&szlig;te Teil dieses 
-Handbuches basiert auf der Originalhilfe von <application>Emacs</application>.
-</para>
-
-<para>
-<application>KBlackBox</application> ist eine Art Versteckspiel, das auf einem 
-gitterartigen Spielfeld gespielt wird. 
-Ihr Gegner (in diesem Fall ein Zufallsgenerator) hat auf diesem Spielfeld
-mehrere Kugeln versteckt. Indem Sie Strahlen durch das Spielfeld schie&szlig;en
-k&ouml;nnen Sie auf die Positionen der versteckten Kugeln schlie&szlig;en. 
-Je weniger Strahlen Sie benutzen, um die Kugeln zu finden, desto kleiner
-ist Ihre Punktzahl.
-</para>
+<title>What is KBlackBox?</title>
+<para>KBlackBox is a superb :-) graphical logical game, inspired by emacs' blackbox.
+Copying policy is GPL. Major part of this help file is based on the original
+emacs's help. </para>
+<para>KBlackBox is a game of hide and seek played on an grid of boxes. Your opponent
+(Random number generator, in this case) has hidden several balls within this
+box. By shooting rays into the box and observing where they emerge it is
+possible to deduce the positions of the hidden balls. The fewer rays you use to
+find the balls, the lower your score.</para>
 </chapter>
-
-
 <chapter id="Installation">
 <title>Installation</title>
-<para>
-<application>KBlackBox</application> ist ein KDE-Programm. 
-Daher m&uuml;ssen Sie KDE auf Ihrem System installiert haben - zumindest die
-Pakete kdesupport und kdelibs. Die eigentliche Installation ist sehr einfach.
+<para>KBlackBox is a KDE application. Therefore you need to have KDE installed on your
+computer - at least kdesupport, kdelibs and kdebase packages. The actual
+installation is very easy:
+<programlisting>       cd somewhere
+       gunzip kblackbox-x.y.z.tgz
+       tar -xvf kblackbox-x.y.z.tar
+       cd kblackbox-x.y.z
+       # This is for generating the configure script. It will be probably removed,
+       # when kblackbox is a part of kdegames.
+       make -f Makefile.dist
+       #
+       ./configure
+       make
+       make install</programlisting>
 
-Geben Sie folgendes im Basisverzeichnis der KBlackbox-Distribution ein:
-<screen Width="40">
-<prompt>%</prompt>       ./configure
-<prompt>%</prompt>       make
-<prompt>%</prompt>       make install
-</screen>
-
-Sie m&uuml;ssen wahrscheinlich root sein, um <command>make install</command> 
-auszuf&uuml;hren.
-</para>
+You may need to be root when doing make install.</para>
 </chapter>
-
-
-
 <chapter id="GUIdescription">
-<title>Beschreibung der Benutzerschnittstelle</title>
-
-<para>
-Men&uuml;s:
-<variablelist>
-	<varlistentry>
-	  <term>Das Datei-Men&uuml;</term>
-	  <listitem>
-	    <para><variablelist>
-		<varlistentry>
-		  <term><MenuChoice>
-		      <Shortcut>
-			<KeyCombo><KeyCap>Strg</KeyCap><KeyCap>Q</KeyCap></KeyCombo>
-		      </Shortcut>
-		      <GUIMenu>Datei</GUIMenu>
-		      <GUIMenuItem>Beenden</GUIMenuItem>
-		    </MenuChoice></term>
-		  <listitem>
-		 <para><action>Beendet <application>KBlackbox</application></action></para>
-		  </listitem>
-		</varlistentry>
-	      </variablelist></para>
-	  </listitem>
-	</varlistentry>
-	<varlistentry>
-	  <term>Das Spiel-Men&uuml;</term>
-	  <listitem>
-	    <para><variablelist>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Spiel</GUIMenu>
-		      <GUIMenuItem>Neu</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Startet ein neues Spiel (und beendet
-das Aktuelle).</action></para>
-		  </listitem>
-		</varlistentry>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Spiel</GUIMenu>
-		      <GUIMenuItem>Aufgeben</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Zeigt Ihnen die Positionen der Kugeln an
-</action></para>
-		  </listitem>
-		</varlistentry>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Spiel</GUIMenu>
-		      <GUIMenuItem>Fertig</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Pr&uuml;ft, ob alle Kugeln platziert sind.</action>
-Wenn ja, wird das aktuelle Spiel beendet, Ihre erreichte Punktzahl errechnet
-und die richtigen Positionen der versteckten Kugeln angezeigt.
-Sie k&ouml;nnen diese Funktion auch mit der mittleren Maustaste aufrufen.
+<title>GUI description</title>
+<para><itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Menus</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">File</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Quit</emphasis> - Well, it's difficult to explain. Let's skip it. </para>
+</listitem>
+</itemizedlist>
 </para>
-		  </listitem>
-		</varlistentry>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Spiel</GUIMenu>
-		      <GUIMenuItem>Gr&ouml;&szlig;e zur&uuml;cksetzen</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Setzt die Gr&ouml;&szlig;e des Hauptfensters auf
-die Originalgr&ouml;&szlig;e zur&uuml;ck.</action>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Game</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">New</emphasis> - Starts a new game (and abandons the current, if any). </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Give up</emphasis> - Shows you positions of the balls. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Done</emphasis> - Checks whether all balls are placed. If yes, it terminates
+the current game, computes the final score and indicates real positions of
+the balls. The middle mouse button has the same function. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Resize</emphasis> - Resizes the main window, so that it fits perfectly its
+contents. This is useful, when you accidentaly change the size of the
+window...</para>
+</listitem>
+</itemizedlist>
 </para>
-		  </listitem>
-		</varlistentry>
-	      </variablelist>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Options</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Size</emphasis> - Sets the size of the game field (black box). </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Balls</emphasis> - Sets the number of balls in the black box. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Tutorial</emphasis>  - Switches on/off the tutorial mode (i.e you can see,
+where the balls actually are).</para>
+</listitem>
+</itemizedlist>
 </para>
-	  </listitem>
-	</varlistentry>
-	<varlistentry>
-	  <term>Das Einstellungen-Men&uuml;</term>
-	  <listitem>
-	    <para><variablelist>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Einstellungen</GUIMenu>
-		      <GUIMenuItem>Gr&ouml;&szlig;e</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Legt die Gr&ouml;&szlig;e des Spielfeldes fest.
-</action></para>
-		  </listitem>
-		</varlistentry>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Einstellungen</GUIMenu>
-		      <GUIMenuItem>Kugeln</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Bestimmt die Anzahl der versteckten Kugeln.
-</action></para>
-		  </listitem>
-		</varlistentry>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Einstellungen</GUIMenu>
-		      <GUIMenuItem>Einf&uuml;hrung</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Aktiviert/Deaktiviert den Einf&uuml;hrungsmodus.
-</action> (z.B. k&ouml;nnen Sie die Positionen der versteckten Kugeln sehen.)
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Help</emphasis>
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Help</emphasis> - Displays this help. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">About</emphasis> - Displays the &quot;About&quot; dialog.</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">About Qt</emphasis> - Displays the information dialog about the Qt GUI library. </para>
+</listitem>
+</itemizedlist>
 </para>
-		  </listitem>
-		</varlistentry>
-	      </variablelist>
+</listitem>
+</itemizedlist>
 </para>
-	  </listitem>
-	</varlistentry>
-	<varlistentry>
-	  <term>Das Hilfe-Men&uuml;</term>
-	  <listitem>
-	    <para><variablelist>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Hilfe</GUIMenu>
-		      <GUIMenuItem>Hilfe</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Zeigt diese Hilfe an.</action></para>
-		  </listitem>
-		</varlistentry>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Hilfe</GUIMenu>
-		      <GUIMenuItem>&Uuml;ber KBlackbox</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Zeigt Kurzinformationen zu 
-<application>KBlackbox</application> an.</action></para>
-		  </listitem>
-		</varlistentry>
-		<varlistentry>
-		  <term><menuchoice>
-		      <GUIMenu>Hilfe</GUIMenu>
-		      <GUIMenuItem>&Uuml;ber QT</GUIMenuItem>
-		    </menuchoice></term>
-		  <listitem>
-		    <para><action>Zeigt Kurzinformationen zur 
-QT GUI-Bibliothek an.</action></para>
-		  </listitem>
-		</varlistentry>
-	      </variablelist>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Tool bar:</emphasis> The tool bar offers some of the most useful menu functions,
+namely, in the mentioned order:
+<itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Quit</emphasis></para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">New</emphasis></para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Give up</emphasis></para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Done</emphasis></para>
+</listitem>
+</itemizedlist>
 </para>
-	  </listitem>
-	</varlistentry>
-      </variablelist>
-
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Status bar:</emphasis> It shows you some useful information.</para>
+</listitem>
+</itemizedlist>
 </para>
-
-<para>
-Werkzeugleiste: 
-
-Die Werkzeugleiste bietet Ihnen einen schnelle Zugriff auf
-die wichtigsten Funktionen: Beenden, Neues Spiel, Aufgeben, Fertig
-</para>
-
-<para>Statusleiste: Zeigt Ihnen n&uuml;tzliche Informationen an.
-</para>
-
 </chapter>
-
-
 <chapter id="Gamedescription">
-<title>Spielbeschreibung</title>
-
-<sect1 id="playingfielddescription">
-<title>Beschreibung des Spielfelds</title>
-<para>Sie finden folgende Farben auf dem Spielfeld:
-<variablelist>
-	  <varlistentry>
-	    <term>grau</term>
-	    <listitem>
-	      <para>Die Blackbox. Hier markieren Sie die
-Felder, auf denen Sie die Kugeln vermuten.</para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>gr&uuml;n</term>
-	    <listitem>
-	      <para>Dies sind die Laser, die im aktivierten Zustand 
-Lichtstrahlen aussenden.</para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>wei&szlig;</term>
-	    <listitem>
-	      <para>Nichts von Interesse, nur eine Begrenzung.</para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>blau</term>
-	    <listitem>
-	      <para>Auf diesem Feld k&ouml;nnte sich Ihrer Meinung nach eine
-Kugel befinden.
+<title>Game description</title>
+<para>In the first part of this section a description of the game board will be given.
+The second part deals with user interaction with the game board and finally in
+the third part the actual game rules are explained.</para>
+<sect1>
+<title>Game board descritpion</title>
+<para>The folloving types of fields are found on the game board: </para>
+<para><itemizedlist>
+<listitem>
+<para><emphasis remap="bf">&quot;gray&quot;</emphasis> - The black box. Here you mark the fields, where the balls probably are. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">&quot;green&quot;</emphasis> - These are lasers, shooting rays of light when switched on. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">&quot;white&quot;</emphasis> - Nothing of interest - it's just a border. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">&quot;blue&quot;</emphasis> - &quot;There must be one!&quot;, you think. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">&quot;cyan&quot;</emphasis> - Correct positions of balls are indicated by this type. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">&quot;red&quot;</emphasis> - Wrong positions of balls are indicated by this type. </para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">&quot;brown&quot;</emphasis> - Marking colour. </para>
+</listitem>
+</itemizedlist>
 </para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>cyan</term>
-	    <listitem>
-	      <para>Richtige Positionen einer Kugel.</para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>rot</term>
-	    <listitem>
-	      <para>Falsche Positionen einer Kugel.</para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>braun</term>
-	    <listitem>
-	      <para>Markierung</para>
-	    </listitem>
-	  </varlistentry>
-	</variablelist>
-</para>
-
-<note>
-	<para>
-Bemerkung:
-Die hier benutzten Farbnamen sind nur zur Identifizierung der verschiedenen
-Feldtypen. M&ouml;glicherweise entsprechen sie nicht den wirklichen Farben auf
-dem Spielfeld. Einfach ausgedr&uuml;ckt: Die Blackbox ist in der Mitte, darum
-herum die Laser und um diese befindet sich eine Begrenzung.</para> </note>
+<para><emphasis remap="bf">NOTE:</emphasis> The names of colours are used just for identifying the different types
+of the fields in this text. They <emphasis>might not</emphasis> be in any relation with the
+actual colour of the fields. Simply said: the black box is in the centre, around are
+the lasers and around them is the border. Remap the colours yourself :-). </para>
 </sect1>
-
-
-<sect1 id="userinteraction">
-<title>Bedienung</title>
-<para>
-Der Cursor (ein Kreis) kann mit den Pfeiltasten auf dem Spielfeld
-bewegt werden. Aktivieren der Laser oder Markieren eines Feldes geschieht
-durch die <mousebutton>linke Maustaste</mousebutton> oder durch Dr&uuml;cken der 
-<keysym>Return</keysym>- oder <keysym>Enter</keysym>-Taste.
-Sie k&ouml;nnen auch Felder markieren, auf denen Sie keine Kugeln vermuten.
-Pressen Sie einfach die <mousebutton>rechte Maustaste</mousebutton>. 
-Dies ist oft n&uuml;tzlich um einen Bereich zu finden, in dem sich m&ouml;glicherweise
-eine Kugel befindet.
-Um eine Markierung zu l&ouml;schen, pressen Sie die 
-<mousebutton>linke Maustaste</mousebutton>. Braune Markierungen k&ouml;nnen blaue
-Markierungen nicht &uuml;berschreiben. Sie k&ouml;nnen also mit der 
-rechten Maustaste markieren, ohne bef&uuml;rchten zu m&uuml;ssen, aus Versehen eine
-blaue Markierung zu l&ouml;schen.</para>
-
-<para>
-Wenn Sie denken, alle Kugeln gefunden zu haben, pressen Sie die 
-<mousebutton>mittlere Maustaste</mousebutton>. Damit beenden Sie das Spiel und
-erfahren, ob Sie mit Ihrer Vermutung richtig gelegen haben. Au&szlig;erdem
-erhalten Sie eine Punktzahl, die sich zusammensetzt aus der Anzahl von
-Buchstaben und Nummern um das Spielfeld plus 5 Punkte f&uuml;r jede
-falsch gesetzte Kugel. Wenn eine Kugel falsch gesetzt wurde, wird dies
-durch ein rotes Feld angezeigt. Die richtige Position der Kugel wird durch
-ein Cyan-Feld angezeigt.</para>
+<sect1>
+<title>User Interaction</title>
+<para>The cursor (a circle) can be moved around the box with the standard cursor
+movement keys. Switching of lasers or marking of black boxes is done by the left
+mouse button, or by pressing &quot;Return&quot; or &quot;Enter&quot; keys. You can mark the fields,
+where a ball can't be, too. Just press the right mouse button. It often helps
+you to find an area, where a ball could possibly be. To clear any marks (blue or
+brown) press the left mouse button. Brown marks can't overwrite blue marks. This
+way you can't erase the blue marks (guessed balls) by accident when playing with
+the right mouse button. </para>
+<para>When you think the configuration of balls you have placed is correct, press the
+middle mouse button. You will be informed whether you are correct or not, and be
+given your score. Your score is the number of letters and numbers around the
+outside of the box plus five for each incorrectly placed ball. If you placed any
+balls incorrectly, they will be indicated with red fields, and their actual
+positions indicated with cyan fields.</para>
 </sect1>
-
-
-<sect1 id="gamerules">
-<title>Spielregeln</title>
-<para>
-Ziel des Spiels ist es, die auf dem Spielfeld versteckten Kugeln zu finden.
-Ihre M&ouml;glichkeiten sind dabei eingeschr&auml;nkt: Sie k&ouml;nnen nur Laserstrahlen 
-durch das Spielfeld schie&szlig;en. Dabei gibt es drei M&ouml;glichkeiten was mit dem 
-Laserstrahl geschehen kann:
+<sect1>
+<title>Game rules</title>
+<para>You have to find balls hidden in the black box. Your means are limited - you can
+just fire lasers which are around the box. There are three possible outcomes for
+each ray you send into the box:  </para>
+<para><itemizedlist>
+<listitem>
+<para><emphasis remap="bf">Detour</emphasis> - The ray is deflected and emerges somewhere other than where
+you sent it in. On the playfield, detours are denoted by matching pairs
+of numbers - one where the ray went in, and the other where it came out.</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Reflection</emphasis> - The ray is reflected and emerges in the same place it was
+sent in. On the playfield, reflections are denoted by the letter `R'.</para>
+</listitem>
+<listitem>
+<para><emphasis remap="bf">Hit</emphasis> The ray strikes a ball directly and is absorbed. It does not
+emerge from the box. On the playfield, hits are denoted by the letter `H'.</para>
+</listitem>
+</itemizedlist>
 </para>
-
-<para>
-<variablelist>
-	  <varlistentry>
-	    <term>Ablenkung</term>
-	    <listitem>
-	      <para>Der Strahl wird reflektiert und kommt an einer
-anderen Stelle aus der Blackbox wieder zum Vorschein. Auf dem Spielfeld
-wird diese M&ouml;glichkeit durch Zahlenpaare dargestellt - eine Zahl an der
-Stelle, an der der Strahl in die Blackbox eintritt, und eine an der Stelle,
-an der der Strahl austritt.</para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>Reflexion</term>
-	    <listitem>
-	      <para>Der Strahl wird reflektiert und tritt an der selben
-Stelle aus der Blackbox aus, an der er eingetreten ist.
-Diese M&ouml;glichkeit wird durch den Buchstaben <keycap>R</keycap> angezeigt.</para>
-	    </listitem>
-	  </varlistentry>
-	  <varlistentry>
-	    <term>Treffer</term>
-	    <listitem>
-	      <para>Der Strahl trifft direkt auf eine Kugel und wird
-absorbiert. Er kommt nicht mehr aus der Blackbox heraus. Treffer werden
-durch <keycap>H</keycap> angezeigt.</para>
-	    </listitem>
-	  </varlistentry>
-	</variablelist>
-
-</para>
-<para>
-Die Regeln, nach denen die Strahlen reflektiert werden sind einfach. Am
-leichtesten sieht man diese Regeln an Beispielen.</para>
-
-<para>
-Wenn ein Strahl eine Kugel erreicht, wird er um 90 Grad abgelenkt.
-Strahlen k&ouml;nnen mehrere Male abgelenkt werden. In den unten gezeigten
-Beispielen bedeutet ein Strich ein leeres Feld und ein O eine versteckte 
-Kugel. Die Eintritts- und Austrittsstellen jedes Strahls sind durch Zahlen
-dargestellt, wie dies unter &quot;Ablenkung&quot; weiter oben beschrieben ist.
-Denken Sie daran, dass Eintritts- und Austrittsstellen immer vertauscht 
-werden k&ouml;nnen. &quot;*&quot; zeigt den Weg eines Strahls an.</para>
-
-<para>
-Schauen Sie sich genau die Anordnung der Kugeln zum Strahl und die Ablenkung
-um 90 Grad, die diese verursacht, an. 
-<informalexample>
+<para>The rules for how balls deflect rays are simple and are best shown by example.</para>
+<para>As a ray approaches a ball it is deflected ninety degrees. Rays can be deflected
+multiple times. In the diagrams below, the dashes represent empty box locations
+and the letter `O' represents a ball. The entrance and exit points of each ray
+are marked with numbers as described under &quot;Detour&quot; above. Note that the
+entrance and exit points are always interchangeable. &quot;*&quot; denotes the
+path taken by the ray.</para>
+<para>Note carefully the relative positions of the ball and the ninety degree deflection it causes.
 <programlisting>
            1                                            
          - * - - - - - -         - - - - - - - -         - - - - - - - -       
@@ -412,78 +247,47 @@ um 90 Grad, die diese verursacht, an.
          - - - - - - - -         - - - * - - - -         - - - O - * - -      
          - - - - - - - -         - - - * - - - -         - - - - * * - -       
          - - - - - - - -         - - - * - - - -         - - - - * - O -       
-                                       2                         3
-</programlisting></informalexample>
+                                       2                         3</programlisting>
 </para>
-
-<para>
-Wie oben schon erw&auml;hnt, tritt Reflexion auf, wenn ein Strahl an der
-selben Stelle austritt wie er eingetreten ist. Dies kann mehrere
-Ursachen haben:
-</para>
-
-<para>
-<informalexample>
-<programlisting>
-         - - - - - - - -         - - - - - - - -          - - - - - - - -
+<para>As mentioned above, a reflection occurs when a ray emerges from the same point it was sent in. This can happen in several ways:</para>
+<para><programlisting>         - - - - - - - -         - - - - - - - -          - - - - - - - -
          - - - - O - - -         - - O - O - - -          - - - - - - - -
        R * * * * - - - -         - - - * - - - -          O - - - - - - -
          - - - - O - - -         - - - * - - - -        R - - - - - - - -
          - - - - - - - -         - - - * - - - -          - - - - - - - -
          - - - - - - - -         - - - * - - - -          - - - - - - - -
          - - - - - - - -       R * * * * - - - -          - - - - - - - -
-         - - - - - - - -         - - - - O - - -          - - - - - - - -
-</programlisting></informalexample>
-Im ersten Beispiel wird der Strahl von der oberen Kugel nach unten abgelenkt,
-dann von der unteren Kugel nach links und geht schlie&szlig;lich den Weg, den
-er gekommen ist, zur&uuml;ck zur Eintrittsstelle. Das zweite Beispiel ist 
-&auml;hnlich. Das dritte Beispiel mag etwas verwirrend erscheinen, aber man
-kann es dadurch erkl&auml;ren, dass der Strahl nie eine Chance hat, &uuml;berhaupt
-in die Blackbox hinein zu gelangen. Eine alternative Erkl&auml;rung ist es,
-sich vorzustellen, dass der Strahl nach unten reflektiert wird und
-dadurch sofort die Blackbox verl&auml;&szlig;t.</para>
+         - - - - - - - -         - - - - O - - -          - - - - - - - -</programlisting>
 
-<para>Ein Treffer tritt auf, wenn der Strahl eine Kugel direkt trifft:
-<informalexample>
-<programlisting>
-         - - - - - - - -         - - - - - - - -          - - - - - - - -
+In the first example, the ray is deflected downwards by the upper ball, then left by the lower ball, and finally retraces its path to its point of origin. The second example is similar. The third example is a
+bit anomalous but can be rationalized by realizing the ray never gets a chance to get into the box. Alternatively, the ray can be thought of as being deflected downwards and immediately emerging
+from the box.</para>
+<para>A hit occurs when a ray runs straight into a ball:
+<programlisting>         - - - - - - - -         - - - - - - - -          - - - - - - - -
          - - - - - - - -         - - - - - - - -          - - - - O - - -
          - - - - - - - -         - - - - O - - -        H * * * * - - - -
          - - - - - - - -       H * * * * O - - -          - - - * - - - -
          - - - - - - - -         - - - - O - - -          - - - O - - - -
        H * * * O - - - -         - - - - - - - -          - - - - - - - -
          - - - - - - - -         - - - - - - - -          - - - - - - - -
-         - - - - - - - -         - - - - - - - -          - - - - - - - -
-</programlisting></informalexample>
-Vergleichen Sie das zweite Beispiel eines Treffers mit dem ersten Beispiel
-einer Reflexion.</para>
+         - - - - - - - -         - - - - - - - -          - - - - - - - -</programlisting>
+
+Be sure to compare the second example of a hit with the first example of a
+reflection.</para>
 </sect1>
 </chapter>
-
-
 <chapter id="Epilogue">
-<title>Epilog</title>
-<para>
-Entwickler:
-<itemizedlist>
-	<listitem>
-<para>Robert Cimrman <email>cimrman3@students.zcu.cz</email></para>
-	</listitem>
-      </itemizedlist>
-</para>
-
-<para>
-Deutsche &Uuml;bersetzung von:<itemizedlist>
-	<listitem>
-	  <para>Matthias Kiefer <email>matthias.kiefer@gmx.de</email></para>
-	</listitem>
-      </itemizedlist>
-</para>
-
-<para>KBblackBox ist unter der
-<ulink URL="common/gpl-license.html">GNU GPL</ulink> ver&ouml;ffentlicht.</para>
+<title>Epilogue</title>
+<sect1>
+<title>Author</title>
+<para> 
+<literal remap="tt">Robert Cimrman, <ulink url="mailto:cimrman3@students.zcu.cz">cimrman3@students.zcu.cz</ulink></literal></para>
+</sect1>
+<sect1>
+<title>Copyright</title>
+<para>KBblackBox is released under the GPL License.</para>
+</sect1>
 </chapter>
-
 </book>
 <!--
 Local Variables:

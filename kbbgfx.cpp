@@ -22,50 +22,16 @@
    Constructs a KBBGraphic widget.
 */
 
-KBBGraphic::KBBGraphic( int w, int h, QPixmap **p,
-			QWidget *parent, const char *name )
-    : QTableView(parent,name)
-{
-  int i;
-
-  curRow = curCol = 0;			// set currently selected cell
-  setFocusPolicy( NoFocus );
-  setBackgroundColor( gray );		// set widgets background white
-  setNumCols( w );			// set number of col's in table
-  setNumRows( h );			// set number of rows in table
-  setCellWidth( CELLW );		// set width of cell in pixels
-  setCellHeight( CELLH );		// set height of cell in pixels
-  setTableFlags( Tbl_autoScrollBars |	// always vertical scroll bar
-		Tbl_clipCellPainting |	// avoid drawing outside cell
-		Tbl_smoothScrolling);	// easier to see the scrolling
-  setMouseTracking( FALSE );
-  
-  pix = p;
-  if (pix == NULL) pixScaled = NULL;
-  else {
-    pixScaled = new (QPixmap *) [NROFTYPES];
-    for (i = 0; i < NROFTYPES; i++) {
-       pixScaled[i] = new QPixmap;
-    }
-  }
-  graphicBoard = new RectOnArray( w, h);
-}
-
 KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent, const char* name )
-    : QTableView(parent,name)
+    : QWidget( parent, name )
 {
   int i;
 
-  curRow = curCol = 0;			// set currently selected cell
+  curRow = curCol = 0;
   setFocusPolicy( NoFocus );
-  setBackgroundColor( gray );		// set widgets background gray
-  setNumCols( 0 );			// number of col's in table
-  setNumRows( 0 );			// set number of rows in table
+  setBackgroundColor( gray );
   setCellWidth( CELLW );		// set width of cell in pixels
   setCellHeight( CELLH );		// set height of cell in pixels
-  setTableFlags( Tbl_autoScrollBars |	// scrollbars when needed...
-		Tbl_clipCellPainting |	// avoid drawing outside cell
-		Tbl_smoothScrolling);	// easier to see the scrolling
   setMouseTracking( FALSE );
   
   pix = p;
@@ -77,6 +43,7 @@ KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent, const char* name )
     }
   }
   graphicBoard = NULL;
+  drawBuffer = NULL;
 }
 
 /*
@@ -99,7 +66,8 @@ KBBGraphic::~KBBGraphic()
     }
     delete pixScaled;
   }
-  delete graphicBoard;			// deallocation
+  if (graphicBoard != NULL) delete graphicBoard;
+  if (drawBuffer != NULL) delete drawBuffer;
 }
 
 /*
@@ -108,20 +76,38 @@ KBBGraphic::~KBBGraphic()
 
 void KBBGraphic::setSize( int w, int h )
 {
-  if ((w != numCols()) || (h != numRows())) {
+  if ((w != numCols) || (h != numRows)) {
     if (graphicBoard != NULL) delete graphicBoard;
     graphicBoard = new RectOnArray( w, h );
     graphicBoard->fill( OUTERBBG );
-    setAutoUpdate( FALSE );
-    setNumCols( w );	       	        // set number of cols in table
-    setNumRows( h );	       	        // set number of rows in table
-    setCellWidth( CELLW );		// set width of cell in pixels
-    setCellHeight( CELLH );		// set height of cell in pixels
-    minW = totalWidth();
-    minH = totalHeight();
+    setNumCols( w );
+    setNumRows( h );
+    setCellWidth( CELLW );
+    setCellHeight( CELLH );
+    minW = cellW * numRows;
+    minH = cellH * numCols;
     emit(sizeChanged());
-    setAutoUpdate( TRUE );
   }
+}
+
+void KBBGraphic::setCellWidth( int w )
+{
+  cellW = w;
+}
+
+void KBBGraphic::setCellHeight( int h )
+{
+  cellH = h;
+}
+
+void KBBGraphic::setNumRows( int rows )
+{
+  numRows = rows;
+}
+
+void KBBGraphic::setNumCols( int cols )
+{
+  numCols = cols;
 }
 
 /*
@@ -130,10 +116,12 @@ void KBBGraphic::setSize( int w, int h )
 
 void KBBGraphic::scalePixmaps( int w, int h )
 {
-  int i;
+  int i, w0, h0;
   QWMatrix wm;
 
-  wm.scale( (float) w / (float) 48, (float) h / (float) 48 );
+  w0 = pix[0]->width();
+  h0 = pix[0]->height();
+  wm.scale( (float) w / (float) w0, (float) h / (float) h0 );
   for (i = 0; i < NROFTYPES; i++) {
     *pixScaled[i] = pix[i]->xForm( wm );
   }
@@ -143,10 +131,10 @@ void KBBGraphic::scalePixmaps( int w, int h )
    Returns the sizes of the table
 */
 
-int KBBGraphic::numC() { return numCols(); }
-int KBBGraphic::numR() { return numRows(); }
-int KBBGraphic::width() { return totalWidth(); }
-int KBBGraphic::height() { return totalHeight(); }
+int KBBGraphic::numC() { return numCols; }
+int KBBGraphic::numR() { return numRows; }
+int KBBGraphic::width() { return cellW * numRows; }
+int KBBGraphic::height() { return cellH * numCols; }
 int KBBGraphic::wHint() { return minW; }
 int KBBGraphic::hHint() { return minH; }
 
@@ -168,14 +156,16 @@ void KBBGraphic::paintCell( QPainter* p, int row, int col )
 
 void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
 {
-  int w = cellWidth( col );	        // width of cell in pixels
-  int h = cellHeight( row );		// height of cell in pixels
+  int w = cellW;
+  int h = cellH;
   int x2 = w - 1;
   int y2 = h - 1;
   int type;
   QPixmap pm;
 
-  switch(type = graphicBoard->get( col, row )) {
+  //  debug( "%d", p->viewport().width() );
+
+  switch (type = graphicBoard->get( col, row )) {
   case MARK1BBG: pm = *pixScaled[MARK1BBG]; break;
   case OUTERBBG: pm = *pixScaled[OUTERBBG]; break;  
   case INNERBBG: pm = *pixScaled[INNERBBG]; break;
@@ -186,8 +176,9 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   case WBALLBBG: pm = *pixScaled[WBALLBBG]; break;
   default: pm = *pixScaled[OUTERBBG];
   }
+  //  debug( "%d %d", pm.width(), w );
   p->drawPixmap( 0, 0, pm );
-  //  bitBlt( this, col * w, row * h, pm );
+  //  bitBlt( this, col * w, row * h, &pm );
 
   p->setPen( black );
 
@@ -235,8 +226,8 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
 
 void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
 {
-  int w = cellWidth( col );	        // width of cell in pixels
-  int h = cellHeight( row );		// height of cell in pixels
+  int w = cellW;
+  int h = cellH;
   int x2 = w - 1;
   int y2 = h - 1;
   int type;
@@ -297,9 +288,19 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
    Xperimantal...
 */
 
-void KBBGraphic::paintEvent( QPaintEvent* e )
+void KBBGraphic::paintEvent( QPaintEvent* )
 {
-  QTableView::paintEvent( e );
+  int i, j;
+  QPainter paint( drawBuffer );
+
+  //  debug( "%d", drawBuffer->width() );
+  for (i = 0; i < numRows; i++) {
+    for (j = 0; j < numCols; j++) {
+      paint.setViewport( j * cellW, i * cellH, width(), height() );
+      paintCell( &paint, i, j );
+    }
+  }
+  bitBlt( this, 0, 0, drawBuffer );
 }
 
 /*
@@ -324,18 +325,16 @@ void KBBGraphic::resizeEvent( QResizeEvent* e )
     hNew = CELLH;
   }
   if (pix != NULL) scalePixmaps( wNew, hNew );
-  setAutoUpdate( FALSE );
   setCellWidth( wNew );
   setCellHeight( hNew );
-  setAutoUpdate( TRUE );
-  QTableView::resizeEvent( e );
+
+  if (drawBuffer != NULL) delete drawBuffer;
+  drawBuffer = new QPixmap( cellW * numRows, cellH * numCols );
 }
 
 /*
    Handles mouse press events for the KBBGraphic widget.
-   The current cell marker is set to the cell the mouse is clicked in.
 */
-
 void KBBGraphic::mousePressEvent( QMouseEvent* e )
 {
   if (inputAccepted) {
@@ -346,18 +345,13 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
       emit endMouseClicked();
       return;
     }
-
-    int oldRow = curRow;			// store previous current cell
+    int oldRow = curRow;
     int oldCol = curCol;
-    QPoint clickedPos = e->pos();		// extract pointer position
-    curRow = findRow( clickedPos.y() );		// map to row; set current cell
-    curCol = findCol( clickedPos.x() );		// map to col; set current cell
-    if ( (curRow != oldRow) 			// if current cell has moved,
-	|| (curCol != oldCol) ) {
-      updateCell( oldRow, oldCol );		// erase previous marking
-      updateCell( curRow, curCol );		// show new current cell
-    }
+    QPoint pos = e->pos();		// extract pointer position
+    curRow = pos.y() / cellH;
+    curCol = pos.x() / cellW;
     //debug("%d %d %d ", e->state(), LeftButton, e->state()&LeftButton);
+    updateElement( oldCol, oldRow );
     emit inputAt( curCol, curRow, e->button() ); 
   }
 }
@@ -365,24 +359,21 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
 
 /*
    Handles mouse move events for the KBBGraphic widget.
-   The current cell marker is set to the cell the mouse is moved in.
-   (Mouse tracking is disabled - move events iff a button is pressed...)
 */
 
 void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
   if (inputAccepted) {
-    int oldRow = curRow;			// store previous current cell
+    int oldRow = curRow;
     int oldCol = curCol;
-    QPoint movedPos = e->pos();                 // extract pointer position
-    int movRow = findRow( movedPos.y() );      	// map to row; set current cell
-    int movCol = findCol( movedPos.x() );      	// map to col; set current cell
+    QPoint pos = e->pos();                 // extract pointer position
+    int movRow = pos.y() / cellH;
+    int movCol = pos.x() / cellW;
     // debug("%d %d", movRow,curRow);
     if ( (curRow != movRow) 			// if current cell has moved,
 	|| (curCol != movCol) ) {
       curRow = movRow;
       curCol = movCol;
-      updateCell( oldRow, oldCol );		// erase previous marking
-      updateCell( curRow, curCol );		// show new current cell
+      updateElement( oldCol, oldRow );
       emit inputAt( curCol, curRow, e->state() ); 
     }
   }
@@ -395,40 +386,27 @@ void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
 void KBBGraphic::keyPressEvent( QKeyEvent* e )
 {
   if (inputAccepted) {
-    int oldRow = curRow;	       	// store previous current cell
+    int oldRow = curRow;
     int oldCol = curCol;
-    int edge = 0;
     switch( e->key() ) {	       	// Look at the key code
     case Key_Left:		       	// If 'left arrow'-key, 
       if( curCol > 0 ) {	       	// and cr't not in leftmost col
 	curCol--;     			// set cr't to next left column
-	edge = leftCell();		// find left edge
-	if ( curCol < edge )		// if we have moved off  edge,
-	  setLeftCell( edge - 1 );	// scroll view to rectify
       }
       break;
     case Key_Right:		       	// Correspondingly...
-      if( curCol < numCols()-1 ) {
+      if( curCol < numCols-1 ) {
 	curCol++;
-	edge = lastColVisible();
-	if ( curCol >= edge )
-	  setLeftCell( leftCell() + 1 );
       }
       break;
     case Key_Up:
       if( curRow > 0 ) {
 	curRow--;
-	edge = topCell();
-	if ( curRow < edge )
-	  setTopCell( edge - 1 );
-      }
+      } 
       break;
     case Key_Down:
-      if( curRow < numRows()-1 ) {
+      if( curRow < numRows-1 ) {
 	curRow++;
-	edge = lastRowVisible();
-	if ( curRow >= edge )
-	  setTopCell( topCell() + 1 );
       }
       break;
     case Key_Return:
@@ -439,34 +417,28 @@ void KBBGraphic::keyPressEvent( QKeyEvent* e )
       e->ignore();			// we don't accept the event
       return;	
     }
-    
-    if ( (curRow != oldRow) 	       	// if current cell has moved,
-	|| (curCol != oldCol)  ) {
-      updateCell( oldRow, oldCol );    	// erase previous marking
-      updateCell( curRow, curCol );    	// show new current cell
-    }
+    updateElement( oldCol, oldRow );
+    updateElement( curCol, curRow );
   }
 }
 
 /*
    Handles focus reception events for the KBBGraphic widget.
-   Repaint only the current cell; to avoid flickering
 */
 
 void KBBGraphic::focusInEvent( QFocusEvent* )
 {
-  updateCell( curRow, curCol );		// draw current cell
+  repaint( FALSE );
 }    
 
 
 /*
    Handles focus loss events for the KBBGraphic widget.
-   Repaint only the current cell; to avoid flickering
 */
 
 void KBBGraphic::focusOutEvent( QFocusEvent* )
 {
-  updateCell( curRow, curCol );		// draw current cell
+  repaint( FALSE );
 }    
 
 /*
@@ -486,13 +458,8 @@ void KBBGraphic::setInputAccepted( bool b )
 
 void KBBGraphic::updateElement( int col, int row )
 {
-  updateCell( row, col, TRUE );
-}
+  QPainter paint( this );
 
-/*
-   Sets the top left cell to the cell at (col, row). 
-*/
-
-void KBBGraphic::setTopLeft( int col, int row ) {
-  setTopLeftCell( row, col );
+  paint.setViewport( col * cellW, row * cellH, width(), height() );
+  paintCell( &paint, row, col );
 }

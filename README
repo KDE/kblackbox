@@ -19,14 +19,12 @@ FEATURES:
 USING:
 	-see help (Ctrl-H)
 KNOWN BUGS:
-	-(0.2.2+) with Qt 1.31: automatic resize is not quite correct.
+	-none
 UNKNOWN BUGS:
 	-still unknown
 	->report any "bogus features" to the author, please
 TODO:
-	-improve gfx
-	-better solution for the automatic resize
-	(add QMenuBar::heightForWidth() to KMenuBar)
+	-improve gfx?
 HISTORY:
 	23.4.1997 -> start	
 	28.4.1997 -> 0.1.0
@@ -37,3 +35,4 @@ HISTORY:
 	 6.3.1998 -> 0.2.4
 	19.3.1998 -> 0.2.5
 	25.8.1998 -> 0.2.6
+	17.1.1999 -> 0.3.0

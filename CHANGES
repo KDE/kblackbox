@@ -1,3 +1,9 @@
+0.3.0 from 0.2.6 (17.1.1999)
+	- KBBGraphic derived only from QWidget, not QTableView
+	  -> a complete rewrite of gfx stuff
+	  -> massive changes almost everywhere
+	- minimal size fixed
+	- new icons (I am just learning the povray :-)
 0.2.6 from 0.2.5 (25.8.1998)
 	- the game is active after starting
 	- fixed bad drawing after setting the board size

@@ -1,1 +1,1 @@
-#define KBVERSION "0.2.6"
+#define KBVERSION "0.3.0"

@@ -59,20 +59,23 @@ KBBGame::KBBGame() : KTopLevelWidget()
   QPopupMenu *file    = new QPopupMenu;
   sizesm  = new QPopupMenu;
   ballsm  = new QPopupMenu;
+  QPopupMenu *help = new QPopupMenu;
   options = new QPopupMenu;
  
   CHECK_PTR( file );
   CHECK_PTR( game );
+  CHECK_PTR( help );
   CHECK_PTR( sizesm );
   CHECK_PTR( ballsm );
   CHECK_PTR( options );
   CHECK_PTR( menu );
 
-  QString about;
-  about.sprintf(i18n("KBlackBox logical game\n"
-                     "author: Robert Cimrman\n"
-                     "e-mail: cimrman3@students.zcu.cz"));
-  QPopupMenu *help = kapp->getHelpMenu(TRUE, about);
+  help->insertItem( trans->translate("&Help"), ID_HELP );
+  help->setAccel( CTRL+Key_H, ID_HELP );
+  help->insertSeparator();
+  help->insertItem( trans->translate("&About KBlackBox"), ID_ABOUT );
+  help->setAccel( CTRL+Key_A, ID_ABOUT );
+  help->insertItem( trans->translate("About &Qt"), ID_ABOUT_QT );
 
 		    
   file->insertItem( trans->translate("&Quit"), ID_QUIT );
@@ -101,6 +104,7 @@ KBBGame::KBBGame() : KTopLevelWidget()
   options->setCheckable( TRUE );
 
   connect( file, SIGNAL(activated(int)), SLOT(callBack(int)) );
+  connect( help, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( game, SIGNAL(activated(int)), SLOT(callBack(int)) );
  
   menu->insertItem( trans->translate("&File"), file );
@@ -139,8 +143,6 @@ KBBGame::KBBGame() : KTopLevelWidget()
   gr = new KBBGraphic( pix, this );
   connect( gr, SIGNAL(inputAt(int,int,int)),
 	  this, SLOT(gotInputAt(int,int,int)) );
-  connect( gr, SIGNAL(sizeChanged()),
-	  this, SLOT(graphicBoardSizeChanged()) );
   connect( this, SIGNAL(gameRuns(bool)),
 	  gr, SLOT(setInputAccepted(bool)) );
   connect( gr, SIGNAL(endMouseClicked()),
@@ -220,8 +222,11 @@ KBBGame::KBBGame() : KTopLevelWidget()
     tutorial = (bool) kConf->readNumEntry( "tutorial" );
   } else tutorial = FALSE;
   options->setItemChecked( tut1id, tutorial );
+
   QString s, s1;
   int pos;
+  setMinSize();
+  gameResize();
   if (kConf->hasKey( "appsize" )) {
     s = kConf->readEntry( "appsize" );
     debug("%s", (const char *) s);
@@ -231,8 +236,6 @@ KBBGame::KBBGame() : KTopLevelWidget()
     //    debug("%s", (const char *) s);
     //    debug("%s", (const char *) s1);
     resize( s.toInt(), s1.toInt() );
-  } else {
-    gameResize();
   }
 
   setScore( 0 );
@@ -274,6 +277,15 @@ KBBGame::~KBBGame()
 void KBBGame::callBack( int witch )
 {
   switch (witch) {
+  case ID_HELP:
+    help();
+    break;
+  case ID_ABOUT:
+    about();
+    break;
+  case ID_ABOUT_QT:
+    aboutQt();
+    break;
   case ID_QUIT:
     kapp->quit();
     break;
@@ -287,6 +299,7 @@ void KBBGame::callBack( int witch )
     gameFinished();
     break;
   case ID_RESIZE:
+    setMinSize();
     gameResize();
     break;
   }
@@ -298,32 +311,9 @@ void KBBGame::callBack( int witch )
 
 void KBBGame::resizeEvent( QResizeEvent *e )
 {
-
   KTopLevelWidget::resizeEvent(e);
-  /*  int w = width();
-  int h = height();
-  int y = menu->height() + 10;
-
-  scoreText->setGeometry( 10, y, w/2-15, 30 ); 
-  statusText->setGeometry( 10, y + 40, w-20, 30 ); 
-  if (gr != NULL) {
-    gr->setGeometry( 10,y+80, w-20,h-y-90 );
-  }*/
 }
 
-/*
-   Resizes pixmaps, if the size of the graphicBoard changed,
-   and redraws it.
-*/
-
-void KBBGame::graphicBoardSizeChanged()
-{
-  /*
-    This resizes the pixmaps!!! Do not remove!!!!!!!!
-  */
-  resize( this->width(), this->height() );
-  gr->update();
-}
 
 /*
    Resizes yourself to fit the contents perfectly, from menu.
@@ -331,18 +321,13 @@ void KBBGame::graphicBoardSizeChanged()
 
 void KBBGame::gameResize()
 {
-  gr->setTopLeft( 0, 0 ); // the size will fit - no need to be scrolled
-  /*
-   * This needs to be rewritten using QMenubar::heightForWidth().
-   */
-  /*  h = m.heightForWidth( gr->wHint() );*/
-  gr->clearTableFlags();
   resize( gr->wHint(), gr->hHint() + menu->height() + stat->height() +
       tool->height() );
-  gr->setTableFlags( Tbl_autoScrollBars |	// scrollbars when needed...
-		     Tbl_clipCellPainting |	// avoid drawing outside cell
-		     Tbl_smoothScrolling);	// easier to see the scrolling
-  resize( gr->wHint(), gr->hHint() + menu->height() + stat->height() +
+}
+
+void KBBGame::setMinSize()
+{
+  setMinimumSize( gr->wHint(), gr->hHint() + menu->height() + stat->height() +
       tool->height() );
 }
 
@@ -408,6 +393,28 @@ void KBBGame::tutorialSwitch()
 {
   tutorial = !tutorial;
   options->setItemChecked( tut1id, tutorial );
+}
+
+/*
+  Display various infos.
+*/
+
+void KBBGame::about()
+{
+  QMessageBox::information( 0, trans->translate("About"), 
+			    trans->translate(
+            "KBlackBox logical game\nauthor: Robert Cimrman\ne-mail: cimrman3@students.zcu.cz"), "Ok" );
+}
+
+void KBBGame::aboutQt()
+{
+  QMessageBox::aboutQt( 0, trans->translate("Qt information") );
+}
+
+void KBBGame::help()
+{
+  //  QMessageBox::message( "Help", "Read the file \"help.txt\", please.", "OK" );
+  KApplication::getKApplication()->invokeHTMLHelp("", "");
 }
 
 /*
@@ -603,11 +610,16 @@ bool KBBGame::setSize( int w, int h )
     } else ok = TRUE;
     if (ok) {
       gr->setSize( w+4, h+4 ); // +4 is the space for "lasers" and an edge...
+      setMinSize();
+      gameResize();
       if (gameBoard != NULL) delete gameBoard;
       gameBoard = new RectOnArray( gr->numC(), gr->numR() );
-      if (running) abortGame();
+      if (running) {
+	abortGame();
+	newGame();
+      }
       else updateStats();
-      gr->repaint( TRUE );
+      //      gr->repaint( TRUE );
     }
   }
   return ok;

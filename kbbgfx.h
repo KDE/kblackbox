@@ -12,7 +12,7 @@
 #ifndef KBBGFX_H
 #define KBBGFX_H
 
-#include <qtablevw.h>
+#include <qwidget.h>
 #include <qpixmap.h>
 
 #include "util.h"
@@ -21,8 +21,8 @@
    Default size of a cell
 */
 
-#define CELLW 24
-#define CELLH 24
+#define CELLW 32
+#define CELLH 32
 
 /*
    Graphical types of the boxes
@@ -50,12 +50,10 @@
    Negative numbers are deflected lasers... 
 */
 
-class KBBGraphic : public QTableView
+class KBBGraphic : public QWidget
 {
   Q_OBJECT
 public:
-  KBBGraphic( int w, int h, QPixmap** p=0,
-	      QWidget* parent=0, const char* name=0 );
   KBBGraphic(  QPixmap** p=0, QWidget* parent=0, const char* name=0 );
   ~KBBGraphic();
 
@@ -69,11 +67,14 @@ public:
   int height();
   int wHint();
   int hHint();
+  void setCellWidth( int w );
+  void setCellHeight( int h );
+  void setNumRows( int rows );
+  void setNumCols( int cols );
 
 public slots:
   void setInputAccepted( bool b );
   void updateElement( int col, int row );
-  void setTopLeft( int col, int row );
 
 signals:
   void sizeChanged();
@@ -81,8 +82,7 @@ signals:
   void endMouseClicked();
 
 protected:
-  void paintEvent( QPaintEvent* e );
-  void paintCell( QPainter*, int row, int col );
+  void paintEvent( QPaintEvent* );
   void mousePressEvent( QMouseEvent* );
   void mouseMoveEvent( QMouseEvent* );
   void keyPressEvent( QKeyEvent* );
@@ -91,6 +91,7 @@ protected:
   void resizeEvent( QResizeEvent* e );
 
 private:
+  void paintCell( QPainter* p, int row, int col );
   void paintCellDefault( QPainter*, int row, int col );
   void paintCellPixmap( QPainter*, int row, int col );
   void scalePixmaps( int w, int h );
@@ -100,8 +101,13 @@ private:
   bool inputAccepted;
   int minW;
   int minH;
-  QPixmap** pix;
-  QPixmap** pixScaled;
+  int cellW;
+  int cellH;
+  int numCols;
+  int numRows;
+  QPixmap **pix;
+  QPixmap **pixScaled;
+  QPixmap *drawBuffer;
 };
 
 #endif // KBBGFX_H

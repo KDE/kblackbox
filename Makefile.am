@@ -32,7 +32,7 @@ kblackbox_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 # the libraries to link against. Be aware of the order. First the libraries,
 # that depend on the following ones.
-kblackbox_LDADD   =       $(LIB_KDEUI)
+kblackbox_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11
 
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = kbbgfx.h kbbgame.h util.h version.h
@@ -45,8 +45,14 @@ EXTRA_DIST += VERSION CHANGES kblackbox.kdelnk kblackbox.xpm mini-kblackbox.xpm
 CLEANFILES = $(kblackbox_METASOURCES)
 
 
+# make messages.po. Move this one to ../po/ and "make merge" in po
+# the -x is for skipping messages already translated in kdelibs
+#messages:
+#	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
+
+# make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
-	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
+	$(XGETTEXT) -C -ktranslate $(kblackbox_SOURCES) && mv messages.po ../po/kblackbox.pot
 
 # just install datas here. Use install-exec-data for scripts and etc.
 # the binary itself is already installed from automake

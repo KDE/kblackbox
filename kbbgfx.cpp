@@ -307,7 +307,7 @@ void KBBGraphic::paintEvent( QPaintEvent* )
    Resize event of the KBBGraphic widget.
 */
 
-void KBBGraphic::resizeEvent( QResizeEvent* e )
+void KBBGraphic::resizeEvent( QResizeEvent*  )
 {
   int w = QWidget::width();
   int h = QWidget::height();

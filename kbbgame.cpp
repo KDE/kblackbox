@@ -464,7 +464,7 @@ void KBBGame::gameFinished()
 	s = i18n("Your final score is: %1\n"
 		 "You did really well!");
       else
-	s = i18n("Your final socre is: %1\n"
+	s = i18n("Your final score is: %1\n"
 		 "I guess you need more practice.");
 
       KMessageBox::information(this,

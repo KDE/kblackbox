@@ -10,9 +10,14 @@
 
 
 #include <kapp.h>
+#include <klocale.h>
+#include <kcmdlineargs.h>
 
 #include "kbbgame.h"
 #include "version.h"
+
+
+static const char *description = I18N_NOOP("KDE Game");
 
 /*
   The program starts here. 
@@ -20,7 +25,9 @@
 
 int main( int argc, char **argv )
 {
-  KApplication a(argc,argv, "kblackbox");
+  KCmdLineArgs::init(argc, argv, "kblackbox", description, KBVERSION);
+
+  KApplication a;
   KBBGame v;
   
   a.setMainWidget( &v );

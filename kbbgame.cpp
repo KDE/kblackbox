@@ -25,6 +25,7 @@
 #include <kglobal.h>
 #include <kmenubar.h>
 #include <kiconloader.h>
+#include <khelpmenu.h>
 
 #include "kbbgame.h"
 #include "util.h"
@@ -57,33 +58,31 @@ KBBGame::KBBGame() : KMainWindow(0)
   setCaption(QString("KBlackBox ")+KBVERSION);
 
   menu                = new KMenuBar(this, "menu");
-  QPopupMenu *game    = new QPopupMenu;
-  QPopupMenu *file    = new QPopupMenu;
-  sizesm  = new QPopupMenu;
-  ballsm  = new QPopupMenu;
-  QPopupMenu *help = 0;
-  options = new QPopupMenu;
+  KPopupMenu *game    = new KPopupMenu;
+  sizesm  = new KPopupMenu;
+  ballsm  = new KPopupMenu;
+  
+  options = new KPopupMenu;
 
-  CHECK_PTR( file );
   CHECK_PTR( game );
   CHECK_PTR( sizesm );
   CHECK_PTR( ballsm );
   CHECK_PTR( options );
   CHECK_PTR( menu );
 
-  help = helpMenu(i18n(
+  KHelpMenu *help = new KHelpMenu(this, i18n(
                                     "KBlackBox logical game\n"
                                     "author: Robert Cimrman\n"
                                     "e-mail: cimrman3@students.zcu.cz"));
 
-  file->insertItem( i18n("E&xit"), ID_QUIT );
-  file->setAccel( CTRL+Key_Q, ID_QUIT );
-
-  game->insertItem( i18n("&New"), ID_NEW );
+  game->insertItem(SmallIcon("filenew"), i18n("&New"), ID_NEW );
   game->insertItem( i18n("&Give up"), ID_GIVEUP );
   game->insertItem( i18n("&Done"), ID_DONE );
   game->insertSeparator();
   game->insertItem( i18n("&Resize"), ID_RESIZE );
+  game->insertSeparator();
+  game->insertItem(SmallIcon("exit") ,i18n("&Quit"), ID_QUIT );
+  game->setAccel( CTRL+Key_Q, ID_QUIT );
 
   sizes1id = sizesm->insertItem( "  8 x 8  ", this, SLOT(size1()) );
   sizes2id = sizesm->insertItem( " 10 x 10 ", this, SLOT(size2()) );
@@ -101,15 +100,13 @@ KBBGame::KBBGame() : KMainWindow(0)
 				this, SLOT(tutorialSwitch()) );
   options->setCheckable( TRUE );
 
-  connect( file, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( help, SIGNAL(activated(int)), SLOT(callBack(int)) );
   connect( game, SIGNAL(activated(int)), SLOT(callBack(int)) );
 
-  menu->insertItem( i18n("&File"), file );
   menu->insertItem( i18n("&Game"), game );
-  menu->insertItem( i18n("&Options"), options );
+  menu->insertItem( i18n("&Settings"), options );
   menu->insertSeparator();
-  menu->insertItem( i18n("&Help"), help );
+  menu->insertItem( i18n("&Help"), help->menu() );
 
   menu->show();
 

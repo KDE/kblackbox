@@ -11,11 +11,11 @@
 
 #include "util.h"
 
-RectOnArray::RectOnArray( int w, int h ) 
+RectOnArray::RectOnArray( int newWidth, int newHeight ) 
 {
   array = new ArrayType[w*h];
-  this->w = w;
-  this->h = h;
+  w = newWidth;
+  h = newHeight;
 }
 
 RectOnArray::~RectOnArray() 

@@ -18,7 +18,7 @@
 #include "version.h"
 
 
-static const char *description = I18N_NOOP("KDE Blackbox Game");
+static const char description[] = I18N_NOOP("KDE Blackbox Game");
 
 /*
   The program starts here.

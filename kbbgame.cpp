@@ -63,20 +63,20 @@ KBBGame::KBBGame()
   pix[0] = new QPixmap();
   *pix[0] = BarIcon( pFNames[0] );
   if (!pix[0]->isNull()) {
-    kdDebug() << "Pixmap \"" << pFNames[0] << "\" loaded." << endl;
+    kdDebug(12009) << "Pixmap \"" << pFNames[0] << "\" loaded." << endl;
     for (i = 1; i < NROFTYPES; i++) {
       pix[i] = new QPixmap;
       *pix[i] = BarIcon( pFNames[i] );
       if (!pix[i]->isNull()) {
-	kdDebug() << "Pixmap \"" << pFNames[i] << "\" loaded." << endl;
+	kdDebug(12009) << "Pixmap \"" << pFNames[i] << "\" loaded." << endl;
       } else {
 	pix[i] = pix[i-1];
 	pix[i]->detach();
-	kdDebug() << "Cannot find pixmap \"" << pFNames[i] << "\". Using previous one." << endl;
+	kdDebug(12009) << "Cannot find pixmap \"" << pFNames[i] << "\". Using previous one." << endl;
       }
     }
   } else {
-    kdDebug() << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
+    kdDebug(12009) << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
     delete pix[0];
     delete pix;
     pix = NULL;
@@ -151,12 +151,12 @@ KBBGame::KBBGame()
   gameResize();
   if (kConf->hasKey( "appsize" )) {
     s = kConf->readEntry( "appsize" );
-    kdDebug() << s << endl;
+    kdDebug(12009) << s << endl;
     pos = s.find( 'x' );
     s1 = s.right( s.length() - pos - 1 );
     s.truncate( pos - 1 );
-    //    kdDebug() << s << endl;
-    //    kdDebug() << s1 << endl;
+    //    kdDebug(12009) << s << endl;
+    //    kdDebug(12009) << s1 << endl;
     resize( s.toInt(), s1.toInt() );
   }
 
@@ -690,7 +690,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
 	setScore( score+1 );
 	break;
       case WRONGSTART:
-	kdDebug() << "Wrong start?! It should't happen!!" << endl;
+	kdDebug(12009) << "Wrong start?! It should't happen!!" << endl;
 	break;
       }
       break;

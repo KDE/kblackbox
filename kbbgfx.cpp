@@ -163,7 +163,7 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   int type;
   QPixmap pm;
 
-  //  kdDebug() << p->viewport().width() << endl;
+  //  kdDebug(12009) << p->viewport().width() << endl;
 
   switch (type = graphicBoard->get( col, row )) {
   case MARK1BBG: pm = *pixScaled[MARK1BBG]; break;
@@ -176,7 +176,7 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   case WBALLBBG: pm = *pixScaled[WBALLBBG]; break;
   default: pm = *pixScaled[OUTERBBG];
   }
-  //  kdDebug() << pm.width() << " " << w << endl;
+  //  kdDebug(12009) << pm.width() << " " << w << endl;
   p->drawPixmap( 0, 0, pm );
   //  bitBlt( this, col * w, row * h, &pm );
 
@@ -293,7 +293,7 @@ void KBBGraphic::paintEvent( QPaintEvent* )
   int i, j;
   QPainter paint( drawBuffer );
 
-  //  kdDebug() << drawBuffer->width() << endl;
+  //  kdDebug(12009) << drawBuffer->width() << endl;
   for (i = 0; i < numRows; i++) {
     for (j = 0; j < numCols; j++) {
       paint.setViewport( j * cellW, i * cellH, width(), height() );
@@ -350,7 +350,7 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
     QPoint pos = e->pos();		// extract pointer position
     curRow = pos.y() / cellH;
     curCol = pos.x() / cellW;
-    //kdDebug() << e->state() << " " << LeftButton << " " << e->state()&LeftButton << endl;
+    //kdDebug(12009) << e->state() << " " << LeftButton << " " << e->state()&LeftButton << endl;
     updateElement( oldCol, oldRow );
     emit inputAt( curCol, curRow, e->button() );
   }
@@ -368,7 +368,7 @@ void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
     QPoint pos = e->pos();                 // extract pointer position
     int movRow = pos.y() / cellH;
     int movCol = pos.x() / cellW;
-    // kdDebug() << movRow << " " << curRow << endl;
+    // kdDebug(12009) << movRow << " " << curRow << endl;
     if ( (curRow != movRow) 			// if current cell has moved,
 	|| (curCol != movCol) ) {
       curRow = movRow;

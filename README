@@ -1,17 +1,7 @@
 Program: kblackbox 
 Author: Robert Cimrman, e-mail: cimrman3@students.zcu.cz
 
-A simple logical game for the KDE project using Qt GUI library.
-
-COMPILING & INSTALLING: 
-
-	cd somewhere
-	gunzip kblackbox-x.y.z.tgz
-	tar -xvf kblackbox-x.y.z.tar
-	cd kblackbox-x.y.z
-	./configure
-	make
-	make install
+A simple logical game for the KDE project.
 
 FEATURES:
 	-stunning gfx (in the next version :-)

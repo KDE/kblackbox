@@ -25,7 +25,7 @@ bin_PROGRAMS = 	kblackbox
 # Which sources should be compiled for kblackbox.
 kblackbox_SOURCES = kbbgfx.cpp kbbgame.cpp util.cpp main.cpp
 
-kblackbox_METASOURCES = USE_AUTOMOC
+kblackbox_METASOURCES = AUTO
 
 # the library search path. 
 kblackbox_LDFLAGS = $(all_libraries) $(KDE_RPATH)

@@ -1,16 +1,15 @@
 <!DOCTYPE book PUBLIC  "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN" [
-  <!ENTITY kapp "<application>KBlackBox</application>">
-  <!ENTITY kappname "&kapp;" -- this only *seems* redundant -->
+  <!ENTITY kappname "&kblackbox;" -- this only *seems* redundant -->
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE" -- change language only here -->
-  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Application-Variable Entities V1.0//EN">
+  <!ENTITY % ents PUBLIC "-//KDE//ENTITIES Documentation V1.0//EN">
   %ents;
 ]>
 
 <book lang="&language;">
 
 <bookinfo>
-<title>&kapp; Game Manual</title>
+<title>&kblackbox; Game Manual</title>
 
 <authorgroup>
 <author>
@@ -21,7 +20,7 @@
 </affiliation>
 </author>
 
-<othercredit>
+<othercredit role="developer">
 <firstname>Robert</firstname>
 <surname>Cimrman</surname>
 <affiliation>
@@ -30,7 +29,7 @@
 <contrib>Developer</contrib>
 </othercredit>
 
-<othercredit>
+<othercredit role="reviewer">
 <firstname>Lauri</firstname>
 <surname>Watts</surname>
 <affiliation><address><email>vampyr@atconnex.net</email></address></affiliation>
@@ -46,11 +45,11 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
     
-<date>02/10/2000</date>
+<date>15/12/2000</date>
 <releaseinfo>0.03.00</releaseinfo>
 
-<abstract><para>&kapp; is a superb graphical logical game, inspired by the
-<application>emacs</application>emacs> blackbox.</para></abstract>
+<abstract><para>&kblackbox; is a superb graphical logical game, inspired by the
+<application>emacs</application> blackbox.</para></abstract>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -63,51 +62,19 @@
 </bookinfo>
 
 <chapter id="what-is-kblackbox">
-<title>What is &kapp;?</title>
+<title>What is &kblackbox;?</title>
 
-<para>&kapp; is a superb :-) graphical logical game, inspired by the
+<para>&kblackbox; is a superb :-) graphical logical game, inspired by the
 <application>emacs</application> blackbox. Major part of this help file is based
 on the original emacs's help. </para> 
 
-<para>&kapp; is a game of hide and seek played on an grid of boxes. Your
+<para>&kblackbox; is a game of hide and seek played on an grid of boxes. Your
 opponent (the Random number generator, in this case) has hidden several balls
 within this box. By shooting rays into the box and observing where they emerge
 it is possible to deduce the positions of the hidden balls. The fewer rays you
 use to find the balls, the lower your score.</para>
 
 </chapter>
-
-<chapter id="installation">
-<title>Installation</title>
-
-<para>
-&kapp; is part of the KDE project
-<ulink url="http://www.kde.org">http://www.kde.org</ulink>.
-&kapp; can be found in the kdeutils package on
-<ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
-main ftp site of the KDE project. </para>
-
-<sect1 id="compilation">
-<title>Compilation and installation</title>
-
-<para>
-In order to compile and install &kapp; on your system, type the following in the base
-directory of the kdegames distribution:</para>
-<screen width="40">
-<prompt>%</prompt> <command>./configure</command>
-<prompt>%</prompt> <command>make</command>
-<prompt>%</prompt> <command>make install</command>
-</screen>
-
-
-<para>Since &kapp; uses <application>autoconf</application> and
-<application>automake</application> you should have not trouble compiling
-it. Should you run into problems please report them to the KDE mailing
-lists.</para> 
-
-</sect1>
-</chapter>
-
 
 <chapter id="game-description">
 <title>Game description</title>
@@ -292,28 +259,28 @@ reflection.</para>
 </sect1>
 </chapter>
 <chapter id="gui-description">
-<title><abbrev>GUI</abbrev> description</title>
+<title><acronym>GUI</acronym> description</title>
 
 <sect1 id="game-menu">
 <title>The <guimenu>Game</guimenu> menu</title>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>New</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
+<guimenuitem><accel>N</accel>ew</guimenuitem></menuchoice></term>
 <listitem><para>Starts a new game (and abandons the current, if
 any.)</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Give Up</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
+<guimenuitem><accel>G</accel>ive Up</guimenuitem></menuchoice></term>
 <listitem><para>Shows you positions of the balls.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Done</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
+<guimenuitem><accel>D</accel>one</guimenuitem></menuchoice></term>
 <listitem><para>Checks whether all balls are placed. If yes, it terminates
 the current game, computes the final score and indicates real positions of
 the balls. The <mousebutton>middle</mousebutton> mouse button has the same
@@ -321,17 +288,17 @@ function. </para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Resize</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
+<guimenuitem><accel>R</accel>esize</guimenuitem></menuchoice></term>
 <listitem><para>Resizes the main window, so that it fits perfectly its
 contents. This is useful, when you accidentaly change the size of the
 window...</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Quit</guimenuitem></menuchoice></term>
-<listitem><para>Quit's &kapp;</para></listitem>
+<term><menuchoice><guimenu><accel>G</accel>ame</guimenu>
+<guimenuitem><accel>Q</accel>uit</guimenuitem></menuchoice></term>
+<listitem><para>Quit's &kblackbox;</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -342,8 +309,8 @@ window...</para></listitem>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guisubmenu>Size</guisubmenu></menuchoice></term>
+<term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
+<guisubmenu><accel>S</accel>ize</guisubmenu></menuchoice></term>
 <listitem><para>Sets the size of the game field (black box.)  You may choose
 between <guimenuitem>8 x 8</guimenuitem>, <guimenuitem>10 x 10</guimenuitem> and
 <guimenuitem>12 x 12</guimenuitem>.  The default is <guimenuitem>8 x
@@ -351,16 +318,16 @@ between <guimenuitem>8 x 8</guimenuitem>, <guimenuitem>10 x 10</guimenuitem> and
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guisubmenu>Balls</guisubmenu></menuchoice></term>
+<term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
+<guisubmenu><accel>B</accel>alls</guisubmenu></menuchoice></term>
 <listitem><para>Sets the number of balls in the black box. You may choose
 between <guimenuitem>4</guimenuitem> (the default) </para>
 </listitem>
 	</varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Tutorial</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu><accel>S</accel>ettings</guimenu>
+<guimenuitem><accel>T</accel>utorial</guimenuitem></menuchoice></term>
 <listitem><para>Switches on or off the tutorial mode.  In tutorial mode, you can
 see where the balls actually are.</para></listitem>
 </varlistentry>
@@ -375,35 +342,35 @@ see where the balls actually are.</para></listitem>
 <variablelist>
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo><keycap>F1</keycap></keycombo></shortcut>
-<guimenu>Help</guimenu><guimenuitem>Contents</guimenuitem></menuchoice></term>
+<shortcut><keycap>F1</keycap></shortcut>
+<guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>C</accel>ontents</guimenuitem></menuchoice></term>
 <listitem>
-<para>This invokes the KDE help system starting at the &kapp; help pages (this
+<para>This invokes the KDE help system starting at the &kblackbox; help pages (this
 document).</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo><keycap>Shift</keycap><keycap>F1</keycap></keycombo></shortcut>
-<guimenu>Help</guimenu><guimenuitem>What's This?</guimenuitem></menuchoice></term>
+<shortcut><keycombo action="simul"><keycap>Shift</keycap><keycap>F1</keycap></keycombo></shortcut>
+<guimenu><accel>H</accel>elp</guimenu><guimenuitem>What's <accel>T</accel>his?</guimenuitem></menuchoice></term>
 <listitem>
 <para>This changes the mouse cursor to a combination arrow and question mark.
-Clicking on items within &kapp; with this arrow will open a help window (if
+Clicking on items within &kblackbox; with this arrow will open a help window (if
 one exists for the particular item) explaining the item's function.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Help</guimenu>
-<guimenuitem>Report Bug</guimenuitem></menuchoice></term>
-<listitem><para>Report a bug or a wishlist item to &kapp;'s
+<term><menuchoice><guimenu><accel>H</accel>elp</guimenu>
+<guimenuitem><accel>R</accel>eport Bug</guimenuitem></menuchoice></term>
+<listitem><para>Report a bug or a wishlist item to &kblackbox;'s
 authors.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Help</guimenu><guimenuitem>About KBlackBox</guimenuitem></menuchoice></term>
+<guimenu><accel>H</accel>elp</guimenu><guimenuitem><accel>A</accel>bout KBlackBox</guimenuitem></menuchoice></term>
 <listitem>
 <para>This will displays version and author information</para>
 </listitem>
@@ -411,7 +378,7 @@ authors.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Help</guimenu><guimenuitem>About KDE</guimenuitem></menuchoice></term>
+<guimenu><accel>H</accel>elp</guimenu><guimenuitem>About <accel>K</accel>DE</guimenuitem></menuchoice></term>
 <listitem>
 <para>This displays the KDE version and other basic information.</para>
 </listitem>
@@ -425,7 +392,7 @@ authors.</para></listitem>
 <variablelist>
 <varlistentry>
 <term><guiicon>Quit</guiicon></term>
-<listitem><para>Quits &kapp;</para></listitem>
+<listitem><para>Quits &kblackbox;</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -452,7 +419,7 @@ function. </para></listitem>
 <chapter id="credits-and-license">
 <title>Credits and License</title>
 
-<para>&kapp;</para>
+<para>&kblackbox;</para>
 
 <para>Copyright 1998-2000 Robert Cimrman,
 <email>cimrman3@students.zcu.cz</email></para>
@@ -460,9 +427,43 @@ function. </para></listitem>
 <para>Documentation by Robert Cimrman.  Updated and converted to Docbook for KDE
 2.0 by Lauri Watts <email>vampyr@atconnex.net</email></para>
 
-&gpllicense-links;
+&underFDL;
+&underGPL;
 
 </chapter>
+
+
+<appendix id="installation">
+<title>Installation</title>
+
+<para>
+&kblackbox; is part of the KDE project
+<ulink url="http://www.kde.org">http://www.kde.org</ulink>.
+&kblackbox; can be found in the kdeutils package on
+<ulink url="ftp://ftp.kde.org/pub/kde/">ftp://ftp.kde.org/pub/kde/</ulink>, the
+main ftp site of the KDE project. </para>
+
+<sect1 id="compilation">
+<title>Compilation and installation</title>
+
+<para>
+In order to compile and install &kblackbox; on your system, type the following in the base
+directory of the kdegames distribution:</para>
+<screen width="40">
+<prompt>%</prompt> <command>./configure</command>
+<prompt>%</prompt> <command>make</command>
+<prompt>%</prompt> <command>make install</command>
+</screen>
+
+
+<para>Since &kblackbox; uses <application>autoconf</application> and
+<application>automake</application> you should have not trouble compiling
+it. Should you run into problems please report them to the KDE mailing
+lists.</para> 
+
+</sect1>
+</appendix>
+
 </book>
 
 <!--

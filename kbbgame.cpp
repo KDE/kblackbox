@@ -18,6 +18,7 @@
 #include <qstring.h>
 
 #include <kmessagebox.h> 
+#include <kdebug.h>
 #include <kapp.h>
 #include <klocale.h>
 #include <kconfig.h>
@@ -118,21 +119,20 @@ KBBGame::KBBGame() : KTMainWindow()
   pix[0] = new QPixmap();
   *pix[0] = BarIcon( pFNames[0] );
   if (!pix[0]->isNull()) {
-    debug( "Pixmap \"%s\" loaded.", pFNames[0] );
+    kdDebug() << "Pixmap \"" << pFNames[0] << "\" loaded." << endl;
     for (i = 1; i < NROFTYPES; i++) {
       pix[i] = new QPixmap;
       *pix[i] = BarIcon( pFNames[i] );
       if (!pix[i]->isNull()) {
-	debug( "Pixmap \"%s\" loaded.", pFNames[i] );
+	kdDebug() << "Pixmap \"" << pFNames[i] << "\" loaded." << endl;
       } else {
 	pix[i] = pix[i-1];
 	pix[i]->detach();
-	debug( "Cannot find pixmap \"%s\". Using previous one.", pFNames[i] );
+	kdDebug() << "Cannot find pixmap \"" << pFNames[i] << "\". Using previous one." << endl;
       }
     }
   } else {
-    debug( "Cannot find pixmap \"%s\". Pixmaps will not be loaded.",
-	   pFNames[0] );
+    kdDebug() << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
     delete pix[0];
     delete pix;
     pix = NULL;
@@ -228,12 +228,12 @@ KBBGame::KBBGame() : KTMainWindow()
   gameResize();
   if (kConf->hasKey( "appsize" )) {
     s = kConf->readEntry( "appsize" );
-    debug("%s", s.ascii());
+    kdDebug() << s << endl;
     pos = s.find( 'x' );
     s1 = s.right( s.length() - pos - 1 );
     s.truncate( pos - 1 );
-    //    debug("%s", s.ascii());
-    //    debug("%s", s1.ascii());
+    //    kdDebug() << s << endl;
+    //    kdDebug() << s1 << endl;
     resize( s.toInt(), s1.toInt() );
   }
 
@@ -782,7 +782,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
       int endX, endY, result;
       result = traceRay( col, row, &endX, &endY );
       r->set( col, row, LFIREBBG );
-      //debug( "%d %d", endX, endY ); 
+      //kdDebug << endX << " " << endY << endl;
       if (col == 1) x = 0; else
       if (col == w) x = w + 1;
       else x = col;
@@ -818,7 +818,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
 	setScore( score+1 );
 	break;
       case WRONGSTART:
-	debug( "Wrong start?! It should't happen!!" );
+	kdDebug() << "Wrong start?! It should't happen!!" << endl;
 	break;
       }
       break;

@@ -8,9 +8,9 @@
 	<Action name="game_resize"/>
   </Menu>
   <Menu name="settings"><text>&amp;Settings</text>
-	<Action name="options_size"/>
-	<Action name="options_balls"/>
-	<Action name="options_tutorial"/>
+	<Action name="options_size" append="save_merge"/>
+	<Action name="options_balls" append="save_merge"/>
+	<Action name="options_tutorial" append="save_merge"/>
   </Menu>
 </MenuBar>
 <ToolBar name="mainToolBar"><text>Main Toolbar</text>

@@ -1,8 +1,5 @@
 [Desktop Entry]
 Encoding=UTF-8
-BinaryPattern=kblackbox;
-Protocols=
-MimeType=
 Comment=Logic Game
 Comment[ar]=لعبة تكتيكية
 Comment[da]=Logisk spil
@@ -32,7 +29,6 @@ TerminalOptions=
 Icon=kblackbox
 Path=
 DocPath=kblackbox/index.html
-Extensions=
 Type=Application
 Terminal=0
 X-KDE-StartupNotify=true

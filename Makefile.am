@@ -1,6 +1,6 @@
 # this 10 paths are KDE specific. Use them:
 # kde_htmldir       Where your docs should go to. (contains lang subdirs)
-# kde_appsdir       Where your application file (.kdelnk) should go to. 
+# kde_appsdir       Where your application file (.desktop) should go to. 
 # kde_icondir       Where your icon should go to.
 # kde_minidir       Where your mini icon should go to.
 # kde_datadir       Where you install application data. (Use a subdir)
@@ -38,7 +38,7 @@ kblackbox_LDADD   = $(LIB_KDEUI)
 noinst_HEADERS = kbbgfx.h kbbgame.h util.h version.h
 
 # extra files for "make dist"
-EXTRA_DIST = VERSION CHANGES kblackbox.kdelnk kblackbox.xpm mini-kblackbox.xpm
+EXTRA_DIST = VERSION CHANGES kblackbox.desktop kblackbox.xpm mini-kblackbox.xpm
 
 # if you "make distclean", this files get removed. If you want to remove
 # them while "make clean", use CLEANFILES
@@ -52,11 +52,11 @@ kde_icon_DATA = kblackbox.xpm
 
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) $(srcdir)/kblackbox.kdelnk $(APPSDIR)
+	$(INSTALL_DATA) $(srcdir)/kblackbox.desktop $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kblackbox.xpm $(kde_minidir)/kblackbox.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
-	-rm -f $(APPSDIR)/kblackbox.kdelnk
+	-rm -f $(APPSDIR)/kblackbox.desktop
 	-rm -f $(kde_minidir)/kblackbox.xpm

@@ -157,14 +157,14 @@ KBBGame::KBBGame() : KTopLevelWidget()
 
   QString tmps;
   stat = new KStatusBar( this );
-  tmps.sprintf( i18n("Score: 0000") );
-  stat->insertItem( (const char *) tmps, SSCORE );
-  tmps.sprintf( i18n("Placed: 00 / 00") );
-  stat->insertItem( (const char *) tmps, SBALLS );
-  tmps.sprintf( i18n("Run: yesno") );
-  stat->insertItem( (const char *) tmps, SRUN );
-  tmps.sprintf( i18n("Size: 00 x 00") );
-  stat->insertItem( (const char *) tmps, SSIZE );
+  tmps = i18n("Score: 0000");
+  stat->insertItem( tmps, SSCORE );
+  tmps = i18n("Placed: 00 / 00");
+  stat->insertItem( tmps, SBALLS );
+  tmps = i18n("Run: yesno");
+  stat->insertItem( tmps, SRUN );
+  tmps = i18n("Size: 00 x 00");
+  stat->insertItem( tmps, SSIZE );
   setStatusBar( stat );
 
   tool = new KToolBar( this );
@@ -573,7 +573,7 @@ void KBBGame::updateStats()
   else
     s += i18n("No");
   stat->changeItem( (const char *) s, SRUN );
-  s.sprintf( "%s: %2d x %2d", i18n( "Size" ).ascii(),
+  s = QString( "%s: %2d x %2d", i18n( "Size" ).ascii(),
 	       gr->numC()-4, gr->numR()-4 );
   stat->changeItem( (const char *) s, SSIZE );
   s.sprintf( "%s: %2d / %2d", i18n("Placed").ascii(),
@@ -588,9 +588,7 @@ void KBBGame::updateStats()
 void KBBGame::setScore( int n )
 {
   score = n;
-  QString s;
-  s.sprintf( "%s: %d", i18n("Score").ascii(), n );
-  stat->changeItem( (const char *) s, SSCORE );
+  stat->changeItem( i18n("Score: %1").arg(n), SSCORE );
 }
 
 /*

@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kblackbox" version="3">
+<kpartgui name="kblackbox" version="4">
 <MenuBar>
   <Menu name="game"><text>&amp;Game</text>
 	<Action name="game_giveup"/>
@@ -13,7 +13,7 @@
 	<Action name="options_tutorial"/>
   </Menu>
 </MenuBar>
-<ToolBar><text>Main Toolbar</text>
+<ToolBar name="mainToolBar"><text>Main Toolbar</text>
 	<Action name="game_quit"/>
 	<Action name="game_new"/>
 	<Action name="game_giveup"/>

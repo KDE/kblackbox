@@ -768,7 +768,7 @@ void KBBGame::initKAction()
   (void)new KAction( i18n("Move Up"), Qt::Key_Up, gr, SLOT(slotUp()), actionCollection(), "move_up" );
   (void)new KAction( i18n("Move Left"), Qt::Key_Left, gr, SLOT(slotLeft()), actionCollection(), "move_left" );
   (void)new KAction( i18n("Move Right"), Qt::Key_Right, gr, SLOT(slotRight()), actionCollection(), "move_right" );
-  (void)new KAction( i18n("Mark Box"), Qt::Key_Return, gr, SLOT(slotInput()), actionCollection(), "move_mark" ); // AB: is "Mark Box" a good description?
+  (void)new KAction( i18n("Trigger Action"), Qt::Key_Return, gr, SLOT(slotInput()), actionCollection(), "move_trigger" );
 
   createGUI("kblackboxui.rc");
 }

@@ -262,7 +262,7 @@ KBBGame::~KBBGame()
   kConf->writeEntry( "Width", gr->numC() - 4);
   kConf->writeEntry( "Height", gr->numR() - 4);
   kConf->writeEntry( "tutorial", (int) tutorial );
-  s.sprintf( "%d x %d", this->width(), this->height() );
+  s = QString("%1 x %2").arg(this->width()).arg(this->height() );
   kConf->writeEntry( "appsize", s );
   
   delete gr;

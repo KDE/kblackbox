@@ -51,4 +51,4 @@ messages: rc.cpp
 KDE_ICON = kblackbox
 
 install-data-local:
-	rm -rf $(kde_appsdir)/Games/kblackbox.desktop
+	rm -rf $(DESTDIR)$(kde_appsdir)/Games/kblackbox.desktop

@@ -37,7 +37,7 @@ KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent, const char* name )
   pix = p;
   if (pix == NULL) pixScaled = NULL;
   else {
-    pixScaled = new (QPixmap *) [NROFTYPES];
+    pixScaled = new QPixmap * [NROFTYPES];
     for (i = 0; i < NROFTYPES; i++) {
        pixScaled[i] = new QPixmap;
     }

@@ -27,7 +27,7 @@ static const char *description = I18N_NOOP("KDE Blackbox Game");
 int main( int argc, char **argv )
 {
   KAboutData aboutData( "kblackbox", I18N_NOOP("KBlackBox"), 
-    KBVERSION, description, KAboutData::GPL, 
+    KBVERSION, description, KAboutData::License_GPL, 
     "(c) 1999-2000, Robert Cimrman");
   aboutData.addAuthor("Robert Cimrman",0, "cimrman3@students.zcu.cz");
   KCmdLineArgs::init( argc, argv, &aboutData );

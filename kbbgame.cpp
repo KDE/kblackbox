@@ -77,7 +77,7 @@ KBBGame::KBBGame() : KTopLevelWidget()
 	    "author: Robert Cimrman\n"
 	    "e-mail: cimrman3@students.zcu.cz"));
 		    
-  file->insertItem( i18n("&Quit"), ID_QUIT );
+  file->insertItem( i18n("E&xit"), ID_QUIT );
   file->setAccel( CTRL+Key_Q, ID_QUIT );
 
   game->insertItem( i18n("&New"), ID_NEW );
@@ -165,7 +165,7 @@ KBBGame::KBBGame() : KTopLevelWidget()
 
   tool = new KToolBar( this );
   tool->insertButton( ICON("exit.xpm"),
-		      ID_QUIT, TRUE, i18n("Quit") );
+		      ID_QUIT, TRUE, i18n("Exit") );
   tool->insertButton( ICON("reload.xpm"),
 		      ID_NEW, TRUE, i18n("New") );
   tool->insertButton( ICON("giveup.xpm"),

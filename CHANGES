@@ -1,3 +1,6 @@
+1999-06-07  Petter Reinholdtsen <pere@td.org.uit.no>
+	* kbbgame.cpp: Changed text Quit to Exit to match KDE style guide.
+
 0.3.0 from 0.2.6 (17.1.1999)
 	- KBBGraphic derived only from QWidget, not QTableView
 	  -> a complete rewrite of gfx stuff

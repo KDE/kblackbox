@@ -85,6 +85,7 @@ private slots:
   void gotInputAt( int col, int row, int state );
 
   void slotQuit();
+  void slotKeyBindings();
 
 private:
   int traceRay( int startX, int startY, int *endX, int *endY );

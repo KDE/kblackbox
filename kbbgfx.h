@@ -75,6 +75,11 @@ public:
 public slots:
   void setInputAccepted( bool b );
   void updateElement( int col, int row );
+  void slotUp();
+  void slotDown();
+  void slotLeft();
+  void slotRight();
+  void slotInput();
 
 signals:
   void sizeChanged();
@@ -85,10 +90,11 @@ protected:
   void paintEvent( QPaintEvent* );
   void mousePressEvent( QMouseEvent* );
   void mouseMoveEvent( QMouseEvent* );
-  void keyPressEvent( QKeyEvent* );
   void focusInEvent( QFocusEvent* );
   void focusOutEvent( QFocusEvent* );
   void resizeEvent( QResizeEvent* e );
+
+  void moveSelection(int drow, int dcol);
 
 private:
   void paintCell( QPainter* p, int row, int col );

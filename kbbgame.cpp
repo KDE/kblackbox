@@ -28,6 +28,7 @@
 #include <khelpmenu.h>
 #include <kaction.h>
 #include <kstdaction.h>
+#include <kkeydialog.h>
 
 #include "kbbgame.h"
 #include "util.h"
@@ -59,8 +60,6 @@ KBBGame::KBBGame() : KMainWindow(0)
 
   setCaption(QString("KBlackBox ")+KBVERSION);
 
-  initKAction();
-
   QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
   *pix[0] = BarIcon( pFNames[0] );
@@ -84,6 +83,9 @@ KBBGame::KBBGame() : KMainWindow(0)
     pix = NULL;
   }
   gr = new KBBGraphic( pix, this, "KBBGraphic" );
+
+  initKAction();
+
   connect( gr, SIGNAL(inputAt(int,int,int)),
 	  this, SLOT(gotInputAt(int,int,int)) );
   connect( this, SIGNAL(gameRuns(bool)),
@@ -759,6 +761,14 @@ void KBBGame::initKAction()
   list.append(i18n(" 8 "));
   s->setItems(list);
   (void)new KToggleAction( i18n("&Tutorial"), 0, this, SLOT(tutorialSwitch()), actionCollection(), "options_tutorial" );
+  KStdAction::keyBindings(this, SLOT(slotKeyBindings()), actionCollection());
+
+// keyboard only
+  (void)new KAction( i18n("Move Down"), Qt::Key_Down, gr, SLOT(slotDown()), actionCollection(), "move_down" );
+  (void)new KAction( i18n("Move Up"), Qt::Key_Up, gr, SLOT(slotUp()), actionCollection(), "move_up" );
+  (void)new KAction( i18n("Move Left"), Qt::Key_Left, gr, SLOT(slotLeft()), actionCollection(), "move_left" );
+  (void)new KAction( i18n("Move Right"), Qt::Key_Right, gr, SLOT(slotRight()), actionCollection(), "move_right" );
+  (void)new KAction( i18n("Mark Box"), Qt::Key_Return, gr, SLOT(slotInput()), actionCollection(), "move_mark" ); // AB: is "Mark Box" a good description?
 
   createGUI("kblackboxui.rc");
 }
@@ -772,4 +782,8 @@ void KBBGame::slotResize()
 void KBBGame::slotQuit()
 { kapp->quit(); }
 
+void KBBGame::slotKeyBindings()
+{
+  KKeyDialog::configure( actionCollection(), this );
+}
 #include "kbbgame.moc"

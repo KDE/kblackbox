@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kblackbox" version="2">
+<kpartgui name="kblackbox" version="3">
 <MenuBar>
   <Menu name="game"><text>&amp;Game</text>
 	<Action name="game_giveup"/>
@@ -7,7 +7,7 @@
 	<Separator/>
 	<Action name="game_resize"/>
   </Menu>
-  <Menu name="settings" noMerge="1"><text>&amp;Settings</text>
+  <Menu name="settings"><text>&amp;Settings</text>
 	<Action name="options_size"/>
 	<Action name="options_balls"/>
 	<Action name="options_tutorial"/>

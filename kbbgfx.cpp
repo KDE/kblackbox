@@ -379,47 +379,52 @@ void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
   }
 }
 
-/*
-   Handles key press events for the KBBGraphic widget.
-*/
-
-void KBBGraphic::keyPressEvent( QKeyEvent* e )
+void KBBGraphic::slotUp()
 {
-  if (inputAccepted) {
-    int oldRow = curRow;
-    int oldCol = curCol;
-    switch( e->key() ) {	       	// Look at the key code
-    case Key_Left:		       	// If 'left arrow'-key, 
-      if( curCol > 0 ) {	       	// and cr't not in leftmost col
-	curCol--;     			// set cr't to next left column
-      }
-      break;
-    case Key_Right:		       	// Correspondingly...
-      if( curCol < numCols-1 ) {
-	curCol++;
-      }
-      break;
-    case Key_Up:
-      if( curRow > 0 ) {
-	curRow--;
-      } 
-      break;
-    case Key_Down:
-      if( curRow < numRows-1 ) {
-	curRow++;
-      }
-      break;
-    case Key_Return:
-    case Key_Enter:
-      emit inputAt( curCol, curRow, LeftButton ); 
-      break;
-    default:				// If not an interesting key,
-      e->ignore();			// we don't accept the event
-      return;	
-    }
-    updateElement( oldCol, oldRow );
-    updateElement( curCol, curRow );
+  if( curRow > 0 ) {
+    moveSelection( -1, 0 );
+  } 
+}
+
+void KBBGraphic::slotDown()
+{
+  if( curRow < numRows-1 ) {
+    moveSelection( 1, 0 );
   }
+}
+
+void KBBGraphic::slotLeft()
+{
+  if( curCol > 0 ) {
+    moveSelection( 0, -1 );
+  }
+}
+
+void KBBGraphic::slotRight()
+{
+  if( curCol < numCols-1 ) {
+    moveSelection( 0, 1 );
+  }
+}
+
+void KBBGraphic::slotInput()
+{
+  if ( !inputAccepted ) {
+    return;
+  }
+  emit inputAt( curCol, curRow, LeftButton ); 
+//  updateElement( curCol, curRow );
+}
+
+void KBBGraphic::moveSelection(int drow, int dcol)
+{
+  if ( !dcol && !drow || !inputAccepted ) {
+    return;
+  }
+  curCol += dcol;
+  curRow += drow;
+  updateElement( curCol - dcol, curRow - drow );
+  updateElement( curCol, curRow );
 }
 
 /*

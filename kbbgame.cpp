@@ -394,7 +394,7 @@ void KBBGame::tutorialSwitch()
 
 void KBBGame::help()
 {
-  KApplication::kApplication()->invokeHTMLHelp("", "");
+  KApplication::kApplication()->invokeHelp();
 }
 
 /*

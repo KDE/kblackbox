@@ -19,7 +19,7 @@
 #include <qmenubar.h> 
 #include <qlabel.h>
 #include <qpushbutton.h>
-#include <ktmainwindow.h>
+#include <kmainwindow.h>
 #include <krandomsequence.h>
 
 /*
@@ -58,7 +58,7 @@
 #define SRUN   2
 #define SSIZE  3
 
-class KBBGame : public KTMainWindow
+class KBBGame : public KMainWindow
 {
   Q_OBJECT
 public:

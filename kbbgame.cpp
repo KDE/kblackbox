@@ -23,7 +23,6 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>
-#include <ktmainwindow.h>
 #include <kmenubar.h>
 #include <kiconloader.h>
 
@@ -51,7 +50,7 @@ const char *pFNames[NROFTYPES] = {
    Creates the KBBGame widget and sets saved options (if any).
 */
 
-KBBGame::KBBGame() : KTMainWindow()     
+KBBGame::KBBGame() : KMainWindow(0)     
 {
   int i;
 
@@ -113,7 +112,6 @@ KBBGame::KBBGame() : KTMainWindow()
   menu->insertItem( i18n("&Help"), help );
 
   menu->show(); 
-  setMenu( menu );
 
   QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
@@ -160,7 +158,6 @@ KBBGame::KBBGame() : KTMainWindow()
   stat->insertItem( tmps, SRUN );
   tmps = i18n("Size: 00 x 00");
   stat->insertItem( tmps, SSIZE );
-  setStatusBar( stat );
 
   tool = new KToolBar( this );
   tool->insertButton( BarIcon("exit"),
@@ -175,7 +172,7 @@ KBBGame::KBBGame() : KTMainWindow()
   tool->insertButton( BarIcon("help"), ID_HELP, TRUE,
 		      i18n("Help") );
   connect( tool, SIGNAL(clicked(int)), SLOT(callBack(int)) );
-  addToolBar( tool );
+
   tool->setBarPos( KToolBar::Top );
   tool->show();
   
@@ -241,7 +238,7 @@ KBBGame::KBBGame() : KTMainWindow()
   ballsPlaced = 0;
   updateStats();
 
-  setView( gr );
+  setCentralWidget( gr );
 
   newGame();
 }
@@ -304,7 +301,7 @@ void KBBGame::callBack( int witch )
 
 void KBBGame::resizeEvent( QResizeEvent *e )
 {
-  KTMainWindow::resizeEvent(e);
+  KMainWindow::resizeEvent(e);
 }
 
 
@@ -836,3 +833,5 @@ void KBBGame::gotInputAt( int col, int row, int state )
   gr->updateElement( col, row );
   updateStats();
 }
+
+#include "kbbgame.moc"

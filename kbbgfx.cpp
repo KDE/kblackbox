@@ -463,3 +463,5 @@ void KBBGraphic::updateElement( int col, int row )
   paint.setViewport( col * cellW, row * cellH, width(), height() );
   paintCell( &paint, row, col );
 }
+
+#include "kbbgfx.moc"

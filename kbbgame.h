@@ -78,8 +78,6 @@ private slots:
   void giveUp();
   void gotInputAt( int col, int row, int state );
 
-  void slotKeyBindings();
-
 private:
   int traceRay( int startX, int startY, int *endX, int *endY );
   void remap( RectOnArray *gam, RectOnArray *gra );

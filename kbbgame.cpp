@@ -28,7 +28,6 @@
 #include <khelpmenu.h>
 #include <kaction.h>
 #include <kstdaction.h>
-#include <kkeydialog.h>
 #include <kstatusbar.h>
 #include <kstdgameaction.h>
 
@@ -734,7 +733,8 @@ void KBBGame::initKAction()
   list.append(i18n(" 8 "));
   ballsAction->setItems(list);
   tutorialAction = new KToggleAction( i18n("&Tutorial"), 0, this, SLOT(tutorialSwitch()), actionCollection(), "options_tutorial" );
-  KStdAction::keyBindings(this, SLOT(slotKeyBindings()), actionCollection());
+  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
+actionCollection());
 
 // keyboard only
   (void)new KAction( i18n("Move Down"), Qt::Key_Down, gr, SLOT(slotDown()), actionCollection(), "move_down" );
@@ -752,8 +752,4 @@ void KBBGame::slotResize()
     gameResize();
 }
 
-void KBBGame::slotKeyBindings()
-{
-  KKeyDialog::configure( actionCollection(), this );
-}
 #include "kbbgame.moc"

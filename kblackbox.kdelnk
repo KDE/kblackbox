@@ -17,6 +17,7 @@ Name[sv]=Svarta lådan
 TerminalOptions=
 Icon=kblackbox.xpm
 Comment=A little logical game
+Comment[ca]=Un petit joc de lògica
 Comment[cs]=Mala logicka hra
 Comment[da]=Et lille logisk spil
 Comment[es]=Un pequeño juego de lógica

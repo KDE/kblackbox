@@ -60,12 +60,12 @@ install-data-local:
 	$(mkinstalldirs) $(APPSDIR)
 	$(INSTALL_DATA) $(srcdir)/kblackbox.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) $(srcdir)/mini-kblackbox.xpm $(kde_minidir)/kblackbox.xpm
-	$(mkinstalldirs) $(kde_minidir)/../large
-	$(INSTALL_DATA) $(srcdir)/large-kblackbox.xpm $(kde_minidir)/../large/kblackbox.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kblackbox.xpm $(kde_icondir)lackbox.xpm
+	$(mkinstalldirs) $(kde_icondir)/large
+	$(INSTALL_DATA) $(srcdir)/large-kblackbox.xpm $(kde_icondir)/large/kblackbox.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
 	-rm -f $(APPSDIR)/kblackbox.kdelnk
-	-rm -f $(kde_minidir)/kblackbox.xpm
-	-rm -f $(kde_minidir)/../large/kblackbox.xpm
+	-rm -f $(kde_icondir)lackbox.xpm
+	-rm -f $(kde_icondir)/large/kblackbox.xpm

@@ -1,0 +1,24 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="kblackbox" version="1">
+<MenuBar>
+  <Menu name="game"><text>&amp;Game</text>
+	<Action name="game_giveup"/>
+	<Action name="game_done"/>
+	<Separator/>
+	<Action name="game_resize"/>
+  </Menu>
+  <Menu name="settings" noMerge="1"><text>&amp;Settings</text>
+	<Action name="options_size"/>
+	<Action name="options_balls"/>
+	<Action name="options_tutorial"/>
+  </Menu>
+</MenuBar>
+<ToolBar>
+	<Action name="game_quit"/>
+	<Action name="game_new"/>
+	<Action name="game_giveup"/>
+	<Action name="game_done"/>
+	<Separator/>
+	<Action name="help_contents"/>
+</ToolBar>
+</kpartgui>

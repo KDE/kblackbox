@@ -41,16 +41,6 @@
 #define HIT         2
 
 /*
- * Menu & toolbar IDs.
- */
-#define ID_HELP     0
-#define ID_QUIT     3
-#define ID_NEW      4
-#define ID_GIVEUP   5
-#define ID_RESIZE   6
-#define ID_DONE     7
-
-/*
  * Statusbar IDs.
  */
 #define SSCORE 0
@@ -72,15 +62,8 @@ protected:
   void resizeEvent( QResizeEvent * );
 
 private slots:
-  void callBack( int );
-
-  void size1();
-  void size2();
-  void size3();
-
-  void balls1();
-  void balls2();
-  void balls3();
+  void slotSize();
+  void slotBalls();
 
   void tutorialSwitch();
 
@@ -92,6 +75,7 @@ private slots:
   bool setBalls( int n );
   void setMinSize();
   void randomBalls( int n );
+  void slotResize();
   void gameResize();
   void setScore( int n );
   void updateStats();
@@ -100,10 +84,13 @@ private slots:
   void giveUp();
   void gotInputAt( int col, int row, int state );
 
+  void slotQuit();
+
 private:
   int traceRay( int startX, int startY, int *endX, int *endY );
   void remap( RectOnArray *gam, RectOnArray *gra );
   void getResults();
+  void initKAction();
 
   int balls;
   int detourCounter;
@@ -113,13 +100,6 @@ private:
   RectOnArray *gameBoard;
   KBBGraphic *gr;
 
-  KMenuBar *menu;
-  QPopupMenu *sizesm, *ballsm, *options;
-  int sizes1id, sizes2id, sizes3id;
-  int balls1id, balls2id, balls3id;
-  int tut1id;
-
-  KToolBar *tool;
   KStatusBar *stat;
   int score;
   /*  QLabel *scoreText;

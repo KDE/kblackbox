@@ -26,11 +26,13 @@
 #include <kmenubar.h>
 #include <kiconloader.h>
 #include <khelpmenu.h>
+#include <kaction.h>
+#include <kstdaction.h>
+#include <klocale.h>
 
 #include "kbbgame.h"
 #include "util.h"
 #include "version.h"
-#include <klocale.h>
 
 /*
   Names of pixmap files.
@@ -57,57 +59,7 @@ KBBGame::KBBGame() : KMainWindow(0)
 
   setCaption(QString("KBlackBox ")+KBVERSION);
 
-  menu                = new KMenuBar(this, "menu");
-  KPopupMenu *game    = new KPopupMenu;
-  sizesm  = new KPopupMenu;
-  ballsm  = new KPopupMenu;
-  
-  options = new KPopupMenu;
-
-  CHECK_PTR( game );
-  CHECK_PTR( sizesm );
-  CHECK_PTR( ballsm );
-  CHECK_PTR( options );
-  CHECK_PTR( menu );
-
-  KHelpMenu *help = new KHelpMenu(this, i18n(
-                                    "KBlackBox logical game\n"
-                                    "author: Robert Cimrman\n"
-                                    "e-mail: cimrman3@students.zcu.cz"));
-
-  game->insertItem(SmallIcon("filenew"), i18n("&New"), ID_NEW );
-  game->insertItem( i18n("&Give up"), ID_GIVEUP );
-  game->insertItem( i18n("&Done"), ID_DONE );
-  game->insertSeparator();
-  game->insertItem( i18n("&Resize"), ID_RESIZE );
-  game->insertSeparator();
-  game->insertItem(SmallIcon("exit") ,i18n("&Quit"), ID_QUIT );
-  game->setAccel( CTRL+Key_Q, ID_QUIT );
-
-  sizes1id = sizesm->insertItem( "  8 x 8  ", this, SLOT(size1()) );
-  sizes2id = sizesm->insertItem( " 10 x 10 ", this, SLOT(size2()) );
-  sizes3id = sizesm->insertItem( " 12 x 12 ", this, SLOT(size3()) );
-  sizesm->setCheckable( TRUE );
-
-  balls1id = ballsm->insertItem( " 4 ", this, SLOT(balls1()) );
-  balls2id = ballsm->insertItem( " 6 ", this, SLOT(balls2()) );
-  balls3id = ballsm->insertItem( " 8 ", this, SLOT(balls3()) );
-  ballsm->setCheckable( TRUE );
-
-  options->insertItem( i18n("&Size"), sizesm );
-  options->insertItem( i18n("&Balls"), ballsm );
-  tut1id = options->insertItem( i18n("&Tutorial"),
-				this, SLOT(tutorialSwitch()) );
-  options->setCheckable( TRUE );
-
-  connect( game, SIGNAL(activated(int)), SLOT(callBack(int)) );
-
-  menu->insertItem( i18n("&Game"), game );
-  menu->insertItem( i18n("&Settings"), options );
-  menu->insertSeparator();
-  menu->insertItem( i18n("&Help"), help->menu() );
-
-  menu->show();
+  initKAction();
 
   QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
@@ -155,23 +107,6 @@ KBBGame::KBBGame() : KMainWindow(0)
   tmps = i18n("Size: 00 x 00");
   stat->insertItem( tmps, SSIZE );
 
-  tool = new KToolBar( this );
-  tool->insertButton( BarIcon("exit"),
-		      ID_QUIT, TRUE, i18n("Exit") );
-  tool->insertButton( BarIcon("reload"),
-		      ID_NEW, TRUE, i18n("New") );
-  tool->insertButton( BarIcon("giveup"),
-		      ID_GIVEUP, TRUE, i18n("Give up") );
-  tool->insertButton( BarIcon("done"),
-		      ID_DONE, TRUE, i18n("Done") );
-  tool->insertSeparator();
-  tool->insertButton( BarIcon("help"), ID_HELP, TRUE,
-		      i18n("Help") );
-  connect( tool, SIGNAL(clicked(int)), SLOT(callBack(int)) );
-
-  tool->setBarPos( KToolBar::Top );
-  tool->show();
-
   /*
      Game initializations
   */
@@ -186,13 +121,13 @@ KBBGame::KBBGame() : KMainWindow(0)
     i = kConf->readNumEntry( "Balls" );
     balls = i;
     switch (i) {
-    case 4: ballsm->setItemChecked( balls1id, TRUE ); break;
-    case 6: ballsm->setItemChecked( balls2id, TRUE ); break;
-    case 8: ballsm->setItemChecked( balls3id, TRUE ); break;
+    case 4: ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(0); break;
+    case 6: ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(1); break;
+    case 8: ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(2); break;
     }
   } else {
     balls = 4;
-    ballsm->setItemChecked( balls1id, TRUE );
+    ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(0);
   }
   if ((kConf->hasKey( "Width" )) &&
       (kConf->hasKey( "Balls" ))) {
@@ -201,19 +136,19 @@ KBBGame::KBBGame() : KMainWindow(0)
     gr->setSize( i+4, j+4 ); // +4 is the space for "lasers" and an edge...
     gameBoard = new RectOnArray( gr->numC(), gr->numR() );
     switch (i) {
-    case 8: sizesm->setItemChecked( sizes1id, TRUE ); break;
-    case 10: sizesm->setItemChecked( sizes2id, TRUE ); break;
-    case 12: sizesm->setItemChecked( sizes3id, TRUE ); break;
+    case 8: ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(0); break;
+    case 10: ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(1); break;
+    case 12: ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(2); break;
     }
   } else {
     gr->setSize( 8+4, 8+4 ); // +4 is the space for "lasers" and an edge...
     gameBoard = new RectOnArray( gr->numC(), gr->numR() );
-    sizesm->setItemChecked( sizes1id, TRUE );
+    ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(0);
   }
   if (kConf->hasKey( "tutorial" )) {
     tutorial = (bool) kConf->readNumEntry( "tutorial" );
   } else tutorial = FALSE;
-  options->setItemChecked( tut1id, tutorial );
+  ((KToggleAction*)actionCollection()->action("options_tutorial"))->setChecked(tutorial);
 
   QString s, s1;
   int pos;
@@ -262,34 +197,6 @@ KBBGame::~KBBGame()
 }
 
 /*
- * GUI callbacks.
- */
-void KBBGame::callBack( int witch )
-{
-  switch (witch) {
-  case ID_HELP:
-    help();
-    break;
-  case ID_QUIT:
-    kapp->quit();
-    break;
-  case ID_NEW:
-    newGame();
-    break;
-  case ID_GIVEUP:
-    giveUp();
-    break;
-  case ID_DONE:
-    gameFinished();
-    break;
-  case ID_RESIZE:
-    setMinSize();
-    gameResize();
-    break;
-  }
-}
-
-/*
    Resize event of the KBBGame widget.
 */
 
@@ -305,78 +212,77 @@ void KBBGame::resizeEvent( QResizeEvent *e )
 
 void KBBGame::gameResize()
 {
-  resize( gr->wHint(), gr->hHint() + menu->height() + stat->height() +
-      tool->height() );
+  resize( gr->wHint(), gr->hHint() + menuBar()->height() + stat->height() +
+      toolBar()->height() );
 }
 
 void KBBGame::setMinSize()
 {
-  setMinimumSize( gr->wHint(), gr->hHint() + menu->height() + stat->height() +
-      tool->height() );
+  setMinimumSize( gr->wHint(), gr->hHint() + menuBar()->height() + stat->height() +
+      toolBar()->height() );
 }
 
 /*
    Settings of various options.
 */
-
-void KBBGame::size1()
+void KBBGame::slotSize()
 {
-  if (setSize( 8, 8 )) {
-    sizesm->setItemChecked( sizes1id, TRUE );
-    sizesm->setItemChecked( sizes2id, FALSE );
-    sizesm->setItemChecked( sizes3id, FALSE );
+  int i = ((KSelectAction*)actionCollection()->action("options_size"))->currentItem();
+  bool ok = false;
+  switch (i) {
+    case 0:
+      ok = setSize( 8, 8 );
+      break;
+    case 1:
+      ok = setSize( 10, 10 );
+      break;
+    case 2:
+      ok = setSize( 12, 12 );
+      break;
+  }
+
+  if (!ok) {
+    switch(gr->numR() - 4) {
+      case 8:
+        ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(0); break;
+      case 10:
+        ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(1); break;
+      case 12:
+        ((KSelectAction*)actionCollection()->action("options_size"))->setCurrentItem(2); break;
+    }
   }
 }
 
-void KBBGame::size2()
+void KBBGame::slotBalls()
 {
-  if (setSize( 10, 10 )) {
-    sizesm->setItemChecked( sizes2id, TRUE );
-    sizesm->setItemChecked( sizes1id, FALSE );
-    sizesm->setItemChecked( sizes3id, FALSE );
+  int i = ((KSelectAction*)actionCollection()->action("options_balls"))->currentItem();
+  bool ok = false;
+  switch (i) {
+      case 0:
+          ok = setBalls( 4 ); 
+          break;
+      case 1:
+          ok = setBalls( 6 );
+	  break;
+        case 2:
+          ok = setBalls( 8 );
+	  break;
   }
-}
-
-void KBBGame::size3()
-{
-  if (setSize( 12, 12 )) {
-    sizesm->setItemChecked( sizes3id, TRUE );
-    sizesm->setItemChecked( sizes2id, FALSE );
-    sizesm->setItemChecked( sizes1id, FALSE );
-  }
-}
-
-void KBBGame::balls1()
-{
-  if (setBalls( 4 )) {
-    ballsm->setItemChecked( balls1id, TRUE );
-    ballsm->setItemChecked( balls2id, FALSE );
-    ballsm->setItemChecked( balls3id, FALSE );
-  }
-}
-
-void KBBGame::balls2()
-{
-  if (setBalls( 6 )) {
-    ballsm->setItemChecked( balls2id, TRUE );
-    ballsm->setItemChecked( balls1id, FALSE );
-    ballsm->setItemChecked( balls3id, FALSE );
-  }
-}
-
-void KBBGame::balls3()
-{
-  if (setBalls( 8 )) {
-    ballsm->setItemChecked( balls3id, TRUE );
-    ballsm->setItemChecked( balls2id, FALSE );
-    ballsm->setItemChecked( balls1id, FALSE );
+  if (!ok) {
+    switch (balls) {
+      case 4:
+        ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(0); break;
+      case 6:
+        ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(1); break;
+      case 8:
+        ((KSelectAction*)actionCollection()->action("options_balls"))->setCurrentItem(2); break;
+    }
   }
 }
 
 void KBBGame::tutorialSwitch()
 {
   tutorial = !tutorial;
-  options->setItemChecked( tut1id, tutorial );
 }
 
 /*
@@ -827,5 +733,43 @@ void KBBGame::gotInputAt( int col, int row, int state )
   gr->updateElement( col, row );
   updateStats();
 }
+
+void KBBGame::initKAction()
+{
+// game
+  KStdAction::openNew( this, SLOT(newGame()), actionCollection(), "game_new" );
+  (void)new KAction( i18n("&Give Up"), SmallIcon("giveup"), 0, this, SLOT(giveUp()), actionCollection(), "game_giveup" );
+  (void)new KAction( i18n("&Done"), SmallIcon("done"), 0, this, SLOT(gameFinished()), actionCollection(), "game_done" );
+  (void)new KAction( i18n("&Resize"), 0, this, SLOT(slotResize()), actionCollection(), "game_resize" );
+  KStdAction::quit( this, SLOT(slotQuit()), actionCollection(), "game_quit" );
+
+
+// settings
+  KSelectAction* s = new KSelectAction( i18n("&Size"), 0, this, SLOT(slotSize()), actionCollection(), "options_size");
+  QStringList list;
+  list.append(i18n("  8 x  8 "));
+  list.append(i18n(" 10 x 10 "));
+  list.append(i18n(" 12 x 12 "));
+  s->setItems(list);
+
+  s = new KSelectAction( i18n("&Balls"), 0, this, SLOT(slotBalls()), actionCollection(), "options_balls");
+  list.clear();
+  list.append(i18n(" 4 "));
+  list.append(i18n(" 6 "));
+  list.append(i18n(" 8 "));
+  s->setItems(list);
+  (void)new KToggleAction( i18n("&Tutorial"), 0, this, SLOT(tutorialSwitch()), actionCollection(), "options_tutorial" );
+
+  createGUI("kblackboxui.rc");
+}
+
+void KBBGame::slotResize()
+{
+    setMinSize();
+    gameResize();
+}
+
+void KBBGame::slotQuit()
+{ kapp->quit(); }
 
 #include "kbbgame.moc"

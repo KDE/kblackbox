@@ -42,8 +42,11 @@ apps_DATA = kblackbox.desktop
 # extra files for "make dist"
 EXTRA_DIST = VERSION CHANGES $(apps_DATA)
 
-messages:
-	$(XGETTEXT) $(kblackbox_SOURCES) -o $(podir)/kblackbox.pot
+rcdir = $(kde_datadir)/kblackbox
+rc_DATA = kblackboxui.rc
+
+messages: rc.cpp
+	$(XGETTEXT) rc.cpp $(kblackbox_SOURCES) -o $(podir)/kblackbox.pot
 
 KDE_ICON = kblackbox
 

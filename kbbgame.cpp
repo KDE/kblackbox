@@ -146,18 +146,8 @@ KBBGame::KBBGame()
 
   QString s, s1;
   int pos;
-  setMinSize();
-  gameResize();
-  if (kConf->hasKey( "appsize" )) {
-    s = kConf->readEntry( "appsize" );
-    kdDebug(12009) << s << endl;
-    pos = s.find( 'x' );
-    s1 = s.right( s.length() - pos - 1 );
-    s.truncate( pos - 1 );
-    //    kdDebug(12009) << s << endl;
-    //    kdDebug(12009) << s1 << endl;
-    resize( s.toInt(), s1.toInt() );
-  }
+  slotResize();
+	setupGUI();
 
   setScore( 0 );
   ballsPlaced = 0;
@@ -183,8 +173,6 @@ KBBGame::~KBBGame()
   kConf->writeEntry( "Width", gr->numC() - 4);
   kConf->writeEntry( "Height", gr->numR() - 4);
   kConf->writeEntry( "tutorial", (int) tutorial );
-  s = QString("%1 x %2").arg(this->width()).arg(this->height() );
-  kConf->writeEntry( "appsize", s );
 
   delete gameBoard;
   // All the rest has "this" for parent so it doesn't need to be deleted.
@@ -742,8 +730,6 @@ void KBBGame::initKAction()
   (void)new KAction( i18n("Move Left"), Qt::Key_Left, gr, SLOT(slotLeft()), actionCollection(), "move_left" );
   (void)new KAction( i18n("Move Right"), Qt::Key_Right, gr, SLOT(slotRight()), actionCollection(), "move_right" );
   (void)new KAction( i18n("Trigger Action"), Qt::Key_Return, gr, SLOT(slotInput()), actionCollection(), "move_trigger" );
-
-  setupGUI();
 }
 
 void KBBGame::slotResize()

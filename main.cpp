@@ -15,9 +15,10 @@
 
 #include "kbbgame.h"
 #include "version.h"
+#include <kaboutdata.h>
 
 
-static const char *description = I18N_NOOP("KDE Game");
+static const char *description = I18N_NOOP("KDE Blackbox Game");
 
 /*
   The program starts here. 
@@ -25,7 +26,11 @@ static const char *description = I18N_NOOP("KDE Game");
 
 int main( int argc, char **argv )
 {
-  KCmdLineArgs::init(argc, argv, "kblackbox", description, KBVERSION);
+  KAboutData aboutData( "kblackbox", I18N_NOOP("KBlackBox"), 
+    KBVERSION, description, KAboutData::GPL, 
+    "(c) 1999-2000, Robert Cimrman");
+  aboutData.addAuthor("Robert Cimrman",0, "cimrman3@students.zcu.cz");
+  KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication a;
   KBBGame v;

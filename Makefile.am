@@ -44,7 +44,7 @@ EXTRA_DIST = VERSION CHANGES $(apps_DATA)
 
 # make messages.po. Move this one to $(podir)/ and "make merge" in po
 messages:
-	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kblackbox_SOURCES) && mv messages.po $(podir)/kblackbox.pot
+	$(XGETTEXT) -C -kI18N_NOOP -ki18n -x $(includedir)/kde.pot $(kblackbox_SOURCES) && mv messages.po $(podir)/kblackbox.pot
 
 KDE_ICON = kblackbox
 

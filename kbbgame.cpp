@@ -28,6 +28,7 @@
 #include "kbbgame.h"
 #include "util.h"
 #include "version.h"
+#include <klocale.h>
 
 /*
   Names of pixmap files.

@@ -431,7 +431,7 @@ void KBBGame::about()
 {
   QMessageBox::information( 0, trans->translate("About"), 
 			    trans->translate(
-            "KBlackBox logical game\nauthor: Robert Cimrman\ne-mail: cimrman3@students.zcu.cz"), "Ok" );
+            "KBlackBox logical game\nauthor: Robert Cimrman\ne-mail: cimrman3@students.zcu.cz"), "OK" );
 }
 
 void KBBGame::aboutQt()

@@ -6,6 +6,7 @@ MimeType=
 Exec=kblackbox
 Name=KBlackBox
 Name[es]=Caja negra
+Name[no]=Hemmelighetens kasse
 Name[pt_BR]=Caixa Preta
 Name[sv]=Svarta lådan
 TerminalOptions=

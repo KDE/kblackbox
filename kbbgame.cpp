@@ -73,7 +73,7 @@ KBBGame::KBBGame() : KTMainWindow()
   CHECK_PTR( options );
   CHECK_PTR( menu );
 
-  help = kapp->helpMenu(false, i18n(
+  help = helpMenu(i18n(
                                     "KBlackBox logical game\n"
                                     "author: Robert Cimrman\n"
                                     "e-mail: cimrman3@students.zcu.cz"));

@@ -156,12 +156,13 @@ the <mousebutton>left</mousebutton> mouse button. Brown marks can't overwrite
 blue marks. This way you can't erase the blue marks (guessed balls) by accident
 when playing with the <mousebutton>right</mousebutton> mouse button. </para>
 
-<para>When you think the configuration of balls you have placed is correct,
-press the middle mouse button. You will be informed whether you are correct or
-not, and be given your score. Your score is the number of letters and numbers
-around the outside of the box plus five for each incorrectly placed ball. If you
-placed any balls incorrectly, they will be indicated with red fields, and their
-actual positions indicated with cyan fields.</para>
+<para>When you think the configuration of balls you have placed is
+correct, press the <mousebutton>middle</mousebutton> mouse button. You
+will be informed whether you are correct or not, and be given your
+score. Your score is the number of letters and numbers around the
+outside of the box plus five for each incorrectly placed ball. If you
+placed any balls incorrectly, they will be indicated with red fields,
+and their actual positions indicated with cyan fields.</para>
 
 </sect1>
 

@@ -42,9 +42,8 @@ apps_DATA = kblackbox.desktop
 # extra files for "make dist"
 EXTRA_DIST = VERSION CHANGES $(apps_DATA)
 
-# make messages.po. Move this one to $(podir)/ and "make merge" in po
 messages:
-	$(XGETTEXT) -C -kI18N_NOOP -ki18n -x $(includedir)/kde.pot $(kblackbox_SOURCES) && mv messages.po $(podir)/kblackbox.pot
+	$(XGETTEXT) $(kblackbox_SOURCES) -o $(podir)/kblackbox.pot
 
 KDE_ICON = kblackbox
 

@@ -21,6 +21,7 @@
 #include <time.h>
 
 #include <kapp.h>
+#include <klocale.h>
 #include <ktopwidget.h>
 #include <kmenubar.h>
 #include <kiconloader.h>

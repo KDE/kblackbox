@@ -544,18 +544,21 @@ void KBBGame::giveUp()
 
 void KBBGame::updateStats()
 {
+  QString tmp;
   QString s = i18n("Run: ");
   if (running)
     s += i18n("Yes");
   else
     s += i18n("No");
-  stat->changeItem( (const char *) s, SRUN );
-  s.sprintf( "%s: %2d x %2d", i18n( "Size" ).ascii(),
+  stat->changeItem( s, SRUN );
+  s = i18n( "Size: " );
+  s += tmp.sprintf( "%2d x %2d",
 	       gr->numC()-4, gr->numR()-4 );
-  stat->changeItem( (const char *) s, SSIZE );
-  s.sprintf( "%s: %2d / %2d", i18n("Placed").ascii(),
+  stat->changeItem( s, SSIZE );
+  s = i18n( "Placed: " );
+  s += tmp.sprintf( "%2d / %2d",
 	     ballsPlaced, balls );
-  stat->changeItem( (const char *) s, SBALLS );
+  stat->changeItem( s, SBALLS );
 }
 
 /*

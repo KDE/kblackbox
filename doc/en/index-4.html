@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+<TITLE> KBlackBox Game Manual: Game description</TITLE>
+</HEAD>
+<BODY>
+<A HREF="index-3.html">Previous</A>
+Next
+<A HREF="index.html#toc4">Table of Contents</A>
+<HR>
+<H2><A NAME="s4">4. Game description</A></H2>
+
+<P>In the first part of this section a description of the game board will be
+given. The second part deals with user interaction with the game board
+and finally in the third part the actual game rules are explained.</P>
+
+<H2><A NAME="ss4.1">4.1 Game board descritpion</A></H2>
+
+<P> 
+The folloving types of fields are found on the game board:
+<UL>
+<LI> <B>"gray"</B> - The black box. Here you mark the fields, where the balls
+probably are.</LI>
+<LI> <B>"green"</B> - These are lasers, shooting rays of light when
+switched on.</LI>
+<LI> <B>"white"</B> - Nothing of interest - it's just a border.</LI>
+<LI> <B>"blue"</B> - "There must be one!", you think.</LI>
+<LI> <B>"cyan"</B> - Correct positions of balls are indicated by this type.</LI>
+<LI> <B>"red"</B> - Wrong positions of balls are indicated by this type.</LI>
+<LI> <B>"brown"</B> - Marking colour.</LI>
+</UL>
+</P>
+<P><B>NOTE:</B> The names of colours are used just for identifying the different
+types of the fields in this text. They <I>might not</I> be in any relation
+with the actual colour of the fields. Simply said: the black box is in
+the centre, around are the lasers and around them is the border. Remap
+the colours yourself :-).</P>
+
+
+<H2><A NAME="ss4.2">4.2 User Interaction</A></H2>
+
+<P>The cursor (a circle) can be moved around the box with the standard cursor
+movement keys.
+Switching of lasers or marking of black boxes is done by the left mouse
+button, or by pressing "Return" or "Enter" keys.
+You can mark the fields, where a ball can't be, too. Just press the right
+mouse button. It often helps you to find an area, where a ball could possibly
+be. To clear any marks (blue or brown) press the left mouse button.
+Brown marks can't overwrite blue marks.
+This way you can't erase the blue marks (guessed balls) by accident when
+playing with the right mouse button.</P>
+<P>When you think the configuration of balls you have placed is correct,
+press the middle mouse button.  You will be informed whether you are correct or
+not, and be given your score.  Your score is the number of letters and
+numbers around the outside of the box plus five for each incorrectly
+placed ball. If you placed any balls incorrectly, they will be
+indicated with red fields, and their actual positions indicated with 
+cyan fields.</P>
+
+
+<H2><A NAME="ss4.3">4.3 Game rules</A></H2>
+
+<P>You have to find balls hidden in the black box. Your means are limited -
+you can just fire lasers which are around the box.
+There are three possible outcomes for each ray you send into the box:
+<UL>
+<LI> <B>Detour</B> - The ray is deflected and emerges somewhere other than
+where you sent it in.  On the playfield, detours are
+denoted by matching pairs of numbers - one where the
+ray went in, and the other where it came out.
+                </LI>
+<LI> <B>Reflection</B> - The ray is reflected and emerges in the same place
+it was sent in.  On the playfield, reflections are
+denoted by the letter `R'.
+                </LI>
+<LI> <B>Hit</B> The ray strikes a ball directly and is absorbed.  It does
+not emerge from the box.  On the playfield, hits are
+denoted by the letter `H'.</LI>
+</UL>
+
+The rules for how balls deflect rays are simple and are best shown by
+example.</P>
+<P>As a ray approaches a ball it is deflected ninety degrees.  Rays can
+be deflected multiple times.  In the diagrams below, the dashes
+represent empty box locations and the letter `O' represents a ball.
+The entrance and exit points of each ray are marked with numbers as
+described under "Detour" above.  Note that the entrance and exit
+points are always interchangeable.  `*' denotes the path taken by the
+ray.</P>
+<P>Note carefully the relative positions of the ball and the ninety
+degree deflection it causes.</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+    1                                            
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>As mentioned above, a reflection occurs when a ray emerges from the same point
+it was sent in.  This can happen in several ways:</P>
+
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>In the first example, the ray is deflected downwards by the upper
+ball, then left by the lower ball, and finally retraces its path to
+its point of origin.  The second example is similar.  The third
+example is a bit anomalous but can be rationalized by realizing the
+ray never gets a chance to get into the box.  Alternatively, the ray
+can be thought of as being deflected downwards and immediately
+emerging from the box.</P>
+<P>A hit occurs when a ray runs straight into a ball:</P>
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+</PRE>
+</CODE></BLOCKQUOTE>
+</P>
+<P>Be sure to compare the second example of a hit with the first example of
+a reflection.</P>
+
+<HR>
+<A HREF="index-3.html">Previous</A>
+Next
+<A HREF="index.html#toc4">Table of Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,185 @@
+/* XPM */
+static char *red[] = {
+/* width height num_colors chars_per_pixel */
+"    48    48      125            2",
+/* colors */
+".. c #020204",
+".# c #820604",
+".a c #420204",
+".b c #1e1e1c",
+".c c #220204",
+".d c #c20204",
+".e c #463234",
+".f c #620604",
+".g c #221214",
+".h c #a20604",
+".i c #420e0c",
+".j c #320604",
+".k c #e20204",
+".l c #121214",
+".m c #9a0204",
+".n c #520204",
+".o c #d20204",
+".p c #321214",
+".q c #360a0c",
+".r c #1a0204",
+".s c #220e0c",
+".t c #620a0c",
+".u c #b20604",
+".v c #520e0c",
+".w c #420a0c",
+".x c #f20204",
+".y c #720a0c",
+".z c #820a0c",
+".A c #2e2e2c",
+".B c #920a0c",
+".C c #6a0a0c",
+".D c #ca0604",
+".E c #520a0c",
+".F c #3a0a0c",
+".G c #1a0a0c",
+".H c #4e0604",
+".I c #2a0604",
+".J c #2a1214",
+".K c #aa0604",
+".L c #4a0e0c",
+".M c #1a1a1c",
+".N c #5a0204",
+".O c #7a0a0c",
+".P c #262624",
+".Q c #c20604",
+".R c #3e0204",
+".S c #ea0204",
+".T c #1a1214",
+".U c #da0204",
+".V c #3a1214",
+".W c #2a0a0c",
+".X c #ba0604",
+".Y c #5a0e0c",
+".Z c #fa0204",
+".0 c #8a0a0c",
+".1 c #9a0a0c",
+".2 c #6a0e0c",
+".3 c #1a0e0c",
+".4 c #0a0a0c",
+".5 c #8e0204",
+".6 c #260604",
+".7 c #261614",
+".8 c #a20a0c",
+".9 c #421214",
+"#. c #7e0604",
+"## c #960604",
+"#a c #320e0c",
+"#b c #620e0c",
+"#c c #720e0c",
+"#d c #363634",
+"#e c #3a0e0c",
+"#f c #5a0604",
+"#g c #2a0e0c",
+"#h c #860604",
+"#i c #460204",
+"#j c #222224",
+"#k c #260204",
+"#l c #c60204",
+"#m c #6e0204",
+"#n c #261214",
+"#o c #a60604",
+"#p c #460e0c",
+"#q c #360604",
+"#r c #e60204",
+"#s c #720604",
+"#t c #161614",
+"#u c #d60204",
+"#v c #361214",
+"#w c #1a0604",
+"#x c #b60604",
+"#y c #560e0c",
+"#z c #f60204",
+"#A c #760a0c",
+"#B c #860a0c",
+"#C c #323234",
+"#D c #960a0c",
+"#E c #6e0a0c",
+"#F c #ce0604",
+"#G c #1e0a0c",
+"#H c #2e0604",
+"#I c #2e1214",
+"#J c #ae0604",
+"#K c #4e0e0c",
+"#L c #5e0204",
+"#M c #7e0a0c",
+"#N c #460604",
+"#O c #2a2a2c",
+"#P c #c60604",
+"#Q c #3a0604",
+"#R c #ee0204",
+"#S c #1e1214",
+"#T c #de0204",
+"#U c #3e1214",
+"#V c #be0604",
+"#W c #5e0e0c",
+"#X c #fe0204",
+"#Y c #8e0a0c",
+"#Z c #9e0a0c",
+"#0 c #6e0e0c",
+"#1 c #1e0e0c",
+"#2 c #0e0e0c",
+"#3 c #9a0604",
+"#4 c #360e0c",
+"#5 c #660e0c",
+"#6 c #3e0e0c",
+/* pixels */
+"#t#t.M.4#2.P#j..#j#j.b#j.P#O#t.M.P.e#i#m.5#o.u.X#x.K#3.#.f.R#O#O#C#C.P.A#C#O#O.A#C.P#j#t.l#2.l#j",
+".P.P#j.l.M#O.b..#O.A.P#j#j#j.M.N.m#P.D#P#P#l.d.d.d.X#x.u#J.K#o#.#N#j.M.P.A.P.P.A.A.P.P.b#O#C#O#C",
+"#C#C.A.M.P.A.b..#j.P.M.M.e#m#P.D#l.o.o#l#F#F#P#P.d.Q.X#x.u#J#o.h.8##.n#O#O.b.M.b.P.b.b.b.b.P.M#C",
+"#O.P#j#2#t.P#t#2.P.A.b#L.d#l#l.o#F.o#F#u.o.o.o#l.D.d.d.d#x.u#J.K.h#Z.1#Y#N.A.P#O.A.P.P.P.P.P#j#C",
+".A.b.M#2#2.b.l#2#O#k.m#P#F#F.o#u#u.U.U.U#u#u#u.o#F#P.Q.Q.X#x#J.K#o.h#3###Y.C.r.b.A#j#O#O#O#O.P#C",
+"#2.l.l.M#j.A#O.M.a.X.Q#l.o#u#u.U#T.k.k#T.k#T.U#u.o.o#l.Q#V.X.u#J#o.8.1#D#Y#h.z#H.A.A.A.A#j.A#j#t",
+"#j#j#t.P.P.P.P.n.d.d.D.D.o#u#T.k.k#r#r#r#r.k#T.U#u#F.o.d.d.X#x.u.K#o.h###D#Y#h.z#q.A.A.P.b#O#j.b",
+"#O.A#O#C#C#O.n.X#V#P#l.o#u#T#T.k#r.S#R.S.S.S.k#T.U#u#F.D.Q#V#x.u.K.h#Z.1.B#h#B.z.O#q.M#t.M#j.M.M",
+".P#j#j#O#C.R#x.X.d.D#F#F.U#T#r.S#R.x.x.x#R#R.S.k#T#u.o#F#l#V#x.u#J#o.h.h#D.B#B.z#M#c#k.P.P.b.b.P",
+"#j.b.b#j.c#J#x#V.Q#l.o#u.U.k#r#R.x#z.Z.Z#z.x.S#r#T.U#u#l.D.Q#V#x#J#o.h.1.B#Y.0.z.O.O#c#O#O.P#O#O",
+"#2.M.b.M#h#J#x.X.Q#P#F#u#T.k#r#R.x.Z#X#X#z.x.S#r.k.U#u.o#l#V.X#x.u#o.h.h###Y.0#B.O#A#E.H#j.b#O.l",
+"#2.P.P.H.K.u#x#V#P#l.o#u.U.k.S#R#z#X#X#X.Z#z#R.S#T.U#F#F.D.d.X#x.u.8.h.1#D#Y#h.z#M#A#c#0.j#j.b.4",
+"#O#d.A.h.K.u#x.X#P.D#F#u#T.k.S#R.x.Z#X#X#z.x.S#r.k#T.o.o#P.d.X.u#J.K.h#3##.B.0.z.O#A#E.2#b.b.b.b",
+"#O#C.f.h#o#J.u.d.Q#l#F#F.U#T#r.S#R#z#z#z.x#R.S#r#T#u.o.D#l#V.X#x.u.8.h.1#D#Y#B.z#M#A#0.C.t#q#2.b",
+".M.M.1.8#o#J.u.X.Q#l#F#F.U.U.k.S.S#R#R#R#R.S#r.k.U#u.o.D#P.d#x.u#J#o.h#3.B#Y.0.z.O#A#0.2#b.Y#t.M",
+".P.a#3.h#o#J.u#x.d#P#l.o.o.U#T.k#r#r.S.S.S#r.k.U.U#F#F#l.d.X.X.u#J.8#Z#D###Y#B#M.O#A#E.C#W.t.6#j",
+"#j#s#D#Z.h.K#J#x.X.Q#P#F.o#u#u#T.k.k.k.k.k#T#T.U#u.o.D#P.Q.X.u#J.K.h.h#D#Y.0#B#M#c#c#0.t#W.Y.w.P",
+"#j#Y##.h#o.8#J.u.X#V.Q#l.D.o#u#u.U.U#T#T.U.U#u#F.o.D#l#V.X#x.u.K#o.h.1##.B.0.z#M.O.y.C#5#b.Y.v.A",
+".j#Y.B.1.h#o.K#J#x.X.Q.d#P.D.o.o#u#u#u.U#u#u#F#F#l.D.d.d#x.u#J.K.8.h#D##.0#B.z.O#A#0.2#b.Y#y.v#w",
+".H.0.B##.1#o.8#J.u#x.X.Q#l#l.D#F#l.o.o.o#F#F.o#l.D.Q#V#x#x.u#J.8.h.1###Y.0#B#M.O#c.y.t.t#W#y#K.W",
+".f.0#Y###D.h.h#o#J.u#x.X.Q#V.d.D#P.D#P.D.D#P.D.d.d#V.X#x.u.K.K.h#3#D.B#Y#B.z.O.O#0#0#5.t#y.v#K.q",
+"#s#B.0#Y##.1.8#o.K#J#J.u#x.d#V.Q.d.d#l#l.d.d.d#V.X#x#x#J#J.8.h#Z.1#D#Y.0#B.z.O.y#E.C#b.Y#y.v#K#e",
+".y.z.0#Y####.1.h.h.K#J#J.u#x#x#V.X#V#V#V#V.X.X#x#x.u.u.K.K#o.h#3#####h#B#M#M#c#c.2.t#b#W#y#K.L#6",
+".O#M.z.0#Y.B##.1.h.8#o#J#J#J#x.u#x#x#x#x#x#x.u.u.u.K.K#o.h#Z.1#D#Y.0.0.z.z#c#A.y.t#5#W#y.v#K.9.i",
+"#A#M#M.z.0#Y.B#D.h#Z.h.8.K.K#J.u#J.u.u.u.u.u#J.K.K#o.8.h.h####.B#Y.0#B#M#M#A#0#0#5.t.Y#y#K#K.9#6",
+"#E#c#M.z#B#h#Y.B#D##.1.h.h#o#o#o.K.K.K.K.K.K.K#o#o.h.h.1#D#D#Y.5.0.z#M.O#A#c#E.t#b.Y#y.v#K#p.i#v",
+".t.y.O#M.z#B#h#h#D###D.1.1.8.8.8.h.8.8.8.h.8.8#Z#Z.1#3##.B.B.0#B#B.z#M#c.y#0.2.t#W.Y.v#K.L#p#6#a",
+".H#0#c#A#M#M#B.0.0#Y##.B#3###3.h#Z.h.h.h#Z#3.h#3####.B.B.5.0#B#B#M.O#c#A#E.C.t#b#W#y.v.9.9.9#U.s",
+"#Q.C#0#c#A.O#M.z#B#B#Y#Y.B.B.B###D#D#D#3.1#D#D.B.B.B#Y.0.0#B.z#M.O.O.y#0.2#5#W.Y.E#y.v#K.i#6#e#G",
+".6#5#E#E#A#c.O#M.z#B#B.0.0#Y.B#Y#Y####.B#Y##.B#Y#Y.0#B#B.z.z.O.O#c#c#0.C#b#b#W.Y#y#K#p.i#U.V#v.A",
+"#O#b#5.2.y#c#A#A.O#M#M#B.z#B.0#h.0.0.0#h.0#h.0#B#B#B.z#M.O.O#c.O#E.C#5.t#b.Y.E#y#K.9.L.i#e#v.p.b",
+".A.w#b.t#5#0#0#c#c#A#M.O.z.z.z#B#B.z#B#B#B#B.z.z.z#M#M.O.O#c#A#0#0.2#5#b.t.Y#y.v.9.L#U.V#v#a.s#O",
+".A.I#W#b.t.t#E#E.y.y#A#A#A.O#M.O#M#M.z#M#M#M#M.O.O.O.O#c#A#0.C.t.t.t#W.Y#y.v#K#K#p#p#6#e#v#a#d#d",
+"#j#j#y.Y#W#b#5.2.2#0#0.y#A#A#c.O.O.O#c.O.O.O#A#A#c#c#0#c.2.C.2#5#b#W.Y#y.v.v.9#p.9.V.V.p#I.J#C.A",
+".l#t#H#y.Y.Y.t#b.t.C#5.2.2.y#0#c.y#A#c#c.y.y#c#c#0#0.C.C#5.t#b#W#W#y#y.v.9#K#p.i#6#e#v#I.J#j#j.M",
+".M#t.b#K.v#y.Y.Y#b#W#5.t.C.2.C.C.2.C#E.C.2.2.C.C.C.t#5#b#b#W.t.Y#y#y#K#K.L#p.9#U.V.p#a#a#n.M.b.b",
+"#O#O.A.6#K#K#y#y.Y.Y#W#W#W#b#b.t#5#5#5.t.2#5#b#b#5#b#b.t.Y#y#y.v#K#K.L.L.i.i#6#4.p#I.J#n#O#O#d#d",
+".P#j.A#O.F#K#K.v.v#y.Y#y.t#W#W#b#W#W#b#b.t#W#W#W#f.Y#y#y.v.v#K#K#K.9.i#U#U.V#v.p#a.J#n.3#O.P#C#C",
+"#j#j.P#j#j#p#p#K.L#K.v.v.v#y#y.Y.Y.Y#y#y.Y.Y.Y#y#y#y.v.v.v#K.L#p#p.9.i#6#4#v.p#I.J#n.s.l.M#t#t.b",
+".A#O#O.P#j.7.9.i.L.L.L#K#K#K.v.v.v.v#y#y.v.v.v.v#K#K#K#K.9#p.9.9.i#6.V#v.p#a#I#n#n#S#t.l.M.l.M.P",
+"#d.b.P.P#j#C#G#U.9.9.9.L.L.L.L.L.L.L.9.v#K.L.9#K#p.9.L#p.9.i.i.V.V#4.p.p#I.J.J#n.g#j#O#j#O.P.A#d",
+"#O.l.b.P.b#O.P#w#6.i.i#U.9.9#p#p.L.L.L#p.L.9.L#p#p#p#U.i#6#U#v.V#v.p.p#I#n#n.g#S#C#C.A#j#d.A.A#d",
+".b.l.b.P#2#j#j#j.M#v#e#e#6#U#U#U#U.i#U#U.i#U#U#U.V#6.V.V#4#v#a#a#I#g#n#n.g#S.T#O#C#d.A.M.A.A.P.P",
+".P#t.P.A.M.A.A.b.P.b#g#v#v#4#e#e#e.V#e#e.V#e#e#4#e#v.p#a#I#a#I.J.J#n#n.g#S.b.P.P.b#j.M.l.P#O.b.A",
+".P.M.P#C.P#C.A#j.A#O.P.7#I#I.p.p.p#v#v#4#v.p#v.p.p#a#I#I.J#n#n.g.g#S#S.T.P#O.P#O#j#O#O#j#C#j.M.P",
+".P#t#O#C.P.P.b.M.P#j.b.A#O.G#g.J#a#I.J.J.J#I.J.J.J.J.J#n#n#n.g.g#S.T.A.A#j.A#O.P#j#O#C#O#C.M#j#O",
+".A.P#C#C#j#O.P.P#d.A#O#O.A#C#O#C.3#n.J.J#n#n#n#n.g.g.g#S#S#S.T#j.M#O#j.P.b#O.b.M#O#O#O.P#O.l#j#d",
+".A#j#C#j.l.A.P.l#j.P.A#O.A#C#O#O#O.l#t#j.3#1#S#S#S.T.3.A.P.A.A#O.A#C#O#O#O#j.b#j.A#O#O#t.M.4#t#O"
+};
+SIMPLE  =                    T                                                  BITPIX  =                    8                                                  NAXIS   =                    2                                                  NAXIS1  =                   48                                                  NAXIS2  =                   48                                                  HISTORY Written by XV 3.10a                                                     COMMENT Made with GIMP                                                          END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -"2"-%"%-*-2***"-%--*-2***""-**
+*-%22"*%%5-**-2*2"*"%****%*"5%*2%%%"-*--"-*%"*2*2"*%%2%2-"-*%%*%*"**"2"%%%---%  %%"%*-%"""!!!!!!!!!   *25---%%*%*%!""  """ """   !! 22-"5--55%%"2!"""""""""""%#""# "" "  "*"*%-5-**%"""""###%%%%&&%%%%####" "" %""%""  #"#%%%&&'''&&'''&&&%%%#"  "%"-*##%%&'&())*))**()))"'&&%%###"!! *%22**-##&&'')))**(+++(-+**+**('&&%##""**55#%&''*)+(+-++-+,+--+++(+**)('&&##" "! &''(*(++--..0./00..00..+++(*))&&%"# """"&')*+--...//00000000//00.0-+-+*)'&%%" "  2--)*((,,..///020223222200000/.+((()'&%##  55-*(+..00/20333443444433322000/..-+*('&%""! ***+-.0//022434616661616444320000,++(*'#&#""+,,/00234466797777977977644330000.+**)'&# ! -+.0/02344779997:::8;::99976643200..-+)'#&%#.0/22466779878;=;;;=8;877992644200/,+(*)&%"""!(.023411:7:;;>>>;>>>;>>==;8799644320..-()'%#" ,0234179:7;;;<<<>>>>>>><<;;;::726320/0,(*'&%# /223679:;=;>>>?@?@@@@@?>><>;;77976422/..+('&##"0236797;;><???B@BBBBBB@@@>><;=;:766330/.(+)&%#".36777;;;>??@BBDCDDDDCCBB@@>><;877142200-(*)&#"*4677;><>??@BDDFDDEEDDDDCBB??>;=;:76430.,+*'&%#%677:;;<?@BCFDDIGIGIIGIDDDCB@>>;8:974300..+(&%#697;<>?@BCFEEIJEIIIJJIEIFDBB@?>;;7764200.(()&#79;;<>?BCFDGIIIKKKLKKJJEIDDB@?>>;:76430/.-*'&%"77;<>?@CDFEIIKKLLMMLLKJIIEDCB@><;;796320.++*'%-"*:=;>?BCFGJIKKMOOOOOMMLKIIGFC@?>;;:764200.()'%%8;<?@BDGEIILMOPPRRRPOLLJJEDCC@?>=:77420/,+)(";><?@CFEJJLLORRSSSSRPOLKIIGDB@?<;897630/.-*'*2%;<?@DFEJJLMPRSVVVTSRPMKIIEDCB@>;;:7432/.+(*5-;>@BCGIJKMORSTWXXVTRPOMIIGDC@?>;879630/,-*%%>@BDGEIKLORSVXXXWVSRMLJJIDCB@>;;:7132/0."
+1?BCFGJKMOPSTWXXVTRPOLKIEDCB@<;;77640/,"*""?BDFEIKLOPSTVWWVTRPMLKEIFDB?<;;9763000**%**%""*2BCDIJJLMPRSTTTSSROMKIJEDB@?<;;:94320%%%*-*22*CDGEIKMMOPRSRRROMLKJIFDB@>;=;91430"""%%%%DDIIIKMOOPPPPOMLKJIDDCB@><;7:713--%*""-*CFEIKKLMOOMOMLKIIEFDC@?<>;:713----"-"-*6GJJIKKLLLKKKIJGFFCB?><;877+
+-"****%2*%"%%-!DEEIJIJKIIIEIDDDB@?>;=;7-%*-%%%%%"222-%-"%9'GIEIIEJJGGDFCB@?<;>7**%%2%%"**-%""" 6GIGGEDDDCB@?><."%-%%--%%*2*2
+%""""%*%9'2<@CB>80%**22%-2**-2%""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

@@ -1,0 +1,18 @@
+# KDE Config File
+[KDE Desktop Entry]
+BinaryPattern=kblackbox;
+Protocols=
+MimeType=
+Comment=A little logical game
+Exec=kblackbox
+Name=KBlackBox
+Name[cs]=KBlackBox
+TerminalOptions=
+Icon=kblackbox.xpm
+Comment=A little logical game
+Comment[cs]=Mala logicka hra
+Path=
+DocPath=kblackbox/index.html
+Extensions=
+Type=Application
+Terminal=0

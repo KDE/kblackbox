@@ -214,11 +214,11 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   p->setPen( yellow );
   if ( (row == curRow) && (col == curCol) ) {	// if we are on current cell,
     if ( hasFocus() ) {
-      p->drawEllipse( 4, 4, x2-6, y2-6 );	// draw ellipse
+      p->drawRect( 0, 0, x2, y2 );
     }
     else {					// we don't have focus, so
       p->setPen( DotLine );		        // use dashed line to
-      p->drawEllipse( 4, 4, x2-6, y2-6 );	// draw ellipse
+      p->drawRect( 0, 0, x2, y2 );
       p->setPen( SolidLine );		        // restore to normal
     }
   }

@@ -158,7 +158,7 @@ lasers and around them is the border. Remap the colors yourself
 <sect1 id="user-interaction">
 <title>User Interaction</title>
 
-<para>The cursor (a circle) can be moved around the box with the
+<para>The cursor can be moved around the box with the
 standard cursor movement keys or the mouse. Switching of lasers or
 marking of black boxes is done by the <mousebutton>left</mousebutton>
 mouse button, or by pressing <keycap>Return</keycap> or

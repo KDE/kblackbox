@@ -1,0 +1,214 @@
+<!doctype linuxdoc system>
+
+<article>
+<title>KBlackBox Game Manual
+<author>Robert Cimrman
+<date>v0.2.3, 10. February 1998 
+<abstract>This document contains the installation guide and a brief description
+of the KBlackBox game.
+</abstract>
+
+<toc>
+
+<sect>What is KBlackBox?
+<p>
+KBlackBox is a superb :-) graphical logical game, inspired by emacs' blackbox.
+Copying policy is GPL. Major part of this help file is based on the original
+emacs's help. 
+
+KBlackBox is a game of hide and seek played on an grid of boxes. Your opponent
+(Random number generator, in this case) has hidden several balls within this
+box. By shooting rays into the box and observing where they emerge it is
+possible to deduce the positions of the hidden balls. The fewer rays you use to
+find the balls, the lower your score.
+
+<sect>Installation
+<p>
+KBlackBox is a KDE application. Therefore you need to have KDE installed on your
+computer - at least kdesupport, kdelibs and kdebase packages. The actual
+installation is very easy:
+<code>
+       cd somewhere
+       gunzip kblackbox-x.y.z.tgz
+       tar -xvf kblackbox-x.y.z.tar
+       cd kblackbox-x.y.z
+       # This is for generating the configure script. It will be probably removed,
+       # when kblackbox is a part of kdegames.
+       make -f Makefile.dist
+       #
+       ./configure
+       make
+       make install
+</code>
+You may need to be root when doing make install.
+
+<sect>GUI description
+<p>
+<itemize>
+<item><bf/Menus/
+  <itemize>
+  <item><bf/File/
+    <itemize>
+    <item><bf/Quit/ - Well, it's difficult to explain. Let's skip it. 
+    </itemize>
+  <item><bf/Game/
+    <itemize>
+    <item><bf/New/ - Starts a new game (and abandons the current, if any). 
+    <item><bf/Give up/ - Shows you positions of the balls. 
+    <item><bf/Done/ - Checks whether all balls are placed. If yes, it terminates
+    the current game, computes the final score and indicates real positions of
+    the balls. The middle mouse button has the same function. 
+    <item><bf/Resize/ - Resizes the main window, so that it fits perfectly its
+    contents. This is useful, when you accidentaly change the size of the
+    window...
+    </itemize>
+  <item><bf/Options/
+    <itemize>
+    <item><bf/Size/ - Sets the size of the game field (black box). 
+    <item><bf/Balls/ - Sets the number of balls in the black box. 
+    <item><bf/Tutorial/  - Switches on/off the tutorial mode (i.e you can see,
+    where the balls actually are).
+    </itemize>
+  <item><bf/Help/
+      <itemize>
+    <item><bf/Help/ - Displays this help. 
+    <item><bf/About/ - Displays the "About" dialog.
+    <item><bf/About Qt/ - Displays the information dialog about the Qt GUI library. 
+    </itemize>
+  </itemize>
+<item><bf/Tool bar:/ The tool bar offers some of the most useful menu functions,
+namely, in the mentioned order:
+  <itemize>
+  <item><bf/Quit/
+  <item><bf/New/
+  <item><bf/Give up/
+  <item><bf/Done/
+  </itemize>
+<item><bf/Status bar:/ It shows you some useful information.
+</itemize>
+
+<sect>Game description
+<p>
+In the first part of this section a description of the game board will be given.
+The second part deals with user interaction with the game board and finally in
+the third part the actual game rules are explained.
+
+<sect1>Game board descritpion
+<p>
+The folloving types of fields are found on the game board: 
+
+<itemize>
+<item><bf/"gray"/ - The black box. Here you mark the fields, where the balls probably are. 
+<item><bf/"green"/ - These are lasers, shooting rays of light when switched on. 
+<item><bf/"white"/ - Nothing of interest - it's just a border. 
+<item><bf/"blue"/ - "There must be one!", you think. 
+<item><bf/"cyan"/ - Correct positions of balls are indicated by this type. 
+<item><bf/"red"/ - Wrong positions of balls are indicated by this type. 
+<item><bf/"brown"/ - Marking colour. 
+</itemize>
+
+<bf/NOTE:/ The names of colours are used just for identifying the different types
+of the fields in this text. They <em/might not/ be in any relation with the
+actual colour of the fields. Simply said: the black box is in the centre, around are
+the lasers and around them is the border. Remap the colours yourself :-). 
+
+<sect1>User Interaction
+<p>
+The cursor (a circle) can be moved around the box with the standard cursor
+movement keys. Switching of lasers or marking of black boxes is done by the left
+mouse button, or by pressing "Return" or "Enter" keys. You can mark the fields,
+where a ball can't be, too. Just press the right mouse button. It often helps
+you to find an area, where a ball could possibly be. To clear any marks (blue or
+brown) press the left mouse button. Brown marks can't overwrite blue marks. This
+way you can't erase the blue marks (guessed balls) by accident when playing with
+the right mouse button. 
+
+When you think the configuration of balls you have placed is correct, press the
+middle mouse button. You will be informed whether you are correct or not, and be
+given your score. Your score is the number of letters and numbers around the
+outside of the box plus five for each incorrectly placed ball. If you placed any
+balls incorrectly, they will be indicated with red fields, and their actual
+positions indicated with cyan fields.
+
+<sect1>Game rules
+<p>
+You have to find balls hidden in the black box. Your means are limited - you can
+just fire lasers which are around the box. There are three possible outcomes for
+each ray you send into the box:  
+
+<itemize>
+<item><bf/Detour/ - The ray is deflected and emerges somewhere other than where
+      you sent it in. On the playfield, detours are denoted by matching pairs
+      of numbers - one where the ray went in, and the other where it came out.
+<item><bf/Reflection/ - The ray is reflected and emerges in the same place it was
+      sent in. On the playfield, reflections are denoted by the letter `R'.
+<item><bf/Hit/ The ray strikes a ball directly and is absorbed. It does not
+      emerge from the box. On the playfield, hits are denoted by the letter `H'.
+</itemize>
+
+The rules for how balls deflect rays are simple and are best shown by example.
+
+As a ray approaches a ball it is deflected ninety degrees. Rays can be deflected
+multiple times. In the diagrams below, the dashes represent empty box locations
+and the letter `O' represents a ball. The entrance and exit points of each ray
+are marked with numbers as described under "Detour" above. Note that the
+entrance and exit points are always interchangeable. `*' denotes the path taken
+by the ray.
+
+Note carefully the relative positions of the ball and the ninety degree deflection it causes.
+<verb>
+
+           1                                            
+         - * - - - - - -         - - - - - - - -         - - - - - - - -       
+         - * - - - - - -         - - - - - - - -         - - - - - - - -       
+       1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+         - - O - - - - -         - - O - - - - -         - - * * * * - -
+         - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+         - - - - - - - -         - - - * - - - -         - - - O - * - -      
+         - - - - - - - -         - - - * - - - -         - - - - * * - -       
+         - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                       2                         3
+</verb>
+
+As mentioned above, a reflection occurs when a ray emerges from the same point it was sent in. This can happen in several ways:
+
+<verb>
+         - - - - - - - -         - - - - - - - -          - - - - - - - -
+         - - - - O - - -         - - O - O - - -          - - - - - - - -
+       R * * * * - - - -         - - - * - - - -          O - - - - - - -
+         - - - - O - - -         - - - * - - - -        R - - - - - - - -
+         - - - - - - - -         - - - * - - - -          - - - - - - - -
+         - - - - - - - -         - - - * - - - -          - - - - - - - -
+         - - - - - - - -       R * * * * - - - -          - - - - - - - -
+         - - - - - - - -         - - - - O - - -          - - - - - - - -
+</verb>
+In the first example, the ray is deflected downwards by the upper ball, then left by the lower ball, and finally retraces its path to its point of origin. The second example is similar. The third example is a
+bit anomalous but can be rationalized by realizing the ray never gets a chance to get into the box. Alternatively, the ray can be thought of as being deflected downwards and immediately emerging
+from the box.
+
+A hit occurs when a ray runs straight into a ball:
+<verb>
+         - - - - - - - -         - - - - - - - -          - - - - - - - -
+         - - - - - - - -         - - - - - - - -          - - - - O - - -
+         - - - - - - - -         - - - - O - - -        H * * * * - - - -
+         - - - - - - - -       H * * * * O - - -          - - - * - - - -
+         - - - - - - - -         - - - - O - - -          - - - O - - - -
+       H * * * O - - - -         - - - - - - - -          - - - - - - - -
+         - - - - - - - -         - - - - - - - -          - - - - - - - -
+         - - - - - - - -         - - - - - - - -          - - - - - - - -
+</verb>
+Be sure to compare the second example of a hit with the first example of a
+reflection.
+
+<sect>Epilogue
+<p>
+<sect1>Author
+<p> 
+<tt><htmlurl url="mailto:cimrman3@students.zcu.cz" 
+name="Robert Cimrman"></tt><p>
+
+<sect1>Copyright
+<p>
+KBblackBox is released under the GPL License.
+
+</article>

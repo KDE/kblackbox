@@ -20,6 +20,7 @@
 #include <qlabel.h>
 #include <qpushbutton.h>
 #include <ktmainwindow.h>
+#include <krandomsequence.h>
 
 /*
    Types of the boxes (used f.e.g. in the traceRay() method)
@@ -123,6 +124,7 @@ private:
   int score;
   /*  QLabel *scoreText;
   QLabel *statusText;*/
+  KRandomSequence random;
 };
 
 #endif // KBBGAME_H

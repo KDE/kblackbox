@@ -17,8 +17,6 @@
 #include <qtooltip.h> 
 #include <qstring.h>
 #include <qmessagebox.h> 
-#include <stdlib.h>
-#include <time.h>
 
 #include <kapp.h>
 #include <klocale.h>
@@ -632,12 +630,12 @@ bool KBBGame::setBalls( int n )
 void KBBGame::randomBalls( int n )
 {
   int i;
+  random.setSeed(0);
   for (i = 0; i < n; i++) {
-    srandom( (int) time( NULL ) );
     int x=0, y=0; // there is OUTERBBT...
     while (gameBoard->get( x, y ) != INNERBBT ) {
-      x =  2 + random() % gameBoard->width() - 3;
-      y =  2 + random() % gameBoard->height() - 3;
+      x =  2 + random.getLong(gameBoard->width()-4);
+      y =  2 + random.getLong(gameBoard->height()-4);
     }
     gameBoard->set( x, y, BALLBBT );
   }

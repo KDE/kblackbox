@@ -17,7 +17,7 @@
 #include <qwidget.h>
 #include <qmenubar.h> 
 #include <qlabel.h>
-#include <qpushbt.h>
+#include <qpushbutton.h>
 #include <ktopwidget.h>
 
 /*

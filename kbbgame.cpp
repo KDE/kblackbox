@@ -10,13 +10,13 @@
 
 #include <config.h>
 
-#include <qpopmenu.h>
+#include <qpopupmenu.h>
 #include <qkeycode.h>
 #include <qlabel.h>
-#include <qpushbt.h>
+#include <qpushbutton.h>
 #include <qtooltip.h> 
 #include <qstring.h>
-#include <qmsgbox.h> 
+#include <qmessagebox.h> 
 #include <stdlib.h>
 #include <time.h>
 
@@ -568,19 +568,16 @@ void KBBGame::giveUp()
 
 void KBBGame::updateStats()
 {
-  QString s;
-  if (running) {
-    s.sprintf( "%s: %s", trans->translate( "Run"),
-	       trans->translate("Yes") );
-  } else {
-    s.sprintf( "%s: %s", trans->translate( "Run"),
-	       trans->translate("No") );
-  }
+  QString s = i18n("Run: ");
+  if (running)
+    s += i18n("Yes");
+  else
+    s += i18n("No");
   stat->changeItem( (const char *) s, SRUN );
-  s.sprintf( "%s: %2d x %2d", trans->translate( "Size" ),
+  s.sprintf( "%s: %2d x %2d", trans->translate( "Size" ).ascii(),
 	       gr->numC()-4, gr->numR()-4 );
   stat->changeItem( (const char *) s, SSIZE );
-  s.sprintf( "%s: %2d / %2d", trans->translate("Placed"),
+  s.sprintf( "%s: %2d / %2d", trans->translate("Placed").ascii(),
 	     ballsPlaced, balls );
   stat->changeItem( (const char *) s, SBALLS );
 }
@@ -593,7 +590,7 @@ void KBBGame::setScore( int n )
 {
   score = n;
   QString s;
-  s.sprintf( "%s: %d", trans->translate("Score"), n );
+  s.sprintf( "%s: %d", trans->translate("Score").ascii(), n );
   stat->changeItem( (const char *) s, SSCORE );
 }
 

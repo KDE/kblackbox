@@ -12,8 +12,13 @@
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qcolor.h>
-#include <qkeycode.h>
-#include <qwmatrix.h>
+#include <qnamespace.h>
+#include <qmatrix.h>
+//Added by qt3to4:
+#include <QMouseEvent>
+#include <QFocusEvent>
+#include <QResizeEvent>
+#include <QPaintEvent>
 
 #include "kbbgfx.h"
 #include "util.h"
@@ -28,8 +33,8 @@ KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent, const char* name )
   int i;
 
   curRow = curCol = 0;
-  setFocusPolicy( NoFocus );
-  setBackgroundColor( gray );
+  setFocusPolicy( Qt::NoFocus );
+  setBackgroundColor( Qt::gray );
   setCellWidth( CELLW );		// set width of cell in pixels
   setCellHeight( CELLH );		// set height of cell in pixels
   setMouseTracking( FALSE );
@@ -117,7 +122,7 @@ void KBBGraphic::setNumCols( int cols )
 void KBBGraphic::scalePixmaps( int w, int h )
 {
   int i, w0, h0;
-  QWMatrix wm;
+  QMatrix wm;
 
   w0 = pix[0]->width();
   h0 = pix[0]->height();
@@ -181,7 +186,7 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   p->drawPixmap( 0, 0, pm );
   //  bitBlt( this, col * w, row * h, &pm );
 
-  p->setPen( black );
+  p->setPen( Qt::black );
 
   if (type == INNERBBG) {
     p->drawLine( x2, 0, x2, y2 );		// draw vertical line on right
@@ -197,30 +202,30 @@ void KBBGraphic::paintCellPixmap( QPainter* p, int row, int col )
   switch (type) {
   case RLASERBBG:
     s.sprintf( "%c", 'R' );
-    p->drawText( 1, 1, x2-1, y2-1, AlignCenter, s );
+    p->drawText( 1, 1, x2-1, y2-1, Qt::AlignCenter, s );
     break;
   case HLASERBBG:
     s.sprintf( "%c", 'H' );
-    p->drawText( 1, 1, x2-1, y2-1, AlignCenter, s );
+    p->drawText( 1, 1, x2-1, y2-1, Qt::AlignCenter, s );
     break;
   }
   if (type < 0) {
     s.sprintf( "%d", -type );
-    p->drawText( 1, 1, x2-1, y2-1, AlignCenter, s );
+    p->drawText( 1, 1, x2-1, y2-1, Qt::AlignCenter, s );
   }
 
   /*
      Draw extra frame inside if this is the current cell.
   */
-  p->setPen( yellow );
+  p->setPen( Qt::yellow );
   if ( (row == curRow) && (col == curCol) ) {	// if we are on current cell,
     if ( hasFocus() ) {
       p->drawRect( 0, 0, x2, y2 );
     }
     else {					// we don't have focus, so
-      p->setPen( DotLine );		        // use dashed line to
+      p->setPen( Qt::DotLine );		        // use dashed line to
       p->drawRect( 0, 0, x2, y2 );
-      p->setPen( SolidLine );		        // restore to normal
+      p->setPen( Qt::SolidLine );		        // restore to normal
     }
   }
 }
@@ -235,19 +240,19 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
   QColor color;
 
   switch (type = graphicBoard->get( col, row )) {
-  case MARK1BBG: color = darkRed; break;
-  case OUTERBBG: color = white; break;
-  case INNERBBG: color = gray; break;
-  case LASERBBG: color = darkGreen; break;
-  case LFIREBBG: color = green; break;
-  case FBALLBBG: color = red; break;
-  case TBALLBBG: color = blue; break;
-  case WBALLBBG: color = cyan; break;
-  default: color = white;
+  case MARK1BBG: color = Qt::darkRed; break;
+  case OUTERBBG: color = Qt::white; break;
+  case INNERBBG: color = Qt::gray; break;
+  case LASERBBG: color = Qt::darkGreen; break;
+  case LFIREBBG: color = Qt::green; break;
+  case FBALLBBG: color = Qt::red; break;
+  case TBALLBBG: color = Qt::blue; break;
+  case WBALLBBG: color = Qt::cyan; break;
+  default: color = Qt::white;
   }
   p->fillRect( 0, 0, x2, y2, color );
 
-  p->setPen( black );
+  p->setPen( Qt::black );
   p->drawLine( x2, 0, x2, y2 );		// draw vertical line on right
   p->drawLine( 0, y2, x2, y2 );		// draw horiz. line at bottom
 
@@ -258,16 +263,16 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
   switch (type) {
   case RLASERBBG:
     s.sprintf( "%c", 'R' );
-    p->drawText( 1, 1, x2-1, y2-1, AlignCenter, s );
+    p->drawText( 1, 1, x2-1, y2-1, Qt::AlignCenter, s );
     break;
   case HLASERBBG:
     s.sprintf( "%c", 'H' );
-    p->drawText( 1, 1, x2-1, y2-1, AlignCenter, s );
+    p->drawText( 1, 1, x2-1, y2-1, Qt::AlignCenter, s );
     break;
   }
   if (type < 0) {
     s.sprintf( "%d", -type );
-    p->drawText( 1, 1, x2-1, y2-1, AlignCenter, s );
+    p->drawText( 1, 1, x2-1, y2-1, Qt::AlignCenter, s );
   }
 
   /*
@@ -278,9 +283,9 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
       p->drawEllipse( 1, 1, x2-2, y2-2 );	// draw ellipse
     }
     else {					// we don't have focus, so
-      p->setPen( DotLine );		        // use dashed line to
+      p->setPen( Qt::DotLine );		        // use dashed line to
       p->drawEllipse( 1, 1, x2-2, y2-2 );	// draw ellipse
-      p->setPen( SolidLine );		        // restore to normal
+      p->setPen( Qt::SolidLine );		        // restore to normal
     }
   }
 }
@@ -342,7 +347,7 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
     /*
      * Middle click finishes the game.
      */
-    if (e->button() == MidButton) {
+    if (e->button() == Qt::MidButton) {
       emit endMouseClicked();
       return;
     }
@@ -351,7 +356,7 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
     QPoint pos = e->pos();		// extract pointer position
     curRow = pos.y() / cellH;
     curCol = pos.x() / cellW;
-    //kdDebug(12009) << e->state() << " " << LeftButton << " " << e->state()&LeftButton << endl;
+    //kdDebug(12009) << e->state() << " " << Qt::LeftButton << " " << e->state()&LeftButton << endl;
     updateElement( oldCol, oldRow );
     emit inputAt( curCol, curRow, e->button() );
   }
@@ -413,7 +418,7 @@ void KBBGraphic::slotInput()
   if ( !inputAccepted ) {
     return;
   }
-  emit inputAt( curCol, curRow, LeftButton );
+  emit inputAt( curCol, curRow, Qt::LeftButton );
 //  updateElement( curCol, curRow );
 }
 
@@ -454,8 +459,8 @@ void KBBGraphic::focusOutEvent( QFocusEvent* )
 void KBBGraphic::setInputAccepted( bool b )
 {
   inputAccepted = b;
-  if (b) setFocusPolicy( StrongFocus );
-  else setFocusPolicy( NoFocus );
+  if (b) setFocusPolicy( Qt::StrongFocus );
+  else setFocusPolicy( Qt::NoFocus );
 }
 
 /*

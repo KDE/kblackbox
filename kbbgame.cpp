@@ -10,12 +10,14 @@
 
 #include <config.h>
 
-#include <qpopupmenu.h>
-#include <qkeycode.h>
+#include <q3popupmenu.h>
+#include <qnamespace.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
 #include <qtooltip.h>
 #include <qstring.h>
+//Added by qt3to4:
+#include <QPixmap>
 
 #include <kmessagebox.h>
 #include <kdebug.h>
@@ -622,7 +624,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
   int w = gameBoard->width() - 2;
   int h = gameBoard->height() - 2;
 
-  if (state & LeftButton) {
+  if (state & Qt::LeftButton) {
     switch (type) {
     case WBALLBBG: // because of the tutorial mode
     case INNERBBG:
@@ -681,7 +683,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
       }
       break;
     }
-  } else if (state & RightButton) {
+  } else if (state & Qt::RightButton) {
     switch (type) {
     case INNERBBG:
       r->set( col, row, MARK1BBG );

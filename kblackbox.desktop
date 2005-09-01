@@ -24,6 +24,7 @@ GenericName[sr]=Логичка игра црне кутије
 GenericName[sr@Latn]=Logička igra crne kutije
 GenericName[sv]=Svart låda logiskt spel
 GenericName[ta]=கறுப்புபெட்டி லாஜிக் விளையாட்டு
+GenericName[xx]=xxBlackbox Logic Gamexx
 Exec=kblackbox %i %m -caption "%c"
 Name=KBlackBox
 Name[af]=Kblackbox

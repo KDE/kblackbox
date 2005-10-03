@@ -13,6 +13,7 @@
 #include <klocale.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
+#include <kglobal.h>
 
 #include "kbbgame.h"
 #include "version.h"

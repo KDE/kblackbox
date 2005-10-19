@@ -3,8 +3,6 @@
 //
 // A simple game inspired by an emacs module
 //
-// File: main.cpp
-//
 // The main() function
 //
 
@@ -33,15 +31,14 @@ int main( int argc, char **argv )
   aboutData.addAuthor("Robert Cimrman",0, "cimrman3@students.zcu.cz");
   KCmdLineArgs::init( argc, argv, &aboutData );
 
-  KApplication a;
+  KApplication application;
   KGlobal::locale()->insertCatalog("libkdegames");
 
-  if (a.isRestored())
+  if (application.isSessionRestored())
       RESTORE(KBBGame)
   else {
-      KBBGame *w = new KBBGame;
-      a.setMainWidget(w);
-      w->show();
+      KBBGame game;
+      game.show();
   }
-  return a.exec();
+  return application.exec();
 }

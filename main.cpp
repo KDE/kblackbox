@@ -37,8 +37,8 @@ int main( int argc, char **argv )
   if (application.isSessionRestored())
       RESTORE(KBBGame)
   else {
-      KBBGame game;
-      game.show();
+      KBBGame *game = new KBBGame;
+      game->show();
   }
   return application.exec();
 }

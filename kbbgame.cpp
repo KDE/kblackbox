@@ -111,7 +111,7 @@ KBBGame::KBBGame()
 
   KConfig *kConf;
   int j;
-  kConf = kapp->config();
+  kConf = KGlobal::config();
   kConf->setGroup( "KBlackBox Setup" );
   if (kConf->hasKey( "Balls" )) {
     i = kConf->readNumEntry( "Balls" );
@@ -168,7 +168,7 @@ KBBGame::~KBBGame()
   KConfig *kConf;
   QString s;
 
-  kConf = kapp->config();
+  kConf = KGlobal::config();
   kConf->setGroup( "KBlackBox Setup" );
   kConf->writeEntry( "Balls", balls );
   kConf->writeEntry( "Width", gr->numC() - 4);

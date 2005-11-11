@@ -128,7 +128,7 @@ void KBBGraphic::scalePixmaps( int w, int h )
   h0 = pix[0]->height();
   wm.scale( (float) w / (float) w0, (float) h / (float) h0 );
   for (i = 0; i < NROFTYPES; i++) {
-    *pixScaled[i] = pix[i]->xForm( wm );
+    *pixScaled[i] = pix[i]->transformed( wm );
   }
 }
 

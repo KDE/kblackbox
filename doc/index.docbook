@@ -40,17 +40,17 @@
 
 <copyright>
 <year>1998</year><year>2000</year>
-<holder>Robert Cimrman</holder>
+<holder>&Robert.Cimrman;</holder>
 </copyright>
 
 <copyright>
 <year>2001-2003</year>
-<holder>Philip Rodrigues</holder>
+<holder>&Philip.Rodrigues;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2003-09-18</date>
+<date>2005-12-10</date>
 <releaseinfo>0.3.0</releaseinfo>
 
 <abstract><para>&kblackbox; is a superb graphical logical game, inspired
@@ -74,7 +74,7 @@ the <application>emacs</application> blackbox game. A major part of this help
 file is based on the original <application>emacs</application>
 help. </para>
 
-<para>&kblackbox; is a game of hide and seek played on an grid of
+<para>&kblackbox; is a game of hide and seek played on a grid of
 boxes. Your opponent (the Random number generator, in this case) has
 hidden several balls within this box. By shooting rays into the box and
 observing where they emerge it is possible to deduce the positions of
@@ -84,7 +84,7 @@ the hidden balls. The fewer rays you use to find the balls, the better
 </chapter>
 
 <chapter id="game-description">
-<title>Game description</title>
+<title>Game Description</title>
 
 <para>In the first part of this section a description of the game board
 will be given.  The second part deals with user interaction with the
@@ -92,7 +92,7 @@ game board and finally in the third part the actual game rules are
 explained.</para>
 
 <sect1 id="game-board-descritpion">
-<title>Game board description</title>
+<title>Game Board Description</title>
 
 <para>The following types of field are found on the game board: </para>
 
@@ -155,11 +155,11 @@ standard cursor movement keys or the mouse. Switching of lasers or
 marking of black boxes is done with the &LMB;, or by pressing the
 <keycap>Return</keycap> or &Enter; key.</para>
 
-<para>You can mark the fields where you think a ball can't be, too. Just press
+<para>You can mark the fields where you think a ball cannot be, too. Just press
 the &RMB;. It often helps you to find an area where a ball could possibly
 be. To clear any marks (blue or brown) press the
-&LMB;. Brown marks can't overwrite blue
-marks. This way you can't erase the blue marks (guessed balls) by accident when
+&LMB;. Brown marks cannot overwrite blue
+marks. This way you cannot erase the blue marks (guessed balls) by accident when
 playing with the &RMB;. </para>
 
 <para>When you think the configuration of balls you have placed is
@@ -173,7 +173,7 @@ and their actual positions indicated with cyan fields.</para>
 </sect1>
 
 <sect1 id="game-rules">
-<title>Game rules</title>
+<title>Game Rules</title>
 
 <para>You have to find balls hidden in the black box. Your means are
 limited - you can just fire lasers which are around the box. There are
@@ -277,14 +277,18 @@ example of a reflection.</para>
 </sect1>
 </chapter>
 <chapter id="gui-description">
-<title><acronym>GUI</acronym> description</title>
+<title>&GUI; description</title>
 
 <sect1 id="game-menu">
-<title>The <guimenu>Game</guimenu> menu</title>
+<title>The <guimenu>Game</guimenu> Menu</title>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
 <guimenuitem>New</guimenuitem></menuchoice></term>
 <listitem><para>Starts a new game (and abandons the current, if
 any.)</para></listitem>
@@ -313,7 +317,11 @@ window...</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
 <guimenuitem>Quit</guimenuitem></menuchoice></term>
 <listitem><para>Quits &kblackbox;</para></listitem>
 </varlistentry>
@@ -322,16 +330,35 @@ window...</para></listitem>
 </sect1>
 
 <sect1 id="settings-menu">
-<title>The <guimenu>Settings</guimenu> menu</title>
+<title>The <guimenu>Settings</guimenu> Menu</title>
 
 <variablelist>
 <varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Show/Hide Toolbar</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Shows or hides the &kblackbox; toolbar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Show/Hide Statusbar</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Shows or hides the &kblackbox; status bar at the base of the screen.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu>
 <guisubmenu>Size</guisubmenu></menuchoice></term>
-<listitem><para>Sets the size of the game field (black box.)  You may choose
+<listitem><para>Sets the size of the game field (black box).  You may choose
 between <guimenuitem>8 x 8</guimenuitem>, <guimenuitem>10 x 10</guimenuitem> and
 <guimenuitem>12 x 12</guimenuitem>.  The default is <guimenuitem>8 x
-8</guimenuitem></para></listitem>
+8</guimenuitem>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -358,6 +385,14 @@ game for this change to take effect.</para></listitem>
 which you can change the keyboard shortcuts used by &kblackbox;.</para></listitem>
 </varlistentry>
 
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Brings up the standard &kde; toolbar configuration dialog to customize the &kblackbox; toolbar.</para>
+</listitem>
+</varlistentry>
 
 </variablelist>
 
@@ -386,10 +421,6 @@ which you can change the keyboard shortcuts used by &kblackbox;.</para></listite
 &kblackbox; functions. From left to right, the icons are:</para>
 
 <variablelist>
-<varlistentry>
-<term><guiicon>Quit</guiicon></term>
-<listitem><para>Quits &kblackbox;</para></listitem>
-</varlistentry>
 
 <varlistentry>
 <term><guiicon>New</guiicon></term>
@@ -409,14 +440,6 @@ the balls. The <mousebutton>middle</mousebutton> mouse button has the same
 function. </para></listitem>
 </varlistentry>
 
-<varlistentry>
-<term><guiicon>&kblackbox; Handbook</guiicon></term>
-<listitem>
-<para>Displays this document in &khelpcenter;.</para>
-</listitem>
-</varlistentry>
-
-
 </variablelist>
 </sect1>
 </chapter>
@@ -428,8 +451,8 @@ function. </para></listitem>
 
 <para>Program Copyright 1998-2000 &Robert.Cimrman; &Robert.Cimrman.mail;</para>
 
-<para>Documentation by Robert Cimrman.  Updated and converted to Docbook
-for KDE 2.0 by &Lauri.Watts; &Lauri.Watts.mail;</para>
+<para>Documentation by &Robert.Cimrman;.  Updated and converted to Docbook
+for &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;</para>
 
 <para>
 Current maintainer &Philip.Rodrigues; &Philip.Rodrigues.mail;

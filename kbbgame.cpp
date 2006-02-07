@@ -64,20 +64,20 @@ KBBGame::KBBGame()
   pix[0] = new QPixmap();
   *pix[0] = BarIcon( pFNames[0] );
   if (!pix[0]->isNull()) {
-    kdDebug(12009) << "Pixmap \"" << pFNames[0] << "\" loaded." << endl;
+    kDebug(12009) << "Pixmap \"" << pFNames[0] << "\" loaded." << endl;
     for (i = 1; i < NROFTYPES; i++) {
       pix[i] = new QPixmap;
       *pix[i] = BarIcon( pFNames[i] );
       if (!pix[i]->isNull()) {
-	kdDebug(12009) << "Pixmap \"" << pFNames[i] << "\" loaded." << endl;
+	kDebug(12009) << "Pixmap \"" << pFNames[i] << "\" loaded." << endl;
       } else {
 	pix[i] = pix[i-1];
 	pix[i]->detach();
-	kdDebug(12009) << "Cannot find pixmap \"" << pFNames[i] << "\". Using previous one." << endl;
+	kDebug(12009) << "Cannot find pixmap \"" << pFNames[i] << "\". Using previous one." << endl;
       }
     }
   } else {
-    kdDebug(12009) << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
+    kDebug(12009) << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
     delete pix[0];
     delete pix;
     pix = NULL;
@@ -642,7 +642,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
       int endX, endY, result;
       result = traceRay( col, row, &endX, &endY );
       r->set( col, row, LFIREBBG );
-      //kdDebug << endX << " " << endY << endl;
+      //kDebug << endX << " " << endY << endl;
       if (col == 1) x = 0; else
       if (col == w) x = w + 1;
       else x = col;
@@ -678,7 +678,7 @@ void KBBGame::gotInputAt( int col, int row, int state )
 	setScore( score+1 );
 	break;
       case WRONGSTART:
-	kdDebug(12009) << "Wrong start?! It should't happen!!" << endl;
+	kDebug(12009) << "Wrong start?! It should't happen!!" << endl;
 	break;
       }
       break;

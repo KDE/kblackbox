@@ -114,7 +114,7 @@ KBBGame::KBBGame()
   kConf = KGlobal::config();
   kConf->setGroup( "KBlackBox Setup" );
   if (kConf->hasKey( "Balls" )) {
-    i = kConf->readNumEntry( "Balls" );
+    i = kConf->readEntry( "Balls",0 );
     balls = i;
     switch (i) {
     case 4: ballsAction->setCurrentItem(0); break;
@@ -127,8 +127,8 @@ KBBGame::KBBGame()
   }
   if ((kConf->hasKey( "Width" )) &&
       (kConf->hasKey( "Balls" ))) {
-    i = kConf->readNumEntry( "Width" );
-    j = kConf->readNumEntry( "Height" );
+    i = kConf->readEntry( "Width", 0 );
+    j = kConf->readEntry( "Height",0 );
     gr->setSize( i+4, j+4 ); // +4 is the space for "lasers" and an edge...
     gameBoard = new RectOnArray( gr->numC(), gr->numR() );
     switch (i) {
@@ -142,7 +142,7 @@ KBBGame::KBBGame()
     sizeAction->setCurrentItem(0);
   }
   if (kConf->hasKey( "tutorial" )) {
-    tutorial = (bool) kConf->readNumEntry( "tutorial" );
+    tutorial = (bool) kConf->readEntry( "tutorial",0 );
   } else tutorial = FALSE;
   tutorialAction->setChecked(tutorial);
 

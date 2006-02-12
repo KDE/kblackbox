@@ -99,7 +99,7 @@ KBBGame::KBBGame()
 	  this, SLOT(gameFinished()) );
 
   /*
-  QToolTip::add( doneButton, i18n(
+  doneButton->setToolTip( i18n(
 		 "Click here when you think you placed all the balls.") );
 		 */
 

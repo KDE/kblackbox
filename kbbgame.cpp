@@ -18,7 +18,7 @@
 #include <qstring.h>
 //Added by qt3to4:
 #include <QPixmap>
-
+#include <ktoolbar.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
 #include <kapplication.h>

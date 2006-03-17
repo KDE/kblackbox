@@ -1,4 +1,5 @@
 kde4_header()
+project(kblackbox)
 
 add_subdirectory( pics ) 
 

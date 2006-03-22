@@ -18,7 +18,7 @@ kde4_automoc(${kblackbox_SRCS})
 
 kde4_add_executable(kblackbox ${kblackbox_SRCS})
 
-target_link_libraries(kblackbox  ${LIB_KDEUI} kdegames )
+target_link_libraries(kblackbox  ${KDE4_KDEUI_LIBRARIES} kdegames )
 
 install_targets(/bin kblackbox )
 

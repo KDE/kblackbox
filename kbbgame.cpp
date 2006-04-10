@@ -322,18 +322,17 @@ void KBBGame::gameFinished()
       abortGame();
       if (score <= (balls*3))
 	s = i18n("Your final score is: %1\n"
-		 "You did really well!");
+		 "You did really well!", score);
       else
 	s = i18n("Your final score is: %1\n"
-		 "I guess you need more practice.");
+		 "I guess you need more practice.", score);
 
-      KMessageBox::information(this,
-			     s.arg(KGlobal::locale()->formatNumber(score, 0)));
+      KMessageBox::information(this, s);
     } else {
       s = i18n( "You should place %1 balls!\n"
-		"You have placed %2.")
-	.arg(KGlobal::locale()->formatNumber(balls, 0))
-	.arg(KGlobal::locale()->formatNumber(ballsPlaced, 0));
+		"You have placed %2.",
+	 KGlobal::locale()->formatNumber(balls, 0),
+	 KGlobal::locale()->formatNumber(ballsPlaced, 0));
 
       KMessageBox::sorry(this, s);
     }
@@ -430,7 +429,7 @@ void KBBGame::updateStats()
 void KBBGame::setScore( int n )
 {
   score = n;
-  statusBar()->changeItem( i18n("Score: %1").arg(n), SSCORE );
+  statusBar()->changeItem( i18n("Score: %1", n), SSCORE );
 }
 
 /*

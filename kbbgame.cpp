@@ -82,7 +82,8 @@ KBBGame::KBBGame()
     delete pix;
     pix = NULL;
   }
-  gr = new KBBGraphic( pix, this, "KBBGraphic" );
+  gr = new KBBGraphic( pix, this );
+  gr->setObjectName("KBBGraphic");
 
   statusBar()->insertItem(i18n("Score: 0000"), SSCORE);
   statusBar()->insertItem(i18n("Placed: 00 / 00"), SBALLS);
@@ -300,7 +301,7 @@ void KBBGame::newGame()
 
   randomBalls( balls );
   remap( gameBoard, gr->getGraphicBoard() );
-  gr->repaint( TRUE );
+  gr->repaint();
   setScore( 0 );
   detourCounter = -1;
   ballsPlaced = 0;

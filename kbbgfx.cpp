@@ -27,8 +27,8 @@
    Constructs a KBBGraphic widget.
 */
 
-KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent, const char* name )
-    : QWidget( parent, name )
+KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent )
+    : QWidget( parent )
 {
   int i;
 
@@ -380,7 +380,7 @@ void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
       curRow = movRow;
       curCol = movCol;
       updateElement( oldCol, oldRow );
-      emit inputAt( curCol, curRow, e->state() );
+      emit inputAt( curCol, curRow, e->buttons() );
     }
   }
 }
@@ -439,7 +439,7 @@ void KBBGraphic::moveSelection(int drow, int dcol)
 
 void KBBGraphic::focusInEvent( QFocusEvent* )
 {
-  repaint( FALSE );
+  repaint();
 }
 
 
@@ -449,7 +449,7 @@ void KBBGraphic::focusInEvent( QFocusEvent* )
 
 void KBBGraphic::focusOutEvent( QFocusEvent* )
 {
-  repaint( FALSE );
+  repaint();
 }
 
 /*

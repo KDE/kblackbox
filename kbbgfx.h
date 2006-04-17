@@ -59,7 +59,7 @@ class KBBGraphic : public QWidget
 {
   Q_OBJECT
 public:
-  KBBGraphic(  QPixmap** p=0, QWidget* parent=0, const char* name=0 );
+  KBBGraphic(  QPixmap** p=0, QWidget* parent=0 );
   ~KBBGraphic();
 
   friend class KBBGame;

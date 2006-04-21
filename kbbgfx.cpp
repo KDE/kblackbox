@@ -34,7 +34,9 @@ KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent )
 
   curRow = curCol = 0;
   setFocusPolicy( Qt::NoFocus );
-  setBackgroundColor( Qt::gray );
+  QPalette palette;
+  palette.setColor( backgroundRole(), Qt::gray );
+  setPalette( palette );
   setCellWidth( CELLW );		// set width of cell in pixels
   setCellHeight( CELLH );		// set height of cell in pixels
   setMouseTracking( FALSE );
@@ -297,8 +299,9 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
 void KBBGraphic::paintEvent( QPaintEvent* )
 {
   int i, j;
-  QPainter paint( drawBuffer );
+  QPainter paint;
 
+  paint.begin( drawBuffer );
   //  kDebug(12009) << drawBuffer->width() << endl;
   for (i = 0; i < numRows; i++) {
     for (j = 0; j < numCols; j++) {
@@ -306,7 +309,10 @@ void KBBGraphic::paintEvent( QPaintEvent* )
       paintCell( &paint, i, j );
     }
   }
-  bitBlt( this, 0, 0, drawBuffer );
+  paint.end();
+  paint.begin(this);
+  paint.drawPixmap(0,0, *drawBuffer);
+  paint.end();
 }
 
 /*

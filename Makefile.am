@@ -18,5 +18,3 @@ EXTRA_DIST = VERSION CHANGES $(xdg_apps_DATA)
 rcdir = $(kde_datadir)/kblackbox
 rc_DATA = kblackboxui.rc
 
-messages: rc.cpp
-	$(XGETTEXT) *.cpp -o $(podir)/kblackbox.pot

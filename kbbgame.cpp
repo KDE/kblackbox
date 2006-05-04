@@ -703,7 +703,8 @@ void KBBGame::initKAction()
   KStdGameAction::gameNew(this, SLOT(newGame()), actionCollection());
   (void)new KAction( i18n("&Give Up"), SmallIcon("giveup"), 0, this, SLOT(giveUp()), actionCollection(), "game_giveup" );
   (void)new KAction( i18n("&Done"), SmallIcon("done"), 0, this, SLOT(gameFinished()), actionCollection(), "game_done" );
-  (void)new KAction( i18n("&Resize"), 0, this, SLOT(slotResize()), actionCollection(), "game_resize" );
+  KAction *action = new KAction( i18n("&Resize"), actionCollection(), "game_resize" );
+  connect(action, SIGNAL(triggered(bool) ), SLOT(slotResize()));
   KStdGameAction::quit(this, SLOT(close()), actionCollection());
 
 
@@ -726,11 +727,21 @@ void KBBGame::initKAction()
 //actionCollection());
 
 // keyboard only
-  (void)new KAction( i18n("Move Down"), Qt::Key_Down, gr, SLOT(slotDown()), actionCollection(), "move_down" );
-  (void)new KAction( i18n("Move Up"), Qt::Key_Up, gr, SLOT(slotUp()), actionCollection(), "move_up" );
-  (void)new KAction( i18n("Move Left"), Qt::Key_Left, gr, SLOT(slotLeft()), actionCollection(), "move_left" );
-  (void)new KAction( i18n("Move Right"), Qt::Key_Right, gr, SLOT(slotRight()), actionCollection(), "move_right" );
-  (void)new KAction( i18n("Trigger Action"), Qt::Key_Return, gr, SLOT(slotInput()), actionCollection(), "move_trigger" );
+  action = new KAction( i18n("Move Down"), actionCollection(), "move_down" );
+  connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotDown()));
+  action->setShortcut(Qt::Key_Down);
+  action = new KAction( i18n("Move Up"), actionCollection(), "move_up" );
+  connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotUp()));
+  action->setShortcut(Qt::Key_Up);
+  action = new KAction( i18n("Move Left"), actionCollection(), "move_left" );
+  connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotLeft()));
+  action->setShortcut(Qt::Key_Left);
+  action = new KAction( i18n("Move Right"), actionCollection(), "move_right" );
+  connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotRight()));
+  action->setShortcut(Qt::Key_Right);
+  action = new KAction( i18n("Trigger Action"), actionCollection(), "move_trigger" );
+  connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotInput()));
+  action->setShortcut(Qt::Key_Return);
 }
 
 void KBBGame::slotResize()

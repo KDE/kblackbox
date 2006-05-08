@@ -32,7 +32,7 @@
 #include <kstdaction.h>
 #include <kstatusbar.h>
 #include <kstdgameaction.h>
-
+#include <ktoggleaction.h>
 #include "kbbgame.h"
 #include "util.h"
 #include "version.h"

@@ -11,7 +11,7 @@
 
 #include <qpainter.h>
 #include <qpixmap.h>
-#include <qcolor.h>
+#include <QColor>
 #include <qnamespace.h>
 #include <qmatrix.h>
 //Added by qt3to4:

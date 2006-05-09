@@ -12,10 +12,10 @@
 
 #include <q3popupmenu.h>
 #include <qnamespace.h>
-#include <qlabel.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
-#include <qstring.h>
+#include <QLabel>
+#include <QPushButton>
+#include <QToolTip>
+#include <QString>
 //Added by qt3to4:
 #include <QPixmap>
 #include <ktoolbar.h>

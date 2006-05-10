@@ -722,7 +722,8 @@ void KBBGame::initKAction()
   list.append(i18n(" 6 "));
   list.append(i18n(" 8 "));
   ballsAction->setItems(list);
-  tutorialAction = new KToggleAction( i18n("&Tutorial"), 0, this, SLOT(tutorialSwitch()), actionCollection(), "options_tutorial" );
+  tutorialAction = new KToggleAction( i18n("&Tutorial"), actionCollection(), "options_tutorial" );
+  connect(tutorialAction, SIGNAL(triggered(bool) ), SLOT(tutorialSwitch()));
 //  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
 //actionCollection());
 

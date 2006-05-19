@@ -9,16 +9,12 @@
 // The implementation of the KBBGraphic widget
 //
 
-#include <qpainter.h>
-#include <qpixmap.h>
+#include <QPainter>
+#include <QPixmap>
 #include <QColor>
-#include <qnamespace.h>
-#include <qmatrix.h>
-//Added by qt3to4:
 #include <QMouseEvent>
-#include <QFocusEvent>
-#include <QResizeEvent>
 #include <QPaintEvent>
+#include <kdebug.h>
 
 #include "kbbgfx.h"
 #include "util.h"
@@ -296,15 +292,18 @@ void KBBGraphic::paintCellDefault( QPainter* p, int row, int col )
    Xperimantal...
 */
 
-void KBBGraphic::paintEvent( QPaintEvent* )
+void KBBGraphic::paintEvent( QPaintEvent* p)
 {
-  int i, j;
-  QPainter paint;
+  QRect r = p->rect();
+  int fromCol = r.left() / cellW;
+  int toCol = r.right() / cellW;
+  int fromRow = r.top() / cellH;
+  int toRow = r.bottom() /cellH;
 
-  paint.begin( drawBuffer );
+  QPainter paint( drawBuffer );
   //  kDebug(12009) << drawBuffer->width() << endl;
-  for (i = 0; i < numRows; i++) {
-    for (j = 0; j < numCols; j++) {
+  for (int i = fromRow; i <= toRow; i++) {
+    for (int j = fromCol; j <= toCol; j++) {
       paint.setViewport( j * cellW, i * cellH, width(), height() );
       paintCell( &paint, i, j );
     }
@@ -469,16 +468,8 @@ void KBBGraphic::setInputAccepted( bool b )
   else setFocusPolicy( Qt::NoFocus );
 }
 
-/*
-   Updates the cell at (col,row).
-*/
-
 void KBBGraphic::updateElement( int col, int row )
 {
-  QPainter paint( this );
-
-  paint.setViewport( col * cellW, row * cellH, width(), height() );
-  paintCell( &paint, row, col );
+  repaint( col*cellW, row*cellH, cellW, cellH );
 }
-
 #include "kbbgfx.moc"

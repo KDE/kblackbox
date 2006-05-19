@@ -13,12 +13,6 @@
 #define KBBGFX_H
 
 #include <QWidget>
-#include <qpixmap.h>
-//Added by qt3to4:
-#include <QMouseEvent>
-#include <QFocusEvent>
-#include <QResizeEvent>
-#include <QPaintEvent>
 
 #include "util.h"
 

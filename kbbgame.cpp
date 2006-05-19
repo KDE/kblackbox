@@ -8,10 +8,6 @@
 // The implementation of the KBBGame widget
 //
 
-#include <config.h>
-
-#include <q3popupmenu.h>
-#include <qnamespace.h>
 #include <QLabel>
 #include <QPushButton>
 #include <QToolTip>
@@ -701,22 +697,26 @@ void KBBGame::initKAction()
 {
 // game
   KStdGameAction::gameNew(this, SLOT(newGame()), actionCollection());
-  (void)new KAction( i18n("&Give Up"), SmallIcon("giveup"), 0, this, SLOT(giveUp()), actionCollection(), "game_giveup" );
-  (void)new KAction( i18n("&Done"), SmallIcon("done"), 0, this, SLOT(gameFinished()), actionCollection(), "game_done" );
+  KAction *giveUpAct = new KAction( KIcon(SmallIcon("giveup")), i18n("&Give Up"), actionCollection(), "game_giveup" );
+  connect(giveUpAct, SIGNAL(triggered(bool)), SLOT(giveUp()));
+  KAction *doneAct = new KAction( KIcon(SmallIcon("done")), i18n("&Done"), actionCollection(), "game_done" );
+  connect(doneAct, SIGNAL(triggered(bool)), SLOT(gameFinished()));
   KAction *action = new KAction( i18n("&Resize"), actionCollection(), "game_resize" );
   connect(action, SIGNAL(triggered(bool) ), SLOT(slotResize()));
   KStdGameAction::quit(this, SLOT(close()), actionCollection());
 
 
 // settings
-  sizeAction = new KSelectAction( i18n("&Size"), 0, this, SLOT(slotSize()), actionCollection(), "options_size");
+  sizeAction = new KSelectAction( i18n("&Size"), actionCollection(), "options_size");
+  connect(sizeAction, SIGNAL(triggered(bool)), SLOT(slotSize()));
   QStringList list;
   list.append(i18n("  8 x  8 "));
   list.append(i18n(" 10 x 10 "));
   list.append(i18n(" 12 x 12 "));
   sizeAction->setItems(list);
 
-  ballsAction = new KSelectAction( i18n("&Balls"), 0, this, SLOT(slotBalls()), actionCollection(), "options_balls");
+  ballsAction = new KSelectAction( i18n("&Balls"), actionCollection(), "options_balls");
+  connect(ballsAction, SIGNAL(triggered(bool)), SLOT(slotBalls()));
   list.clear();
   list.append(i18n(" 4 "));
   list.append(i18n(" 6 "));
@@ -731,18 +731,27 @@ void KBBGame::initKAction()
   action = new KAction( i18n("Move Down"), actionCollection(), "move_down" );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotDown()));
   action->setShortcut(Qt::Key_Down);
+  addAction(action);
+
   action = new KAction( i18n("Move Up"), actionCollection(), "move_up" );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotUp()));
   action->setShortcut(Qt::Key_Up);
+  addAction(action);
+
   action = new KAction( i18n("Move Left"), actionCollection(), "move_left" );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotLeft()));
   action->setShortcut(Qt::Key_Left);
+  addAction(action);
+
   action = new KAction( i18n("Move Right"), actionCollection(), "move_right" );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotRight()));
   action->setShortcut(Qt::Key_Right);
+  addAction(action);
+
   action = new KAction( i18n("Trigger Action"), actionCollection(), "move_trigger" );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotInput()));
   action->setShortcut(Qt::Key_Return);
+  addAction(action);
 }
 
 void KBBGame::slotResize()

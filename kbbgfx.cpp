@@ -35,7 +35,7 @@ KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent )
   setPalette( palette );
   setCellWidth( CELLW );		// set width of cell in pixels
   setCellHeight( CELLH );		// set height of cell in pixels
-  setMouseTracking( FALSE );
+  setMouseTracking( false );
 
   pix = p;
   if (pix == NULL) pixScaled = NULL;

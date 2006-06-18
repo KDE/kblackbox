@@ -103,7 +103,7 @@ KBBGame::KBBGame()
   /*
      Game initializations
   */
-  running = FALSE;
+  running = false;
   gameBoard = NULL;
 
   KConfig *kConf;
@@ -140,7 +140,7 @@ KBBGame::KBBGame()
   }
   if (kConf->hasKey( "tutorial" )) {
     tutorial = (bool) kConf->readEntry( "tutorial",0 );
-  } else tutorial = FALSE;
+  } else tutorial = false;
   tutorialAction->setChecked(tutorial);
 
   setCentralWidget( gr );
@@ -301,7 +301,7 @@ void KBBGame::newGame()
   setScore( 0 );
   detourCounter = -1;
   ballsPlaced = 0;
-  running = TRUE;
+  running = true;
   updateStats();
   emit gameRuns( running );
 }
@@ -368,7 +368,7 @@ void KBBGame::getResults()
 void KBBGame::abortGame()
 {
   if (running) {
-    running = FALSE;
+    running = false;
     ballsPlaced = 0;
     updateStats();
     gr->clearFocus();
@@ -435,7 +435,7 @@ void KBBGame::setScore( int n )
 
 bool KBBGame::setSize( int w, int h )
 {
-  bool ok = FALSE;
+  bool ok = false;
   if (((w+4) != gr->numC()) || ((h+4) != gr->numR())) {
     if (running) {
       ok = KMessageBox::warningContinueCancel(0,
@@ -443,7 +443,7 @@ bool KBBGame::setSize( int w, int h )
 			      "This will be the end of the current game!"),QString::null,i18n("End Game"))
 	== KMessageBox::Continue;
 
-    } else ok = TRUE;
+    } else ok = true;
     if (ok) {
       gr->setSize( w+4, h+4 ); // +4 is the space for "lasers" and an edge...
       setMinSize();
@@ -452,7 +452,7 @@ bool KBBGame::setSize( int w, int h )
       gameBoard = new RectOnArray( gr->numC(), gr->numR() );
       if (running) abortGame();
       newGame();
-      //      gr->repaint( TRUE );
+      //      gr->repaint( true );
     }
   }
   return ok;
@@ -464,13 +464,13 @@ bool KBBGame::setSize( int w, int h )
 
 bool KBBGame::setBalls( int n )
 {
-  bool ok = FALSE;
+  bool ok = false;
   if (balls != n) {
     if (running) {
       ok = KMessageBox::warningContinueCancel(0,
 			 i18n("This will be the end of the current game!"),QString::null,i18n("End Game"))
 	== KMessageBox::Continue;
-    } else ok = TRUE;
+    } else ok = true;
     if (ok) {
       balls = n;
       if (running) abortGame();
@@ -549,7 +549,7 @@ int KBBGame::traceRay( int startX, int startY, int *endX, int *endY )
       sly = 1; scy = 0; sry = -1;
       break;
     }
-    directionChanged = FALSE;
+    directionChanged = false;
     if (gameBoard->get( x+scx, y+scy ) == LASERBBT) {
       type = DETOUR;
       *endX = x+scx;
@@ -564,13 +564,13 @@ int KBBGame::traceRay( int startX, int startY, int *endX, int *endY )
     if (gameBoard->get( x+slx, y+sly ) == BALLBBT) {
       type = REFLECTION;
       if (gameBoard->get( x, y ) == LASERBBT) break;
-      directionChanged = TRUE;
+      directionChanged = true;
       refl += 1;
     }
     if (gameBoard->get( x+srx, y+sry ) == BALLBBT) {
       type = REFLECTION;
       if (gameBoard->get( x, y ) == LASERBBT) break;
-      directionChanged = TRUE;
+      directionChanged = true;
       refl +=2;
     }
     // turn to the right

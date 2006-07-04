@@ -4,7 +4,7 @@
 
 ########### install files ###############
 
-install_files( ${DATA_INSTALL_DIR}/kblackbox/pics FILES blue.xpm brown.xpm cyan.xpm gray.xpm green.xpm red.xpm white.xpm             green2.xpm giveup.xpm done.xpm )
+install( FILES blue.xpm brown.xpm cyan.xpm gray.xpm green.xpm red.xpm white.xpm             green2.xpm giveup.xpm done.xpm  DESTINATION  ${DATA_INSTALL_DIR}/kblackbox/pics )
 
 
 

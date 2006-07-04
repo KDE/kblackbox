@@ -24,8 +24,8 @@ install_targets(/bin kblackbox )
 
 ########### install files ###############
 
-install_files( ${XDG_APPS_DIR} FILES kblackbox.desktop )
-install_files( ${DATA_INSTALL_DIR}/kblackbox FILES kblackboxui.rc )
+install( FILES kblackbox.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kblackboxui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kblackbox )
 
 kde4_install_icons( ${ICON_INSTALL_DIR}  hicolor )
 

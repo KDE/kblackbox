@@ -29,6 +29,7 @@
 #include <kstatusbar.h>
 #include <kstdgameaction.h>
 #include <ktoggleaction.h>
+#include <kicon.h>
 #include "kbbgame.h"
 #include "util.h"
 #include "version.h"

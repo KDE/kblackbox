@@ -76,8 +76,8 @@ KBBGame::KBBGame()
   } else {
     kDebug(12009) << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
     delete pix[0];
-    delete pix;
-    pix = NULL;
+    delete [] pix;
+    pix = 0;
   }
   gr = new KBBGraphic( pix, this );
   gr->setObjectName("KBBGraphic");

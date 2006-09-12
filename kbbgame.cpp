@@ -266,7 +266,7 @@ void KBBGame::newGame()
   if (running) {
     bool cancel;
     cancel = KMessageBox::warningContinueCancel(0,
-         i18n("Do you really want to give up this game?"),QString::null,i18n("Give Up"))
+         i18n("Do you really want to give up this game?"),QString::null,KGuiItem(i18n("Give Up")))
       == KMessageBox::Cancel;
     if (cancel)
       return;
@@ -387,7 +387,7 @@ void KBBGame::giveUp()
     bool stop;
     stop = KMessageBox::warningContinueCancel(0,
 			    i18n(
-			    "Do you really want to give up this game?"),QString::null,i18n("Give Up"))
+			    "Do you really want to give up this game?"),QString::null,KGuiItem(i18n("Give Up")))
       == KMessageBox::Continue;
 
     if (stop) {
@@ -441,7 +441,7 @@ bool KBBGame::setSize( int w, int h )
     if (running) {
       ok = KMessageBox::warningContinueCancel(0,
 			      i18n(
-			      "This will be the end of the current game!"),QString::null,i18n("End Game"))
+			      "This will be the end of the current game!"),QString::null,KGuiItem(i18n("End Game")))
 	== KMessageBox::Continue;
 
     } else ok = true;
@@ -469,7 +469,7 @@ bool KBBGame::setBalls( int n )
   if (balls != n) {
     if (running) {
       ok = KMessageBox::warningContinueCancel(0,
-			 i18n("This will be the end of the current game!"),QString::null,i18n("End Game"))
+			 i18n("This will be the end of the current game!"),QString::null,KGuiItem(i18n("End Game")))
 	== KMessageBox::Continue;
     } else ok = true;
     if (ok) {

@@ -13,7 +13,7 @@ set(kblackbox_SRCS
    util.cpp 
    main.cpp )
 
-kde4_automoc(kblackbox ${kblackbox_SRCS})
+kde4_automoc(${kblackbox_SRCS})
 
 kde4_add_executable(kblackbox ${kblackbox_SRCS})
 

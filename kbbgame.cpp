@@ -25,7 +25,7 @@
 #include <kiconloader.h>
 #include <khelpmenu.h>
 #include <kaction.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kstatusbar.h>
 #include <kstdgameaction.h>
 #include <ktoggleaction.h>
@@ -725,7 +725,7 @@ void KBBGame::initKAction()
   ballsAction->setItems(list);
   tutorialAction = new KToggleAction( i18n("&Tutorial"), actionCollection(), "options_tutorial" );
   connect(tutorialAction, SIGNAL(triggered(bool) ), SLOT(tutorialSwitch()));
-//  KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
+//  KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
 //actionCollection());
 
 // keyboard only

@@ -27,7 +27,7 @@
 #include <kaction.h>
 #include <kstandardaction.h>
 #include <kstatusbar.h>
-#include <kstdgameaction.h>
+#include <kstandardgameaction.h>
 #include <ktoggleaction.h>
 #include <kicon.h>
 #include "kbbgame.h"
@@ -697,14 +697,14 @@ void KBBGame::gotInputAt( int col, int row, int state )
 void KBBGame::initKAction()
 {
 // game
-  KStdGameAction::gameNew(this, SLOT(newGame()), actionCollection());
+  KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
   KAction *giveUpAct = new KAction( KIcon(SmallIcon("giveup")), i18n("&Give Up"), actionCollection(), "game_giveup" );
   connect(giveUpAct, SIGNAL(triggered(bool)), SLOT(giveUp()));
   KAction *doneAct = new KAction( KIcon(SmallIcon("done")), i18n("&Done"), actionCollection(), "game_done" );
   connect(doneAct, SIGNAL(triggered(bool)), SLOT(gameFinished()));
   KAction *action = new KAction( i18n("&Resize"), actionCollection(), "game_resize" );
   connect(action, SIGNAL(triggered(bool) ), SLOT(slotResize()));
-  KStdGameAction::quit(this, SLOT(close()), actionCollection());
+  KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
 
 // settings

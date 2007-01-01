@@ -29,6 +29,7 @@
 #include <kstatusbar.h>
 #include <kstandardgameaction.h>
 #include <ktoggleaction.h>
+#include <kactioncollection.h>
 #include <kicon.h>
 #include "kbbgame.h"
 #include "util.h"
@@ -145,10 +146,10 @@ KBBGame::KBBGame()
   tutorialAction->setChecked(tutorial);
 
   setCentralWidget( gr );
-  
+
   setScore( 0 );
   ballsPlaced = 0;
-  
+
 	updateStats();
 
   newGame();
@@ -697,18 +698,25 @@ void KBBGame::gotInputAt( int col, int row, int state )
 void KBBGame::initKAction()
 {
 // game
-  KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
-  KAction *giveUpAct = new KAction( KIcon(SmallIcon("giveup")), i18n("&Give Up"), actionCollection(), "game_giveup" );
+  QAction *newAct = KStandardGameAction::gameNew(this, SLOT(newGame()), this);
+  actionCollection()->addAction(newAct->objectName(), newAct);
+  QAction *giveUpAct = actionCollection()->addAction("game_giveup");
+  giveUpAct->setIcon(KIcon(SmallIcon("giveup")));
+  giveUpAct->setText(i18n("&Give Up"));
   connect(giveUpAct, SIGNAL(triggered(bool)), SLOT(giveUp()));
-  KAction *doneAct = new KAction( KIcon(SmallIcon("done")), i18n("&Done"), actionCollection(), "game_done" );
+  QAction *doneAct = actionCollection()->addAction("game_done" );
+  doneAct->setIcon(KIcon(SmallIcon("done")));
+  doneAct->setText(i18n("&Done"));
   connect(doneAct, SIGNAL(triggered(bool)), SLOT(gameFinished()));
-  KAction *action = new KAction( i18n("&Resize"), actionCollection(), "game_resize" );
+  QAction *action = actionCollection()->addAction("game_resize");
+  action->setText(i18n("&Resize"));
   connect(action, SIGNAL(triggered(bool) ), SLOT(slotResize()));
   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
 
 // settings
-  sizeAction = new KSelectAction( i18n("&Size"), actionCollection(), "options_size");
+  sizeAction = new KSelectAction( i18n("&Size"), this);
+  actionCollection()->addAction("options_size", sizeAction);
   connect(sizeAction, SIGNAL(triggered(bool)), SLOT(slotSize()));
   QStringList list;
   list.append(i18n("  8 x  8 "));
@@ -716,40 +724,47 @@ void KBBGame::initKAction()
   list.append(i18n(" 12 x 12 "));
   sizeAction->setItems(list);
 
-  ballsAction = new KSelectAction( i18n("&Balls"), actionCollection(), "options_balls");
+  ballsAction = new KSelectAction( i18n("&Balls"), this);
+  actionCollection()->addAction("options_balls", ballsAction);
   connect(ballsAction, SIGNAL(triggered(bool)), SLOT(slotBalls()));
   list.clear();
   list.append(i18n(" 4 "));
   list.append(i18n(" 6 "));
   list.append(i18n(" 8 "));
   ballsAction->setItems(list);
-  tutorialAction = new KToggleAction( i18n("&Tutorial"), actionCollection(), "options_tutorial" );
+  tutorialAction = new KToggleAction( i18n("&Tutorial"), this );
+  actionCollection()->addAction( "options_tutorial", tutorialAction );
   connect(tutorialAction, SIGNAL(triggered(bool) ), SLOT(tutorialSwitch()));
-//  KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), 
+//  KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()),
 //actionCollection());
 
 // keyboard only
-  action = new KAction( i18n("Move Down"), actionCollection(), "move_down" );
+  action = actionCollection()->addAction( "move_down" );
+  action->setText( i18n("Move Down") );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotDown()));
   action->setShortcut(Qt::Key_Down);
   addAction(action);
 
-  action = new KAction( i18n("Move Up"), actionCollection(), "move_up" );
+  action = actionCollection()->addAction( "move_up" );
+  action->setText( i18n("Move Up") );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotUp()));
   action->setShortcut(Qt::Key_Up);
   addAction(action);
 
-  action = new KAction( i18n("Move Left"), actionCollection(), "move_left" );
+  action = actionCollection()->addAction( "move_left" );
+  action->setText( i18n("Move Left") );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotLeft()));
   action->setShortcut(Qt::Key_Left);
   addAction(action);
 
-  action = new KAction( i18n("Move Right"), actionCollection(), "move_right" );
+  action = actionCollection()->addAction( "move_right" );
+  action->setText( i18n("Move Right") );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotRight()));
   action->setShortcut(Qt::Key_Right);
   addAction(action);
 
-  action = new KAction( i18n("Trigger Action"), actionCollection(), "move_trigger" );
+  action = actionCollection()->addAction( "move_trigger" );
+  action->setText( i18n("Trigger Action") );
   connect(action, SIGNAL(triggered(bool) ), gr, SLOT(slotInput()));
   action->setShortcut(Qt::Key_Return);
   addAction(action);

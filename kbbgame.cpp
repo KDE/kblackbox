@@ -17,7 +17,6 @@
 #include <ktoolbar.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
-#include <kapplication.h>
 #include <klocale.h>
 #include <kconfig.h>
 #include <kglobal.h>

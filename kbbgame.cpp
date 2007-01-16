@@ -196,11 +196,10 @@ void KBBGame::setMinSize()
 /*
    Settings of various options.
 */
-void KBBGame::slotSize()
+void KBBGame::slotSize(int selection)
 {
-  int i = sizeAction->currentItem();
   bool ok = false;
-  switch (i) {
+  switch (selection) {
     case 0:
       ok = setSize( 8, 8 );
       break;
@@ -224,11 +223,11 @@ void KBBGame::slotSize()
   }
 }
 
-void KBBGame::slotBalls()
+void KBBGame::slotBalls(int selection)
 {
-  int i = ballsAction->currentItem();
   bool ok = false;
-  switch (i) {
+
+  switch (selection) {
       case 0:
           ok = setBalls( 4 );
           break;
@@ -249,6 +248,7 @@ void KBBGame::slotBalls()
         ballsAction->setCurrentItem(2); break;
     }
   }
+
 }
 
 void KBBGame::tutorialSwitch()
@@ -716,7 +716,7 @@ void KBBGame::initKAction()
 // settings
   sizeAction = new KSelectAction( i18n("&Size"), this);
   actionCollection()->addAction("options_size", sizeAction);
-  connect(sizeAction, SIGNAL(triggered(bool)), SLOT(slotSize()));
+  connect(sizeAction, SIGNAL(triggered(int)), this, SLOT(slotSize(int)));
   QStringList list;
   list.append(i18n("  8 x  8 "));
   list.append(i18n(" 10 x 10 "));
@@ -725,7 +725,7 @@ void KBBGame::initKAction()
 
   ballsAction = new KSelectAction( i18n("&Balls"), this);
   actionCollection()->addAction("options_balls", ballsAction);
-  connect(ballsAction, SIGNAL(triggered(bool)), SLOT(slotBalls()));
+  connect(ballsAction, SIGNAL(triggered(int)), this, SLOT(slotBalls(int)));
   list.clear();
   list.append(i18n(" 4 "));
   list.append(i18n(" 6 "));

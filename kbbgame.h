@@ -58,8 +58,8 @@ signals:
   void gameRuns( bool );
 
 private slots:
-  void slotSize();
-  void slotBalls();
+  void slotSize(int selection);
+  void slotBalls(int selection);
 
   void tutorialSwitch();
 

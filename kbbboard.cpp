@@ -67,7 +67,7 @@ const char *pFNames[NROFTYPES] = {
 KBBBoard::KBBBoard(KMainWindow *parent)
 {
   int i;
-
+  gameBoard = 0;
   QPixmap **pix = new QPixmap * [NROFTYPES];
   pix[0] = new QPixmap();
   *pix[0] = BarIcon( pFNames[0] );
@@ -103,7 +103,7 @@ KBBBoard::KBBBoard(KMainWindow *parent)
 
 KBBBoard::~KBBBoard()
 {
-	delete gameBoard;
+	if (gameBoard) delete gameBoard;
 	// All the rest has "this" for parent so it doesn't need to be deleted.
 }
 
@@ -197,7 +197,7 @@ int KBBBoard::getWidth()
 void KBBBoard::setSize( int w, int h )
 {
 	gr->setSize(w + 4, h + 4); // +4 is the space for "lasers" and an edge...
-	delete gameBoard;
+	if (gameBoard) delete gameBoard;
 	gameBoard = new RectOnArray( gr->numC(), gr->numR() );
 }
 

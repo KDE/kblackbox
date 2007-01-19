@@ -1,3 +1,12 @@
+2007-01-18 Nicolas Roffet <nicolas-kde@roffet.com>
+	* New private methode "KBBGame::comfirmGameEndIfNeeded()" to avoid duplication of code.
+	* New member variable "m_gameReallyStarted" to avoid to annoy the user with the confirmation of the end of the game when the player didn't really start to play.
+	* Removed several redundant tests "if (running)".
+	* small clean up in "KBBGame::giveUp()".
+	* Clean up: division of the class (and file) KBBGame in 2 classes (and 2 files) to remove a lot of dependencies to the graphic widget (KBBGraphic) in the main window:
+	    - KBBGame: main window of the game
+	    - KBBBoard: logical board of the game
+
 1999-06-07  Petter Reinholdtsen <pere@td.org.uit.no>
 	* kbbgame.cpp: Changed text Quit to Exit to match KDE style guide.
 

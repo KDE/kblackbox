@@ -103,7 +103,7 @@ KBBBoard::KBBBoard(KMainWindow *parent)
 
 KBBBoard::~KBBBoard()
 {
-	if (gameBoard) delete gameBoard;
+	delete gameBoard;
 	// All the rest has "this" for parent so it doesn't need to be deleted.
 }
 
@@ -197,7 +197,7 @@ int KBBBoard::getWidth()
 void KBBBoard::setSize( int w, int h )
 {
 	gr->setSize(w + 4, h + 4); // +4 is the space for "lasers" and an edge...
-	if (gameBoard) delete gameBoard;
+	delete gameBoard;
 	gameBoard = new RectOnArray( gr->numC(), gr->numR() );
 }
 

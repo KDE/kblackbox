@@ -7,6 +7,9 @@
  *   Copyright (c) 1999-2000, Robert Cimrman                               *
  *   cimrman3@students.zcu.cz                                              *
  *                                                                         *
+ *   Copyright (c) 2007, Nicolas Roffet                                    *
+ *   nicolas-kde@roffet.com                                                *
+ *                                                                         *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -25,38 +28,17 @@
  ***************************************************************************/
 
 
-#include <QPixmap>
+
 #include <QWidget>
 
 
 #include <kdebug.h>
-#include <kicon.h>
-#include <kiconloader.h>
 #include <kmainwindow.h>
 #include <krandomsequence.h>
 
 
 #include "kbbboard.h"
 #include "kbbgfx.h"
-#include "util.h"
-
-
-
-
-/*
-  Names of pixmap files.
-*/
-
-const char *pFNames[NROFTYPES] = {
-  "white",
-  "gray",
-  "green",
-  "red",
-  "blue",
-  "cyan",
-  "brown",
-  "green2"
-};
 
 
 
@@ -66,45 +48,13 @@ const char *pFNames[NROFTYPES] = {
 
 KBBBoard::KBBBoard(KMainWindow *parent)
 {
-  int i;
-  gameBoard = 0;
-  QPixmap **pix = new QPixmap * [NROFTYPES];
-  pix[0] = new QPixmap();
-  *pix[0] = BarIcon( pFNames[0] );
-  if (!pix[0]->isNull()) {
-    kDebug(12009) << "Pixmap \"" << pFNames[0] << "\" loaded." << endl;
-    for (i = 1; i < NROFTYPES; i++) {
-      pix[i] = new QPixmap;
-      *pix[i] = BarIcon( pFNames[i] );
-      if (!pix[i]->isNull()) {
-	kDebug(12009) << "Pixmap \"" << pFNames[i] << "\" loaded." << endl;
-      } else {
-	pix[i] = pix[i-1];
-	pix[i]->detach();
-	kDebug(12009) << "Cannot find pixmap \"" << pFNames[i] << "\". Using previous one." << endl;
-      }
-    }
-  } else {
-    kDebug(12009) << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
-    delete pix[0];
-    delete [] pix;
-    pix = 0;
-  }
+	random.setSeed(0);
 
-
-	gr = new KBBGraphic( pix, parent );
-	gr->setObjectName("KBBGraphic");
-
-	connect( gr, SIGNAL(inputAt(int,int,int)), this, SLOT(gotInputAt(int,int,int)) );
+	gr = new KBBGraphic( this );
 
 	connect( gr, SIGNAL(endMouseClicked()), parent, SLOT(gameFinished()) );
-}
-
-
-KBBBoard::~KBBBoard()
-{
-	delete gameBoard;
-	// All the rest has "this" for parent so it doesn't need to be deleted.
+	connect( gr, SIGNAL(addPlayerBall(int)), this, SLOT(addPlayerBall(int)) );
+	connect( gr, SIGNAL(removePlayerBall(int)), this, SLOT(removePlayerBall(int)) );
 }
 
 
@@ -113,36 +63,58 @@ KBBBoard::~KBBBoard()
 // Public
 //
 
-void KBBBoard::drawNewBoard(int balls, bool tutorial)
+int KBBBoard::absolutePositionToBorderPosition(int position[DIM_MAX])
 {
-  int i,j;
+	int borderPosition = HIT_POSITION;
+	if (position[DIM_Y] == 1)
+		borderPosition = position[DIM_X] - 2;
+	else if (position[DIM_X] == m_columns + 2)
+		borderPosition = position[DIM_Y] - 2 + m_columns;
+	else if (position[DIM_Y] == m_rows + 2)
+		borderPosition = 1 - position[DIM_X] + 2 * m_columns + m_rows;
+	else if (position[DIM_X] == 1)
+		borderPosition = 1 - position[DIM_Y] + 2*(m_rows + m_columns);
+	
+	return borderPosition;
+}
 
-  gameBoard->fill( INNERBBT );
-  for (j = 0; j < (gr->numR()); j++) {
-    gameBoard->set( 0, j, OUTERBBT );
-    gameBoard->set( gr->numC()-1, j, OUTERBBT );
-  }
-  for (i = 0; i < (gr->numC()); i++) {
-    gameBoard->set( i, 0, OUTERBBT );
-    gameBoard->set( i, gr->numR()-1, OUTERBBT );
-  }
-  for (j = 2; j < (gr->numR()-2); j++) {
-    gameBoard->set( 1, j, LASERBBT );
-    gameBoard->set( gr->numC()-2, j, LASERBBT );
-  }
-  for (i = 2; i < (gr->numC()-2); i++) {
-    gameBoard->set( i, 1, LASERBBT );
-    gameBoard->set( i, gr->numR()-2, LASERBBT );
-  }
-  gameBoard->set( 1, 1, OUTERBBT );
-  gameBoard->set( 1, gr->numR()-2, OUTERBBT );
-  gameBoard->set( gr->numC()-2, 1, OUTERBBT );
-  gameBoard->set( gr->numC()-2, gr->numR()-2, OUTERBBT );
 
-  placeBalls(balls);
+void KBBBoard::borderPositionToAbsolutePosition(int borderPosition, int position[DIM_MAX]) 
+{
+	if (borderPosition < m_columns) {
+		position[DIM_X] = borderPosition + 2;
+		position[DIM_Y] = 1;
+	} else if ((borderPosition >= m_columns) && (borderPosition < m_columns + m_rows)) {
+		position[DIM_X] = m_columns + 2;
+		position[DIM_Y] = (borderPosition - m_columns) + 2;
+	} else if ((borderPosition >= m_columns + m_rows) && (borderPosition < 2*m_columns + m_rows)) {
+		position[DIM_X] = (m_columns - (borderPosition - m_columns - m_rows)) + 1;
+		position[DIM_Y] = m_rows + 2;
+	} else if (borderPosition >= 2*m_columns + m_rows) {
+		position[DIM_X] = 1;
+		position[DIM_Y] = (m_rows - (borderPosition - 2*m_columns - m_rows)) + 1;
+	} else {
+		position[DIM_X] = HIT_POSITION;
+		position[DIM_Y] = HIT_POSITION;
+	}
+}
 
-  remap( gameBoard, gr->getGraphicBoard(), tutorial );
-  gr->repaint();
+
+void KBBBoard::gameOver()
+{
+	// Clear
+	m_gameReallyStarted = false;
+	
+	// Compute final score
+	for (int i=0;i<m_balls.count();i++)
+		if (!m_ballsPlaced.contains(m_balls.value(i)))
+			setScore( score + 5 );
+	
+	//Show solution (and indicate errors).
+	gr->solve();
+	
+	// Deactivate central widget
+	gr->setInputAccepted(false);
 }
 
 
@@ -152,15 +124,48 @@ bool KBBBoard::gameReallyStarted()
 }
 
 
-int KBBBoard::getBallsPlaced()
+void KBBBoard::getOutgoingPosition( int position[DIM_MAX], int incomingDirection[DIM_MAX] )
 {
-	return ballsPlaced;
-}
+	int outgoingDirection[DIM_MAX];
+	
+	int nextPosition[DIM_MAX];
+	nextPosition[DIM_X] = position[DIM_X] + incomingDirection[DIM_X];
+	nextPosition[DIM_Y] = position[DIM_Y] + incomingDirection[DIM_Y];
+
+	int nextLeftPosition[DIM_MAX];
+	nextLeftPosition[DIM_X] = nextPosition[DIM_X] + incomingDirection[DIM_Y];
+	nextLeftPosition[DIM_Y] = nextPosition[DIM_Y] + incomingDirection[DIM_X];
+
+	int nextRightPosition[DIM_MAX];
+	nextRightPosition[DIM_X] = nextPosition[DIM_X] - incomingDirection[DIM_Y];
+	nextRightPosition[DIM_Y] = nextPosition[DIM_Y] - incomingDirection[DIM_X];
 
 
-int KBBBoard::getHeight()
-{
-	return gr->numR() - 4;
+	if (positionInTheBox(nextPosition) && m_balls.contains((nextPosition[DIM_X] - 2) + (nextPosition[DIM_Y] - 2) * m_columns)) {
+		// HIT
+		position[DIM_X] = HIT_POSITION;
+		position[DIM_Y] = HIT_POSITION;
+	} else if (positionInTheBox(nextLeftPosition) && m_balls.contains((nextLeftPosition[DIM_X] - 2) + (nextLeftPosition[DIM_Y] - 2) * m_columns)) {
+		// DEVIATION 1
+		outgoingDirection[DIM_X] = -incomingDirection[DIM_Y];
+		outgoingDirection[DIM_Y] = -incomingDirection[DIM_X];
+	} else if (positionInTheBox(nextRightPosition) && m_balls.contains((nextRightPosition[DIM_X] - 2) + (nextRightPosition[DIM_Y] - 2) * m_columns)) {
+		// DEVIATION 2
+		outgoingDirection[DIM_X] = incomingDirection[DIM_Y];
+		outgoingDirection[DIM_Y] = incomingDirection[DIM_X];
+	} else {
+		//NORMAL
+		position[DIM_X] = nextPosition[DIM_X];
+		position[DIM_Y] = nextPosition[DIM_Y];
+		outgoingDirection[DIM_X] = incomingDirection[DIM_X];
+		outgoingDirection[DIM_Y] = incomingDirection[DIM_Y];
+	}
+	
+	
+	// Out of the Black box? (loop exit condition)
+	if (positionInTheBox(position))
+		getOutgoingPosition( position, outgoingDirection );
+	return;
 }
 
 
@@ -188,42 +193,81 @@ int KBBBoard::getWidgetWidth()
 }
 
 
-int KBBBoard::getWidth()
+void KBBBoard::newGame( int balls, int columns, int rows, bool tutorial )
 {
-	return gr->numC() - 4;
+	m_columns = columns;
+	m_rows = rows;
+	gr->setSize(m_columns, m_rows);
+	
+	// Clear
+	m_gameReallyStarted = false;
+	m_ballsPlaced.clear();
+	setScore( 0 );
+	gr->clear();
+	
+	// Puts the balls in the black box on random positions.
+	m_balls.clear();
+	int boxPos;
+	for (int i = 0; i < balls; i++) {
+		do {
+			boxPos = random.getLong(m_columns * m_rows);
+		} while (m_balls.contains(boxPos));
+		m_balls.append(boxPos);
+	}
+
+	
+	if (tutorial)
+		gr->solve();
+	
+	// Activate central widget
+	gr->setInputAccepted(true);
 }
 
 
-void KBBBoard::setSize( int w, int h )
+int KBBBoard::numberOfBallsPlaced()
 {
-	gr->setSize(w + 4, h + 4); // +4 is the space for "lasers" and an edge...
-	delete gameBoard;
-	gameBoard = new RectOnArray( gr->numC(), gr->numR() );
+	return m_ballsPlaced.count();
 }
 
 
-/*
-   Computes the final score and indicate errors.
-*/
-void KBBBoard::solve()
+int KBBBoard::shootRay( int borderPosition )
 {
-  int i, j, tgam, tgra;
-  RectOnArray *r = gr->getGraphicBoard();
-  for (j = 0; j < (gr->numR()); j++) {
-    for (i = 0; i < (gr->numC()); i++) {
-      tgam = gameBoard->get( i, j );
-      tgra = r->get( i, j );
-      if ((tgam == BALLBBT) && (tgra != TBALLBBG)) {
-	r->set( i, j, WBALLBBG );
-	gr->updateElement( i, j );
-	setScore( score + 5);
-      }
-      if ((tgam != BALLBBT) && (tgra == TBALLBBG)) {
-	r->set( i, j, FBALLBBG );
-	gr->updateElement( i, j );
-      }
-    }
-  }
+	// 1. Conversion "border position -> (Absolute) position"
+	int position[DIM_MAX];
+	borderPositionToAbsolutePosition(borderPosition, position);
+
+	// 2. Get start direction
+	int direction[DIM_MAX];
+	if (borderPosition < m_columns) {
+		direction[DIM_X] = 0;
+		direction[DIM_Y] = 1;
+	} else if ((borderPosition >= m_columns) && (borderPosition < m_columns + m_rows)) {
+		direction[DIM_X] = -1;
+		direction[DIM_Y] = 0;
+	} else if ((borderPosition >= m_columns + m_rows) && (borderPosition < 2*m_columns + m_rows)) {
+		direction[DIM_X] = 0;
+		direction[DIM_Y] = -1;
+	} else if (borderPosition >= 2*m_columns + m_rows) {
+		direction[DIM_X] = 1;
+		direction[DIM_Y] = 0;
+	}
+
+	// 3. Get the outgoing (absolute) position
+	getOutgoingPosition(position, direction);
+	
+	// 4. Conversion "(absolute) position -> border position"
+	int outgoingBorderPosition = absolutePositionToBorderPosition(position);
+	
+	// 5. Update the score
+	if ((outgoingBorderPosition == HIT_POSITION) || (borderPosition == outgoingBorderPosition))
+		setScore( score + 1);
+	else
+		setScore( score + 2);
+	m_gameReallyStarted = true;
+	emit updateStats();
+
+
+	return outgoingBorderPosition;
 }
 
 
@@ -232,253 +276,37 @@ void KBBBoard::solve()
 // Slots
 //
 
-void KBBBoard::gameOver()
-{
-	ballsPlaced = 0;
-	m_gameReallyStarted = false;
-	gr->clearFocus();
-	gr->setInputAccepted(false);
-}
-
-void KBBBoard::gameStarting()
-{
-	ballsPlaced = 0;
-	detourCounter = -1;
-	setScore( 0 );
-	m_gameReallyStarted = false;
-	gr->setInputAccepted(true);
-	gr->setFocus();
+void KBBBoard::addPlayerBall( int boxPosition ) {
+	if (!m_ballsPlaced.contains(boxPosition))
+		m_ballsPlaced.append(boxPosition);
 }
 
 
-/*
-   Processes the user input.
-*/
-void KBBBoard::gotInputAt( int col, int row, int state )
-{
-  RectOnArray *r = gr->getGraphicBoard();
-  int type = r->get( col, row );
-  int x, y;
-  int ex, ey;
-  int w = gameBoard->width() - 2;
-  int h = gameBoard->height() - 2;
-
-  if (state & Qt::LeftButton) {
-    switch (type) {
-    case WBALLBBG: // because of the tutorial mode
-    case INNERBBG:
-      r->set( col, row, TBALLBBG );
-      ballsPlaced++;
-      break;
-    case MARK1BBG:
-      r->set( col, row, INNERBBG );
-      break;
-    case TBALLBBG:
-      r->set( col, row, INNERBBG );
-      ballsPlaced--;
-      break;
-    case LASERBBG:
-      int endX, endY, result;
-      result = traceRay( col, row, &endX, &endY );
-      r->set( col, row, LFIREBBG );
-      //kDebug << endX << " " << endY << endl;
-      if (col == 1) x = 0; else
-      if (col == w) x = w + 1;
-      else x = col;
-
-      if (row == 1) y = 0; else
-      if (row == h) y = h + 1;
-      else y = row;
-
-      switch (result) {
-      case DETOUR:
-	r->set( endX, endY, LFIREBBG );
-	r->set( x, y, detourCounter );
-	if (endX == 1) ex = 0; else
-	  if (endX == w) ex = w + 1;
-	  else ex = endX;
-	if (endY == 1) ey = 0; else
-	  if (endY == h) ey = h + 1;
-	  else ey = endY;
-	r->set( ex, ey, detourCounter-- );
-	gr->updateElement( x, y );
-	gr->updateElement( ex, ey );
-	gr->updateElement( endX, endY );
-	setScore( score+2 );
-	break;
-      case REFLECTION:
-	r->set( x, y, RLASERBBG );
-	gr->updateElement( x, y );
-	setScore( score+1 );
-	break;
-      case HIT:
-	r->set( x, y, HLASERBBG );
-	gr->updateElement( x, y );
-	setScore( score+1 );
-	break;
-      case WRONGSTART:
-	kDebug(12009) << "Wrong start?! It should't happen!!" << endl;
-	break;
-      }
-      break;
-    }
-  } else if (state & Qt::RightButton) {
-    switch (type) {
-    case INNERBBG:
-      r->set( col, row, MARK1BBG );
-      break;
-      /*case MARK1BBG:
-	r->set( col, row, INNERBBG );
-      break;*/
-    }
-  }
-  gr->updateElement( col, row );
-
-  emit updateStats();
+bool KBBBoard::containsBall( int boxPosition ) {
+	return m_balls.contains(boxPosition);
 }
+
+
+void KBBBoard::removePlayerBall( int boxPosition ) {
+	m_ballsPlaced.removeAll(boxPosition);
+}
+
 
 
 //
 // Private
 //
 
-/*
-   Puts n balls in the black box on random positions.
-*/
-void KBBBoard::placeBalls( int n )
+bool KBBBoard::positionInTheBox( int position[DIM_MAX] )
 {
-  int i;
-  random.setSeed(0);
-  for (i = 0; i < n; i++) {
-    int x=0, y=0; // there is OUTERBBT...
-    while (gameBoard->get( x, y ) != INNERBBT ) {
-      x =  2 + random.getLong(gameBoard->width()-4);
-      y =  2 + random.getLong(gameBoard->height()-4);
-    }
-    gameBoard->set( x, y, BALLBBT );
-  }
+	return !((position[DIM_X] < 2) || (position[DIM_X] > m_columns + 1) || (position[DIM_Y] < 2) || (position[DIM_Y] > m_rows + 1));
 }
 
 
-/*
-   Remaps the gameBoard to its graphic representation.
-*/
-void KBBBoard::remap( RectOnArray *gam, RectOnArray *gra, bool tutorial )
-{
-  int i, j;
-  for (j = 0; j < (gam->height()); j++) {
-    for (i = 0; i < (gam->width()); i++) {
-      switch (gam->get( i,j )) {
-      case BALLBBT: if (tutorial) { gra->set( i,j, WBALLBBG ); break; }
-      case INNERBBT: gra->set( i,j, INNERBBG ); break;
-      case OUTERBBT: gra->set( i,j, OUTERBBG ); break;
-      case LASERBBT: gra->set( i,j, LASERBBG ); break;
-      default: gra->set( i,j, OUTERBBG );
-      }
-    }
-  }
-}
-
-
-/*
-   Sets the score value to n.
-*/
 void KBBBoard::setScore( int n )
 {
 	score = n;
 	emit updateStats();
 }
-
-
-/*
-   This is, in fact, the whole game...
-*/
-int KBBBoard::traceRay( int startX, int startY, int *endX, int *endY )
-{
-  int type, x, y, d, refl;
-  int slx, scx, srx, sly, scy, sry;
-  bool directionChanged;
-  *endX = x = startX;
-  *endY = y = startY;
-  /*
-    Just to avoid compiler warnings
-  */
-  type = slx = scx = srx = sly = scy = sry = 0;
-  /*
-     Get the initial direction d.
-     0 .. up, 1 .. right, 2 .. down, 3 .. left
-     (0,0) is the upper-left corner.
-  */
-  if ((gameBoard->get( x, y-1 ) == INNERBBT) ||
-      (gameBoard->get( x, y-1 ) == BALLBBT)) { d = 0; }
-  else if ((gameBoard->get( x+1, y ) == INNERBBT) ||
-	   (gameBoard->get( x+1, y ) == BALLBBT)) { d = 1; }
-  else if ((gameBoard->get( x, y+1 ) == INNERBBT) ||
-	   (gameBoard->get( x, y+1 ) == BALLBBT)) { d = 2; }
-  else if ((gameBoard->get( x-1, y ) == INNERBBT) ||
-	   (gameBoard->get( x-1, y ) == BALLBBT)) { d = 3; }
-  else return WRONGSTART;
-  /*
-     And now trace the ray.
-  */
-  while (1) {
-    switch (d) {
-    case 0:
-      slx = -1; scx = 0; srx = 1;
-      sly = -1; scy = -1; sry = -1;
-      break;
-    case 1:
-      slx = 1; scx = 1; srx = 1;
-      sly = -1; scy = 0; sry = 1;
-      break;
-    case 2:
-      slx = 1; scx = 0; srx = -1;
-      sly = 1; scy = 1; sry = 1;
-      break;
-    case 3:
-      slx = -1; scx = -1; srx = -1;
-      sly = 1; scy = 0; sry = -1;
-      break;
-    }
-    directionChanged = false;
-    if (gameBoard->get( x+scx, y+scy ) == LASERBBT) {
-      type = DETOUR;
-      *endX = x+scx;
-      *endY = y+scy;
-      break;
-    }
-    if (gameBoard->get( x+scx, y+scy ) == BALLBBT) {
-      type = HIT;
-      break;
-    }
-    refl = 0;
-    if (gameBoard->get( x+slx, y+sly ) == BALLBBT) {
-      type = REFLECTION;
-      if (gameBoard->get( x, y ) == LASERBBT) break;
-      directionChanged = true;
-      refl += 1;
-    }
-    if (gameBoard->get( x+srx, y+sry ) == BALLBBT) {
-      type = REFLECTION;
-      if (gameBoard->get( x, y ) == LASERBBT) break;
-      directionChanged = true;
-      refl +=2;
-    }
-    // turn to the right
-    if (refl == 1) d = (d + 1) % 4;
-    // turn to the left
-    if (refl == 2) if ((d -= 1) < 0) d += 4;
-    // turn back -- no need to trace again the same way
-    if (refl == 3) break;
-    if (!directionChanged) {
-      x += scx;
-      y += scy;
-    }
-  }
-
-  m_gameReallyStarted = true;
-  return type;
-}
-
 
 #include "kbbboard.moc"

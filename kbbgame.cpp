@@ -46,12 +46,9 @@ KBBGame::KBBGame()
   statusBar()->insertItem(i18n("Run: yesno"), SRUN);
   statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
 
+
   initKAction();
 
-  connect( this, SIGNAL(gameOver()),
-	  m_board, SLOT(gameOver() ));
-  connect( this, SIGNAL(gameStarting()),
-	  m_board, SLOT(gameStarting()) );
   connect( m_board, SIGNAL(updateStats()),
 	  this, SLOT(updateStats()) );
 
@@ -66,13 +63,11 @@ KBBGame::KBBGame()
   running = false;
 
   KConfig *kConf;
-  int i,j;
   kConf = KGlobal::config();
   kConf->setGroup( "KBlackBox Setup" );
   if (kConf->hasKey( "Balls" )) {
-    i = kConf->readEntry( "Balls",0 );
-    balls = i;
-    switch (i) {
+    balls = kConf->readEntry( "Balls",0 );
+    switch (balls) {
     case 4: ballsAction->setCurrentItem(0); break;
     case 6: ballsAction->setCurrentItem(1); break;
     case 8: ballsAction->setCurrentItem(2); break;
@@ -83,16 +78,16 @@ KBBGame::KBBGame()
   }
   if ((kConf->hasKey( "Width" )) &&
       (kConf->hasKey( "Balls" ))) {
-    i = kConf->readEntry( "Width", 0 );
-    j = kConf->readEntry( "Height",0 );
-    m_board->setSize( i, j ); 
-    switch (i) {
+    m_columns = kConf->readEntry( "Width", 0 );
+    m_rows = kConf->readEntry( "Height",0 );
+    switch (m_columns) {
     case 8: sizeAction->setCurrentItem(0); break;
     case 10: sizeAction->setCurrentItem(1); break;
     case 12: sizeAction->setCurrentItem(2); break;
     }
   } else {
-    m_board->setSize( 8, 8 );
+    m_columns = 8;
+    m_rows = 8;
     sizeAction->setCurrentItem(0);
   }
   if (kConf->hasKey( "tutorial" )) {
@@ -100,13 +95,13 @@ KBBGame::KBBGame()
   } else tutorial = false;
   tutorialAction->setChecked(tutorial);
 
+
   setCentralWidget( m_board->getWidget() );
 
 
-  newGame();
-  setMinSize();
-
+  startGame();
   setupGUI();
+  setMinSize();
 }
 
 /*
@@ -120,8 +115,8 @@ KBBGame::~KBBGame()
   kConf = KGlobal::config();
   kConf->setGroup( "KBlackBox Setup" );
   kConf->writeEntry( "Balls", balls );
-  kConf->writeEntry( "Width", m_board->getWidth());
-  kConf->writeEntry( "Height", m_board->getHeight());
+  kConf->writeEntry( "Width", m_columns);
+  kConf->writeEntry( "Height", m_rows);
   kConf->writeEntry( "tutorial", (int) tutorial );
 
   // All the rest has "this" for parent so it doesn't need to be deleted.
@@ -145,18 +140,19 @@ void KBBGame::slotSize(int selection)
   bool ok = false;
   switch (selection) {
     case 0:
-      ok = setSize( 8, 8 );
+      ok = setSize( 8, 8 ); 
       break;
     case 1:
-      ok = setSize( 10, 10 );
+      ok = setSize( 10, 10 ); 
       break;
     case 2:
-      ok = setSize( 12, 12 );
+      ok = setSize( 12, 12 ); 
       break;
   }
 
+
   if (!ok) {
-    switch(m_board->getWidth()) {
+    switch(m_columns) {
       case 8:
         sizeAction->setCurrentItem(0); break;
       case 10:
@@ -208,13 +204,14 @@ void KBBGame::newGame()
   if (!comfirmGameEndIfNeeded()) 
     return;
 
-  abortGame();
+  startGame();
+}  
 
-  m_board->drawNewBoard( balls , tutorial );
-
-  running = true;
-  updateStats();
-  emit gameStarting();
+void KBBGame::startGame()
+{
+	running = true;
+	m_board->newGame( balls, m_columns, m_rows, tutorial );
+	updateStats();
 }
 
 /*
@@ -224,8 +221,7 @@ void KBBGame::gameFinished()
 {
   if (running) {
     QString s;
-    if (m_board->getBallsPlaced() == balls) {
-      getResults();
+    if (m_board->numberOfBallsPlaced() == balls) {
       abortGame();
       int score = m_board->getScore();
       if (score <= (balls*3))
@@ -240,7 +236,7 @@ void KBBGame::gameFinished()
       s = i18n( "You should place %1 balls!\n"
 		"You have placed %2.",
 	 KGlobal::locale()->formatNumber(balls, 0),
-	 KGlobal::locale()->formatNumber(m_board->getBallsPlaced(), 0));
+	 KGlobal::locale()->formatNumber(m_board->numberOfBallsPlaced(), 0));
 
       KMessageBox::sorry(this, s);
     }
@@ -258,21 +254,13 @@ bool KBBGame::comfirmGameEndIfNeeded()
 }
 
 /*
-   Computes the final score and indicate errors.
-*/
-void KBBGame::getResults()
-{
-	m_board->solve();
-}
-
-/*
    Aborts the current game.
 */
 void KBBGame::abortGame()
 {
     running = false;
     updateStats();
-    emit gameOver();
+    m_board->gameOver();
 }
 
 /*
@@ -282,7 +270,6 @@ void KBBGame::giveUp()
 {
 	if (running) {
 		if ( KMessageBox::warningContinueCancel(0, i18n("Do you really want to give up this game?"), QString::null, KGuiItem(i18n("Give Up"))) == KMessageBox::Continue) {
-			getResults();
 			abortGame();
 		}
 	}
@@ -301,11 +288,10 @@ void KBBGame::updateStats()
     s += i18n("No");
   statusBar()->changeItem( s, SRUN );
   s = i18n( "Size: " );
-  s += tmp.sprintf( "%2d x %2d",
-	       m_board->getWidth(), m_board->getHeight() );
+  s += tmp.sprintf( "%2d x %2d", m_columns, m_rows );
   statusBar()->changeItem( s, SSIZE );
   s = i18n( "Placed: " );
-  s += tmp.sprintf( "%2d / %2d", m_board->getBallsPlaced(), balls );
+  s += tmp.sprintf( "%2d / %2d", m_board->numberOfBallsPlaced(), balls );
   statusBar()->changeItem( s, SBALLS );
 
   statusBar()->changeItem( i18n("Score: %1", m_board->getScore()), SSCORE );
@@ -318,17 +304,16 @@ void KBBGame::updateStats()
 bool KBBGame::setSize( int w, int h )
 {
 	bool ok = false;
-	if ((w != m_board->getWidth()) || (h != m_board->getHeight())) {
+	if ((w != m_columns) || (h != m_rows)) {
 		if (comfirmGameEndIfNeeded()) {
 			ok = true;
-			m_board->setSize( w, h );
+			m_columns = w;
+			m_rows = h;
+			startGame();
 			setMinSize();
 			gameResize();
-			abortGame();
-			newGame();
 		}
 	}
-
 	return ok;
 }
 
@@ -342,8 +327,7 @@ bool KBBGame::setBalls( int n )
 		if (comfirmGameEndIfNeeded()) {
 			ok = true;
 			balls = n;
-			abortGame();
-			newGame();
+			startGame();
 		}
 	}
 	return ok;

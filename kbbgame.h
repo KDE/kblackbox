@@ -44,11 +44,6 @@ public:
   ~KBBGame();
 
 
-signals:
-  void gameOver();
-  void gameStarting();
-
-
 public slots:
   void updateStats();
 
@@ -59,6 +54,9 @@ private slots:
 
   void tutorialSwitch();
 
+  /**
+   * @brief Start a new game afer user confirmation (if needed).
+   */
   void newGame();
 
   bool setSize( int w, int h );
@@ -73,15 +71,24 @@ private slots:
 private:
   /**
   * @brief As the user if he wants to end the game, if needed.
+  * 
   * If the game is running and really started, the user has to confirm the end of the game.
   * If the game is not running or running but not really started, the game may end without user confirmation.
   */
   bool comfirmGameEndIfNeeded();
+  
+  /**
+   * @brief Start a new game (without user comfirmation)
+   * 
+   * @see newGame()
+   */
+  void startGame();
 
-  void getResults();
   void initKAction();
 
   int balls;
+  int m_columns;
+  int m_rows;
   KBBBoard *m_board;
   bool running;
   bool tutorial;

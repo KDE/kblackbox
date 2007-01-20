@@ -14,19 +14,74 @@
 #include <QColor>
 #include <QMouseEvent>
 #include <QPaintEvent>
+
+
 #include <kdebug.h>
+#include <kicon.h>
+#include <kiconloader.h>
+
 
 #include "kbbgfx.h"
+#include "kbbboard.h"
 #include "util.h"
+
+
+
+/*
+  Names of pixmap files.
+*/
+
+const char *pFNames[NROFTYPES] = {
+  "white",
+  "gray",
+  "green",
+  "red",
+  "blue",
+  "cyan",
+  "brown",
+  "green2"
+};
+
 
 /*
    Constructs a KBBGraphic widget.
 */
 
-KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent )
-    : QWidget( parent )
+KBBGraphic::KBBGraphic( KBBBoard* parent )
+    : QWidget( )
 {
+  m_board = parent;
+
   int i;
+
+  // Load icon files
+  
+//  QPixmap **pix = new QPixmap * [NROFTYPES];
+  pix = new QPixmap * [NROFTYPES];
+  pix[0] = new QPixmap();
+  *pix[0] = BarIcon( pFNames[0] );
+  if (!pix[0]->isNull()) {
+    kDebug(12009) << "Pixmap \"" << pFNames[0] << "\" loaded." << endl;
+    for (i = 1; i < NROFTYPES; i++) {
+      pix[i] = new QPixmap;
+      *pix[i] = BarIcon( pFNames[i] );
+      if (!pix[i]->isNull()) {
+	kDebug(12009) << "Pixmap \"" << pFNames[i] << "\" loaded." << endl;
+      } else {
+	pix[i] = pix[i-1];
+	pix[i]->detach();
+	kDebug(12009) << "Cannot find pixmap \"" << pFNames[i] << "\". Using previous one." << endl;
+      }
+    }
+  } else {
+    kDebug(12009) << "Cannot find pixmap \"" << pFNames[0] << "\". Pixmaps will not be loaded." << endl;
+    delete pix[0];
+    delete [] pix;
+    pix = 0;
+  }
+
+
+
 
   curRow = curCol = 0;
   setFocusPolicy( Qt::NoFocus );
@@ -36,8 +91,7 @@ KBBGraphic::KBBGraphic( QPixmap **p, QWidget* parent )
   setCellWidth( CELLW );		// set width of cell in pixels
   setCellHeight( CELLH );		// set height of cell in pixels
   setMouseTracking( false );
-
-  pix = p;
+  
   if (pix == NULL) pixScaled = NULL;
   else {
     pixScaled = new QPixmap * [NROFTYPES];
@@ -79,6 +133,10 @@ KBBGraphic::~KBBGraphic()
 
 void KBBGraphic::setSize( int w, int h )
 {
+  // +4 is the space for "lasers" and an edge...
+  w += 4;
+  h += 4;
+  
   if ((w != numCols) || (h != numRows)) {
     delete graphicBoard;
     graphicBoard = new RectOnArray( w, h );
@@ -90,6 +148,60 @@ void KBBGraphic::setSize( int w, int h )
     minW = cellW * numRows;
     minH = cellH * numCols;
     emit(sizeChanged());
+  }
+}
+
+void KBBGraphic::clear()
+{
+  detourCounter = -1;
+
+  
+  int i,j;
+
+  graphicBoard->fill( INNERBBT );
+  for (j = 0; j < (numR()); j++) {
+    graphicBoard->set( 0, j, OUTERBBT );
+    graphicBoard->set( numC()-1, j, OUTERBBT );
+  }
+  for (i = 0; i < (numC()); i++) {
+    graphicBoard->set( i, 0, OUTERBBT );
+    graphicBoard->set( i, numR()-1, OUTERBBT );
+  }
+  for (j = 2; j < (numR()-2); j++) {
+    graphicBoard->set( 1, j, LASERBBT );
+    graphicBoard->set( numC()-2, j, LASERBBT );
+  }
+  for (i = 2; i < (numC()-2); i++) {
+    graphicBoard->set( i, 1, LASERBBT );
+    graphicBoard->set( i, numR()-2, LASERBBT );
+  }
+  graphicBoard->set( 1, 1, OUTERBBT );
+  graphicBoard->set( 1, numR()-2, OUTERBBT );
+  graphicBoard->set( numC()-2, 1, OUTERBBT );
+  graphicBoard->set( numC()-2, numR()-2, OUTERBBT );
+
+
+  repaint();
+}
+
+
+void KBBGraphic::solve()
+{
+  int tgra;
+  int pos[DIM_MAX];
+
+  for (pos[DIM_Y] = 0; pos[DIM_Y] < numR()-4; pos[DIM_Y]++) {
+    for (pos[DIM_X] = 0; pos[DIM_X] < numC()-4; pos[DIM_X]++) {
+      tgra = graphicBoard->get( pos[DIM_X]+2, pos[DIM_Y]+2 );
+      if ((m_board->containsBall( pos[DIM_X] + pos[DIM_Y]*(numR()-4) )) && (tgra != TBALLBBG)) {
+	graphicBoard->set( pos[DIM_X]+2, pos[DIM_Y]+2, WBALLBBG );
+	updateElement( pos[DIM_X]+2, pos[DIM_Y]+2 );
+      }
+      if (!(m_board->containsBall( pos[DIM_X] + pos[DIM_Y]*(numR()-4) )) && (tgra == TBALLBBG)) {
+	graphicBoard->set( pos[DIM_X]+2, pos[DIM_Y]+2, FBALLBBG );
+	updateElement( pos[DIM_X]+2, pos[DIM_Y]+2 );
+      }
+    }
   }
 }
 
@@ -363,8 +475,108 @@ void KBBGraphic::mousePressEvent( QMouseEvent* e )
     curCol = pos.x() / cellW;
     //kDebug(12009) << e->state() << " " << Qt::LeftButton << " " << e->state()&LeftButton << endl;
     updateElement( oldCol, oldRow );
-    emit inputAt( curCol, curRow, e->button() );
+    inputAt( curCol, curRow, e->button() );
   }
+}
+
+
+void KBBGraphic::inputAt( int col, int row, int state )
+{
+  RectOnArray *r = getGraphicBoard();
+  int type = r->get( col, row );
+  int x, y;
+  int ex, ey;
+  int w = graphicBoard->width() - 2;
+  int h = graphicBoard->height() - 2;
+
+  if (state & Qt::LeftButton) {
+    switch (type) {
+    case WBALLBBG: // because of the tutorial mode
+    case INNERBBG:
+      r->set( col, row, TBALLBBG );
+      emit addPlayerBall( (col - 2) + (row - 2) * w  );
+      break;
+    case MARK1BBG:
+      r->set( col, row, INNERBBG );
+      break;
+    case TBALLBBG:
+      r->set( col, row, INNERBBG );
+      emit removePlayerBall( (col - 2) + (row - 2) * w  );
+      break;
+    case LASERBBG:
+      int endX, endY, result;
+      result = traceRay( col, row, &endX, &endY );
+      r->set( col, row, LFIREBBG );
+      //kDebug << endX << " " << endY << endl;
+      if (col == 1) x = 0; else
+      if (col == w) x = w + 1;
+      else x = col;
+
+      if (row == 1) y = 0; else
+      if (row == h) y = h + 1;
+      else y = row;
+
+      switch (result) {
+      case DETOUR:
+	r->set( endX, endY, LFIREBBG );
+	r->set( x, y, detourCounter );
+	if (endX == 1) ex = 0; else
+	  if (endX == w) ex = w + 1;
+	  else ex = endX;
+	if (endY == 1) ey = 0; else
+	  if (endY == h) ey = h + 1;
+	  else ey = endY;
+	r->set( ex, ey, detourCounter-- );
+	updateElement( x, y );
+	updateElement( ex, ey );
+	updateElement( endX, endY );
+	break;
+      case REFLECTION:
+	r->set( x, y, RLASERBBG );
+	updateElement( x, y );
+	break;
+      case HIT:
+	r->set( x, y, HLASERBBG );
+	updateElement( x, y );
+	break;
+      case WRONGSTART:
+	kDebug(12009) << "Wrong start?! It should't happen!!" << endl;
+	break;
+      }
+      break;
+    }
+  } else if (state & Qt::RightButton) {
+    switch (type) {
+    case INNERBBG:
+      r->set( col, row, MARK1BBG );
+      break;
+    }
+  }
+  updateElement( col, row );
+}
+
+
+int KBBGraphic::traceRay( int startX, int startY, int *endX, int *endY )
+{
+	int startPos[DIM_MAX];
+	startPos[DIM_X] = startX;
+	startPos[DIM_Y] = startY;
+
+	int startBorderPos = m_board->absolutePositionToBorderPosition(startPos);
+	int endBorderPos = m_board->shootRay(startBorderPos);
+
+	if (endBorderPos == m_board->HIT_POSITION)
+		return HIT;
+
+	if (startBorderPos == endBorderPos)
+		return REFLECTION;
+
+	int endPos[DIM_MAX];
+	m_board->borderPositionToAbsolutePosition(endBorderPos, endPos);
+	*endX = endPos[DIM_X];
+	*endY = endPos[DIM_Y];
+
+	return DETOUR;
 }
 
 
@@ -385,7 +597,7 @@ void KBBGraphic::mouseMoveEvent( QMouseEvent* e ) {
       curRow = movRow;
       curCol = movCol;
       updateElement( oldCol, oldRow );
-      emit inputAt( curCol, curRow, e->buttons() );
+      inputAt( curCol, curRow, e->buttons() );
     }
   }
 }
@@ -423,7 +635,7 @@ void KBBGraphic::slotInput()
   if ( !inputAccepted ) {
     return;
   }
-  emit inputAt( curCol, curRow, Qt::LeftButton );
+  inputAt( curCol, curRow, Qt::LeftButton );
 //  updateElement( curCol, curRow );
 }
 
@@ -464,8 +676,13 @@ void KBBGraphic::focusOutEvent( QFocusEvent* )
 void KBBGraphic::setInputAccepted( bool b )
 {
   inputAccepted = b;
-  if (b) setFocusPolicy( Qt::StrongFocus );
-  else setFocusPolicy( Qt::NoFocus );
+  if (b) {
+    setFocusPolicy( Qt::StrongFocus );
+    setFocus();
+  } else {
+    setFocusPolicy( Qt::NoFocus );
+    clearFocus();
+  }
 }
 
 void KBBGraphic::updateElement( int col, int row )

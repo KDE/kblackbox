@@ -1,3 +1,10 @@
+2007-01-20 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Big clean-up (2nd part) to have a clean API between the logical game and the graphic widget (to be able to substitute it with a new one in the future).
+	* User input is now managed by the graphic widget.
+	* Full rewrite of the methode that calculates the trajectory of the laser ray.
+	* Object "gameBoard" removed.
+	* Documentation of the code of the class KBBBoard.
+
 2007-01-18 Nicolas Roffet <nicolas-kde@roffet.com>
 	* New private methode "KBBGame::comfirmGameEndIfNeeded()" to avoid duplication of code.
 	* New member variable "m_gameReallyStarted" to avoid to annoy the user with the confirmation of the end of the game when the player didn't really start to play.

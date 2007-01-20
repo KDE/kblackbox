@@ -12,9 +12,13 @@
 #ifndef KBBGFX_H
 #define KBBGFX_H
 
+
 #include <QWidget>
 
+
+class KBBBoard;
 #include "util.h"
+
 
 /*
    Default size of a cell
@@ -45,6 +49,26 @@
 
 #define NROFTYPES 8
 
+
+/*
+   Types of the boxes (used f.e.g. in the traceRay() method)
+*/
+#define OUTERBBT 0
+#define INNERBBT 1
+#define LASERBBT 2
+#define BALLBBT  3
+
+
+/*
+   Ray-tracing results.
+*/
+#define WRONGSTART -1
+#define DETOUR      0
+#define REFLECTION  1
+#define HIT         2
+
+
+
 /*
    Negative numbers are deflected lasers... 
 */
@@ -53,12 +77,24 @@ class KBBGraphic : public QWidget
 {
   Q_OBJECT
 public:
-  KBBGraphic(  QPixmap** p=0, QWidget* parent=0 );
+  KBBGraphic( KBBBoard* parent );
   ~KBBGraphic();
 
   friend class KBBGame;
   
+  /**
+   * @brief Define the size of the board game
+   * 
+   * @param w Number of columns of the black box
+   * @param h Number of rows of the black box
+   * The real size is 4 columns and rows bigger because of the space for "lasers" and an edge...
+   */
   void setSize( int w, int h );
+
+  void clear();
+  void inputAt( int, int, int );
+  void solve();
+
   RectOnArray *getGraphicBoard();
   int numC();
   int numR();
@@ -82,8 +118,9 @@ public slots:
 
 signals:
   void sizeChanged();
-  void inputAt( int, int, int );
   void endMouseClicked();
+  void addPlayerBall ( int );
+  void removePlayerBall ( int );
 
 protected:
   virtual QSize sizeHint() const;
@@ -101,7 +138,9 @@ private:
   void paintCellDefault( QPainter*, int row, int col );
   void paintCellPixmap( QPainter*, int row, int col );
   void scalePixmaps( int w, int h );
+  int traceRay( int startX, int startY, int *endX, int *endY );
   RectOnArray *graphicBoard;
+  KBBBoard* m_board;
   int curRow;
   int curCol;
   bool inputAccepted;
@@ -111,6 +150,7 @@ private:
   int cellH;
   int numCols;
   int numRows;
+  int detourCounter;
   QPixmap **pix;
   QPixmap **pixScaled;
   QPixmap *drawBuffer;

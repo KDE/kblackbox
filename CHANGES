@@ -1,3 +1,6 @@
+2007-01-21 Nicolas Roffet <nicolas-kde@roffet.com>
+	* In KBBGraphic: Fusion of the methodes "setSize" and "clear" in a new one "newGame". (Code optimisation)
+
 2007-01-20 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Big clean-up (2nd part) to have a clean API between the logical game and the graphic widget (to be able to substitute it with a new one in the future).
 	* User input is now managed by the graphic widget.

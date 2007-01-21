@@ -131,7 +131,7 @@ KBBGraphic::~KBBGraphic()
    Sets the size of the table
 */
 
-void KBBGraphic::setSize( int w, int h )
+void KBBGraphic::newGame( int w, int h )
 {
   // +4 is the space for "lasers" and an edge...
   w += 4;
@@ -140,19 +140,15 @@ void KBBGraphic::setSize( int w, int h )
   if ((w != numCols) || (h != numRows)) {
     delete graphicBoard;
     graphicBoard = new RectOnArray( w, h );
-    graphicBoard->fill( OUTERBBG );
     setNumCols( w );
     setNumRows( h );
     setCellWidth( CELLW );
     setCellHeight( CELLH );
     minW = cellW * numRows;
     minH = cellH * numCols;
-    emit(sizeChanged());
   }
-}
 
-void KBBGraphic::clear()
-{
+
   detourCounter = -1;
 
   

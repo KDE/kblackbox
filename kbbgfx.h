@@ -83,15 +83,14 @@ public:
   friend class KBBGame;
   
   /**
-   * @brief Define the size of the board game
+   * @brief Create a new board game
    * 
    * @param w Number of columns of the black box
    * @param h Number of rows of the black box
    * The real size is 4 columns and rows bigger because of the space for "lasers" and an edge...
    */
-  void setSize( int w, int h );
+  void newGame( int w, int h );
 
-  void clear();
   void inputAt( int, int, int );
   void solve();
 
@@ -117,7 +116,7 @@ public slots:
   void slotInput();
 
 signals:
-  void sizeChanged();
+  //void sizeChanged();
   void endMouseClicked();
   void addPlayerBall ( int );
   void removePlayerBall ( int );

@@ -197,13 +197,12 @@ void KBBBoard::newGame( int balls, int columns, int rows, bool tutorial )
 {
 	m_columns = columns;
 	m_rows = rows;
-	gr->setSize(m_columns, m_rows);
 	
 	// Clear
 	m_gameReallyStarted = false;
 	m_ballsPlaced.clear();
 	setScore( 0 );
-	gr->clear();
+	gr->newGame(m_columns, m_rows);
 	
 	// Puts the balls in the black box on random positions.
 	m_balls.clear();

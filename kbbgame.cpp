@@ -62,8 +62,7 @@ KBBGame::KBBGame()
   */
   running = false;
 
-  KConfig *kConf;
-  kConf = KGlobal::config();
+  KSharedConfigPtr kConf = KGlobal::config();
   kConf->setGroup( "KBlackBox Setup" );
   if (kConf->hasKey( "Balls" )) {
     balls = kConf->readEntry( "Balls",0 );
@@ -109,10 +108,9 @@ KBBGame::KBBGame()
 */
 KBBGame::~KBBGame()
 {
-  KConfig *kConf;
+  KSharedConfigPtr kConf = KGlobal::config();
   QString s;
 
-  kConf = KGlobal::config();
   kConf->setGroup( "KBlackBox Setup" );
   kConf->writeEntry( "Balls", balls );
   kConf->writeEntry( "Width", m_columns);

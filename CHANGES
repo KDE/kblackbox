@@ -1,3 +1,11 @@
+2007-01-31 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Full rewrite of the central graphic widget with QGraphicsView to improve the user experience and to provide cool effects in the future ,)
+	* Full scalable central graphic widget (with some SVG elements: the balls and the cross): KBBScalableGraphicWidget.
+	* Old central widget KBBGraphic is still there and can be activated by changing 2 lines in the code.
+	* Set the version number to "0.4.0-SVN" as the changes are now big and visible.
+	* Bug correction: Number of placed balls is now immediately updated.
+	* Small temporary regressions: It's not possible to play with the keyboard anymore. User  documentation is now out-dated.
+
 2007-01-21 Nicolas Roffet <nicolas-kde@roffet.com>
 	* In KBBGraphic: Fusion of the methodes "setSize" and "clear" in a new one "newGame". (Code optimisation)
 

@@ -39,6 +39,7 @@
 
 #include "kbbboard.h"
 #include "kbbgfx.h"
+#include "kbbscalablegraphicwidget.h"
 
 
 
@@ -50,7 +51,9 @@ KBBBoard::KBBBoard(KMainWindow *parent)
 {
 	random.setSeed(0);
 
-	gr = new KBBGraphic( this );
+	// SWITCH THE CENTRAL WIDGET HERE
+	//gr = new KBBGraphic( this );
+	gr = new KBBScalableGraphicWidget( this );
 
 	connect( gr, SIGNAL(endMouseClicked()), parent, SLOT(gameFinished()) );
 	connect( gr, SIGNAL(addPlayerBall(int)), this, SLOT(addPlayerBall(int)) );
@@ -278,6 +281,7 @@ int KBBBoard::shootRay( int borderPosition )
 void KBBBoard::addPlayerBall( int boxPosition ) {
 	if (!m_ballsPlaced.contains(boxPosition))
 		m_ballsPlaced.append(boxPosition);
+	emit updateStats();
 }
 
 
@@ -288,6 +292,7 @@ bool KBBBoard::containsBall( int boxPosition ) {
 
 void KBBBoard::removePlayerBall( int boxPosition ) {
 	m_ballsPlaced.removeAll(boxPosition);
+	emit updateStats();
 }
 
 

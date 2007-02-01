@@ -11,6 +11,12 @@ set(kblackbox_SRCS
    kbbgfx.cpp 
    kbbgame.cpp 
    kbbboard.cpp
+   kbbscalablegraphicwidget.cpp
+   kbbgraphicsitemborder.cpp
+   kbbgraphicsitemlaser.cpp
+   kbbgraphicsitemrayresult.cpp
+   kbbgraphicsitemball.cpp
+   kbbgraphicsitemblackbox.cpp
    util.cpp 
    main.cpp )
 

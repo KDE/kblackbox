@@ -108,7 +108,6 @@ public:
 
 public slots:
   void setInputAccepted( bool b );
-  void updateElement( int col, int row );
   void slotUp();
   void slotDown();
   void slotLeft();
@@ -138,6 +137,7 @@ private:
   void paintCellPixmap( QPainter*, int row, int col );
   void scalePixmaps( int w, int h );
   int traceRay( int startX, int startY, int *endX, int *endY );
+  void updateElement( int col, int row );
   RectOnArray *graphicBoard;
   KBBBoard* m_board;
   int curRow;

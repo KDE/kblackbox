@@ -74,7 +74,7 @@ class KBBBoard : public QObject
 	Q_OBJECT
 
 	public:
-		KBBBoard(KMainWindow *parent);
+		explicit KBBBoard(KMainWindow *parent);
 		
 		
 		static const int HIT_POSITION = -1;

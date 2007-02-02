@@ -77,7 +77,7 @@ class KBBGraphic : public QWidget
 {
   Q_OBJECT
 public:
-  KBBGraphic( KBBBoard* parent );
+  explicit KBBGraphic( KBBBoard* parent );
   ~KBBGraphic();
 
   friend class KBBGame;

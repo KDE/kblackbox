@@ -65,7 +65,6 @@ private slots:
   void setMinSize();
   void gameFinished();
   void abortGame();
-  void giveUp();
 
 
 private:

@@ -1,3 +1,6 @@
+2007-02-02 Nicolas Roffet <nicolas-kde@roffet.com>
+	* GUI: Removed the "Give up" and "Done" actions in the menu and toolbar and used the standard game action "Solve" instead of both. Depending on how many balls the player placed on the board, the game will be normaly finished or given up (after confirmation).
+
 2007-01-31 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Full rewrite of the central graphic widget with QGraphicsView to improve the user experience and to provide cool effects in the future ,)
 	* Full scalable central graphic widget (with some SVG elements: the balls and the cross): KBBScalableGraphicWidget.

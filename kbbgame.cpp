@@ -231,12 +231,10 @@ void KBBGame::gameFinished()
 
       KMessageBox::information(this, s);
     } else {
-      s = i18n( "You should place %1 balls!\n"
-		"You have placed %2.",
-	 KGlobal::locale()->formatNumber(balls, 0),
-	 KGlobal::locale()->formatNumber(m_board->numberOfBallsPlaced(), 0));
+      s = i18n( "You should place %1 balls!\nYou have placed %2.\nDo you want to give up this game?", KGlobal::locale()->formatNumber(balls, 0), KGlobal::locale()->formatNumber(m_board->numberOfBallsPlaced(), 0));
 
-      KMessageBox::sorry(this, s);
+      if ( KMessageBox::warningContinueCancel(this, s, QString::null, KGuiItem(i18n("Give Up"))) == KMessageBox::Continue )
+        abortGame();
     }
   }
 }
@@ -261,17 +259,6 @@ void KBBGame::abortGame()
     m_board->gameOver();
 }
 
-/*
-   Gives the game up.
-*/
-void KBBGame::giveUp()
-{
-	if (running) {
-		if ( KMessageBox::warningContinueCancel(0, i18n("Do you really want to give up this game?"), QString::null, KGuiItem(i18n("Give Up"))) == KMessageBox::Continue) {
-			abortGame();
-		}
-	}
-}
 
 /*
    Displays game statistics.
@@ -338,14 +325,10 @@ void KBBGame::initKAction()
 // game
   QAction *newAct = KStandardGameAction::gameNew(this, SLOT(newGame()), this);
   actionCollection()->addAction(newAct->objectName(), newAct);
-  QAction *giveUpAct = actionCollection()->addAction("game_giveup");
-  giveUpAct->setIcon(KIcon(SmallIcon("giveup")));
-  giveUpAct->setText(i18n("&Give Up"));
-  connect(giveUpAct, SIGNAL(triggered(bool)), SLOT(giveUp()));
-  QAction *doneAct = actionCollection()->addAction("game_done" );
-  doneAct->setIcon(KIcon(SmallIcon("done")));
-  doneAct->setText(i18n("&Done"));
-  connect(doneAct, SIGNAL(triggered(bool)), SLOT(gameFinished()));
+
+  QAction *doneAct = KStandardGameAction::solve(this, SLOT(gameFinished()), this);
+  actionCollection()->addAction(doneAct->objectName(), doneAct);
+
   QAction *action = actionCollection()->addAction("game_resize");
   action->setText(i18n("&Resize"));
   connect(action, SIGNAL(triggered(bool) ), SLOT(gameResize()));

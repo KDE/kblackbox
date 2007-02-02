@@ -1,10 +1,8 @@
 <!DOCTYPE kpartgui>
-<kpartgui name="kblackbox" version="5">
+<kpartgui name="kblackbox" version="6">
 
 <MenuBar>
   <Menu name="game"><text>&amp;Game</text>
-	<Action name="game_giveup" append="new_merge"/>
-	<Action name="game_done" append="new_merge"/>
 	<Separator/>
 	<Action name="game_resize" append="misc_merge"/>
   </Menu>
@@ -17,8 +15,7 @@
 
 <ToolBar name="mainToolBar" noMerge="1"><text>Main Toolbar</text>
 	<Action name="game_new"/>
-	<Action name="game_giveup"/>
-	<Action name="game_done"/>
+	<Action name="move_solve"/>
 </ToolBar>
 
 </kpartgui>

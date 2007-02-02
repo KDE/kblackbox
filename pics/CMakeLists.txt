@@ -4,7 +4,7 @@
 
 ########### install files ###############
 
-install( FILES balls.svg blue.xpm brown.xpm cyan.xpm gray.xpm green.xpm red.xpm white.xpm             green2.xpm giveup.xpm done.xpm  DESTINATION  ${DATA_INSTALL_DIR}/kblackbox/pics )
+install( FILES balls.svg blue.xpm brown.xpm cyan.xpm gray.xpm green.xpm red.xpm white.xpm green2.xpm DESTINATION ${DATA_INSTALL_DIR}/kblackbox/pics )
 
 
 

@@ -1,3 +1,8 @@
+2007-02-03 Nicolas Roffet <nicolas-kde@roffet.com>
+	* New: Grid over the black box in the widget KBBScalableGraphicWidget.
+	* Updates the KBBScalableGraphicWidget after starting a new game. (Small bug corrected)
+	* Doesn't resize the widget automatically anymore after a change of the board size. It just bothered the player.
+
 2007-02-02 Nicolas Roffet <nicolas-kde@roffet.com>
 	* GUI: Removed the "Give up" and "Done" actions in the menu and toolbar and used the standard game action "Solve" instead of both. Depending on how many balls the player placed on the board, the game will be normaly finished or given up (after confirmation).
 

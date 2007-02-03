@@ -33,8 +33,10 @@
 #define KBBGRAPHICSITEMBLACKBOX_H
 
 
+class QGraphicsLineItem;
 #include <QGraphicsRectItem>
 class QGraphicsScene;
+#include <QList>
 
 
 #include "kbbscalablegraphicwidget.h"
@@ -57,7 +59,9 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 		void mousePressEvent (QGraphicsSceneMouseEvent* event);
 		
 		int m_columns;
+		QList<QGraphicsLineItem*> m_lines;
 		int m_rows;
+		QGraphicsScene* m_scene;
 		KBBScalableGraphicWidget* m_widget;
 };
 

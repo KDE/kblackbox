@@ -296,7 +296,6 @@ bool KBBGame::setSize( int w, int h )
 			m_rows = h;
 			startGame();
 			setMinSize();
-			gameResize();
 		}
 	}
 	return ok;

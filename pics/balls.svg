@@ -9,8 +9,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="50px"
-   height="50px"
+   width="60px"
+   height="180px"
    id="svg2194"
    sodipodi:version="0.32"
    inkscape:version="0.44.1"
@@ -235,13 +235,13 @@
      inkscape:pageshadow="2"
      inkscape:zoom="2"
      inkscape:cx="-113.75"
-     inkscape:cy="36.392857"
+     inkscape:cy="35.892857"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:window-width="1049"
      inkscape:window-height="653"
-     inkscape:window-x="421"
-     inkscape:window-y="232" />
+     inkscape:window-x="232"
+     inkscape:window-y="257" />
   <metadata
      id="metadata2199">
     <rdf:RDF>
@@ -256,7 +256,8 @@
   <g
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     style="opacity:1">
     <g
        id="blueball"
        transform="matrix(0.176383,0,0,0.176383,-6.96648,-98.5948)"
@@ -548,8 +549,8 @@
     <g
        id="cross"
        inkscape:label="#g1973"
-       transform="matrix(1.24494,0,0,1.045675,6.112348,112.5195)"
-       style="stroke:black;stroke-opacity:1;stroke-width:1.0000301;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round;stroke-linecap:round;fill:#ff2811;fill-opacity:1">
+       transform="matrix(1.217164,0,0,1.022345,6.030181,112.0115)"
+       style="fill:#ff2811;fill-opacity:1;stroke:black;stroke-width:1.00003004;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
       <rect
          transform="matrix(0.685388,-0.728178,0.813309,0.581832,0,0)"
          y="-20.713779"
@@ -557,7 +558,7 @@
          height="8.8476076"
          width="47.862175"
          id="rect1967"
-         style="opacity:1;fill:#ff2811;fill-opacity:1;stroke:black;stroke-width:1.00455355;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;fill:#ff2811;fill-opacity:1;stroke:black;stroke-width:1.00455356;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <rect
          transform="matrix(-0.685388,-0.728178,-0.813309,0.581832,0,0)"
          y="-46.675568"
@@ -565,7 +566,7 @@
          height="8.8476076"
          width="47.862167"
          id="rect1971"
-         style="opacity:1;fill:#ff2811;fill-opacity:1;stroke:black;stroke-width:1.00455355;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;fill:#ff2811;fill-opacity:1;stroke:black;stroke-width:1.00455356;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
   </g>
 </svg>

@@ -138,11 +138,13 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows )
 	m_rows = rows;
 	m_blackbox->setSize(m_columns, m_rows);
 	m_scene->setSceneRect(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE);
+	resizeEvent(0);
 
 	// Place new lasers
 	for (int i=0; i<2*(m_columns + m_rows); i++)
 		m_lasers.insert(i, new KBBGraphicsItemLaser(this, m_scene, i, m_columns, m_rows));
 
+	m_scene->update();
 }
 
 

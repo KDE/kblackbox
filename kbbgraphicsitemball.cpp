@@ -48,7 +48,7 @@ KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGra
 	m_widget = parent;
 	m_boxPosition = boxPosition;
 	setSharedRenderer(svgRenderer);
-	setPos( KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns));
+	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns) + 4*KBBScalableGraphicWidget::RATIO/50);
 	switch (type) {
 		case blue:
 			setZValue(2);

@@ -178,6 +178,7 @@ void KBBGraphic::newGame( int w, int h )
 
 
   repaint();
+  resizeEvent(0);
 }
 
 

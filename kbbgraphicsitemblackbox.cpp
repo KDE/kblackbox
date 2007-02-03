@@ -31,7 +31,9 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
+#include <QGraphicsLineItem>
 #include <QGraphicsRectItem>
+#include <QPen>
 
 
 #include "kbbgraphicsitemblackbox.h"
@@ -46,9 +48,10 @@
 KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* parent, QGraphicsScene* scene) : QGraphicsRectItem (0, scene )
 {
 	m_widget = parent;
+	m_scene = scene;
 
 	setPen(QPen(Qt::black));
-	setBrush(QColor(35, 35, 35));
+	setBrush(QColor(65, 65, 65));
 }
 
 
@@ -59,12 +62,31 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* pare
 
 void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 {
-	m_columns = columns;
-	m_rows = rows;
+	if ((m_columns!=columns) && (m_rows!=rows)) {
+		m_columns = columns;
+		m_rows = rows;
+		
+		setRect(KBBScalableGraphicWidget::BORDER_SIZE, KBBScalableGraphicWidget::BORDER_SIZE, m_columns*KBBScalableGraphicWidget::RATIO, m_rows*KBBScalableGraphicWidget::RATIO);
 	
-	setRect(KBBScalableGraphicWidget::BORDER_SIZE, KBBScalableGraphicWidget::BORDER_SIZE, m_columns*KBBScalableGraphicWidget::RATIO, m_rows*KBBScalableGraphicWidget::RATIO);
-
-	//TODO: Improve the black box with a grid a nicer look.
+		//remove old lines
+		for (int i=0; i<m_lines.count(); i++)
+			delete m_lines[i];
+		m_lines.clear();
+	
+		// add new lines
+		for (int i=1; i<m_columns; i++)
+			m_lines.append(new QGraphicsLineItem( KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, KBBScalableGraphicWidget::BORDER_SIZE, KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, KBBScalableGraphicWidget::BORDER_SIZE + m_rows*KBBScalableGraphicWidget::RATIO, this, m_scene));
+		for (int i=1; i<m_rows; i++)
+			m_lines.append(new QGraphicsLineItem(  KBBScalableGraphicWidget::BORDER_SIZE, KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, KBBScalableGraphicWidget::BORDER_SIZE + m_columns*KBBScalableGraphicWidget::RATIO,  KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, this, m_scene));
+		
+		// set line style
+		for (int i=0; i<m_lines.count(); i++) {
+			QPen pen(Qt::DashLine);
+			pen.setColor(Qt::black);
+			pen.setWidth(0);
+			m_lines[i]->setPen(pen);
+		}
+	}
 }
 
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name="kblackboxrc"/>
+  <group name="KBlackBox Setup">
+    <entry name="balls" type="Int">
+      <label>Number of balls</label>
+      <default>4</default>
+    </entry>
+    <entry name="tutorial" type="Bool">
+      <label>Tutorial mode</label>
+      <default>false</default>
+    </entry>
+    <entry name="columns" type="Int">
+      <label>Number of columns of the board</label>
+      <default>8</default>
+    </entry>
+    <entry name="rows" type="Int">
+      <label>Number of rows of the board</label>
+      <default>8</default>
+    </entry>
+  </group>
+</kcfg>

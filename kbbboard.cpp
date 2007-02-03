@@ -47,7 +47,7 @@
 // Constructor / Destructor
 //
 
-KBBBoard::KBBBoard(KMainWindow *parent)
+KBBBoard::KBBBoard(KMainWindow *parent) : QObject(parent)
 {
 	random.setSeed(0);
 

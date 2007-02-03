@@ -74,10 +74,10 @@ class KBBBoard : public QObject
 	Q_OBJECT
 
 	public:
-		explicit KBBBoard(KMainWindow *parent);
-		
-		
 		static const int HIT_POSITION = -1;
+		
+		
+		explicit KBBBoard(KMainWindow *parent);
 		
 		
 		/**

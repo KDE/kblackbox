@@ -36,10 +36,11 @@ int main( int argc, char **argv )
   KGlobal::locale()->insertCatalog("libkdegames");
 
   if (application.isSessionRestored())
-      RESTORE(KBBGame)
+      kRestoreMainWindows<KBBGame>();
   else {
       KBBGame *game = new KBBGame;
       game->show();
   }
+
   return application.exec();
 }

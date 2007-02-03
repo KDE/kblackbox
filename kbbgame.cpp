@@ -13,12 +13,11 @@
 #include <QToolTip>
 #include <QString>
 
+
 #include <ktoolbar.h>
 #include <kmessagebox.h>
-#include <kdebug.h>
 #include <kiconloader.h>
 #include <klocale.h>
-#include <kconfig.h>
 #include <kglobal.h>
 #include <kmenubar.h>
 #include <khelpmenu.h>
@@ -29,9 +28,13 @@
 #include <ktoggleaction.h>
 #include <kactioncollection.h>
 #include <kicon.h>
+
+
 #include "kbbgame.h"
 #include "kbbboard.h"
+#include "kbbprefs.h"
 #include "version.h"
+
 
 
 /*
@@ -57,41 +60,33 @@ KBBGame::KBBGame()
 		 "Click here when you think you placed all the balls.") );
 		 */
 
-  /*
-     Game initializations
-  */
   running = false;
 
-  KSharedConfigPtr kConf = KGlobal::config();
-  kConf->setGroup( "KBlackBox Setup" );
-  if (kConf->hasKey( "Balls" )) {
-    balls = kConf->readEntry( "Balls",0 );
-    switch (balls) {
+
+  //Read configuration options
+
+  balls = KBBPrefs::balls();
+  if ((balls!=6) && (balls!=8))
+    balls = 4;
+  switch (balls) {
     case 4: ballsAction->setCurrentItem(0); break;
     case 6: ballsAction->setCurrentItem(1); break;
     case 8: ballsAction->setCurrentItem(2); break;
-    }
-  } else {
-    balls = 4;
-    ballsAction->setCurrentItem(0);
   }
-  if ((kConf->hasKey( "Width" )) &&
-      (kConf->hasKey( "Balls" ))) {
-    m_columns = kConf->readEntry( "Width", 0 );
-    m_rows = kConf->readEntry( "Height",0 );
-    switch (m_columns) {
-    case 8: sizeAction->setCurrentItem(0); break;
-    case 10: sizeAction->setCurrentItem(1); break;
-    case 12: sizeAction->setCurrentItem(2); break;
-    }
-  } else {
+
+  m_columns = KBBPrefs::columns();
+  m_rows = KBBPrefs::rows();
+  if ((m_columns==10) && (m_rows==10))
+    sizeAction->setCurrentItem(1);
+  else if ((m_columns==12) && (m_rows==12))
+    sizeAction->setCurrentItem(2);
+  else {
     m_columns = 8;
     m_rows = 8;
     sizeAction->setCurrentItem(0);
   }
-  if (kConf->hasKey( "tutorial" )) {
-    tutorial = (bool) kConf->readEntry( "tutorial",0 );
-  } else tutorial = false;
+
+  tutorial = KBBPrefs::tutorial();
   tutorialAction->setChecked(tutorial);
 
 
@@ -103,27 +98,19 @@ KBBGame::KBBGame()
   setMinSize();
 }
 
-/*
-   Saves the options and destroys the KBBGame widget.
-*/
+
 KBBGame::~KBBGame()
 {
-  KSharedConfigPtr kConf = KGlobal::config();
-  QString s;
-
-  kConf->setGroup( "KBlackBox Setup" );
-  kConf->writeEntry( "Balls", balls );
-  kConf->writeEntry( "Width", m_columns);
-  kConf->writeEntry( "Height", m_rows);
-  kConf->writeEntry( "tutorial", (int) tutorial );
-
-  // All the rest has "this" for parent so it doesn't need to be deleted.
+	KBBPrefs::writeConfig();
 }
+
+
 
 void KBBGame::gameResize()
 {
   resize( this->minimumWidth(), this->minimumHeight());
 }
+
 
 void KBBGame::setMinSize()
 {
@@ -149,7 +136,11 @@ void KBBGame::slotSize(int selection)
   }
 
 
-  if (!ok) {
+  if (ok) {
+    KBBPrefs::setColumns(m_columns);
+    KBBPrefs::setRows(m_rows);
+  }
+  else {
     switch(m_columns) {
       case 8:
         sizeAction->setCurrentItem(0); break;
@@ -177,7 +168,9 @@ void KBBGame::slotBalls(int selection)
           break;
   }
 
-  if (!ok) {
+  if (ok) 
+    KBBPrefs::setBalls(balls);
+  else {
     switch (balls) {
       case 4:
         ballsAction->setCurrentItem(0); break;
@@ -192,6 +185,7 @@ void KBBGame::slotBalls(int selection)
 void KBBGame::tutorialSwitch()
 {
   tutorial = !tutorial;
+  KBBPrefs::setTutorial(tutorial);
 }
 
 /*
@@ -389,5 +383,6 @@ void KBBGame::initKAction()
   action->setShortcut(Qt::Key_Return);
   addAction(action);
 }
+
 
 #include "kbbgame.moc"

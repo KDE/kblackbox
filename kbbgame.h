@@ -39,6 +39,8 @@ class KBBBoard;
 class KBBGame : public KMainWindow
 {
   Q_OBJECT
+
+
 public:
   KBBGame();
   ~KBBGame();
@@ -75,7 +77,7 @@ private:
   * If the game is not running or running but not really started, the game may end without user confirmation.
   */
   bool comfirmGameEndIfNeeded();
-  
+
   /**
    * @brief Start a new game (without user comfirmation)
    * 

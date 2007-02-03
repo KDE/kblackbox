@@ -1,4 +1,8 @@
 2007-02-03 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Changed the way preferences are managed. It's not anymore with KSharedConfigPtr but with "KConfig XT". Good consequence: the following crash by closing the application disappeared: "Fatal Error: Accessed global static 'KGlobalPrivate *globalData()' after destruction." :)
+	* Substituted the macro "RESTORE" by the template "kRestoreMainWindows" for session management in "main.cpp".
+
+2007-02-03 Nicolas Roffet <nicolas-kde@roffet.com>
 	* New: Grid over the black box in the widget KBBScalableGraphicWidget.
 	* Updates the KBBScalableGraphicWidget after starting a new game. (Small bug corrected)
 	* Doesn't resize the widget automatically anymore after a change of the board size. It just bothered the player.
@@ -12,7 +16,7 @@
 	* Old central widget KBBGraphic is still there and can be activated by changing 2 lines in the code.
 	* Set the version number to "0.4.0-SVN" as the changes are now big and visible.
 	* Bug correction: Number of placed balls is now immediately updated.
-	* Small temporary regressions: It's not possible to play with the keyboard anymore. User  documentation is now out-dated.
+	* Small temporary regressions: It's not possible to play with the keyboard anymore. User documentation is now out-dated.
 
 2007-01-21 Nicolas Roffet <nicolas-kde@roffet.com>
 	* In KBBGraphic: Fusion of the methodes "setSize" and "clear" in a new one "newGame". (Code optimisation)

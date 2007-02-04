@@ -3,7 +3,6 @@ Encoding=UTF-8
 GenericName=Blackbox Logic Game
 GenericName[el]=Παιχνίδι λογικής Blackbox
 GenericName[fr]=Jeu de logique Blackbox
-GenericName[ja]=ブラックボックス論理ゲーム
 GenericName[x-test]=xxBlackbox Logic Gamexx
 Exec=kblackbox -caption "%c"
 Name=KBlackBox

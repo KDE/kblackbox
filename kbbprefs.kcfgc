@@ -3,3 +3,4 @@ File=kblackbox.kcfg
 ClassName=KBBPrefs
 Singleton=true
 Mutators=true
+SetUserTexts=true

@@ -34,6 +34,7 @@
 
 
 class QGraphicsScene;
+class QSvgRenderer;
 
 
 #include "kbbgraphicsitemborder.h"
@@ -47,14 +48,20 @@ class QGraphicsScene;
 class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder
 {
 	public:
-		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber);
-
+		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows, const int rayNumber);
+		
+		void highlight(bool state);
+		void setOpposite(KBBGraphicsItemRayResult* opposite);
+		
 
 	private:
-		//void hoverEnterEvent (QGraphicsSceneHoverEvent* event);
-		//void hoverLeaveEvent (QGraphicsSceneHoverEvent* event);
+		QRectF boundingRect() const;
+		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
+		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
 		void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget*);
 		
+		int m_centerRadius;
+		KBBGraphicsItemRayResult* m_opposite;
 		int m_rayNumber;
 };
 

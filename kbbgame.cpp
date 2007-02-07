@@ -55,10 +55,6 @@ KBBGame::KBBGame()
   connect( m_board, SIGNAL(updateStats()),
 	  this, SLOT(updateStats()) );
 
-  /*
-  doneButton->setToolTip( i18n(
-		 "Click here when you think you placed all the balls.") );
-		 */
 
   running = false;
 
@@ -342,9 +338,9 @@ void KBBGame::initKAction()
   actionCollection()->addAction("options_balls", ballsAction);
   connect(ballsAction, SIGNAL(triggered(int)), this, SLOT(slotBalls(int)));
   list.clear();
-  list.append(i18n(" 4 "));
-  list.append(i18n(" 6 "));
-  list.append(i18n(" 8 "));
+  list.append(i18n("4 balls"));
+  list.append(i18n("6 balls"));
+  list.append(i18n("8 balls"));
   ballsAction->setItems(list);
   tutorialAction = new KToggleAction( i18n("&Tutorial"), this );
   actionCollection()->addAction( "options_tutorial", tutorialAction );

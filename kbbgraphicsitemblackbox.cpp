@@ -33,7 +33,9 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsLineItem>
 #include <QGraphicsRectItem>
+#include <QGraphicsSvgItem>
 #include <QPen>
+#include <QSvgRenderer>
 
 
 #include "kbbgraphicsitemblackbox.h"
@@ -45,15 +47,29 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* parent, QGraphicsScene* scene) : QGraphicsRectItem (0, scene )
+KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer) : QGraphicsRectItem (0, scene )
 {
 	m_widget = parent;
 	m_scene = scene;
 
 	setPen(QPen(Qt::black));
-	setBrush(QColor(65, 65, 65));
+	setBrush(QColor(79, 79, 79));
+	
+	m_background = new QGraphicsSvgItem(this);
+	m_background->setSharedRenderer(svgRenderer);
+	m_background->setElementId("bbquestion");
+	m_background->setZValue(1);
+
+	m_scene->addItem(m_background);
+	m_scene->update();
 }
 
+
+KBBGraphicsItemBlackBox::~KBBGraphicsItemBlackBox()
+{
+	m_scene->removeItem(m_background);
+	delete m_background;
+}
 
 
 //
@@ -66,7 +82,10 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 		m_columns = columns;
 		m_rows = rows;
 		
-		setRect(KBBScalableGraphicWidget::BORDER_SIZE, KBBScalableGraphicWidget::BORDER_SIZE, m_columns*KBBScalableGraphicWidget::RATIO, m_rows*KBBScalableGraphicWidget::RATIO);
+		const int b = KBBScalableGraphicWidget::BORDER_SIZE;
+		const int r = KBBScalableGraphicWidget::RATIO;
+		
+		setRect(b, b, m_columns*r, m_rows*r);
 	
 		//remove old lines
 		for (int i=0; i<m_lines.count(); i++)
@@ -74,10 +93,10 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 		m_lines.clear();
 	
 		// add new lines
-		for (int i=1; i<m_columns; i++)
-			m_lines.append(new QGraphicsLineItem( KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, KBBScalableGraphicWidget::BORDER_SIZE, KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, KBBScalableGraphicWidget::BORDER_SIZE + m_rows*KBBScalableGraphicWidget::RATIO, this, m_scene));
-		for (int i=1; i<m_rows; i++)
-			m_lines.append(new QGraphicsLineItem(  KBBScalableGraphicWidget::BORDER_SIZE, KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, KBBScalableGraphicWidget::BORDER_SIZE + m_columns*KBBScalableGraphicWidget::RATIO,  KBBScalableGraphicWidget::BORDER_SIZE + i*KBBScalableGraphicWidget::RATIO, this, m_scene));
+		for (int i=0; i<m_columns+1; i++)
+			m_lines.append(new QGraphicsLineItem( b + i*r, b, b + i*r, b + m_rows*r, this, m_scene));
+		for (int i=0; i<m_rows+1; i++)
+			m_lines.append(new QGraphicsLineItem(  b, b + i*r, b + m_columns*r,  b + i*r, this, m_scene));
 		
 		// set line style
 		for (int i=0; i<m_lines.count(); i++) {
@@ -86,6 +105,8 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 			pen.setWidth(0);
 			m_lines[i]->setPen(pen);
 		}
+		
+		m_background->setPos(b + m_columns*r/2 - 6*r/2, b + m_rows*r/2 - 6*r/2);
 	}
 }
 

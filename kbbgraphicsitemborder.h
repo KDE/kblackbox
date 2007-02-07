@@ -33,9 +33,10 @@
 #define KBBGRAPHICSITEMBORDER_H
 
 
-#include <QGraphicsItem>
+#include <QGraphicsSvgItem>
 class QGraphicsScene;
 class QRectF;
+class QSvgRenderer;
 
 
 #include "kbbscalablegraphicwidget.h"
@@ -46,13 +47,12 @@ class QRectF;
  * @brief Border element of the scalable graphic widget of KBlackBox
  *
  */
-class KBBGraphicsItemBorder : public QGraphicsItem
+class KBBGraphicsItemBorder : public QGraphicsSvgItem
 {
 	public:
-		KBBGraphicsItemBorder(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int offset);
+		KBBGraphicsItemBorder(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, QString svgId, const int borderPosition, const int columns, const int rows, const int offset);
 	
 		int borderPosition() const;
-		QRectF boundingRect() const;
 
 
 	protected:
@@ -60,7 +60,7 @@ class KBBGraphicsItemBorder : public QGraphicsItem
 		int m_borderPosition;
 		int m_centerX;
 		int m_centerY;
-		int m_centerRadius;
+		int m_rotation;
 };
 
 #endif // KBBGRAPHICSITEMBORDER_H

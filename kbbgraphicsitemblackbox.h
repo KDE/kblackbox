@@ -36,7 +36,9 @@
 class QGraphicsLineItem;
 #include <QGraphicsRectItem>
 class QGraphicsScene;
+class QGraphicsSvgItem;
 #include <QList>
+class QSvgRenderer;
 
 
 #include "kbbscalablegraphicwidget.h"
@@ -50,7 +52,8 @@ class QGraphicsScene;
 class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 {
 	public:
-		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene);
+		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer);
+		~KBBGraphicsItemBlackBox();
 		
 		void setSize(const int columns, const int rows);
 
@@ -58,6 +61,7 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 	private:
 		void mousePressEvent (QGraphicsSceneMouseEvent* event);
 		
+		QGraphicsSvgItem* m_background;
 		int m_columns;
 		QList<QGraphicsLineItem*> m_lines;
 		int m_rows;

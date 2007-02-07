@@ -51,15 +51,15 @@ KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGra
 	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns) + 4*KBBScalableGraphicWidget::RATIO/50);
 	switch (type) {
 		case blue:
-			setZValue(2);
+			setZValue(3);
 			setElementId("blueball");
 			break;
 		case red:
-			setZValue(1);
+			setZValue(2);
 			setElementId("redball");
 			break;
 		case cross:
-			setZValue(3);
+			setZValue(4);
 			setElementId("cross");
 			break;
 	}

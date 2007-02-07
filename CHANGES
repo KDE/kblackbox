@@ -1,3 +1,6 @@
+2007-02-07 Nicolas Roffet <nicolas-kde@roffet.com>
+	* More SVG: The black box disposes now of a question mark. Lasers intend to try to look like lasers.
+
 2007-02-03 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Changed the way preferences are managed. It's not anymore with KSharedConfigPtr but with "KConfig XT". Good consequence: the following crash by closing the application disappeared: "Fatal Error: Accessed global static 'KGlobalPrivate *globalData()' after destruction." :)
 	* Substituted the macro "RESTORE" by the template "kRestoreMainWindows" for session management in "main.cpp".

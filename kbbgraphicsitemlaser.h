@@ -34,6 +34,7 @@
 
 
 class QGraphicsScene;
+class QSvgRenderer;
 
 
 #include "kbbgraphicsitemborder.h"
@@ -47,12 +48,11 @@ class QGraphicsScene;
 class KBBGraphicsItemLaser : public KBBGraphicsItemBorder
 {
 	public:
-		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows);
+		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows);
 
 
 	private:
 		void mousePressEvent (QGraphicsSceneMouseEvent* );
-		void paint(QPainter *painter, const QStyleOptionGraphicsItem*, QWidget*);
 };
 
 #endif // KBBGRAPHICSITEMLASER_H

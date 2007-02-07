@@ -30,9 +30,7 @@
 
 #include <QFont>
 #include <QGraphicsScene>
-
-
-#include <kdebug.h>
+#include <QSvgRenderer>
 
 
 #include "kbbgraphicsitemborder.h"
@@ -45,10 +43,28 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( parent, scene, borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2)
+KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( parent, scene, svgRenderer, "laser", borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2)
 {
+	m_centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
 	m_rayNumber = rayNumber;
 	setAcceptsHoverEvents(true);
+}
+
+
+
+//
+// Public
+//
+
+void KBBGraphicsItemRayResult::highlight(bool state)
+{
+	//TODO: Small animation?
+}
+
+
+void KBBGraphicsItemRayResult::setOpposite(KBBGraphicsItemRayResult* opposite)
+{
+	m_opposite = opposite;
 }
 
 
@@ -56,20 +72,23 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 // Private
 //
 
-/*
-// TODO: Nice effects to show the outgoing border position of the current position.
-
-void KBBGraphicsItemRayResult::hoverEnterEvent (QGraphicsSceneHoverEvent* event)
+QRectF KBBGraphicsItemRayResult::boundingRect() const
 {
-	kDebug() << "Enter " << m_borderPosition << "!!\n";
+	return QRectF(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
 }
 
 
-void KBBGraphicsItemRayResult::hoverLeaveEvent (QGraphicsSceneHoverEvent* event)
+void KBBGraphicsItemRayResult::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 {
-	kDebug() << "Leave " << m_borderPosition << "!!\n";
+	m_opposite->highlight(true);
 }
-*/
+
+
+void KBBGraphicsItemRayResult::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
+{
+	m_opposite->highlight(false);
+}
+
 
 void KBBGraphicsItemRayResult::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget*)
 {

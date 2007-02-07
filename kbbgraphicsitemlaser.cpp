@@ -30,6 +30,7 @@
 
 
 #include <QGraphicsScene>
+#include <QSvgRenderer>
 
 
 #include <kdebug.h>
@@ -45,8 +46,13 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( parent, scene, borderPosition, columns, rows, 0)
+KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( parent, scene, svgRenderer, "laser", borderPosition, columns, rows, 0)
 {
+	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
+	setPos(m_centerX - radius, m_centerY - radius);
+	translate(radius,radius);
+	rotate(m_rotation);
+	translate(-radius,-radius);
 }
 
 
@@ -58,14 +64,4 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QG
 void KBBGraphicsItemLaser::mousePressEvent (QGraphicsSceneMouseEvent* )
 {
 	m_widget->clickLaser(this);
-}
-
-
-void KBBGraphicsItemLaser::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QWidget*)
-{
-	painter->setPen(QPen(Qt::red));
-	painter->setBrush(Qt::SolidPattern);
-	painter->setBrush(Qt::red);
-	//TODO: Draw something that *really* looks like a laser and not like a simple red square...
-	painter->drawRect(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
 }

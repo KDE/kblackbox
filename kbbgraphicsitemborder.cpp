@@ -31,6 +31,7 @@
 
 #include <QGraphicsScene>
 #include <QRectF>
+#include <QSvgRenderer>
 
 
 #include "kbbgraphicsitemborder.h"
@@ -42,7 +43,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int offset) : QGraphicsItem (0, scene )
+KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, QString svgId, const int borderPosition, const int columns, const int rows, const int offset) : QGraphicsSvgItem ( )
 {
 	m_widget = parent;
 	m_borderPosition = borderPosition;
@@ -52,20 +53,29 @@ KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, 
 	if (m_borderPosition<columns) {
 		x = m_borderPosition*KBBScalableGraphicWidget::RATIO + KBBScalableGraphicWidget::BORDER_SIZE;
 		y = offset;
+		m_rotation = 0;
 	} else if (m_borderPosition<columns + rows) {
 		x = (columns)*KBBScalableGraphicWidget::RATIO + KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::BORDER_SIZE/2 - offset;
 		y = (m_borderPosition - columns)*KBBScalableGraphicWidget::RATIO + KBBScalableGraphicWidget::BORDER_SIZE;
+		m_rotation = 90;
 	} else if (m_borderPosition<2*columns + rows) {
 		x = (2*columns + rows - m_borderPosition)*KBBScalableGraphicWidget::RATIO + KBBScalableGraphicWidget::BORDER_SIZE/2;
 		y = (rows)*KBBScalableGraphicWidget::RATIO + 3*KBBScalableGraphicWidget::BORDER_SIZE/2 - offset;
+		m_rotation = 180;
 	} else {
 		x = offset;
 		y = (2*columns + 2*rows - m_borderPosition)*KBBScalableGraphicWidget::RATIO + KBBScalableGraphicWidget::BORDER_SIZE/2;
+		m_rotation = 270;
 	}
 	
 	m_centerX = x + KBBScalableGraphicWidget::RATIO/2;
 	m_centerY = y + KBBScalableGraphicWidget::RATIO/2;
-	m_centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
+
+	setSharedRenderer(svgRenderer);
+	setElementId(svgId);
+	scene->addItem(this);
+	setZValue(1);
+	scene->update();
 }
 
 
@@ -73,12 +83,6 @@ KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, 
 //
 // Public
 //
-
-QRectF KBBGraphicsItemBorder::boundingRect() const
-{
-	return QRectF(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
-}
-
 
 int KBBGraphicsItemBorder::borderPosition () const
 {

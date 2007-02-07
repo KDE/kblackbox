@@ -59,9 +59,9 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard *parent) : QGraphic
 	m_rows = 1;
 	
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
-	m_scene->setBackgroundBrush(QColor(220,220,185));
-	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene);
-	m_ballSvg = new QSvgRenderer(KStandardDirs::locate("appdata", "pics/balls.svg"));
+	m_scene->setBackgroundBrush(QColor(205,190,240));
+	m_ballSvg = new QSvgRenderer(KStandardDirs::locate("appdata", "pics/kblackbox.svg"));
+	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_ballSvg);
 	
 	this->setScene( m_scene );
 }
@@ -96,10 +96,14 @@ void KBBScalableGraphicWidget::clickLaser( KBBGraphicsItemLaser* laser )
 			if (outgoingPosition!=incomingPosition) {
 				m_rayNumber++;
 				removeLaser(m_lasers[outgoingPosition]);
-				m_rayResults.insert(outgoingPosition, new KBBGraphicsItemRayResult(this, m_scene, outgoingPosition, m_columns, m_rows, m_rayNumber));
+				m_rayResults.insert(outgoingPosition, new KBBGraphicsItemRayResult(this, m_scene, m_ballSvg,  outgoingPosition, m_columns, m_rows, m_rayNumber));
 				rayNumberOrReflection = m_rayNumber;
 			}
-			m_rayResults.insert(incomingPosition, new KBBGraphicsItemRayResult(this, m_scene, incomingPosition, m_columns, m_rows, rayNumberOrReflection));
+			m_rayResults.insert(incomingPosition, new KBBGraphicsItemRayResult(this, m_scene, m_ballSvg, incomingPosition, m_columns, m_rows, rayNumberOrReflection));
+			
+			m_rayResults[outgoingPosition]->setOpposite(m_rayResults[incomingPosition]);
+			m_rayResults[incomingPosition]->setOpposite(m_rayResults[outgoingPosition]);
+			
 			m_scene->update();
 		}
 		removeLaser(laser);
@@ -142,7 +146,7 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows )
 
 	// Place new lasers
 	for (int i=0; i<2*(m_columns + m_rows); i++)
-		m_lasers.insert(i, new KBBGraphicsItemLaser(this, m_scene, i, m_columns, m_rows));
+		m_lasers.insert(i, new KBBGraphicsItemLaser(this, m_scene, m_ballSvg, i, m_columns, m_rows));
 
 	m_scene->update();
 }

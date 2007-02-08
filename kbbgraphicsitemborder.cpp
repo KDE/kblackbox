@@ -43,7 +43,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, QString svgId, const int borderPosition, const int columns, const int rows, const int offset) : QGraphicsSvgItem ( )
+KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const QString svgId, const int borderPosition, const int columns, const int rows, const int offset) : QGraphicsSvgItem ( )
 {
 	m_widget = parent;
 	m_borderPosition = borderPosition;

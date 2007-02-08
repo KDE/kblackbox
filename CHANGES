@@ -1,3 +1,6 @@
+2007-02-08 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Code clean-up to solve the issues found by the English Breakfast Network (on  http://www.englishbreakfastnetwork.org/krazy/reports/kde-4.0/kdegames/kblackbox/ ).
+
 2007-02-07 Nicolas Roffet <nicolas-kde@roffet.com>
 	* More SVG: The black box disposes now of a question mark. Lasers intend to try to look like lasers.
 

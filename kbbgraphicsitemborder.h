@@ -50,7 +50,7 @@ class QSvgRenderer;
 class KBBGraphicsItemBorder : public QGraphicsSvgItem
 {
 	public:
-		KBBGraphicsItemBorder(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, QString svgId, const int borderPosition, const int columns, const int rows, const int offset);
+		KBBGraphicsItemBorder(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const QString svgId, const int borderPosition, const int columns, const int rows, const int offset);
 	
 		int borderPosition() const;
 

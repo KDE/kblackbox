@@ -60,7 +60,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const RATIO = 50;
 		static int const BORDER_SIZE = 100;
 		
-		KBBScalableGraphicWidget(KBBBoard* parent);
+		explicit KBBScalableGraphicWidget(KBBBoard* parent);
 		
 		void clickBlackBox(const int boxPosition);
 		void clickLaser(KBBGraphicsItemLaser* laser);

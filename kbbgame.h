@@ -57,16 +57,16 @@ class KBBBoard;
 
 
 /**
-* @brief Main window of the game
+* @brief Main window of the game KBlackBox
 */
-class KBBGame : public KMainWindow
+class KBBMainWindow : public KMainWindow
 {
   Q_OBJECT
 
 
 public:
-  KBBGame();
-  ~KBBGame();
+  KBBMainWindow();
+  ~KBBMainWindow();
 
 
 public slots:

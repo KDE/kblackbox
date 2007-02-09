@@ -58,10 +58,11 @@
 
 
 
-/*
-   Creates the KBBGame widget and sets saved options (if any).
-*/
-KBBGame::KBBGame()
+//
+// Constructor / Destructor
+//
+
+KBBMainWindow::KBBMainWindow()
 {
   m_board = new KBBBoard(this);
 
@@ -112,27 +113,19 @@ KBBGame::KBBGame()
 
   startGame();
   setupGUI();
-  //setMinSize();
 }
 
 
-KBBGame::~KBBGame()
+KBBMainWindow::~KBBMainWindow()
 {
 	KBBPrefs::writeConfig();
 }
 
 
 /*
-void KBBGame::setMinSize()
-{
-  setMinimumSize( m_board->getWidgetWidth(), m_board->getWidgetHeight() + menuBar()->height() + statusBar()->height() + toolBar()->height() );
-}
-*/
-
-/*
    Settings of various options.
 */
-void KBBGame::slotSize(int selection)
+void KBBMainWindow::slotSize(int selection)
 {
   bool ok = false;
   switch (selection) {
@@ -164,7 +157,7 @@ void KBBGame::slotSize(int selection)
   }
 }
 
-void KBBGame::slotBalls(int selection)
+void KBBMainWindow::slotBalls(int selection)
 {
   bool ok = false;
 
@@ -194,7 +187,7 @@ void KBBGame::slotBalls(int selection)
   }
 }
 
-void KBBGame::tutorialSwitch()
+void KBBMainWindow::tutorialSwitch()
 {
   tutorial = !tutorial;
   KBBPrefs::setTutorial(tutorial);
@@ -203,7 +196,7 @@ void KBBGame::tutorialSwitch()
 /*
    Creates a new game.
 */
-void KBBGame::newGame()
+void KBBMainWindow::newGame()
 {
   if (!comfirmGameEndIfNeeded()) 
     return;
@@ -211,7 +204,7 @@ void KBBGame::newGame()
   startGame();
 }
 
-void KBBGame::startGame()
+void KBBMainWindow::startGame()
 {
 	running = true;
 	m_solveAction->setEnabled(true);
@@ -222,7 +215,7 @@ void KBBGame::startGame()
 /*
    Ends the current game.
 */
-void KBBGame::gameFinished()
+void KBBMainWindow::gameFinished()
 {
   if (running) {
     QString s;
@@ -246,7 +239,7 @@ void KBBGame::gameFinished()
   }
 }
 
-bool KBBGame::comfirmGameEndIfNeeded()
+bool KBBMainWindow::comfirmGameEndIfNeeded()
 {
 	bool gameMayEnd = true;
 
@@ -259,7 +252,7 @@ bool KBBGame::comfirmGameEndIfNeeded()
 /*
    Aborts the current game.
 */
-void KBBGame::abortGame()
+void KBBMainWindow::abortGame()
 {
 	running = false;
 	m_solveAction->setEnabled(false);
@@ -271,7 +264,7 @@ void KBBGame::abortGame()
 /*
    Displays game statistics.
 */
-void KBBGame::updateStats()
+void KBBMainWindow::updateStats()
 {
   QString tmp;
   QString s = i18n("Run: ");
@@ -294,7 +287,7 @@ void KBBGame::updateStats()
 /*
    Sets the size of the black box.
 */
-bool KBBGame::setSize( int w, int h )
+bool KBBMainWindow::setSize( int w, int h )
 {
 	bool ok = false;
 	if ((w != m_columns) || (h != m_rows)) {
@@ -312,7 +305,7 @@ bool KBBGame::setSize( int w, int h )
 /*
    Sets the number of balls in the black box to n.
 */
-bool KBBGame::setBalls( int n )
+bool KBBMainWindow::setBalls( int n )
 {
 	bool ok = false;
 	if (balls != n) {
@@ -327,7 +320,7 @@ bool KBBGame::setBalls( int n )
 
 
 
-void KBBGame::initKAction()
+void KBBMainWindow::initKAction()
 {
 // game
   QAction *newAct = KStandardGameAction::gameNew(this, SLOT(newGame()), this);

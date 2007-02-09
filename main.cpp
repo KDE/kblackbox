@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -58,10 +58,10 @@ int main( int argc, char **argv )
   KGlobal::locale()->insertCatalog("libkdegames");
 
   if (application.isSessionRestored())
-      kRestoreMainWindows<KBBGame>();
+      kRestoreMainWindows<KBBMainWindow>();
   else {
-      KBBGame *game = new KBBGame;
-      game->show();
+      KBBMainWindow *mainWindow = new KBBMainWindow;
+      mainWindow->show();
   }
 
   return application.exec();

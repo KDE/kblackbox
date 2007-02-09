@@ -51,7 +51,7 @@
 #include <kicon.h>
 
 
-#include "kbbgame.h"
+#include "kbbmainwindow.h"
 #include "kbbboard.h"
 #include "kbbprefs.h"
 #include "version.h"
@@ -390,4 +390,4 @@ void KBBMainWindow::initKAction()
 }
 
 
-#include "kbbgame.moc"
+#include "kbbmainwindow.moc"

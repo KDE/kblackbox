@@ -35,7 +35,7 @@
 #include <kaboutdata.h>
 #include <kglobal.h>
 
-#include "kbbgame.h"
+#include "kbbmainwindow.h"
 #include "version.h"
 
 

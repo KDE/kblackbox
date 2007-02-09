@@ -9,7 +9,7 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
 
 set(kblackbox_SRCS 
    kbbgfx.cpp 
-   kbbgame.cpp 
+   kbbmainwindow.cpp 
    kbbboard.cpp
    kbbscalablegraphicwidget.cpp
    kbbgraphicsitemborder.cpp

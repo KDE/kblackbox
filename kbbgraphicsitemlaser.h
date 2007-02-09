@@ -38,6 +38,7 @@ class QSvgRenderer;
 
 
 #include "kbbgraphicsitemborder.h"
+class KBBScalableGraphicWidget;
 
 
 
@@ -45,7 +46,7 @@ class QSvgRenderer;
  * @brief Laser als element of the scalable graphic widget of KBlackBox
  *
  */
-class KBBGraphicsItemLaser : public KBBGraphicsItemBorder
+class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public QGraphicsSvgItem
 {
 	public:
 		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows);
@@ -53,6 +54,8 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder
 
 	private:
 		void mousePressEvent (QGraphicsSceneMouseEvent* );
+		
+		KBBScalableGraphicWidget* m_widget;
 };
 
 #endif // KBBGRAPHICSITEMLASER_H

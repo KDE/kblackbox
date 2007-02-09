@@ -29,8 +29,11 @@
 
 
 #include <QFont>
+#include <QGraphicsEllipseItem>
 #include <QGraphicsScene>
-#include <QSvgRenderer>
+
+
+#include <kdebug.h>
 
 
 #include "kbbgraphicsitemborder.h"
@@ -43,10 +46,39 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( parent, scene, svgRenderer, "laser", borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2)
+KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsEllipseItem ( 0, scene )
 {
 	m_centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
+	setRect(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
 	m_rayNumber = rayNumber;
+	m_opposite = this;
+	m_scene = scene;
+	
+	setPen(QPen(Qt::black, 0));
+	setBrush(Qt::Dense5Pattern);
+	setBrush(Qt::green);
+	setZValue(7);
+	
+	
+	QString text("R"); // R for "Reflection". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
+	if (m_rayNumber>0)
+		text.setNum(m_rayNumber);
+	m_number = new QGraphicsSimpleTextItem ( text, this, scene);
+	QFont font;
+	font.setStyleHint(QFont::SansSerif);
+	font.setWeight(QFont::DemiBold);
+	int offset;
+	if (m_rayNumber<10) {
+		font.setPixelSize(3*m_centerRadius/2);
+		offset = 0;
+	} else {
+		font.setPixelSize(5*m_centerRadius/4);
+		offset = 1*m_centerRadius/6;
+	}
+	m_number->setFont(font);
+	m_number->setPos(m_centerX - m_centerRadius/2 - 2*offset, m_centerY - m_centerRadius + offset);
+	m_number->setZValue(6);
+	
 	setAcceptsHoverEvents(true);
 }
 
@@ -58,7 +90,12 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 
 void KBBGraphicsItemRayResult::highlight(bool state)
 {
-	//TODO: Small animation?
+	if (state)
+		 //orange color
+		setBrush(QColor(255, 219, 56));
+	else
+		// normal green color
+		setBrush(Qt::green);
 }
 
 
@@ -81,31 +118,12 @@ QRectF KBBGraphicsItemRayResult::boundingRect() const
 void KBBGraphicsItemRayResult::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 {
 	m_opposite->highlight(true);
+	highlight(true);
 }
 
 
 void KBBGraphicsItemRayResult::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 {
 	m_opposite->highlight(false);
-}
-
-
-void KBBGraphicsItemRayResult::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget*)
-{
-	painter->setPen(QPen(Qt::green));
-	painter->setBrush(Qt::Dense5Pattern);
-	painter->setBrush(Qt::green);
-	painter->drawEllipse(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
-	
-	QString text("R"); // R for "Reflection". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
-	if (m_rayNumber>0)
-		text.setNum(m_rayNumber);
-	painter->setPen(QPen(Qt::black));
-
-	QFont font;
-	font.setStyleHint(QFont::SansSerif);
-	font.setWeight(QFont::DemiBold);
-	font.setPixelSize(3*m_centerRadius/2);
-	painter->setFont(font);
-	painter->drawText(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius, Qt::AlignCenter, text);
+	highlight(false);
 }

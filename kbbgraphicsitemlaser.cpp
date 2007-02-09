@@ -30,10 +30,8 @@
 
 
 #include <QGraphicsScene>
+#include <QGraphicsSvgItem>
 #include <QSvgRenderer>
-
-
-#include <kdebug.h>
 
 
 #include "kbbgraphicsitemborder.h"
@@ -46,8 +44,16 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( parent, scene, svgRenderer, "laser", borderPosition, columns, rows, 0)
+KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( borderPosition, columns, rows, 0), QGraphicsSvgItem ( )
 {
+	m_widget = parent;
+
+	setSharedRenderer(svgRenderer);
+	setElementId("laser");
+	scene->addItem(this);
+	setZValue(1);
+	scene->update();
+
 	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
 	setPos(m_centerX - radius, m_centerY - radius);
 	translate(radius,radius);

@@ -51,7 +51,7 @@ class KBBGraphicsItemBall : public QGraphicsSvgItem
 	Q_OBJECT
 	
 	public:
-		enum ballType { blue, red, cross };
+		enum ballType { blue, blueUnsure, red, cross, nothing };
 		
 		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, QSvgRenderer* svgRenderer, ballType type);
 		
@@ -60,7 +60,9 @@ class KBBGraphicsItemBall : public QGraphicsSvgItem
 
 	private:
 		void mousePressEvent (QGraphicsSceneMouseEvent *);
+		void setBallType(ballType type);
 		
+		ballType m_ballType;
 		int m_boxPosition;
 		KBBScalableGraphicWidget* m_widget;
 };

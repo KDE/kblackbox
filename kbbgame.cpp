@@ -112,7 +112,7 @@ KBBGame::KBBGame()
 
   startGame();
   setupGUI();
-  setMinSize();
+  //setMinSize();
 }
 
 
@@ -122,17 +122,12 @@ KBBGame::~KBBGame()
 }
 
 
-
-void KBBGame::gameResize()
-{
-  resize( this->minimumWidth(), this->minimumHeight());
-}
-
-
+/*
 void KBBGame::setMinSize()
 {
   setMinimumSize( m_board->getWidgetWidth(), m_board->getWidgetHeight() + menuBar()->height() + statusBar()->height() + toolBar()->height() );
 }
+*/
 
 /*
    Settings of various options.
@@ -214,11 +209,12 @@ void KBBGame::newGame()
     return;
 
   startGame();
-}  
+}
 
 void KBBGame::startGame()
 {
 	running = true;
+	m_solveAction->setEnabled(true);
 	m_board->newGame( balls, m_columns, m_rows, tutorial );
 	updateStats();
 }
@@ -265,9 +261,10 @@ bool KBBGame::comfirmGameEndIfNeeded()
 */
 void KBBGame::abortGame()
 {
-    running = false;
-    updateStats();
-    m_board->gameOver();
+	running = false;
+	m_solveAction->setEnabled(false);
+	updateStats();
+	m_board->gameOver();
 }
 
 
@@ -306,7 +303,7 @@ bool KBBGame::setSize( int w, int h )
 			m_columns = w;
 			m_rows = h;
 			startGame();
-			setMinSize();
+			//setMinSize();
 		}
 	}
 	return ok;
@@ -336,13 +333,11 @@ void KBBGame::initKAction()
   QAction *newAct = KStandardGameAction::gameNew(this, SLOT(newGame()), this);
   actionCollection()->addAction(newAct->objectName(), newAct);
 
-  QAction *doneAct = KStandardGameAction::solve(this, SLOT(gameFinished()), this);
-  actionCollection()->addAction(doneAct->objectName(), doneAct);
-
-  QAction *action = actionCollection()->addAction("game_resize");
-  action->setText(i18n("&Resize"));
-  connect(action, SIGNAL(triggered(bool) ), SLOT(gameResize()));
   KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+
+// move
+  m_solveAction = KStandardGameAction::solve(this, SLOT(gameFinished()), this);
+  actionCollection()->addAction(m_solveAction->objectName(), m_solveAction);
 
 
 // settings
@@ -370,7 +365,7 @@ void KBBGame::initKAction()
 //actionCollection());
 
 // keyboard only
-  action = actionCollection()->addAction( "move_down" );
+  QAction* action = actionCollection()->addAction( "move_down" );
   action->setText( i18n("Move Down") );
   connect(action, SIGNAL(triggered(bool) ), m_board->getWidget(), SLOT(slotDown()));
   action->setShortcut(Qt::Key_Down);

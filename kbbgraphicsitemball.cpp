@@ -30,6 +30,7 @@
 
 
 #include <QGraphicsScene>
+#include <QGraphicsSceneMouseEvent>
 #include <QGraphicsSvgItem>
 #include <QSvgRenderer>
 
@@ -48,23 +49,9 @@ KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGra
 	m_widget = parent;
 	m_boxPosition = boxPosition;
 	setSharedRenderer(svgRenderer);
-	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns) + 4*KBBScalableGraphicWidget::RATIO/50);
-	switch (type) {
-		case blue:
-			setZValue(3);
-			setElementId("blueball");
-			break;
-		case red:
-			setZValue(2);
-			setElementId("redball");
-			break;
-		case cross:
-			setZValue(4);
-			setElementId("cross");
-			break;
-	}
+	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns));
 	scene->addItem(this);
-	scene->update();
+	setBallType(type);
 }
 
 
@@ -79,14 +66,72 @@ int KBBGraphicsItemBall::boxPosition () const
 }
 
 
+
 //
 // Private
 //
 
-void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent*)
+void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	m_widget->clickBlackBox(boxPosition());
+	if (event->buttons()==Qt::LeftButton) {
+		switch(m_ballType) {
+			case red:
+				m_widget->clickAddBall(boxPosition());
+				break;
+			case blue:
+				m_widget->clickRemoveBall(boxPosition());
+				break;
+			case blueUnsure:
+				setBallType(blue);
+				break;
+			case nothing:
+				m_widget->clickAddBall(boxPosition());
+				break;
+		}
+	} else {
+		switch(m_ballType) {
+			case red:
+				m_widget->clickAddBallNothing(boxPosition());
+				break;
+			case blue:
+				setBallType(blueUnsure);
+				break;
+			case blueUnsure:
+				m_widget->clickAddBallNothing(boxPosition());
+				break;
+			case nothing:
+				m_widget->clickRemoveBallNothing(boxPosition());
+				break;
+		}
+	}
 }
 
+
+void KBBGraphicsItemBall::setBallType(ballType type)
+{
+	m_ballType = type;
+	switch (m_ballType) {
+		case blue:
+			setZValue(4);
+			setElementId("blueball");
+			break;
+		case blueUnsure:
+			setZValue(4);
+			setElementId("blueballunsure");
+			break;
+		case red:
+			setZValue(3);
+			setElementId("redball");
+			break;
+		case cross:
+			setZValue(5);
+			setElementId("cross");
+			break;
+		case nothing:
+			setZValue(2);
+			setElementId("nothing");
+			break;
+	}
+}
 
 #include "kbbgraphicsitemball.moc"

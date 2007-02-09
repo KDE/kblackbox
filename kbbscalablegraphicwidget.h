@@ -62,8 +62,11 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		
 		explicit KBBScalableGraphicWidget(KBBBoard* parent);
 		
-		void clickBlackBox(const int boxPosition);
+		void clickAddBall(const int boxPosition);
+		void clickAddBallNothing(const int boxPosition);
 		void clickLaser(KBBGraphicsItemLaser* laser);
+		void clickRemoveBall(const int boxPosition);
+		void clickRemoveBallNothing(const int boxPosition);
 		int hHint() const;
 		void newGame(const int columns, const int rows);
 		void resizeEvent(QResizeEvent*);
@@ -87,13 +90,15 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	private:
-		void removeBall( KBBGraphicsItemBall* ball);
-		void removeBallSolution( KBBGraphicsItemBall* ball);
+		void removeBall(KBBGraphicsItemBall* ball);
+		void removeBallNothing(KBBGraphicsItemBall* ball);
+		void removeBallSolution(KBBGraphicsItemBall* ball);
 		void removeLaser( KBBGraphicsItemLaser* laser);
 		void removeRayResult( KBBGraphicsItemRayResult* rayResult);
 		
 		// Graphics Items
 		QMap<int, KBBGraphicsItemBall*> m_balls;
+		QMap<int, KBBGraphicsItemBall*> m_ballsNothing;
 		QMap<int, KBBGraphicsItemBall*> m_ballsSolution;
 		KBBGraphicsItemBlackBox* m_blackbox;
 		QMap<int, KBBGraphicsItemLaser*> m_lasers;

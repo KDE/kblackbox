@@ -34,6 +34,9 @@
 
 
 
+class QAction;
+
+
 #include <kmainwindow.h>
 class KSelectAction;
 class KToggleAction;
@@ -83,8 +86,7 @@ private slots:
 
   bool setSize( int w, int h );
   bool setBalls( int n );
-  void gameResize();
-  void setMinSize();
+//  void setMinSize();
   void gameFinished();
   void abortGame();
 
@@ -110,6 +112,7 @@ private:
   int balls;
   int m_columns;
   int m_rows;
+  QAction *m_solveAction;
   KBBBoard *m_board;
   bool running;
   bool tutorial;

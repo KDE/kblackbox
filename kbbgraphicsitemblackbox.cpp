@@ -122,5 +122,8 @@ void KBBGraphicsItemBlackBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	int y = (static_cast<int>(event->pos().y()) - KBBScalableGraphicWidget::BORDER_SIZE);
 	x /= KBBScalableGraphicWidget::RATIO;
 	y /= KBBScalableGraphicWidget::RATIO;
-	m_widget->clickBlackBox(x + y*m_columns);
+	if (event->buttons()==Qt::LeftButton)
+		m_widget->clickAddBall(x + y*m_columns);
+	if (event->buttons()==Qt::RightButton)
+		m_widget->clickAddBallNothing(x + y*m_columns);
 }

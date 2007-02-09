@@ -33,11 +33,12 @@
 #define KBBGRAPHICSITEMRAYRESULT_H
 
 
+#include <QGraphicsEllipseItem>
 class QGraphicsScene;
-class QSvgRenderer;
 
 
 #include "kbbgraphicsitemborder.h"
+class KBBScalableGraphicWidget;
 
 
 
@@ -45,11 +46,11 @@ class QSvgRenderer;
  * @brief RayResult als element of the scalable graphic widget of KBlackBox
  *
  */
-class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder
+class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public QGraphicsEllipseItem
 {
 	public:
-		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows, const int rayNumber);
-		
+		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber);
+
 		void highlight(bool state);
 		void setOpposite(KBBGraphicsItemRayResult* opposite);
 		
@@ -58,11 +59,12 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder
 		QRectF boundingRect() const;
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
-		void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget*);
 		
 		int m_centerRadius;
+		QGraphicsSimpleTextItem* m_number;
 		KBBGraphicsItemRayResult* m_opposite;
 		int m_rayNumber;
+		QGraphicsScene* m_scene;
 };
 
 #endif // KBBGRAPHICSITEMRAYRESULT_H

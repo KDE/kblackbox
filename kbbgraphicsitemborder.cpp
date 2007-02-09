@@ -29,11 +29,6 @@
 
 
 
-#include <QGraphicsScene>
-#include <QRectF>
-#include <QSvgRenderer>
-
-
 #include "kbbgraphicsitemborder.h"
 #include "kbbscalablegraphicwidget.h"
 
@@ -43,9 +38,8 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const QString svgId, const int borderPosition, const int columns, const int rows, const int offset) : QGraphicsSvgItem ( )
+KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const int columns, const int rows, const int offset)
 {
-	m_widget = parent;
 	m_borderPosition = borderPosition;
 	
 	int x;
@@ -70,12 +64,6 @@ KBBGraphicsItemBorder::KBBGraphicsItemBorder( KBBScalableGraphicWidget* parent, 
 	
 	m_centerX = x + KBBScalableGraphicWidget::RATIO/2;
 	m_centerY = y + KBBScalableGraphicWidget::RATIO/2;
-
-	setSharedRenderer(svgRenderer);
-	setElementId(svgId);
-	scene->addItem(this);
-	setZValue(1);
-	scene->update();
 }
 
 

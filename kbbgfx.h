@@ -36,6 +36,7 @@
 #include <QWidget>
 
 
+class KBBBallsOnBoard;
 class KBBBoard;
 #include "util.h"
 
@@ -112,7 +113,7 @@ public:
    * @param h Number of rows of the black box
    * The real size is 4 columns and rows bigger because of the space for "lasers" and an edge...
    */
-  void newGame( int w, int h );
+  void newGame( int w, int h, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced);
 
   void inputAt( int, int, int );
   void solve();
@@ -138,10 +139,7 @@ public slots:
   void slotInput();
 
 signals:
-  //void sizeChanged();
   void endMouseClicked();
-  void addPlayerBall ( int );
-  void removePlayerBall ( int );
 
 protected:
   virtual QSize sizeHint() const;
@@ -176,6 +174,8 @@ private:
   QPixmap **pix;
   QPixmap **pixScaled;
   QPixmap *drawBuffer;
+  KBBBallsOnBoard* m_balls;
+  KBBBallsOnBoard* m_ballsPlaced;
 };
 
 #endif // KBBGFX_H

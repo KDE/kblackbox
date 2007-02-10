@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -28,14 +28,13 @@
  ***************************************************************************/
 
 
+
 #include <QFont>
 #include <QGraphicsEllipseItem>
 #include <QGraphicsScene>
 
 
-#include <kdebug.h>
-
-
+#include "kbbboard.h"
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemrayresult.h"
 #include "kbbscalablegraphicwidget.h"
@@ -48,6 +47,10 @@
 
 KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsEllipseItem ( 0, scene )
 {
+	m_widget = parent;
+	m_columns = columns;
+	m_rows = rows;
+	
 	m_centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
 	setRect(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
 	m_rayNumber = rayNumber;
@@ -57,12 +60,16 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	setPen(QPen(Qt::black, 0));
 	setBrush(Qt::Dense5Pattern);
 	setBrush(Qt::green);
-	setZValue(7);
+	setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_BACKGROUND);
 	
 	
-	QString text("R"); // R for "Reflection". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
+	// R for "Reflection". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
+	QString text("R");
 	if (m_rayNumber>0)
 		text.setNum(m_rayNumber);
+	if (m_rayNumber==KBBBoard::HIT_POSITION)
+		// H for "Hit". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
+		text = "H";
 	m_number = new QGraphicsSimpleTextItem ( text, this, scene);
 	QFont font;
 	font.setStyleHint(QFont::SansSerif);
@@ -77,7 +84,7 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	}
 	m_number->setFont(font);
 	m_number->setPos(m_centerX - m_centerRadius/2 - 2*offset, m_centerY - m_centerRadius + offset);
-	m_number->setZValue(6);
+	m_number->setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_TEXT);
 	
 	setAcceptsHoverEvents(true);
 }
@@ -119,6 +126,7 @@ void KBBGraphicsItemRayResult::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 {
 	m_opposite->highlight(true);
 	highlight(true);
+	m_widget->drawRay(borderPosition());
 }
 
 
@@ -126,4 +134,5 @@ void KBBGraphicsItemRayResult::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 {
 	m_opposite->highlight(false);
 	highlight(false);
+	m_widget->removeRay();
 }

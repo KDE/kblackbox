@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -61,10 +61,13 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public QGraphicsE
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
 		
 		int m_centerRadius;
+		int m_columns;
 		QGraphicsSimpleTextItem* m_number;
 		KBBGraphicsItemRayResult* m_opposite;
 		int m_rayNumber;
+		int m_rows;
 		QGraphicsScene* m_scene;
+		KBBScalableGraphicWidget* m_widget;
 };
 
 #endif // KBBGRAPHICSITEMRAYRESULT_H

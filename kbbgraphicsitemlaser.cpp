@@ -48,17 +48,32 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QG
 {
 	m_widget = parent;
 
+	int rotation;
+
+	if (borderPosition<columns) {
+		rotation = 0;
+	} else if (borderPosition<columns + rows) {
+		rotation = 90;
+	} else if (borderPosition<2*columns + rows) {
+		rotation = 180;
+	} else {
+		rotation = 270;
+	}
+
+
 	setSharedRenderer(svgRenderer);
 	setElementId("laser");
 	scene->addItem(this);
-	setZValue(1);
+	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
 	scene->update();
 
 	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
 	setPos(m_centerX - radius, m_centerY - radius);
 	translate(radius,radius);
-	rotate(m_rotation);
+	rotate(rotation);
 	translate(-radius,-radius);
+
+	setAcceptsHoverEvents(true);
 }
 
 
@@ -67,7 +82,21 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QG
 // Private
 //
 
+
+void KBBGraphicsItemLaser::hoverEnterEvent (QGraphicsSceneHoverEvent*)
+{
+	m_widget->drawRay(borderPosition());
+}
+
+
+void KBBGraphicsItemLaser::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
+{
+	m_widget->removeRay();
+}
+
+
 void KBBGraphicsItemLaser::mousePressEvent (QGraphicsSceneMouseEvent* )
 {
 	m_widget->clickLaser(this);
+	m_widget->removeRay();
 }

@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,28 +29,34 @@
 
 
 
-#ifndef KBBGRAPHICSITEMBORDER_H
-#define KBBGRAPHICSITEMBORDER_H
+#ifndef KBBGRAPHICSITEMRAY_H
+#define KBBGRAPHICSITEMRAY_H
+
+
+#include <QGraphicsPathItem>
+class QGraphicsScene;
+#include <QList>
+
+
+#include "kbbballsonboard.h"
+#include "kbbgraphicsitemborder.h"
+class KBBScalableGraphicWidget;
 
 
 
 /**
- * @brief Border element of the scalable graphic widget of KBlackBox
+ * @brief Ray on the scalable graphic widget of KBlackBox
  *
  */
-class KBBGraphicsItemBorder
+class KBBGraphicsItemRay : public KBBGraphicsItemBorder, public QGraphicsPathItem
 {
 	public:
-		KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset);
-	
-		int borderPosition() const;
+		enum rayType { playerRay, playerSolutionRay, solutionRay };
+		
+		KBBGraphicsItemRay(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type);
 
 
-	protected:
-		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset, const int columns, const int rows);
-		int m_borderPosition;
-		int m_centerX;
-		int m_centerY;
+	private:
 };
 
-#endif // KBBGRAPHICSITEMBORDER_H
+#endif // KBBGRAPHICSITEMRAY_H

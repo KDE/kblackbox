@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,7 +29,16 @@
 
 
 
+#include <QColor>
+#include <QGraphicsScene>
+#include <QList>
+#include <QPainterPath>
+#include <QPen>
+
+
+#include "kbbboard.h"
 #include "kbbgraphicsitemborder.h"
+#include "kbbgraphicsitemray.h"
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -38,10 +47,59 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const int columns, const int rows, const int offset)
+KBBGraphicsItemRay::KBBGraphicsItemRay( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type ) : KBBGraphicsItemBorder( borderPosition, ballsOnBoard->columns(), ballsOnBoard->rows(), KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem ( 0, scene )
 {
-	m_borderPosition = borderPosition;
-	centerCoordinate(m_borderPosition, m_centerX, m_centerY, offset, columns, rows);
+	QList<int> points;
+	const int oppositeBorderPosition = ballsOnBoard->oppositeBorderPositionWithPoints(borderPosition, points);
+	
+	QPainterPath path;
+	path.moveTo(m_centerX, m_centerY);
+
+	const int columns = ballsOnBoard->columns();
+	const int rows = ballsOnBoard->rows();
+	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
+	const int r = KBBScalableGraphicWidget::RATIO;
+	int x;
+	int y;
+	for (int i=0; i<points.count(); i++) {
+		x = b - r/2 + r*((points[i] % columns) + 1);
+		y = b - r/2 + r*((points[i] / columns) + 1);
+		path.lineTo(x,y);
+	}
+	
+	if (oppositeBorderPosition!=KBBBoard::HIT_POSITION) {
+		int x1;
+		int y1;
+		centerCoordinate(oppositeBorderPosition, x1, y1, b/2, columns, rows);
+		path.lineTo(x1,y1);
+	}
+	
+	QPen pen;
+	switch(type) {
+		case playerRay:
+			pen.setColor(QColor(0,237,255));
+			pen.setStyle(Qt::DotLine);
+			pen.setWidth(r/10);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_PLAYER_RAY);
+			break;
+		case playerSolutionRay:
+			pen.setColor(QColor(0,237,255));
+			pen.setStyle(Qt::DotLine);
+			pen.setWidth(r/15);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_PLAYER_RAY);
+			break;
+		case solutionRay:
+			pen.setColor(Qt::red);
+			pen.setStyle(Qt::SolidLine);
+			pen.setWidth(r/7);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_SOLUTION_RAY);
+			break;
+	}
+	pen.setJoinStyle(Qt::RoundJoin);
+	pen.setCapStyle(Qt::RoundCap);
+	setPen(pen);
+	
+	setPath(path);
 }
 
 
@@ -50,37 +108,9 @@ KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const in
 // Public
 //
 
-int KBBGraphicsItemBorder::borderPosition () const
-{
-	return m_borderPosition;
-}
-
 
 
 //
 // Private
 //
 
-void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset, const int columns, const int rows)
-{
-	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
-	const int r = KBBScalableGraphicWidget::RATIO;
-	int x;
-	int y;
-	if (borderPosition<columns) {
-		x = borderPosition*r + b;
-		y = offset;
-	} else if (borderPosition<columns + rows) {
-		x = (columns)*r + b + b/2 - offset;
-		y = (borderPosition - columns)*r + b;
-	} else if (borderPosition<2*columns + rows) {
-		x = (2*columns + rows - borderPosition)*r + b/2;
-		y = (rows)*r + 3*b/2 - offset;
-	} else {
-		x = offset;
-		y = (2*columns + 2*rows - borderPosition)*r + b/2;
-	}
-	
-	centerX = x + r/2;
-	centerY = y + r/2;
-}

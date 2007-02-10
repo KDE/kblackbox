@@ -42,6 +42,7 @@
 
 
 #include "kbbgfx.h"
+#include "kbbballsonboard.h"
 #include "kbbboard.h"
 #include "util.h"
 
@@ -151,11 +152,14 @@ KBBGraphic::~KBBGraphic()
    Sets the size of the table
 */
 
-void KBBGraphic::newGame( int w, int h )
+void KBBGraphic::newGame( int w, int h, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced )
 {
   // +4 is the space for "lasers" and an edge...
   w += 4;
   h += 4;
+
+  m_balls = balls;
+  m_ballsPlaced = ballsPlaced;
   
   if ((w != numCols) || (h != numRows)) {
     delete graphicBoard;
@@ -210,11 +214,11 @@ void KBBGraphic::solve()
   for (pos[DIM_Y] = 0; pos[DIM_Y] < numR()-4; pos[DIM_Y]++) {
     for (pos[DIM_X] = 0; pos[DIM_X] < numC()-4; pos[DIM_X]++) {
       tgra = graphicBoard->get( pos[DIM_X]+2, pos[DIM_Y]+2 );
-      if ((m_board->containsBall( pos[DIM_X] + pos[DIM_Y]*(numR()-4) )) && (tgra != TBALLBBG)) {
+      if ((m_balls->contains( pos[DIM_X] + pos[DIM_Y]*(numR()-4) )) && (tgra != TBALLBBG)) {
 	graphicBoard->set( pos[DIM_X]+2, pos[DIM_Y]+2, WBALLBBG );
 	updateElement( pos[DIM_X]+2, pos[DIM_Y]+2 );
       }
-      if (!(m_board->containsBall( pos[DIM_X] + pos[DIM_Y]*(numR()-4) )) && (tgra == TBALLBBG)) {
+      if (!(m_balls->contains( pos[DIM_X] + pos[DIM_Y]*(numR()-4) )) && (tgra == TBALLBBG)) {
 	graphicBoard->set( pos[DIM_X]+2, pos[DIM_Y]+2, FBALLBBG );
 	updateElement( pos[DIM_X]+2, pos[DIM_Y]+2 );
       }
@@ -511,14 +515,14 @@ void KBBGraphic::inputAt( int col, int row, int state )
     case WBALLBBG: // because of the tutorial mode
     case INNERBBG:
       r->set( col, row, TBALLBBG );
-      emit addPlayerBall( (col - 2) + (row - 2) * w  );
+      m_ballsPlaced->add( (col - 2) + (row - 2) * w  );
       break;
     case MARK1BBG:
       r->set( col, row, INNERBBG );
       break;
     case TBALLBBG:
       r->set( col, row, INNERBBG );
-      emit removePlayerBall( (col - 2) + (row - 2) * w  );
+      m_ballsPlaced->remove( (col - 2) + (row - 2) * w  );
       break;
     case LASERBBG:
       int endX, endY, result;
@@ -579,7 +583,7 @@ int KBBGraphic::traceRay( int startX, int startY, int *endX, int *endY )
 	startPos[DIM_X] = startX;
 	startPos[DIM_Y] = startY;
 
-	int startBorderPos = m_board->absolutePositionToBorderPosition(startPos);
+	int startBorderPos = m_balls->absolutePositionToBorderPosition(startPos);
 	int endBorderPos = m_board->shootRay(startBorderPos);
 
 	if (endBorderPos == m_board->HIT_POSITION)
@@ -589,7 +593,7 @@ int KBBGraphic::traceRay( int startX, int startY, int *endX, int *endY )
 		return REFLECTION;
 
 	int endPos[DIM_MAX];
-	m_board->borderPositionToAbsolutePosition(endBorderPos, endPos);
+	m_balls->borderPositionToAbsolutePosition(endBorderPos, endPos);
 	*endX = endPos[DIM_X];
 	*endY = endPos[DIM_Y];
 

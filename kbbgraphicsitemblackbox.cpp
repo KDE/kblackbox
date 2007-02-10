@@ -54,11 +54,12 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* pare
 
 	setPen(QPen(Qt::black));
 	setBrush(QColor(79, 79, 79));
-	
+	setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX);
+
 	m_background = new QGraphicsSvgItem(this);
 	m_background->setSharedRenderer(svgRenderer);
 	m_background->setElementId("bbquestion");
-	m_background->setZValue(1);
+	m_background->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX_BACKGROUND);
 
 	m_scene->addItem(m_background);
 	m_scene->update();
@@ -104,6 +105,7 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 			pen.setColor(Qt::black);
 			pen.setWidth(0);
 			m_lines[i]->setPen(pen);
+			m_lines[i]->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX_GRID);
 		}
 		
 		m_background->setPos(b + m_columns*r/2 - 6*r/2, b + m_rows*r/2 - 6*r/2);

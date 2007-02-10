@@ -34,7 +34,6 @@
 
 
 #include <QObject>
-#include <QList>
 class QWidget;
 
 
@@ -42,32 +41,21 @@ class KMainWindow;
 #include <krandomsequence.h>
 
 
+class KBBBallsOnBoard;
 class KBBGraphic;
 class KBBScalableGraphicWidget;
-
-
-
-#define DIM_X 0
-#define DIM_Y 1
-#define DIM_MAX 2
 
 
 
 /**
  * @brief Logical board of the game
  *
- * The logical board manages:
+ * The logical board manages a game, that is:
  *    - the score
- *    - the position and the number of the balls the user places on the board
- *    - the position of the real (hidden) balls of the black box
+ *    - the balls the user places on the board
+ *    - the real (hidden) balls of the black box
  *
- * It computes also the trajectory of the laser ray.
  * It contains also the graphic widget (that displays the game status and manages the user inputs).
- *
- * There are 3 different kinds of coordinates for object positions.
- * - The 1st one is the (absolute) position in 2 dimensions between (0,0) and (2 + m_columns + 2, 2 + m_rows + 2). It is used to manage the positions of the graphic elements but also to calculate the laser ray trajectory.
- * - The 2nd one is the border position in 1 dimension between 0 and (2 * m_rows + 2 * m_columns -1). Only borders can be managed with this coordinate.
- * - The 3rd one is the box position in 1 dimension between 0 and (m_columns*m_rows - 1). It is used to manage the postion of the balls in the black box.
  */
 class KBBBoard : public QObject
 {
@@ -81,24 +69,6 @@ class KBBBoard : public QObject
 		
 		
 		/**
-		 * @brief Convert (absolute) position to border position
-		 *
-		 * @param position The (absolute) position to convert.
-		 * @return The result of the conversion: border position.
-		 * @see borderPositionToAbsolutePosition(int borderPosition, int position[DIM_MAX])
-		 */
-		int absolutePositionToBorderPosition(int position[DIM_MAX]);	
-
-		/**
-		 * @brief Convert border position to (abosulte) position
-		 *
-		 * @param borderPosition The border position to convert.
-		 * @param position The result of the conversion: (absolute) position.
-		 * @see borderPositionToAbsolutePosition(int position[DIM_MAX])
-		 */
-		void borderPositionToAbsolutePosition(int borderPosition, int position[DIM_MAX]);
-		
-		/**
 		 * @brief Stop the game, show solution and compute final score
 		 */
 		void gameOver();
@@ -110,14 +80,6 @@ class KBBBoard : public QObject
 		 * Before that, the player doesn't need to confirm the end of the game, if he tries to start a new game.
 		 */
 		bool gameReallyStarted();
-		
-		/**
-		 * @brief Find the position where the laser ray leaves the black box
-		 *
-		 * @param position[DIM_MAX] Current incoming (absolute) position. It can be on a border or in the black box.
-		 * @param incomingDirection[DIM_MAX] Direction to move in the black box as a vector (difference of (absolute) positions)
-		 */
-		void getOutgoingPosition( int position[DIM_MAX], int incomingDirection[DIM_MAX] );
 		
 		/**
 		 * @brief Get current score
@@ -170,39 +132,7 @@ class KBBBoard : public QObject
 		void updateStats();
 
 
-	public slots:
-		/**
-		 * @brief Player places a new ball on the board
-		 *
-		 * @param boxPosition Box position of the player ball
-		 */
-		void addPlayerBall( int boxPosition );
-		
-		/**
-		 * @brief Check if there is a ball at the given position in the black box
-		 *
-		 * @param boxPosition Box position to check
-		 */
-		bool containsBall( int boxPosition );
-		
-		/**
-		 * @brief Player removes a ball from the board
-		 *
-		 * If there is no ball at the given position, nothing happens.
-		 *
-		 * @param boxPosition Box position of the ball to remove
-		 */
-		void removePlayerBall( int boxPosition );
-
-
 	private:
-		/**
-		 * @brief Check if the given (absolute) position is in the box
-		 *
-		 * @param position (Absolute) position to check
-		 */
-		bool positionInTheBox( int position[DIM_MAX] );
-		
 		/**
 		 * @brief Sets the score value
 		 *
@@ -218,8 +148,8 @@ class KBBBoard : public QObject
 		int m_rows;
 		KRandomSequence random;
 		int score;
-		QList<int> m_balls;
-		QList<int> m_ballsPlaced;
+		KBBBallsOnBoard* m_balls;
+		KBBBallsOnBoard* m_ballsPlaced;
 };
 
 #endif //KBBBOARD_H

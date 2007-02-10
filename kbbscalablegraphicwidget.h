@@ -40,10 +40,12 @@ class QResizeEvent;
 class QSvgRenderer;
 
 
+class KBBBallsOnBoard;
 class KBBBoard;
 class KBBGraphicsItemBall;
 class KBBGraphicsItemBlackBox;
 class KBBGraphicsItemLaser;
+class KBBGraphicsItemRay;
 class KBBGraphicsItemRayResult;
 
 
@@ -60,6 +62,21 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const RATIO = 50;
 		static int const BORDER_SIZE = 100;
 		
+		static int const ZVALUE_BACKGROUND = 10;
+		static int const ZVALUE_BLACKBOX = 20;
+		static int const ZVALUE_BLACKBOX_GRID = 30;
+		static int const ZVALUE_BLACKBOX_BACKGROUND = 40;
+		static int const ZVALUE_MARKER_NOTHING = 50;
+		static int const ZVALUE_SOLUTION_RAY = 60;
+		static int const ZVALUE_PLAYER_RAY = 70;
+		static int const ZVALUE_RAY_RESULT_BACKGROUND = 80;
+		static int const ZVALUE_RAY_RESULT_TEXT = 90;
+		static int const ZVALUE_BALL_RED = 100;
+		static int const ZVALUE_BALL_BLUE = 110;
+		static int const ZVALUE_BALL_CROSS = 120;
+		static int const ZVALUE_LASER = 130;
+
+		
 		explicit KBBScalableGraphicWidget(KBBBoard* parent);
 		
 		void clickAddBall(const int boxPosition);
@@ -67,8 +84,10 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void clickLaser(KBBGraphicsItemLaser* laser);
 		void clickRemoveBall(const int boxPosition);
 		void clickRemoveBallNothing(const int boxPosition);
+		void drawRay(const int borderPosition);
 		int hHint() const;
-		void newGame(const int columns, const int rows);
+		void newGame(const int columns, const int rows, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced);
+		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		void solve();
 		int wHint() const;
@@ -85,8 +104,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 	signals:
 		void endMouseClicked();
-		void addPlayerBall (int);
-		void removePlayerBall (int);
 
 
 	private:
@@ -105,11 +122,15 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		QMap<int, KBBGraphicsItemRayResult*> m_rayResults;
 		
 		// Various member variables
+		KBBBallsOnBoard* m_boardBalls;
+		KBBBallsOnBoard* m_boardBallsPlaced;
 		QSvgRenderer* m_ballSvg;
 		KBBBoard* m_board;
 		int m_columns;
 		bool m_inputAccepted;
 		int m_rows;
+		KBBGraphicsItemRay* m_ray;
+		KBBGraphicsItemRay* m_raySolution;
 		int m_rayNumber;
 		QGraphicsScene* m_scene;
 };

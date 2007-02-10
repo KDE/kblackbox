@@ -53,6 +53,8 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public QGraphicsSvgIt
 
 
 	private:
+		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
+		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
 		void mousePressEvent (QGraphicsSceneMouseEvent* );
 		
 		KBBScalableGraphicWidget* m_widget;

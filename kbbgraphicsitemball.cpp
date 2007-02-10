@@ -87,6 +87,8 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 			case nothing:
 				m_widget->clickAddBall(boxPosition());
 				break;
+			case cross:
+				break;
 		}
 	} else {
 		switch(m_ballType) {
@@ -102,6 +104,8 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 			case nothing:
 				m_widget->clickRemoveBallNothing(boxPosition());
 				break;
+			case cross:
+				break;
 		}
 	}
 }
@@ -112,23 +116,23 @@ void KBBGraphicsItemBall::setBallType(ballType type)
 	m_ballType = type;
 	switch (m_ballType) {
 		case blue:
-			setZValue(4);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
 			setElementId("blueball");
 			break;
 		case blueUnsure:
-			setZValue(4);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
 			setElementId("blueballunsure");
 			break;
 		case red:
-			setZValue(3);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_RED);
 			setElementId("redball");
 			break;
 		case cross:
-			setZValue(5);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_CROSS);
 			setElementId("cross");
 			break;
 		case nothing:
-			setZValue(2);
+			setZValue(KBBScalableGraphicWidget::ZVALUE_MARKER_NOTHING);
 			setElementId("nothing");
 			break;
 	}

@@ -17,6 +17,8 @@ set(kblackbox_SRCS
    kbbgraphicsitemrayresult.cpp
    kbbgraphicsitemball.cpp
    kbbgraphicsitemblackbox.cpp
+   kbbgraphicsitemray.cpp
+   kbbballsonboard.cpp
    util.cpp 
    main.cpp )
 

@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -33,8 +33,9 @@
 #define KBBSCALABLEGRAPHICWIDGET_H
 
 
-#include <QGraphicsView>
+class QGraphicsItem;
 class QGraphicsScene;
+#include <QGraphicsView>
 #include <QMap>
 class QResizeEvent;
 class QSvgRenderer;
@@ -76,9 +77,10 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const ZVALUE_BALL_CROSS = 120;
 		static int const ZVALUE_LASER = 130;
 
-		
+
 		explicit KBBScalableGraphicWidget(KBBBoard* parent);
 		
+		void addItem(QGraphicsItem* item);
 		void clickAddBall(const int boxPosition);
 		void clickAddBallNothing(const int boxPosition);
 		void clickLaser(KBBGraphicsItemLaser* laser);
@@ -87,9 +89,11 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void drawRay(const int borderPosition);
 		int hHint() const;
 		void newGame(const int columns, const int rows, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced);
+		void removeItem(QGraphicsItem* item);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		void solve();
+		QSvgRenderer* svgRenderer();
 		int wHint() const;
 
 
@@ -100,10 +104,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void slotLeft();
 		void slotRight();
 		void slotUp();
-
-
-	signals:
-		void endMouseClicked();
 
 
 	private:

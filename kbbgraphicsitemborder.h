@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -35,8 +35,7 @@
 
 
 /**
- * @brief Border element of the scalable graphic widget of KBlackBox
- *
+ * @brief Any border element of the scalable graphic widget
  */
 class KBBGraphicsItemBorder
 {

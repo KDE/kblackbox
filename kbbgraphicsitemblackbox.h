@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -38,7 +38,6 @@ class QGraphicsLineItem;
 class QGraphicsScene;
 class QGraphicsSvgItem;
 #include <QList>
-class QSvgRenderer;
 
 
 #include "kbbscalablegraphicwidget.h"
@@ -46,15 +45,20 @@ class QSvgRenderer;
 
 
 /**
- * @brief Black box in the scalable graphic widget of KBlackBox
+ * @brief The black box in the scalable graphic widget
  *
  */
 class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 {
 	public:
-		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer);
+		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene);
 		~KBBGraphicsItemBlackBox();
 		
+		/**
+		 * @brief Define the (new) size of the black box
+		 *
+		 * Used to "recycle" the black box for a new game.
+		 */
 		void setSize(const int columns, const int rows);
 
 

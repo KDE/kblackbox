@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -34,7 +34,6 @@
 
 
 class QGraphicsScene;
-class QSvgRenderer;
 
 
 #include "kbbgraphicsitemborder.h"
@@ -43,13 +42,22 @@ class KBBScalableGraphicWidget;
 
 
 /**
- * @brief Laser als element of the scalable graphic widget of KBlackBox
+ * @brief Laser element of the scalable graphic widget
  *
+ * The laser is used to shoot a laser ray into the black box.
  */
 class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public QGraphicsSvgItem
 {
 	public:
-		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows);
+		/**
+		 * @brief Constructor
+		 * 
+		 * @param parent Scalable graphic widget
+		 * @param borderPosition Position of the laser around the border. Each laser has a different border position.
+		 * @param columns Width of the Black Box
+		 * @param rows Height of the Black Box
+		 */
+		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows);
 
 
 	private:

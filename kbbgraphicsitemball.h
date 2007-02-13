@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -35,7 +35,6 @@
 
 #include <QGraphicsSvgItem>
 class QGraphicsScene;
-class QSvgRenderer;
 
 
 #include "kbbscalablegraphicwidget.h"
@@ -43,7 +42,7 @@ class QSvgRenderer;
 
 
 /**
- * @brief Ball (element of the scalable graphic widget of KBlackBox)
+ * @brief Ball (or similar) on the scalable graphic widget
  *
  */
 class KBBGraphicsItemBall : public QGraphicsSvgItem
@@ -53,7 +52,7 @@ class KBBGraphicsItemBall : public QGraphicsSvgItem
 	public:
 		enum ballType { blue, blueUnsure, red, cross, nothing };
 		
-		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, QSvgRenderer* svgRenderer, ballType type);
+		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, ballType type);
 		
 		int boxPosition() const;
 

@@ -1,1 +1,1 @@
-#define KBVERSION "0.4.0-SVN"
+#define KBBVERSION "0.4.0-SVN"

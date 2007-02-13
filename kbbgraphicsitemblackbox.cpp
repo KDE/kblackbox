@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -47,8 +47,10 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer) : QGraphicsRectItem (0, scene )
+KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* parent, QGraphicsScene* scene) : QGraphicsRectItem (0, scene )
 {
+	m_columns = 1;
+	m_rows = 1;
 	m_widget = parent;
 	m_scene = scene;
 
@@ -57,19 +59,17 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* pare
 	setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX);
 
 	m_background = new QGraphicsSvgItem(this);
-	m_background->setSharedRenderer(svgRenderer);
+	m_background->setSharedRenderer(m_widget->svgRenderer());
 	m_background->setElementId("bbquestion");
 	m_background->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX_BACKGROUND);
 
-	m_scene->addItem(m_background);
-	m_scene->update();
+	m_widget->addItem(m_background);
 }
 
 
 KBBGraphicsItemBlackBox::~KBBGraphicsItemBlackBox()
 {
-	m_scene->removeItem(m_background);
-	delete m_background;
+	m_widget->removeItem(m_background);
 }
 
 

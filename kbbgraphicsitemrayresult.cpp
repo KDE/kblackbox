@@ -48,14 +48,10 @@
 KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsEllipseItem ( 0, scene )
 {
 	m_widget = parent;
-	m_columns = columns;
-	m_rows = rows;
 	
 	m_centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
 	setRect(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
-	m_rayNumber = rayNumber;
 	m_opposite = this;
-	m_scene = scene;
 	
 	setPen(QPen(Qt::black, 0));
 	setBrush(Qt::Dense5Pattern);
@@ -65,9 +61,9 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	
 	// R for "Reflection". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
 	QString text("R");
-	if (m_rayNumber>0)
-		text.setNum(m_rayNumber);
-	if (m_rayNumber==KBBBoard::HIT_POSITION)
+	if (rayNumber>0)
+		text.setNum(rayNumber);
+	if (rayNumber==KBBBoard::HIT_POSITION)
 		// H for "Hit". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
 		text = "H";
 	m_number = new QGraphicsSimpleTextItem ( text, this, scene);
@@ -75,7 +71,7 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	font.setStyleHint(QFont::SansSerif);
 	font.setWeight(QFont::DemiBold);
 	int offset;
-	if (m_rayNumber<10) {
+	if (rayNumber<10) {
 		font.setPixelSize(3*m_centerRadius/2);
 		offset = 0;
 	} else {

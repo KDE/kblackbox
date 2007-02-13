@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -32,7 +32,6 @@
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsSvgItem>
-#include <QSvgRenderer>
 
 
 #include "kbbgraphicsitemball.h"
@@ -44,11 +43,11 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, QSvgRenderer* svgRenderer, ballType type) : QGraphicsSvgItem ( 0 )
+KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, ballType type) : QGraphicsSvgItem ( 0 )
 {
 	m_widget = parent;
 	m_boxPosition = boxPosition;
-	setSharedRenderer(svgRenderer);
+	setSharedRenderer(m_widget->svgRenderer());
 	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns));
 	scene->addItem(this);
 	setBallType(type);

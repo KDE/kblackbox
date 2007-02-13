@@ -1,6 +1,11 @@
+2007-02-13 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Code optimisation and clean-up.
+
 2007-02-10 Nicolas Roffet <nicolas-kde@roffet.com>
 	* GUI: New GraphicsView item: laser ray. Now the player can see laser rays on the board to check if he placed the balls correctly on the board and to understand better how the interactions in the black box do work. At the end of the game, he can also see the laser rays of the solution.
 	* Separation of the class KBBBoard in 2 with the creation of the class KBBBallsOnBoard. The 1st one manages the game, the second one the boards.
+	* Interaction result "HIT" is now diplayed on the board like every other interaction result.
+	* Introduced contants to better manage the superposition order of the different graphic elements of the widget.
 	* And some clean-up...
 
 2007-02-09 Nicolas Roffet <nicolas-kde@roffet.com>

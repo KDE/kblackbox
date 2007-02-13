@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -44,12 +44,16 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, QSvgRenderer* svgRenderer, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( borderPosition, columns, rows, 0), QGraphicsSvgItem ( )
+KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( borderPosition, columns, rows, 0), QGraphicsSvgItem ( )
 {
 	m_widget = parent;
 
-	int rotation;
+	setSharedRenderer(parent->svgRenderer());
+	setElementId("laser");
+	parent->addItem(this);
+	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
 
+	int rotation;
 	if (borderPosition<columns) {
 		rotation = 0;
 	} else if (borderPosition<columns + rows) {
@@ -59,13 +63,6 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, QG
 	} else {
 		rotation = 270;
 	}
-
-
-	setSharedRenderer(svgRenderer);
-	setElementId("laser");
-	scene->addItem(this);
-	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
-	scene->update();
 
 	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
 	setPos(m_centerX - radius, m_centerY - radius);

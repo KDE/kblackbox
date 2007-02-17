@@ -37,7 +37,9 @@ class QGraphicsItem;
 class QGraphicsScene;
 #include <QGraphicsView>
 class QResizeEvent;
-class QSvgRenderer;
+
+
+#include <ksvgrenderer.h>
 
 
 class KBBBallsOnBoard;
@@ -88,7 +90,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		void solve();
-		QSvgRenderer* svgRenderer();
+		KSvgRenderer* svgRenderer();
 		int wHint() const;
 
 
@@ -121,7 +123,8 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		int m_rayNumber;
 		int m_rows;
 		QGraphicsScene* m_scene;
-		QSvgRenderer* m_svgRenderer;
+		//QSvgRenderer* m_svgRenderer;
+		KSvgRenderer m_svgRenderer;
 };
 
 #endif // KBBSCALABLEGRAPHICWIDGET_H

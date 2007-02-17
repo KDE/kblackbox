@@ -34,7 +34,6 @@
 #include <QGraphicsView>
 #include <QColor>
 #include <QResizeEvent>
-#include <QSvgRenderer>
 
 
 #include <kstandarddirs.h>
@@ -61,9 +60,11 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard *parent) : QGraphic
 	m_board = parent;
 	m_columns = 1;
 	m_rows = 1;
-	m_svgRenderer = NULL;
+//	m_svgRenderer = NULL;
 	m_ray = 0;
 	m_raySolution = 0;
+
+	m_svgRenderer.load(KStandardDirs::locate("appdata", "pics/kblackbox.svgz"));
 	
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	m_scene->setBackgroundBrush(QColor(205,190,240));
@@ -226,10 +227,10 @@ void KBBScalableGraphicWidget::solve()
 }
 
 
-QSvgRenderer* KBBScalableGraphicWidget::svgRenderer() {
-	if (m_svgRenderer == NULL)
-		m_svgRenderer = new QSvgRenderer(KStandardDirs::locate("appdata", "pics/kblackbox.svg"));
-	return m_svgRenderer;
+KSvgRenderer* KBBScalableGraphicWidget::svgRenderer() {
+//	if (m_svgRenderer == NULL)
+//		m_svgRenderer = new QSvgRenderer(KStandardDirs::locate("appdata", "pics/kblackbox.svgz"));
+	return &m_svgRenderer;
 }
 
 

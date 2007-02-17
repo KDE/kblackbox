@@ -33,7 +33,6 @@
 #include <QGraphicsScene>
 
 
-#include "kbbboard.h"
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemrayresult.h"
@@ -48,6 +47,9 @@
 KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), KBBGraphicsItem()
 {
 	m_widget = parent;
+	m_scene = scene;
+	m_number = NULL;
+	m_notNumber = NULL;
 	
 	int centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
 	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
@@ -60,31 +62,46 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	parent->addItem(this);
 	setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_BACKGROUND);
 	
-	
-	// R for "Reflection". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
-	QString text("R");
-	if (rayNumber>0)
-		text.setNum(rayNumber);
-	if (rayNumber==KBBBoard::HIT_POSITION)
-		// H for "Hit". TODO: Draw a sign to symbolise it. Better for i18n and nicer anyway...
-		text = "H";
-	m_number = new QGraphicsSimpleTextItem ( text, this, scene);
-	QFont font;
-	font.setStyleHint(QFont::SansSerif);
-	font.setWeight(QFont::DemiBold);
-	int offset;
-	if (rayNumber<10) {
-		font.setPixelSize(3*centerRadius/2);
-		offset = 0;
+	if(rayNumber<=0) {
+		m_notNumber = new QGraphicsSvgItem(this);
+		m_notNumber->setSharedRenderer(m_widget->svgRenderer());
+		m_notNumber->setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_TEXT);
+		translate(radius,radius);
+		rotate(rotation());
+		translate(-radius,-radius);
+		m_widget->addItem(m_notNumber);
+		if (rayNumber==0)
+			m_notNumber->setElementId("reflection");
+		else
+			m_notNumber->setElementId("hit");
 	} else {
-		font.setPixelSize(5*centerRadius/4);
-		offset = 1*centerRadius/6;
+		QString text;
+		text.setNum(rayNumber);
+
+		m_number = new QGraphicsSimpleTextItem ( text, this, scene);
+		QFont font;
+		font.setStyleHint(QFont::SansSerif);
+		font.setWeight(QFont::DemiBold);
+		int offset;
+		if (rayNumber<10) {
+			font.setPixelSize(3*centerRadius/2);
+			offset = 0;
+		} else {
+			font.setPixelSize(5*centerRadius/4);
+			offset = 1*centerRadius/6;
+		}
+		m_number->setFont(font);
+		m_number->setPos(radius - centerRadius/2 - 2*offset, radius - centerRadius + offset);
+		m_number->setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_TEXT);
 	}
-	m_number->setFont(font);
-	m_number->setPos(radius - centerRadius/2 - 2*offset, radius - centerRadius + offset);
-	m_number->setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_TEXT);
-	
 	setAcceptsHoverEvents(true);
+}
+
+
+KBBGraphicsItemRayResult::~KBBGraphicsItemRayResult()
+{
+	delete m_notNumber;
+	delete m_number;
 }
 
 

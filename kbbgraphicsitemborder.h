@@ -44,10 +44,14 @@ class KBBGraphicsItemBorder
 
 
 	protected:
-		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset, const int columns, const int rows);
+		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset);
+		int rotation();
+
 		int m_borderPosition;
 		int m_centerX;
 		int m_centerY;
+		int m_columns;
+		int m_rows;
 };
 
 #endif // KBBGRAPHICSITEMBORDER_H

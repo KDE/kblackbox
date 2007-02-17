@@ -33,6 +33,10 @@
 #define KBBGRAPHICSITEMRAYRESULT_H
 
 
+class QGraphicsScene;
+class QGraphicsSvgItem;
+
+
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
 class KBBScalableGraphicWidget;
@@ -51,6 +55,7 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 {
 	public:
 		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber);
+		~KBBGraphicsItemRayResult();
 
 		/**
 		 * @brief Highlight the item
@@ -77,8 +82,10 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
 		
+		QGraphicsSvgItem* m_notNumber;
 		QGraphicsSimpleTextItem* m_number;
 		KBBGraphicsItemRayResult* m_opposite;
+		QGraphicsScene* m_scene;
 		KBBScalableGraphicWidget* m_widget;
 };
 

@@ -37,12 +37,12 @@
 class QWidget;
 
 
-class KMainWindow;
 #include <krandomsequence.h>
 
 
 class KBBBallsOnBoard;
 class KBBGraphic;
+#include "kbbmainwindow.h"
 class KBBScalableGraphicWidget;
 
 
@@ -65,7 +65,7 @@ class KBBBoard : public QObject
 		static const int HIT_POSITION = -1;
 		
 		
-		explicit KBBBoard(KMainWindow *parent);
+		explicit KBBBoard(KBBMainWindow *parent);
 		
 		
 		/**

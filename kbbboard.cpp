@@ -32,8 +32,6 @@
 #include <QWidget>
 
 
-#include <kdebug.h>
-#include <kmainwindow.h>
 #include <krandomsequence.h>
 
 
@@ -48,7 +46,7 @@
 // Constructor / Destructor
 //
 
-KBBBoard::KBBBoard(KMainWindow *parent) : QObject(parent)
+KBBBoard::KBBBoard(KBBMainWindow *parent) : QObject(parent)
 {
 	random.setSeed(0);
 

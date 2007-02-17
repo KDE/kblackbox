@@ -41,35 +41,52 @@
 KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const int columns, const int rows, const int offset)
 {
 	m_borderPosition = borderPosition;
-	centerCoordinate(m_borderPosition, m_centerX, m_centerY, offset, columns, rows);
+	m_columns = columns;
+	m_rows = rows;
+	
+	centerCoordinate(m_borderPosition, m_centerX, m_centerY, offset);
 }
 
 
 
 //
-// Private
+// Protected
 //
 
-void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset, const int columns, const int rows)
+void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset)
 {
 	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
 	const int r = KBBScalableGraphicWidget::RATIO;
 	int x;
 	int y;
-	if (borderPosition<columns) {
+	if (borderPosition<m_columns) {
 		x = borderPosition*r + b;
 		y = offset;
-	} else if (borderPosition<columns + rows) {
-		x = (columns)*r + b + b/2 - offset;
-		y = (borderPosition - columns)*r + b;
-	} else if (borderPosition<2*columns + rows) {
-		x = (2*columns + rows - borderPosition)*r + b/2;
-		y = (rows)*r + 3*b/2 - offset;
+	} else if (borderPosition<m_columns + m_rows) {
+		x = m_columns*r + b + b/2 - offset;
+		y = (borderPosition - m_columns)*r + b;
+	} else if (borderPosition<2*m_columns + m_rows) {
+		x = (2*m_columns + m_rows - borderPosition)*r + b/2;
+		y = m_rows*r + 3*b/2 - offset;
 	} else {
 		x = offset;
-		y = (2*columns + 2*rows - borderPosition)*r + b/2;
+		y = (2*m_columns + 2*m_rows - borderPosition)*r + b/2;
 	}
 	
 	centerX = x + r/2;
 	centerY = y + r/2;
+}
+
+
+int KBBGraphicsItemBorder::rotation()
+{
+	if (m_borderPosition<m_columns) {
+		return 0;
+	} else if (m_borderPosition<m_columns + m_rows) {
+		return 90;
+	} else if (m_borderPosition<2*m_columns + m_rows) {
+		return 180;
+	} else {
+		return 270;
+	}
 }

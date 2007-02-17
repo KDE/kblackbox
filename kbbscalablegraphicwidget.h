@@ -61,7 +61,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const RATIO = 50;
 		static int const BORDER_SIZE = 100;
 		
-		static int const ZVALUE_BACKGROUND = 10;
 		static int const ZVALUE_BLACKBOX = 20;
 		static int const ZVALUE_BLACKBOX_GRID = 30;
 		static int const ZVALUE_BLACKBOX_BACKGROUND = 40;
@@ -123,7 +122,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		int m_rayNumber;
 		int m_rows;
 		QGraphicsScene* m_scene;
-		//QSvgRenderer* m_svgRenderer;
 		KSvgRenderer m_svgRenderer;
 };
 

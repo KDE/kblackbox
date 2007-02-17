@@ -52,21 +52,10 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, co
 	parent->addItem(this);
 	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
 
-	int rotation;
-	if (borderPosition<columns) {
-		rotation = 0;
-	} else if (borderPosition<columns + rows) {
-		rotation = 90;
-	} else if (borderPosition<2*columns + rows) {
-		rotation = 180;
-	} else {
-		rotation = 270;
-	}
-
 	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
 	setPos(m_centerX - radius, m_centerY - radius);
 	translate(radius,radius);
-	rotate(rotation);
+	rotate(rotation());
 	translate(-radius,-radius);
 
 	setAcceptsHoverEvents(true);

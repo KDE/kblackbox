@@ -70,7 +70,7 @@ KBBGraphicsItemRay::KBBGraphicsItemRay( QGraphicsScene* scene, const int borderP
 	if (oppositeBorderPosition!=KBBBoard::HIT_POSITION) {
 		int x1;
 		int y1;
-		centerCoordinate(oppositeBorderPosition, x1, y1, b/2, columns, rows);
+		centerCoordinate(oppositeBorderPosition, x1, y1, b/2);
 		path.lineTo(x1,y1);
 	}
 	

@@ -29,10 +29,11 @@
 
 
 
+#include <QColor>
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QColor>
+#include <QPalette>
 #include <QResizeEvent>
 
 
@@ -55,19 +56,17 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard *parent) : QGraphicsView( )
+KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphicsView( )
 {
 	m_board = parent;
 	m_columns = 1;
 	m_rows = 1;
-//	m_svgRenderer = NULL;
 	m_ray = 0;
 	m_raySolution = 0;
-
+	
 	m_svgRenderer.load(KStandardDirs::locate("appdata", "pics/kblackbox.svgz"));
 	
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
-	m_scene->setBackgroundBrush(QColor(205,190,240));
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene);
 	
 	m_balls = new KBBGraphicsItemSet(m_scene);
@@ -75,7 +74,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard *parent) : QGraphic
 	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
 	m_lasers = new KBBGraphicsItemSet(m_scene);
 	m_rayResults = new KBBGraphicsItemSet(m_scene);
-
+	
 	this->setScene( m_scene );
 }
 
@@ -228,8 +227,6 @@ void KBBScalableGraphicWidget::solve()
 
 
 KSvgRenderer* KBBScalableGraphicWidget::svgRenderer() {
-//	if (m_svgRenderer == NULL)
-//		m_svgRenderer = new QSvgRenderer(KStandardDirs::locate("appdata", "pics/kblackbox.svgz"));
 	return &m_svgRenderer;
 }
 

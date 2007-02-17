@@ -33,9 +33,7 @@
 #define KBBGRAPHICSITEMRAYRESULT_H
 
 
-#include <QGraphicsEllipseItem>
-
-
+#include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
 class KBBScalableGraphicWidget;
 
@@ -49,7 +47,7 @@ class KBBScalableGraphicWidget;
  *   - REFLECTION: if the laser ray exits the black box at the entrance point.
  *   - A number to display both positions where the laser ray entered and exited the black box. Both positions are opposite positions of each other and belong together.
  */
-class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public QGraphicsEllipseItem
+class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphicsItem
 {
 	public:
 		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber);
@@ -62,6 +60,11 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public QGraphicsE
 		void highlight(bool state);
 
 		/**
+		 * @brief Get the border position
+		 */
+		const int position();
+
+		/**
 		 * @brief Define the opposite "ray result" item
 		 * 
 		 * Used if the result is not a HIT and not a REFLECTION. In the other case, the opoosite is the item itself and this method doesn't need to be called.
@@ -71,11 +74,9 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public QGraphicsE
 		
 
 	private:
-		QRectF boundingRect() const;
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
 		
-		int m_centerRadius;
 		QGraphicsSimpleTextItem* m_number;
 		KBBGraphicsItemRayResult* m_opposite;
 		KBBScalableGraphicWidget* m_widget;

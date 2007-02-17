@@ -47,17 +47,6 @@ KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const in
 
 
 //
-// Public
-//
-
-int KBBGraphicsItemBorder::borderPosition () const
-{
-	return m_borderPosition;
-}
-
-
-
-//
 // Private
 //
 

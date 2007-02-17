@@ -1,5 +1,5 @@
 //
-// KBlackBox
+// KBlackbox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,13 +29,11 @@
 
 
 
-#include <QSvgRenderer>
+#include <QGraphicsScene>
 
 
 #include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemborder.h"
-#include "kbbgraphicsitemlaser.h"
-#include "kbbscalablegraphicwidget.h"
+#include "kbbgraphicsitemset.h"
 
 
 
@@ -43,33 +41,9 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( borderPosition, columns, rows, 0), KBBGraphicsItem()
+KBBGraphicsItemSet::KBBGraphicsItemSet(QGraphicsScene* scene)
 {
-	m_widget = parent;
-
-	setSharedRenderer(parent->svgRenderer());
-	setElementId("laser");
-	parent->addItem(this);
-	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
-
-	int rotation;
-	if (borderPosition<columns) {
-		rotation = 0;
-	} else if (borderPosition<columns + rows) {
-		rotation = 90;
-	} else if (borderPosition<2*columns + rows) {
-		rotation = 180;
-	} else {
-		rotation = 270;
-	}
-
-	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
-	setPos(m_centerX - radius, m_centerY - radius);
-	translate(radius,radius);
-	rotate(rotation);
-	translate(-radius,-radius);
-
-	setAcceptsHoverEvents(true);
+	m_scene = scene;
 }
 
 
@@ -78,31 +52,31 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, co
 // Public
 //
 
-const int KBBGraphicsItemLaser::position ()
+void KBBGraphicsItemSet::clear()
 {
-	return m_borderPosition;
+	while (m_items.count()>0) {
+		remove(m_items[m_items.keys().last()]->position());
+	}
 }
 
 
-
-//
-// Private
-//
-
-void KBBGraphicsItemLaser::hoverEnterEvent (QGraphicsSceneHoverEvent*)
+bool KBBGraphicsItemSet::contains(int position)
 {
-	m_widget->drawRay(position());
+	return m_items.contains(position);
 }
 
 
-void KBBGraphicsItemLaser::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
+void KBBGraphicsItemSet::insert(KBBGraphicsItem* item)
 {
-	m_widget->removeRay();
+	m_items.insert(item->position(), item);
 }
 
 
-void KBBGraphicsItemLaser::mousePressEvent (QGraphicsSceneMouseEvent* )
+void KBBGraphicsItemSet::remove(int position)
 {
-	m_widget->clickLaser(position());
-	m_widget->removeRay();
+	if (m_items.contains(position)) {
+		m_scene->removeItem(m_items[position]);
+		delete m_items[position];
+		m_items.remove(position);
+	}
 }

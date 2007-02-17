@@ -33,9 +33,7 @@
 #define KBBGRAPHICSITEMLASER_H
 
 
-class QGraphicsScene;
-
-
+#include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
 class KBBScalableGraphicWidget;
 
@@ -46,7 +44,7 @@ class KBBScalableGraphicWidget;
  *
  * The laser is used to shoot a laser ray into the black box.
  */
-class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public QGraphicsSvgItem
+class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsItem
 {
 	public:
 		/**
@@ -57,7 +55,12 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public QGraphicsSvgIt
 		 * @param columns Width of the Black Box
 		 * @param rows Height of the Black Box
 		 */
-		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows);
+		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, const int borderPosition, const int columns, const int rows);
+
+		/**
+		 * @brief Get the border position
+		 */
+		const int position();
 
 
 	private:

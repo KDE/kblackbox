@@ -41,8 +41,6 @@ class KBBGraphicsItemBorder
 {
 	public:
 		KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset);
-	
-		int borderPosition() const;
 
 
 	protected:

@@ -13,9 +13,11 @@
    height="500"
    id="svg2194"
    sodipodi:version="0.32"
-   inkscape:version="0.44.1"
+   inkscape:version="0.45"
    version="1.0"
-   sodipodi:docname="kblackbox.svg">
+   sodipodi:docname="kblackbox.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:modified="true">
   <defs
      id="defs2196">
     <linearGradient
@@ -376,6 +378,14 @@
        fx="112.2124"
        fy="43.835297"
        r="37.829708" />
+    <filter
+       inkscape:collect="always"
+       id="filter3747">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.9972495"
+         id="feGaussianBlur3749" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -384,11 +394,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="149.78372"
-     inkscape:cy="307.61342"
+     inkscape:zoom="1.192"
+     inkscape:cx="200"
+     inkscape:cy="171.54225"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g2365"
      inkscape:window-width="1049"
      inkscape:window-height="802"
      inkscape:window-x="398"
@@ -1143,6 +1153,51 @@
          width="50"
          id="rect4628"
          style="opacity:0.75;fill:none;fill-opacity:0.53370786;fill-rule:nonzero;stroke:none;stroke-width:1.14100003;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <g
+       id="result">
+      <path
+         transform="matrix(0.754717,0,0,0.754717,96.132071,142.92452)"
+         d="M 262 440 A 25 25 0 1 1  212,440 A 25 25 0 1 1  262 440 z"
+         sodipodi:ry="25"
+         sodipodi:rx="25"
+         sodipodi:cy="440"
+         sodipodi:cx="237"
+         id="tgbnhz"
+         style="opacity:1;fill:#00ff00;fill-opacity:0.53370786;fill-rule:nonzero;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter3747)"
+         sodipodi:type="arc" />
+      <rect
+         y="450"
+         x="250"
+         height="50"
+         width="50"
+         id="rect3751"
+         style="opacity:1;fill:none;fill-opacity:0.53370786;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <g
+       style="opacity:1;display:inline"
+       id="g2365"
+       transform="translate(100,1)">
+      <g
+         id="resulthighlight">
+        <path
+           sodipodi:type="arc"
+           style="fill:#ffd500;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter3747)"
+           id="path2367"
+           sodipodi:cx="237"
+           sodipodi:cy="440"
+           sodipodi:rx="25"
+           sodipodi:ry="25"
+           d="M 262 440 A 25 25 0 1 1  212,440 A 25 25 0 1 1  262 440 z"
+           transform="matrix(0.754717,0,0,0.754717,96.132071,141.92452)" />
+        <rect
+           style="fill:none;fill-opacity:0.53370786;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect2369"
+           width="50"
+           height="50"
+           x="250"
+           y="449" />
+      </g>
     </g>
   </g>
 </svg>

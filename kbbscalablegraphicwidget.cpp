@@ -47,6 +47,7 @@
 #include "kbbgraphicsitemlaser.h"
 #include "kbbgraphicsitemray.h"
 #include "kbbgraphicsitemrayresult.h"
+#include "kbbgraphicsitemset.h"
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -60,7 +61,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard *parent) : QGraphic
 	m_board = parent;
 	m_columns = 1;
 	m_rows = 1;
-	m_ballSvg = NULL;
+	m_svgRenderer = NULL;
 	m_ray = 0;
 	m_raySolution = 0;
 	
@@ -68,6 +69,12 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard *parent) : QGraphic
 	m_scene->setBackgroundBrush(QColor(205,190,240));
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene);
 	
+	m_balls = new KBBGraphicsItemSet(m_scene);
+	m_ballsNothing = new KBBGraphicsItemSet(m_scene);
+	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
+	m_lasers = new KBBGraphicsItemSet(m_scene);
+	m_rayResults = new KBBGraphicsItemSet(m_scene);
+
 	this->setScene( m_scene );
 }
 
@@ -86,49 +93,50 @@ void KBBScalableGraphicWidget::addItem(QGraphicsItem* item)
 
 void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_balls.contains(boxPosition))) {
+	if (m_inputAccepted && (!m_balls->contains(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
-		m_balls.insert(boxPosition, new KBBGraphicsItemBall(this, m_scene, boxPosition, m_columns, KBBGraphicsItemBall::blue));
-		if (m_ballsNothing.contains(boxPosition))
-			removeBallNothing(m_ballsNothing[boxPosition]);
+		m_balls->insert(new KBBGraphicsItemBall(this, m_scene, boxPosition, m_columns, KBBGraphicsItemBall::blue));
+		m_ballsNothing->remove(boxPosition);
 	}
 }
 
 
 void KBBScalableGraphicWidget::clickAddBallNothing(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_ballsNothing.contains(boxPosition))) {
-		m_ballsNothing.insert(boxPosition, new KBBGraphicsItemBall(this, m_scene, boxPosition, m_columns, KBBGraphicsItemBall::nothing));
-		if (m_balls.contains(boxPosition))
-			removeBall(m_balls[boxPosition]);
+	if (m_inputAccepted && (!m_ballsNothing->contains(boxPosition))) {
+		m_ballsNothing->insert(new KBBGraphicsItemBall(this, m_scene, boxPosition, m_columns, KBBGraphicsItemBall::nothing));
+		m_balls->remove(boxPosition);
+		m_boardBallsPlaced->remove(boxPosition);
 	}
 }
 
 
-void KBBScalableGraphicWidget::clickLaser( KBBGraphicsItemLaser* laser )
+void KBBScalableGraphicWidget::clickLaser(const int incomingPosition)
 {
 	if (m_inputAccepted) {
-		int incomingPosition = laser->borderPosition();
-		int outgoingPosition = m_board->shootRay(incomingPosition);
-	
+		const int outgoingPosition = m_board->shootRay(incomingPosition);
+		
+		KBBGraphicsItemRayResult* inRay;
+		KBBGraphicsItemRayResult* outRay;
+		
 		int rayNumberOrReflection = 0;
 		if (outgoingPosition==KBBBoard::HIT_POSITION)
 			rayNumberOrReflection = KBBBoard::HIT_POSITION;
 		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBBoard::HIT_POSITION)) {
 			m_rayNumber++;
-			removeLaser(m_lasers[outgoingPosition]);
-			m_rayResults.insert(outgoingPosition, new KBBGraphicsItemRayResult(this, m_scene,  outgoingPosition, m_columns, m_rows, m_rayNumber));
+			m_lasers->remove(outgoingPosition);
+			m_rayResults->insert(outRay = new KBBGraphicsItemRayResult(this, m_scene,  outgoingPosition, m_columns, m_rows, m_rayNumber));
 			rayNumberOrReflection = m_rayNumber;
 		}
-		m_rayResults.insert(incomingPosition, new KBBGraphicsItemRayResult(this, m_scene, incomingPosition, m_columns, m_rows, rayNumberOrReflection));
+		m_rayResults->insert(inRay = new KBBGraphicsItemRayResult(this, m_scene, incomingPosition, m_columns, m_rows, rayNumberOrReflection));
 		
 		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBBoard::HIT_POSITION)) {
-			m_rayResults[outgoingPosition]->setOpposite(m_rayResults[incomingPosition]);
-			m_rayResults[incomingPosition]->setOpposite(m_rayResults[outgoingPosition]);
+			inRay->setOpposite(outRay);
+			outRay->setOpposite(inRay);
 		}
 		
 		m_scene->update();
-		removeLaser(laser);
+		m_lasers->remove(incomingPosition);
 	}
 }
 
@@ -136,7 +144,8 @@ void KBBScalableGraphicWidget::clickLaser( KBBGraphicsItemLaser* laser )
 void KBBScalableGraphicWidget::clickRemoveBall(const int boxPosition)
 {
 	if (m_inputAccepted) {
-		removeBall(m_balls[boxPosition]);
+		m_balls->remove(boxPosition);
+		m_boardBallsPlaced->remove(boxPosition);
 	}
 }
 
@@ -144,7 +153,7 @@ void KBBScalableGraphicWidget::clickRemoveBall(const int boxPosition)
 void KBBScalableGraphicWidget::clickRemoveBallNothing(const int boxPosition)
 {
 	if (m_inputAccepted) {
-		removeBallNothing(m_ballsNothing[boxPosition]);
+		m_ballsNothing->remove(boxPosition);
 	}
 }
 
@@ -152,10 +161,10 @@ void KBBScalableGraphicWidget::clickRemoveBallNothing(const int boxPosition)
 void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 {
 	if (!m_inputAccepted) {
-		m_raySolution = new KBBGraphicsItemRay(this, m_scene, borderPosition, m_boardBalls, KBBGraphicsItemRay::solutionRay);
-		m_ray = new KBBGraphicsItemRay(this, m_scene, borderPosition, m_boardBallsPlaced, KBBGraphicsItemRay::playerSolutionRay);
+		m_raySolution = new KBBGraphicsItemRay(m_scene, borderPosition, m_boardBalls, KBBGraphicsItemRay::solutionRay);
+		m_ray = new KBBGraphicsItemRay(m_scene, borderPosition, m_boardBallsPlaced, KBBGraphicsItemRay::playerSolutionRay);
 	} else
-		m_ray = new KBBGraphicsItemRay(this, m_scene, borderPosition, m_boardBallsPlaced, KBBGraphicsItemRay::playerRay);
+		m_ray = new KBBGraphicsItemRay(m_scene, borderPosition, m_boardBallsPlaced, KBBGraphicsItemRay::playerRay);
 }
 
 
@@ -171,23 +180,12 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 	m_boardBalls = balls;
 	m_boardBallsPlaced = ballsPlaced;
 	
-	// remove old lasers and old ray results
-	for (int i=0; i<2*(m_columns + m_rows); i++) {
-		if (m_lasers.contains(i))
-			removeLaser(m_lasers[i]);
-		if (m_rayResults.contains(i))
-			removeRayResult(m_rayResults[i]);
-	}
-
-	// remove all placed balls, all markers "nothing" and all solutions
-	for (int i=0; i<(m_columns * m_rows); i++) {
-		if (m_balls.contains(i)) 
-			removeBall(m_balls[i]);
-		if (m_ballsNothing.contains(i)) 
-			removeBallNothing(m_ballsNothing[i]);
-		if (m_ballsSolution.contains(i)) 
-			removeBallSolution(m_ballsSolution[i]);
-	}
+	// remove old lasers, old ray results, all placed balls, all markers "nothing" and all solutions
+	m_lasers->clear();
+	m_rayResults->clear();
+	m_balls->clear();
+	m_ballsNothing->clear();
+	m_ballsSolution->clear();
 
 	// set the new size
 	m_columns = columns;
@@ -198,9 +196,7 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 
 	// Place new lasers
 	for (int i=0; i<2*(m_columns + m_rows); i++)
-		m_lasers.insert(i, new KBBGraphicsItemLaser(this, m_scene, i, m_columns, m_rows));
-
-	m_scene->update();
+		m_lasers->insert(new KBBGraphicsItemLaser(this, i, m_columns, m_rows));
 }
 
 
@@ -208,14 +204,6 @@ void KBBScalableGraphicWidget::resizeEvent(  QResizeEvent* )
 {
 	this->fitInView(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE, Qt::KeepAspectRatio);
 }
-
-
-void KBBScalableGraphicWidget::removeItem(QGraphicsItem* item)
-{
-	m_scene->removeItem(item);
-	delete item;
-}
-
 
 
 void KBBScalableGraphicWidget::removeRay()
@@ -230,18 +218,18 @@ void KBBScalableGraphicWidget::removeRay()
 void KBBScalableGraphicWidget::solve()
 {
 	for (int i=0; i<(m_columns * m_rows); i++) {
-		if (m_balls.contains(i) && !m_boardBalls->contains(i))
-			m_ballsSolution.insert(i, new KBBGraphicsItemBall(this, m_scene, i, m_columns, KBBGraphicsItemBall::cross));
-		if (!m_balls.contains(i) && m_boardBalls->contains(i)) 
-			m_ballsSolution.insert(i, new KBBGraphicsItemBall(this, m_scene, i, m_columns, KBBGraphicsItemBall::red));
+		if (m_balls->contains(i) && !m_boardBalls->contains(i))
+			m_ballsSolution->insert(new KBBGraphicsItemBall(this, m_scene, i, m_columns, KBBGraphicsItemBall::cross));
+		if (!m_balls->contains(i) && m_boardBalls->contains(i)) 
+			m_ballsSolution->insert(new KBBGraphicsItemBall(this, m_scene, i, m_columns, KBBGraphicsItemBall::red));
 	}
 }
 
 
 QSvgRenderer* KBBScalableGraphicWidget::svgRenderer() {
-	if (m_ballSvg == NULL)
-		m_ballSvg = new QSvgRenderer(KStandardDirs::locate("appdata", "pics/kblackbox.svg"));
-	return m_ballSvg;
+	if (m_svgRenderer == NULL)
+		m_svgRenderer = new QSvgRenderer(KStandardDirs::locate("appdata", "pics/kblackbox.svg"));
+	return m_svgRenderer;
 }
 
 
@@ -297,47 +285,5 @@ void KBBScalableGraphicWidget::slotUp()
 {
 	//TODO: Manage keyboard input
 }
-
-
-
-//
-// Private
-//
-
-void KBBScalableGraphicWidget::removeBall(KBBGraphicsItemBall* ball)
-{
-	m_boardBallsPlaced->remove(ball->boxPosition());
-	m_balls.remove(ball->boxPosition());
-	removeItem(ball);
-}
-
-
-void KBBScalableGraphicWidget::removeBallNothing(KBBGraphicsItemBall* ball)
-{
-	m_ballsNothing.remove(ball->boxPosition());
-	removeItem(ball);
-}
-
-
-void KBBScalableGraphicWidget::removeBallSolution(KBBGraphicsItemBall* ball)
-{
-	m_ballsSolution.remove(ball->boxPosition());
-	removeItem(ball);
-}
-
-
-void KBBScalableGraphicWidget::removeLaser( KBBGraphicsItemLaser* laser)
-{
-	m_lasers.remove(laser->borderPosition());
-	removeItem(laser);
-}
-
-
-void KBBScalableGraphicWidget::removeRayResult( KBBGraphicsItemRayResult* rayResult)
-{
-	m_rayResults.remove(rayResult->borderPosition());
-	removeItem(rayResult);
-}
-
 
 #include "kbbscalablegraphicwidget.moc"

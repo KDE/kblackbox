@@ -8,19 +8,22 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
 ########### next target ###############
 
 set(kblackbox_SRCS 
-   kbbgfx.cpp 
-   kbbmainwindow.cpp 
-   kbbboard.cpp
-   kbbscalablegraphicwidget.cpp
-   kbbgraphicsitemborder.cpp
-   kbbgraphicsitemlaser.cpp
-   kbbgraphicsitemrayresult.cpp
-   kbbgraphicsitemball.cpp
-   kbbgraphicsitemblackbox.cpp
-   kbbgraphicsitemray.cpp
-   kbbballsonboard.cpp
-   util.cpp 
-   main.cpp )
+    kbbballsonboard.cpp
+    kbbboard.cpp
+    kbbgfx.cpp 
+    kbbgraphicsitem.cpp
+    kbbgraphicsitemball.cpp
+    kbbgraphicsitemblackbox.cpp
+    kbbgraphicsitemborder.cpp
+    kbbgraphicsitemlaser.cpp
+    kbbgraphicsitemray.cpp
+    kbbgraphicsitemrayresult.cpp
+    kbbgraphicsitemset.cpp
+    kbbmainwindow.cpp 
+    kbbscalablegraphicwidget.cpp
+    main.cpp
+    util.cpp
+    )
 
 kde4_automoc(${kblackbox_SRCS})
 

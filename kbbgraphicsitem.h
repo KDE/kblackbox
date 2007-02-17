@@ -29,80 +29,22 @@
 
 
 
-#include <QSvgRenderer>
+#ifndef KBBGRAPHICSITEM_H
+#define KBBGRAPHICSITEM_H
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemborder.h"
-#include "kbbgraphicsitemlaser.h"
-#include "kbbscalablegraphicwidget.h"
+#include <QGraphicsSvgItem>
 
 
 
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( borderPosition, columns, rows, 0), KBBGraphicsItem()
+/**
+ * @brief Graphic item of the scalable graphic widget
+ */
+class KBBGraphicsItem : public QGraphicsSvgItem
 {
-	m_widget = parent;
+	public:
+		KBBGraphicsItem();
+		virtual const int position() = 0;
+};
 
-	setSharedRenderer(parent->svgRenderer());
-	setElementId("laser");
-	parent->addItem(this);
-	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
-
-	int rotation;
-	if (borderPosition<columns) {
-		rotation = 0;
-	} else if (borderPosition<columns + rows) {
-		rotation = 90;
-	} else if (borderPosition<2*columns + rows) {
-		rotation = 180;
-	} else {
-		rotation = 270;
-	}
-
-	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
-	setPos(m_centerX - radius, m_centerY - radius);
-	translate(radius,radius);
-	rotate(rotation);
-	translate(-radius,-radius);
-
-	setAcceptsHoverEvents(true);
-}
-
-
-
-//
-// Public
-//
-
-const int KBBGraphicsItemLaser::position ()
-{
-	return m_borderPosition;
-}
-
-
-
-//
-// Private
-//
-
-void KBBGraphicsItemLaser::hoverEnterEvent (QGraphicsSceneHoverEvent*)
-{
-	m_widget->drawRay(position());
-}
-
-
-void KBBGraphicsItemLaser::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
-{
-	m_widget->removeRay();
-}
-
-
-void KBBGraphicsItemLaser::mousePressEvent (QGraphicsSceneMouseEvent* )
-{
-	m_widget->clickLaser(position());
-	m_widget->removeRay();
-}
+#endif // KBBGRAPHICSITEM_H

@@ -36,24 +36,20 @@
 class QGraphicsItem;
 class QGraphicsScene;
 #include <QGraphicsView>
-#include <QMap>
 class QResizeEvent;
 class QSvgRenderer;
 
 
 class KBBBallsOnBoard;
 class KBBBoard;
-class KBBGraphicsItemBall;
 class KBBGraphicsItemBlackBox;
-class KBBGraphicsItemLaser;
 class KBBGraphicsItemRay;
-class KBBGraphicsItemRayResult;
+class KBBGraphicsItemSet;
 
 
 
 /**
  * @brief Scalable graphic central widget for KBlackBox
- *
  */
 class KBBScalableGraphicWidget : public QGraphicsView
 {
@@ -83,13 +79,12 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void addItem(QGraphicsItem* item);
 		void clickAddBall(const int boxPosition);
 		void clickAddBallNothing(const int boxPosition);
-		void clickLaser(KBBGraphicsItemLaser* laser);
+		void clickLaser(const int incomingPosition);
 		void clickRemoveBall(const int boxPosition);
 		void clickRemoveBallNothing(const int boxPosition);
 		void drawRay(const int borderPosition);
 		int hHint() const;
 		void newGame(const int columns, const int rows, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced);
-		void removeItem(QGraphicsItem* item);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		void solve();
@@ -107,32 +102,26 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	private:
-		void removeBall(KBBGraphicsItemBall* ball);
-		void removeBallNothing(KBBGraphicsItemBall* ball);
-		void removeBallSolution(KBBGraphicsItemBall* ball);
-		void removeLaser( KBBGraphicsItemLaser* laser);
-		void removeRayResult( KBBGraphicsItemRayResult* rayResult);
-		
-		// Graphics Items
-		QMap<int, KBBGraphicsItemBall*> m_balls;
-		QMap<int, KBBGraphicsItemBall*> m_ballsNothing;
-		QMap<int, KBBGraphicsItemBall*> m_ballsSolution;
+		// Graphics items
+		KBBGraphicsItemSet* m_balls;
+		KBBGraphicsItemSet* m_ballsNothing;
+		KBBGraphicsItemSet* m_ballsSolution;
+		KBBGraphicsItemSet* m_lasers;
+		KBBGraphicsItemSet* m_rayResults;
 		KBBGraphicsItemBlackBox* m_blackbox;
-		QMap<int, KBBGraphicsItemLaser*> m_lasers;
-		QMap<int, KBBGraphicsItemRayResult*> m_rayResults;
-		
-		// Various member variables
-		KBBBallsOnBoard* m_boardBalls;
-		KBBBallsOnBoard* m_boardBallsPlaced;
-		QSvgRenderer* m_ballSvg;
-		KBBBoard* m_board;
-		int m_columns;
-		bool m_inputAccepted;
-		int m_rows;
 		KBBGraphicsItemRay* m_ray;
 		KBBGraphicsItemRay* m_raySolution;
+		
+		// Various member variables
+		KBBBoard* m_board;
+		KBBBallsOnBoard* m_boardBalls;
+		KBBBallsOnBoard* m_boardBallsPlaced;
+		int m_columns;
+		bool m_inputAccepted;
 		int m_rayNumber;
+		int m_rows;
 		QGraphicsScene* m_scene;
+		QSvgRenderer* m_svgRenderer;
 };
 
 #endif // KBBSCALABLEGRAPHICWIDGET_H

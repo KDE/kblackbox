@@ -35,7 +35,6 @@
 
 #include <QGraphicsPathItem>
 class QGraphicsScene;
-#include <QList>
 
 
 #include "kbbballsonboard.h"
@@ -53,10 +52,8 @@ class KBBGraphicsItemRay : public KBBGraphicsItemBorder, public QGraphicsPathIte
 	public:
 		enum rayType { playerRay, playerSolutionRay, solutionRay };
 		
-		KBBGraphicsItemRay(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type);
+		KBBGraphicsItemRay(QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type);
 
-
-	private:
 };
 
 #endif // KBBGRAPHICSITEMRAY_H

@@ -31,9 +31,9 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
-#include <QGraphicsSvgItem>
 
 
+#include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemball.h"
 #include "kbbscalablegraphicwidget.h"
 
@@ -43,7 +43,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, ballType type) : QGraphicsSvgItem ( 0 )
+KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, ballType type) : KBBGraphicsItem()
 {
 	m_widget = parent;
 	m_boxPosition = boxPosition;
@@ -59,7 +59,7 @@ KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, QGra
 // Public
 //
 
-int KBBGraphicsItemBall::boxPosition () const
+const int KBBGraphicsItemBall::position ()
 {
 	return m_boxPosition;
 }
@@ -75,16 +75,16 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	if (event->buttons()==Qt::LeftButton) {
 		switch(m_ballType) {
 			case red:
-				m_widget->clickAddBall(boxPosition());
+				m_widget->clickAddBall(position());
 				break;
 			case blue:
-				m_widget->clickRemoveBall(boxPosition());
+				m_widget->clickRemoveBall(position());
 				break;
 			case blueUnsure:
 				setBallType(blue);
 				break;
 			case nothing:
-				m_widget->clickAddBall(boxPosition());
+				m_widget->clickAddBall(position());
 				break;
 			case cross:
 				break;
@@ -92,16 +92,16 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	} else {
 		switch(m_ballType) {
 			case red:
-				m_widget->clickAddBallNothing(boxPosition());
+				m_widget->clickAddBallNothing(position());
 				break;
 			case blue:
 				setBallType(blueUnsure);
 				break;
 			case blueUnsure:
-				m_widget->clickAddBallNothing(boxPosition());
+				m_widget->clickAddBallNothing(position());
 				break;
 			case nothing:
-				m_widget->clickRemoveBallNothing(boxPosition());
+				m_widget->clickRemoveBallNothing(position());
 				break;
 			case cross:
 				break;

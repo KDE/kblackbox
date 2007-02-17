@@ -29,80 +29,34 @@
 
 
 
-#include <QSvgRenderer>
+#ifndef KBBGRAPHICSITEMSET_H
+#define KBBGRAPHICSITEMSET_H
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemborder.h"
-#include "kbbgraphicsitemlaser.h"
-#include "kbbscalablegraphicwidget.h"
+class QGraphicsScene;
+
+
+class KBBGraphicsItem;
+#include <QMap>
 
 
 
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( borderPosition, columns, rows, 0), KBBGraphicsItem()
+/**
+ * @brief Set of graphic items
+ */
+class KBBGraphicsItemSet
 {
-	m_widget = parent;
-
-	setSharedRenderer(parent->svgRenderer());
-	setElementId("laser");
-	parent->addItem(this);
-	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
-
-	int rotation;
-	if (borderPosition<columns) {
-		rotation = 0;
-	} else if (borderPosition<columns + rows) {
-		rotation = 90;
-	} else if (borderPosition<2*columns + rows) {
-		rotation = 180;
-	} else {
-		rotation = 270;
-	}
-
-	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
-	setPos(m_centerX - radius, m_centerY - radius);
-	translate(radius,radius);
-	rotate(rotation);
-	translate(-radius,-radius);
-
-	setAcceptsHoverEvents(true);
-}
+	public:
+		KBBGraphicsItemSet(QGraphicsScene* scene);
+		void clear();
+		bool contains(int position);
+		void insert(KBBGraphicsItem* item);
+		void remove(int position);
 
 
+	private:
+		QGraphicsScene* m_scene;
+		QMap<int, KBBGraphicsItem*> m_items;
+};
 
-//
-// Public
-//
-
-const int KBBGraphicsItemLaser::position ()
-{
-	return m_borderPosition;
-}
-
-
-
-//
-// Private
-//
-
-void KBBGraphicsItemLaser::hoverEnterEvent (QGraphicsSceneHoverEvent*)
-{
-	m_widget->drawRay(position());
-}
-
-
-void KBBGraphicsItemLaser::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
-{
-	m_widget->removeRay();
-}
-
-
-void KBBGraphicsItemLaser::mousePressEvent (QGraphicsSceneMouseEvent* )
-{
-	m_widget->clickLaser(position());
-	m_widget->removeRay();
-}
+#endif // KBBGRAPHICSITEMSET_H

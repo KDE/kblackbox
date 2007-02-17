@@ -29,9 +29,8 @@
 
 
 
-#ifndef KBBGAME_H
-#define KBBGAME_H
-
+#ifndef KBBMAINWINDOW_H
+#define KBBMAINWINDOW_H
 
 
 class QAction;
@@ -86,7 +85,6 @@ private slots:
 
   bool setSize( int w, int h );
   bool setBalls( int n );
-//  void setMinSize();
   void gameFinished();
   void abortGame();
 
@@ -121,4 +119,4 @@ private:
   KToggleAction *tutorialAction;
 };
 
-#endif // KBBGAME_H
+#endif // KBBMAINWINDOW_H

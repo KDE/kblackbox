@@ -47,7 +47,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRay::KBBGraphicsItemRay( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type ) : KBBGraphicsItemBorder( borderPosition, ballsOnBoard->columns(), ballsOnBoard->rows(), KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem ( 0, scene )
+KBBGraphicsItemRay::KBBGraphicsItemRay( QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type ) : KBBGraphicsItemBorder( borderPosition, ballsOnBoard->columns(), ballsOnBoard->rows(), KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem ( 0, scene )
 {
 	QList<int> points;
 	const int oppositeBorderPosition = ballsOnBoard->oppositeBorderPositionWithPoints(borderPosition, points);
@@ -101,16 +101,3 @@ KBBGraphicsItemRay::KBBGraphicsItemRay( KBBScalableGraphicWidget* parent, QGraph
 	
 	setPath(path);
 }
-
-
-
-//
-// Public
-//
-
-
-
-//
-// Private
-//
-

@@ -30,11 +30,11 @@
 
 
 #include <QFont>
-#include <QGraphicsEllipseItem>
 #include <QGraphicsScene>
 
 
 #include "kbbboard.h"
+#include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemrayresult.h"
 #include "kbbscalablegraphicwidget.h"
@@ -45,17 +45,19 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsEllipseItem ( 0, scene )
+KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), KBBGraphicsItem()
 {
 	m_widget = parent;
 	
-	m_centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
-	setRect(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
+	int centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
+	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
+
 	m_opposite = this;
 	
-	setPen(QPen(Qt::black, 0));
-	setBrush(Qt::Dense5Pattern);
-	setBrush(Qt::green);
+	setSharedRenderer(parent->svgRenderer());
+	setElementId("result");
+	setPos(m_centerX - radius, m_centerY - radius);
+	parent->addItem(this);
 	setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_BACKGROUND);
 	
 	
@@ -72,14 +74,14 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	font.setWeight(QFont::DemiBold);
 	int offset;
 	if (rayNumber<10) {
-		font.setPixelSize(3*m_centerRadius/2);
+		font.setPixelSize(3*centerRadius/2);
 		offset = 0;
 	} else {
-		font.setPixelSize(5*m_centerRadius/4);
-		offset = 1*m_centerRadius/6;
+		font.setPixelSize(5*centerRadius/4);
+		offset = 1*centerRadius/6;
 	}
 	m_number->setFont(font);
-	m_number->setPos(m_centerX - m_centerRadius/2 - 2*offset, m_centerY - m_centerRadius + offset);
+	m_number->setPos(radius - centerRadius/2 - 2*offset, radius - centerRadius + offset);
 	m_number->setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_TEXT);
 	
 	setAcceptsHoverEvents(true);
@@ -94,11 +96,20 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 void KBBGraphicsItemRayResult::highlight(bool state)
 {
 	if (state)
-		 //orange color
-		setBrush(QColor(255, 219, 56));
+		setElementId("resulthighlight");
 	else
-		// normal green color
-		setBrush(Qt::green);
+		setElementId("result");
+}
+
+
+
+//
+// Public
+//
+
+const int KBBGraphicsItemRayResult::position ()
+{
+	return m_borderPosition;
 }
 
 
@@ -112,17 +123,11 @@ void KBBGraphicsItemRayResult::setOpposite(KBBGraphicsItemRayResult* opposite)
 // Private
 //
 
-QRectF KBBGraphicsItemRayResult::boundingRect() const
-{
-	return QRectF(m_centerX - m_centerRadius, m_centerY - m_centerRadius, 2*m_centerRadius, 2*m_centerRadius);
-}
-
-
 void KBBGraphicsItemRayResult::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 {
 	m_opposite->highlight(true);
 	highlight(true);
-	m_widget->drawRay(borderPosition());
+	m_widget->drawRay(position());
 }
 
 

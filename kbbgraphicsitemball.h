@@ -33,10 +33,10 @@
 #define KBBGRAPHICSITEMBALL_H
 
 
-#include <QGraphicsSvgItem>
 class QGraphicsScene;
 
 
+#include "kbbgraphicsitem.h"
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -45,7 +45,7 @@ class QGraphicsScene;
  * @brief Ball (or similar) on the scalable graphic widget
  *
  */
-class KBBGraphicsItemBall : public QGraphicsSvgItem
+class KBBGraphicsItemBall : public KBBGraphicsItem
 {
 	Q_OBJECT
 	
@@ -54,7 +54,7 @@ class KBBGraphicsItemBall : public QGraphicsSvgItem
 		
 		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, ballType type);
 		
-		int boxPosition() const;
+		const int position();
 
 
 	private:

@@ -72,6 +72,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 	m_balls = new KBBGraphicsItemSet(m_scene);
 	m_ballsNothing = new KBBGraphicsItemSet(m_scene);
 	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
+	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
 	m_lasers = new KBBGraphicsItemSet(m_scene);
 	m_rayResults = new KBBGraphicsItemSet(m_scene);
 	
@@ -106,6 +107,7 @@ void KBBScalableGraphicWidget::clickAddBallNothing(const int boxPosition)
 	if (m_inputAccepted && (!m_ballsNothing->contains(boxPosition))) {
 		m_ballsNothing->insert(new KBBGraphicsItemBall(this, m_scene, boxPosition, m_columns, KBBGraphicsItemBall::nothing));
 		m_balls->remove(boxPosition);
+		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
 	}
 }
@@ -145,6 +147,7 @@ void KBBScalableGraphicWidget::clickRemoveBall(const int boxPosition)
 {
 	if (m_inputAccepted) {
 		m_balls->remove(boxPosition);
+		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
 	}
 }
@@ -154,6 +157,20 @@ void KBBScalableGraphicWidget::clickRemoveBallNothing(const int boxPosition)
 {
 	if (m_inputAccepted) {
 		m_ballsNothing->remove(boxPosition);
+	}
+}
+
+
+void KBBScalableGraphicWidget::clickSetBallUnsure(const int boxPosition, const bool unsure)
+{
+	if (m_inputAccepted) {
+		if (unsure) {
+			m_balls->remove(boxPosition);
+			m_ballsUnsure->insert(new KBBGraphicsItemBall(this, m_scene, boxPosition, m_columns, KBBGraphicsItemBall::blueUnsure));
+		} else {
+			m_ballsUnsure->remove(boxPosition);
+			m_balls->insert(new KBBGraphicsItemBall(this, m_scene, boxPosition, m_columns, KBBGraphicsItemBall::blue));
+		}
 	}
 }
 
@@ -184,6 +201,7 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 	m_lasers->clear();
 	m_rayResults->clear();
 	m_balls->clear();
+	m_ballsUnsure->clear();
 	m_ballsNothing->clear();
 	m_ballsSolution->clear();
 

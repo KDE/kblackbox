@@ -81,7 +81,7 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 				m_widget->clickRemoveBall(position());
 				break;
 			case blueUnsure:
-				setBallType(blue);
+				m_widget->clickSetBallUnsure(position(), false);
 				break;
 			case nothing:
 				m_widget->clickAddBall(position());
@@ -95,7 +95,7 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 				m_widget->clickAddBallNothing(position());
 				break;
 			case blue:
-				setBallType(blueUnsure);
+				m_widget->clickSetBallUnsure(position(), true);
 				break;
 			case blueUnsure:
 				m_widget->clickAddBallNothing(position());
@@ -136,5 +136,3 @@ void KBBGraphicsItemBall::setBallType(ballType type)
 			break;
 	}
 }
-
-#include "kbbgraphicsitemball.moc"

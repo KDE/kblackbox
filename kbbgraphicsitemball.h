@@ -47,8 +47,6 @@ class QGraphicsScene;
  */
 class KBBGraphicsItemBall : public KBBGraphicsItem
 {
-	Q_OBJECT
-	
 	public:
 		enum ballType { blue, blueUnsure, red, cross, nothing };
 		

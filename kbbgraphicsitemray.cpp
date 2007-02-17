@@ -56,7 +56,6 @@ KBBGraphicsItemRay::KBBGraphicsItemRay( QGraphicsScene* scene, const int borderP
 	path.moveTo(m_centerX, m_centerY);
 
 	const int columns = ballsOnBoard->columns();
-	const int rows = ballsOnBoard->rows();
 	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
 	const int r = KBBScalableGraphicWidget::RATIO;
 	int x;

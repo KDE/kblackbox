@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -31,8 +31,8 @@
 
 #include <QLabel>
 #include <QPushButton>
-#include <QToolTip>
 #include <QString>
+#include <QToolTip>
 
 
 #include <ktoolbar.h>
@@ -51,8 +51,8 @@
 #include <kicon.h>
 
 
-#include "kbbmainwindow.h"
 #include "kbbboard.h"
+#include "kbbmainwindow.h"
 #include "kbbprefs.h"
 #include "version.h"
 
@@ -233,7 +233,7 @@ void KBBMainWindow::gameFinished()
     } else {
       s = i18n( "You should place %1 balls!\nYou have placed %2.\nDo you want to give up this game?", KGlobal::locale()->formatNumber(balls, 0), KGlobal::locale()->formatNumber(m_board->numberOfBallsPlaced(), 0));
 
-      if ( KMessageBox::warningContinueCancel(this, s, QString::null, KGuiItem(i18n("Give Up"))) == KMessageBox::Continue )
+      if ( KMessageBox::warningContinueCancel(this, s, QString(), KGuiItem(i18n("Give Up"))) == KMessageBox::Continue )
         abortGame();
     }
   }
@@ -241,12 +241,10 @@ void KBBMainWindow::gameFinished()
 
 bool KBBMainWindow::comfirmGameEndIfNeeded()
 {
-	bool gameMayEnd = true;
-
 	if (m_board->gameReallyStarted())
-		gameMayEnd = ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString::null, KGuiItem(i18n("End Game"))) == KMessageBox::Continue );
-
-	return gameMayEnd;
+		return ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("End Game"))) == KMessageBox::Continue );
+	else
+		return true;
 }
 
 /*

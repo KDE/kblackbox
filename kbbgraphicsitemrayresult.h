@@ -60,7 +60,7 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		/**
 		 * @brief Highlight the item
 		 * 
-		 * Usualy used when the mouse goes over the item or over the opposite item.
+		 * Usually used when the mouse goes over the item or over the opposite item.
 		 */
 		void highlight(bool state);
 

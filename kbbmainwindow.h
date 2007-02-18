@@ -45,78 +45,80 @@ class KBBBoard;
 
 
 
-/*
- * Statusbar IDs.
- */
-#define SSCORE 0
-#define SBALLS 1
-#define SRUN   2
-#define SSIZE  3
-
-
-
 /**
 * @brief Main window of the game KBlackBox
 */
 class KBBMainWindow : public KMainWindow
 {
-  Q_OBJECT
+	Q_OBJECT
 
 
-public:
-  KBBMainWindow();
-  ~KBBMainWindow();
+	public:
+		KBBMainWindow();
+		~KBBMainWindow();
 
 
-public slots:
-  void updateStats();
+	public slots:
+		/**
+		 * @brief Displays game statistics on the status bar
+		 */
+		void updateStats();
 
 
-private slots:
-  void slotSize(int selection);
-  void slotBalls(int selection);
+	private slots:
+		/**
+		 * @brief Start a new game.
+		 */
+		void newGame();
+		
+		void slotSize(int selection);
+		void slotBalls(int selection);
+		
+		/**
+		 * @brief Ends the current game
+		 * 
+		 * This function is used when the player is giving up or when he is done.
+		 */
+		void solve();
+		
+		void tutorialSwitch();
 
-  void tutorialSwitch();
 
-  /**
-   * @brief Start a new game afer user confirmation (if needed).
-   */
-  void newGame();
-
-  bool setSize( int w, int h );
-  bool setBalls( int n );
-  void gameFinished();
-  void abortGame();
-
-
-private:
-  /**
-  * @brief As the user if he wants to end the game, if needed.
-  * 
-  * If the game is running and really started, the user has to confirm the end of the game.
-  * If the game is not running or running but not really started, the game may end without user confirmation.
-  */
-  bool comfirmGameEndIfNeeded();
-
-  /**
-   * @brief Start a new game (without user comfirmation)
-   * 
-   * @see newGame()
-   */
-  void startGame();
-
-  void initKAction();
-
-  int balls;
-  int m_columns;
-  int m_rows;
-  QAction *m_solveAction;
-  KBBBoard *m_board;
-  bool running;
-  bool tutorial;
-
-  KSelectAction *ballsAction, *sizeAction;
-  KToggleAction *tutorialAction;
+	private:
+		/**
+		 * Statusbar IDs.
+		 */
+		static const int SSCORE = 0;
+		static const int SBALLS = 1;
+		static const int SRUN = 2;
+		static const int SSIZE = 3;
+		
+		
+		/**
+		 * @brief Start a new game afer user confirmation (if needed).
+		 *
+		 * If the game is running and really started, the user has to confirm the end of the game.
+		 * If the game is not running or running but not really started, the game may end and a new game may start without user confirmation.
+		 * 
+		 * @return if a new game started or not
+		 */
+		bool startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newTutorialMode);
+		
+		
+		// Actions
+		KSelectAction *m_ballsAction;
+		KSelectAction *m_sizeAction;
+		QAction *m_solveAction;
+		KToggleAction *m_tutorialAction;
+		
+		
+		// Various member variables
+		int m_ballNumber;
+		KBBBoard *m_board;
+		int m_columns;
+		int m_rows;
+		bool m_running;
+		bool m_tutorial;
 };
 
 #endif // KBBMAINWINDOW_H

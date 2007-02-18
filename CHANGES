@@ -1,4 +1,8 @@
 2007-02-17 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Clean-up in the class "KMainWindow".
+	* Tutorial starts immediately after switching to tutorial mode (and no anymore only with the start of the next game).
+
+2007-02-17 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Replaced the texts "H" and "R" by new symbols (SVG items).
 	* Widget Background has now the standard WindowBackground user defined color.
 

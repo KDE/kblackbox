@@ -52,7 +52,6 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 {
 	public:
 		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene);
-		~KBBGraphicsItemBlackBox();
 		
 		/**
 		 * @brief Define the (new) size of the black box

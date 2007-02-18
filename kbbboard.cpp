@@ -48,16 +48,17 @@
 
 KBBBoard::KBBBoard(KBBMainWindow *parent) : QObject(parent)
 {
+	m_gameReallyStarted = false;
+	m_columns = 1;
+	m_rows = 1;
+
 	random.setSeed(0);
 
 	// SWITCH THE CENTRAL WIDGET HERE
 	//gr = new KBBGraphic( this );
 	gr = new KBBScalableGraphicWidget( this );
 
-	connect( gr, SIGNAL(endMouseClicked()), parent, SLOT(gameFinished()) );
-
-	m_columns = 1;
-	m_rows = 1;
+	connect( gr, SIGNAL(endMouseClicked()), parent, SLOT(solve()) );
 
 	m_balls = new KBBBallsOnBoard(this, m_columns, m_rows);
 	m_ballsPlaced = new KBBBallsOnBoard(this, m_columns, m_rows);

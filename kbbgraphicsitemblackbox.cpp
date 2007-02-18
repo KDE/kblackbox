@@ -67,12 +67,6 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* pare
 }
 
 
-KBBGraphicsItemBlackBox::~KBBGraphicsItemBlackBox()
-{
-	m_scene->removeItem(m_background);
-	delete m_background;
-}
-
 
 //
 // Public

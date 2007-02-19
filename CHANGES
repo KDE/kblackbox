@@ -1,4 +1,4 @@
-2007-02-17 Nicolas Roffet <nicolas-kde@roffet.com>
+2007-02-18 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Clean-up in the class "KMainWindow".
 	* Tutorial starts immediately after switching to tutorial mode (and no anymore only with the start of the next game).
 
@@ -79,6 +79,7 @@
 	  -> massive changes almost everywhere
 	- minimal size fixed
 	- new icons (I am just learning the povray :-)
+
 0.2.6 from 0.2.5 (25.8.1998)
 	- the game is active after starting
 	- fixed bad drawing after setting the board size
@@ -86,35 +87,42 @@
 	- moc dependencies in Makefile.am done by automoc to
 	  avoid problems on Solaris (bug report by David Faure)
 	- some string fixes for better translation
+
 0.2.5 from 0.2.4 (19.3.1998)
 	- es language support added
 	- sk language support added
+
 0.2.4 from 0.2.3 (6.3.1998)
 	- pt language support added
 	- it language support added
+
 0.2.3 from 0.2.2 (10.2.1998)
 	- new icon for fired laser
 	- new icon for "give up"
 	- "done" added to menu and toolbar (new icon)
 	- help file updated
+
 0.2.2 from 0.2.1 (2.2.1998)
 	- "done" button removed - middle mouse button instead
 	- kde toolbar
 	- kde status bar
 	- new icons
 	- help file updated
+
 0.2.1 from 0.2.0:
 	- KBlackBox.kdelnk
 	- icon kblackbox.xpm
 	- double updating during resize fixed
 	- saves the application size
 	- doesn't autoresize after changing a board size
-0.2.0 from 0.1.1:
+
+0.2.0 from 0.1.1 (29.7.1997)
 	- kblackbox is now a KDE application -> help, configuration, ...
 	- autoconf usage (by kexample-0.4.0)
 	- remembers last used options
 	- pixmaps on fields in the box
-0.1.1 from 0.1.0:
+
+0.1.1 from 0.1.0 (29.4.1997)
 	- you are warned if you try to change # of balls when a game is running
 	- game->resize works properly, even if you moved scrollbars now
 	- mouseMoveEvent reimplemented, so that you can "draw" when a button
@@ -122,3 +130,8 @@
 	- marking with the right mouse button
 	- displaying more game statistics
 	- possibility to give up the game (shows you where the balls were)
+
+0.1.0 (28.4.1997)
+
+23.4.1997:
+	- start

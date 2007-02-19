@@ -1,10 +1,13 @@
-Program: kblackbox 
-Author: Robert Cimrman, e-mail: cimrman3@students.zcu.cz
+Program: KBlackBox 
+
+Authors: 
+	Robert Cimrman, e-mail: cimrman3@students.zcu.cz
+	Nicolas Roffet, e-mail: nicolas-kde@roffet.com
 
 A simple logical game for the KDE project.
 
 FEATURES:
-	-stunning gfx (in the next version :-)
+	-stunning gfx :-)
 	-high logical requirements
 USING:
 	-see help
@@ -14,15 +17,6 @@ UNKNOWN BUGS:
 	-still unknown
 	->report any "bogus features" to the author, please
 TODO:
-	-improve gfx?
+	-any wishes?
 HISTORY:
-	23.4.1997 -> start	
-	28.4.1997 -> 0.1.0
-	29.4.1997 -> 0.1.1
-	29.7.1997 -> 0.2.0
-	 2.2.1997 -> 0.2.2
-	10.2.1998 -> 0.2.3
-	 6.3.1998 -> 0.2.4
-	19.3.1998 -> 0.2.5
-	25.8.1998 -> 0.2.6
-	17.1.1999 -> 0.3.0
+	-see file "CHANGES"

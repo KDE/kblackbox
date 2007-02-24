@@ -33,13 +33,3 @@
 
 
 #include "kbbgraphicsitem.h"
-
-
-
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItem::KBBGraphicsItem() : QGraphicsSvgItem()
-{
-}

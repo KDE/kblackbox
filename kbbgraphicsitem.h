@@ -43,7 +43,6 @@
 class KBBGraphicsItem : public QGraphicsSvgItem
 {
 	public:
-		KBBGraphicsItem();
 		virtual const int position() = 0;
 };
 

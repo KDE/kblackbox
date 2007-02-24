@@ -33,32 +33,29 @@
 #define KBBGRAPHICSITEMBALL_H
 
 
-class QGraphicsScene;
 class QTimer;
 
 
-#include "kbbgraphicsitem.h"
+#include "kbbgraphicsitemonbox.h"
 class KBBGraphicsItemInteractionInfo;
-#include "kbbscalablegraphicwidget.h"
+class KBBScalableGraphicWidget;
 
 
 
 /**
- * @brief Ball (or similar) on the scalable graphic widget
+ * @brief Ball on the scalable graphic widget
  *
+ * A ball can be blue, red or blue with a question mark.
  */
-class KBBGraphicsItemBall : public KBBGraphicsItem
+class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 {
 	Q_OBJECT
 	
 	public:
 		static const int TIME_TO_WAIT_BEFORE_SHOWING_INTERACTIONS = 1500;
 		
-		enum ballType { blue, blueUnsure, red, cross, nothing };
-		
-		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, ballType type);
-		
-		const int position();
+		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type);
+		~KBBGraphicsItemBall();
 
 
 	private slots:
@@ -68,16 +65,10 @@ class KBBGraphicsItemBall : public KBBGraphicsItem
 	private:
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
-		void mousePressEvent (QGraphicsSceneMouseEvent*);
 		void removeInteractionInfos();
 		
-		ballType m_ballType;
-		int m_boxPosition;
-		int m_columns;
 		KBBGraphicsItemInteractionInfo* m_interactionInfos[8];
-		int m_rows;
 		QTimer* m_timer;
-		KBBScalableGraphicWidget* m_widget;
 };
 
 #endif // KBBGRAPHICSITEMBALL_H

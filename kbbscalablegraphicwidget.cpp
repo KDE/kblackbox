@@ -45,6 +45,7 @@
 #include "kbbgraphicsitemball.h"
 #include "kbbgraphicsitemblackbox.h"
 #include "kbbgraphicsitemlaser.h"
+#include "kbbgraphicsitemonbox.h"
 #include "kbbgraphicsitemray.h"
 #include "kbbgraphicsitemrayresult.h"
 #include "kbbgraphicsitemset.h"
@@ -69,14 +70,14 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene);
 	
-	m_balls = new KBBGraphicsItemSet();
-	m_ballsNothing = new KBBGraphicsItemSet();
-	m_ballsSolution = new KBBGraphicsItemSet();
-	m_ballsUnsure = new KBBGraphicsItemSet();
-	m_lasers = new KBBGraphicsItemSet();
-	m_rayResults = new KBBGraphicsItemSet();
+	m_balls = new KBBGraphicsItemSet(m_scene);
+	m_ballsNothing = new KBBGraphicsItemSet(m_scene);
+	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
+	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
+	m_lasers = new KBBGraphicsItemSet(m_scene);
+	m_rayResults = new KBBGraphicsItemSet(m_scene);
 	
-	this->setScene( m_scene );
+	this->setScene(m_scene);
 }
 
 
@@ -96,7 +97,7 @@ void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 {
 	if (m_inputAccepted && (!m_balls->contains(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
-		m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::blue));
+		m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::blue));
 		m_ballsNothing->remove(boxPosition);
 	}
 }
@@ -105,7 +106,7 @@ void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 void KBBScalableGraphicWidget::clickAddBallNothing(const int boxPosition)
 {
 	if (m_inputAccepted && (!m_ballsNothing->contains(boxPosition))) {
-		m_ballsNothing->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::nothing));
+		m_ballsNothing->insert(new KBBGraphicsItemOnBox(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::nothing));
 		m_balls->remove(boxPosition);
 		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
@@ -166,10 +167,10 @@ void KBBScalableGraphicWidget::clickSetBallUnsure(const int boxPosition, const b
 	if (m_inputAccepted) {
 		if (unsure) {
 			m_balls->remove(boxPosition);
-			m_ballsUnsure->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::blueUnsure));
+			m_ballsUnsure->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::blueUnsure));
 		} else {
 			m_ballsUnsure->remove(boxPosition);
-			m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::blue));
+			m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::blue));
 		}
 	}
 }
@@ -237,9 +238,9 @@ void KBBScalableGraphicWidget::solve()
 {
 	for (int i=0; i<(m_columns * m_rows); i++) {
 		if (m_balls->contains(i) && !m_boardBalls->contains(i))
-			m_ballsSolution->insert(new KBBGraphicsItemBall(this, i, m_columns, m_rows, KBBGraphicsItemBall::cross));
+			m_ballsSolution->insert(new KBBGraphicsItemOnBox(this, i, m_columns, m_rows, KBBGraphicsItemOnBox::cross));
 		if (!m_balls->contains(i) && m_boardBalls->contains(i)) 
-			m_ballsSolution->insert(new KBBGraphicsItemBall(this, i, m_columns, m_rows, KBBGraphicsItemBall::red));
+			m_ballsSolution->insert(new KBBGraphicsItemBall(this, i, m_columns, m_rows, KBBGraphicsItemOnBox::red));
 	}
 }
 

@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,60 +29,44 @@
 
 
 
-#include <QGraphicsScene>
+#ifndef KBBGRAPHICSITEMONBOX_H
+#define KBBGRAPHICSITEMONBOX_H
+
+
+class QGraphicsScene;
 
 
 #include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemset.h"
+class KBBScalableGraphicWidget;
 
 
 
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItemSet::KBBGraphicsItemSet(QGraphicsScene* scene)
+/**
+ * @brief Item on the box on the scalable graphic widget
+ *
+ * The item is general and can be a ball or other markers.
+ */
+class KBBGraphicsItemOnBox : public KBBGraphicsItem
 {
-        m_scene = scene;
-}
+	public:
+		enum itemType { blue, blueUnsure, red, cross, nothing };
+		
+		KBBGraphicsItemOnBox(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type);
+		
+		const int position();
 
 
-KBBGraphicsItemSet::~KBBGraphicsItemSet()
-{
-	clear();
-}
+	protected:
+		KBBScalableGraphicWidget* m_widget;
+		int m_boxPosition;
+		int m_columns;
+		int m_rows;
 
 
+	private:
+		void mousePressEvent (QGraphicsSceneMouseEvent*);
+		
+		itemType m_itemType;
+};
 
-//
-// Public
-//
-
-void KBBGraphicsItemSet::clear()
-{
-	while (m_items.count()>0) {
-		remove(m_items[m_items.keys().last()]->position());
-	}
-}
-
-
-bool KBBGraphicsItemSet::contains(int position)
-{
-	return m_items.contains(position);
-}
-
-
-void KBBGraphicsItemSet::insert(KBBGraphicsItem* item)
-{
-	m_items.insert(item->position(), item);
-}
-
-
-void KBBGraphicsItemSet::remove(int position)
-{
-	if (m_items.contains(position)) {
-		delete m_items[position];
-		m_scene->update();
-		m_items.remove(position);
-	}
-}
+#endif // KBBGRAPHICSITEMONBOX_H

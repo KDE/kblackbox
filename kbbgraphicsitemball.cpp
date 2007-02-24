@@ -29,14 +29,13 @@
 
 
 
-#include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsSceneHoverEvent>
 #include <QTimer>
 
 
-#include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemball.h"
 #include "kbbgraphicsiteminteractioninfo.h"
+#include "kbbgraphicsitemonbox.h"
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -45,58 +44,20 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, ballType type) : KBBGraphicsItem()
+KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type) : KBBGraphicsItemOnBox( parent, boxPosition, columns, rows, type)
 {
-	m_widget = parent;
-	m_boxPosition = boxPosition;
-	m_columns = columns;
-	m_rows = rows;
-	m_ballType = type;
 	m_timer = NULL;
 	
-	setSharedRenderer(m_widget->svgRenderer());
-	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns));
-	m_widget->addItem(this);
-	
-	switch (m_ballType) {
-		case blue:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
-			setElementId("blueball");
-			setAcceptsHoverEvents(true);
-			break;
-		case blueUnsure:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
-			setElementId("blueballunsure");
-			setAcceptsHoverEvents(true);
-			break;
-		case red:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_RED);
-			setElementId("redball");
-			setAcceptsHoverEvents(true);
-			break;
-		case cross:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_CROSS);
-			setElementId("cross");
-			break;
-		case nothing:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_MARKER_NOTHING);
-			setElementId("nothing");
-			break;
-	}
+	setAcceptsHoverEvents(true);
 	
 	for (int i=0; i<8;i++)
 		m_interactionInfos[i] = NULL;
 }
 
 
-
-//
-// Public
-//
-
-const int KBBGraphicsItemBall::position ()
+KBBGraphicsItemBall::~KBBGraphicsItemBall()
 {
-	return m_boxPosition;
+	removeInteractionInfos();
 }
 
 
@@ -178,46 +139,6 @@ void KBBGraphicsItemBall::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 	delete m_timer;
 	m_timer = NULL;
 	removeInteractionInfos();
-}
-
-
-void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
-{
-	if (event->buttons()==Qt::LeftButton) {
-		switch(m_ballType) {
-			case red:
-				m_widget->clickAddBall(position());
-				break;
-			case blue:
-				m_widget->clickRemoveBall(position());
-				break;
-			case blueUnsure:
-				m_widget->clickSetBallUnsure(position(), false);
-				break;
-			case nothing:
-				m_widget->clickAddBall(position());
-				break;
-			case cross:
-				break;
-		}
-	} else {
-		switch(m_ballType) {
-			case red:
-				m_widget->clickAddBallNothing(position());
-				break;
-			case blue:
-				m_widget->clickSetBallUnsure(position(), true);
-				break;
-			case blueUnsure:
-				m_widget->clickAddBallNothing(position());
-				break;
-			case nothing:
-				m_widget->clickRemoveBallNothing(position());
-				break;
-			case cross:
-				break;
-		}
-	}
 }
 
 

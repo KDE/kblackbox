@@ -235,7 +235,7 @@ void KBBMainWindow::slotSize(int selection)
 void KBBMainWindow::solve()
 {
 	if (m_board->numberOfBallsPlaced() != m_ballNumber)
-		if (KMessageBox::warningContinueCancel(this, i18n( "You should place %1 balls!\nYou have placed %2.\nDo you want to give up this game?", KGlobal::locale()->formatNumber(m_ballNumber, 0), KGlobal::locale()->formatNumber(m_board->numberOfBallsPlaced(), 0)), QString(), KGuiItem(i18n("Give Up"))) == KMessageBox::Continue)
+		if (KMessageBox::warningContinueCancel(this, i18n( "You should place %1 balls!\nYou have placed %2.\nDo you want to give up this game?", KGlobal::locale()->formatNumber(m_ballNumber, 0), KGlobal::locale()->formatNumber(m_board->numberOfBallsPlaced(), 0)), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
 			return;
 	
 	m_running = false;
@@ -289,5 +289,7 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 	
 	return start;
 }
+
+
 
 #include "kbbmainwindow.moc"

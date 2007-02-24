@@ -34,9 +34,11 @@
 
 
 class QGraphicsScene;
+class QTimer;
 
 
 #include "kbbgraphicsitem.h"
+class KBBGraphicsItemInteractionInfo;
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -47,20 +49,34 @@ class QGraphicsScene;
  */
 class KBBGraphicsItemBall : public KBBGraphicsItem
 {
+	Q_OBJECT
+	
 	public:
+		static const int TIME_TO_WAIT_BEFORE_SHOWING_INTERACTIONS = 1500;
+		
 		enum ballType { blue, blueUnsure, red, cross, nothing };
 		
-		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int boxPosition, const int columns, ballType type);
+		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, ballType type);
 		
 		const int position();
 
 
+	private slots:
+		void showInteractions();
+
+
 	private:
-		void mousePressEvent (QGraphicsSceneMouseEvent *);
-		void setBallType(ballType type);
+		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
+		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
+		void mousePressEvent (QGraphicsSceneMouseEvent*);
+		void removeInteractionInfos();
 		
 		ballType m_ballType;
 		int m_boxPosition;
+		int m_columns;
+		KBBGraphicsItemInteractionInfo* m_interactionInfos[8];
+		int m_rows;
+		QTimer* m_timer;
 		KBBScalableGraphicWidget* m_widget;
 };
 

@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,50 +29,30 @@
 
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemset.h"
+#ifndef KBBGRAPHICSITEMINTERACTIONINFO_H
+#define KBBGRAPHICSITEMINTERACTIONINFO_H
+
+
+#include <QGraphicsSvgItem>
+
+
+#include "kbbscalablegraphicwidget.h"
 
 
 
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItemSet::~KBBGraphicsItemSet()
+/**
+ * @brief Interaction information around a ball on the scalable graphic widget
+ *
+ * Some signs around the ball the player is pointing on are been displayed to show how a laser ray interacts with the ball.
+ */
+class KBBGraphicsItemInteractionInfo : public QGraphicsSvgItem
 {
-	clear();
-}
+	public:
+		enum interactionType { deflection, reflection, reflectionSym, hit, nothing };
+		
+		KBBGraphicsItemInteractionInfo(KBBScalableGraphicWidget* widget, interactionType type, const qreal x, const qreal y, const int rotation);
 
+		void setType(interactionType type);
+};
 
-
-//
-// Public
-//
-
-void KBBGraphicsItemSet::clear()
-{
-	while (m_items.count()>0) {
-		remove(m_items[m_items.keys().last()]->position());
-	}
-}
-
-
-bool KBBGraphicsItemSet::contains(int position)
-{
-	return m_items.contains(position);
-}
-
-
-void KBBGraphicsItemSet::insert(KBBGraphicsItem* item)
-{
-	m_items.insert(item->position(), item);
-}
-
-
-void KBBGraphicsItemSet::remove(int position)
-{
-	if (m_items.contains(position)) {
-		delete m_items[position];
-		m_items.remove(position);
-	}
-}
+#endif // KBBGRAPHICSITEMINTERACTIONINFO_H

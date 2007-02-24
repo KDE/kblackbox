@@ -33,9 +33,6 @@
 #define KBBGRAPHICSITEMSET_H
 
 
-class QGraphicsScene;
-
-
 class KBBGraphicsItem;
 #include <QMap>
 
@@ -47,7 +44,8 @@ class KBBGraphicsItem;
 class KBBGraphicsItemSet
 {
 	public:
-		KBBGraphicsItemSet(QGraphicsScene* scene);
+		~KBBGraphicsItemSet();
+		
 		void clear();
 		bool contains(int position);
 		void insert(KBBGraphicsItem* item);
@@ -55,7 +53,6 @@ class KBBGraphicsItemSet
 
 
 	private:
-		QGraphicsScene* m_scene;
 		QMap<int, KBBGraphicsItem*> m_items;
 };
 

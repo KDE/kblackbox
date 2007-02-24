@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,8 +29,11 @@
 
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemset.h"
+#include <QGraphicsSvgItem>
+
+
+#include "kbbgraphicsiteminteractioninfo.h"
+#include "kbbscalablegraphicwidget.h"
 
 
 
@@ -38,9 +41,14 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemSet::~KBBGraphicsItemSet()
+KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraphicWidget* widget, interactionType type, const qreal x, const qreal y, const int rotation) : QGraphicsSvgItem()
 {
-	clear();
+	setSharedRenderer(widget->svgRenderer());
+	setPos(x, y);
+	setType(type);
+	rotate(rotation);
+	setZValue(KBBScalableGraphicWidget::ZVALUE_INTERACTION_INFO);
+	widget->addItem(this);
 }
 
 
@@ -49,30 +57,23 @@ KBBGraphicsItemSet::~KBBGraphicsItemSet()
 // Public
 //
 
-void KBBGraphicsItemSet::clear()
+void KBBGraphicsItemInteractionInfo::setType(interactionType type)
 {
-	while (m_items.count()>0) {
-		remove(m_items[m_items.keys().last()]->position());
-	}
-}
-
-
-bool KBBGraphicsItemSet::contains(int position)
-{
-	return m_items.contains(position);
-}
-
-
-void KBBGraphicsItemSet::insert(KBBGraphicsItem* item)
-{
-	m_items.insert(item->position(), item);
-}
-
-
-void KBBGraphicsItemSet::remove(int position)
-{
-	if (m_items.contains(position)) {
-		delete m_items[position];
-		m_items.remove(position);
+	switch (type) {
+		case deflection:
+			setElementId("infod");
+			break;
+		case reflection:
+			setElementId("infor");
+			break;
+		case reflectionSym:
+			setElementId("infos");
+			break;
+		case hit:
+			setElementId("infoh");
+			break;
+		case nothing:
+			setElementId("infon");
+			break;
 	}
 }

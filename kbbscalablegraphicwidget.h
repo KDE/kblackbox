@@ -47,6 +47,7 @@ class KBBBoard;
 class KBBGraphicsItemBlackBox;
 class KBBGraphicsItemRay;
 class KBBGraphicsItemSet;
+class KBBMainWindow;
 
 
 
@@ -72,10 +73,12 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const ZVALUE_BALL_RED = 100;
 		static int const ZVALUE_BALL_BLUE = 110;
 		static int const ZVALUE_BALL_CROSS = 120;
-		static int const ZVALUE_LASER = 130;
-
-
+		static int const ZVALUE_INTERACTION_INFO = 130;
+		static int const ZVALUE_LASER = 140;
+		
+		
 		explicit KBBScalableGraphicWidget(KBBBoard* parent);
+		
 		
 		void addItem(QGraphicsItem* item);
 		void clickAddBall(const int boxPosition);

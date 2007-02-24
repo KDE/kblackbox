@@ -1,3 +1,6 @@
+2007-02-24 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Small "goody": New SVG items in the GraphicsView displaying the interactions of laser rays with every ball the player is moving the mouse over.
+
 2007-02-18 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Clean-up in the class "KMainWindow".
 	* Tutorial starts immediately after switching to tutorial mode (and no anymore only with the start of the next game).

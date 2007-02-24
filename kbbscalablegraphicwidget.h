@@ -47,7 +47,6 @@ class KBBBoard;
 class KBBGraphicsItemBlackBox;
 class KBBGraphicsItemRay;
 class KBBGraphicsItemSet;
-class KBBMainWindow;
 
 
 

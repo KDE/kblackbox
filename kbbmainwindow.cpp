@@ -44,7 +44,6 @@
 #include "kbbboard.h"
 #include "kbbmainwindow.h"
 #include "kbbprefs.h"
-#include "version.h"
 
 
 

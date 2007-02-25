@@ -35,20 +35,19 @@
 #include <kaboutdata.h>
 #include <kglobal.h>
 
+
 #include "kbbmainwindow.h"
-#include "version.h"
 
 
-static const char description[] = I18N_NOOP("KDE Blackbox Game");
 
-/*
-  The program starts here.
-*/
+static const char KBBDESCRIPTION[] = I18N_NOOP("KDE Black Box Game: Find the hidden balls in the black box");
+static const char KBBVERSION[] = "0.4.0-SVN";
+
 
 int main( int argc, char **argv )
 {
   KAboutData aboutData( "kblackbox", I18N_NOOP("KBlackBox"),
-    KBBVERSION, description, KAboutData::License_GPL,
+    KBBVERSION, KBBDESCRIPTION, KAboutData::License_GPL,
     "(c) 1999-2000, Robert Cimrman\n(c) 2007, Nicolas Roffet");
   aboutData.addAuthor("Robert Cimrman",0, "cimrman3@students.zcu.cz");
   aboutData.addAuthor("Nicolas Roffet",0, "nicolas-kde@roffet.com");

@@ -41,7 +41,6 @@ class QWidget;
 
 
 class KBBBallsOnBoard;
-class KBBGraphic;
 #include "kbbmainwindow.h"
 class KBBScalableGraphicWidget;
 
@@ -140,8 +139,6 @@ class KBBBoard : public QObject
 		 */
 		void setScore( int n );
 
-		// SWITCH THE CENTRAL WIDGET HERE
-		//KBBGraphic *gr;
 		KBBScalableGraphicWidget *gr;
 		int m_columns;
 		bool m_gameReallyStarted;

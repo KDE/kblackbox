@@ -10,7 +10,6 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
 set(kblackbox_SRCS 
     kbbballsonboard.cpp
     kbbboard.cpp
-    kbbgfx.cpp 
     kbbgraphicsitem.cpp
     kbbgraphicsitemball.cpp
     kbbgraphicsitemblackbox.cpp
@@ -24,7 +23,6 @@ set(kblackbox_SRCS
     kbbmainwindow.cpp 
     kbbscalablegraphicwidget.cpp
     main.cpp
-    util.cpp
     )
 
 kde4_automoc(${kblackbox_SRCS})

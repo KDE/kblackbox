@@ -49,7 +49,7 @@ class KBBScalableGraphicWidget;
 class KBBGraphicsItemOnBox : public KBBGraphicsItem
 {
 	public:
-		enum itemType { blue, blueUnsure, red, cross, nothing };
+		enum itemType { ball, cross, nothing };
 		
 		KBBGraphicsItemOnBox(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type);
 		
@@ -58,7 +58,6 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem
 
 	protected:
 		KBBScalableGraphicWidget* m_widget;
-		int m_boxPosition;
 		int m_columns;
 		int m_rows;
 
@@ -66,6 +65,7 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem
 	private:
 		void mousePressEvent (QGraphicsSceneMouseEvent*);
 		
+		int m_boxPosition;
 		itemType m_itemType;
 };
 

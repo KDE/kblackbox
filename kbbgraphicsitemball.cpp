@@ -44,9 +44,25 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type) : KBBGraphicsItemOnBox( parent, boxPosition, columns, rows, type)
+KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, ballType type) : KBBGraphicsItemOnBox( parent, boxPosition, columns, rows, ball)
 {
 	m_timer = NULL;
+	m_ballType = type;
+	
+	switch (m_ballType) {
+		case playerBall:
+			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
+			setElementId("blueball");
+			break;
+		case unsureBall:
+			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
+			setElementId("blueballunsure");
+			break;
+		case solutionBall:
+			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_RED);
+			setElementId("redball");
+			break;
+	}
 	
 	setAcceptsHoverEvents(true);
 	
@@ -89,32 +105,32 @@ void KBBGraphicsItemBall::showInteractions()
 	// If the ball is on a border:
 	const KBBGraphicsItemInteractionInfo::interactionType r = KBBGraphicsItemInteractionInfo::reflection;
 	const KBBGraphicsItemInteractionInfo::interactionType rS = KBBGraphicsItemInteractionInfo::reflectionSym;
-	if (m_boxPosition<m_columns) {
+	if (position()<m_columns) {
 		m_interactionInfos[0]->setType(r);
 		m_interactionInfos[2]->setType(rS);
 	}
-	if (m_boxPosition>=m_columns*(m_rows-1)) {
+	if (position()>=m_columns*(m_rows-1)) {
 		m_interactionInfos[4]->setType(r);
 		m_interactionInfos[6]->setType(rS);
 	}
-	if (m_boxPosition%m_columns == 0) {
+	if (position()%m_columns == 0) {
 		m_interactionInfos[6]->setType(r);
 		m_interactionInfos[0]->setType(rS);
 	}
-	if (m_boxPosition%m_columns == (m_columns-1)) {
+	if (position()%m_columns == (m_columns-1)) {
 		m_interactionInfos[2]->setType(r);
 		m_interactionInfos[4]->setType(rS);
 	}
 	
 	// If the ball is on a corner:
 	const KBBGraphicsItemInteractionInfo::interactionType n = KBBGraphicsItemInteractionInfo::nothing;
-	if (m_boxPosition==0)
+	if (position()==0)
 		m_interactionInfos[0]->setType(n);
-	if (m_boxPosition==m_columns-1)
+	if (position()==m_columns-1)
 		m_interactionInfos[2]->setType(n);
-	if (m_boxPosition==m_rows*m_columns-1)
+	if (position()==m_rows*m_columns-1)
 		m_interactionInfos[4]->setType(n);
-	if (m_boxPosition==(m_rows-1)*m_columns)
+	if (position()==(m_rows-1)*m_columns)
 		m_interactionInfos[6]->setType(n);
 }
 
@@ -139,6 +155,36 @@ void KBBGraphicsItemBall::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 	delete m_timer;
 	m_timer = NULL;
 	removeInteractionInfos();
+}
+
+
+void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
+{
+	if (event->buttons()==Qt::LeftButton) {
+		switch(m_ballType) {
+			case solutionBall:
+				m_widget->clickAddBall(position());
+				break;
+			case playerBall:
+				m_widget->clickRemoveBall(position());
+				break;
+			case unsureBall:
+				m_widget->clickSetBallUnsure(position(), false);
+				break;
+		}
+	} else {
+		switch(m_ballType) {
+			case solutionBall:
+				m_widget->clickAddBallNothing(position());
+				break;
+			case playerBall:
+				m_widget->clickSetBallUnsure(position(), true);
+				break;
+			case unsureBall:
+				m_widget->clickAddBallNothing(position());
+				break;
+		}
+	}
 }
 
 

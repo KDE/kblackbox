@@ -54,7 +54,9 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 	public:
 		static const int TIME_TO_WAIT_BEFORE_SHOWING_INTERACTIONS = 1500;
 		
-		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type);
+		enum ballType { playerBall, unsureBall, solutionBall };
+		
+		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, ballType type);
 		~KBBGraphicsItemBall();
 
 
@@ -65,10 +67,13 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 	private:
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
+		void mousePressEvent (QGraphicsSceneMouseEvent*);
 		void removeInteractionInfos();
 		
 		KBBGraphicsItemInteractionInfo* m_interactionInfos[8];
 		QTimer* m_timer;
+		
+		ballType m_ballType;
 };
 
 #endif // KBBGRAPHICSITEMBALL_H

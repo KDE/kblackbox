@@ -57,7 +57,7 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphicsView()
+KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent, QString theme) : QGraphicsView()
 {
 	m_board = parent;
 	m_columns = 1;
@@ -65,7 +65,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 	m_ray = 0;
 	m_raySolution = 0;
 	
-	m_svgRenderer.load(KStandardDirs::locate("appdata", "pics/kblackbox.svgz"));
+	m_svgRenderer.load(KStandardDirs::locate("appdata", theme));
 	
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene);
@@ -97,7 +97,7 @@ void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 {
 	if (m_inputAccepted && (!m_balls->contains(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
-		m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::blue));
+		m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::playerBall));
 		m_ballsNothing->remove(boxPosition);
 	}
 }
@@ -167,10 +167,10 @@ void KBBScalableGraphicWidget::clickSetBallUnsure(const int boxPosition, const b
 	if (m_inputAccepted) {
 		if (unsure) {
 			m_balls->remove(boxPosition);
-			m_ballsUnsure->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::blueUnsure));
+			m_ballsUnsure->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::unsureBall));
 		} else {
 			m_ballsUnsure->remove(boxPosition);
-			m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::blue));
+			m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::playerBall));
 		}
 	}
 }
@@ -240,7 +240,7 @@ void KBBScalableGraphicWidget::solve()
 		if (m_balls->contains(i) && !m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemOnBox(this, i, m_columns, m_rows, KBBGraphicsItemOnBox::cross));
 		if (!m_balls->contains(i) && m_boardBalls->contains(i)) 
-			m_ballsSolution->insert(new KBBGraphicsItemBall(this, i, m_columns, m_rows, KBBGraphicsItemOnBox::red));
+			m_ballsSolution->insert(new KBBGraphicsItemBall(this, i, m_columns, m_rows, KBBGraphicsItemBall::solutionBall));
 	}
 }
 

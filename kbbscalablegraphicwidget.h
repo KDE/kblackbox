@@ -58,8 +58,22 @@ class KBBScalableGraphicWidget : public QGraphicsView
 	Q_OBJECT
 
 	public:
+		/**
+		 * @brief Width and height of a single square on the black box
+		 *
+		 * Note: The widget is scalable, so it's just an arbitrary default compared with other ranges.
+		 */
 		static int const RATIO = 50;
+		
+		/**
+		 * @brief Distance between the black box and the widget border
+		 *
+		 * Note: The widget is scalable, so it's just an arbitrary default compared with other ranges.
+		 * It's the minimal distance as the width/height ratio is constant and the widget may have another width/height ratio.
+		 * @see RATIO
+		 */
 		static int const BORDER_SIZE = 100;
+		
 		
 		static int const ZVALUE_BLACKBOX = 20;
 		static int const ZVALUE_BLACKBOX_GRID = 30;
@@ -76,7 +90,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const ZVALUE_LASER = 140;
 		
 		
-		explicit KBBScalableGraphicWidget(KBBBoard* parent);
+		KBBScalableGraphicWidget(KBBBoard* parent, QString theme);
 		
 		
 		void addItem(QGraphicsItem* item);

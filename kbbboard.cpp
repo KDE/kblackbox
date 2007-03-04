@@ -37,7 +37,6 @@
 
 #include "kbbballsonboard.h"
 #include "kbbboard.h"
-#include "kbbgfx.h"
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -54,9 +53,7 @@ KBBBoard::KBBBoard(KBBMainWindow *parent) : QObject(parent)
 
 	random.setSeed(0);
 
-	// SWITCH THE CENTRAL WIDGET HERE
-	//gr = new KBBGraphic( this );
-	gr = new KBBScalableGraphicWidget( this );
+	gr = new KBBScalableGraphicWidget( this, "pics/kblackbox.svgz" );
 
 	connect( gr, SIGNAL(endMouseClicked()), parent, SLOT(solve()) );
 

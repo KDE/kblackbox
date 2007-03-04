@@ -56,17 +56,8 @@ KBBGraphicsItemOnBox::KBBGraphicsItemOnBox( KBBScalableGraphicWidget* parent, co
 	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns));
 	
 	switch (m_itemType) {
-		case blue:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
-			setElementId("blueball");
-			break;
-		case blueUnsure:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
-			setElementId("blueballunsure");
-			break;
-		case red:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_RED);
-			setElementId("redball");
+		case ball:
+			// Do nothing. It's implemented in the sub-class KBBGraphicsItemBall
 			break;
 		case cross:
 			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_CROSS);
@@ -100,39 +91,10 @@ const int KBBGraphicsItemOnBox::position ()
 
 void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	if (event->buttons()==Qt::LeftButton) {
-		switch(m_itemType) {
-			case red:
-				m_widget->clickAddBall(position());
-				break;
-			case blue:
-				m_widget->clickRemoveBall(position());
-				break;
-			case blueUnsure:
-				m_widget->clickSetBallUnsure(position(), false);
-				break;
-			case nothing:
-				m_widget->clickAddBall(position());
-				break;
-			case cross:
-				break;
-		}
-	} else {
-		switch(m_itemType) {
-			case red:
-				m_widget->clickAddBallNothing(position());
-				break;
-			case blue:
-				m_widget->clickSetBallUnsure(position(), true);
-				break;
-			case blueUnsure:
-				m_widget->clickAddBallNothing(position());
-				break;
-			case nothing:
-				m_widget->clickRemoveBallNothing(position());
-				break;
-			case cross:
-				break;
-		}
+	if (m_itemType==nothing) {
+		if (event->buttons()==Qt::LeftButton)
+			m_widget->clickAddBall(position());
+		else
+			m_widget->clickRemoveBallNothing(position());
 	}
 }

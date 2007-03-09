@@ -75,9 +75,8 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const BORDER_SIZE = 100;
 		
 		
-		static int const ZVALUE_BLACKBOX = 20;
 		static int const ZVALUE_BLACKBOX_GRID = 30;
-		static int const ZVALUE_BLACKBOX_BACKGROUND = 40;
+		static int const ZVALUE_BLACKBOX = 40;
 		static int const ZVALUE_MARKER_NOTHING = 50;
 		static int const ZVALUE_SOLUTION_RAY = 60;
 		static int const ZVALUE_PLAYER_RAY = 70;

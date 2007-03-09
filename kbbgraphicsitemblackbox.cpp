@@ -54,14 +54,10 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* pare
 	m_widget = parent;
 	m_scene = scene;
 
-	setPen(QPen(Qt::black));
-	setBrush(QColor(79, 79, 79));
-	setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX);
-
 	m_background = new QGraphicsSvgItem(this);
 	m_background->setSharedRenderer(m_widget->svgRenderer());
-	m_background->setElementId("bbquestion");
-	m_background->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX_BACKGROUND);
+	m_background->setElementId("blackbox");
+	m_background->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX);
 
 	m_widget->addItem(m_background);
 }
@@ -74,6 +70,8 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* pare
 
 void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 {
+	m_background->scale(1./m_columns, 1./m_rows);
+
 	if ((m_columns!=columns) && (m_rows!=rows)) {
 		m_columns = columns;
 		m_rows = rows;
@@ -102,9 +100,10 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 			m_lines[i]->setPen(pen);
 			m_lines[i]->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX_GRID);
 		}
-		
-		m_background->setPos(b + m_columns*r/2 - 6*r/2, b + m_rows*r/2 - 6*r/2);
+		m_background->setPos(b, b);
 	}
+	
+	m_background->scale(m_columns/1., m_rows/1.);
 }
 
 

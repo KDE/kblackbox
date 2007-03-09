@@ -123,6 +123,10 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void endMouseClicked();
 
 
+	protected:
+		void drawBackground(QPainter* painter, const QRectF&);
+
+
 	private:
 		// Graphics items
 		KBBGraphicsItemSet* m_balls;
@@ -135,6 +139,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		KBBGraphicsItemRay* m_ray;
 		KBBGraphicsItemRay* m_raySolution;
 		
+		
 		// Various member variables
 		KBBBoard* m_board;
 		KBBBallsOnBoard* m_boardBalls;
@@ -142,6 +147,15 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		int m_columns;
 		bool m_inputAccepted;
 		int m_rayNumber;
+		
+		/**
+		 * @brief Position and size of the background in scene coordinates
+		 *
+		 * Used for drwing the background.
+		 * @see drawBackground(QPainter* painter, const QRectF&)
+		 */
+		QRectF m_rectBackground;
+		
 		int m_rows;
 		QGraphicsScene* m_scene;
 		KSvgRenderer m_svgRenderer;

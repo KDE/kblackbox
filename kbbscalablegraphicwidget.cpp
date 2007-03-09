@@ -219,9 +219,24 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 }
 
 
-void KBBScalableGraphicWidget::resizeEvent(  QResizeEvent* )
+void KBBScalableGraphicWidget::resizeEvent( QResizeEvent* )
 {
-	this->fitInView(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE, Qt::KeepAspectRatio);
+	// 1. Compute the size of m_rectBackground
+	const qreal offset = 10 ;
+	if (m_scene->height()*width() > m_scene->width()*height()) {
+		// The widget is larger than the scene
+		qreal w =  width()*m_scene->height()/height();
+		qreal x = (m_scene->width()-w)/2;
+		m_rectBackground.setRect(x - offset, - offset, w + 2*offset, m_scene->height() + 2*offset);
+	} else {
+		// The scene is larger than the widget (or as large)
+		qreal h =  height()*m_scene->width()/width();
+		qreal y = (m_scene->height()-h)/2;
+		m_rectBackground.setRect(-offset, y - offset, m_scene->width() + 2*offset, h + 2*offset);
+	}
+	
+	// 2. Resize the scene
+	fitInView(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE, Qt::KeepAspectRatio);
 }
 
 
@@ -301,6 +316,18 @@ void KBBScalableGraphicWidget::slotRight()
 void KBBScalableGraphicWidget::slotUp()
 {
 	//TODO: Manage keyboard input
+}
+
+
+
+//
+// Protected
+//
+
+
+void KBBScalableGraphicWidget::drawBackground(QPainter* painter, const QRectF&)
+{
+	m_svgRenderer.render(painter, "background", m_rectBackground);
 }
 
 #include "kbbscalablegraphicwidget.moc"

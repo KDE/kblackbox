@@ -29,6 +29,7 @@
 
 
 
+#include <QString>
 #include <QSvgRenderer>
 
 
@@ -48,16 +49,19 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, co
 	m_widget = parent;
 
 	setSharedRenderer(parent->svgRenderer());
-	setElementId("laser");
+	setElementId(QString("laser_%1").arg(rotation()));
 	parent->addItem(this);
 	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
 
-	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
-	setPos(m_centerX - radius, m_centerY - radius);
-	translate(radius,radius);
-	rotate(rotation());
-	translate(-radius,-radius);
-
+	const int radius = KBBScalableGraphicWidget::RATIO/2;
+	if (rotation()==90) {
+		setPos(m_centerX - 3*radius, m_centerY - radius);
+	} else if (rotation()==180) {
+		setPos(m_centerX - radius, m_centerY - 3*radius);
+	} else {
+		setPos(m_centerX - radius, m_centerY - radius);
+	}
+	
 	setAcceptsHoverEvents(true);
 }
 

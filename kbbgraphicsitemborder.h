@@ -45,7 +45,7 @@ class KBBGraphicsItemBorder
 
 	protected:
 		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset);
-		int rotation();
+		const int rotation();
 
 		int m_borderPosition;
 		int m_centerX;

@@ -1,3 +1,6 @@
+2007-03-09 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Preparation for Oxygenation: There are now 4 different SVG items for the lasers (one for each direction) instead of just one (with intern rotations).
+
 2007-03-03 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Removed the files of the old widget with QPixmap items. (Not used anymore)
 

@@ -78,7 +78,7 @@ void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &cent
 }
 
 
-int KBBGraphicsItemBorder::rotation()
+const int KBBGraphicsItemBorder::rotation()
 {
 	if (m_borderPosition<m_columns) {
 		return 0;

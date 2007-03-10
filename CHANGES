@@ -1,3 +1,6 @@
+2007-03-10 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Added posibility to play with a non square grid: 18x12. First: this is fun, because the grid is really big! It's also useful to see how the graphic items are displayed in such a configuration and it helped me to find and fix a bug in the black box class. :)
+
 2007-03-09 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Preparation for Oxygenation: There are now 4 different SVG items for the lasers (one for each direction) instead of just one (with intern rotations), the graphic widget has now a SVG background and the black box is now a full SVG item (not a QGraphicsRectItem with a SVG question mark anymore).
 

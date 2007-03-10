@@ -82,6 +82,7 @@ KBBMainWindow::KBBMainWindow()
 	list.append(i18n("  8 x  8 "));
 	list.append(i18n(" 10 x 10 "));
 	list.append(i18n(" 12 x 12 "));
+	list.append(i18n(" 18 x 12 "));
 	m_sizeAction->setItems(list);
 	
 	m_ballsAction = new KSelectAction( i18n("&Balls"), this);
@@ -91,6 +92,7 @@ KBBMainWindow::KBBMainWindow()
 	list.append(i18n("4 balls"));
 	list.append(i18n("6 balls"));
 	list.append(i18n("8 balls"));
+	list.append(i18n("10 balls"));
 	m_ballsAction->setItems(list);
 	m_tutorialAction = new KToggleAction( i18n("&Tutorial"), this );
 	actionCollection()->addAction( "options_tutorial", m_tutorialAction );
@@ -131,16 +133,17 @@ KBBMainWindow::KBBMainWindow()
 	
 	//Read configuration options
 	m_ballNumber = KBBPrefs::balls();
-	const int menuNumber[3] = {4, 6, 8};
+	const int menuNumber[4] = {4, 6, 8, 10};
 	for (int i=0; i<3; i++)
 		if (menuNumber[i]==m_ballNumber)
 			m_ballsAction->setCurrentItem(i);
 	
 	m_columns = KBBPrefs::columns();
 	m_rows = KBBPrefs::rows();
-	const int menuSize[3] = {8, 10, 12};
+	const int menuSizeColumns[4] = {8, 10, 12, 18};
+	const int menuSizeRows[4] = {8, 10, 12, 12};
 	for (int i=0; i<3; i++)
-		if ((menuSize[i]==m_columns) && (menuSize[i]==m_rows))
+		if ((menuSizeColumns[i]==m_columns) && (menuSizeRows[i]==m_rows))
 			m_sizeAction->setCurrentItem(i);
 	
 	m_tutorial = KBBPrefs::tutorial();
@@ -198,8 +201,8 @@ void KBBMainWindow::newGame()
 
 void KBBMainWindow::slotBalls(int selection)
 {
-	const int ARRAY_SIZE = 3;
-	const int newNumber[ARRAY_SIZE] = {4, 6, 8};
+	const int ARRAY_SIZE = 4;
+	const int newNumber[ARRAY_SIZE] = {4, 6, 8, 10};
 	
 	if (m_ballNumber != newNumber[selection]) {
 		if (startGame(newNumber[selection], m_columns, m_rows, m_tutorial))
@@ -215,16 +218,17 @@ void KBBMainWindow::slotBalls(int selection)
 
 void KBBMainWindow::slotSize(int selection)
 {
-	const int ARRAY_SIZE = 3;
-	const int newSizes[ARRAY_SIZE] = {8, 10, 12};
+	const int ARRAY_SIZE = 4;
+	const int newSizesColumns[ARRAY_SIZE] = {8, 10, 12, 18};
+	const int newSizesRows[ARRAY_SIZE] = {8, 10, 12, 12};
 
-	if ((newSizes[selection] != m_columns) || (newSizes[selection] != m_rows)) {
-		if (startGame(m_ballNumber, newSizes[selection], newSizes[selection], m_tutorial)) {
+	if ((newSizesColumns[selection] != m_columns) || (newSizesRows[selection] != m_rows)) {
+		if (startGame(m_ballNumber, newSizesColumns[selection], newSizesRows[selection], m_tutorial)) {
 			KBBPrefs::setColumns(m_columns);
 			KBBPrefs::setRows(m_rows);
 		} else {
 			for (int i=0; i<ARRAY_SIZE; i++)
-				if ((newSizes[i]==m_columns) && (newSizes[i]==m_rows))
+				if ((newSizesColumns[i]==m_columns) && (newSizesRows[i]==m_rows))
 					m_sizeAction->setCurrentItem(i);
 		}
 	}

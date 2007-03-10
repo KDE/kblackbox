@@ -72,7 +72,7 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 {
 	m_background->scale(1./m_columns, 1./m_rows);
 
-	if ((m_columns!=columns) && (m_rows!=rows)) {
+	if ((m_columns!=columns) || (m_rows!=rows)) {
 		m_columns = columns;
 		m_rows = rows;
 		

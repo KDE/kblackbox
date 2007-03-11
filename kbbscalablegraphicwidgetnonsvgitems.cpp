@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,8 +29,18 @@
 
 
 
-#include "kbbgraphicsitemborder.h"
-#include "kbbscalablegraphicwidget.h"
+#include <QColor>
+#include <QDomDocument>
+#include <QFile>
+#include <QString>
+#include <QStringList>
+
+
+#include <kdebug.h>
+#include <kfilterdev.h>
+
+
+#include "kbbscalablegraphicwidgetnonsvgitems.h"
 
 
 
@@ -38,11 +48,20 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const int columns, const int rows, const int offset)
+KBBScalableGraphicWidgetNonSvgItems::KBBScalableGraphicWidgetNonSvgItems(QString svgzFileName)
 {
-	m_offset = offset;
+	QFile svgzFile(svgzFileName);
+	QIODevice *f = KFilterDev::device( &svgzFile, QString::fromLatin1("application/x-gzip"), false);
 	
-	setSize(borderPosition, columns, rows);
+	if (!f)
+		return;
+	
+	QDomDocument doc;
+	if (doc.setContent(f,true)) {
+		m_root = doc.documentElement();
+	}
+	
+	delete f;
 }
 
 
@@ -51,55 +70,53 @@ KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const in
 // Public
 //
 
-void KBBGraphicsItemBorder::setSize(const int borderPosition, const int columns, const int rows)
+QColor KBBScalableGraphicWidgetNonSvgItems::color(QString elementId)
 {
-	m_borderPosition = borderPosition;
-	m_columns = columns;
-	m_rows = rows;
-	
-	centerCoordinate(m_borderPosition, m_centerX, m_centerY, m_offset);
+	return QColor(value(elementId, "stroke"));
+}
+
+
+Qt::PenStyle KBBScalableGraphicWidgetNonSvgItems::style(QString elementId)
+{
+	if (value(elementId, "stroke-dasharray")=="none") {
+		return Qt::SolidLine;
+	} else
+		return Qt::DotLine;
+}
+
+
+qreal KBBScalableGraphicWidgetNonSvgItems::width(QString elementId)
+{
+	return value(elementId, "stroke-width").toFloat();
 }
 
 
 
 //
-// Protected
+// Private
 //
 
-void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset)
+
+QString KBBScalableGraphicWidgetNonSvgItems::value(QString elementId, QString styleElement)
 {
-	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
-	const int r = KBBScalableGraphicWidget::RATIO;
-	int x;
-	int y;
-	if (borderPosition<m_columns) {
-		x = borderPosition*r + b;
-		y = offset;
-	} else if (borderPosition<m_columns + m_rows) {
-		x = m_columns*r + b + b/2 - offset;
-		y = (borderPosition - m_columns)*r + b;
-	} else if (borderPosition<2*m_columns + m_rows) {
-		x = (2*m_columns + m_rows - borderPosition)*r + b/2;
-		y = m_rows*r + 3*b/2 - offset;
-	} else {
-		x = offset;
-		y = (2*m_columns + 2*m_rows - borderPosition)*r + b/2;
+	QString style("");
+	QString v("");
+	
+	QDomNode node = m_root.firstChild();
+	while(!node.isNull()) {
+		if (node.toElement().attribute("id") == elementId)
+			style = node.toElement().attribute("style");
+		node = node.nextSibling();
 	}
 	
-	centerX = x + r/2;
-	centerY = y + r/2;
-}
-
-
-const int KBBGraphicsItemBorder::rotation()
-{
-	if (m_borderPosition<m_columns) {
-		return 0;
-	} else if (m_borderPosition<m_columns + m_rows) {
-		return 90;
-	} else if (m_borderPosition<2*m_columns + m_rows) {
-		return 180;
-	} else {
-		return 270;
+	QStringList styleList = style.split(";");
+	for (int i = 0; i < styleList.size(); i++) {
+		styleList.replace(i, styleList.at(i).trimmed());
+		if (styleList.at(i).startsWith(styleElement+":")) {
+			QString s = styleList.at(i);
+			v = s.right(s.length()-styleElement.length()-1);
+		}
 	}
+	
+	return v;
 }

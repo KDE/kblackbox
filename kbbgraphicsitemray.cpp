@@ -36,6 +36,7 @@
 #include <QPen>
 
 
+#include "kbbballsonboard.h"
 #include "kbbboard.h"
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemray.h"
@@ -47,15 +48,38 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRay::KBBGraphicsItemRay( QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type ) : KBBGraphicsItemBorder( borderPosition, ballsOnBoard->columns(), ballsOnBoard->rows(), KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem ( 0, scene )
+KBBGraphicsItemRay::KBBGraphicsItemRay( QGraphicsScene* scene, QColor color, const qreal width, Qt::PenStyle style, const int zValue) : KBBGraphicsItemBorder(0, 1, 1, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem ( 0, scene )
 {
+	QPen pen;
+	
+	pen.setColor(color);
+	pen.setStyle(style);
+	pen.setWidthF(width);
+	setZValue(zValue);
+	
+	pen.setJoinStyle(Qt::RoundJoin);
+	pen.setCapStyle(Qt::RoundCap);
+	setPen(pen);
+}
+
+
+
+//
+// Public
+//
+
+void KBBGraphicsItemRay::draw(KBBBallsOnBoard* ballsOnBoard, const int borderPosition)
+{
+	const int columns = ballsOnBoard->columns();
+	const int rows = ballsOnBoard->rows();
+	
 	QList<int> points;
 	const int oppositeBorderPosition = ballsOnBoard->oppositeBorderPositionWithPoints(borderPosition, points);
 	
 	QPainterPath path;
+	setSize(borderPosition, columns, rows);
 	path.moveTo(m_centerX, m_centerY);
 
-	const int columns = ballsOnBoard->columns();
 	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
 	const int r = KBBScalableGraphicWidget::RATIO;
 	int x;
@@ -73,30 +97,11 @@ KBBGraphicsItemRay::KBBGraphicsItemRay( QGraphicsScene* scene, const int borderP
 		path.lineTo(x1,y1);
 	}
 	
-	QPen pen;
-	switch(type) {
-		case playerRay:
-			pen.setColor(QColor(0,237,255));
-			pen.setStyle(Qt::DotLine);
-			pen.setWidth(r/10);
-			setZValue(KBBScalableGraphicWidget::ZVALUE_PLAYER_RAY);
-			break;
-		case playerSolutionRay:
-			pen.setColor(QColor(0,237,255));
-			pen.setStyle(Qt::DotLine);
-			pen.setWidth(r/15);
-			setZValue(KBBScalableGraphicWidget::ZVALUE_PLAYER_RAY);
-			break;
-		case solutionRay:
-			pen.setColor(Qt::red);
-			pen.setStyle(Qt::SolidLine);
-			pen.setWidth(r/7);
-			setZValue(KBBScalableGraphicWidget::ZVALUE_SOLUTION_RAY);
-			break;
-	}
-	pen.setJoinStyle(Qt::RoundJoin);
-	pen.setCapStyle(Qt::RoundCap);
-	setPen(pen);
-	
 	setPath(path);
+}
+
+
+void KBBGraphicsItemRay::hide()
+{
+	setPath(QPainterPath());
 }

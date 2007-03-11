@@ -1,3 +1,7 @@
+2007-03-11 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Preparation for Oxygenation: the laser ray attributes (color, width and style) are now customizable. The rays are not SVG elements but their attributes are defined in the SVG file and parsed.
+	* Correction of a (new) bug in the "solve" methode: Balls marked as "unsure" were not considered as placed balls.
+
 2007-03-10 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Added posibility to play with a non square grid: 18x12. First: this is fun, because the grid is really big! It's also useful to see how the graphic items are displayed in such a configuration and it helped me to find and fix a bug in the black box class. :)
 

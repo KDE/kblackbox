@@ -50,6 +50,7 @@
 #include "kbbgraphicsitemrayresult.h"
 #include "kbbgraphicsitemset.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbscalablegraphicwidgetnonsvgitems.h"
 
 
 
@@ -62,10 +63,9 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent, QString th
 	m_board = parent;
 	m_columns = 1;
 	m_rows = 1;
-	m_ray = 0;
-	m_raySolution = 0;
 	
-	m_svgRenderer.load(KStandardDirs::locate("appdata", theme));
+	QString svgzFile = KStandardDirs::locate("appdata", theme);
+	m_svgRenderer.load(svgzFile);
 	
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene);
@@ -76,6 +76,12 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent, QString th
 	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
 	m_lasers = new KBBGraphicsItemSet(m_scene);
 	m_rayResults = new KBBGraphicsItemSet(m_scene);
+
+	// Get ray attributes from SVG file
+	KBBScalableGraphicWidgetNonSvgItems nonSvgItems(svgzFile);
+
+	m_playerRay = new KBBGraphicsItemRay(m_scene, nonSvgItems.color("player_ray"), nonSvgItems.width("player_ray"), nonSvgItems.style("player_ray"), ZVALUE_PLAYER_RAY);
+	m_solutionRay = new KBBGraphicsItemRay(m_scene, nonSvgItems.color("solution_ray"), nonSvgItems.width("solution_ray"), nonSvgItems.style("solution_ray"), ZVALUE_SOLUTION_RAY);
 	
 	this->setScene(m_scene);
 }
@@ -179,10 +185,9 @@ void KBBScalableGraphicWidget::clickSetBallUnsure(const int boxPosition, const b
 void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 {
 	if (!m_inputAccepted) {
-		m_raySolution = new KBBGraphicsItemRay(m_scene, borderPosition, m_boardBalls, KBBGraphicsItemRay::solutionRay);
-		m_ray = new KBBGraphicsItemRay(m_scene, borderPosition, m_boardBallsPlaced, KBBGraphicsItemRay::playerSolutionRay);
-	} else
-		m_ray = new KBBGraphicsItemRay(m_scene, borderPosition, m_boardBallsPlaced, KBBGraphicsItemRay::playerRay);
+		m_solutionRay->draw(m_boardBalls, borderPosition);
+	}
+	m_playerRay->draw(m_boardBallsPlaced, borderPosition);
 }
 
 
@@ -242,19 +247,17 @@ void KBBScalableGraphicWidget::resizeEvent( QResizeEvent* )
 
 void KBBScalableGraphicWidget::removeRay()
 {
-	delete m_ray;
-	m_ray = 0;
-	delete m_raySolution;
-	m_raySolution = 0;
+	m_playerRay->hide();
+	m_solutionRay->hide();
 }
 
 
 void KBBScalableGraphicWidget::solve()
 {
 	for (int i=0; i<(m_columns * m_rows); i++) {
-		if (m_balls->contains(i) && !m_boardBalls->contains(i))
+		if ((m_balls->contains(i) || m_ballsUnsure->contains(i)) && !m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemOnBox(this, i, m_columns, m_rows, KBBGraphicsItemOnBox::cross));
-		if (!m_balls->contains(i) && m_boardBalls->contains(i)) 
+		if (!m_balls->contains(i) && !m_ballsUnsure->contains(i) && m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemBall(this, i, m_columns, m_rows, KBBGraphicsItemBall::solutionBall));
 	}
 }

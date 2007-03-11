@@ -22,6 +22,7 @@ set(kblackbox_SRCS
     kbbgraphicsitemset.cpp
     kbbmainwindow.cpp 
     kbbscalablegraphicwidget.cpp
+    kbbscalablegraphicwidgetnonsvgitems.cpp
     main.cpp
     )
 

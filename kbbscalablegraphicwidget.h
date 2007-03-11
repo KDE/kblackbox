@@ -128,15 +128,15 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 	private:
 		// Graphics items
+		KBBGraphicsItemBlackBox* m_blackbox;
 		KBBGraphicsItemSet* m_balls;
 		KBBGraphicsItemSet* m_ballsNothing;
 		KBBGraphicsItemSet* m_ballsSolution;
 		KBBGraphicsItemSet* m_ballsUnsure;
 		KBBGraphicsItemSet* m_lasers;
 		KBBGraphicsItemSet* m_rayResults;
-		KBBGraphicsItemBlackBox* m_blackbox;
-		KBBGraphicsItemRay* m_ray;
-		KBBGraphicsItemRay* m_raySolution;
+		KBBGraphicsItemRay* m_playerRay;
+		KBBGraphicsItemRay* m_solutionRay;
 		
 		
 		// Various member variables

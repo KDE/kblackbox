@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -29,77 +29,36 @@
 
 
 
-#include "kbbgraphicsitemborder.h"
-#include "kbbscalablegraphicwidget.h"
+#ifndef KBBSCALABLEGRAPHICWIDGETNONSVGITEMS_H
+#define KBBSCALABLEGRAPHICWIDGETNONSVGITEMS_H
+
+
+#include <QDomElement>
+#include <QString>
 
 
 
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const int columns, const int rows, const int offset)
+/**
+ * @brief Get some attributes in the SVG file for items that are not SVG items
+ *
+ * Useful for laser ray.
+ * @see KBBGraphicsItemRay
+ */
+class KBBScalableGraphicWidgetNonSvgItems
 {
-	m_offset = offset;
-	
-	setSize(borderPosition, columns, rows);
-}
+	public:
+		KBBScalableGraphicWidgetNonSvgItems(QString svgzFile);
+		
+		
+		QColor color(QString elementId);
+		Qt::PenStyle style(QString elementId);
+		qreal width(QString elementId);
 
 
+	private:
+		QString value(QString elementId, QString styleElement);
+		
+		QDomElement m_root;
+};
 
-//
-// Public
-//
-
-void KBBGraphicsItemBorder::setSize(const int borderPosition, const int columns, const int rows)
-{
-	m_borderPosition = borderPosition;
-	m_columns = columns;
-	m_rows = rows;
-	
-	centerCoordinate(m_borderPosition, m_centerX, m_centerY, m_offset);
-}
-
-
-
-//
-// Protected
-//
-
-void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset)
-{
-	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
-	const int r = KBBScalableGraphicWidget::RATIO;
-	int x;
-	int y;
-	if (borderPosition<m_columns) {
-		x = borderPosition*r + b;
-		y = offset;
-	} else if (borderPosition<m_columns + m_rows) {
-		x = m_columns*r + b + b/2 - offset;
-		y = (borderPosition - m_columns)*r + b;
-	} else if (borderPosition<2*m_columns + m_rows) {
-		x = (2*m_columns + m_rows - borderPosition)*r + b/2;
-		y = m_rows*r + 3*b/2 - offset;
-	} else {
-		x = offset;
-		y = (2*m_columns + 2*m_rows - borderPosition)*r + b/2;
-	}
-	
-	centerX = x + r/2;
-	centerY = y + r/2;
-}
-
-
-const int KBBGraphicsItemBorder::rotation()
-{
-	if (m_borderPosition<m_columns) {
-		return 0;
-	} else if (m_borderPosition<m_columns + m_rows) {
-		return 90;
-	} else if (m_borderPosition<2*m_columns + m_rows) {
-		return 180;
-	} else {
-		return 270;
-	}
-}
+#endif // KBBSCALABLEGRAPHICWIDGETNONSVGITEMS_H

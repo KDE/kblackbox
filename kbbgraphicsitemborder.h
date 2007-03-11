@@ -42,6 +42,8 @@ class KBBGraphicsItemBorder
 	public:
 		KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset);
 
+		void setSize(const int borderPosition, const int columns, const int rows);
+
 
 	protected:
 		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset);
@@ -51,6 +53,7 @@ class KBBGraphicsItemBorder
 		int m_centerX;
 		int m_centerY;
 		int m_columns;
+		int m_offset;
 		int m_rows;
 };
 

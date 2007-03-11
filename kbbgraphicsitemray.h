@@ -33,11 +33,12 @@
 #define KBBGRAPHICSITEMRAY_H
 
 
+class QColor;
 #include <QGraphicsPathItem>
 class QGraphicsScene;
 
 
-#include "kbbballsonboard.h"
+class KBBBallsOnBoard;
 #include "kbbgraphicsitemborder.h"
 class KBBScalableGraphicWidget;
 
@@ -50,10 +51,10 @@ class KBBScalableGraphicWidget;
 class KBBGraphicsItemRay : public KBBGraphicsItemBorder, public QGraphicsPathItem
 {
 	public:
-		enum rayType { playerRay, playerSolutionRay, solutionRay };
+		KBBGraphicsItemRay(QGraphicsScene* scene, QColor color, const qreal width, Qt::PenStyle style, const int zValue);
 		
-		KBBGraphicsItemRay(QGraphicsScene* scene, const int borderPosition, KBBBallsOnBoard* ballsOnBoard, rayType type);
-
+		void draw(KBBBallsOnBoard* ballsOnBoard, const int borderPosition);
+		void hide();
 };
 
 #endif // KBBGRAPHICSITEMRAY_H

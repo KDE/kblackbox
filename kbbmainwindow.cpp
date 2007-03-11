@@ -134,7 +134,7 @@ KBBMainWindow::KBBMainWindow()
 	//Read configuration options
 	m_ballNumber = KBBPrefs::balls();
 	const int menuNumber[4] = {4, 6, 8, 10};
-	for (int i=0; i<3; i++)
+	for (int i=0; i<4; i++)
 		if (menuNumber[i]==m_ballNumber)
 			m_ballsAction->setCurrentItem(i);
 	
@@ -142,7 +142,7 @@ KBBMainWindow::KBBMainWindow()
 	m_rows = KBBPrefs::rows();
 	const int menuSizeColumns[4] = {8, 10, 12, 18};
 	const int menuSizeRows[4] = {8, 10, 12, 12};
-	for (int i=0; i<3; i++)
+	for (int i=0; i<4; i++)
 		if ((menuSizeColumns[i]==m_columns) && (menuSizeRows[i]==m_rows))
 			m_sizeAction->setCurrentItem(i);
 	

@@ -58,7 +58,7 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent, QString theme) : QGraphicsView()
+KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent, const QString &theme) : QGraphicsView()
 {
 	m_board = parent;
 	m_columns = 1;

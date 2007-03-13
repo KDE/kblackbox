@@ -89,7 +89,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const ZVALUE_LASER = 140;
 		
 		
-		KBBScalableGraphicWidget(KBBBoard* parent, QString theme);
+		KBBScalableGraphicWidget(KBBBoard* parent, const QString &theme);
 		
 		
 		void addItem(QGraphicsItem* item);

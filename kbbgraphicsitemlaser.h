@@ -44,7 +44,7 @@ class KBBScalableGraphicWidget;
  *
  * The laser is used to shoot a laser ray into the black box.
  *
- * Note: The laser size should be so defined: width = width of a single box of the black box (RATIO), heigth = twice the size of single box of the black box (2*RATIO). The laser size is independant of the board border size.
+ * Note: The laser size should be so defined: width = width of a single box of the black box (RATIO), height = twice the size of single box of the black box (2*RATIO). The laser size is independent of the board border size.
  */
 class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsItem
 {

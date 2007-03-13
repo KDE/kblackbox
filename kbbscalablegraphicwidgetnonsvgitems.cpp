@@ -48,7 +48,7 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidgetNonSvgItems::KBBScalableGraphicWidgetNonSvgItems(QString svgzFileName)
+KBBScalableGraphicWidgetNonSvgItems::KBBScalableGraphicWidgetNonSvgItems(const QString &svgzFileName)
 {
 	QFile svgzFile(svgzFileName);
 	QIODevice *f = KFilterDev::device( &svgzFile, QString::fromLatin1("application/x-gzip"), false);
@@ -70,13 +70,13 @@ KBBScalableGraphicWidgetNonSvgItems::KBBScalableGraphicWidgetNonSvgItems(QString
 // Public
 //
 
-QColor KBBScalableGraphicWidgetNonSvgItems::color(QString elementId)
+QColor KBBScalableGraphicWidgetNonSvgItems::color(const QString &elementId)
 {
 	return QColor(value(elementId, "stroke"));
 }
 
 
-Qt::PenStyle KBBScalableGraphicWidgetNonSvgItems::style(QString elementId)
+Qt::PenStyle KBBScalableGraphicWidgetNonSvgItems::style(const QString &elementId)
 {
 	if (value(elementId, "stroke-dasharray")=="none") {
 		return Qt::SolidLine;
@@ -85,7 +85,7 @@ Qt::PenStyle KBBScalableGraphicWidgetNonSvgItems::style(QString elementId)
 }
 
 
-qreal KBBScalableGraphicWidgetNonSvgItems::width(QString elementId)
+qreal KBBScalableGraphicWidgetNonSvgItems::width(const QString &elementId)
 {
 	return value(elementId, "stroke-width").toFloat();
 }
@@ -97,7 +97,7 @@ qreal KBBScalableGraphicWidgetNonSvgItems::width(QString elementId)
 //
 
 
-QString KBBScalableGraphicWidgetNonSvgItems::value(QString elementId, QString styleElement)
+QString KBBScalableGraphicWidgetNonSvgItems::value(const QString &elementId, const QString &styleElement)
 {
 	QString style("");
 	QString v("");
@@ -112,7 +112,7 @@ QString KBBScalableGraphicWidgetNonSvgItems::value(QString elementId, QString st
 	QStringList styleList = style.split(";");
 	for (int i = 0; i < styleList.size(); i++) {
 		styleList.replace(i, styleList.at(i).trimmed());
-		if (styleList.at(i).startsWith(styleElement+":")) {
+		if (styleList.at(i).startsWith(styleElement + ':')) {
 			QString s = styleList.at(i);
 			v = s.right(s.length()-styleElement.length()-1);
 		}

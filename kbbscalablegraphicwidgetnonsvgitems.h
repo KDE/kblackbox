@@ -47,16 +47,16 @@
 class KBBScalableGraphicWidgetNonSvgItems
 {
 	public:
-		KBBScalableGraphicWidgetNonSvgItems(QString svgzFile);
+		KBBScalableGraphicWidgetNonSvgItems(const QString &svgzFile);
 		
 		
-		QColor color(QString elementId);
-		Qt::PenStyle style(QString elementId);
-		qreal width(QString elementId);
+		QColor color(const QString &elementId);
+		Qt::PenStyle style(const QString &elementId);
+		qreal width(const QString &elementId);
 
 
 	private:
-		QString value(QString elementId, QString styleElement);
+		QString value(const QString &elementId, const QString &styleElement);
 		
 		QDomElement m_root;
 };

@@ -4,9 +4,6 @@
 // A simple game inspired by an emacs module
 //
 /***************************************************************************
- *   Copyright (c) 1999-2000, Robert Cimrman                               *
- *   cimrman3@students.zcu.cz                                              *
- *                                                                         *
  *   Copyright (c) 2007, Nicolas Roffet                                    *
  *   nicolas-kde@roffet.com                                                *
  *                                                                         *
@@ -29,35 +26,21 @@
 
 
 
-#ifndef KBBGRAPHICSITEMBORDER_H
-#define KBBGRAPHICSITEMBORDER_H
+#ifndef KBBITEMWITHPOSITION_H
+#define KBBITEMWITHPOSITION_H
 
 
 
 /**
- * @brief Any border element of the scalable graphic widget
+ * @brief Item with position
+ *
+ * Items with position can be managed by the class KBBGraphicsItemSet.
  */
-class KBBGraphicsItemBorder
+class KBBItemWithPosition
 {
 	public:
-		/**
-		 * @brief Constructor
-		 */
-		KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset);
-		
-		void setSize(const int borderPosition, const int columns, const int rows);
-
-
-	protected:
-		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset);
-		const int rotation();
-
-		int m_borderPosition;
-		int m_centerX;
-		int m_centerY;
-		int m_columns;
-		int m_offset;
-		int m_rows;
+		virtual ~KBBItemWithPosition();
+		virtual const int position() = 0;
 };
 
-#endif // KBBGRAPHICSITEMBORDER_H
+#endif // KBBITEMWITHPOSITION_H

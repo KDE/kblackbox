@@ -37,6 +37,7 @@
 #include "kbbgraphicsiteminteractioninfo.h"
 #include "kbbgraphicsitemonbox.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -44,25 +45,11 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBall::KBBGraphicsItemBall( KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, ballType type) : KBBGraphicsItemOnBox( parent, boxPosition, columns, rows, ball)
+KBBGraphicsItemBall::KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows) : KBBGraphicsItemOnBox( itemType, parent, themeManager, boxPosition, columns, rows)
 {
 	m_timer = NULL;
-	m_ballType = type;
-	
-	switch (m_ballType) {
-		case playerBall:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
-			setElementId("blueball");
-			break;
-		case unsureBall:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_BLUE);
-			setElementId("blueballunsure");
-			break;
-		case solutionBall:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_RED);
-			setElementId("redball");
-			break;
-	}
+	m_ballType = itemType;
+	m_themeManager = themeManager;
 	
 	setAcceptsHoverEvents(true);
 	
@@ -99,7 +86,7 @@ void KBBGraphicsItemBall::showInteractions()
 		KBBGraphicsItemInteractionInfo::interactionType type = KBBGraphicsItemInteractionInfo::deflection;
 		if (i%2 == 1)
 			type = KBBGraphicsItemInteractionInfo::hit;
-		m_interactionInfos[i] = new KBBGraphicsItemInteractionInfo(m_widget, type, posX, posY, i*45 );
+		m_interactionInfos[i] = new KBBGraphicsItemInteractionInfo(m_widget, m_themeManager, type, posX, posY, i*45 );
 	}
 	
 	// If the ball is on a border:
@@ -162,26 +149,30 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
 	if (event->buttons()==Qt::LeftButton) {
 		switch(m_ballType) {
-			case solutionBall:
+			case KBBScalableGraphicWidget::solutionBall:
 				m_widget->clickAddBall(position());
 				break;
-			case playerBall:
+			case KBBScalableGraphicWidget::playerBall:
 				m_widget->clickRemoveBall(position());
 				break;
-			case unsureBall:
+			case KBBScalableGraphicWidget::unsureBall:
 				m_widget->clickSetBallUnsure(position(), false);
+				break;
+			default:
 				break;
 		}
 	} else {
 		switch(m_ballType) {
-			case solutionBall:
+			case KBBScalableGraphicWidget::solutionBall:
 				m_widget->clickAddBallNothing(position());
 				break;
-			case playerBall:
+			case KBBScalableGraphicWidget::playerBall:
 				m_widget->clickSetBallUnsure(position(), true);
 				break;
-			case unsureBall:
+			case KBBScalableGraphicWidget::unsureBall:
 				m_widget->clickAddBallNothing(position());
+				break;
+			default:
 				break;
 		}
 	}

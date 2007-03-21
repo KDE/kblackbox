@@ -38,7 +38,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBorder::KBBGraphicsItemBorder( const int borderPosition, const int columns, const int rows, const int offset)
+KBBGraphicsItemBorder::KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset)
 {
 	m_offset = offset;
 	

@@ -37,7 +37,9 @@ class QGraphicsScene;
 
 
 #include "kbbgraphicsitem.h"
+#include "kbbitemwithposition.h"
 class KBBScalableGraphicWidget;
+class KBBThemeManager;
 
 
 
@@ -46,12 +48,10 @@ class KBBScalableGraphicWidget;
  *
  * The item is general and can be a ball or other markers.
  */
-class KBBGraphicsItemOnBox : public KBBGraphicsItem
+class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 {
 	public:
-		enum itemType { ball, cross, nothing };
-		
-		KBBGraphicsItemOnBox(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type);
+		KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows);
 		
 		const int position();
 
@@ -66,7 +66,7 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem
 		void mousePressEvent (QGraphicsSceneMouseEvent*);
 		
 		int m_boxPosition;
-		itemType m_itemType;
+		KBBScalableGraphicWidget::itemType m_itemType;
 };
 
 #endif // KBBGRAPHICSITEMONBOX_H

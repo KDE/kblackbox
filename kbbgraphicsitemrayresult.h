@@ -39,7 +39,9 @@ class QGraphicsSvgItem;
 
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
+#include "kbbitemwithposition.h"
 class KBBScalableGraphicWidget;
+class KBBThemeManager;
 
 
 
@@ -51,10 +53,10 @@ class KBBScalableGraphicWidget;
  *   - REFLECTION: if the laser ray exits the black box at the entrance point.
  *   - A number to display both positions where the laser ray entered and exited the black box. Both positions are opposite positions of each other and belong together.
  */
-class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphicsItem
+class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphicsItem, public KBBItemWithPosition
 {
 	public:
-		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber);
+		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber);
 		~KBBGraphicsItemRayResult();
 
 		/**

@@ -39,6 +39,7 @@ class QTimer;
 #include "kbbgraphicsitemonbox.h"
 class KBBGraphicsItemInteractionInfo;
 class KBBScalableGraphicWidget;
+class KBBThemeManager;
 
 
 
@@ -54,9 +55,11 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 	public:
 		static const int TIME_TO_WAIT_BEFORE_SHOWING_INTERACTIONS = 1500;
 		
-		enum ballType { playerBall, unsureBall, solutionBall };
+		/**
+		 * @brief Constructor
+		 */
+		KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows);
 		
-		KBBGraphicsItemBall(KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, ballType type);
 		~KBBGraphicsItemBall();
 
 
@@ -71,9 +74,10 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 		void removeInteractionInfos();
 		
 		KBBGraphicsItemInteractionInfo* m_interactionInfos[8];
+		KBBThemeManager* m_themeManager;
 		QTimer* m_timer;
 		
-		ballType m_ballType;
+		KBBScalableGraphicWidget::itemType m_ballType;
 };
 
 #endif // KBBGRAPHICSITEMBALL_H

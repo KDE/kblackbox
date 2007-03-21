@@ -29,11 +29,10 @@
 
 
 
-#include <QGraphicsSvgItem>
-
-
 #include "kbbgraphicsiteminteractioninfo.h"
+#include "kbbgraphicsitem.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -41,14 +40,12 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraphicWidget* widget, interactionType type, const qreal x, const qreal y, const int rotation) : QGraphicsSvgItem()
+KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, interactionType type, const qreal x, const qreal y, const int rotation) : KBBGraphicsItem(KBBScalableGraphicWidget::interactionInfo, widget, themeManager)
 {
-	setSharedRenderer(widget->svgRenderer());
+	m_elementIdBase = themeManager->elementId(KBBScalableGraphicWidget::interactionInfo);
 	setPos(x, y);
 	setType(type);
 	rotate(rotation);
-	setZValue(KBBScalableGraphicWidget::ZVALUE_INTERACTION_INFO);
-	widget->addItem(this);
 }
 
 
@@ -59,21 +56,26 @@ KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraph
 
 void KBBGraphicsItemInteractionInfo::setType(interactionType type)
 {
+	//TODO change elementIds
+	QString s;
+	
 	switch (type) {
 		case deflection:
-			setElementId("infod");
+			s = "d";
 			break;
 		case reflection:
-			setElementId("infor");
+			s = "r";
 			break;
 		case reflectionSym:
-			setElementId("infos");
+			s = "s";
 			break;
 		case hit:
-			setElementId("infoh");
+			s = "h";
 			break;
 		case nothing:
-			setElementId("infon");
+			s = "n";
 			break;
 	}
+	
+	setElementId(m_elementIdBase + s);
 }

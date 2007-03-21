@@ -39,14 +39,12 @@ class QGraphicsScene;
 class QResizeEvent;
 
 
-#include <ksvgrenderer.h>
-
-
 class KBBBallsOnBoard;
 class KBBBoard;
 class KBBGraphicsItemBlackBox;
 class KBBGraphicsItemRay;
 class KBBGraphicsItemSet;
+class KBBThemeManager;
 
 
 
@@ -74,22 +72,19 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 */
 		static int const BORDER_SIZE = 100;
 		
-		
-		static int const ZVALUE_BLACKBOX_GRID = 30;
-		static int const ZVALUE_BLACKBOX = 40;
-		static int const ZVALUE_MARKER_NOTHING = 50;
-		static int const ZVALUE_SOLUTION_RAY = 60;
-		static int const ZVALUE_PLAYER_RAY = 70;
-		static int const ZVALUE_RAY_RESULT_BACKGROUND = 80;
-		static int const ZVALUE_RAY_RESULT_TEXT = 90;
-		static int const ZVALUE_BALL_RED = 100;
-		static int const ZVALUE_BALL_BLUE = 110;
-		static int const ZVALUE_BALL_CROSS = 120;
-		static int const ZVALUE_INTERACTION_INFO = 130;
-		static int const ZVALUE_LASER = 140;
+		/**
+		 * @brief Every graphic items
+		 *
+		 * Values are used to define the relative heigths between the displayed graphic items.
+		 * @see KBBThemeManager::zValue(const KBBScalableGraphicWidget::itemType itemType);
+		 */
+		enum itemType { blackbox=10, blackboxGrid=20, markerNothing=30, solutionRay=40, playerRay=50, resultBackground=60, resultReflection=70, resultHit=80, resultText=90, solutionBall=100, playerBall=110, unsureBall=120, wrongPlayerBall=130, interactionInfo=140, laser=150 };
 		
 		
-		KBBScalableGraphicWidget(KBBBoard* parent, const QString &theme);
+		/**
+		 * @brief Constructor
+		 */
+		explicit KBBScalableGraphicWidget(KBBBoard* parent);
 		
 		
 		void addItem(QGraphicsItem* item);
@@ -105,7 +100,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		void solve();
-		KSvgRenderer* svgRenderer();
 		int wHint() const;
 
 
@@ -157,7 +151,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		
 		int m_rows;
 		QGraphicsScene* m_scene;
-		KSvgRenderer m_svgRenderer;
+		KBBThemeManager* m_themeManager;
 };
 
 #endif // KBBSCALABLEGRAPHICWIDGET_H

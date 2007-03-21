@@ -35,7 +35,9 @@
 
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
+#include "kbbitemwithposition.h"
 class KBBScalableGraphicWidget;
+class KBBThemeManager;
 
 
 
@@ -46,7 +48,7 @@ class KBBScalableGraphicWidget;
  *
  * Note: The laser size should be so defined: width = width of a single box of the black box (RATIO), height = twice the size of single box of the black box (2*RATIO). The laser size is independent of the board border size.
  */
-class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsItem
+class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsItem, public KBBItemWithPosition
 {
 	public:
 		/**
@@ -57,7 +59,7 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsIte
 		 * @param columns Width of the Black Box
 		 * @param rows Height of the Black Box
 		 */
-		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, const int borderPosition, const int columns, const int rows);
+		KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int borderPosition, const int columns, const int rows);
 
 		/**
 		 * @brief Get the border position

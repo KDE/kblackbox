@@ -32,7 +32,7 @@
 #include <QGraphicsScene>
 
 
-#include "kbbgraphicsitem.h"
+#include "kbbitemwithposition.h"
 #include "kbbgraphicsitemset.h"
 
 
@@ -72,7 +72,7 @@ bool KBBGraphicsItemSet::contains(int position)
 }
 
 
-void KBBGraphicsItemSet::insert(KBBGraphicsItem* item)
+void KBBGraphicsItemSet::insert(KBBItemWithPosition* item)
 {
 	m_items.insert(item->position(), item);
 }

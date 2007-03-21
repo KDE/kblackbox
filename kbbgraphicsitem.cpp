@@ -4,9 +4,6 @@
 // A simple game inspired by an emacs module
 //
 /***************************************************************************
- *   Copyright (c) 1999-2000, Robert Cimrman                               *
- *   cimrman3@students.zcu.cz                                              *
- *                                                                         *
  *   Copyright (c) 2007, Nicolas Roffet                                    *
  *   nicolas-kde@roffet.com                                                *
  *                                                                         *
@@ -33,3 +30,20 @@
 
 
 #include "kbbgraphicsitem.h"
+#include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
+
+
+
+//
+// Constructor / Destructor
+//
+
+KBBGraphicsItem::KBBGraphicsItem(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager) : QGraphicsSvgItem()
+{
+	setSharedRenderer(themeManager->svgRenderer());
+	setElementId(themeManager->elementId(itemType));
+	setZValue(themeManager->zValue(itemType));
+	
+	widget->addItem(this);
+}

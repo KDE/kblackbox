@@ -41,6 +41,7 @@
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemray.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -48,17 +49,18 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRay::KBBGraphicsItemRay( QGraphicsScene* scene, QColor color, const qreal width, Qt::PenStyle style, const int zValue) : KBBGraphicsItemBorder(0, 1, 1, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem ( 0, scene )
+KBBGraphicsItemRay::KBBGraphicsItemRay(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager) : KBBGraphicsItemBorder(0, 1, 1, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem (0, scene)
 {
 	QPen pen;
 	
-	pen.setColor(color);
-	pen.setStyle(style);
-	pen.setWidthF(width);
-	setZValue(zValue);
+	pen.setColor(themeManager->color(itemType));
+	pen.setStyle(themeManager->style(itemType));
+	pen.setWidthF(themeManager->width(itemType));
+	setZValue(themeManager->zValue(itemType));
 	
 	pen.setJoinStyle(Qt::RoundJoin);
 	pen.setCapStyle(Qt::RoundCap);
+	
 	setPen(pen);
 }
 

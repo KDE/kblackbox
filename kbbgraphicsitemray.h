@@ -40,7 +40,8 @@ class QGraphicsScene;
 
 class KBBBallsOnBoard;
 #include "kbbgraphicsitemborder.h"
-class KBBScalableGraphicWidget;
+#include "kbbscalablegraphicwidget.h"
+class KBBThemeManager;
 
 
 
@@ -51,7 +52,12 @@ class KBBScalableGraphicWidget;
 class KBBGraphicsItemRay : public KBBGraphicsItemBorder, public QGraphicsPathItem
 {
 	public:
-		KBBGraphicsItemRay(QGraphicsScene* scene, QColor color, const qreal width, Qt::PenStyle style, const int zValue);
+		//KBBGraphicsItemRay(QGraphicsScene* scene, QColor color, const qreal width, Qt::PenStyle style, const int zValue);
+		/**
+		 * @brief Constructor
+		 */
+		KBBGraphicsItemRay(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager);
+		
 		
 		void draw(KBBBallsOnBoard* ballsOnBoard, const int borderPosition);
 		void hide();

@@ -36,7 +36,9 @@
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemonbox.h"
 #include "kbbgraphicsiteminteractioninfo.h"
+#include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -44,32 +46,15 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemOnBox::KBBGraphicsItemOnBox( KBBScalableGraphicWidget* parent, const int boxPosition, const int columns, const int rows, itemType type) : KBBGraphicsItem()
+KBBGraphicsItemOnBox::KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows) : KBBGraphicsItem(itemType, parent, themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
 	m_boxPosition = boxPosition;
 	m_columns = columns;
 	m_rows = rows;
-	m_itemType = type;
+	m_itemType = itemType;
 	
-	setSharedRenderer(m_widget->svgRenderer());
 	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns));
-	
-	switch (m_itemType) {
-		case ball:
-			// Do nothing. It's implemented in the sub-class KBBGraphicsItemBall
-			break;
-		case cross:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_BALL_CROSS);
-			setElementId("cross");
-			break;
-		case nothing:
-			setZValue(KBBScalableGraphicWidget::ZVALUE_MARKER_NOTHING);
-			setElementId("nothing");
-			break;
-	}
-	
-	m_widget->addItem(this);
 }
 
 
@@ -91,7 +76,7 @@ const int KBBGraphicsItemOnBox::position ()
 
 void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	if (m_itemType==nothing) {
+	if (m_itemType==KBBScalableGraphicWidget::markerNothing) {
 		if (event->buttons()==Qt::LeftButton)
 			m_widget->clickAddBall(position());
 		else

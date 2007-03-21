@@ -53,7 +53,7 @@ KBBBoard::KBBBoard(KBBMainWindow *parent) : QObject(parent)
 
 	random.setSeed(0);
 
-	gr = new KBBScalableGraphicWidget( this, "pics/kblackbox.svgz" );
+	gr = new KBBScalableGraphicWidget(this);
 
 	connect( gr, SIGNAL(endMouseClicked()), parent, SLOT(solve()) );
 

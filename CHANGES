@@ -1,3 +1,7 @@
+2007-03-21 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Code refactoring to better manage themes.
+	* The black box grid can now be custumized within the theme file (like the laser rays) with the XML node id="blackbox_grid".
+
 2007-03-11 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Preparation for Oxygenation: the laser ray attributes (color, width and style) are now customizable. The rays are not SVG elements but their attributes are defined in the SVG file and parsed.
 	* Correction of a (new) bug in the "solve" methode: Balls marked as "unsure" were not considered as placed balls.

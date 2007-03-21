@@ -36,7 +36,7 @@
 class QGraphicsScene;
 
 
-class KBBGraphicsItem;
+class KBBItemWithPosition;
 #include <QMap>
 
 
@@ -52,13 +52,13 @@ class KBBGraphicsItemSet
 		
 		void clear();
 		bool contains(int position);
-		void insert(KBBGraphicsItem* item);
+		void insert(KBBItemWithPosition* item);
 		void remove(int position);
 
 
 	private:
 		QGraphicsScene* m_scene;
-		QMap<int, KBBGraphicsItem*> m_items;
+		QMap<int, KBBItemWithPosition*> m_items;
 };
 
 #endif // KBBGRAPHICSITEMSET_H

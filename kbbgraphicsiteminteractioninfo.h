@@ -33,10 +33,12 @@
 #define KBBGRAPHICSITEMINTERACTIONINFO_H
 
 
-#include <QGraphicsSvgItem>
+#include <QString>
 
 
-#include "kbbscalablegraphicwidget.h"
+#include "kbbgraphicsitem.h"
+class KBBScalableGraphicWidget;
+class KBBThemeManager;
 
 
 
@@ -45,14 +47,21 @@
  *
  * Some signs around the ball the player is pointing on are been displayed to show how a laser ray interacts with the ball.
  */
-class KBBGraphicsItemInteractionInfo : public QGraphicsSvgItem
+class KBBGraphicsItemInteractionInfo : public KBBGraphicsItem
 {
 	public:
 		enum interactionType { deflection, reflection, reflectionSym, hit, nothing };
 		
-		KBBGraphicsItemInteractionInfo(KBBScalableGraphicWidget* widget, interactionType type, const qreal x, const qreal y, const int rotation);
-
+		/**
+		 * @brief Constructor
+		 */
+		KBBGraphicsItemInteractionInfo(KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, interactionType type, const qreal x, const qreal y, const int rotation);
+		
 		void setType(interactionType type);
+
+
+	private:
+		QString m_elementIdBase;
 };
 
 #endif // KBBGRAPHICSITEMINTERACTIONINFO_H

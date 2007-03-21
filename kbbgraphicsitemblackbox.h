@@ -36,10 +36,11 @@
 class QGraphicsLineItem;
 #include <QGraphicsRectItem>
 class QGraphicsScene;
-class QGraphicsSvgItem;
 #include <QList>
+#include <QPen>
 
 
+class KBBGraphicsItem;
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -51,7 +52,10 @@ class QGraphicsSvgItem;
 class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 {
 	public:
-		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene);
+		/**
+		 * @brief Constructor
+		 */
+		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, KBBThemeManager* themeManager);
 		
 		/**
 		 * @brief Define the (new) size of the black box
@@ -64,12 +68,14 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 	private:
 		void mousePressEvent (QGraphicsSceneMouseEvent* event);
 		
-		QGraphicsSvgItem* m_background;
+		KBBGraphicsItem* m_background;
 		int m_columns;
 		QList<QGraphicsLineItem*> m_lines;
+		QPen m_penLines;
 		int m_rows;
 		QGraphicsScene* m_scene;
 		KBBScalableGraphicWidget* m_widget;
+		int m_zValueLines;
 };
 
 #endif // KBBGRAPHICSITEMBLACKBOX_H

@@ -20,9 +20,10 @@ set(kblackbox_SRCS
     kbbgraphicsitemray.cpp
     kbbgraphicsitemrayresult.cpp
     kbbgraphicsitemset.cpp
+    kbbitemwithposition.cpp
     kbbmainwindow.cpp 
     kbbscalablegraphicwidget.cpp
-    kbbscalablegraphicwidgetnonsvgitems.cpp
+    kbbthememanager.cpp
     main.cpp
     )
 

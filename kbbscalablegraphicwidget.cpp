@@ -50,7 +50,7 @@
 #include "kbbgraphicsitemrayresult.h"
 #include "kbbgraphicsitemset.h"
 #include "kbbscalablegraphicwidget.h"
-#include "kbbscalablegraphicwidgetnonsvgitems.h"
+#include "kbbthememanager.h"
 
 
 
@@ -58,30 +58,29 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent, const QString &theme) : QGraphicsView()
+KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphicsView()
 {
 	m_board = parent;
 	m_columns = 1;
 	m_rows = 1;
 	
-	QString svgzFile = KStandardDirs::locate("appdata", theme);
-	m_svgRenderer.load(svgzFile);
+	QString svgzFile = KStandardDirs::locate("appdata", "pics/kblackbox.svgz");
+	m_themeManager = new KBBThemeManager(svgzFile);
 	
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
-	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene);
 	
+	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_themeManager);
 	m_balls = new KBBGraphicsItemSet(m_scene);
 	m_ballsNothing = new KBBGraphicsItemSet(m_scene);
 	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
 	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
 	m_lasers = new KBBGraphicsItemSet(m_scene);
 	m_rayResults = new KBBGraphicsItemSet(m_scene);
-
-	// Get ray attributes from SVG file
-	KBBScalableGraphicWidgetNonSvgItems nonSvgItems(svgzFile);
-
-	m_playerRay = new KBBGraphicsItemRay(m_scene, nonSvgItems.color("player_ray"), nonSvgItems.width("player_ray"), nonSvgItems.style("player_ray"), ZVALUE_PLAYER_RAY);
-	m_solutionRay = new KBBGraphicsItemRay(m_scene, nonSvgItems.color("solution_ray"), nonSvgItems.width("solution_ray"), nonSvgItems.style("solution_ray"), ZVALUE_SOLUTION_RAY);
+	
+	
+	m_playerRay = new KBBGraphicsItemRay(playerRay, m_scene, m_themeManager);
+	m_solutionRay = new KBBGraphicsItemRay(solutionRay, m_scene, m_themeManager);
+	
 	
 	this->setScene(m_scene);
 }
@@ -103,7 +102,7 @@ void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 {
 	if (m_inputAccepted && (!m_balls->contains(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
-		m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::playerBall));
+		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_ballsNothing->remove(boxPosition);
 	}
 }
@@ -112,7 +111,7 @@ void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 void KBBScalableGraphicWidget::clickAddBallNothing(const int boxPosition)
 {
 	if (m_inputAccepted && (!m_ballsNothing->contains(boxPosition))) {
-		m_ballsNothing->insert(new KBBGraphicsItemOnBox(this, boxPosition, m_columns, m_rows, KBBGraphicsItemOnBox::nothing));
+		m_ballsNothing->insert(new KBBGraphicsItemOnBox(markerNothing, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_balls->remove(boxPosition);
 		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
@@ -134,10 +133,10 @@ void KBBScalableGraphicWidget::clickLaser(const int incomingPosition)
 		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBBoard::HIT_POSITION)) {
 			m_rayNumber++;
 			m_lasers->remove(outgoingPosition);
-			m_rayResults->insert(outRay = new KBBGraphicsItemRayResult(this, m_scene,  outgoingPosition, m_columns, m_rows, m_rayNumber));
+			m_rayResults->insert(outRay = new KBBGraphicsItemRayResult(this, m_themeManager, m_scene, outgoingPosition, m_columns, m_rows, m_rayNumber));
 			rayNumberOrReflection = m_rayNumber;
 		}
-		m_rayResults->insert(inRay = new KBBGraphicsItemRayResult(this, m_scene, incomingPosition, m_columns, m_rows, rayNumberOrReflection));
+		m_rayResults->insert(inRay = new KBBGraphicsItemRayResult(this, m_themeManager, m_scene, incomingPosition, m_columns, m_rows, rayNumberOrReflection));
 		
 		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBBoard::HIT_POSITION)) {
 			inRay->setOpposite(outRay);
@@ -173,10 +172,10 @@ void KBBScalableGraphicWidget::clickSetBallUnsure(const int boxPosition, const b
 	if (m_inputAccepted) {
 		if (unsure) {
 			m_balls->remove(boxPosition);
-			m_ballsUnsure->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::unsureBall));
+			m_ballsUnsure->insert(new KBBGraphicsItemBall(unsureBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		} else {
 			m_ballsUnsure->remove(boxPosition);
-			m_balls->insert(new KBBGraphicsItemBall(this, boxPosition, m_columns, m_rows, KBBGraphicsItemBall::playerBall));
+			m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		}
 	}
 }
@@ -220,7 +219,7 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 
 	// Place new lasers
 	for (int i=0; i<2*(m_columns + m_rows); i++)
-		m_lasers->insert(new KBBGraphicsItemLaser(this, i, m_columns, m_rows));
+		m_lasers->insert(new KBBGraphicsItemLaser(this, m_themeManager, i, m_columns, m_rows));
 }
 
 
@@ -256,15 +255,10 @@ void KBBScalableGraphicWidget::solve()
 {
 	for (int i=0; i<(m_columns * m_rows); i++) {
 		if ((m_balls->contains(i) || m_ballsUnsure->contains(i)) && !m_boardBalls->contains(i))
-			m_ballsSolution->insert(new KBBGraphicsItemOnBox(this, i, m_columns, m_rows, KBBGraphicsItemOnBox::cross));
+			m_ballsSolution->insert(new KBBGraphicsItemOnBox(wrongPlayerBall, this, m_themeManager, i, m_columns, m_rows));
 		if (!m_balls->contains(i) && !m_ballsUnsure->contains(i) && m_boardBalls->contains(i))
-			m_ballsSolution->insert(new KBBGraphicsItemBall(this, i, m_columns, m_rows, KBBGraphicsItemBall::solutionBall));
+			m_ballsSolution->insert(new KBBGraphicsItemBall(solutionBall, this, m_themeManager, i, m_columns, m_rows));
 	}
-}
-
-
-KSvgRenderer* KBBScalableGraphicWidget::svgRenderer() {
-	return &m_svgRenderer;
 }
 
 
@@ -330,7 +324,8 @@ void KBBScalableGraphicWidget::slotUp()
 
 void KBBScalableGraphicWidget::drawBackground(QPainter* painter, const QRectF&)
 {
-	m_svgRenderer.render(painter, "background", m_rectBackground);
+	// TODO: Change this to fix a small bug!!
+	m_themeManager->svgRenderer()->render(painter, "background", m_rectBackground);
 }
 
 #include "kbbscalablegraphicwidget.moc"

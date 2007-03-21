@@ -36,7 +36,9 @@
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemrayresult.h"
+#include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -44,7 +46,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), KBBGraphicsItem()
+KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), KBBGraphicsItem(KBBScalableGraphicWidget::resultBackground, parent, themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
 	m_scene = scene;
@@ -56,24 +58,18 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 
 	m_opposite = this;
 	
-	setSharedRenderer(parent->svgRenderer());
-	setElementId("result");
 	setPos(m_centerX - radius, m_centerY - radius);
-	parent->addItem(this);
-	setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_BACKGROUND);
 	
 	if(rayNumber<=0) {
-		m_notNumber = new QGraphicsSvgItem(this);
-		m_notNumber->setSharedRenderer(m_widget->svgRenderer());
-		m_notNumber->setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_TEXT);
-		translate(radius,radius);
-		rotate(rotation());
-		translate(-radius,-radius);
-		m_widget->addItem(m_notNumber);
+
 		if (rayNumber==0)
-			m_notNumber->setElementId("reflection");
+			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultReflection, m_widget, themeManager);
 		else
-			m_notNumber->setElementId("hit");
+			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultHit, m_widget, themeManager);
+		m_notNumber->translate(radius,radius);
+		m_notNumber->rotate(rotation());
+		m_notNumber->translate(-radius,-radius);
+		m_notNumber->setPos(m_centerX - radius, m_centerY - radius);
 	} else {
 		QString text;
 		text.setNum(rayNumber);
@@ -92,7 +88,7 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 		}
 		m_number->setFont(font);
 		m_number->setPos(radius - centerRadius/2 - 2*offset, radius - centerRadius + offset);
-		m_number->setZValue(KBBScalableGraphicWidget::ZVALUE_RAY_RESULT_TEXT);
+		m_number->setZValue(themeManager->zValue(KBBScalableGraphicWidget::resultText));
 	}
 	setAcceptsHoverEvents(true);
 }

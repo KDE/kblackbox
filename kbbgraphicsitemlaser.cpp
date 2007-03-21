@@ -30,13 +30,14 @@
 
 
 #include <QString>
-#include <QSvgRenderer>
 
 
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemlaser.h"
+#include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -44,14 +45,11 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemLaser::KBBGraphicsItemLaser( KBBScalableGraphicWidget* parent, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder( borderPosition, columns, rows, 0), KBBGraphicsItem()
+KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder(borderPosition, columns, rows, 0), KBBGraphicsItem(KBBScalableGraphicWidget::laser, parent, themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
 
-	setSharedRenderer(parent->svgRenderer());
-	setElementId(QString("laser_%1").arg(rotation()));
-	parent->addItem(this);
-	setZValue(KBBScalableGraphicWidget::ZVALUE_LASER);
+	setElementId(themeManager->elementId(KBBScalableGraphicWidget::laser) + QString("_%1").arg(rotation()));
 
 	const int radius = KBBScalableGraphicWidget::RATIO/2;
 	if (rotation()==90) {

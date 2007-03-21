@@ -33,13 +33,13 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsLineItem>
 #include <QGraphicsRectItem>
-#include <QGraphicsSvgItem>
 #include <QPen>
-#include <QSvgRenderer>
 
 
+#include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemblackbox.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -47,19 +47,21 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox( KBBScalableGraphicWidget* parent, QGraphicsScene* scene) : QGraphicsRectItem (0, scene )
+KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsRectItem (0, scene)
 {
 	m_columns = 1;
 	m_rows = 1;
 	m_widget = parent;
 	m_scene = scene;
 
-	m_background = new QGraphicsSvgItem(this);
-	m_background->setSharedRenderer(m_widget->svgRenderer());
-	m_background->setElementId("blackbox");
-	m_background->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX);
-
-	m_widget->addItem(m_background);
+	m_background = new KBBGraphicsItem(KBBScalableGraphicWidget::blackbox, m_widget, themeManager);
+	
+	//Grid
+	const KBBScalableGraphicWidget::itemType g = KBBScalableGraphicWidget::blackboxGrid;
+	m_zValueLines = themeManager->zValue(g);
+	m_penLines.setColor(themeManager->color(g));
+	m_penLines.setStyle(themeManager->style(g));
+	m_penLines.setWidthF(themeManager->width(g));
 }
 
 
@@ -94,11 +96,8 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 		
 		// set line style
 		for (int i=0; i<m_lines.count(); i++) {
-			QPen pen(Qt::DashLine);
-			pen.setColor(Qt::black);
-			pen.setWidth(0);
-			m_lines[i]->setPen(pen);
-			m_lines[i]->setZValue(KBBScalableGraphicWidget::ZVALUE_BLACKBOX_GRID);
+			m_lines[i]->setPen(m_penLines);
+			m_lines[i]->setZValue(m_zValueLines);
 		}
 		m_background->setPos(b, b);
 	}

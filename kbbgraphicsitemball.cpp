@@ -164,13 +164,13 @@ void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	} else {
 		switch(m_ballType) {
 			case KBBScalableGraphicWidget::solutionBall:
-				m_widget->clickAddBallNothing(position());
+				m_widget->clickAddMarkerNothing(position());
 				break;
 			case KBBScalableGraphicWidget::playerBall:
 				m_widget->clickSetBallUnsure(position(), true);
 				break;
 			case KBBScalableGraphicWidget::unsureBall:
-				m_widget->clickAddBallNothing(position());
+				m_widget->clickAddMarkerNothing(position());
 				break;
 			default:
 				break;

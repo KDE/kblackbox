@@ -72,7 +72,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 	
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_themeManager);
 	m_balls = new KBBGraphicsItemSet(m_scene);
-	m_ballsNothing = new KBBGraphicsItemSet(m_scene);
+	m_markersNothing = new KBBGraphicsItemSet(m_scene);
 	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
 	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
 	m_lasers = new KBBGraphicsItemSet(m_scene);
@@ -102,15 +102,15 @@ void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 	if (m_inputAccepted && (!m_balls->contains(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
 		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
-		m_ballsNothing->remove(boxPosition);
+		m_markersNothing->remove(boxPosition);
 	}
 }
 
 
-void KBBScalableGraphicWidget::clickAddBallNothing(const int boxPosition)
+void KBBScalableGraphicWidget::clickAddMarkerNothing(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_ballsNothing->contains(boxPosition))) {
-		m_ballsNothing->insert(new KBBGraphicsItemOnBox(markerNothing, this, m_themeManager, boxPosition, m_columns, m_rows));
+	if (m_inputAccepted && (!m_markersNothing->contains(boxPosition))) {
+		m_markersNothing->insert(new KBBGraphicsItemOnBox(markerNothing, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_balls->remove(boxPosition);
 		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
@@ -158,10 +158,10 @@ void KBBScalableGraphicWidget::clickRemoveBall(const int boxPosition)
 }
 
 
-void KBBScalableGraphicWidget::clickRemoveBallNothing(const int boxPosition)
+void KBBScalableGraphicWidget::clickRemoveMarkerNothing(const int boxPosition)
 {
 	if (m_inputAccepted) {
-		m_ballsNothing->remove(boxPosition);
+		m_markersNothing->remove(boxPosition);
 	}
 }
 
@@ -200,7 +200,7 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 	m_rayResults->clear();
 	m_balls->clear();
 	m_ballsUnsure->clear();
-	m_ballsNothing->clear();
+	m_markersNothing->clear();
 	m_ballsSolution->clear();
 
 	// set the new size if needed

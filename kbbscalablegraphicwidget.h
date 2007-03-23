@@ -90,10 +90,10 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		
 		void addItem(QGraphicsItem* item);
 		void clickAddBall(const int boxPosition);
-		void clickAddBallNothing(const int boxPosition);
+		void clickAddMarkerNothing(const int boxPosition);
 		void clickLaser(const int incomingPosition);
 		void clickRemoveBall(const int boxPosition);
-		void clickRemoveBallNothing(const int boxPosition);
+		void clickRemoveMarkerNothing(const int boxPosition);
 		void clickSetBallUnsure(const int boxPosition, const bool unsure);
 		void drawRay(const int borderPosition);
 		void newGame(const int columns, const int rows, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced);
@@ -111,10 +111,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void slotUp();
 
 
-	signals:
-		void endMouseClicked();
-
-
 	protected:
 		void drawBackground(QPainter* painter, const QRectF&);
 
@@ -123,7 +119,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		// Graphics items
 		KBBGraphicsItemBlackBox* m_blackbox;
 		KBBGraphicsItemSet* m_balls;
-		KBBGraphicsItemSet* m_ballsNothing;
+		KBBGraphicsItemSet* m_markersNothing;
 		KBBGraphicsItemSet* m_ballsSolution;
 		KBBGraphicsItemSet* m_ballsUnsure;
 		KBBGraphicsItemSet* m_lasers;

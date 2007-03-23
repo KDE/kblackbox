@@ -80,6 +80,6 @@ void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 		if (event->buttons()==Qt::LeftButton)
 			m_widget->clickAddBall(position());
 		else
-			m_widget->clickRemoveBallNothing(position());
+			m_widget->clickRemoveMarkerNothing(position());
 	}
 }

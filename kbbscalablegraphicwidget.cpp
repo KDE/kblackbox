@@ -64,6 +64,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 	m_columns = 1;
 	m_rows = 1;
 	
+	
 	QString svgzFile = KStandardDirs::locate("appdata", "pics/kblackbox.svgz");
 	m_themeManager = new KBBThemeManager(svgzFile);
 	
@@ -76,7 +77,6 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
 	m_lasers = new KBBGraphicsItemSet(m_scene);
 	m_rayResults = new KBBGraphicsItemSet(m_scene);
-	
 	
 	m_playerRay = new KBBGraphicsItemRay(playerRay, m_scene, m_themeManager);
 	m_solutionRay = new KBBGraphicsItemRay(solutionRay, m_scene, m_themeManager);
@@ -226,20 +226,22 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 void KBBScalableGraphicWidget::resizeEvent( QResizeEvent* )
 {
 	// 1. Compute the size of m_rectBackground
-	const qreal offset = 10 ;
-	if (m_scene->height()*width() > m_scene->width()*height()) {
+	const qreal sW = m_scene->width();
+	const qreal sH = m_scene->height();
+	const qreal wW = width();
+	const qreal wH = height();
+	const qreal offset = (sH+sW)/100 ;
+	if (sH*wW > sW*wH) {
 		// The widget is larger than the scene
-		qreal w =  width()*m_scene->height()/height();
-		qreal x = (m_scene->width()-w)/2;
-		m_rectBackground.setRect(x - offset, - offset, w + 2*offset, m_scene->height() + 2*offset);
+		qreal w =  wW*sH/wH;
+		m_rectBackground.setRect((sW-w)/2-offset, -offset, w + 2*offset, sH + 2*offset);
 	} else {
 		// The scene is larger than the widget (or as large)
-		qreal h =  height()*m_scene->width()/width();
-		qreal y = (m_scene->height()-h)/2;
-		m_rectBackground.setRect(-offset, y - offset, m_scene->width() + 2*offset, h + 2*offset);
+		qreal h =  wH*sW/wW;
+		m_rectBackground.setRect(-offset, (sH-h)/2-offset, sW + 2*offset, h + 2*offset);
 	}
 	
-	// 2. Resize the scene
+	// 2. Resize the scene to fit in the widget
 	fitInView(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE, Qt::KeepAspectRatio);
 }
 
@@ -316,16 +318,13 @@ void KBBScalableGraphicWidget::slotUp()
 }
 
 
-
 //
 // Protected
 //
 
-
 void KBBScalableGraphicWidget::drawBackground(QPainter* painter, const QRectF&)
 {
-	// TODO: Change this to fix a small bug!!
-	m_themeManager->svgRenderer()->render(painter, "background", m_rectBackground);
+	m_themeManager->svgRenderer()->render(painter, m_themeManager->elementId(background), m_rectBackground);
 }
 
 #include "kbbscalablegraphicwidget.moc"

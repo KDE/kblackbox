@@ -41,6 +41,7 @@ class QResizeEvent;
 
 class KBBBallsOnBoard;
 class KBBBoard;
+class KBBGraphicsItem;
 class KBBGraphicsItemBlackBox;
 class KBBGraphicsItemRay;
 class KBBGraphicsItemSet;
@@ -78,7 +79,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * Values are used to define the relative heigths between the displayed graphic items.
 		 * @see KBBThemeManager::zValue(const KBBScalableGraphicWidget::itemType itemType);
 		 */
-		enum itemType { blackbox=10, blackboxGrid=20, markerNothing=30, solutionRay=40, playerRay=50, resultBackground=60, resultReflection=70, resultHit=80, resultText=90, solutionBall=100, playerBall=110, unsureBall=120, wrongPlayerBall=130, interactionInfo=140, laser=150 };
+		enum itemType { background=0, blackbox=1, blackboxGrid=2, markerNothing=3, solutionRay=4, playerRay=5, resultBackground=6, resultBackgroundHighlight=7, resultReflection=8, resultHit=9, resultText=10, solutionBall=11, playerBall=12, unsureBall=13, wrongPlayerBall=14,  interactionInfoDeflection=15, interactionInfoHit=16, interactionInfoNothing=17, interactionInfoReflection=18, interactionInfoReflectionSym=19, laser0=20, laser90=21, laser180=22, laser270=23 };
 		
 		
 		/**
@@ -133,14 +134,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		KBBGraphicsItemRay* m_solutionRay;
 		
 		
-		// Various member variables
-		KBBBoard* m_board;
-		KBBBallsOnBoard* m_boardBalls;
-		KBBBallsOnBoard* m_boardBallsPlaced;
-		int m_columns;
-		bool m_inputAccepted;
-		int m_rayNumber;
-		
 		/**
 		 * @brief Position and size of the background in scene coordinates
 		 *
@@ -148,6 +141,14 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * @see drawBackground(QPainter* painter, const QRectF&)
 		 */
 		QRectF m_rectBackground;
+		
+		// Various member variables
+		KBBBoard* m_board;
+		KBBBallsOnBoard* m_boardBalls;
+		KBBBallsOnBoard* m_boardBallsPlaced;
+		int m_columns;
+		bool m_inputAccepted;
+		int m_rayNumber;
 		
 		int m_rows;
 		QGraphicsScene* m_scene;

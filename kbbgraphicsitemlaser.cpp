@@ -45,12 +45,10 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder(borderPosition, columns, rows, 0), KBBGraphicsItem(KBBScalableGraphicWidget::laser, parent, themeManager), KBBItemWithPosition()
+KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder(borderPosition, columns, rows, 0), KBBGraphicsItem(((borderPosition<columns) ? KBBScalableGraphicWidget::laser0 : ((borderPosition<columns + rows) ? KBBScalableGraphicWidget::laser90 : ((borderPosition<2*columns + rows) ? KBBScalableGraphicWidget::laser180 : KBBScalableGraphicWidget::laser270))) , parent, themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
-
-	setElementId(themeManager->elementId(KBBScalableGraphicWidget::laser) + QString("_%1").arg(rotation()));
-
+	
 	const int radius = KBBScalableGraphicWidget::RATIO/2;
 	if (rotation()==90) {
 		setPos(m_centerX - 3*radius, m_centerY - radius);

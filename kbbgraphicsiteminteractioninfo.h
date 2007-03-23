@@ -50,18 +50,17 @@ class KBBThemeManager;
 class KBBGraphicsItemInteractionInfo : public KBBGraphicsItem
 {
 	public:
-		enum interactionType { deflection, reflection, reflectionSym, hit, nothing };
-		
 		/**
 		 * @brief Constructor
 		 */
-		KBBGraphicsItemInteractionInfo(KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, interactionType type, const qreal x, const qreal y, const int rotation);
+		KBBGraphicsItemInteractionInfo(KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, KBBScalableGraphicWidget::itemType type, const qreal x, const qreal y, const int rotation);
 		
-		void setType(interactionType type);
+		void setType(KBBScalableGraphicWidget::itemType type);
 
 
 	private:
 		QString m_elementIdBase;
+		KBBThemeManager* m_themeManager;
 };
 
 #endif // KBBGRAPHICSITEMINTERACTIONINFO_H

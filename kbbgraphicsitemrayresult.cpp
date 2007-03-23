@@ -50,6 +50,8 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 {
 	m_widget = parent;
 	m_scene = scene;
+	m_elementIdResultBackground = themeManager->elementId(KBBScalableGraphicWidget::resultBackground);
+	m_elementIdResultBackgroundHighlight = themeManager->elementId(KBBScalableGraphicWidget::resultBackgroundHighlight);
 	m_number = NULL;
 	m_notNumber = NULL;
 	
@@ -109,9 +111,9 @@ KBBGraphicsItemRayResult::~KBBGraphicsItemRayResult()
 void KBBGraphicsItemRayResult::highlight(bool state)
 {
 	if (state)
-		setElementId("resulthighlight");
+		setElementId(m_elementIdResultBackgroundHighlight);
 	else
-		setElementId("result");
+		setElementId(m_elementIdResultBackground);
 }
 
 

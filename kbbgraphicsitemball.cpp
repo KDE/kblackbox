@@ -83,15 +83,15 @@ void KBBGraphicsItemBall::showInteractions()
 	for (int i=0; i<8;i++) {
 		posX = x() - KBBScalableGraphicWidget::RATIO/2 + offsetX[i]*KBBScalableGraphicWidget::RATIO;
 		posY = y() - KBBScalableGraphicWidget::RATIO/2 + offsetY[i]*KBBScalableGraphicWidget::RATIO;
-		KBBGraphicsItemInteractionInfo::interactionType type = KBBGraphicsItemInteractionInfo::deflection;
+		KBBScalableGraphicWidget::itemType type = KBBScalableGraphicWidget::interactionInfoDeflection;
 		if (i%2 == 1)
-			type = KBBGraphicsItemInteractionInfo::hit;
+			type = KBBScalableGraphicWidget::interactionInfoHit;
 		m_interactionInfos[i] = new KBBGraphicsItemInteractionInfo(m_widget, m_themeManager, type, posX, posY, i*45 );
 	}
 	
 	// If the ball is on a border:
-	const KBBGraphicsItemInteractionInfo::interactionType r = KBBGraphicsItemInteractionInfo::reflection;
-	const KBBGraphicsItemInteractionInfo::interactionType rS = KBBGraphicsItemInteractionInfo::reflectionSym;
+	const KBBScalableGraphicWidget::itemType r = KBBScalableGraphicWidget::interactionInfoReflection;
+	const KBBScalableGraphicWidget::itemType rS = KBBScalableGraphicWidget::interactionInfoReflectionSym;
 	if (position()<m_columns) {
 		m_interactionInfos[0]->setType(r);
 		m_interactionInfos[2]->setType(rS);
@@ -110,7 +110,7 @@ void KBBGraphicsItemBall::showInteractions()
 	}
 	
 	// If the ball is on a corner:
-	const KBBGraphicsItemInteractionInfo::interactionType n = KBBGraphicsItemInteractionInfo::nothing;
+	const KBBScalableGraphicWidget::itemType n = KBBScalableGraphicWidget::interactionInfoNothing;
 	if (position()==0)
 		m_interactionInfos[0]->setType(n);
 	if (position()==m_columns-1)

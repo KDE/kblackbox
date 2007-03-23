@@ -40,12 +40,12 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, interactionType type, const qreal x, const qreal y, const int rotation) : KBBGraphicsItem(KBBScalableGraphicWidget::interactionInfo, widget, themeManager)
+KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, KBBScalableGraphicWidget::itemType type, const qreal x, const qreal y, const int rotation) : KBBGraphicsItem(KBBScalableGraphicWidget::interactionInfoNothing, widget, themeManager)
 {
-	m_elementIdBase = themeManager->elementId(KBBScalableGraphicWidget::interactionInfo);
+	m_themeManager = themeManager;
 	setPos(x, y);
-	setType(type);
 	rotate(rotation);
+	setType(type);
 }
 
 
@@ -54,28 +54,7 @@ KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraph
 // Public
 //
 
-void KBBGraphicsItemInteractionInfo::setType(interactionType type)
+void KBBGraphicsItemInteractionInfo::setType(KBBScalableGraphicWidget::itemType type)
 {
-	//TODO change elementIds
-	QString s;
-	
-	switch (type) {
-		case deflection:
-			s = "d";
-			break;
-		case reflection:
-			s = "r";
-			break;
-		case reflectionSym:
-			s = "s";
-			break;
-		case hit:
-			s = "h";
-			break;
-		case nothing:
-			s = "n";
-			break;
-	}
-	
-	setElementId(m_elementIdBase + s);
+	setElementId(m_themeManager->elementId(type));
 }

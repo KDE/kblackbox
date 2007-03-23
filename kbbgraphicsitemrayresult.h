@@ -84,6 +84,8 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
 		
+		QString m_elementIdResultBackground;
+		QString m_elementIdResultBackgroundHighlight;
 		QGraphicsSvgItem* m_notNumber;
 		QGraphicsSimpleTextItem* m_number;
 		KBBGraphicsItemRayResult* m_opposite;

@@ -83,58 +83,74 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 	QString eId;
 	
 	switch (itemType) {
+		case KBBScalableGraphicWidget::background:
+			eId = "background";
+			break;
 		case KBBScalableGraphicWidget::blackbox:
 			eId = "blackbox";
 			break;
 		case KBBScalableGraphicWidget::blackboxGrid:
 			eId = "blackbox_grid";
 			break;
-		case KBBScalableGraphicWidget::interactionInfo:
-			//TODO change
-			eId = "info";
-			//Note: Use "infod", "infor", "infos", "infoh" and "infon" in the SVG file, depending on the kind of interaction. "info" alone is not used.
+		case KBBScalableGraphicWidget::interactionInfoDeflection:
+			eId = "interaction_info_deflection";
 			break;
-		case KBBScalableGraphicWidget::laser:
-			eId = "laser";
-			//Note: Use "laser_0", "laser_90", "laser_180" and "laser_270" in the SVG file, depending on the direction of the laser. "laser" alone is not used.
+		case KBBScalableGraphicWidget::interactionInfoHit:
+			eId = "interaction_info_hit";
+			break;
+		case KBBScalableGraphicWidget::interactionInfoNothing:
+			eId = "interaction_info_nothing";
+			break;
+		case KBBScalableGraphicWidget::interactionInfoReflection:
+			eId = "interaction_info_reflection";
+			break;
+		case KBBScalableGraphicWidget::interactionInfoReflectionSym:
+			eId = "interaction_info_reflection_sym";
+			break;
+		case KBBScalableGraphicWidget::laser0:
+			eId = "laser_0";
+			break;
+		case KBBScalableGraphicWidget::laser90:
+			eId = "laser_90";
+			break;
+		case KBBScalableGraphicWidget::laser180:
+			eId = "laser_180";
+			break;
+		case KBBScalableGraphicWidget::laser270:
+			eId = "laser_270";
 			break;
 		case KBBScalableGraphicWidget::markerNothing:
-			//TODO change
-			eId = "nothing";
+			eId = "marker_nothing";
 			break;
 		case KBBScalableGraphicWidget::playerBall:
-			//TODO change
-			eId = "blueball";
+			eId = "player_ball";
 			break;
 		case KBBScalableGraphicWidget::playerRay:
 			eId = "player_ray";
 			break;
 		case KBBScalableGraphicWidget::resultBackground:
-			//TODO change
-			eId = "result";
+			eId = "result_background";
+			break;
+		case KBBScalableGraphicWidget::resultBackgroundHighlight:
+			eId = "result_background_highlight";
 			break;
 		case KBBScalableGraphicWidget::resultHit:
-			//TODO change
-			eId = "hit";
+			eId = "result_hit";
 			break;
 		case KBBScalableGraphicWidget::resultReflection:
-			//TODO change
-			eId = "reflection";
+			eId = "result_reflection";
 			break;
 		case KBBScalableGraphicWidget::solutionBall:
-			//TODO change
-			eId = "redball";
+			eId = "solution_ball";
 			break;
 		case KBBScalableGraphicWidget::solutionRay:
 			eId = "solution_ray";
 			break;
 		case KBBScalableGraphicWidget::unsureBall:
-			//TODO change
-			eId = "blueballunsure";
+			eId = "unsure_ball";
 			break;
 		case KBBScalableGraphicWidget::wrongPlayerBall:
-			//TODO change
-			eId = "cross";
+			eId = "wrong_player_ball";
 			break;
 		default:
 			eId = "none";

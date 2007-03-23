@@ -1,3 +1,6 @@
+2007-03-23 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Preparation for Oxygenation: the element IDs in the SVG file have now better names.
+
 2007-03-21 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Code refactoring to better manage themes.
 	* The black box grid can now be custumized within the theme file (like the laser rays) with the XML node id="blackbox_grid".

@@ -33,7 +33,6 @@
 #define KBBSCALABLEGRAPHICWIDGET_H
 
 
-class QGraphicsItem;
 class QGraphicsScene;
 #include <QGraphicsView>
 class QResizeEvent;
@@ -79,16 +78,41 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * Values are used to define the relative heigths between the displayed graphic items.
 		 * @see KBBThemeManager::zValue(const KBBScalableGraphicWidget::itemType itemType);
 		 */
-		enum itemType { background=0, blackbox=1, blackboxGrid=2, markerNothing=3, solutionRay=4, playerRay=5, resultBackground=6, resultBackgroundHighlight=7, resultReflection=8, resultHit=9, resultText=10, solutionBall=11, playerBall=12, unsureBall=13, wrongPlayerBall=14,  interactionInfoDeflection=15, interactionInfoHit=16, interactionInfoNothing=17, interactionInfoReflection=18, interactionInfoReflectionSym=19, laser0=20, laser90=21, laser180=22, laser270=23 };
+		enum itemType {
+			background=0,
+			blackbox=1,
+			blackboxGrid=2,
+			markerNothing=3,
+			solutionRay=4,
+			playerRay=5,
+			resultBackground=6,
+			resultBackgroundHighlight=7,
+			resultReflection=8,
+			resultHit=9,
+			resultText=10,
+			solutionBall=11,
+			playerBall=12,
+			unsureBall=13,
+			wrongPlayerBall=14,
+			interactionInfoDeflection=15,
+			interactionInfoHit=16,
+			interactionInfoNothing=17,
+			interactionInfoReflection=18,
+			interactionInfoReflectionSym=19,
+			laser0=20,
+			laser90=21,
+			laser180=22,
+			laser270=23
+		};
 		
 		
 		/**
 		 * @brief Constructor
 		 */
-		explicit KBBScalableGraphicWidget(KBBBoard* parent);
+		explicit KBBScalableGraphicWidget(KBBBoard* board, KBBThemeManager* themeManager);
 		
 		
-		void addItem(QGraphicsItem* item);
+		void addItem(KBBGraphicsItem* item);
 		void clickAddBall(const int boxPosition);
 		void clickAddMarkerNothing(const int boxPosition);
 		void clickLaser(const int incomingPosition);
@@ -96,14 +120,19 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void clickRemoveMarkerNothing(const int boxPosition);
 		void clickSetBallUnsure(const int boxPosition, const bool unsure);
 		void drawRay(const int borderPosition);
-		void newGame(const int columns, const int rows, KBBBallsOnBoard* ballsPlaced);
+		void newGame(const int columns, const int rows);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
-		void solve(KBBBallsOnBoard* balls);
+		
+		/**
+		 * @brief display the solution
+		 *
+		 * Used at the end of the game and for the tutorial mode.
+		 */
+		void solve();
 
 
 	public slots:
-		void setInputAccepted(bool inputAccepted);
 		void slotDown();
 		void slotInput();
 		void slotLeft();
@@ -116,6 +145,9 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	private:
+		void setInputAccepted(bool inputAccepted);
+		
+		
 		// Graphics items
 		KBBGraphicsItemBlackBox* m_blackbox;
 		KBBGraphicsItemSet* m_balls;

@@ -29,6 +29,7 @@
 
 
 
+#include <QFile>
 #include <QString>
 
 
@@ -36,6 +37,7 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kstandarddirs.h>
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
 #include <ktoggleaction.h>
@@ -45,6 +47,7 @@
 #include "kbbmainwindow.h"
 #include "kbbprefs.h"
 #include "kbbscalablegraphicwidget.h"
+#include "kbbthememanager.h"
 
 
 
@@ -59,8 +62,18 @@ KBBMainWindow::KBBMainWindow()
 	
 	// Board
 	m_board = new KBBBoard(this);
-	m_gameWidget = new KBBScalableGraphicWidget(m_board);
 	connect( m_board, SIGNAL(updateStats()), this, SLOT(updateStats()) );
+	
+	
+	// Theme manager
+	QString svgzFile = KBBPrefs::theme();
+	if (!QFile(svgzFile).exists())
+		svgzFile = KStandardDirs::locate("appdata", "pics/kblackbox.svgz");
+	m_themeManager = new KBBThemeManager(svgzFile);
+	
+	
+	// Game widget
+	m_gameWidget = new KBBScalableGraphicWidget(m_board, m_themeManager);
 	setCentralWidget(m_gameWidget);
 	
 	
@@ -246,7 +259,7 @@ void KBBMainWindow::solve()
 	m_running = false;
 	m_solveAction->setEnabled(false);
 	m_board->gameOver();
-	m_gameWidget->solve(m_board->m_balls);
+	m_gameWidget->solve();
 	updateStats();
 	
 	
@@ -291,9 +304,9 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 
 		m_solveAction->setEnabled(true);
 		m_board->newGame(m_ballNumber, m_columns, m_rows, m_tutorial);
-		m_gameWidget->newGame(m_columns, m_rows, m_board->m_ballsPlaced);
+		m_gameWidget->newGame(m_columns, m_rows);
 		if (m_tutorial)
-			m_gameWidget->solve(m_board->m_balls);
+			m_gameWidget->solve();
 		updateStats();
 	}
 	

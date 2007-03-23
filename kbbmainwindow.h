@@ -43,6 +43,7 @@ class KToggleAction;
 
 class KBBBoard;
 class KBBScalableGraphicWidget;
+class KBBThemeManager;
 
 
 
@@ -130,6 +131,7 @@ class KBBMainWindow : public KMainWindow
 		int m_rows;
 		bool m_running;
 		bool m_tutorial;
+		KBBThemeManager* m_themeManager;
 };
 
 #endif // KBBMAINWINDOW_H

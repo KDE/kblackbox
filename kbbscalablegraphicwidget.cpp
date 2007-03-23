@@ -30,14 +30,10 @@
 
 
 #include <QColor>
-#include <QGraphicsItem>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QPalette>
 #include <QResizeEvent>
-
-
-#include <kstandarddirs.h>
 
 
 #include "kbbballsonboard.h"
@@ -58,15 +54,13 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphicsView()
+KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBBoard* board, KBBThemeManager* themeManager)
 {
-	m_board = parent;
+	m_board = board;
+	m_themeManager = themeManager;
 	m_columns = 1;
 	m_rows = 1;
 	
-	
-	QString svgzFile = KStandardDirs::locate("appdata", "pics/kblackbox.svgz");
-	m_themeManager = new KBBThemeManager(svgzFile);
 	
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	
@@ -82,7 +76,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 	m_solutionRay = new KBBGraphicsItemRay(solutionRay, m_scene, m_themeManager);
 	
 	
-	this->setScene(m_scene);
+	setScene(m_scene);
 }
 
 
@@ -91,7 +85,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 // Public
 //
 
-void KBBScalableGraphicWidget::addItem(QGraphicsItem* item) 
+void KBBScalableGraphicWidget::addItem(KBBGraphicsItem* item) 
 {
 	m_scene->addItem(item);
 }
@@ -189,10 +183,10 @@ void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 }
 
 
-void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBallsOnBoard* ballsPlaced )
+void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 {
 	m_rayNumber = 0;
-	m_boardBallsPlaced = ballsPlaced;
+	m_boardBallsPlaced = m_board->m_ballsPlaced;
 	
 	// remove old lasers, old ray results, all placed balls, all markers "nothing" and all solutions
 	m_lasers->clear();
@@ -249,9 +243,9 @@ void KBBScalableGraphicWidget::removeRay()
 }
 
 
-void KBBScalableGraphicWidget::solve(KBBBallsOnBoard* balls)
+void KBBScalableGraphicWidget::solve()
 {
-	m_boardBalls = balls;
+	m_boardBalls = m_board->m_balls;
 	
 	setInputAccepted(false);
 	
@@ -268,19 +262,6 @@ void KBBScalableGraphicWidget::solve(KBBBallsOnBoard* balls)
 //
 // Slots
 //
-
-void KBBScalableGraphicWidget::setInputAccepted( bool inputAccepted )
-{
-	m_inputAccepted = inputAccepted;
-	if (m_inputAccepted) {
-		setFocusPolicy( Qt::StrongFocus );
-		setFocus();
-	} else {
-		setFocusPolicy( Qt::NoFocus );
-		clearFocus();
-	}
-}
-
 
 void KBBScalableGraphicWidget::slotDown()
 {
@@ -312,6 +293,7 @@ void KBBScalableGraphicWidget::slotUp()
 }
 
 
+
 //
 // Protected
 //
@@ -319,6 +301,24 @@ void KBBScalableGraphicWidget::slotUp()
 void KBBScalableGraphicWidget::drawBackground(QPainter* painter, const QRectF&)
 {
 	m_themeManager->svgRenderer()->render(painter, m_themeManager->elementId(background), m_rectBackground);
+}
+
+
+
+//
+// Private
+//
+
+void KBBScalableGraphicWidget::setInputAccepted(bool inputAccepted)
+{
+	m_inputAccepted = inputAccepted;
+	if (m_inputAccepted) {
+		setFocusPolicy( Qt::StrongFocus );
+		setFocus();
+	} else {
+		setFocusPolicy( Qt::NoFocus );
+		clearFocus();
+	}
 }
 
 #include "kbbscalablegraphicwidget.moc"

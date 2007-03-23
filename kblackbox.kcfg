@@ -5,6 +5,10 @@
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
   <kcfgfile name="kblackboxrc"/>
   <group name="KBlackBox Setup">
+    <entry name="theme" type="String">
+      <label>File of the current theme of the graphic elements. (SVGZ file with path and file extension)</label>
+      <default></default>
+    </entry>
     <entry name="balls" type="Int">
       <label>Number of balls</label>
       <default>4</default>

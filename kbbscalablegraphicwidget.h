@@ -96,12 +96,10 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void clickRemoveBallNothing(const int boxPosition);
 		void clickSetBallUnsure(const int boxPosition, const bool unsure);
 		void drawRay(const int borderPosition);
-		int hHint() const;
 		void newGame(const int columns, const int rows, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		void solve();
-		int wHint() const;
 
 
 	public slots:

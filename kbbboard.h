@@ -91,16 +91,6 @@ class KBBBoard : public QObject
 		QWidget* getWidget();
 		
 		/**
-		 * @brief Height of the central graphic widget of the game
-		 */
-		int getWidgetHeight();
-		
-		/**
-		 * @brief Width of the central graphic widget of the game
-		 */
-		int getWidgetWidth();
-		
-		/**
 		 * @brief Create new board game and initialize game
 		 * 
 		 * @param balls Number of balls to place on the board

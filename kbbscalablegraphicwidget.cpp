@@ -94,7 +94,6 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget( KBBBoard* parent) : QGraphic
 void KBBScalableGraphicWidget::addItem(QGraphicsItem* item) 
 {
 	m_scene->addItem(item);
-	m_scene->update();
 }
 
 
@@ -190,12 +189,6 @@ void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 }
 
 
-int KBBScalableGraphicWidget::hHint() const
-{
-	return (m_rows*RATIO + 2*BORDER_SIZE)/2;
-}
-
-
 void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced )
 {
 	m_rayNumber = 0;
@@ -210,12 +203,14 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 	m_ballsNothing->clear();
 	m_ballsSolution->clear();
 
-	// set the new size
-	m_columns = columns;
-	m_rows = rows;
-	m_blackbox->setSize(m_columns, m_rows);
-	m_scene->setSceneRect(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE);
-	resizeEvent(0);
+	// set the new size if needed
+	if (m_columns!=columns || m_rows!=rows) {
+		m_columns = columns;
+		m_rows = rows;
+		m_blackbox->setSize(m_columns, m_rows);
+		m_scene->setSceneRect(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE);
+		resizeEvent(0);
+	}
 
 	// Place new lasers
 	for (int i=0; i<2*(m_columns + m_rows); i++)
@@ -261,12 +256,6 @@ void KBBScalableGraphicWidget::solve()
 		if (!m_balls->contains(i) && !m_ballsUnsure->contains(i) && m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemBall(solutionBall, this, m_themeManager, i, m_columns, m_rows));
 	}
-}
-
-
-int KBBScalableGraphicWidget::wHint() const
-{
-	return (m_columns*RATIO + 2*BORDER_SIZE)/2;
 }
 
 

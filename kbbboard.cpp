@@ -102,18 +102,6 @@ QWidget* KBBBoard::getWidget()
 }
 
 
-int KBBBoard::getWidgetHeight()
-{
-	return gr->hHint();
-}
-
-
-int KBBBoard::getWidgetWidth()
-{
-	return gr->wHint();
-}
-
-
 void KBBBoard::newGame( int balls, int columns, int rows, bool tutorial )
 {
 	m_columns = columns;

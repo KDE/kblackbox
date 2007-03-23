@@ -42,6 +42,7 @@ class KToggleAction;
 
 
 class KBBBoard;
+class KBBScalableGraphicWidget;
 
 
 
@@ -112,9 +113,19 @@ class KBBMainWindow : public KMainWindow
 		KToggleAction *m_tutorialAction;
 		
 		
+		/**
+		 * @brief The game document
+		 */
+		KBBBoard* m_board;
+		
+		/**
+		 * @brief The game main widget
+		 */
+		KBBScalableGraphicWidget* m_gameWidget;
+		
+		
 		// Various member variables
 		int m_ballNumber;
-		KBBBoard *m_board;
 		int m_columns;
 		int m_rows;
 		bool m_running;

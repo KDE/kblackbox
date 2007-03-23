@@ -37,7 +37,6 @@
 
 #include "kbbballsonboard.h"
 #include "kbbboard.h"
-#include "kbbscalablegraphicwidget.h"
 
 
 
@@ -52,9 +51,7 @@ KBBBoard::KBBBoard(KBBMainWindow *parent) : QObject(parent)
 	m_rows = 1;
 	
 	random.setSeed(0);
-	
-	gr = new KBBScalableGraphicWidget(this);
-	
+		
 	m_balls = new KBBBallsOnBoard(this, m_columns, m_rows);
 	m_ballsPlaced = new KBBBallsOnBoard(this, m_columns, m_rows);
 	connect(m_ballsPlaced, SIGNAL(changes()), parent, SLOT(updateStats()));
@@ -73,12 +70,6 @@ void KBBBoard::gameOver()
 	
 	// Compute final score
 	setScore( score + 5*m_ballsPlaced->numberOfBallsNotIn(m_balls) );
-	
-	//Show solution (and indicate errors).
-	gr->solve();
-	
-	// Deactivate central widget
-	gr->setInputAccepted(false);
 }
 
 
@@ -91,12 +82,6 @@ bool KBBBoard::gameReallyStarted()
 int KBBBoard::getScore()
 {
 	return score;
-}
-
-
-QWidget* KBBBoard::getWidget()
-{
-	return gr;
 }
 
 
@@ -119,14 +104,6 @@ void KBBBoard::newGame( int balls, int columns, int rows, bool tutorial )
 		} while (m_balls->contains(boxPos));
 		m_balls->add(boxPos);
 	}
-
-	gr->newGame(m_columns, m_rows, m_balls, m_ballsPlaced);
-	
-	if (tutorial)
-		gr->solve();
-	
-	// Activate central widget
-	gr->setInputAccepted(true);
 }
 
 

@@ -42,7 +42,6 @@ class QWidget;
 
 class KBBBallsOnBoard;
 #include "kbbmainwindow.h"
-class KBBScalableGraphicWidget;
 
 
 
@@ -86,11 +85,6 @@ class KBBBoard : public QObject
 		int getScore();
 		
 		/**
-		 * @brief Access the central graphic widget of the game
-		 */
-		QWidget* getWidget();
-		
-		/**
 		 * @brief Create new board game and initialize game
 		 * 
 		 * @param balls Number of balls to place on the board
@@ -115,6 +109,10 @@ class KBBBoard : public QObject
 		 * @return Outgoing border position, where the laser leaves the black box. If the laser hits a ball, the result is HIT_POSITION (that is not a valid border position). 
 		 */
 		int shootRay(int borderPosition);
+		
+		
+		KBBBallsOnBoard* m_balls;
+		KBBBallsOnBoard* m_ballsPlaced;
 
 
 	signals:
@@ -128,15 +126,12 @@ class KBBBoard : public QObject
 		 * @param n New score
 		 */
 		void setScore( int n );
-
-		KBBScalableGraphicWidget *gr;
+		
 		int m_columns;
 		bool m_gameReallyStarted;
 		int m_rows;
 		KRandomSequence random;
 		int score;
-		KBBBallsOnBoard* m_balls;
-		KBBBallsOnBoard* m_ballsPlaced;
 };
 
 #endif //KBBBOARD_H

@@ -189,10 +189,9 @@ void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 }
 
 
-void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBallsOnBoard* balls, KBBBallsOnBoard* ballsPlaced )
+void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBallsOnBoard* ballsPlaced )
 {
 	m_rayNumber = 0;
-	m_boardBalls = balls;
 	m_boardBallsPlaced = ballsPlaced;
 	
 	// remove old lasers, old ray results, all placed balls, all markers "nothing" and all solutions
@@ -215,6 +214,8 @@ void KBBScalableGraphicWidget::newGame( const int columns, const int rows, KBBBa
 	// Place new lasers
 	for (int i=0; i<2*(m_columns + m_rows); i++)
 		m_lasers->insert(new KBBGraphicsItemLaser(this, m_themeManager, i, m_columns, m_rows));
+	
+	setInputAccepted(true);
 }
 
 
@@ -248,8 +249,12 @@ void KBBScalableGraphicWidget::removeRay()
 }
 
 
-void KBBScalableGraphicWidget::solve()
+void KBBScalableGraphicWidget::solve(KBBBallsOnBoard* balls)
 {
+	m_boardBalls = balls;
+	
+	setInputAccepted(false);
+	
 	for (int i=0; i<(m_columns * m_rows); i++) {
 		if ((m_balls->contains(i) || m_ballsUnsure->contains(i)) && !m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemOnBox(wrongPlayerBall, this, m_themeManager, i, m_columns, m_rows));

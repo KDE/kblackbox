@@ -44,6 +44,7 @@
 #include "kbbboard.h"
 #include "kbbmainwindow.h"
 #include "kbbprefs.h"
+#include "kbbscalablegraphicwidget.h"
 
 
 
@@ -58,8 +59,9 @@ KBBMainWindow::KBBMainWindow()
 	
 	// Board
 	m_board = new KBBBoard(this);
+	m_gameWidget = new KBBScalableGraphicWidget(m_board);
 	connect( m_board, SIGNAL(updateStats()), this, SLOT(updateStats()) );
-	setCentralWidget( m_board->getWidget() );
+	setCentralWidget(m_gameWidget);
 	
 	
 	// Menu "Game"
@@ -102,31 +104,31 @@ KBBMainWindow::KBBMainWindow()
 	// Keyboard only
 	QAction* action = actionCollection()->addAction( "move_down" );
 	action->setText( i18n("Move Down") );
-	connect(action, SIGNAL(triggered(bool) ), m_board->getWidget(), SLOT(slotDown()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotDown()));
 	action->setShortcut(Qt::Key_Down);
 	addAction(action);
 	
 	action = actionCollection()->addAction( "move_up" );
 	action->setText( i18n("Move Up") );
-	connect(action, SIGNAL(triggered(bool) ), m_board->getWidget(), SLOT(slotUp()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotUp()));
 	action->setShortcut(Qt::Key_Up);
 	addAction(action);
 	
 	action = actionCollection()->addAction( "move_left" );
 	action->setText( i18n("Move Left") );
-	connect(action, SIGNAL(triggered(bool) ), m_board->getWidget(), SLOT(slotLeft()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotLeft()));
 	action->setShortcut(Qt::Key_Left);
 	addAction(action);
 	
 	action = actionCollection()->addAction( "move_right" );
 	action->setText( i18n("Move Right") );
-	connect(action, SIGNAL(triggered(bool) ), m_board->getWidget(), SLOT(slotRight()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotRight()));
 	action->setShortcut(Qt::Key_Right);
 	addAction(action);
 	
 	action = actionCollection()->addAction( "move_trigger" );
 	action->setText( i18n("Trigger Action") );
-	connect(action, SIGNAL(triggered(bool) ), m_board->getWidget(), SLOT(slotInput()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotInput()));
 	action->setShortcut(Qt::Key_Return);
 	addAction(action);
 	
@@ -243,8 +245,10 @@ void KBBMainWindow::solve()
 	
 	m_running = false;
 	m_solveAction->setEnabled(false);
-	updateStats();
 	m_board->gameOver();
+	m_gameWidget->solve(m_board->m_balls);
+	updateStats();
+	
 	
 	if (m_board->numberOfBallsPlaced() == m_ballNumber) {
 		const int score = m_board->getScore();
@@ -286,7 +290,10 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 		m_tutorial = newTutorialMode;
 
 		m_solveAction->setEnabled(true);
-		m_board->newGame( m_ballNumber, m_columns, m_rows, m_tutorial );
+		m_board->newGame(m_ballNumber, m_columns, m_rows, m_tutorial);
+		m_gameWidget->newGame(m_columns, m_rows, m_board->m_ballsPlaced);
+		if (m_tutorial)
+			m_gameWidget->solve(m_board->m_balls);
 		updateStats();
 	}
 	

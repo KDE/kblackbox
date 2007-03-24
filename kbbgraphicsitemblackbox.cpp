@@ -54,7 +54,7 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* paren
 	m_widget = parent;
 	m_scene = scene;
 
-	m_background = new KBBGraphicsItem(KBBScalableGraphicWidget::blackbox, m_widget, themeManager);
+	m_background = new KBBGraphicsItem(KBBScalableGraphicWidget::blackbox, m_scene, themeManager);
 	
 	//Grid
 	const KBBScalableGraphicWidget::itemType g = KBBScalableGraphicWidget::blackboxGrid;

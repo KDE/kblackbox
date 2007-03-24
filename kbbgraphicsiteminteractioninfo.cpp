@@ -40,7 +40,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, KBBScalableGraphicWidget::itemType type, const qreal x, const qreal y, const int rotation) : KBBGraphicsItem(KBBScalableGraphicWidget::interactionInfoNothing, widget, themeManager)
+KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager, KBBScalableGraphicWidget::itemType type, const qreal x, const qreal y, const int rotation) : KBBGraphicsItem(KBBScalableGraphicWidget::interactionInfoNothing, widget->scene(), themeManager)
 {
 	m_themeManager = themeManager;
 	setPos(x, y);

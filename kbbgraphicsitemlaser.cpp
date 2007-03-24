@@ -45,7 +45,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder(borderPosition, columns, rows, 0), KBBGraphicsItem(((borderPosition<columns) ? KBBScalableGraphicWidget::laser0 : ((borderPosition<columns + rows) ? KBBScalableGraphicWidget::laser90 : ((borderPosition<2*columns + rows) ? KBBScalableGraphicWidget::laser180 : KBBScalableGraphicWidget::laser270))) , parent, themeManager), KBBItemWithPosition()
+KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int borderPosition, const int columns, const int rows) : KBBGraphicsItemBorder(borderPosition, columns, rows, 0), KBBGraphicsItem(((borderPosition<columns) ? KBBScalableGraphicWidget::laser0 : ((borderPosition<columns + rows) ? KBBScalableGraphicWidget::laser90 : ((borderPosition<2*columns + rows) ? KBBScalableGraphicWidget::laser180 : KBBScalableGraphicWidget::laser270))) , parent->scene(), themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
 	

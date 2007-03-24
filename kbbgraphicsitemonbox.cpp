@@ -46,7 +46,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemOnBox::KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows) : KBBGraphicsItem(itemType, parent, themeManager), KBBItemWithPosition()
+KBBGraphicsItemOnBox::KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows) : KBBGraphicsItem(itemType, parent->scene(), themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
 	m_boxPosition = boxPosition;

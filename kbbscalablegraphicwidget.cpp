@@ -85,12 +85,6 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBBoard* board, KBBThemeMana
 // Public
 //
 
-void KBBScalableGraphicWidget::addItem(KBBGraphicsItem* item) 
-{
-	m_scene->addItem(item);
-}
-
-
 void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 {
 	if (m_inputAccepted && (!m_balls->contains(boxPosition))) {
@@ -240,6 +234,12 @@ void KBBScalableGraphicWidget::removeRay()
 {
 	m_playerRay->hide();
 	m_solutionRay->hide();
+}
+
+
+QGraphicsScene* KBBScalableGraphicWidget::scene() 
+{
+	return m_scene;
 }
 
 

@@ -30,6 +30,7 @@
 #define KBBGRAPHICSITEM_H
 
 
+#include <QGraphicsScene>
 #include <QGraphicsSvgItem>
 
 
@@ -47,7 +48,7 @@ class KBBGraphicsItem : public QGraphicsSvgItem
 		/**
 		 * @brief Constructor
 		 */
-		KBBGraphicsItem(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* widget, KBBThemeManager* themeManager);
+		KBBGraphicsItem(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager);
 };
 
 #endif // KBBGRAPHICSITEM_H

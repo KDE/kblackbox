@@ -8,7 +8,9 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
 ########### next target ###############
 
 set(kblackbox_SRCS 
+    kbbballsgraphicwidget.cpp
     kbbballsonboard.cpp
+    kbbballsstatusbarwidget.cpp
     kbbboard.cpp
     kbbgraphicsitem.cpp
     kbbgraphicsitemball.cpp

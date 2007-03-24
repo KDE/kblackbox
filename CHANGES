@@ -1,3 +1,6 @@
+2007-03-24 Nicolas Roffet <nicolas-kde@roffet.com>
+	* GUI: Created a new widget to display in the status bar how many balls remain to be placed on the black box.
+
 2007-03-23 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Preparation for Oxygenation: the element IDs in the SVG file have now better names.
 

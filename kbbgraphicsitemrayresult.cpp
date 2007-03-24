@@ -46,7 +46,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), KBBGraphicsItem(KBBScalableGraphicWidget::resultBackground, parent, themeManager), KBBItemWithPosition()
+KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber) : KBBGraphicsItemBorder( borderPosition, columns, rows, KBBScalableGraphicWidget::BORDER_SIZE/2), KBBGraphicsItem(KBBScalableGraphicWidget::resultBackground, scene, themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
 	m_scene = scene;
@@ -65,9 +65,9 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	if(rayNumber<=0) {
 
 		if (rayNumber==0)
-			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultReflection, m_widget, themeManager);
+			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultReflection, m_scene, themeManager);
 		else
-			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultHit, m_widget, themeManager);
+			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultHit, m_scene, themeManager);
 		m_notNumber->translate(radius,radius);
 		m_notNumber->rotate(rotation());
 		m_notNumber->translate(-radius,-radius);

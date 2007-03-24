@@ -112,7 +112,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		explicit KBBScalableGraphicWidget(KBBBoard* board, KBBThemeManager* themeManager);
 		
 		
-		void addItem(KBBGraphicsItem* item);
 		void clickAddBall(const int boxPosition);
 		void clickAddMarkerNothing(const int boxPosition);
 		void clickLaser(const int incomingPosition);
@@ -123,6 +122,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void newGame(const int columns, const int rows);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
+		QGraphicsScene* scene();
 		
 		/**
 		 * @brief display the solution

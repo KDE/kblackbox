@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -26,25 +26,39 @@
 
 
 
-#include <QGraphicsScene>
-#include <QGraphicsSvgItem>
+#ifndef KBBBALLSSTATUSBARWIDGET_H
+#define KBBBALLSSTATUSBARWIDGET_H
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbscalablegraphicwidget.h"
-#include "kbbthememanager.h"
+class QLabel;
+#include <QWidget>
+
+
+class KBBBallsGraphicWidget;
+class KBBThemeManager;
 
 
 
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItem::KBBGraphicsItem(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsSvgItem()
+/**
+ * @brief Widget for the status bar displaying the number of balls left to be placed on the black box
+ */
+class KBBBallsStatusBarWidget : public QWidget
 {
-	setSharedRenderer(themeManager->svgRenderer());
-	setElementId(themeManager->elementId(itemType));
-	setZValue(themeManager->zValue(itemType));
-	
-	scene->addItem(this);
-}
+	public:
+		/**
+		 * @brief Constructor
+		 */
+		KBBBallsStatusBarWidget(KBBThemeManager* themeManager);
+		
+		
+		void setBalls(const int placedBalls, const int ballsToPlace);
+
+
+	private:
+		static const int BALL_SIZE = 50;
+		
+		KBBBallsGraphicWidget* m_ballsWidget;
+		QLabel* m_title;
+};
+
+#endif // KBBBALLSSTATUSBARWIDGET_H

@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -26,13 +26,16 @@
 
 
 
-#include <QGraphicsScene>
-#include <QGraphicsSvgItem>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QWidget>
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbscalablegraphicwidget.h"
-#include "kbbthememanager.h"
+#include <klocale.h>
+
+
+#include "kbbballsgraphicwidget.h"
+#include "kbbballsstatusbarwidget.h"
 
 
 
@@ -40,11 +43,29 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItem::KBBGraphicsItem(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsSvgItem()
+KBBBallsStatusBarWidget::KBBBallsStatusBarWidget(KBBThemeManager* themeManager)
 {
-	setSharedRenderer(themeManager->svgRenderer());
-	setElementId(themeManager->elementId(itemType));
-	setZValue(themeManager->zValue(itemType));
+	QHBoxLayout *mainLayout = new QHBoxLayout;
 	
-	scene->addItem(this);
+	m_title = new QLabel(i18n("Balls to place:"), this);
+	mainLayout->addWidget(m_title);
+	
+	m_ballsWidget = new KBBBallsGraphicWidget(BALL_SIZE, themeManager);
+	mainLayout->addWidget(m_ballsWidget);
+	
+	setLayout(mainLayout);
+	
+	setMinimumHeight(BALL_SIZE);
+}
+
+
+
+//
+// Public
+//
+
+void KBBBallsStatusBarWidget::setBalls(const int placedBalls, const int ballsToPlace)
+{
+	m_ballsWidget->setBallsToPlace(ballsToPlace);
+	m_ballsWidget->setPlacedBalls(placedBalls);
 }

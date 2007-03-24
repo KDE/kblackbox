@@ -41,6 +41,7 @@ class KSelectAction;
 class KToggleAction;
 
 
+class KBBBallsStatusBarWidget;
 class KBBBoard;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
@@ -127,6 +128,7 @@ class KBBMainWindow : public KMainWindow
 		
 		// Various member variables
 		int m_ballNumber;
+		KBBBallsStatusBarWidget* m_ballsStatusBarWidget;
 		int m_columns;
 		int m_rows;
 		bool m_running;

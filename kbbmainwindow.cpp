@@ -43,6 +43,7 @@
 #include <ktoggleaction.h>
 
 
+#include "kbbballsstatusbarwidget.h"
 #include "kbbboard.h"
 #include "kbbmainwindow.h"
 #include "kbbprefs.h"
@@ -167,7 +168,8 @@ KBBMainWindow::KBBMainWindow()
 	
 	// Status bar
 	statusBar()->insertItem(i18n("Score: 0000"), SSCORE);
-	statusBar()->insertItem(i18n("Placed: 00 / 00"), SBALLS);
+	m_ballsStatusBarWidget = new KBBBallsStatusBarWidget(m_themeManager);
+	statusBar()->insertWidget(SBALLS, m_ballsStatusBarWidget);
 	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
 	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
 	
@@ -197,7 +199,7 @@ void KBBMainWindow::updateStats()
 	
 	statusBar()->changeItem( i18n("Size: %1 x %2", m_columns, m_rows), SSIZE );
 	
-	statusBar()->changeItem( i18n("Placed: %1 / %2", m_board->numberOfBallsPlaced(), m_ballNumber), SBALLS );
+	m_ballsStatusBarWidget->setBalls(m_board->numberOfBallsPlaced(), m_ballNumber);
 	
 	statusBar()->changeItem( i18n("Score: %1", m_board->getScore()), SSCORE );
 }

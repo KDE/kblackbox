@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -26,25 +26,46 @@
 
 
 
-#include <QGraphicsScene>
-#include <QGraphicsSvgItem>
+#ifndef KBBBALLSGRAPHICWIDGET_H
+#define KBBBALLSGRAPHICWIDGET_H
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbscalablegraphicwidget.h"
-#include "kbbthememanager.h"
+class QGraphicsScene;
+#include <QGraphicsView>
+#include <QList>
+
+
+class KBBBallsGraphicWidget;
+class KBBGraphicsItem;
+class KBBThemeManager;
 
 
 
-//
-// Constructor / Destructor
-//
-
-KBBGraphicsItem::KBBGraphicsItem(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsSvgItem()
+/**
+ * @brief Widget displaying the number of balls left to be placed on the black box
+ */
+class KBBBallsGraphicWidget : public QGraphicsView
 {
-	setSharedRenderer(themeManager->svgRenderer());
-	setElementId(themeManager->elementId(itemType));
-	setZValue(themeManager->zValue(itemType));
-	
-	scene->addItem(this);
-}
+	public:
+		/**
+		 * @brief Constructor
+		 */
+		KBBBallsGraphicWidget(const int ballSize, KBBThemeManager* themeManager);
+		
+		~KBBBallsGraphicWidget();
+		
+		
+		void resizeEvent(QResizeEvent*);
+		void setBallsToPlace(const int ballsToPlace);
+		void setPlacedBalls(const int placedBalls);
+
+
+	private:
+		int m_ballSize;
+		QList<KBBGraphicsItem*> m_balls;
+		int m_ballsToPlace;
+		QGraphicsScene* m_scene;
+		KBBThemeManager* m_themeManager;
+};
+
+#endif // KBBBALLSGRAPHICWIDGET_H

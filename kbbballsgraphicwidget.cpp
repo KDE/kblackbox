@@ -1,5 +1,5 @@
 //
-// KBlackbox
+// KBlackBox
 //
 // A simple game inspired by an emacs module
 //
@@ -27,9 +27,10 @@
 
 
 #include <QGraphicsScene>
-#include <QGraphicsSvgItem>
+#include <QGraphicsView>
 
 
+#include "kbbballsgraphicwidget.h"
 #include "kbbgraphicsitem.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
@@ -40,11 +41,65 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItem::KBBGraphicsItem(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsSvgItem()
+KBBBallsGraphicWidget::KBBBallsGraphicWidget(const int ballSize, KBBThemeManager* themeManager)
 {
-	setSharedRenderer(themeManager->svgRenderer());
-	setElementId(themeManager->elementId(itemType));
-	setZValue(themeManager->zValue(itemType));
+	m_ballSize = ballSize;
+	m_themeManager = themeManager;
+	m_ballsToPlace = 0;
 	
-	scene->addItem(this);
+	setMaximumHeight(m_ballSize);
+	setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+	
+	m_scene = new QGraphicsScene(this);
+	setScene(m_scene);
+	
+	setPlacedBalls(0);
+}
+
+
+KBBBallsGraphicWidget::~KBBBallsGraphicWidget()
+{
+	setPlacedBalls(m_ballsToPlace);
+}
+
+
+
+//
+// Public
+//
+
+void KBBBallsGraphicWidget::resizeEvent(QResizeEvent*)
+{
+	fitInView(m_scene->sceneRect(), Qt::KeepAspectRatio);
+}
+
+
+void KBBBallsGraphicWidget::setBallsToPlace(const int ballsToPlace)
+{
+	if (m_ballsToPlace != ballsToPlace) {
+		m_ballsToPlace = ballsToPlace;
+		
+		//setMaximumWidth(m_ballSize*m_ballsToPlace);
+		m_scene->setSceneRect(0, 0, m_ballsToPlace*KBBScalableGraphicWidget::RATIO, KBBScalableGraphicWidget::RATIO);
+		resizeEvent(NULL);
+	}
+}
+
+
+void KBBBallsGraphicWidget::setPlacedBalls(const int placedBalls)
+{
+	int ballsLeftToPlace = m_ballsToPlace - placedBalls;
+	
+	// remove balls
+	while ((ballsLeftToPlace>=0) && (ballsLeftToPlace<m_balls.count())) {
+		delete m_balls.last();
+		m_scene->update();
+		m_balls.removeLast();
+	}
+
+	// add balls
+	while (ballsLeftToPlace>m_balls.count()) {
+		m_balls.append(new KBBGraphicsItem(KBBScalableGraphicWidget::playerBall, m_scene, m_themeManager));
+		m_balls.last()->setPos((m_balls.count()-1)*KBBScalableGraphicWidget::RATIO,0);
+	}
 }

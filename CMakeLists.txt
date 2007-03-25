@@ -10,7 +10,6 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
 set(kblackbox_SRCS 
     kbbballsgraphicwidget.cpp
     kbbballsonboard.cpp
-    kbbballsstatusbarwidget.cpp
     kbbboard.cpp
     kbbgraphicsitem.cpp
     kbbgraphicsitemball.cpp
@@ -22,6 +21,7 @@ set(kblackbox_SRCS
     kbbgraphicsitemray.cpp
     kbbgraphicsitemrayresult.cpp
     kbbgraphicsitemset.cpp
+    kbbinfowidget.cpp
     kbbitemwithposition.cpp
     kbbmainwindow.cpp 
     kbbscalablegraphicwidget.cpp

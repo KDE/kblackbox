@@ -45,8 +45,8 @@
 #include <ktoggleaction.h>
 
 
-#include "kbbballsstatusbarwidget.h"
 #include "kbbboard.h"
+#include "kbbinfowidget.h"
 #include "kbbmainwindow.h"
 #include "kbbprefs.h"
 #include "kbbscalablegraphicwidget.h"

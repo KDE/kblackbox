@@ -35,7 +35,7 @@
 
 
 #include "kbbballsgraphicwidget.h"
-#include "kbbballsstatusbarwidget.h"
+#include "kbbinfowidget.h"
 
 
 

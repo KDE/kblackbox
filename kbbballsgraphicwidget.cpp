@@ -26,8 +26,13 @@
 
 
 
+#include <QFont>
 #include <QGraphicsScene>
+#include <QGraphicsTextItem>
 #include <QGraphicsView>
+
+
+#include <klocale.h>
 
 
 #include "kbbballsgraphicwidget.h"
@@ -46,12 +51,16 @@ KBBBallsGraphicWidget::KBBBallsGraphicWidget(const int ballSize, KBBThemeManager
 	m_ballSize = ballSize;
 	m_themeManager = themeManager;
 	m_ballsToPlace = 0;
+	m_ballWrong = NULL;
 	
 	setMaximumHeight(m_ballSize);
 	setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 	
 	m_scene = new QGraphicsScene(this);
 	setScene(m_scene);
+	
+	m_text = new QGraphicsTextItem(NULL, m_scene);
+	m_text->setFont(QFont("Helvetica", 2*KBBScalableGraphicWidget::RATIO/3));
 	
 	setPlacedBalls(0);
 }
@@ -90,6 +99,13 @@ void KBBBallsGraphicWidget::setPlacedBalls(const int placedBalls)
 {
 	int ballsLeftToPlace = m_ballsToPlace - placedBalls;
 	
+	// remove "wrong" ball
+	if ((ballsLeftToPlace>=0) && (m_ballWrong!=NULL)) {
+		delete m_ballWrong;
+		m_scene->update();
+		m_ballWrong = NULL;
+	}
+	
 	// remove balls
 	while ((ballsLeftToPlace>=0) && (ballsLeftToPlace<m_balls.count())) {
 		delete m_balls.last();
@@ -102,4 +118,22 @@ void KBBBallsGraphicWidget::setPlacedBalls(const int placedBalls)
 		m_balls.append(new KBBGraphicsItem(KBBScalableGraphicWidget::playerBall, m_scene, m_themeManager));
 		m_balls.last()->setPos((m_balls.count()-1)*KBBScalableGraphicWidget::RATIO,0);
 	}
+	
+	// add "wrong" ball
+	while ((ballsLeftToPlace<0) && (m_ballWrong==NULL)) {
+		m_ballWrong = new KBBGraphicsItem(KBBScalableGraphicWidget::wrongPlayerBall, m_scene, m_themeManager);
+	}
+	if (ballsLeftToPlace<0) {
+		m_text->setPlainText(i18n("x %1 too much!", -ballsLeftToPlace));
+		m_text->setPos(KBBScalableGraphicWidget::RATIO,0);
+	}
+
+	if (ballsLeftToPlace==0) {
+		m_text->setPlainText(i18n("You're done!"));
+		m_text->setPos(0,0);
+	}
+	
+	if (ballsLeftToPlace>0)
+		m_text->setPlainText("");
+
 }

@@ -41,6 +41,8 @@ class KBBThemeManager;
 
 /**
  * @brief Widget for the status bar displaying the number of balls left to be placed on the black box
+ *
+ * TODO / i18n issue: This widget cannot manage bidirectional languages: only "left to right" languages are supported. This limitation should be fixed once it is possible to fix it, by changing the way the class QHboxLayout orders the widget positions depending on the locale...
  */
 class KBBBallsStatusBarWidget : public QWidget
 {

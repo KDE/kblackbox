@@ -45,7 +45,10 @@
 
 KBBBallsStatusBarWidget::KBBBallsStatusBarWidget(KBBThemeManager* themeManager)
 {
-	QHBoxLayout *mainLayout = new QHBoxLayout;
+	QHBoxLayout *mainLayout = new QHBoxLayout();
+	
+	// TODO: The following line should depend on the locale to correct manage languages that display text from right to left. See note in file "kbbballsstatusbarwidget.h".
+	mainLayout->setDirection(QBoxLayout::LeftToRight);
 	
 	m_title = new QLabel(i18n("Balls to place:"), this);
 	mainLayout->addWidget(m_title);

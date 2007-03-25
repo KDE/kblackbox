@@ -31,7 +31,6 @@
 
 
 class QGraphicsScene;
-class QGraphicsTextItem;
 #include <QGraphicsView>
 #include <QList>
 
@@ -67,7 +66,6 @@ class KBBBallsGraphicWidget : public QGraphicsView
 		KBBGraphicsItem* m_ballWrong;
 		int m_ballsToPlace;
 		QGraphicsScene* m_scene;
-		QGraphicsTextItem* m_text;
 		KBBThemeManager* m_themeManager;
 };
 

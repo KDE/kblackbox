@@ -34,15 +34,20 @@ class QLabel;
 #include <QWidget>
 
 
+class KGameLCD;
+
+
 class KBBBallsGraphicWidget;
 class KBBThemeManager;
 
 
 
 /**
- * @brief Widget for the status bar displaying the number of balls left to be placed on the black box
+ * @brief Widget displaying game information
  *
- * TODO / i18n issue: This widget cannot manage bidirectional languages: only "left to right" languages are supported. This limitation should be fixed once it is possible to fix it, by changing the way the class QHboxLayout orders the widget positions depending on the locale...
+ * Displayed information: 
+ * - the number of balls left to be placed on the black box
+ * - the score
  */
 class KBBInfoWidget : public QWidget
 {
@@ -53,14 +58,19 @@ class KBBInfoWidget : public QWidget
 		KBBInfoWidget(KBBThemeManager* themeManager);
 		
 		
-		void setBalls(const int placedBalls, const int ballsToPlace);
+		void setGameParameters(const int ballsToPlace, const int scoreLimit);
+		void setPlacedBalls(const int placedBalls);
+		void setScore(const int score);
 
 
 	private:
 		static const int BALL_SIZE = 50;
 		
+		QLabel* m_ballsTitle;
+		int m_ballsToPlace;
 		KBBBallsGraphicWidget* m_ballsWidget;
-		QLabel* m_title;
+		KGameLCD* m_score;
+		int m_scoreLimit;
 };
 
 #endif // KBBINFOWIDGET_H

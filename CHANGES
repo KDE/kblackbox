@@ -1,3 +1,6 @@
+2007-03-25 Nicolas Roffet <nicolas-kde@roffet.com>
+	* GUI: Added a new widget that displays the number of balls to place and the score. Position: now on the left part of the main window.
+
 2007-03-24 Nicolas Roffet <nicolas-kde@roffet.com>
 	* GUI: Created a new widget to display in the status bar how many balls remain to be placed on the black box.
 

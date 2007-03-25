@@ -31,7 +31,7 @@
 
 #include <QFile>
 #include <QString>
-#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QWidget>
 
 
@@ -85,7 +85,7 @@ KBBMainWindow::KBBMainWindow()
 	
 	// Central Widget
 	m_centralWidget = new QWidget(this);
-	QVBoxLayout *widgetLayout = new QVBoxLayout();
+	QHBoxLayout *widgetLayout = new QHBoxLayout();
 	m_centralWidget->setLayout(widgetLayout);
 	widgetLayout->addWidget(m_infoWidget);
 	widgetLayout->addWidget(m_gameWidget);
@@ -181,8 +181,6 @@ KBBMainWindow::KBBMainWindow()
 	
 	
 	// Status bar
-	statusBar()->insertItem(i18n("Score: 0000"), SSCORE);
-	//statusBar()->insertWidget(SBALLS, m_ballsStatusBarWidget);
 	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
 	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
 	
@@ -213,11 +211,10 @@ void KBBMainWindow::updateStats()
 	
 	statusBar()->changeItem( i18n("Size: %1 x %2", m_columns, m_rows), SSIZE );
 	
-	statusBar()->changeItem( i18n("Score: %1", m_board->getScore()), SSCORE );
-	
 	
 	// 2. Info Widget
-	m_infoWidget->setBalls(m_board->numberOfBallsPlaced(), m_ballNumber);
+	m_infoWidget->setPlacedBalls(m_board->numberOfBallsPlaced());
+	m_infoWidget->setScore(m_board->getScore());
 }
 
 
@@ -325,6 +322,8 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 		m_gameWidget->newGame(m_columns, m_rows);
 		if (m_tutorial)
 			m_gameWidget->solve();
+		
+		m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
 		updateStats();
 	}
 	

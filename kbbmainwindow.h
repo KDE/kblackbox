@@ -92,10 +92,8 @@ class KBBMainWindow : public KMainWindow
 		/**
 		 * Statusbar IDs.
 		 */
-		static const int SSCORE = 0;
-		static const int SBALLS = 1;
-		static const int SRUN = 2;
-		static const int SSIZE = 3;
+		static const int SRUN = 0;
+		static const int SSIZE = 1;
 		
 		
 		/**

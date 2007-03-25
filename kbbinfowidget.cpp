@@ -26,11 +26,13 @@
 
 
 
-#include <QHBoxLayout>
+#include <QGroupBox>
+#include <QVBoxLayout>
 #include <QLabel>
 #include <QWidget>
 
 
+#include <kgamelcd.h>
 #include <klocale.h>
 
 
@@ -45,20 +47,36 @@
 
 KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 {
-	QHBoxLayout *mainLayout = new QHBoxLayout();
+	// General
+	QVBoxLayout *mainLayout = new QVBoxLayout();
+	setMaximumWidth(3*BALL_SIZE);
+
 	
-	// TODO: The following line should depend on the locale to correct manage languages that display text from right to left. See note in file "kbbballsstatusbarwidget.h".
-	mainLayout->setDirection(QBoxLayout::LeftToRight);
-	
-	m_title = new QLabel(i18n("Balls to place:"), this);
-	mainLayout->addWidget(m_title);
-	
+	// 1st part: balls
+	QGroupBox *ballsGroupBox = new QGroupBox(i18n("Balls"));
+	QVBoxLayout *ballsLayout = new QVBoxLayout();
+	m_ballsTitle = new QLabel(this);
+	m_ballsTitle->setWordWrap(true);
+	ballsLayout->addWidget(m_ballsTitle);
 	m_ballsWidget = new KBBBallsGraphicWidget(BALL_SIZE, themeManager);
-	mainLayout->addWidget(m_ballsWidget);
+	m_ballsWidget->setMinimumWidth(BALL_SIZE);
+	ballsLayout->addWidget(m_ballsWidget);
+	ballsGroupBox->setLayout(ballsLayout);
+	mainLayout->addWidget(ballsGroupBox);
+	
+	
+	// 2nd part: score
+	QGroupBox *scoreGroupBox = new QGroupBox(i18n("Score"));
+	QVBoxLayout *scoreLayout = new QVBoxLayout();
+	m_score = new KGameLCD(3, this);
+	m_score->setMinimumHeight(3*BALL_SIZE/2);
+	m_score->setHighlightColor(Qt::red);
+	scoreLayout->addWidget(m_score);
+	scoreGroupBox->setLayout(scoreLayout);
+	mainLayout->addWidget(scoreGroupBox);
+	
 	
 	setLayout(mainLayout);
-	
-	setMinimumHeight(BALL_SIZE);
 }
 
 
@@ -67,8 +85,34 @@ KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 // Public
 //
 
-void KBBInfoWidget::setBalls(const int placedBalls, const int ballsToPlace)
+void KBBInfoWidget::setGameParameters(const int ballsToPlace, const int scoreLimit)
 {
+	m_ballsToPlace = ballsToPlace;
+	m_scoreLimit = scoreLimit;
+	
 	m_ballsWidget->setBallsToPlace(ballsToPlace);
+}
+
+
+void KBBInfoWidget::setPlacedBalls(const int placedBalls)
+{
 	m_ballsWidget->setPlacedBalls(placedBalls);
+	
+	int ballsLeftToPlace = m_ballsToPlace - placedBalls;
+	if (ballsLeftToPlace<0) {
+		m_ballsTitle->setText(i18n("%1 balls too much!", -ballsLeftToPlace));
+	}
+	if (ballsLeftToPlace==0) {
+		m_ballsTitle->setText(i18n("You're done!"));
+	}
+	if (ballsLeftToPlace>0)
+		m_ballsTitle->setText(i18n("%1 balls to place", ballsLeftToPlace));
+}
+
+
+void KBBInfoWidget::setScore(const int score)
+{
+	m_score->displayInt(score);
+	if (score>m_scoreLimit)
+		m_score->highlight();
 }

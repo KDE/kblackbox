@@ -34,6 +34,7 @@
 
 
 class QAction;
+class QWidget;
 
 
 #include <kmainwindow.h>
@@ -41,8 +42,8 @@ class KSelectAction;
 class KToggleAction;
 
 
-class KBBBallsStatusBarWidget;
 class KBBBoard;
+class KBBInfoWidget;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
 
@@ -128,8 +129,9 @@ class KBBMainWindow : public KMainWindow
 		
 		// Various member variables
 		int m_ballNumber;
-		KBBBallsStatusBarWidget* m_ballsStatusBarWidget;
+		QWidget* m_centralWidget;
 		int m_columns;
+		KBBInfoWidget* m_infoWidget;
 		int m_rows;
 		bool m_running;
 		bool m_tutorial;

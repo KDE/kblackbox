@@ -43,7 +43,7 @@
 // Constructor / Destructor
 //
 
-KBBBallsStatusBarWidget::KBBBallsStatusBarWidget(KBBThemeManager* themeManager)
+KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 {
 	QHBoxLayout *mainLayout = new QHBoxLayout();
 	
@@ -67,7 +67,7 @@ KBBBallsStatusBarWidget::KBBBallsStatusBarWidget(KBBThemeManager* themeManager)
 // Public
 //
 
-void KBBBallsStatusBarWidget::setBalls(const int placedBalls, const int ballsToPlace)
+void KBBInfoWidget::setBalls(const int placedBalls, const int ballsToPlace)
 {
 	m_ballsWidget->setBallsToPlace(ballsToPlace);
 	m_ballsWidget->setPlacedBalls(placedBalls);

@@ -26,8 +26,8 @@
 
 
 
-#ifndef KBBBALLSSTATUSBARWIDGET_H
-#define KBBBALLSSTATUSBARWIDGET_H
+#ifndef KBBINFOWIDGET_H
+#define KBBINFOWIDGET_H
 
 
 class QLabel;
@@ -44,13 +44,13 @@ class KBBThemeManager;
  *
  * TODO / i18n issue: This widget cannot manage bidirectional languages: only "left to right" languages are supported. This limitation should be fixed once it is possible to fix it, by changing the way the class QHboxLayout orders the widget positions depending on the locale...
  */
-class KBBBallsStatusBarWidget : public QWidget
+class KBBInfoWidget : public QWidget
 {
 	public:
 		/**
 		 * @brief Constructor
 		 */
-		KBBBallsStatusBarWidget(KBBThemeManager* themeManager);
+		KBBInfoWidget(KBBThemeManager* themeManager);
 		
 		
 		void setBalls(const int placedBalls, const int ballsToPlace);
@@ -63,4 +63,4 @@ class KBBBallsStatusBarWidget : public QWidget
 		QLabel* m_title;
 };
 
-#endif // KBBBALLSSTATUSBARWIDGET_H
+#endif // KBBINFOWIDGET_H

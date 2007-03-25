@@ -31,6 +31,8 @@
 
 #include <QFile>
 #include <QString>
+#include <QVBoxLayout>
+#include <QWidget>
 
 
 #include <kactioncollection.h>
@@ -73,9 +75,21 @@ KBBMainWindow::KBBMainWindow()
 	m_themeManager = new KBBThemeManager(svgzFile);
 	
 	
+	// Info widget
+	m_infoWidget = new KBBInfoWidget(m_themeManager);
+	
+	
 	// Game widget
 	m_gameWidget = new KBBScalableGraphicWidget(m_board, m_themeManager);
-	setCentralWidget(m_gameWidget);
+	
+	
+	// Central Widget
+	m_centralWidget = new QWidget(this);
+	QVBoxLayout *widgetLayout = new QVBoxLayout();
+	m_centralWidget->setLayout(widgetLayout);
+	widgetLayout->addWidget(m_infoWidget);
+	widgetLayout->addWidget(m_gameWidget);
+	setCentralWidget(m_centralWidget);
 	
 	
 	// Menu "Game"
@@ -168,8 +182,7 @@ KBBMainWindow::KBBMainWindow()
 	
 	// Status bar
 	statusBar()->insertItem(i18n("Score: 0000"), SSCORE);
-	m_ballsStatusBarWidget = new KBBBallsStatusBarWidget(m_themeManager);
-	statusBar()->insertWidget(SBALLS, m_ballsStatusBarWidget);
+	//statusBar()->insertWidget(SBALLS, m_ballsStatusBarWidget);
 	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
 	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
 	
@@ -192,6 +205,7 @@ KBBMainWindow::~KBBMainWindow()
 
 void KBBMainWindow::updateStats()
 {
+	// 1. Status bar
 	if (m_running)
 		statusBar()->changeItem(i18n("Run: Yes"), SRUN );
 	else
@@ -199,9 +213,11 @@ void KBBMainWindow::updateStats()
 	
 	statusBar()->changeItem( i18n("Size: %1 x %2", m_columns, m_rows), SSIZE );
 	
-	m_ballsStatusBarWidget->setBalls(m_board->numberOfBallsPlaced(), m_ballNumber);
-	
 	statusBar()->changeItem( i18n("Score: %1", m_board->getScore()), SSCORE );
+	
+	
+	// 2. Info Widget
+	m_infoWidget->setBalls(m_board->numberOfBallsPlaced(), m_ballNumber);
 }
 
 

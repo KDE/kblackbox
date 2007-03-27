@@ -101,12 +101,14 @@ void KBBInfoWidget::setPlacedBalls(const int placedBalls)
 	int ballsLeftToPlace = m_ballsToPlace - placedBalls;
 	if (ballsLeftToPlace<0) {
 		m_ballsTitle->setText(i18np("1 ball too much", "%1 balls too much!", -ballsLeftToPlace));
-	}
-	if (ballsLeftToPlace==0) {
-		m_ballsTitle->setText(i18n("No more ball to place. Are you done?"));
-	}
-	if (ballsLeftToPlace>0)
+		m_ballsTitle->setToolTip(i18np("You need to remove 1 ball from the black box.", "You need to remove %1 balls from the black box.", -ballsLeftToPlace));
+	} else if (ballsLeftToPlace==0) {
+		m_ballsTitle->setText(i18n("No more ball to place."));
+		m_ballsTitle->setToolTip(i18n("If you think you are done: click on \"solve\" to check if you successful guessed the ball positions!"));
+	} else if (ballsLeftToPlace>0) {
 		m_ballsTitle->setText(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace));
+		m_ballsTitle->setToolTip(i18np("You need to place 1 more ball on the black box.", "You need to place %1 more balls on the black box.\n", ballsLeftToPlace) + i18np("You will be done after having found the positions of the ball.", "You will be done after having found the positions of the %1 balls.", m_ballsToPlace));
+	}
 }
 
 

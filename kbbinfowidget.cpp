@@ -58,7 +58,7 @@ KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 	m_ballsTitle = new QLabel(this);
 	m_ballsTitle->setWordWrap(true);
 	ballsLayout->addWidget(m_ballsTitle);
-	m_ballsWidget = new KBBBallsGraphicWidget(BALL_SIZE, themeManager);
+	m_ballsWidget = new KBBBallsGraphicWidget(themeManager);
 	m_ballsWidget->setMinimumWidth(BALL_SIZE);
 	ballsLayout->addWidget(m_ballsWidget);
 	ballsGroupBox->setLayout(ballsLayout);

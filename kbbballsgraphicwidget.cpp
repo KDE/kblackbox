@@ -26,12 +26,8 @@
 
 
 
-#include <QFont>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-
-
-#include <klocale.h>
 
 
 #include "kbbballsgraphicwidget.h"
@@ -45,14 +41,11 @@
 // Constructor / Destructor
 //
 
-KBBBallsGraphicWidget::KBBBallsGraphicWidget(const int ballSize, KBBThemeManager* themeManager)
+KBBBallsGraphicWidget::KBBBallsGraphicWidget(KBBThemeManager* themeManager)
 {
-	m_ballSize = ballSize;
 	m_themeManager = themeManager;
 	m_ballsToPlace = 0;
-	m_ballWrong = NULL;
 	
-	//setMaximumWidth(m_ballSize);
 	setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
 	
 	m_scene = new QGraphicsScene(this);
@@ -64,6 +57,7 @@ KBBBallsGraphicWidget::KBBBallsGraphicWidget(const int ballSize, KBBThemeManager
 
 KBBBallsGraphicWidget::~KBBBallsGraphicWidget()
 {
+	// This removes all graphic items on the view
 	setPlacedBalls(m_ballsToPlace);
 }
 
@@ -82,13 +76,14 @@ void KBBBallsGraphicWidget::resizeEvent(QResizeEvent*)
 void KBBBallsGraphicWidget::setBallsToPlace(const int ballsToPlace)
 {
 	if (m_ballsToPlace != ballsToPlace) {
-		// remove all balls
+		// 1. remove all balls
 		m_ballsToPlace = 0;
 		setPlacedBalls(0);
 		
-		// set new value
+		// 2. set new value
 		m_ballsToPlace = ballsToPlace;
 		
+		// 3. Set the scene size
 		m_scene->setSceneRect(0, 0, KBBScalableGraphicWidget::RATIO, m_ballsToPlace*KBBScalableGraphicWidget::RATIO);
 		resizeEvent(NULL);
 	}
@@ -99,29 +94,29 @@ void KBBBallsGraphicWidget::setPlacedBalls(const int placedBalls)
 {
 	int ballsLeftToPlace = m_ballsToPlace - placedBalls;
 	
-	// remove "wrong" ball
-	if ((ballsLeftToPlace>=0) && (m_ballWrong!=NULL)) {
-		delete m_ballWrong;
-		m_scene->update();
-		m_ballWrong = NULL;
+	// remove "wrong" player balls
+	while (((ballsLeftToPlace>=0) && (m_wrongPlayerBalls.count()>0)) || ((ballsLeftToPlace<0) && (m_wrongPlayerBalls.count()>-ballsLeftToPlace))) {
+		delete m_wrongPlayerBalls.last();
+		m_wrongPlayerBalls.removeLast();
 	}
 	
-	// remove balls
-	while ((ballsLeftToPlace>=0) && (ballsLeftToPlace<m_balls.count())) {
-		delete m_balls.last();
-		m_scene->update();
-		m_balls.removeLast();
+	// remove player balls
+	while (((ballsLeftToPlace>=0) && (ballsLeftToPlace<m_playerBalls.count())) || ((ballsLeftToPlace<0) && (m_playerBalls.count()>0))) {
+		delete m_playerBalls.last();
+		m_playerBalls.removeLast();
 	}
 
 	// add balls
-	while (ballsLeftToPlace>m_balls.count()) {
-		m_balls.append(new KBBGraphicsItem(KBBScalableGraphicWidget::playerBall, m_scene, m_themeManager));
-		m_balls.last()->setPos(0, (m_ballsToPlace-m_balls.count())*KBBScalableGraphicWidget::RATIO);
+	while (ballsLeftToPlace>m_playerBalls.count()) {
+		m_playerBalls.append(new KBBGraphicsItem(KBBScalableGraphicWidget::playerBall, m_scene, m_themeManager));
+		m_playerBalls.last()->setPos(0, (m_ballsToPlace-m_playerBalls.count())*KBBScalableGraphicWidget::RATIO);
 	}
 	
 	// add "wrong" ball
-	while ((ballsLeftToPlace<0) && (m_ballWrong==NULL)) {
-		m_ballWrong = new KBBGraphicsItem(KBBScalableGraphicWidget::wrongPlayerBall, m_scene, m_themeManager);
-		m_ballWrong->setPos(0, (m_ballsToPlace-1)*KBBScalableGraphicWidget::RATIO);
+	while (-ballsLeftToPlace>m_wrongPlayerBalls.count()) {
+		m_wrongPlayerBalls.append(new KBBGraphicsItem(KBBScalableGraphicWidget::wrongPlayerBall, m_scene, m_themeManager));
+		m_wrongPlayerBalls.last()->setPos(0, (m_ballsToPlace-m_wrongPlayerBalls.count())*KBBScalableGraphicWidget::RATIO);
 	}
+	
+	m_scene->update();
 }

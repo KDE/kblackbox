@@ -268,7 +268,7 @@ void KBBMainWindow::slotSize(int selection)
 void KBBMainWindow::solve()
 {
 	if (m_gameDoc->numberOfBallsPlaced() != m_ballNumber)
-		if (KMessageBox::warningContinueCancel(this, i18n( "You should place %1 balls!\nYou have placed %2.\nDo you want to give up this game?", KGlobal::locale()->formatNumber(m_ballNumber, 0), KGlobal::locale()->formatNumber(m_gameDoc->numberOfBallsPlaced(), 0)), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
+		if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_ballNumber) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you want to give up this game?"), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
 			return;
 	
 	m_running = false;
@@ -282,9 +282,9 @@ void KBBMainWindow::solve()
 		const int score = m_gameDoc->getScore();
 		QString s;
 		if (score <= (m_ballNumber*3))
-			s = i18n("Your final score is: %1\nYou did really well!", score);
+			s = i18n("Your final score is: %1.\nYou did really well!", KGlobal::locale()->formatNumber(score,0));
 		else
-			s = i18n("Your final score is: %1\nI guess you need more practice.", score);
+			s = i18n("Your final score is: %1.\nI guess you need more practice.", KGlobal::locale()->formatNumber(score,0));
 		KMessageBox::information(this, s);
 	}
 }

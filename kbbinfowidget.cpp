@@ -100,13 +100,13 @@ void KBBInfoWidget::setPlacedBalls(const int placedBalls)
 	
 	int ballsLeftToPlace = m_ballsToPlace - placedBalls;
 	if (ballsLeftToPlace<0) {
-		m_ballsTitle->setText(i18n("%1 balls too much!", -ballsLeftToPlace));
+		m_ballsTitle->setText(i18np("1 ball too much", "%1 balls too much!", -ballsLeftToPlace));
 	}
 	if (ballsLeftToPlace==0) {
-		m_ballsTitle->setText(i18n("You're done!"));
+		m_ballsTitle->setText(i18n("No more ball to place. Are you done?"));
 	}
 	if (ballsLeftToPlace>0)
-		m_ballsTitle->setText(i18n("%1 balls to place", ballsLeftToPlace));
+		m_ballsTitle->setText(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace));
 }
 
 

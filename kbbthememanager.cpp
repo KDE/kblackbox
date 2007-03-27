@@ -92,6 +92,9 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 		case KBBScalableGraphicWidget::blackboxGrid:
 			eId = "blackbox_grid";
 			break;
+		case KBBScalableGraphicWidget::cursor:
+			eId = "cursor";
+			break;
 		case KBBScalableGraphicWidget::interactionInfoDeflection:
 			eId = "interaction_info_deflection";
 			break;

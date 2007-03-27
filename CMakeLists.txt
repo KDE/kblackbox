@@ -15,6 +15,7 @@ set(kblackbox_SRCS
     kbbgraphicsitemball.cpp
     kbbgraphicsitemblackbox.cpp
     kbbgraphicsitemborder.cpp
+    kbbgraphicsitemcursor.cpp
     kbbgraphicsiteminteractioninfo.cpp
     kbbgraphicsitemlaser.cpp
     kbbgraphicsitemonbox.cpp

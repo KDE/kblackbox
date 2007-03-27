@@ -40,6 +40,7 @@
 #include "kbbgamedoc.h"
 #include "kbbgraphicsitemball.h"
 #include "kbbgraphicsitemblackbox.h"
+#include "kbbgraphicsitemcursor.h"
 #include "kbbgraphicsitemlaser.h"
 #include "kbbgraphicsitemonbox.h"
 #include "kbbgraphicsitemray.h"
@@ -66,6 +67,8 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_themeManager);
 	m_balls = new KBBGraphicsItemSet(m_scene);
+	m_cursor = new KBBGraphicsItemCursor(this, m_themeManager);
+	connect(m_cursor, SIGNAL(cursorAtNewPosition(int)), this, SLOT(cursorAtNewPosition(int)));
 	m_markersNothing = new KBBGraphicsItemSet(m_scene);
 	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
 	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
@@ -87,11 +90,12 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 
 void KBBScalableGraphicWidget::clickAddBall(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_balls->contains(boxPosition))) {
+	if (m_inputAccepted && (!m_balls->contains(boxPosition))&& (!m_ballsUnsure->contains(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
 		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_markersNothing->remove(boxPosition);
 	}
+	m_cursor->setBoxPosition(boxPosition);
 }
 
 
@@ -103,12 +107,13 @@ void KBBScalableGraphicWidget::clickAddMarkerNothing(const int boxPosition)
 		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
 	}
+	m_cursor->setBoxPosition(boxPosition);
 }
 
 
 void KBBScalableGraphicWidget::clickLaser(const int incomingPosition)
 {
-	if (m_inputAccepted) {
+	if (m_inputAccepted && m_lasers->contains(incomingPosition)) {
 		const int outgoingPosition = m_gameDoc->shootRay(incomingPosition);
 		
 		KBBGraphicsItemRayResult* inRay;
@@ -133,6 +138,7 @@ void KBBScalableGraphicWidget::clickLaser(const int incomingPosition)
 		m_scene->update();
 		m_lasers->remove(incomingPosition);
 	}
+	m_cursor->setBorderPosition(incomingPosition);
 }
 
 
@@ -143,6 +149,7 @@ void KBBScalableGraphicWidget::clickRemoveBall(const int boxPosition)
 		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
 	}
+	m_cursor->setBoxPosition(boxPosition);
 }
 
 
@@ -151,6 +158,7 @@ void KBBScalableGraphicWidget::clickRemoveMarkerNothing(const int boxPosition)
 	if (m_inputAccepted) {
 		m_markersNothing->remove(boxPosition);
 	}
+	m_cursor->setBoxPosition(boxPosition);
 }
 
 
@@ -165,6 +173,7 @@ void KBBScalableGraphicWidget::clickSetBallUnsure(const int boxPosition, const b
 			m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		}
 	}
+	m_cursor->setBoxPosition(boxPosition);
 }
 
 
@@ -195,6 +204,7 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 		m_columns = columns;
 		m_rows = rows;
 		m_blackbox->setSize(m_columns, m_rows);
+		m_cursor->setBoardSize(m_columns, m_rows);
 		m_scene->setSceneRect(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE);
 		resizeEvent(0);
 	}
@@ -263,33 +273,51 @@ void KBBScalableGraphicWidget::solve()
 // Slots
 //
 
+void KBBScalableGraphicWidget::cursorAtNewPosition(const int borderPosition)
+{
+	removeRay();
+	if ((borderPosition!=KBBGraphicsItemCursor::NO_POSITION) && m_cursor->isVisible())
+		drawRay(borderPosition);
+}
+
+
 void KBBScalableGraphicWidget::slotDown()
 {
-	//TODO: Manage keyboard input
+	m_cursor->moveDown();
 }
 
 
 void KBBScalableGraphicWidget::slotInput()
 {
-	//TODO: Manage keyboard input
+	if (m_cursor->isVisible()) {
+		if (m_cursor->borderPosition() != KBBGraphicsItemCursor::NO_POSITION)
+			clickLaser(m_cursor->borderPosition());
+		if (m_cursor->boxPosition() != KBBGraphicsItemCursor::NO_POSITION) {
+			if ((m_balls->contains(m_cursor->boxPosition())) || (m_ballsUnsure->contains(m_cursor->boxPosition())))
+				clickRemoveBall(m_cursor->boxPosition());
+			else
+				clickAddBall(m_cursor->boxPosition());
+		}
+	} else
+		m_cursor->show();
 }
 
 
 void KBBScalableGraphicWidget::slotLeft()
 {
-	//TODO: Manage keyboard input
+	m_cursor->moveLeft();
 }
 
 
 void KBBScalableGraphicWidget::slotRight()
 {
-	//TODO: Manage keyboard input
+	m_cursor->moveRight();
 }
 
 
 void KBBScalableGraphicWidget::slotUp()
 {
-	//TODO: Manage keyboard input
+	m_cursor->moveUp();
 }
 
 

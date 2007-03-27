@@ -42,6 +42,7 @@ class KBBBallsOnBoard;
 class KBBGameDoc;
 class KBBGraphicsItem;
 class KBBGraphicsItemBlackBox;
+class KBBGraphicsItemCursor;
 class KBBGraphicsItemRay;
 class KBBGraphicsItemSet;
 class KBBThemeManager;
@@ -102,7 +103,8 @@ class KBBScalableGraphicWidget : public QGraphicsView
 			laser0=20,
 			laser90=21,
 			laser180=22,
-			laser270=23
+			laser270=23,
+			cursor=24
 		};
 		
 		
@@ -133,6 +135,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	public slots:
+		void cursorAtNewPosition(const int borderPosition);
 		void slotDown();
 		void slotInput();
 		void slotLeft();
@@ -151,6 +154,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		// Graphics items
 		KBBGraphicsItemBlackBox* m_blackbox;
 		KBBGraphicsItemSet* m_balls;
+		KBBGraphicsItemCursor* m_cursor;
 		KBBGraphicsItemSet* m_markersNothing;
 		KBBGraphicsItemSet* m_ballsSolution;
 		KBBGraphicsItemSet* m_ballsUnsure;

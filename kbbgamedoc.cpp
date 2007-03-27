@@ -36,7 +36,7 @@
 
 
 #include "kbbballsonboard.h"
-#include "kbbboard.h"
+#include "kbbgamedoc.h"
 
 
 
@@ -139,4 +139,4 @@ void KBBGameDoc::setScore( int n )
 	emit updateStats();
 }
 
-#include "kbbboard.moc"
+#include "kbbgamedoc.moc"

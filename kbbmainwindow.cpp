@@ -45,7 +45,7 @@
 #include <ktoggleaction.h>
 
 
-#include "kbbboard.h"
+#include "kbbgamedoc.h"
 #include "kbbinfowidget.h"
 #include "kbbmainwindow.h"
 #include "kbbprefs.h"

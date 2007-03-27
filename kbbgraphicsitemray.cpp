@@ -37,7 +37,7 @@
 
 
 #include "kbbballsonboard.h"
-#include "kbbboard.h"
+#include "kbbgamedoc.h"
 #include "kbbgraphicsitemborder.h"
 #include "kbbgraphicsitemray.h"
 #include "kbbscalablegraphicwidget.h"

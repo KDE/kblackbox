@@ -33,7 +33,7 @@
 
 
 #include "kbbballsonboard.h"
-#include "kbbboard.h"
+#include "kbbgamedoc.h"
 
 
 

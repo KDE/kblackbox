@@ -92,7 +92,7 @@ void KBBGraphicsItemRay::draw(KBBBallsOnBoard* ballsOnBoard, const int borderPos
 		path.lineTo(x,y);
 	}
 	
-	if (oppositeBorderPosition!=KBBBoard::HIT_POSITION) {
+	if (oppositeBorderPosition!=KBBGameDoc::HIT_POSITION) {
 		int x1;
 		int y1;
 		centerCoordinate(oppositeBorderPosition, x1, y1, b/2);

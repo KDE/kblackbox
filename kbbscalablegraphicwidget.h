@@ -39,7 +39,7 @@ class QResizeEvent;
 
 
 class KBBBallsOnBoard;
-class KBBBoard;
+class KBBGameDoc;
 class KBBGraphicsItem;
 class KBBGraphicsItemBlackBox;
 class KBBGraphicsItemRay;
@@ -109,7 +109,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		/**
 		 * @brief Constructor
 		 */
-		explicit KBBScalableGraphicWidget(KBBBoard* board, KBBThemeManager* themeManager);
+		explicit KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager);
 		
 		
 		void clickAddBall(const int boxPosition);
@@ -169,7 +169,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		QRectF m_rectBackground;
 		
 		// Various member variables
-		KBBBoard* m_board;
+		KBBGameDoc* m_gameDoc;
 		KBBBallsOnBoard* m_boardBalls;
 		KBBBallsOnBoard* m_boardBallsPlaced;
 		int m_columns;

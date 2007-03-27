@@ -29,8 +29,8 @@
 
 
 
-#ifndef KBBBOARD_H
-#define KBBBOARD_H
+#ifndef KBBGAMEDOC_H
+#define KBBGAMEDOC_H
 
 
 #include <QObject>
@@ -46,24 +46,29 @@ class KBBBallsOnBoard;
 
 
 /**
- * @brief Logical board of the game
+ * @brief Game document (Logical board)
  *
- * The logical board manages a game, that is:
+ * The game document (=logical board) manages a game, that is:
  *    - the score
- *    - the balls the user places on the board
+ *    - the balls the user placed on the board
  *    - the real (hidden) balls of the black box
- *
- * It contains also the graphic widget (that displays the game status and manages the user inputs).
  */
-class KBBBoard : public QObject
+class KBBGameDoc : public QObject
 {
 	Q_OBJECT
 
 	public:
+		/**
+		 * When a laser ray enter the black box, it exits on a defined border position, except if the laser ray hits a ball. In this case, it doesn't exit the black box. In this case, we defined the exit position as the HIT_POSITION.
+		 * This position is "virtual" and must be different to all other possible "real" border positions. (That's why we defined it as a negative (<0) position).
+		 */
 		static const int HIT_POSITION = -1;
 		
 		
-		explicit KBBBoard(KBBMainWindow *parent);
+		/**
+		 * @brief Constructor
+		 */
+		explicit KBBGameDoc(KBBMainWindow *parent);
 		
 		
 		/**
@@ -134,4 +139,4 @@ class KBBBoard : public QObject
 		int score;
 };
 
-#endif //KBBBOARD_H
+#endif //KBBGAMEDOC_H

@@ -44,7 +44,7 @@
 // Constructor / Destructor
 //
 
-KBBBoard::KBBBoard(KBBMainWindow *parent) : QObject(parent)
+KBBGameDoc::KBBGameDoc(KBBMainWindow *parent) : QObject(parent)
 {
 	m_gameReallyStarted = false;
 	m_columns = 1;
@@ -63,7 +63,7 @@ KBBBoard::KBBBoard(KBBMainWindow *parent) : QObject(parent)
 // Public
 //
 
-void KBBBoard::gameOver()
+void KBBGameDoc::gameOver()
 {
 	// Clear
 	m_gameReallyStarted = false;
@@ -73,19 +73,19 @@ void KBBBoard::gameOver()
 }
 
 
-bool KBBBoard::gameReallyStarted()
+bool KBBGameDoc::gameReallyStarted()
 {
 	return m_gameReallyStarted;
 }
 
 
-int KBBBoard::getScore()
+int KBBGameDoc::getScore()
 {
 	return score;
 }
 
 
-void KBBBoard::newGame( int balls, int columns, int rows, bool tutorial )
+void KBBGameDoc::newGame( int balls, int columns, int rows, bool tutorial )
 {
 	m_columns = columns;
 	m_rows = rows;
@@ -107,13 +107,13 @@ void KBBBoard::newGame( int balls, int columns, int rows, bool tutorial )
 }
 
 
-int KBBBoard::numberOfBallsPlaced()
+int KBBGameDoc::numberOfBallsPlaced()
 {
 	return m_ballsPlaced->count();
 }
 
 
-int KBBBoard::shootRay( int borderPosition )
+int KBBGameDoc::shootRay( int borderPosition )
 {
 	int outgoingBorderPosition = m_balls->oppositeBorderPosition(borderPosition);
 	
@@ -133,7 +133,7 @@ int KBBBoard::shootRay( int borderPosition )
 // Private
 //
 
-void KBBBoard::setScore( int n )
+void KBBGameDoc::setScore( int n )
 {
 	score = n;
 	emit updateStats();

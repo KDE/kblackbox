@@ -41,7 +41,7 @@
 // Constructor / Destructor
 //
 
-KBBBallsOnBoard::KBBBallsOnBoard(KBBBoard* parent, const int columns, const int rows) : QObject(parent)
+KBBBallsOnBoard::KBBBallsOnBoard(KBBGameDoc* parent, const int columns, const int rows) : QObject(parent)
 {
 	m_columns = columns;
 	m_rows = rows;
@@ -55,7 +55,7 @@ KBBBallsOnBoard::KBBBallsOnBoard(KBBBoard* parent, const int columns, const int 
 
 int KBBBallsOnBoard::absolutePositionToBorderPosition(int position[DIM_MAX])
 {
-	int borderPosition = KBBBoard::HIT_POSITION;
+	int borderPosition = KBBGameDoc::HIT_POSITION;
 	if (position[DIM_Y] == 1)
 		borderPosition = position[DIM_X] - 2;
 	else if (position[DIM_X] == m_columns + 2)
@@ -97,8 +97,8 @@ void KBBBallsOnBoard::borderPositionToAbsolutePosition(int borderPosition, int p
 		position[DIM_X] = 1;
 		position[DIM_Y] = (m_rows - (borderPosition - 2*m_columns - m_rows)) + 1;
 	} else {
-		position[DIM_X] = KBBBoard::HIT_POSITION;
-		position[DIM_Y] = KBBBoard::HIT_POSITION;
+		position[DIM_X] = KBBGameDoc::HIT_POSITION;
+		position[DIM_Y] = KBBGameDoc::HIT_POSITION;
 	}
 }
 
@@ -220,8 +220,8 @@ void KBBBallsOnBoard::getOutgoingPosition( int position[DIM_MAX], int incomingDi
 	bool deviation = false;
 	if (positionInTheBox(nextPosition) && contains((nextPosition[DIM_X] - 2) + (nextPosition[DIM_Y] - 2) * m_columns)) {
 		// HIT
-		position[DIM_X] = KBBBoard::HIT_POSITION;
-		position[DIM_Y] = KBBBoard::HIT_POSITION;
+		position[DIM_X] = KBBGameDoc::HIT_POSITION;
+		position[DIM_Y] = KBBGameDoc::HIT_POSITION;
 		points.append(absolutePositionToBoxPosition(nextPosition));
 	} else if (positionInTheBox(nextLeftPosition) && contains((nextLeftPosition[DIM_X] - 2) + (nextLeftPosition[DIM_Y] - 2) * m_columns)) {
 		// DEVIATION 1

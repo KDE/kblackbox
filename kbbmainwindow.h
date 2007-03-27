@@ -42,7 +42,7 @@ class KSelectAction;
 class KToggleAction;
 
 
-class KBBBoard;
+class KBBGameDoc;
 class KBBInfoWidget;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
@@ -117,7 +117,7 @@ class KBBMainWindow : public KMainWindow
 		/**
 		 * @brief The game document
 		 */
-		KBBBoard* m_board;
+		KBBGameDoc* m_gameDoc;
 		
 		/**
 		 * @brief The game main widget

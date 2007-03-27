@@ -64,8 +64,8 @@ KBBMainWindow::KBBMainWindow()
 	
 	
 	// Board
-	m_board = new KBBBoard(this);
-	connect( m_board, SIGNAL(updateStats()), this, SLOT(updateStats()) );
+	m_gameDoc = new KBBGameDoc(this);
+	connect( m_gameDoc, SIGNAL(updateStats()), this, SLOT(updateStats()) );
 	
 	
 	// Theme manager
@@ -80,7 +80,7 @@ KBBMainWindow::KBBMainWindow()
 	
 	
 	// Game widget
-	m_gameWidget = new KBBScalableGraphicWidget(m_board, m_themeManager);
+	m_gameWidget = new KBBScalableGraphicWidget(m_gameDoc, m_themeManager);
 	
 	
 	// Central Widget
@@ -213,8 +213,8 @@ void KBBMainWindow::updateStats()
 	
 	
 	// 2. Info Widget
-	m_infoWidget->setPlacedBalls(m_board->numberOfBallsPlaced());
-	m_infoWidget->setScore(m_board->getScore());
+	m_infoWidget->setPlacedBalls(m_gameDoc->numberOfBallsPlaced());
+	m_infoWidget->setScore(m_gameDoc->getScore());
 }
 
 
@@ -267,19 +267,19 @@ void KBBMainWindow::slotSize(int selection)
 
 void KBBMainWindow::solve()
 {
-	if (m_board->numberOfBallsPlaced() != m_ballNumber)
-		if (KMessageBox::warningContinueCancel(this, i18n( "You should place %1 balls!\nYou have placed %2.\nDo you want to give up this game?", KGlobal::locale()->formatNumber(m_ballNumber, 0), KGlobal::locale()->formatNumber(m_board->numberOfBallsPlaced(), 0)), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
+	if (m_gameDoc->numberOfBallsPlaced() != m_ballNumber)
+		if (KMessageBox::warningContinueCancel(this, i18n( "You should place %1 balls!\nYou have placed %2.\nDo you want to give up this game?", KGlobal::locale()->formatNumber(m_ballNumber, 0), KGlobal::locale()->formatNumber(m_gameDoc->numberOfBallsPlaced(), 0)), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
 			return;
 	
 	m_running = false;
 	m_solveAction->setEnabled(false);
-	m_board->gameOver();
+	m_gameDoc->gameOver();
 	m_gameWidget->solve();
 	updateStats();
 	
 	
-	if (m_board->numberOfBallsPlaced() == m_ballNumber) {
-		const int score = m_board->getScore();
+	if (m_gameDoc->numberOfBallsPlaced() == m_ballNumber) {
+		const int score = m_gameDoc->getScore();
 		QString s;
 		if (score <= (m_ballNumber*3))
 			s = i18n("Your final score is: %1\nYou did really well!", score);
@@ -307,7 +307,7 @@ void KBBMainWindow::tutorialSwitch()
 bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newTutorialMode)
 {
 	bool start = true;
-	if (m_board->gameReallyStarted())
+	if (m_gameDoc->gameReallyStarted())
 		start = ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("End Game"))) == KMessageBox::Continue );
 	
 	if (start) {
@@ -318,7 +318,7 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 		m_tutorial = newTutorialMode;
 
 		m_solveAction->setEnabled(true);
-		m_board->newGame(m_ballNumber, m_columns, m_rows, m_tutorial);
+		m_gameDoc->newGame(m_ballNumber, m_columns, m_rows, m_tutorial);
 		m_gameWidget->newGame(m_columns, m_rows);
 		if (m_tutorial)
 			m_gameWidget->solve();

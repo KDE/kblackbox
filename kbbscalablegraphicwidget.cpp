@@ -54,9 +54,9 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBBoard* board, KBBThemeManager* themeManager)
+KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager)
 {
-	m_board = board;
+	m_gameDoc = gameDoc;
 	m_themeManager = themeManager;
 	m_columns = 1;
 	m_rows = 1;
@@ -109,15 +109,15 @@ void KBBScalableGraphicWidget::clickAddMarkerNothing(const int boxPosition)
 void KBBScalableGraphicWidget::clickLaser(const int incomingPosition)
 {
 	if (m_inputAccepted) {
-		const int outgoingPosition = m_board->shootRay(incomingPosition);
+		const int outgoingPosition = m_gameDoc->shootRay(incomingPosition);
 		
 		KBBGraphicsItemRayResult* inRay;
 		KBBGraphicsItemRayResult* outRay;
 		
 		int rayNumberOrReflection = 0;
-		if (outgoingPosition==KBBBoard::HIT_POSITION)
-			rayNumberOrReflection = KBBBoard::HIT_POSITION;
-		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBBoard::HIT_POSITION)) {
+		if (outgoingPosition==KBBGameDoc::HIT_POSITION)
+			rayNumberOrReflection = KBBGameDoc::HIT_POSITION;
+		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBGameDoc::HIT_POSITION)) {
 			m_rayNumber++;
 			m_lasers->remove(outgoingPosition);
 			m_rayResults->insert(outRay = new KBBGraphicsItemRayResult(this, m_themeManager, m_scene, outgoingPosition, m_columns, m_rows, m_rayNumber));
@@ -125,7 +125,7 @@ void KBBScalableGraphicWidget::clickLaser(const int incomingPosition)
 		}
 		m_rayResults->insert(inRay = new KBBGraphicsItemRayResult(this, m_themeManager, m_scene, incomingPosition, m_columns, m_rows, rayNumberOrReflection));
 		
-		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBBoard::HIT_POSITION)) {
+		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBGameDoc::HIT_POSITION)) {
 			inRay->setOpposite(outRay);
 			outRay->setOpposite(inRay);
 		}
@@ -180,7 +180,7 @@ void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 {
 	m_rayNumber = 0;
-	m_boardBallsPlaced = m_board->m_ballsPlaced;
+	m_boardBallsPlaced = m_gameDoc->m_ballsPlaced;
 	
 	// remove old lasers, old ray results, all placed balls, all markers "nothing" and all solutions
 	m_lasers->clear();
@@ -245,7 +245,7 @@ QGraphicsScene* KBBScalableGraphicWidget::scene()
 
 void KBBScalableGraphicWidget::solve()
 {
-	m_boardBalls = m_board->m_balls;
+	m_boardBalls = m_gameDoc->m_balls;
 	
 	setInputAccepted(false);
 	

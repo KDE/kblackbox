@@ -37,7 +37,7 @@
 #include <QObject>
 
 
-class KBBBoard;
+class KBBGameDoc;
 
 
 
@@ -64,7 +64,10 @@ class KBBBallsOnBoard : public QObject
 	Q_OBJECT
 
 	public:
-		KBBBallsOnBoard(KBBBoard* parent, const int columns, const int rows);
+		/**
+		 * @brief Constructor
+		 */
+		KBBBallsOnBoard(KBBGameDoc* parent, const int columns, const int rows);
 
 
 		/**

@@ -1,0 +1,6 @@
+/** @mainpage KBlackBox API Reference
+ *
+ * KBlackBox is a game based on an emacs module. See a description of the game principles in Wikipedia: http://en.wikipedia.org/wiki/Black_Box_(game) .
+ * Since the version 0.4, the game uses intensely the GraphicsView framework of Qt 4.2 with SVG items. See: http://doc.trolltech.com/qgraphicsview.html
+ */
+

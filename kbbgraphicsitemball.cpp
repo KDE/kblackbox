@@ -145,40 +145,6 @@ void KBBGraphicsItemBall::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 }
 
 
-void KBBGraphicsItemBall::mousePressEvent (QGraphicsSceneMouseEvent* event)
-{
-	if (event->buttons()==Qt::LeftButton) {
-		switch(m_ballType) {
-			case KBBScalableGraphicWidget::solutionBall:
-				m_widget->clickAddBall(position());
-				break;
-			case KBBScalableGraphicWidget::playerBall:
-				m_widget->clickRemoveBall(position());
-				break;
-			case KBBScalableGraphicWidget::unsureBall:
-				m_widget->clickSetBallUnsure(position(), false);
-				break;
-			default:
-				break;
-		}
-	} else {
-		switch(m_ballType) {
-			case KBBScalableGraphicWidget::solutionBall:
-				m_widget->clickAddMarkerNothing(position());
-				break;
-			case KBBScalableGraphicWidget::playerBall:
-				m_widget->clickSetBallUnsure(position(), true);
-				break;
-			case KBBScalableGraphicWidget::unsureBall:
-				m_widget->clickAddMarkerNothing(position());
-				break;
-			default:
-				break;
-		}
-	}
-}
-
-
 void KBBGraphicsItemBall::removeInteractionInfos()
 {
 	for (int i=0; i<8;i++) {

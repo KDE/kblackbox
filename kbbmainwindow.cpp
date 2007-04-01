@@ -132,34 +132,39 @@ KBBMainWindow::KBBMainWindow()
 	// Keyboard only
 	QAction* action = actionCollection()->addAction( "move_down" );
 	action->setText( i18n("Move Down") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotDown()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveDown()));
 	action->setShortcut(Qt::Key_Down);
 	addAction(action);
 	
 	action = actionCollection()->addAction( "move_up" );
 	action->setText( i18n("Move Up") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotUp()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveUp()));
 	action->setShortcut(Qt::Key_Up);
 	addAction(action);
 	
 	action = actionCollection()->addAction( "move_left" );
 	action->setText( i18n("Move Left") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotLeft()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveLeft()));
 	action->setShortcut(Qt::Key_Left);
 	addAction(action);
 	
 	action = actionCollection()->addAction( "move_right" );
 	action->setText( i18n("Move Right") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotRight()));
+	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveRight()));
 	action->setShortcut(Qt::Key_Right);
 	addAction(action);
 	
-	action = actionCollection()->addAction( "move_trigger" );
-	action->setText( i18n("Trigger Action") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(slotInput()));
+	action = actionCollection()->addAction("switch_ball");
+	action->setText(i18n("Switch ball or shoot laser"));
+	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardEnter()));
 	action->setShortcut(Qt::Key_Return);
 	addAction(action);
 	
+	action = actionCollection()->addAction("switch_marker");
+	action->setText(i18n("Switch marker"));
+	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardSpace()));
+	action->setShortcut(Qt::Key_Space);
+	addAction(action);
 	
 	//Read configuration options
 	m_ballNumber = KBBPrefs::balls();
@@ -274,7 +279,7 @@ void KBBMainWindow::solve()
 	m_running = false;
 	m_solveAction->setEnabled(false);
 	m_gameDoc->gameOver();
-	m_gameWidget->solve();
+	m_gameWidget->solve(false);
 	updateStats();
 	
 	
@@ -321,7 +326,7 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 		m_gameDoc->newGame(m_ballNumber, m_columns, m_rows, m_tutorial);
 		m_gameWidget->newGame(m_columns, m_rows);
 		if (m_tutorial)
-			m_gameWidget->solve();
+			m_gameWidget->solve(true);
 		
 		m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
 		updateStats();

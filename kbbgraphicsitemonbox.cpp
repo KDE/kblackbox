@@ -76,10 +76,5 @@ const int KBBGraphicsItemOnBox::position ()
 
 void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	if (m_itemType==KBBScalableGraphicWidget::markerNothing) {
-		if (event->buttons()==Qt::LeftButton)
-			m_widget->clickAddBall(position());
-		else
-			m_widget->clickRemoveMarkerNothing(position());
-	}
+	m_widget->mouseBoxClick(event->button(), position());
 }

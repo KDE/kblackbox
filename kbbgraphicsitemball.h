@@ -70,7 +70,6 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 	private:
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
-		void mousePressEvent (QGraphicsSceneMouseEvent*);
 		void removeInteractionInfos();
 		
 		KBBGraphicsItemInteractionInfo* m_interactionInfos[8];

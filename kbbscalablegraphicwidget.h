@@ -114,13 +114,9 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		explicit KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager);
 		
 		
-		void clickAddBall(const int boxPosition);
-		void clickAddMarkerNothing(const int boxPosition);
-		void clickLaser(const int incomingPosition);
-		void clickRemoveBall(const int boxPosition);
-		void clickRemoveMarkerNothing(const int boxPosition);
-		void clickSetBallUnsure(const int boxPosition, const bool unsure);
 		void drawRay(const int borderPosition);
+		void mouseBorderClick(const int borderPosition);
+		void mouseBoxClick(const Qt::MouseButton button, const int boxPosition);
 		void newGame(const int columns, const int rows);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
@@ -130,17 +126,19 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * @brief display the solution
 		 *
 		 * Used at the end of the game and for the tutorial mode.
+		 * @param continueGame Sould the game continue after displaying the solution? (Yes for tutorial mode, no for normal game end).
 		 */
-		void solve();
+		void solve(const bool continueGame);
 
 
 	public slots:
 		void cursorAtNewPosition(const int borderPosition);
-		void slotDown();
-		void slotInput();
-		void slotLeft();
-		void slotRight();
-		void slotUp();
+		void keyboardEnter();
+		void keyboardMoveDown();
+		void keyboardMoveLeft();
+		void keyboardMoveRight();
+		void keyboardMoveUp();
+		void keyboardSpace();
 
 
 	protected:
@@ -148,7 +146,15 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	private:
+		void addBall(const int boxPosition);
+		void addMarkerNothing(const int boxPosition);
+		void removeBall(const int boxPosition);
+		void removeMarkerNothing(const int boxPosition);
+		void setBallUnsure(const int boxPosition, const bool unsure);
 		void setInputAccepted(bool inputAccepted);
+		void switchBall();
+		void switchMarker();
+		void useLaser(const int incomingPosition);
 		
 		
 		// Graphics items

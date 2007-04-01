@@ -117,8 +117,6 @@ void KBBGraphicsItemBlackBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	int y = (static_cast<int>(event->pos().y()) - KBBScalableGraphicWidget::BORDER_SIZE);
 	x /= KBBScalableGraphicWidget::RATIO;
 	y /= KBBScalableGraphicWidget::RATIO;
-	if (event->buttons()==Qt::LeftButton)
-		m_widget->clickAddBall(x + y*m_columns);
-	if (event->buttons()==Qt::RightButton)
-		m_widget->clickAddMarkerNothing(x + y*m_columns);
+	
+	m_widget->mouseBoxClick(event->button(), x + y*m_columns);
 }

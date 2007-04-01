@@ -29,6 +29,7 @@
 
 
 
+#include <QGraphicsSceneMouseEvent>
 #include <QString>
 
 
@@ -90,8 +91,10 @@ void KBBGraphicsItemLaser::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 }
 
 
-void KBBGraphicsItemLaser::mousePressEvent (QGraphicsSceneMouseEvent* )
+void KBBGraphicsItemLaser::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	m_widget->clickLaser(position());
-	m_widget->removeRay();
+	if (event->buttons()==Qt::LeftButton) {
+		m_widget->mouseBorderClick(position());
+		m_widget->removeRay();
+	}
 }

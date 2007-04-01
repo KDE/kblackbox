@@ -70,7 +70,7 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsIte
 	private:
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
-		void mousePressEvent (QGraphicsSceneMouseEvent* );
+		void mousePressEvent (QGraphicsSceneMouseEvent* event);
 		
 		KBBScalableGraphicWidget* m_widget;
 };

@@ -1,3 +1,6 @@
+2007-04-01 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Code refactoring to merge keyboard and mouse control.
+
 2007-03-27 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Basic support of the keyboard reintroduced. (it has been removed on 2007-01-31.) Added a new (temporary) SVG item for the "cursor".
 	* Used i18np for the GUI texts to better support plural forms.

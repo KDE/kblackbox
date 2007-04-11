@@ -28,6 +28,7 @@
  ***************************************************************************/
 
 
+#include "kbbgamedoc.h"
 
 #include <QWidget>
 
@@ -36,7 +37,6 @@
 
 
 #include "kbbballsonboard.h"
-#include "kbbgamedoc.h"
 
 
 

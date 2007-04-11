@@ -25,6 +25,7 @@
  ***************************************************************************/
 
 
+#include "kbbthememanager.h"
 
 #include <QColor>
 #include <QDomDocument>
@@ -38,7 +39,6 @@
 
 
 #include "kbbscalablegraphicwidget.h"
-#include "kbbthememanager.h"
 
 
 

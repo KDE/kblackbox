@@ -28,11 +28,11 @@
  ***************************************************************************/
 
 
+#include "kbbballsonboard.h"
 
 #include <QObject>
 
 
-#include "kbbballsonboard.h"
 #include "kbbgamedoc.h"
 
 

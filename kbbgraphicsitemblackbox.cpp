@@ -28,6 +28,7 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitemblackbox.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
@@ -37,7 +38,6 @@
 
 
 #include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemblackbox.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 

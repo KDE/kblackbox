@@ -25,12 +25,12 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitem.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSvgItem>
 
 
-#include "kbbgraphicsitem.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 

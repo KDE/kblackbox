@@ -28,13 +28,13 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitemonbox.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 
 
 #include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemonbox.h"
 #include "kbbgraphicsiteminteractioninfo.h"
 #include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"

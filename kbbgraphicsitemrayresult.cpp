@@ -28,6 +28,7 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitemrayresult.h"
 
 #include <QFont>
 #include <QGraphicsScene>
@@ -35,7 +36,6 @@
 
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
-#include "kbbgraphicsitemrayresult.h"
 #include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"

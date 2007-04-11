@@ -25,6 +25,7 @@
  ***************************************************************************/
 
 
+#include "kbbinfowidget.h"
 
 #include <QGroupBox>
 #include <QVBoxLayout>
@@ -37,7 +38,6 @@
 
 
 #include "kbbballsgraphicwidget.h"
-#include "kbbinfowidget.h"
 
 
 

@@ -28,12 +28,12 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitemset.h"
 
 #include <QGraphicsScene>
 
 
 #include "kbbitemwithposition.h"
-#include "kbbgraphicsitemset.h"
 
 
 

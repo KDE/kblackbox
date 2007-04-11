@@ -28,6 +28,7 @@
  ***************************************************************************/
 
 
+#include "kbbmainwindow.h"
 
 #include <QFile>
 #include <QString>
@@ -47,7 +48,6 @@
 
 #include "kbbgamedoc.h"
 #include "kbbinfowidget.h"
-#include "kbbmainwindow.h"
 #include "kbbprefs.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"

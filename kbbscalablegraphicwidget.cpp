@@ -28,6 +28,7 @@
  ***************************************************************************/
 
 
+#include "kbbscalablegraphicwidget.h"
 
 #include <QColor>
 #include <QGraphicsScene>
@@ -46,7 +47,6 @@
 #include "kbbgraphicsitemray.h"
 #include "kbbgraphicsitemrayresult.h"
 #include "kbbgraphicsitemset.h"
-#include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 
 

@@ -28,6 +28,7 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitemray.h"
 
 #include <QColor>
 #include <QGraphicsScene>
@@ -39,7 +40,6 @@
 #include "kbbballsonboard.h"
 #include "kbbgamedoc.h"
 #include "kbbgraphicsitemborder.h"
-#include "kbbgraphicsitemray.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 

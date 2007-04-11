@@ -28,12 +28,12 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitemball.h"
 
 #include <QGraphicsSceneHoverEvent>
 #include <QTimer>
 
 
-#include "kbbgraphicsitemball.h"
 #include "kbbgraphicsiteminteractioninfo.h"
 #include "kbbgraphicsitemonbox.h"
 #include "kbbscalablegraphicwidget.h"

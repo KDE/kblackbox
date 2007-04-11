@@ -28,6 +28,7 @@
  ***************************************************************************/
 
 
+#include "kbbgraphicsitemlaser.h"
 
 #include <QGraphicsSceneMouseEvent>
 #include <QString>
@@ -35,7 +36,6 @@
 
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemborder.h"
-#include "kbbgraphicsitemlaser.h"
 #include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"

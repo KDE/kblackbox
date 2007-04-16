@@ -37,7 +37,7 @@ class QAction;
 class QWidget;
 
 
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 class KSelectAction;
 class KToggleAction;
 
@@ -52,7 +52,7 @@ class KBBThemeManager;
 /**
 * @brief Main window of the game KBlackBox
 */
-class KBBMainWindow : public KMainWindow
+class KBBMainWindow : public KXmlGuiWindow
 {
 	Q_OBJECT
 
@@ -74,17 +74,17 @@ class KBBMainWindow : public KMainWindow
 		 * @brief Start a new game.
 		 */
 		void newGame();
-		
+
 		void slotSize(int selection);
 		void slotBalls(int selection);
-		
+
 		/**
 		 * @brief Ends the current game
-		 * 
+		 *
 		 * This function is used when the player is giving up or when he is done.
 		 */
 		void solve();
-		
+
 		void tutorialSwitch();
 
 
@@ -94,37 +94,37 @@ class KBBMainWindow : public KMainWindow
 		 */
 		static const int SRUN = 0;
 		static const int SSIZE = 1;
-		
-		
+
+
 		/**
 		 * @brief Start a new game afer user confirmation (if needed).
 		 *
 		 * If the game is running and really started, the user has to confirm the end of the game.
 		 * If the game is not running or running but not really started, the game may end and a new game may start without user confirmation.
-		 * 
+		 *
 		 * @return if a new game started or not
 		 */
 		bool startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newTutorialMode);
-		
-		
+
+
 		// Actions
 		KSelectAction *m_ballsAction;
 		KSelectAction *m_sizeAction;
 		QAction *m_solveAction;
 		KToggleAction *m_tutorialAction;
-		
-		
+
+
 		/**
 		 * @brief The game document
 		 */
 		KBBGameDoc* m_gameDoc;
-		
+
 		/**
 		 * @brief The game main widget
 		 */
 		KBBScalableGraphicWidget* m_gameWidget;
-		
-		
+
+
 		// Various member variables
 		int m_ballNumber;
 		QWidget* m_centralWidget;

@@ -30,7 +30,7 @@
 #include <QColor>
 #include <QDomDocument>
 #include <QFile>
-#include <QString>
+
 #include <QStringList>
 
 

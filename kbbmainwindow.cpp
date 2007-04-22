@@ -31,7 +31,7 @@
 #include "kbbmainwindow.h"
 
 #include <QFile>
-#include <QString>
+
 #include <QHBoxLayout>
 #include <QWidget>
 

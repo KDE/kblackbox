@@ -33,7 +33,7 @@
 #define KBBGRAPHICSITEMINTERACTIONINFO_H
 
 
-#include <QString>
+
 
 
 #include "kbbgraphicsitem.h"

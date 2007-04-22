@@ -31,7 +31,7 @@
 #include "kbbgraphicsitemlaser.h"
 
 #include <QGraphicsSceneMouseEvent>
-#include <QString>
+
 
 
 #include "kbbgraphicsitem.h"

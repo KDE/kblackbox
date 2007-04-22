@@ -44,6 +44,7 @@
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
 #include <ktoggleaction.h>
+#include <kselectaction.h>
 
 
 #include "kbbgamedoc.h"

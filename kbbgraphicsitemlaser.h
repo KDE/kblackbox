@@ -55,6 +55,7 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsIte
 		 * @brief Constructor
 		 * 
 		 * @param parent Scalable graphic widget
+		 * @param themeManager Theme manager
 		 * @param borderPosition Position of the laser around the border. Each laser has a different border position.
 		 * @param columns Width of the Black Box
 		 * @param rows Height of the Black Box

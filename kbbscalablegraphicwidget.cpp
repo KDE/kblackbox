@@ -57,6 +57,8 @@
 
 KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager)
 {
+    setFrameStyle(QFrame::NoFrame);
+
 	m_gameDoc = gameDoc;
 	m_themeManager = themeManager;
 	m_columns = 1;

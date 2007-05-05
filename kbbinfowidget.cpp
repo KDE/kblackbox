@@ -54,6 +54,7 @@ KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 	
 	// 1st part: balls
 	QGroupBox *ballsGroupBox = new QGroupBox(i18n("Balls"));
+    ballsGroupBox->setFlat(true);
 	QVBoxLayout *ballsLayout = new QVBoxLayout();
 	m_ballsTitle = new QLabel(this);
 	m_ballsTitle->setWordWrap(true);
@@ -67,8 +68,10 @@ KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 	
 	// 2nd part: score
 	QGroupBox *scoreGroupBox = new QGroupBox(i18n("Score"));
+    scoreGroupBox->setFlat(true);
 	QVBoxLayout *scoreLayout = new QVBoxLayout();
 	m_score = new KGameLCD(3, this);
+    m_score->setFrameStyle(QFrame::NoFrame);
 	m_score->setMinimumHeight(3*BALL_SIZE/2);
 	m_score->setHighlightColor(Qt::red);
 	scoreLayout->addWidget(m_score);

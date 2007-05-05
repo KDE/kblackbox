@@ -87,6 +87,7 @@ KBBMainWindow::KBBMainWindow()
 	// Central Widget
 	m_centralWidget = new QWidget(this);
 	QHBoxLayout *widgetLayout = new QHBoxLayout();
+    widgetLayout->setMargin(0);
 	m_centralWidget->setLayout(widgetLayout);
 	widgetLayout->addWidget(m_infoWidget);
 	widgetLayout->addWidget(m_gameWidget);

@@ -85,7 +85,7 @@ int KBBGameDoc::getScore()
 }
 
 
-void KBBGameDoc::newGame( int balls, int columns, int rows, bool tutorial )
+void KBBGameDoc::newGame(int balls, int columns, int rows)
 {
 	m_columns = columns;
 	m_rows = rows;

@@ -85,7 +85,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		 */
 		void solve();
 
-		void tutorialSwitch();
+		void sandboxModeSwitch();
 
 
 	private:
@@ -104,14 +104,14 @@ class KBBMainWindow : public KXmlGuiWindow
 		 *
 		 * @return if a new game started or not
 		 */
-		bool startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newTutorialMode);
+		bool startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newSandboxModeMode);
 
 
 		// Actions
 		KSelectAction *m_ballsAction;
+		KToggleAction *m_sandboxModeAction;
 		KSelectAction *m_sizeAction;
 		QAction *m_solveAction;
-		KToggleAction *m_tutorialAction;
 
 
 		/**
@@ -132,7 +132,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		KBBInfoWidget* m_infoWidget;
 		int m_rows;
 		bool m_running;
-		bool m_tutorial;
+		bool m_sandboxMode;
 		KBBThemeManager* m_themeManager;
 };
 

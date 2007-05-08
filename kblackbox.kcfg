@@ -13,8 +13,8 @@
       <label>Number of balls</label>
       <default>4</default>
     </entry>
-    <entry name="tutorial" type="Bool">
-      <label>Tutorial mode</label>
+    <entry name="sandboxMode" type="Bool">
+      <label>Sandbox mode</label>
       <default>false</default>
     </entry>
     <entry name="columns" type="Int">

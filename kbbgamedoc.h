@@ -95,9 +95,8 @@ class KBBGameDoc : public QObject
 		 * @param balls Number of balls to place on the board
 		 * @param columns Number of columns
 		 * @param rows Number of rows
-		 * @param tutorial Define if the game is in tutorial mode
 		 */
-		void newGame( int balls, int columns, int rows, bool tutorial );
+		void newGame(int balls, int columns, int rows);
 		
 		/**
 		 * @brief Number of balls the user placed on the board

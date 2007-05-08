@@ -126,9 +126,10 @@ KBBMainWindow::KBBMainWindow()
 	list.append(i18n("8 balls"));
 	list.append(i18n("10 balls"));
 	m_ballsAction->setItems(list);
-	m_tutorialAction = new KToggleAction( i18n("&Tutorial"), this );
-	actionCollection()->addAction( "options_tutorial", m_tutorialAction );
-	connect(m_tutorialAction, SIGNAL(triggered(bool) ), SLOT(tutorialSwitch()));
+
+	m_sandboxModeAction = new KToggleAction( i18n("&Sandbox mode"), this );
+	actionCollection()->addAction( "options_sandbox_mode", m_sandboxModeAction );
+	connect(m_sandboxModeAction, SIGNAL(triggered(bool) ), SLOT(sandboxModeSwitch()));
 	
 	
 	// Keyboard only
@@ -183,8 +184,8 @@ KBBMainWindow::KBBMainWindow()
 		if ((menuSizeColumns[i]==m_columns) && (menuSizeRows[i]==m_rows))
 			m_sizeAction->setCurrentItem(i);
 	
-	m_tutorial = KBBPrefs::tutorial();
-	m_tutorialAction->setChecked(m_tutorial);
+	m_sandboxMode = KBBPrefs::sandboxMode();
+	m_sandboxModeAction->setChecked(m_sandboxMode);
 	
 	
 	// Status bar
@@ -232,7 +233,7 @@ void KBBMainWindow::updateStats()
 
 void KBBMainWindow::newGame()
 {
-	startGame(m_ballNumber, m_columns, m_rows, m_tutorial);
+	startGame(m_ballNumber, m_columns, m_rows, m_sandboxMode);
 }
 
 
@@ -242,7 +243,7 @@ void KBBMainWindow::slotBalls(int selection)
 	const int newNumber[ARRAY_SIZE] = {4, 6, 8, 10};
 	
 	if (m_ballNumber != newNumber[selection]) {
-		if (startGame(newNumber[selection], m_columns, m_rows, m_tutorial))
+		if (startGame(newNumber[selection], m_columns, m_rows, m_sandboxMode))
 			KBBPrefs::setBalls(newNumber[selection]);
 		else {
 			for (int i=0; i<ARRAY_SIZE; i++)
@@ -260,7 +261,7 @@ void KBBMainWindow::slotSize(int selection)
 	const int newSizesRows[ARRAY_SIZE] = {8, 10, 12, 12};
 
 	if ((newSizesColumns[selection] != m_columns) || (newSizesRows[selection] != m_rows)) {
-		if (startGame(m_ballNumber, newSizesColumns[selection], newSizesRows[selection], m_tutorial)) {
+		if (startGame(m_ballNumber, newSizesColumns[selection], newSizesRows[selection], m_sandboxMode)) {
 			KBBPrefs::setColumns(m_columns);
 			KBBPrefs::setRows(m_rows);
 		} else {
@@ -297,12 +298,12 @@ void KBBMainWindow::solve()
 }
 
 
-void KBBMainWindow::tutorialSwitch()
+void KBBMainWindow::sandboxModeSwitch()
 {
-	if (startGame(m_ballNumber, m_columns, m_rows, !m_tutorial))
-		KBBPrefs::setTutorial(m_tutorial);
+	if (startGame(m_ballNumber, m_columns, m_rows, !m_sandboxMode))
+		KBBPrefs::setSandboxMode(m_sandboxMode);
 	else
-		m_tutorialAction->setChecked(m_tutorial);
+		m_sandboxModeAction->setChecked(m_sandboxMode);
 }
 
 
@@ -311,7 +312,7 @@ void KBBMainWindow::tutorialSwitch()
 // Private
 //
 
-bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newTutorialMode)
+bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newSandboxModeMode)
 {
 	bool start = true;
 	if (m_gameDoc->gameReallyStarted())
@@ -322,12 +323,12 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 		m_ballNumber = newBallNumber;
 		m_columns = newColumnNumber;
 		m_rows = newRowNumber;
-		m_tutorial = newTutorialMode;
+		m_sandboxMode = newSandboxModeMode;
 
 		m_solveAction->setEnabled(true);
-		m_gameDoc->newGame(m_ballNumber, m_columns, m_rows, m_tutorial);
+		m_gameDoc->newGame(m_ballNumber, m_columns, m_rows);
 		m_gameWidget->newGame(m_columns, m_rows);
-		if (m_tutorial)
+		if (m_sandboxMode)
 			m_gameWidget->solve(true);
 		
 		m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);

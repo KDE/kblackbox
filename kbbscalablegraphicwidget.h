@@ -125,8 +125,8 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		/**
 		 * @brief display the solution
 		 *
-		 * Used at the end of the game and for the tutorial mode.
-		 * @param continueGame Sould the game continue after displaying the solution? (Yes for tutorial mode, no for normal game end).
+		 * Used at the end of the game and for the sandbox mode.
+		 * @param continueGame Sould the game continue after displaying the solution? (Yes for sandbox mode, no for normal game end).
 		 */
 		void solve(const bool continueGame);
 

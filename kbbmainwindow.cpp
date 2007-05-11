@@ -94,19 +94,14 @@ KBBMainWindow::KBBMainWindow()
 	setCentralWidget(m_centralWidget);
 	
 	
-	// Menu "Game"
-	QAction *newAct = KStandardGameAction::gameNew(this, SLOT(newGame()), this);
-	actionCollection()->addAction(newAct->objectName(), newAct);
-	
-	KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-	
-	
-	// Menu "Move"
-	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), this);
-	actionCollection()->addAction(m_solveAction->objectName(), m_solveAction);
-	
-	
-	// Menu "Settings"
+  // Game
+  KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
+  KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+
+  // Move
+  m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
+
+  // Settings
 	m_sizeAction = new KSelectAction( i18n("&Size"), this);
 	actionCollection()->addAction("options_size", m_sizeAction);
 	connect(m_sizeAction, SIGNAL(triggered(int)), this, SLOT(slotSize(int)));

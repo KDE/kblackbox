@@ -27,8 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbgamedoc.h"
+
+
 
 #include <QWidget>
 
@@ -37,6 +38,7 @@
 
 
 #include "kbbballsonboard.h"
+#include "kbbtutorial.h"
 
 
 
@@ -44,11 +46,12 @@
 // Constructor / Destructor
 //
 
-KBBGameDoc::KBBGameDoc(KBBMainWindow *parent) : QObject(parent)
+KBBGameDoc::KBBGameDoc(KBBMainWindow *parent, KBBTutorial* tutorial) : QObject(parent)
 {
 	m_gameReallyStarted = false;
 	m_columns = 1;
 	m_rows = 1;
+	m_tutorial = tutorial;
 	
 	random.setSeed(0);
 		
@@ -62,6 +65,12 @@ KBBGameDoc::KBBGameDoc(KBBMainWindow *parent) : QObject(parent)
 //
 // Public
 //
+
+int KBBGameDoc::columns() const
+{
+	return m_columns;
+}
+
 
 void KBBGameDoc::gameOver()
 {
@@ -85,18 +94,20 @@ int KBBGameDoc::getScore()
 }
 
 
+bool KBBGameDoc::mayShootRay(const int incomingPosition) const
+{
+	if (m_tutorial->isVisible() && !m_tutorial->mayShootRay(incomingPosition))
+		return false;
+	else
+		return true;
+}
+
+
 void KBBGameDoc::newGame(int balls, int columns, int rows)
 {
-	m_columns = columns;
-	m_rows = rows;
-	
-	// Clear
-	m_gameReallyStarted = false;
-	m_ballsPlaced->newBoard(m_columns, m_rows);
-	setScore( 0 );
-	
+	clean(columns, rows);
+
 	// Puts the balls in the black box on random positions.
-	m_balls->newBoard(m_columns, m_rows);
 	int boxPos;
 	for (int i = 0; i < balls; i++) {
 		do {
@@ -113,6 +124,18 @@ int KBBGameDoc::numberOfBallsPlaced()
 }
 
 
+int KBBGameDoc::numberOfBallsToPlace()
+{
+	return m_balls->count();
+}
+
+
+int KBBGameDoc::rows() const
+{
+	return m_rows;
+}
+
+
 int KBBGameDoc::shootRay( int borderPosition )
 {
 	int outgoingBorderPosition = m_balls->oppositeBorderPosition(borderPosition);
@@ -121,10 +144,23 @@ int KBBGameDoc::shootRay( int borderPosition )
 		setScore( score + 1);
 	else
 		setScore( score + 2);
-	m_gameReallyStarted = true;
+	
+	if (!m_tutorial->isVisible())
+		m_gameReallyStarted = true;
 	emit updateStats();
 
 	return outgoingBorderPosition;
+}
+
+
+void KBBGameDoc::startTutorial()
+{
+	clean(KBBTutorial::COLUMNS, KBBTutorial::ROWS);
+	m_balls->add(16);
+	m_balls->add(21);
+	m_balls->add(33);
+	m_tutorial->setStep(1);
+	m_tutorial->show();
 }
 
 
@@ -132,6 +168,20 @@ int KBBGameDoc::shootRay( int borderPosition )
 //
 // Private
 //
+
+void KBBGameDoc::clean(const int columns, const int rows)
+{
+	m_columns = columns;
+	m_rows = rows;
+
+	// Clear
+	m_gameReallyStarted = false;
+	m_ballsPlaced->newBoard(m_columns, m_rows);
+	setScore(0);
+
+	m_balls->newBoard(m_columns, m_rows);
+}
+
 
 void KBBGameDoc::setScore( int n )
 {

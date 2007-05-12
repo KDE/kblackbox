@@ -4,9 +4,6 @@
 // A simple game inspired by an emacs module
 //
 /***************************************************************************
- *   Copyright (c) 1999-2000, Robert Cimrman                               *
- *   cimrman3@students.zcu.cz                                              *
- *                                                                         *
  *   Copyright (c) 2007, Nicolas Roffet                                    *
  *   nicolas-kde@roffet.com                                                *
  *                                                                         *
@@ -27,41 +24,28 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
-#ifndef KBBGRAPHICSITEMBORDER_H
-#define KBBGRAPHICSITEMBORDER_H
+#include "kbbgraphicsitemtutorialmarker.h"
 
 
 
-/**
- * @brief Any border element of the scalable graphic widget
- */
-class KBBGraphicsItemBorder
+//
+// Constructor / Destructor
+//
+
+KBBGraphicsItemTutorialMarker::KBBGraphicsItemTutorialMarker(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int columns, const int rows) : KBBGraphicsItemBorder(NO_POSITION, columns, rows, 0), KBBGraphicsItem(KBBScalableGraphicWidget::tutorialMarker, parent->scene(), themeManager)
 {
-	public:
-		/**
-		 * @brief Constructor
-		 */
-		KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset);
-		
-		void setSize(const int borderPosition, const int columns, const int rows);
+	m_borderPosition = NO_POSITION;
+	setBorderPosition(m_borderPosition);
+}
 
 
-	protected:
-		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset);
-		int centerX() const;
-		int centerY() const;
-		const int rotation();
-		void setBorderPosition(const int borderPosition);
 
+//
+// Public
+//
 
-		int m_borderPosition;
-		int m_centerX;
-		int m_centerY;
-		int m_columns;
-		int m_offset;
-		int m_rows;
-};
-
-#endif // KBBGRAPHICSITEMBORDER_H
+void KBBGraphicsItemTutorialMarker::setBorderPosition(const int borderPosition)
+{
+	KBBGraphicsItemBorder::setBorderPosition(borderPosition);
+	setPos(centerX() - KBBScalableGraphicWidget::RATIO/2, centerY() - KBBScalableGraphicWidget::RATIO/2);
+}

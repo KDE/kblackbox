@@ -22,11 +22,13 @@ set(kblackbox_SRCS
     kbbgraphicsitemray.cpp
     kbbgraphicsitemrayresult.cpp
     kbbgraphicsitemset.cpp
+    kbbgraphicsitemtutorialmarker.cpp
     kbbinfowidget.cpp
     kbbitemwithposition.cpp
     kbbmainwindow.cpp 
     kbbscalablegraphicwidget.cpp
     kbbthememanager.cpp
+    kbbtutorial.cpp
     main.cpp
     )
 

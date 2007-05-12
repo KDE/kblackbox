@@ -42,6 +42,7 @@ class QWidget;
 
 class KBBBallsOnBoard;
 #include "kbbmainwindow.h"
+class KBBTutorial;
 
 
 
@@ -68,9 +69,14 @@ class KBBGameDoc : public QObject
 		/**
 		 * @brief Constructor
 		 */
-		explicit KBBGameDoc(KBBMainWindow *parent);
-		
-		
+		KBBGameDoc(KBBMainWindow *parent, KBBTutorial* tutorial);
+
+
+		/**
+		 * @brief Get the number of columns
+		 */
+		int columns() const;
+
 		/**
 		 * @brief Stop the game, show solution and compute final score
 		 */
@@ -88,7 +94,9 @@ class KBBGameDoc : public QObject
 		 * @brief Get current score
 		 */
 		int getScore();
-		
+
+		bool mayShootRay(const int incomingPosition) const;
+
 		/**
 		 * @brief Create new board game and initialize game
 		 * 
@@ -102,7 +110,17 @@ class KBBGameDoc : public QObject
 		 * @brief Number of balls the user placed on the board
 		 */
 		int numberOfBallsPlaced();
-		
+
+		/**
+		 * @brief Number of balls the user has to place on the board
+		 */
+		int numberOfBallsToPlace();
+
+		/**
+		 * @brief Get the number of rows
+		 */
+		int rows() const;
+
 		/**
 		 * @brief Shoot a ray
 		 * 
@@ -113,8 +131,13 @@ class KBBGameDoc : public QObject
 		 * @return Outgoing border position, where the laser leaves the black box. If the laser hits a ball, the result is HIT_POSITION (that is not a valid border position). 
 		 */
 		int shootRay(int borderPosition);
-		
-		
+
+		/**
+		 * @brief Initialize the tutorial
+		 */
+		void startTutorial();
+
+
 		KBBBallsOnBoard* m_balls;
 		KBBBallsOnBoard* m_ballsPlaced;
 
@@ -130,12 +153,15 @@ class KBBGameDoc : public QObject
 		 * @param n New score
 		 */
 		void setScore( int n );
-		
+
+		void clean(const int columns, const int rows);
+
 		int m_columns;
 		bool m_gameReallyStarted;
 		int m_rows;
 		KRandomSequence random;
 		int score;
+		KBBTutorial* m_tutorial;
 };
 
 #endif //KBBGAMEDOC_H

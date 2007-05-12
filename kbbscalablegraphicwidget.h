@@ -58,13 +58,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 	public:
 		/**
-		 * @brief Width and height of a single square on the black box
-		 *
-		 * Note: The widget is scalable, so it's just an arbitrary default compared with other ranges.
-		 */
-		static int const RATIO = 50;
-		
-		/**
 		 * @brief Distance between the black box and the widget border
 		 *
 		 * Note: The widget is scalable, so it's just an arbitrary default compared with other ranges.
@@ -72,7 +65,14 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * @see RATIO
 		 */
 		static int const BORDER_SIZE = 100;
-		
+
+		/**
+		 * @brief Width and height of a single square on the black box
+		 *
+		 * Note: The widget is scalable, so it's just an arbitrary default compared with other ranges.
+		 */
+		static int const RATIO = 50;
+
 		/**
 		 * @brief Every graphic items
 		 *
@@ -83,28 +83,29 @@ class KBBScalableGraphicWidget : public QGraphicsView
 			background=0,
 			blackbox=1,
 			blackboxGrid=2,
-			markerNothing=3,
-			solutionRay=4,
-			playerRay=5,
-			resultBackground=6,
-			resultBackgroundHighlight=7,
-			resultReflection=8,
-			resultHit=9,
-			resultText=10,
-			solutionBall=11,
-			playerBall=12,
-			unsureBall=13,
-			wrongPlayerBall=14,
-			interactionInfoDeflection=15,
-			interactionInfoHit=16,
-			interactionInfoNothing=17,
-			interactionInfoReflection=18,
-			interactionInfoReflectionSym=19,
-			laser0=20,
-			laser90=21,
-			laser180=22,
-			laser270=23,
-			cursor=24
+			tutorialMarker=3,
+			markerNothing=4,
+			solutionRay=5,
+			playerRay=6,
+			resultBackground=7,
+			resultBackgroundHighlight=8,
+			resultReflection=9,
+			resultHit=10,
+			resultText=11,
+			solutionBall=12,
+			playerBall=13,
+			unsureBall=14,
+			wrongPlayerBall=15,
+			interactionInfoDeflection=16,
+			interactionInfoHit=17,
+			interactionInfoNothing=18,
+			interactionInfoReflection=19,
+			interactionInfoReflectionSym=20,
+			laser0=21,
+			laser90=22,
+			laser180=23,
+			laser270=24,
+			cursor=25
 		};
 		
 		
@@ -112,12 +113,17 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * @brief Constructor
 		 */
 		explicit KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager);
-		
-		
+
+
+		void addBall(const int boxPosition);
+		void addBallUnsure(const int boxPosition);
+		void addMarkerNothing(const int boxPosition);
 		void drawRay(const int borderPosition);
 		void mouseBorderClick(const int borderPosition);
 		void mouseBoxClick(const Qt::MouseButton button, const int boxPosition);
 		void newGame(const int columns, const int rows);
+		void removeAllBalls();
+		void removeBall(const int boxPosition);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		QGraphicsScene* scene();
@@ -146,9 +152,13 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	private:
-		void addBall(const int boxPosition);
-		void addMarkerNothing(const int boxPosition);
-		void removeBall(const int boxPosition);
+		/**
+		 * @brief Minimum width and height
+		 *
+		 * Minimum width and minimum height of the widget. The widget needs a minimal site: it is ugly if it is too small.
+		 */
+		static int const MINIMUM_SIZE = 250;
+
 		void removeMarkerNothing(const int boxPosition);
 		void setBallUnsure(const int boxPosition, const bool unsure);
 		void setInputAccepted(bool inputAccepted);

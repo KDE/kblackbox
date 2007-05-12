@@ -4,9 +4,6 @@
 // A simple game inspired by an emacs module
 //
 /***************************************************************************
- *   Copyright (c) 1999-2000, Robert Cimrman                               *
- *   cimrman3@students.zcu.cz                                              *
- *                                                                         *
  *   Copyright (c) 2007, Nicolas Roffet                                    *
  *   nicolas-kde@roffet.com                                                *
  *                                                                         *
@@ -27,41 +24,30 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
+#ifndef KBBGRAPHICSITEMTUTORIALMARKER_H
+#define KBBGRAPHICSITEMTUTORIALMARKER_H
 
 
-#ifndef KBBGRAPHICSITEMBORDER_H
-#define KBBGRAPHICSITEMBORDER_H
+
+#include "kbbgraphicsitem.h"
+#include "kbbgraphicsitemborder.h"
+class KBBScalableGraphicWidget;
+class KBBThemeManager;
 
 
 
 /**
- * @brief Any border element of the scalable graphic widget
+ * @brief Marker used by the tutorial
  */
-class KBBGraphicsItemBorder
+class KBBGraphicsItemTutorialMarker : public KBBGraphicsItemBorder, public KBBGraphicsItem
 {
 	public:
-		/**
-		 * @brief Constructor
-		 */
-		KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset);
-		
-		void setSize(const int borderPosition, const int columns, const int rows);
+		static const int NO_POSITION = -1;
 
 
-	protected:
-		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset);
-		int centerX() const;
-		int centerY() const;
-		const int rotation();
+		KBBGraphicsItemTutorialMarker(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int columns, const int rows);
+
 		void setBorderPosition(const int borderPosition);
-
-
-		int m_borderPosition;
-		int m_centerX;
-		int m_centerY;
-		int m_columns;
-		int m_offset;
-		int m_rows;
 };
 
-#endif // KBBGRAPHICSITEMBORDER_H
+#endif // KBBGRAPHICSITEMTUTORIALMARKER_H

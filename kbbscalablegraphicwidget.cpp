@@ -27,8 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbscalablegraphicwidget.h"
+
+
 
 #include <QColor>
 #include <QGraphicsScene>
@@ -57,14 +58,16 @@
 
 KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager)
 {
-    setFrameStyle(QFrame::NoFrame);
-
 	m_gameDoc = gameDoc;
 	m_themeManager = themeManager;
 	m_columns = 1;
 	m_rows = 1;
-	
-	
+
+
+	setFrameStyle(QFrame::NoFrame);
+	setMinimumSize(QSize(MINIMUM_SIZE, MINIMUM_SIZE));
+
+
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_themeManager);
@@ -89,6 +92,34 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 //
 // Public
 //
+
+void KBBScalableGraphicWidget::addBall(const int boxPosition)
+{
+	if (m_inputAccepted && (!m_balls->contains(boxPosition))&& (!m_ballsUnsure->contains(boxPosition))) {
+		m_boardBallsPlaced->add(boxPosition);
+		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
+		m_markersNothing->remove(boxPosition);
+	}
+}
+
+
+void KBBScalableGraphicWidget::addBallUnsure(const int boxPosition)
+{
+	addBall(boxPosition);
+	setBallUnsure(boxPosition, true);
+}
+
+
+void KBBScalableGraphicWidget::addMarkerNothing(const int boxPosition)
+{
+	if (m_inputAccepted && (!m_markersNothing->contains(boxPosition))) {
+		m_markersNothing->insert(new KBBGraphicsItemOnBox(markerNothing, this, m_themeManager, boxPosition, m_columns, m_rows));
+		m_balls->remove(boxPosition);
+		m_ballsUnsure->remove(boxPosition);
+		m_boardBallsPlaced->remove(boxPosition);
+	}
+}
+
 
 void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 {
@@ -172,6 +203,24 @@ void KBBScalableGraphicWidget::resizeEvent( QResizeEvent* )
 }
 
 
+void KBBScalableGraphicWidget::removeAllBalls()
+{
+	for (int i=0;i<m_columns*m_rows;i++) {
+		removeBall(i);
+	}
+}
+
+
+void KBBScalableGraphicWidget::removeBall(const int boxPosition)
+{
+	if (m_inputAccepted) {
+		m_balls->remove(boxPosition);
+		m_ballsUnsure->remove(boxPosition);
+		m_boardBallsPlaced->remove(boxPosition);
+	}
+}
+
+
 void KBBScalableGraphicWidget::removeRay()
 {
 	m_playerRay->hide();
@@ -179,7 +228,7 @@ void KBBScalableGraphicWidget::removeRay()
 }
 
 
-QGraphicsScene* KBBScalableGraphicWidget::scene() 
+QGraphicsScene* KBBScalableGraphicWidget::scene()
 {
 	return m_scene;
 }
@@ -202,7 +251,7 @@ void KBBScalableGraphicWidget::solve(const bool continueGame)
 
 
 //
-// Slots
+// Public slots
 //
 
 void KBBScalableGraphicWidget::cursorAtNewPosition(const int borderPosition)
@@ -283,36 +332,6 @@ void KBBScalableGraphicWidget::drawBackground(QPainter* painter, const QRectF&)
 // Private
 //
 
-void KBBScalableGraphicWidget::addBall(const int boxPosition)
-{
-	if (m_inputAccepted && (!m_balls->contains(boxPosition))&& (!m_ballsUnsure->contains(boxPosition))) {
-		m_boardBallsPlaced->add(boxPosition);
-		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
-		m_markersNothing->remove(boxPosition);
-	}
-}
-
-
-void KBBScalableGraphicWidget::addMarkerNothing(const int boxPosition)
-{
-	if (m_inputAccepted && (!m_markersNothing->contains(boxPosition))) {
-		m_markersNothing->insert(new KBBGraphicsItemOnBox(markerNothing, this, m_themeManager, boxPosition, m_columns, m_rows));
-		m_balls->remove(boxPosition);
-		m_ballsUnsure->remove(boxPosition);
-		m_boardBallsPlaced->remove(boxPosition);
-	}
-}
-
-
-void KBBScalableGraphicWidget::removeBall(const int boxPosition)
-{
-	if (m_inputAccepted) {
-		m_balls->remove(boxPosition);
-		m_ballsUnsure->remove(boxPosition);
-		m_boardBallsPlaced->remove(boxPosition);
-	}
-}
-
 
 void KBBScalableGraphicWidget::removeMarkerNothing(const int boxPosition)
 {
@@ -371,7 +390,7 @@ void KBBScalableGraphicWidget::switchMarker()
 
 void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 {
-	if (m_inputAccepted && m_lasers->contains(incomingPosition)) {
+	if (m_gameDoc->mayShootRay(incomingPosition) && m_inputAccepted && m_lasers->contains(incomingPosition)) {
 		const int outgoingPosition = m_gameDoc->shootRay(incomingPosition);
 		
 		KBBGraphicsItemRayResult* inRay;

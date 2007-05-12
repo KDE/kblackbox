@@ -27,9 +27,10 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #include "kbbgraphicsitemborder.h"
+
+
+
 #include "kbbscalablegraphicwidget.h"
 
 
@@ -66,6 +67,12 @@ void KBBGraphicsItemBorder::setSize(const int borderPosition, const int columns,
 // Protected
 //
 
+void KBBGraphicsItemBorder::setBorderPosition(const int borderPosition)
+{
+	setSize(borderPosition, m_columns, m_rows);
+}
+
+
 void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset)
 {
 	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
@@ -88,6 +95,18 @@ void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &cent
 	
 	centerX = x + r/2;
 	centerY = y + r/2;
+}
+
+
+int KBBGraphicsItemBorder::centerX() const
+{
+	return m_centerX;
+}
+
+
+int KBBGraphicsItemBorder::centerY() const
+{
+	return m_centerY;
 }
 
 

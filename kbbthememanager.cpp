@@ -149,6 +149,9 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 		case KBBScalableGraphicWidget::solutionRay:
 			eId = "solution_ray";
 			break;
+		case KBBScalableGraphicWidget::tutorialMarker:
+			eId = "tutorial_marker";
+			break;
 		case KBBScalableGraphicWidget::unsureBall:
 			eId = "unsure_ball";
 			break;

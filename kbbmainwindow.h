@@ -37,15 +37,16 @@ class QAction;
 class QWidget;
 
 
-#include <kxmlguiwindow.h>
 class KSelectAction;
 class KToggleAction;
+#include <kxmlguiwindow.h>
 
 
 class KBBGameDoc;
 class KBBInfoWidget;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
+class KBBTutorial;
 
 
 
@@ -85,6 +86,11 @@ class KBBMainWindow : public KXmlGuiWindow
 		 */
 		void solve();
 
+		/**
+		 * @brief Start tutorial mode
+		 */
+		void startTutorial();
+
 		void sandboxModeSwitch();
 
 
@@ -95,6 +101,13 @@ class KBBMainWindow : public KXmlGuiWindow
 		static const int SRUN = 0;
 		static const int SSIZE = 1;
 
+
+		/**
+		 * @brief If needed, ask the player if he agrees to end the current game.
+		 *
+		 * @return if the current game may be aborted
+		 */
+		bool mayAbortGame();
 
 		/**
 		 * @brief Start a new game afer user confirmation (if needed).
@@ -134,6 +147,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		bool m_running;
 		bool m_sandboxMode;
 		KBBThemeManager* m_themeManager;
+		KBBTutorial* m_tutorial;
 };
 
 #endif // KBBMAINWINDOW_H

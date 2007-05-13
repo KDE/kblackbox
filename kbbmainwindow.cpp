@@ -317,6 +317,7 @@ void KBBMainWindow::startTutorial()
 {
 	if (mayAbortGame()) {
 		m_gameDoc->startTutorial();
+		m_solveAction->setEnabled(true);
 		m_infoWidget->setGameParameters(KBBTutorial::BALLS, KBBTutorial::BALLS*3);
 
 		updateStats();

@@ -155,7 +155,9 @@ void KBBTutorial::setStep(const int step)
 
 	m_step = step;
 	setNewStepMaxAllowed(m_step);
-	m_gameWidget->removeAllBalls();
+
+	if (m_step!=LAST_STEP)
+		m_gameWidget->removeAllBalls();
 
 	switch (m_step) {
 		case FIRST_STEP:
@@ -184,7 +186,7 @@ void KBBTutorial::setStep(const int step)
 			m_gameWidget->drawRay(4);
 			break;
 		case FIRST_STEP+4:
-			setTexts(i18n("A simple deflection"), i18n("The interaction resulting from a ray which does not actually hit a ball, but which passes directly to one side of the ball is called a \"<b>deflection</b>\". The angle of deflection for this ray/ball interaction is 90 degrees.<br /><br />Example: the placed ball would deflect the laser ray as expected. This position is a <b>possible</b> position. However, it is not the only one."), i18n("Click on \"Next\" to see another possible combination of ball positions that deflect the laser ray as expected."));
+			setTexts(i18n("Simple deflection"), i18n("The interaction resulting from a ray which does not actually hit a ball, but which passes directly to one side of the ball is called a \"<b>deflection</b>\". The angle of deflection for ray/ball interactions is <b>90 degrees</b>.<br /><br />Example: the placed ball would deflect the laser ray as expected. This position is a <b>possible</b> position. However, it is not the only one."), i18n("Click on \"Next\" to see another possible combination of ball positions that deflect the laser ray as expected."));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+5);
 			m_gameWidget->addBallUnsure(16);
@@ -196,6 +198,7 @@ void KBBTutorial::setStep(const int step)
 			m_gameWidget->addBallUnsure(5);
 			m_gameWidget->addBallUnsure(26);
 			m_gameWidget->addBallUnsure(29);
+			m_gameWidget->drawRay(22);
 			break;
 		case FIRST_STEP+6:
 			setTexts(i18n("Reflection"), i18n("If the laser ray exits the black box <b>at the entry point</b>, it has been reflected inside the black box.<br /><br />Example: We placed 2 balls for you in a configuration that would lead to a reflection."), i18n("Shoot the marked laser to see another reflection configuration."));
@@ -212,7 +215,7 @@ void KBBTutorial::setStep(const int step)
 			m_gameWidget->drawRay(15);
 			break;
 		case FIRST_STEP+8:
-			setTexts(i18n("Useful markers"), i18n("We are sure there are no ball in the first 2 colums. If there where some, rays entering at the position \"1\" would be hit or deflected. With a right mouse click (see also kexboard shortcuts), you can put a marker \"free position\".<br /><br />Example: We put for you 12 markers on the 2 first columns."), i18n("Click on \"Next\"."));
+			setTexts(i18n("Marker \"free position\""), i18n("We are sure there are no ball in the first 2 colums. If there where some, rays entering at the position \"1\" would be hit or deflected. With a right mouse click (see also keyboard shortcuts), you can put a marker \"free position\".<br /><br />Example: We put for you 12 markers on the 2 first columns."), i18n("Click on \"Next\"."));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+9);
 			for (int i=0;i<ROWS;i++) {
@@ -221,12 +224,14 @@ void KBBTutorial::setStep(const int step)
 			}
 			break;
 		case FIRST_STEP+9:
-			setTexts(i18n("Last tip"), i18n("If you are not sure about a ball position, you can also use the right click over a placed ball to mark this postion for you as \"unsure\"."), i18n("Click on \"Next\"."));
+			setTexts(i18n("Marker \"?\""), i18n("Last tip: if you are not sure about a ball position, you can also use the right click over a placed ball to mark this postion for you as \"unsure\".<br /><br />Example: We marked one position as sure, the other one as unsure."), i18n("Click on \"Next\"."));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+10);
+			m_gameWidget->addBall(33);
+			m_gameWidget->addBallUnsure(35);
 			break;
 		case FIRST_STEP+10:
-			setTexts(i18n("Let us play!"), i18n("<b>Congratulations!</b> You know now <b>all the rules</b> that apply to the black box.<br /><br /><b>You can start to play</b>: try to finish this tutorial alone!<br /><br />Tip: We shot enough rays into the black box to be able to guess unequivocally the positions of the 3 balls. Of course, you can use some more lasers if needed."), i18n("Place all the balls and click on \"Solve\" when you are finished!"));
+			setTexts(i18n("Let us play!"), i18n("<b>Congratulations!</b> You know now <b>all the rules</b> that apply to the black box.<br /><br /><b>You can start to play</b>: try to finish this tutorial by yourself!<br /><br />Tip: We shot enough rays into the black box to be able to guess unequivocally the positions of the 3 balls. Of course, you can use some more lasers if needed."), i18n("Place all the balls and click on \"Solve\" when you are finished!"));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+9);
 			break;

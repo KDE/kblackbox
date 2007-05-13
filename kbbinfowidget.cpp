@@ -24,12 +24,13 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbinfowidget.h"
 
+
+
 #include <QGroupBox>
-#include <QVBoxLayout>
 #include <QLabel>
+#include <QVBoxLayout>
 #include <QWidget>
 
 
@@ -48,13 +49,14 @@
 KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 {
 	// General
+	m_scoreLimitDefinied = false;
 	QVBoxLayout *mainLayout = new QVBoxLayout();
 	setMaximumWidth(3*BALL_SIZE);
 
 	
 	// 1st part: balls
 	QGroupBox *ballsGroupBox = new QGroupBox(i18n("Balls"));
-    ballsGroupBox->setFlat(true);
+	ballsGroupBox->setFlat(true);
 	QVBoxLayout *ballsLayout = new QVBoxLayout();
 	m_ballsTitle = new QLabel(this);
 	m_ballsTitle->setWordWrap(true);
@@ -68,10 +70,10 @@ KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager)
 	
 	// 2nd part: score
 	QGroupBox *scoreGroupBox = new QGroupBox(i18n("Score"));
-    scoreGroupBox->setFlat(true);
+	scoreGroupBox->setFlat(true);
 	QVBoxLayout *scoreLayout = new QVBoxLayout();
 	m_score = new KGameLCD(3, this);
-    m_score->setFrameStyle(QFrame::NoFrame);
+	m_score->setFrameStyle(QFrame::NoFrame);
 	m_score->setMinimumHeight(3*BALL_SIZE/2);
 	m_score->setHighlightColor(Qt::red);
 	scoreLayout->addWidget(m_score);
@@ -92,6 +94,7 @@ void KBBInfoWidget::setGameParameters(const int ballsToPlace, const int scoreLim
 {
 	m_ballsToPlace = ballsToPlace;
 	m_scoreLimit = scoreLimit;
+	m_scoreLimitDefinied = true;
 	
 	m_ballsWidget->setBallsToPlace(ballsToPlace);
 }
@@ -118,6 +121,6 @@ void KBBInfoWidget::setPlacedBalls(const int placedBalls)
 void KBBInfoWidget::setScore(const int score)
 {
 	m_score->displayInt(score);
-	if (score>m_scoreLimit)
+	if ((score>m_scoreLimit) && m_scoreLimitDefinied)
 		m_score->highlight();
 }

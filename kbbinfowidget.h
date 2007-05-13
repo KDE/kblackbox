@@ -24,10 +24,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #ifndef KBBINFOWIDGET_H
 #define KBBINFOWIDGET_H
+
 
 
 class QLabel;
@@ -71,6 +70,14 @@ class KBBInfoWidget : public QWidget
 		KBBBallsGraphicWidget* m_ballsWidget;
 		KGameLCD* m_score;
 		int m_scoreLimit;
+
+		/**
+		 * @brief Set if the variable m_scoreLimit has been defined
+		 *
+		 * If no score limit is defined, the widget don't highlight the score value in the LCD.
+		 * @see m_scoreLimit
+		 */
+		bool m_scoreLimitDefinied;
 };
 
 #endif // KBBINFOWIDGET_H

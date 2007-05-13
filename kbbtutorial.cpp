@@ -275,7 +275,7 @@ void KBBTutorial::setNewStepMaxAllowed(const int newStepMax)
 }
 
 
-void KBBTutorial::setTexts(const QString title, const QString text, const QString action)
+void KBBTutorial::setTexts(const QString &title, const QString &text, const QString &action)
 {
 	m_title->setText("<qt><strong>" + title + "</strong></qt>");
 	m_explanation->setText("<qt>" + text + "</qt>");

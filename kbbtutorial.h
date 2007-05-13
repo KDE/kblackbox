@@ -153,7 +153,7 @@ class KBBTutorial : public QGroupBox
 		/**
 		 * @brief Set the title and the main text
 		 */
-		void setTexts(const QString title, const QString text, const QString action);
+		void setTexts(const QString &title, const QString &text, const QString &action);
 
 		/**
 		 * @brief Show tutorial marker on the board

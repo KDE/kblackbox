@@ -17,6 +17,7 @@
 		<text>Main Toolbar</text>
 		<Action name="game_new" />
 		<Action name="game_tutorial" />
+		<Separator />
 		<Action name="move_solve" />
 	</ToolBar>
 </kpartgui>

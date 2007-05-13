@@ -241,6 +241,8 @@ void KBBScalableGraphicWidget::solve(const bool continueGame)
 	setInputAccepted(continueGame);
 	
 	for (int i=0; i<(m_columns * m_rows); i++) {
+		if ((m_balls->contains(i) || m_ballsUnsure->contains(i)) && m_boardBalls->contains(i))
+			m_ballsSolution->insert(new KBBGraphicsItemBall(rightPlayerBall, this, m_themeManager, i, m_columns, m_rows));
 		if ((m_balls->contains(i) || m_ballsUnsure->contains(i)) && !m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemOnBox(wrongPlayerBall, this, m_themeManager, i, m_columns, m_rows));
 		if (!m_balls->contains(i) && !m_ballsUnsure->contains(i) && m_boardBalls->contains(i))

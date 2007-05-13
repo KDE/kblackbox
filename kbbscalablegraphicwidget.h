@@ -96,16 +96,17 @@ class KBBScalableGraphicWidget : public QGraphicsView
 			playerBall=13,
 			unsureBall=14,
 			wrongPlayerBall=15,
-			interactionInfoDeflection=16,
-			interactionInfoHit=17,
-			interactionInfoNothing=18,
-			interactionInfoReflection=19,
-			interactionInfoReflectionSym=20,
-			laser0=21,
-			laser90=22,
-			laser180=23,
-			laser270=24,
-			cursor=25
+			rightPlayerBall=16,
+			interactionInfoDeflection=17,
+			interactionInfoHit=18,
+			interactionInfoNothing=19,
+			interactionInfoReflection=20,
+			interactionInfoReflectionSym=21,
+			laser0=22,
+			laser90=23,
+			laser180=24,
+			laser270=25,
+			cursor=26
 		};
 		
 		

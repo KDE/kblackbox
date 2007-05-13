@@ -143,6 +143,9 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 		case KBBScalableGraphicWidget::resultReflection:
 			eId = "result_reflection";
 			break;
+		case KBBScalableGraphicWidget::rightPlayerBall:
+			eId = "right_player_ball";
+			break;
 		case KBBScalableGraphicWidget::solutionBall:
 			eId = "solution_ball";
 			break;

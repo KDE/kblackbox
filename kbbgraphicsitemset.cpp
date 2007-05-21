@@ -27,12 +27,14 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbgraphicsitemset.h"
+
+
 
 #include <QGraphicsScene>
 
 
+#include "kbbgraphicsitem.h"
 #include "kbbitemwithposition.h"
 
 
@@ -68,6 +70,14 @@ void KBBGraphicsItemSet::clear()
 
 bool KBBGraphicsItemSet::contains(int position)
 {
+	if (m_items.contains(position)) {
+		if(dynamic_cast<KBBGraphicsItem*>(m_items[position]))
+			return (dynamic_cast<KBBGraphicsItem*>(m_items[position]))->isVisible();
+		else
+			return true;
+	} else
+		return false;
+
 	return m_items.contains(position);
 }
 
@@ -84,5 +94,14 @@ void KBBGraphicsItemSet::remove(int position)
 		delete m_items[position];
 		m_scene->update();
 		m_items.remove(position);
+	}
+}
+
+
+void KBBGraphicsItemSet::setVisible(int position, const bool visible) const
+{
+	if (m_items.contains(position)) {
+		if(dynamic_cast<KBBGraphicsItem*>(m_items[position]))
+			(dynamic_cast<KBBGraphicsItem*>(m_items[position]))->setVisible(visible);
 	}
 }

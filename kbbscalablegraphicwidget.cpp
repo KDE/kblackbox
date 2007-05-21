@@ -154,13 +154,24 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 	m_rayNumber = 0;
 	m_boardBallsPlaced = m_gameDoc->m_ballsPlaced;
 	
-	// remove old lasers, old ray results, all placed balls, all markers "nothing" and all solutions
-	m_lasers->clear();
+	// remove old ray results, all placed balls, all markers "nothing" and all solutions
 	m_rayResults->clear();
 	m_balls->clear();
 	m_ballsUnsure->clear();
 	m_markersNothing->clear();
 	m_ballsSolution->clear();
+
+	// Reorganize lasers
+	if ((columns!=m_columns) || (rows!=m_rows)) {
+		// not the same amount of lasers: We can destroy them and create some new ones
+		m_lasers->clear();
+		for (int i=0; i<2*(columns + rows); i++)
+			m_lasers->insert(new KBBGraphicsItemLaser(this, m_themeManager, i, columns, rows));
+	} else {
+		// same amount of lasers: We "recycle" them. (Just destroying them and re-creating them is not working fine: some lasers remain hidden until the next resize... Strange bug with QGraphicsView...)
+		for (int i=0; i<2*(m_columns + m_rows); i++)
+			m_lasers->setVisible(i, true);
+	}
 
 	// set the new size if needed
 	if (m_columns!=columns || m_rows!=rows) {
@@ -172,9 +183,6 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 		resizeEvent(0);
 	}
 
-	// Place new lasers
-	for (int i=0; i<2*(m_columns + m_rows); i++)
-		m_lasers->insert(new KBBGraphicsItemLaser(this, m_themeManager, i, m_columns, m_rows));
 	
 	setInputAccepted(true);
 }
@@ -403,7 +411,7 @@ void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 			rayNumberOrReflection = KBBGameDoc::HIT_POSITION;
 		if ((outgoingPosition!=incomingPosition) && (outgoingPosition!=KBBGameDoc::HIT_POSITION)) {
 			m_rayNumber++;
-			m_lasers->remove(outgoingPosition);
+			m_lasers->setVisible(outgoingPosition, false);
 			m_rayResults->insert(outRay = new KBBGraphicsItemRayResult(this, m_themeManager, m_scene, outgoingPosition, m_columns, m_rows, m_rayNumber));
 			rayNumberOrReflection = m_rayNumber;
 		}
@@ -415,7 +423,7 @@ void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 		}
 		
 		m_scene->update();
-		m_lasers->remove(incomingPosition);
+		m_lasers->setVisible(incomingPosition, false);
 	}
 }
 

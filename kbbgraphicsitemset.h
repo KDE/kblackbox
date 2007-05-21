@@ -51,9 +51,20 @@ class KBBGraphicsItemSet
 		~KBBGraphicsItemSet();
 		
 		void clear();
+
+		/**
+		 * If an element is not visible, it is not contained.
+		 * @return false if the element is not contained or contained but not visible.
+		 */
 		bool contains(int position);
+
 		void insert(KBBItemWithPosition* item);
 		void remove(int position);
+
+		/**
+		 * @brief Change the visibility of an element
+		 */
+		void setVisible(const int position, const bool visible) const;
 
 
 	private:

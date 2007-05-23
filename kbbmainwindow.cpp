@@ -207,7 +207,7 @@ KBBMainWindow::KBBMainWindow()
 
 KBBMainWindow::~KBBMainWindow()
 {
-	KBBPrefs::writeConfig();
+	KBBPrefs::self()->writeConfig();
 }
 
 

@@ -106,6 +106,12 @@ class KBBTutorial : public QGroupBox
 		 */
 		void setStep(const int step);
 
+		/**
+		 * @brief Start the tutorial
+		 * Start or restart the tutorial at the 1st step.
+		 */
+		void start();
+
 
 	private slots:
 		/**

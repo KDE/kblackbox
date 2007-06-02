@@ -160,7 +160,7 @@ void KBBGameDoc::startTutorial()
 	m_balls->add(21);
 	m_balls->add(33);
 	m_tutorial->setStep(1);
-	m_tutorial->show();
+	m_tutorial->start();
 }
 
 

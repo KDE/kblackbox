@@ -54,7 +54,6 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 {
 	m_marker = 0;
 	m_gameWidget = 0;
-	m_stepMaxAllowed = 0;
 
 	setMinimumSize(QSize(WIDTH, WIDTH));
 	setFixedWidth(WIDTH);
@@ -241,6 +240,13 @@ void KBBTutorial::setStep(const int step)
 	m_buttonNext->setEnabled(m_step<m_stepMaxAllowed);
 	m_progression->setValue(m_step);
 	showMarker(m_laserToUse);
+}
+
+
+void KBBTutorial::start()
+{
+	m_stepMaxAllowed = 0;
+	show();
 }
 
 

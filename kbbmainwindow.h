@@ -37,6 +37,7 @@ class QAction;
 class QWidget;
 
 
+class KInformationLabel;
 class KSelectAction;
 class KToggleAction;
 #include <kxmlguiwindow.h>
@@ -142,6 +143,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		int m_ballNumber;
 		QWidget* m_centralWidget;
 		int m_columns;
+		KInformationLabel* m_infoScore;
 		KBBInfoWidget* m_infoWidget;
 		int m_rows;
 		bool m_running;

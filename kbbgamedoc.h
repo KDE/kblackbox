@@ -34,7 +34,6 @@
 
 
 #include <QObject>
-class QWidget;
 
 
 #include <krandomsequence.h>

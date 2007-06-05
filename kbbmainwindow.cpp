@@ -38,13 +38,13 @@
 
 #include <kactioncollection.h>
 #include <kglobal.h>
-#include <kinformationlabel.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kselectaction.h>
 #include <kstandarddirs.h>
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
+#include <ktitlewidget.h>
 #include <ktoggleaction.h>
 
 
@@ -104,10 +104,8 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Information message about the score
-	m_infoScore = new KInformationLabel(m_gameWidget);
-	m_infoScore->setIconType(KInformationLabel::Information);
-	m_infoScore->setAutoHideTimeout(0);
-
+	m_infoScore = new KTitleWidget(m_gameWidget);
+	m_infoScore->setPixmap(KTitleWidget::InfoMessage);
 
 	// Game
 	KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
@@ -328,7 +326,7 @@ void KBBMainWindow::startTutorial()
 		m_infoWidget->setGameParameters(KBBTutorial::BALLS, KBBTutorial::BALLS*3);
 
 		// Hide score message, if no hiden already
-		m_infoScore->setText("");
+		m_infoScore->setHidden(true);
 
 		updateStats();
 	}
@@ -381,7 +379,7 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 		m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
 
 		// Hide score message, if no hiden already
-		m_infoScore->setText("");
+		m_infoScore->setHidden(true);
 
 		updateStats();
 	}

@@ -38,6 +38,9 @@
 #include <QResizeEvent>
 
 
+#include "kgamepopupitem.h"
+
+
 #include "kbbballsonboard.h"
 #include "kbbgamedoc.h"
 #include "kbbgraphicsitemball.h"
@@ -83,7 +86,10 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_playerRay = new KBBGraphicsItemRay(playerRay, m_scene, m_themeManager);
 	m_solutionRay = new KBBGraphicsItemRay(solutionRay, m_scene, m_themeManager);
 	
-	
+	// Information message about the score
+	m_infoScore = new KGamePopupItem();
+	m_scene->addItem(m_infoScore); // it hides itself by default
+
 	setScene(m_scene);
 }
 
@@ -185,6 +191,12 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 
 	
 	setInputAccepted(true);
+}
+
+
+void KBBScalableGraphicWidget::popupText(QString& text)
+{
+	m_infoScore->showMessage( text, KGamePopupItem::TopLeft );
 }
 
 

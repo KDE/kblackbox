@@ -38,6 +38,9 @@ class QGraphicsScene;
 class QResizeEvent;
 
 
+class KGamePopupItem;
+
+
 class KBBBallsOnBoard;
 class KBBGameDoc;
 class KBBGraphicsItem;
@@ -123,6 +126,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void mouseBorderClick(const int borderPosition);
 		void mouseBoxClick(const Qt::MouseButton button, const int boxPosition);
 		void newGame(const int columns, const int rows);
+		void popupText(QString& text);
 		void removeAllBalls();
 		void removeBall(const int boxPosition);
 		void removeRay();
@@ -190,10 +194,11 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		QRectF m_rectBackground;
 		
 		// Various member variables
-		KBBGameDoc* m_gameDoc;
 		KBBBallsOnBoard* m_boardBalls;
 		KBBBallsOnBoard* m_boardBallsPlaced;
 		int m_columns;
+		KBBGameDoc* m_gameDoc;
+		KGamePopupItem* m_infoScore;
 		bool m_inputAccepted;
 		int m_rayNumber;
 		

@@ -1,3 +1,6 @@
+2007-06-24 Nicolas Roffet <nicolas-kde@roffet.com>
+	* The ending score message is now a KGamePopupItem.
+
 2007-05-12 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Added a "real" tutorial.
 

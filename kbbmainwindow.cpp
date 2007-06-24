@@ -37,6 +37,7 @@
 
 
 #include <kactioncollection.h>
+#include <kgamepopupitem.h>
 #include <kglobal.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -44,7 +45,6 @@
 #include <kstandarddirs.h>
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
-#include <ktitlewidget.h>
 #include <ktoggleaction.h>
 
 
@@ -102,10 +102,6 @@ KBBMainWindow::KBBMainWindow()
 	widgetLayout->addWidget(m_tutorial);
 	setCentralWidget(m_centralWidget);
 
-
-	// Information message about the score
-	m_infoScore = new KTitleWidget(m_gameWidget);
-	m_infoScore->setPixmap(KTitleWidget::InfoMessage);
 
 	// Game
 	KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
@@ -312,7 +308,7 @@ void KBBMainWindow::solve()
 				s = i18n("Your final score is: %1.\nYou did really well!", KGlobal::locale()->formatNumber(score,0));
 			else
 				s = i18n("Your final score is: %1.\nI guess you need more practice.", KGlobal::locale()->formatNumber(score,0));
-			m_infoScore->setText(s);
+			m_gameWidget->popupText(s);
 		}
 	}
 }
@@ -324,9 +320,6 @@ void KBBMainWindow::startTutorial()
 		m_gameDoc->startTutorial();
 		m_solveAction->setEnabled(true);
 		m_infoWidget->setGameParameters(KBBTutorial::BALLS, KBBTutorial::BALLS*3);
-
-		// Hide score message, if no hiden already
-		m_infoScore->setHidden(true);
 
 		updateStats();
 	}
@@ -377,9 +370,6 @@ bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 			m_gameWidget->solve(true);
 
 		m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
-
-		// Hide score message, if no hiden already
-		m_infoScore->setHidden(true);
 
 		updateStats();
 	}

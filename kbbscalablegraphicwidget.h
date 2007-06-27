@@ -77,6 +77,11 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const RATIO = 50;
 
 		/**
+		 * @brief Time the score message remains displayed
+		 */
+		static int const TIMEOUT_INFOSCORE = 4000;
+
+		/**
 		 * @brief Every graphic items
 		 *
 		 * Values are used to define the relative heigths between the displayed graphic items.

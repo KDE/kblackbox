@@ -179,13 +179,13 @@ void KBBTutorial::setStep(const int step)
 			m_gameWidget->drawRay(0);
 			break;
 		case FIRST_STEP+3:
-			setTexts(i18n("Hit"), i18n("A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam might have hit a ball at the position shown, but the exact position of the hit is not certain. It could be anywhere in that column."), i18n("Shoot the marked laser to discover the second kind of interaction."));
+			setTexts(i18n("Hit"), i18n("A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam might have hit a ball at the position shown, but the exact position of the hit is not certain: There are many other possibilities."), i18n("Shoot the marked laser to discover the second kind of interaction."));
 			m_laserToUse = 22;
 			m_gameWidget->addBallUnsure(28);
 			m_gameWidget->drawRay(4);
 			break;
 		case FIRST_STEP+4:
-			setTexts(i18n("Simple deflection"), i18n("The interaction of a beam that does not actually hit a ball, but aims to one side of it, is called a \"<b>deflection</b>\". The angle of deflection of the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown would deflect beam \"2\" upward, as shown, but this is not the <b>only</b> possibility."), i18n("Click on \"Next\" to see another combination of ball positions that deflects the laser beam as shown."));
+			setTexts(i18n("Simple deflection"), i18n("The interaction of a beam that does not actually hit a ball, but aims to one side of it, is called a \"<b>deflection</b>\". The angle of deflection of the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only possibility."), i18n("Click on \"Next\" to see another combination of ball positions that deflects the laser beam as shown."));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+5);
 			m_gameWidget->addBallUnsure(16);
@@ -214,7 +214,7 @@ void KBBTutorial::setStep(const int step)
 			m_gameWidget->drawRay(15);
 			break;
 		case FIRST_STEP+8:
-			setTexts(i18n("Marker for \"free position\""), i18n("We are sure there are no balls in the first 2 colums. If there were any, the beam entering at position \"1\" would hit a ball or be deflected by a ball in column 2. You can mark a \"free position\" with a right mouse click (see also keyboard shortcuts).<br /><br />Example: There are 12 markers in the first 2 columns."), i18n("Click on \"Next\"."));
+			setTexts(i18n("Marker for \"free position\""), i18n("We are sure there are no balls in the first 2 columns. If there were any, the beam entering at position \"1\" would hit a ball or be deflected by a ball in column 2. You can mark a \"free position\" with a right mouse click (see also keyboard shortcuts).<br /><br />Example: There are 12 markers in the first 2 columns."), i18n("Click on \"Next\"."));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+9);
 			for (int i=0;i<ROWS;i++) {
@@ -223,7 +223,7 @@ void KBBTutorial::setStep(const int step)
 			}
 			break;
 		case FIRST_STEP+9:
-			setTexts(i18n("Marking balls"), i18n("When you have worked out where a ball is, please use the left mouse button to mark it. To remove a ball, use the left mouse button again. Last tip: If you are not sure about a position, you can use a right click on a ball to mark it as \"unsure\".<br /><br />Example: We marked one position as sure, the other one as unsure."), i18n("Click on \"Next\"."));
+			setTexts(i18n("Marking balls"), i18n("When you have worked out where a ball is, please use the left mouse button to mark it. To remove a ball, use the left mouse button again. Last tip: If you are not sure about a position, you can use a right click on a ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br />Example: We marked one position as sure, the other one as unsure."), i18n("Click on \"Next\"."));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+10);
 			m_gameWidget->addBall(33);

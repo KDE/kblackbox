@@ -44,7 +44,6 @@ GenericName[zh_TW]=黑盒子智力遊戲
 Exec=kblackbox -caption "%c"
 Name=KBlackBox
 Name[af]=Kblackbox
-Name[ar]=لعبة الصندوق الأسود (KBlackBox)
 Name[be]=Чорная скрыня
 Name[eo]=Nigra kesto
 Name[hu]=Fekete doboz

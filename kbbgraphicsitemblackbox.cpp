@@ -27,8 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbgraphicsitemblackbox.h"
+
+
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
@@ -113,10 +114,8 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 
 void KBBGraphicsItemBlackBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	int x = (static_cast<int>(event->pos().x()) - KBBScalableGraphicWidget::BORDER_SIZE);
-	int y = (static_cast<int>(event->pos().y()) - KBBScalableGraphicWidget::BORDER_SIZE);
-	x /= KBBScalableGraphicWidget::RATIO;
-	y /= KBBScalableGraphicWidget::RATIO;
+	int x = (int)(event->pos().x() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
+	int y = (int)(event->pos().y() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
 	
 	m_widget->mouseBoxClick(event->button(), x + y*m_columns);
 }

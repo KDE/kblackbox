@@ -27,10 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #ifndef KBBGRAPHICSITEMRAYRESULT_H
 #define KBBGRAPHICSITEMRAYRESULT_H
+
 
 
 class QGraphicsScene;
@@ -57,7 +56,13 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 {
 	public:
 		KBBGraphicsItemRayResult(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, QGraphicsScene* scene, const int borderPosition, const int columns, const int rows, const int rayNumber);
-		~KBBGraphicsItemRayResult();
+
+
+		/**
+		 * @brief Destructor of the class and dependent object
+		 * Call this methode to destroy simultaneously this QGraphicsItem and all other dependent QGraphicsItems: The number or the sign.
+		 */
+		void cleanDelete();
 
 		/**
 		 * @brief Highlight the item

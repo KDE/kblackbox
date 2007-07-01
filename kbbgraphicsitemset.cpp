@@ -86,7 +86,7 @@ void KBBGraphicsItemSet::insert(KBBItemWithPosition* item)
 {
 	if (m_items.contains(item->position()))
 		// We want to avoid duplicated item on a given position.
-		delete item;
+		item->cleanDelete();
 	else
 		m_items.insert(item->position(), item);
 }
@@ -95,7 +95,7 @@ void KBBGraphicsItemSet::insert(KBBItemWithPosition* item)
 void KBBGraphicsItemSet::remove(int position)
 {
 	if (m_items.contains(position)) {
-		delete m_items[position];
+		m_items[position]->cleanDelete();
 		m_scene->update();
 		m_items.remove(position);
 	}

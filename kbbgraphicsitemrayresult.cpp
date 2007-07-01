@@ -96,17 +96,18 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 }
 
 
-KBBGraphicsItemRayResult::~KBBGraphicsItemRayResult()
-{
-	delete m_notNumber;
-	delete m_number;
-}
-
-
 
 //
 // Public
 //
+
+void KBBGraphicsItemRayResult::cleanDelete()
+{
+	delete m_notNumber;
+	delete m_number;
+	delete this;
+}
+
 
 void KBBGraphicsItemRayResult::highlight(bool state)
 {

@@ -37,3 +37,14 @@
 KBBItemWithPosition::~KBBItemWithPosition()
 {
 }
+
+
+
+//
+// Public
+//
+
+void KBBItemWithPosition::cleanDelete()
+{
+	delete this;
+}

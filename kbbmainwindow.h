@@ -87,11 +87,14 @@ class KBBMainWindow : public KXmlGuiWindow
 		void solve();
 
 		/**
+		 * @brief Start a game in the sandbox mode
+		 */
+		void startSandbox();
+
+		/**
 		 * @brief Start tutorial mode
 		 */
 		void startTutorial();
-
-		void sandboxModeSwitch();
 
 
 	private:
@@ -122,7 +125,6 @@ class KBBMainWindow : public KXmlGuiWindow
 
 		// Actions
 		KSelectAction *m_ballsAction;
-		KToggleAction *m_sandboxModeAction;
 		KSelectAction *m_sizeAction;
 		QAction *m_solveAction;
 

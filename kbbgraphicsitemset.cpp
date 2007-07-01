@@ -84,7 +84,11 @@ bool KBBGraphicsItemSet::contains(int position)
 
 void KBBGraphicsItemSet::insert(KBBItemWithPosition* item)
 {
-	m_items.insert(item->position(), item);
+	if (m_items.contains(item->position()))
+		// We want to avoid duplicated item on a given position.
+		delete item;
+	else
+		m_items.insert(item->position(), item);
 }
 
 

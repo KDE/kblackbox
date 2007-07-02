@@ -46,11 +46,11 @@ static const char KBBVERSION[] = "0.4.0-SVN";
 
 int main( int argc, char **argv )
 {
-  KAboutData aboutData( "kblackbox", I18N_NOOP("KBlackBox"),
-    KBBVERSION, KBBDESCRIPTION, KAboutData::License_GPL,
-    "(c) 1999-2000, Robert Cimrman\n(c) 2007, Nicolas Roffet");
-  aboutData.addAuthor("Robert Cimrman",0, "cimrman3@students.zcu.cz");
-  aboutData.addAuthor("Nicolas Roffet",0, "nicolas-kde@roffet.com");
+  KAboutData aboutData( "kblackbox", 0, ki18n("KBlackBox"),
+    KBBVERSION, ki18n(KBBDESCRIPTION), KAboutData::License_GPL,
+    ki18n("(c) 1999-2000, Robert Cimrman\n(c) 2007, Nicolas Roffet"));
+  aboutData.addAuthor(ki18n("Robert Cimrman"),KLocalizedString(), "cimrman3@students.zcu.cz");
+  aboutData.addAuthor(ki18n("Nicolas Roffet"),KLocalizedString(), "nicolas-kde@roffet.com");
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   KApplication application;

@@ -48,13 +48,13 @@
 
 KBBGameDoc::KBBGameDoc(KBBMainWindow *parent, KBBTutorial* tutorial) : QObject(parent)
 {
-	m_gameReallyStarted = false;
+	setRunning(false);
 	m_columns = 1;
 	m_rows = 1;
 	m_tutorial = tutorial;
 	
 	random.setSeed(0);
-		
+	
 	m_balls = new KBBBallsOnBoard(this, m_columns, m_rows);
 	m_ballsPlaced = new KBBBallsOnBoard(this, m_columns, m_rows);
 	connect(m_ballsPlaced, SIGNAL(changes()), parent, SLOT(updateStats()));
@@ -75,7 +75,7 @@ int KBBGameDoc::columns() const
 void KBBGameDoc::gameOver()
 {
 	// Clear
-	m_gameReallyStarted = false;
+	setRunning(false);
 	
 	// Compute final score
 	setScore( score + 5*m_ballsPlaced->numberOfBallsNotIn(m_balls) );
@@ -146,7 +146,7 @@ int KBBGameDoc::shootRay( int borderPosition )
 		setScore( score + 2);
 	
 	if (!m_tutorial->isVisible())
-		m_gameReallyStarted = true;
+		setRunning(true);
 	emit updateStats();
 
 	return outgoingBorderPosition;
@@ -175,11 +175,18 @@ void KBBGameDoc::clean(const int columns, const int rows)
 	m_rows = rows;
 
 	// Clear
-	m_gameReallyStarted = false;
+	setRunning(false);
 	m_ballsPlaced->newBoard(m_columns, m_rows);
 	setScore(0);
 
 	m_balls->newBoard(m_columns, m_rows);
+}
+
+
+void KBBGameDoc::setRunning(const bool r)
+{
+	m_gameReallyStarted = r;
+	emit running(r);
 }
 
 

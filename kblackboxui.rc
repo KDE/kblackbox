@@ -9,13 +9,13 @@
 		</Menu>
 		<Menu name="settings">
 			<text>&amp;Settings</text>
-			<Action name="options_size" />
-			<Action name="options_balls" />
+			<Action name="game_difficulty" />
 		</Menu>
 	</MenuBar>
 	<ToolBar name="mainToolBar">
 		<text>Main Toolbar</text>
 		<Action name="game_new" />
+		<Action name="game_difficulty" />
 		<Action name="game_tutorial" />
 		<Separator />
 		<Action name="move_solve" />

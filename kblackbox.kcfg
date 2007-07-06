@@ -10,16 +10,20 @@
       <default></default>
     </entry>
     <entry name="balls" type="Int">
-      <label>Number of balls</label>
+      <label>Number of balls for custom difficulty level</label>
       <default>4</default>
     </entry>
     <entry name="columns" type="Int">
-      <label>Number of columns of the board</label>
+      <label>Number of columns of the board for custom difficulty level</label>
       <default>8</default>
     </entry>
     <entry name="rows" type="Int">
-      <label>Number of rows of the board</label>
+      <label>Number of rows of the board for custom difficuty level</label>
       <default>8</default>
+    </entry>
+    <entry name="level" type="Int">
+      <label>Difficulty level</label>
+      <default>3</default>
     </entry>
   </group>
 </kcfg>

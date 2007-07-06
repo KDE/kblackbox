@@ -37,7 +37,7 @@ class QAction;
 class QWidget;
 
 
-class KSelectAction;
+class KGameDifficulty;
 class KToggleAction;
 #include <kxmlguiwindow.h>
 
@@ -69,15 +69,17 @@ class KBBMainWindow : public KXmlGuiWindow
 		 */
 		void updateStats();
 
+		/**
+		 * @brief Player changed the level
+		 */
+		void levelChanged(const int level);
+
 
 	private slots:
 		/**
 		 * @brief Start a new game.
 		 */
 		void newGame();
-
-		void slotSize(int selection);
-		void slotBalls(int selection);
 
 		/**
 		 * @brief Ends the current game
@@ -113,19 +115,12 @@ class KBBMainWindow : public KXmlGuiWindow
 		bool mayAbortGame();
 
 		/**
-		 * @brief Start a new game afer user confirmation (if needed).
-		 *
-		 * If the game is running and really started, the user has to confirm the end of the game.
-		 * If the game is not running or running but not really started, the game may end and a new game may start without user confirmation.
-		 *
-		 * @return if a new game started or not
+		 * @brief Start a new game.
 		 */
-		bool startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newSandboxModeMode);
+		void startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newSandboxModeMode);
 
 
 		// Actions
-		KSelectAction *m_ballsAction;
-		KSelectAction *m_sizeAction;
 		QAction *m_solveAction;
 
 
@@ -140,11 +135,18 @@ class KBBMainWindow : public KXmlGuiWindow
 		KBBScalableGraphicWidget* m_gameWidget;
 
 
+		// Custom difficulty level
+		int m_customBallNumber;
+		int m_customColumns;
+		int m_customRows;
+
 		// Various member variables
 		int m_ballNumber;
 		QWidget* m_centralWidget;
 		int m_columns;
+		KGameDifficulty* m_difficulty;
 		KBBInfoWidget* m_infoWidget;
+		int m_level;
 		int m_rows;
 		bool m_running;
 		bool m_sandboxMode;

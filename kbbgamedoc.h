@@ -142,10 +142,13 @@ class KBBGameDoc : public QObject
 
 
 	signals:
+		void running(bool);
 		void updateStats();
 
 
 	private:
+		void setRunning(bool r);
+
 		/**
 		 * @brief Sets the score value
 		 *

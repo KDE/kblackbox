@@ -37,11 +37,11 @@
 
 
 #include <kactioncollection.h>
+#include <kgamedifficulty.h>
 #include <kgamepopupitem.h>
 #include <kglobal.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kselectaction.h>
 #include <kstandarddirs.h>
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
@@ -116,29 +116,14 @@ KBBMainWindow::KBBMainWindow()
 
 	// Move
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
-	
-	// Settings
-	m_sizeAction = new KSelectAction( i18n("&Size"), this);
-	actionCollection()->addAction("options_size", m_sizeAction);
-	connect(m_sizeAction, SIGNAL(triggered(int)), this, SLOT(slotSize(int)));
-	QStringList list;
-	list.append(i18n("  8 x  8 "));
-	list.append(i18n(" 10 x 10 "));
-	list.append(i18n(" 12 x 12 "));
-	list.append(i18n(" 18 x 12 "));
-	m_sizeAction->setItems(list);
-	
-	m_ballsAction = new KSelectAction( i18n("&Balls"), this);
-	actionCollection()->addAction("options_balls", m_ballsAction);
-	connect(m_ballsAction, SIGNAL(triggered(int)), this, SLOT(slotBalls(int)));
-	list.clear();
-	list.append(i18n("4 balls"));
-	list.append(i18n("6 balls"));
-	list.append(i18n("8 balls"));
-	list.append(i18n("10 balls"));
-	m_ballsAction->setItems(list);
-	
-	
+
+
+	m_difficulty = new KGameDifficulty(this, true, 8);
+// TODO	m_difficulty->addCustomLevel();
+	connect(m_gameDoc, SIGNAL(running(bool)), m_difficulty, SLOT(setRunning(bool)));
+	connect(m_difficulty, SIGNAL(levelChanged(int)), this, SLOT(levelChanged(int)));
+
+
 	// Keyboard only
 	QAction* action = actionCollection()->addAction( "move_down" );
 	action->setText( i18n("Move Down") );
@@ -175,28 +160,22 @@ KBBMainWindow::KBBMainWindow()
 	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardSpace()));
 	action->setShortcut(Qt::Key_Space);
 	addAction(action);
-	
-	//Read configuration options
-	m_ballNumber = KBBPrefs::balls();
-	const int menuNumber[4] = {4, 6, 8, 10};
-	for (int i=0; i<4; i++)
-		if (menuNumber[i]==m_ballNumber)
-			m_ballsAction->setCurrentItem(i);
-	
-	m_columns = KBBPrefs::columns();
-	m_rows = KBBPrefs::rows();
-	const int menuSizeColumns[4] = {8, 10, 12, 18};
-	const int menuSizeRows[4] = {8, 10, 12, 12};
-	for (int i=0; i<4; i++)
-		if ((menuSizeColumns[i]==m_columns) && (menuSizeRows[i]==m_rows))
-			m_sizeAction->setCurrentItem(i);
-	
-	
+
+
 	// Status bar
 	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
 	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
-	
-	
+
+
+	//Read configuration options
+	m_customBallNumber = KBBPrefs::balls();
+	m_customColumns = KBBPrefs::columns();
+	m_customRows = KBBPrefs::rows();
+
+	m_level = KBBPrefs::level();
+	m_difficulty->setLevel(m_level);
+
+
 	newGame();
 	setupGUI();
 }
@@ -234,6 +213,57 @@ void KBBMainWindow::updateStats()
 }
 
 
+void KBBMainWindow::levelChanged(const int level)
+{
+	m_level = level;
+	KBBPrefs::setLevel(m_level);
+	switch(m_level) {
+		case 0:
+			m_ballNumber = 2;
+			m_columns = 5;
+			m_rows = 5;
+			break;
+		case 1:
+			m_ballNumber = 3;
+			m_columns = 6;
+			m_rows = 6;
+			break;
+		case 2:
+			m_ballNumber = 4;
+			m_columns = 8;
+			m_rows = 8;
+			break;
+		case 3:
+			m_ballNumber = 6;
+			m_columns = 10;
+			m_rows = 10;
+			break;
+		case 4:
+			m_ballNumber = 8;
+			m_columns = 12;
+			m_rows = 12;
+			break;
+		case 5:
+			m_ballNumber = 10;
+			m_columns = 14;
+			m_rows = 10;
+			break;
+		case 6:
+			m_ballNumber = 10;
+			m_columns = 18;
+			m_rows = 12;
+			break;
+		case 7:
+			m_ballNumber = 24;
+			m_columns = 20;
+			m_rows = 14;
+			break;
+	}
+
+	startGame(m_ballNumber, m_columns, m_rows, m_sandboxMode);
+}
+
+
 
 //
 // Private slots
@@ -241,43 +271,8 @@ void KBBMainWindow::updateStats()
 
 void KBBMainWindow::newGame()
 {
-	startGame(m_ballNumber, m_columns, m_rows, false);
-}
-
-
-void KBBMainWindow::slotBalls(int selection)
-{
-	const int ARRAY_SIZE = 4;
-	const int newNumber[ARRAY_SIZE] = {4, 6, 8, 10};
-	
-	if (m_ballNumber != newNumber[selection]) {
-		if (startGame(newNumber[selection], m_columns, m_rows, m_sandboxMode))
-			KBBPrefs::setBalls(newNumber[selection]);
-		else {
-			for (int i=0; i<ARRAY_SIZE; i++)
-				if (newNumber[i]==m_ballNumber)
-					m_ballsAction->setCurrentItem(i);
-		}
-	}
-}
-
-
-void KBBMainWindow::slotSize(int selection)
-{
-	const int ARRAY_SIZE = 4;
-	const int newSizesColumns[ARRAY_SIZE] = {8, 10, 12, 18};
-	const int newSizesRows[ARRAY_SIZE] = {8, 10, 12, 12};
-
-	if ((newSizesColumns[selection] != m_columns) || (newSizesRows[selection] != m_rows)) {
-		if (startGame(m_ballNumber, newSizesColumns[selection], newSizesRows[selection], m_sandboxMode)) {
-			KBBPrefs::setColumns(m_columns);
-			KBBPrefs::setRows(m_rows);
-		} else {
-			for (int i=0; i<ARRAY_SIZE; i++)
-				if ((newSizesColumns[i]==m_columns) && (newSizesRows[i]==m_rows))
-					m_sizeAction->setCurrentItem(i);
-		}
-	}
+	if (mayAbortGame())
+		startGame(m_ballNumber, m_columns, m_rows, false);
 }
 
 
@@ -312,7 +307,8 @@ void KBBMainWindow::solve()
 
 void KBBMainWindow::startSandbox()
 {
-	startGame(m_ballNumber, m_columns, m_rows, true);
+	if (mayAbortGame())
+		startGame(m_ballNumber, m_columns, m_rows, true);
 }
 
 
@@ -338,36 +334,30 @@ bool KBBMainWindow::mayAbortGame()
 	bool mayAbort = true;
 
 	if (m_gameDoc->gameReallyStarted())
-		mayAbort = ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("End Game"))) == KMessageBox::Continue );
+		mayAbort = ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("End game"))) == KMessageBox::Continue );
 
 	return mayAbort;
 }
 
 
-bool KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool sandboxMode)
+void KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool sandboxMode)
 {
-	bool start = mayAbortGame();
+	m_running = true;
+	m_ballNumber = newBallNumber;
+	m_columns = newColumnNumber;
+	m_rows = newRowNumber;
+	m_sandboxMode = sandboxMode;
 
-	if (start) {
-		m_running = true;
-		m_ballNumber = newBallNumber;
-		m_columns = newColumnNumber;
-		m_rows = newRowNumber;
-		m_sandboxMode = sandboxMode;
+	m_solveAction->setEnabled(true);
+	m_tutorial->hide();
+	m_gameDoc->newGame(m_ballNumber, m_columns, m_rows);
+	m_gameWidget->newGame(m_columns, m_rows);
+	if (m_sandboxMode)
+		m_gameWidget->solve(true);
 
-		m_solveAction->setEnabled(true);
-		m_tutorial->hide();
-		m_gameDoc->newGame(m_ballNumber, m_columns, m_rows);
-		m_gameWidget->newGame(m_columns, m_rows);
-		if (m_sandboxMode)
-			m_gameWidget->solve(true);
+	m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
 
-		m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
-
-		updateStats();
-	}
-
-	return start;
+	updateStats();
 }
 
 

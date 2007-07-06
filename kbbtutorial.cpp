@@ -285,7 +285,7 @@ void KBBTutorial::setTexts(const QString &title, const QString &text, const QStr
 {
 	m_title->setText("<qt><strong>" + title + "</strong></qt>");
 	m_explanation->setText("<qt>" + text + "</qt>");
-	m_playerAction->setText("<qt><i><b>" + action + "</b></i></qt>");
+	m_playerAction->setText("<qt><b>" + action + "</b></qt>");
 }
 
 

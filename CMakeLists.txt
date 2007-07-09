@@ -32,8 +32,6 @@ set(kblackbox_SRCS
     main.cpp
     )
 
-kde4_automoc(${kblackbox_SRCS})
-
 kde4_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc )
 
 kde4_add_executable(kblackbox ${kblackbox_SRCS})

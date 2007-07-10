@@ -68,6 +68,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 
 
 	setFrameStyle(QFrame::NoFrame);
+	setCacheMode(QGraphicsView::CacheBackground);
 	setMinimumSize(QSize(MINIMUM_SIZE, MINIMUM_SIZE));
 
 

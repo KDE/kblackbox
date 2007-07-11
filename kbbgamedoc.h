@@ -142,7 +142,6 @@ class KBBGameDoc : public QObject
 
 
 	signals:
-		void running(bool);
 		void updateStats();
 
 

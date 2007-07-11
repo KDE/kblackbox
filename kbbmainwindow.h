@@ -37,7 +37,7 @@ class QAction;
 class QWidget;
 
 
-class KGameDifficulty;
+#include <kgamedifficulty.h>
 class KToggleAction;
 #include <kxmlguiwindow.h>
 
@@ -72,7 +72,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		/**
 		 * @brief Player changed the level
 		 */
-		void levelChanged(const int level);
+		void levelChanged(KGameDifficulty::standardLevel level);
 
 
 	private slots:
@@ -144,9 +144,8 @@ class KBBMainWindow : public KXmlGuiWindow
 		int m_ballNumber;
 		QWidget* m_centralWidget;
 		int m_columns;
-		KGameDifficulty* m_difficulty;
 		KBBInfoWidget* m_infoWidget;
-		int m_level;
+		KGameDifficulty::standardLevel m_level;
 		int m_rows;
 		bool m_running;
 		bool m_sandboxMode;

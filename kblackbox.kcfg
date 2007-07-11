@@ -23,7 +23,7 @@
     </entry>
     <entry name="level" type="Int">
       <label>Difficulty level</label>
-      <default>3</default>
+      <default>30</default>
     </entry>
   </group>
 </kcfg>

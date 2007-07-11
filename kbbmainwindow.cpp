@@ -65,8 +65,17 @@
 KBBMainWindow::KBBMainWindow()
 {
 	m_running = false;
-	
-	
+
+	KGameDifficulty::init(this, this, SLOT(levelChanged(KGameDifficulty::standardLevel)));
+	KGameDifficulty::addStandardLevel(KGameDifficulty::veryEasy);
+	KGameDifficulty::addStandardLevel(KGameDifficulty::easy);
+	KGameDifficulty::addStandardLevel(KGameDifficulty::medium);
+	KGameDifficulty::addStandardLevel(KGameDifficulty::hard);
+	KGameDifficulty::addStandardLevel(KGameDifficulty::veryHard);
+	KGameDifficulty::addStandardLevel(KGameDifficulty::extremelyHard);
+// TODO	KGameDifficulty::addStandardLevel(KGameDifficulty::configurable);
+
+
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
 	if (!QFile(svgzFile).exists())
@@ -118,12 +127,6 @@ KBBMainWindow::KBBMainWindow()
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
 
 
-	m_difficulty = new KGameDifficulty(this, true, 8);
-// TODO	m_difficulty->addCustomLevel();
-	connect(m_gameDoc, SIGNAL(running(bool)), m_difficulty, SLOT(setRunning(bool)));
-	connect(m_difficulty, SIGNAL(levelChanged(int)), this, SLOT(levelChanged(int)));
-
-
 	// Keyboard only
 	QAction* action = actionCollection()->addAction( "move_down" );
 	action->setText( i18n("Move Down") );
@@ -172,8 +175,8 @@ KBBMainWindow::KBBMainWindow()
 	m_customColumns = KBBPrefs::columns();
 	m_customRows = KBBPrefs::rows();
 
-	m_level = KBBPrefs::level();
-	m_difficulty->setLevel(m_level);
+	m_level = (KGameDifficulty::standardLevel) (KBBPrefs::level());
+	KGameDifficulty::setLevel(m_level);
 
 
 	newGame();
@@ -213,51 +216,45 @@ void KBBMainWindow::updateStats()
 }
 
 
-void KBBMainWindow::levelChanged(const int level)
+void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 {
 	m_level = level;
-	KBBPrefs::setLevel(m_level);
+	KBBPrefs::setLevel((int)(m_level));
 	switch(m_level) {
-		case 0:
+		case KGameDifficulty::veryEasy:
 			m_ballNumber = 2;
-			m_columns = 5;
-			m_rows = 5;
-			break;
-		case 1:
-			m_ballNumber = 3;
 			m_columns = 6;
 			m_rows = 6;
 			break;
-		case 2:
+		case KGameDifficulty::easy:
 			m_ballNumber = 4;
 			m_columns = 8;
 			m_rows = 8;
 			break;
-		case 3:
+		case KGameDifficulty::medium:
+		default:
 			m_ballNumber = 6;
 			m_columns = 10;
 			m_rows = 10;
 			break;
-		case 4:
+		case KGameDifficulty::hard:
 			m_ballNumber = 8;
 			m_columns = 12;
 			m_rows = 12;
 			break;
-		case 5:
+		case KGameDifficulty::veryHard:
 			m_ballNumber = 10;
 			m_columns = 14;
 			m_rows = 10;
 			break;
-		case 6:
-			m_ballNumber = 10;
+		case KGameDifficulty::extremelyHard:
+			m_ballNumber = 12;
 			m_columns = 18;
 			m_rows = 12;
 			break;
-		case 7:
-			m_ballNumber = 24;
-			m_columns = 20;
-			m_rows = 14;
-			break;
+//		case KGameDifficulty::configurable:
+//			TODO...
+//			break;
 	}
 
 	startGame(m_ballNumber, m_columns, m_rows, m_sandboxMode);
@@ -317,6 +314,7 @@ void KBBMainWindow::startTutorial()
 	if (mayAbortGame()) {
 		m_gameDoc->startTutorial();
 		m_solveAction->setEnabled(true);
+		KGameDifficulty::setEnabled(false);
 		m_infoWidget->setGameParameters(KBBTutorial::BALLS, KBBTutorial::BALLS*3);
 
 		updateStats();
@@ -349,6 +347,7 @@ void KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber
 	m_sandboxMode = sandboxMode;
 
 	m_solveAction->setEnabled(true);
+	KGameDifficulty::setEnabled(true);
 	m_tutorial->hide();
 	m_gameDoc->newGame(m_ballNumber, m_columns, m_rows);
 	m_gameWidget->newGame(m_columns, m_rows);

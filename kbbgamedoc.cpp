@@ -34,6 +34,7 @@
 #include <QWidget>
 
 
+#include <kgamedifficulty.h>
 #include <krandomsequence.h>
 
 
@@ -186,7 +187,7 @@ void KBBGameDoc::clean(const int columns, const int rows)
 void KBBGameDoc::setRunning(const bool r)
 {
 	m_gameReallyStarted = r;
-	emit running(r);
+	KGameDifficulty::setRunning(r);
 }
 
 

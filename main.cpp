@@ -40,28 +40,23 @@
 
 
 
-static const char KBBDESCRIPTION[] = I18N_NOOP("KDE Black Box Game: Find the hidden balls in the black box");
-static const char KBBVERSION[] = "0.4.0-SVN";
-
-
 int main( int argc, char **argv )
 {
-  KAboutData aboutData( "kblackbox", 0, ki18n("KBlackBox"),
-    KBBVERSION, ki18n(KBBDESCRIPTION), KAboutData::License_GPL,
-    ki18n("(c) 1999-2000, Robert Cimrman\n(c) 2007, Nicolas Roffet"));
-  aboutData.addAuthor(ki18n("Robert Cimrman"),KLocalizedString(), "cimrman3@students.zcu.cz");
-  aboutData.addAuthor(ki18n("Nicolas Roffet"),KLocalizedString(), "nicolas-kde@roffet.com");
-  KCmdLineArgs::init( argc, argv, &aboutData );
+	KAboutData aboutData( "kblackbox", 0, ki18n("KBlackBox"), "0.4.0", ki18n("KDE Black Box Game: Find the hidden balls in the black box"), KAboutData::License_GPL, ki18n("(c) 1999-2000, Robert Cimrman\n(c) 2007, Nicolas Roffet"));
+	aboutData.addAuthor(ki18n("Nicolas Roffet"),ki18n("Developper of version 0.4."), "nicolas-kde@roffet.com");
+	aboutData.addAuthor(ki18n("Robert Cimrman"),ki18n("Original developper"), "cimrman3@students.zcu.cz");
+	aboutData.addCredit(ki18n("Johann Ollivier Lapeyre"), ki18n("Artist"), "johann.ollivierlapeyre@gmail.com");
+	KCmdLineArgs::init( argc, argv, &aboutData );
 
-  KApplication application;
-  KGlobal::locale()->insertCatalog("libkdegames");
+	KApplication application;
+	KGlobal::locale()->insertCatalog("libkdegames");
 
-  if (application.isSessionRestored())
-      kRestoreMainWindows<KBBMainWindow>();
-  else {
-      KBBMainWindow *mainWindow = new KBBMainWindow;
-      mainWindow->show();
-  }
+	if (application.isSessionRestored())
+		kRestoreMainWindows<KBBMainWindow>();
+	else {
+		KBBMainWindow *mainWindow = new KBBMainWindow;
+		mainWindow->show();
+	}
 
-  return application.exec();
+	return application.exec();
 }

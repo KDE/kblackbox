@@ -29,10 +29,12 @@
 
 
 
+class QAction;
 class QLabel;
 #include <QWidget>
 
 
+class KPushButton;
 class KGameLCD;
 
 
@@ -54,7 +56,7 @@ class KBBInfoWidget : public QWidget
 		/**
 		 * @brief Constructor
 		 */
-		KBBInfoWidget(KBBThemeManager* themeManager);
+		KBBInfoWidget(KBBThemeManager* themeManager, QAction* check);
 		
 		
 		void setGameParameters(const int ballsToPlace, const int scoreLimit);
@@ -68,6 +70,7 @@ class KBBInfoWidget : public QWidget
 		QLabel* m_ballsTitle;
 		int m_ballsToPlace;
 		KBBBallsGraphicWidget* m_ballsWidget;
+		KPushButton* m_checkButton;
 		KGameLCD* m_score;
 		int m_scoreLimit;
 

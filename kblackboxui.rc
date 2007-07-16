@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui name="kblackbox" version="7">
+<gui name="kblackbox" version="8">
 	<MenuBar>
 		<Menu name="game">
-			<text>&amp;Game</text>
+			<text>Game</text>
 			<Action name="game_tutorial" />
 			<Action name="game_sandbox" />
 		</Menu>
+		<Menu name="move">
+			<text>Move</text>
+			<Action name="move_check" />
+		</Menu>
 		<Menu name="settings">
-			<text>&amp;Settings</text>
+			<text>Settings</text>
 			<Action name="game_difficulty" />
 		</Menu>
 	</MenuBar>

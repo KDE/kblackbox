@@ -230,7 +230,7 @@ void KBBTutorial::setStep(const int step)
 			m_gameWidget->addBallUnsure(35);
 			break;
 		case FIRST_STEP+10:
-			setTexts(i18n("Let us play!"), i18n("<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /><br /><b>You can start to play.</b> Try to finish this tutorial game by yourself!<br /><br />Tip: We have sent in enough beams to deduce the positions of the 3 balls with certainty. Of course, you can use some more shots if needed."), i18n("Finish placing the balls and click on \"Solve\" when you are done!"));
+			setTexts(i18n("Let us play!"), i18n("<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /><br /><b>You can start to play.</b> Try to finish this tutorial game by yourself!<br /><br />Tip: We have sent in enough beams to deduce the positions of the 3 balls with certainty. Of course, you can use some more shots if needed."), i18n("Finish placing the balls and click on \"Check positions\" when you are done!"));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+9);
 			break;

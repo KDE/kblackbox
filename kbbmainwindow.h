@@ -27,10 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #ifndef KBBMAINWINDOW_H
 #define KBBMAINWINDOW_H
+
 
 
 class QAction;
@@ -77,14 +76,23 @@ class KBBMainWindow : public KXmlGuiWindow
 
 	private slots:
 		/**
+		 * @brief Ends the current game
+		 *
+		 * This function is used when the player is done.
+		 * @see solve()
+		 */
+		void check();
+
+		/**
 		 * @brief Start a new game.
 		 */
 		void newGame();
 
 		/**
-		 * @brief Ends the current game
+		 * @brief Give up the current game
 		 *
-		 * This function is used when the player is giving up or when he is done.
+		 * This function is used when the player is giving up.
+		 * @see check()
 		 */
 		void solve();
 
@@ -114,6 +122,8 @@ class KBBMainWindow : public KXmlGuiWindow
 		 */
 		bool mayAbortGame();
 
+		void solving();
+
 		/**
 		 * @brief Start a new game.
 		 */
@@ -122,6 +132,7 @@ class KBBMainWindow : public KXmlGuiWindow
 
 		// Actions
 		QAction *m_solveAction;
+		QAction *m_check;
 
 
 		/**

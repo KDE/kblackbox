@@ -304,7 +304,7 @@ void KBBMainWindow::solve()
 		KMessageBox::sorry(this, i18n("Sorry, you may not give up the tutorial."), i18n("Solve"));
 	} else {
 		if (m_gameDoc->numberOfBallsPlaced() != m_gameDoc->numberOfBallsToPlace())
-			if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you realy want to give up this game?"), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
+			if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
 				return;
 
 		solving();

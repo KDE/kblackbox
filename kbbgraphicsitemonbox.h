@@ -27,10 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #ifndef KBBGRAPHICSITEMONBOX_H
 #define KBBGRAPHICSITEMONBOX_H
+
 
 
 class QGraphicsScene;
@@ -51,6 +50,12 @@ class KBBThemeManager;
 class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 {
 	public:
+		/**
+		 * @brief Invalid box position
+		 */
+		static const int NO_POSITION = -1;
+
+
 		KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows);
 		
 		const int position();
@@ -63,9 +68,15 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 
 
 	private:
-		void mousePressEvent (QGraphicsSceneMouseEvent*);
+		int boxPosition(qreal x, qreal y);
+		bool isMovable();
+		void mousePressEvent (QGraphicsSceneMouseEvent* event);
+		void mouseReleaseEvent (QGraphicsSceneMouseEvent* event);
+		void setBoxPosition(int boxPosition);
 		
 		int m_boxPosition;
+		qreal m_dragX;
+		qreal m_dragY;
 		KBBScalableGraphicWidget::itemType m_itemType;
 };
 

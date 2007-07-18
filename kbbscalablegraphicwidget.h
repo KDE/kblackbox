@@ -130,6 +130,8 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void drawRay(const int borderPosition);
 		void mouseBorderClick(const int borderPosition);
 		void mouseBoxClick(const Qt::MouseButton button, const int boxPosition);
+		int moveBall(const int boxPositionFrom, const int boxPositionTo);
+		int moveMarkerNothing(const int boxPositionFrom, const int boxPositionTo);
 		void newGame(const int columns, const int rows);
 		void popupText(QString& text);
 		void removeAllBalls();

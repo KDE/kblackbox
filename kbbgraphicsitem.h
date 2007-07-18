@@ -24,10 +24,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #ifndef KBBGRAPHICSITEM_H
 #define KBBGRAPHICSITEM_H
+
 
 
 #include <QGraphicsScene>

@@ -27,49 +27,68 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #ifndef KBBGRAPHICSITEMSET_H
 #define KBBGRAPHICSITEMSET_H
 
 
+
 class QGraphicsScene;
+#include <QList>
 
 
 class KBBItemWithPosition;
-#include <QMap>
 
 
 
 /**
- * @brief Set of graphic items
+ * @brief Set of graphic items with positions
  */
 class KBBGraphicsItemSet
 {
 	public:
 		KBBGraphicsItemSet(QGraphicsScene* scene);
 		~KBBGraphicsItemSet();
-		
+
+
+		/**
+		 * @brief Remove all items
+		 */
 		void clear();
 
 		/**
 		 * If an element is not visible, it is not contained.
 		 * @return false if the element is not contained or contained but not visible.
 		 */
-		bool contains(int position);
+		bool containsVisible(int position);
 
+		/**
+		 * @brief Insert an item in the list
+		 *
+		 * @param item Item to insert. It must have a position: a box position or a border position.
+		 */
 		void insert(KBBItemWithPosition* item);
+
+		/**
+		 * @brief Remove item at given position
+		 *
+		 * @param position Position of the item to be removed.
+		 */
 		void remove(int position);
 
 		/**
 		 * @brief Change the visibility of an element
 		 */
-		void setVisible(const int position, const bool visible) const;
+		void setVisible(const int position, const bool visible);
 
 
 	private:
+		static const int NO_INDEX = -1;
+
+		bool contains(int position);
+		int indexOf(int position);
+
 		QGraphicsScene* m_scene;
-		QMap<int, KBBItemWithPosition*> m_items;
+		QList<KBBItemWithPosition*> m_items;
 };
 
 #endif // KBBGRAPHICSITEMSET_H

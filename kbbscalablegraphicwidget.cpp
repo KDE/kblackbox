@@ -103,7 +103,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 
 void KBBScalableGraphicWidget::addBall(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_balls->contains(boxPosition))&& (!m_ballsUnsure->contains(boxPosition))) {
+	if (m_inputAccepted && (!m_balls->containsVisible(boxPosition))&& (!m_ballsUnsure->containsVisible(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
 		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_markersNothing->remove(boxPosition);
@@ -120,7 +120,7 @@ void KBBScalableGraphicWidget::addBallUnsure(const int boxPosition)
 
 void KBBScalableGraphicWidget::addMarkerNothing(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_markersNothing->contains(boxPosition))) {
+	if (m_inputAccepted && (!m_markersNothing->containsVisible(boxPosition))) {
 		m_markersNothing->insert(new KBBGraphicsItemOnBox(markerNothing, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_balls->remove(boxPosition);
 		m_ballsUnsure->remove(boxPosition);
@@ -154,6 +154,28 @@ void KBBScalableGraphicWidget::mouseBoxClick(const Qt::MouseButton button, const
 	else
 		switchBall();
 	m_cursor->hide();
+}
+
+
+int KBBScalableGraphicWidget::moveBall(const int boxPositionFrom, const int boxPositionTo)
+{
+	if (m_inputAccepted && (!m_balls->containsVisible(boxPositionTo)) && (!m_ballsUnsure->containsVisible(boxPositionTo))) {
+		m_boardBallsPlaced->remove(boxPositionFrom);
+		m_boardBallsPlaced->add(boxPositionTo);
+		m_markersNothing->remove(boxPositionTo);
+		return boxPositionTo;
+	} else
+		return boxPositionFrom;
+}
+
+
+int KBBScalableGraphicWidget::moveMarkerNothing(const int boxPositionFrom, const int boxPositionTo)
+{
+	if (m_inputAccepted && (!m_markersNothing->containsVisible(boxPositionTo))) {
+		removeBall(boxPositionFrom);
+		return boxPositionTo;
+	} else
+		return boxPositionFrom;
 }
 
 
@@ -263,11 +285,11 @@ void KBBScalableGraphicWidget::solve(const bool continueGame)
 	setInputAccepted(continueGame);
 	
 	for (int i=0; i<(m_columns * m_rows); i++) {
-		if ((m_balls->contains(i) || m_ballsUnsure->contains(i)) && m_boardBalls->contains(i))
+		if ((m_balls->containsVisible(i) || m_ballsUnsure->containsVisible(i)) && m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemBall(rightPlayerBall, this, m_themeManager, i, m_columns, m_rows));
-		if ((m_balls->contains(i) || m_ballsUnsure->contains(i)) && !m_boardBalls->contains(i))
+		if ((m_balls->containsVisible(i) || m_ballsUnsure->containsVisible(i)) && !m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemOnBox(wrongPlayerBall, this, m_themeManager, i, m_columns, m_rows));
-		if (!m_balls->contains(i) && !m_ballsUnsure->contains(i) && m_boardBalls->contains(i))
+		if (!m_balls->containsVisible(i) && !m_ballsUnsure->containsVisible(i) && m_boardBalls->contains(i))
 			m_ballsSolution->insert(new KBBGraphicsItemBall(solutionBall, this, m_themeManager, i, m_columns, m_rows));
 	}
 }
@@ -394,7 +416,7 @@ void KBBScalableGraphicWidget::setInputAccepted(bool inputAccepted)
 
 void KBBScalableGraphicWidget::switchBall()
 {
-	if ((m_balls->contains(m_cursor->boxPosition())) || (m_ballsUnsure->contains(m_cursor->boxPosition())))
+	if ((m_balls->containsVisible(m_cursor->boxPosition())) || (m_ballsUnsure->containsVisible(m_cursor->boxPosition())))
 		removeBall(m_cursor->boxPosition());
 	else
 		addBall(m_cursor->boxPosition());
@@ -403,9 +425,9 @@ void KBBScalableGraphicWidget::switchBall()
 
 void KBBScalableGraphicWidget::switchMarker()
 {
-	if (m_balls->contains(m_cursor->boxPosition()))
+	if (m_balls->containsVisible(m_cursor->boxPosition()))
 		setBallUnsure(m_cursor->boxPosition(), true);
-	else if (m_markersNothing->contains(m_cursor->boxPosition()))
+	else if (m_markersNothing->containsVisible(m_cursor->boxPosition()))
 		removeMarkerNothing(m_cursor->boxPosition());
 	else
 		addMarkerNothing(m_cursor->boxPosition());
@@ -414,7 +436,7 @@ void KBBScalableGraphicWidget::switchMarker()
 
 void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 {
-	if (m_gameDoc->mayShootRay(incomingPosition) && m_inputAccepted && m_lasers->contains(incomingPosition)) {
+	if (m_gameDoc->mayShootRay(incomingPosition) && m_inputAccepted && m_lasers->containsVisible(incomingPosition)) {
 		const int outgoingPosition = m_gameDoc->shootRay(incomingPosition);
 		
 		KBBGraphicsItemRayResult* inRay;

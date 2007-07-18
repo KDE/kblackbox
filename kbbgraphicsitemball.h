@@ -46,7 +46,7 @@ class KBBThemeManager;
 /**
  * @brief Ball on the scalable graphic widget
  *
- * A ball can be blue, red or blue with a question mark.
+ * A ball can be gray, red or gray with a question mark.
  */
 class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 {

@@ -27,8 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbgraphicsitemonbox.h"
+
+
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
@@ -49,12 +50,16 @@
 KBBGraphicsItemOnBox::KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows) : KBBGraphicsItem(itemType, parent->scene(), themeManager), KBBItemWithPosition()
 {
 	m_widget = parent;
-	m_boxPosition = boxPosition;
 	m_columns = columns;
 	m_rows = rows;
 	m_itemType = itemType;
 	
-	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / columns));
+	setBoxPosition(boxPosition);
+
+	if (isMovable()) {
+		setAcceptDrops(true);
+		setFlag(QGraphicsItem::ItemIsMovable);
+	}
 }
 
 
@@ -74,7 +79,59 @@ const int KBBGraphicsItemOnBox::position ()
 // Private
 //
 
+int KBBGraphicsItemOnBox::boxPosition(qreal x, qreal y)
+{
+	int r = (int)((x - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
+	int c = (int)((y - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
+
+	if ((r<0) || (r>=m_rows) || (c<0) || (c>=m_columns))
+		return NO_POSITION;
+	else
+		return r+c*m_rows;
+}
+
+
+bool KBBGraphicsItemOnBox::isMovable()
+{
+	return ((m_itemType==KBBScalableGraphicWidget::playerBall) || (m_itemType==KBBScalableGraphicWidget::unsureBall) || (m_itemType==KBBScalableGraphicWidget::markerNothing));
+}
+
+
 void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	m_widget->mouseBoxClick(event->button(), position());
+	if (isMovable()) {
+		m_dragX = event->scenePos().x();
+		m_dragY = event->scenePos().y();
+		setCursor(Qt::ClosedHandCursor);
+	}
+}
+
+
+void KBBGraphicsItemOnBox::mouseReleaseEvent (QGraphicsSceneMouseEvent* event)
+{
+	if (isMovable()) {
+		setCursor(Qt::ArrowCursor);
+
+		qreal dropX = event->scenePos().x();
+		qreal dropY = event->scenePos().y();
+	
+		if ((dropX==m_dragX) && (dropY==m_dragY))
+			m_widget->mouseBoxClick(event->button(), position());
+		else if ((boxPosition(dropX, dropY)==NO_POSITION) || (boxPosition(dropX, dropY)==boxPosition(m_dragX, m_dragY)))
+			setBoxPosition(boxPosition(m_dragX, m_dragY));
+		else {
+			if (m_itemType==KBBScalableGraphicWidget::markerNothing)
+				setBoxPosition(m_widget->moveMarkerNothing(boxPosition(m_dragX, m_dragY), boxPosition(dropX, dropY)));
+			else
+				setBoxPosition(m_widget->moveBall(boxPosition(m_dragX, m_dragY), boxPosition(dropX, dropY)));
+		}
+	}
+}
+
+
+void KBBGraphicsItemOnBox::setBoxPosition(int boxPosition)
+{
+	m_boxPosition = boxPosition;
+
+	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % m_columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / m_columns));
 }

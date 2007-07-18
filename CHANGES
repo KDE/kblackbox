@@ -1,3 +1,15 @@
+2007-07-18 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Added support of drag-and-drop: it's now possible to move balls and markers over the black box.
+
+2007-07-16 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Revived the action "Check positions". (It was called "Done" in the KDE 3 version). Now, "Solve" is for giving up and "Check positions" is for normal game end. Added a KPushButton for this action in the left part of the game area. Motivation for this change was the feedback of different players.
+
+2007-07-06 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Defined difficulty levels and used KGameDifficulty to manage them.
+
+2007-07-01 Nicolas Roffet <nicolas-kde@roffet.com>
+	* GUI: Sandbox mode is now not a configuration option anymore, it is a game mode.
+
 2007-06-24 Nicolas Roffet <nicolas-kde@roffet.com>
 	* The ending score message is now a KGamePopupItem.
 

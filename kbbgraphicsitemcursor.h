@@ -47,9 +47,12 @@ class KBBGraphicsItemCursor : public KBBGraphicsItem
 
 
 	public:
+		/**
+		 * @brief Invalid border and box position
+		 */
 		static const int NO_POSITION = -1;
-		
-		
+
+
 		KBBGraphicsItemCursor(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager);
 		
 		

@@ -63,49 +63,74 @@ KBBGraphicsItemSet::~KBBGraphicsItemSet()
 void KBBGraphicsItemSet::clear()
 {
 	while (m_items.count()>0) {
-		remove(m_items[m_items.keys().last()]->position());
+		remove(m_items.last()->position());
 	}
 }
 
 
 bool KBBGraphicsItemSet::contains(int position)
 {
-	if (m_items.contains(position)) {
-		if(dynamic_cast<KBBGraphicsItem*>(m_items[position]))
-			return (dynamic_cast<KBBGraphicsItem*>(m_items[position]))->isVisible();
+	return (indexOf(position)!=NO_INDEX);
+}
+
+
+bool KBBGraphicsItemSet::containsVisible(int position)
+{
+	int i = indexOf(position);
+
+	if (i!=NO_INDEX) {
+		if(dynamic_cast<KBBGraphicsItem*>(m_items[i]))
+			return ((dynamic_cast<KBBGraphicsItem*>(m_items[i]))->isVisible());
 		else
 			return true;
 	} else
 		return false;
-
-	return m_items.contains(position);
 }
 
 
 void KBBGraphicsItemSet::insert(KBBItemWithPosition* item)
 {
-	if (m_items.contains(item->position()))
+	if (contains(item->position()))
 		// We want to avoid duplicated item on a given position.
 		item->cleanDelete();
 	else
-		m_items.insert(item->position(), item);
+		m_items.append(item);
 }
 
 
 void KBBGraphicsItemSet::remove(int position)
 {
-	if (m_items.contains(position)) {
-		m_items[position]->cleanDelete();
+	int i = indexOf(position);
+
+	if (i!=NO_INDEX) {
+		m_items[i]->cleanDelete();
 		m_scene->update();
-		m_items.remove(position);
+		m_items.removeAt(i);
 	}
 }
 
 
-void KBBGraphicsItemSet::setVisible(int position, const bool visible) const
+void KBBGraphicsItemSet::setVisible(int position, const bool visible)
 {
-	if (m_items.contains(position)) {
-		if(dynamic_cast<KBBGraphicsItem*>(m_items[position]))
-			(dynamic_cast<KBBGraphicsItem*>(m_items[position]))->setVisible(visible);
+	int i = indexOf(position);
+
+	if (i!=NO_INDEX) {
+		if(dynamic_cast<KBBGraphicsItem*>(m_items[i]))
+			(dynamic_cast<KBBGraphicsItem*>(m_items[i]))->setVisible(visible);
 	}
+}
+
+
+
+//
+// Private
+//
+
+int KBBGraphicsItemSet::indexOf(int position)
+{
+	for(int i=0;i<m_items.count();i++)
+		if (m_items[i]->position()==position)
+			return i;
+
+	return NO_INDEX;
 }

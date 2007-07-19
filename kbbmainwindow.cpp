@@ -66,6 +66,12 @@ KBBMainWindow::KBBMainWindow()
 {
 	m_running = false;
 
+	// Status bar
+	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
+	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
+
+
+	// Difficulty
 	KGameDifficulty::init(this, this, SLOT(levelChanged(KGameDifficulty::standardLevel)));
 	KGameDifficulty::addStandardLevel(KGameDifficulty::veryEasy);
 	KGameDifficulty::addStandardLevel(KGameDifficulty::easy);
@@ -73,7 +79,8 @@ KBBMainWindow::KBBMainWindow()
 	KGameDifficulty::addStandardLevel(KGameDifficulty::hard);
 	KGameDifficulty::addStandardLevel(KGameDifficulty::veryHard);
 	KGameDifficulty::addStandardLevel(KGameDifficulty::extremelyHard);
-// TODO	KGameDifficulty::addStandardLevel(KGameDifficulty::configurable);
+	// TODO: Implement a dialog to define a custom game.
+//	KGameDifficulty::addStandardLevel(KGameDifficulty::configurable);
 
 
 	// Game
@@ -169,19 +176,13 @@ KBBMainWindow::KBBMainWindow()
 	addAction(action);
 
 
-	// Status bar
-	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
-	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
-
-
 	//Read configuration options
 	m_customBallNumber = KBBPrefs::balls();
 	m_customColumns = KBBPrefs::columns();
 	m_customRows = KBBPrefs::rows();
 
-	m_level = (KGameDifficulty::standardLevel) (KBBPrefs::level());
+	levelChanged((KGameDifficulty::standardLevel) (KBBPrefs::level()));
 	KGameDifficulty::setLevel(m_level);
-
 
 	newGame();
 	setupGUI();
@@ -225,21 +226,20 @@ void KBBMainWindow::updateStats()
 
 void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 {
-	m_level = level;
-	KBBPrefs::setLevel((int)(m_level));
-	switch(m_level) {
+	switch(level) {
 		case KGameDifficulty::veryEasy:
 			m_ballNumber = 2;
 			m_columns = 6;
 			m_rows = 6;
 			break;
 		case KGameDifficulty::easy:
+		default:
 			m_ballNumber = 4;
 			m_columns = 8;
 			m_rows = 8;
+			level = KGameDifficulty::medium;
 			break;
 		case KGameDifficulty::medium:
-		default:
 			m_ballNumber = 6;
 			m_columns = 10;
 			m_rows = 10;
@@ -263,6 +263,8 @@ void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 //			TODO...
 //			break;
 	}
+	m_level = level;
+	KBBPrefs::setLevel((int)(m_level));
 
 	startGame(m_ballNumber, m_columns, m_rows, m_sandboxMode);
 }

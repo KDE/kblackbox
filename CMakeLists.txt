@@ -36,7 +36,7 @@ kde4_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc )
 
 kde4_add_executable(kblackbox ${kblackbox_SRCS})
 
-target_link_libraries(kblackbox  ${KDE4_KDEUI_LIBS} kdegames )
+target_link_libraries(kblackbox  ${KDE4_KDEUI_LIBS} ${QT_QT3SUPPORT_LIBRARY} kdegames )
 
 install(TARGETS kblackbox  DESTINATION ${BIN_INSTALL_DIR} )
 

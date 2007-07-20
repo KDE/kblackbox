@@ -219,7 +219,7 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 }
 
 
-void KBBScalableGraphicWidget::popupText(QString& text)
+void KBBScalableGraphicWidget::popupText(const QString& text)
 {
 	m_infoScore->showMessage( text, KGamePopupItem::TopLeft );
 }

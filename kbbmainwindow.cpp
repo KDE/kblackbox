@@ -284,10 +284,12 @@ void KBBMainWindow::check()
 
 		const int score = m_gameDoc->getScore();
 		QString s;
-		if (score <= (m_ballNumber*3))
-			s = i18n("Your final score is: %1.<br />You did really well!", KGlobal::locale()->formatNumber(score,0));
-		else
-			s = i18n("Your final score is: %1.<br />I guess you need more practice.", KGlobal::locale()->formatNumber(score,0));
+		if (score <= (m_ballNumber*3)) {
+			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />You did really well!", KGlobal::locale()->formatNumber(score,0));
+			if (m_sandboxMode)
+				s += QString("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it doesn't count<br />because <b>it is the sandbox!</b>");
+		} else
+			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", KGlobal::locale()->formatNumber(score,0));
 		m_gameWidget->popupText(s);
 	}
 }
@@ -316,8 +318,10 @@ void KBBMainWindow::solve()
 
 void KBBMainWindow::startSandbox()
 {
-	if (mayAbortGame())
+	if (mayAbortGame()) {
 		startGame(m_ballNumber, m_columns, m_rows, true);
+		m_gameWidget->popupText(i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Note: In the sandbox mode,<br />the solution is already displayed.<br />Have fun!"));
+	}
 }
 
 

@@ -79,7 +79,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		/**
 		 * @brief Time the score message remains displayed
 		 */
-		static int const TIMEOUT_INFOSCORE = 4000;
+		static int const TIMEOUT_INFOSCORE = 5000;
 
 		/**
 		 * @brief Every graphic items
@@ -133,7 +133,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		int moveBall(const int boxPositionFrom, const int boxPositionTo);
 		int moveMarkerNothing(const int boxPositionFrom, const int boxPositionTo);
 		void newGame(const int columns, const int rows);
-		void popupText(QString& text);
+		void popupText(const QString& text);
 		void removeAllBalls();
 		void removeBall(const int boxPosition);
 		void removeRay();

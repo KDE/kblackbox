@@ -81,13 +81,13 @@ const int KBBGraphicsItemOnBox::position ()
 
 int KBBGraphicsItemOnBox::boxPosition(qreal x, qreal y)
 {
-	int r = (int)((x - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
-	int c = (int)((y - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
+	int r = (int)((y - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
+	int c = (int)((x - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
 
 	if ((r<0) || (r>=m_rows) || (c<0) || (c>=m_columns))
 		return NO_POSITION;
 	else
-		return r+c*m_rows;
+		return c+r*m_columns;
 }
 
 

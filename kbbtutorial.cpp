@@ -32,6 +32,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QProgressBar>
+#include <QTimer>
 #include <QVBoxLayout>
 
 
@@ -92,6 +93,8 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 	m_playerAction->setWhatsThis(i18n("Describes what you should do to reach the next tutorial step."));
 	m_playerAction->setAlignment(Qt::AlignLeft);
 	m_playerAction->setWordWrap(true);
+	m_playerAction->setFrameStyle(QFrame::StyledPanel);
+	m_playerAction->setStyleSheet("border-style: none");
 	actionLayout->addWidget(m_playerAction, 0, Qt::AlignVCenter);
 
 	QHBoxLayout *buttonLayout = new QHBoxLayout();
@@ -134,7 +137,9 @@ bool KBBTutorial::mayShootRay(const int incomingPosition)
 			nextStep();
 			return true;
 		} else {
-			// TODO: Highlight m_playerAction
+			// Highlight m_playerAction to show what the player has to do
+			m_playerAction->setStyleSheet("color: black; background-color: #de0000");
+			QTimer::singleShot(HIGHLIGHT_TIME, this, SLOT(restoreStyle()));
 			return false;
 		}
 }
@@ -264,6 +269,12 @@ void KBBTutorial::nextStep()
 void KBBTutorial::previousStep()
 {
 	setStep(m_step-1);
+}
+
+
+void KBBTutorial::restoreStyle()
+{
+	m_playerAction->setStyleSheet("color: palette(text); background-color: palette(window)");
 }
 
 

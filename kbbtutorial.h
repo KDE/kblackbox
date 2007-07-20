@@ -124,12 +124,26 @@ class KBBTutorial : public QGroupBox
 		 */
 		void previousStep();
 
+		/**
+		 * @brief Restore the default style of the label m_playerAction
+		 *
+		 * This slot is called by the timer.
+		 */
+		void restoreStyle();
+
 
 	private:
 		/**
 		 * @brief First tutorial step
 		 */
 		static int const FIRST_STEP = 1;
+
+		/**
+		 * @brief Time to highlight the label m_playerAction
+		 *
+		 * If the player clicks on a disabled laser, the label m_playerAction is highlighted during this time (in ms).
+		 */
+		static int const HIGHLIGHT_TIME = 600;
 
 		/**
 		 * @brief Last tutorial step

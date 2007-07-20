@@ -67,14 +67,14 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * It's the minimal distance as the width/height ratio is constant and the widget may have another width/height ratio.
 		 * @see RATIO
 		 */
-		static int const BORDER_SIZE = 100;
+		static int const BORDER_SIZE = 50;
 
 		/**
 		 * @brief Width and height of a single square on the black box
 		 *
 		 * Note: The widget is scalable, so it's just an arbitrary default compared with other ranges.
 		 */
-		static int const RATIO = 50;
+		static int const RATIO = 25;
 
 		/**
 		 * @brief Time the score message remains displayed

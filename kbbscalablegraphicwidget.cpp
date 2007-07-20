@@ -90,6 +90,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	// Information message about the score
 	m_infoScore = new KGamePopupItem();
 	m_infoScore->setMessageTimeout(TIMEOUT_INFOSCORE);
+	m_infoScore->setMessageIcon(QPixmap()); // No icon, because they are no scalable.
 	m_scene->addItem(m_infoScore); // it hides itself by default
 
 	setScene(m_scene);

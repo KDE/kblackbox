@@ -99,25 +99,25 @@ bool KBBGraphicsItemOnBox::isMovable()
 
 void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
-	if (isMovable()) {
-		m_dragX = event->scenePos().x();
-		m_dragY = event->scenePos().y();
+	m_dragX = event->scenePos().x();
+	m_dragY = event->scenePos().y();
+
+	if (isMovable())
 		setCursor(Qt::ClosedHandCursor);
-	}
 }
 
 
 void KBBGraphicsItemOnBox::mouseReleaseEvent (QGraphicsSceneMouseEvent* event)
 {
-	if (isMovable()) {
+	qreal dropX = event->scenePos().x();
+	qreal dropY = event->scenePos().y();
+
+	if ((dropX==m_dragX) && (dropY==m_dragY))
+		m_widget->mouseBoxClick(event->button(), position());
+	else if (isMovable()) {
 		setCursor(Qt::ArrowCursor);
 
-		qreal dropX = event->scenePos().x();
-		qreal dropY = event->scenePos().y();
-	
-		if ((dropX==m_dragX) && (dropY==m_dragY))
-			m_widget->mouseBoxClick(event->button(), position());
-		else if ((boxPosition(dropX, dropY)==NO_POSITION) || (boxPosition(dropX, dropY)==boxPosition(m_dragX, m_dragY)))
+		if ((boxPosition(dropX, dropY)==NO_POSITION) || (boxPosition(dropX, dropY)==boxPosition(m_dragX, m_dragY)))
 			setBoxPosition(boxPosition(m_dragX, m_dragY));
 		else {
 			if (m_itemType==KBBScalableGraphicWidget::markerNothing)

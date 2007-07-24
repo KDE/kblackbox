@@ -35,7 +35,6 @@
 
 
 #include <kgamedifficulty.h>
-#include <krandomsequence.h>
 
 
 #include "kbbballsonboard.h"

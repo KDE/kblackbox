@@ -7,7 +7,7 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
 
 ########### next target ###############
 
-set(kblackbox_SRCS 
+set(kblackbox_SRCS
     kbbballsgraphicwidget.cpp
     kbbballsonboard.cpp
     kbbgamedoc.cpp
@@ -25,12 +25,14 @@ set(kblackbox_SRCS
     kbbgraphicsitemtutorialmarker.cpp
     kbbinfowidget.cpp
     kbbitemwithposition.cpp
-    kbbmainwindow.cpp 
+    kbblevelconfigurationpreview.cpp
+    kbblevelconfigurationwidget.cpp
+    kbbmainwindow.cpp
     kbbscalablegraphicwidget.cpp
     kbbthememanager.cpp
     kbbtutorial.cpp
     main.cpp
-    )
+)
 
 kde4_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc )
 

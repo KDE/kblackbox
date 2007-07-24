@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui name="kblackbox" version="9">
+<gui name="kblackbox" version="10">
 	<MenuBar>
 		<Menu name="game">
 			<text>Game</text>
@@ -22,5 +22,7 @@
 		<Action name="game_tutorial" />
 		<Separator />
 		<Action name="move_solve" />
+		<Separator />
+		<Action name="options_configure" />
 	</ToolBar>
 </gui>

@@ -210,7 +210,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		int m_rayNumber;
 		
 		int m_rows;
-		QGraphicsScene* m_scene;
+		QGraphicsScene* m_scene; //TODO: Remove it because scene() already gives it back.
 		KBBThemeManager* m_themeManager;
 };
 

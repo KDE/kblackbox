@@ -37,6 +37,7 @@
 
 
 #include <kactioncollection.h>
+#include <kconfigdialog.h>
 #include <kgamedifficulty.h>
 #include <kgamepopupitem.h>
 #include <kglobal.h>
@@ -51,6 +52,7 @@
 #include "kbbgamedoc.h"
 #include "kbbgraphicsitemtutorialmarker.h"
 #include "kbbinfowidget.h"
+#include "kbblevelconfigurationwidget.h"
 #include "kbbprefs.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
@@ -79,8 +81,7 @@ KBBMainWindow::KBBMainWindow()
 	KGameDifficulty::addStandardLevel(KGameDifficulty::hard);
 	KGameDifficulty::addStandardLevel(KGameDifficulty::veryHard);
 	KGameDifficulty::addStandardLevel(KGameDifficulty::extremelyHard);
-	// TODO: Implement a dialog to define a custom game.
-//	KGameDifficulty::addStandardLevel(KGameDifficulty::configurable);
+	KGameDifficulty::addStandardLevel(KGameDifficulty::configurable);
 
 
 	// Game
@@ -100,6 +101,9 @@ KBBMainWindow::KBBMainWindow()
 	m_check->setIcon(KIcon("ok"));
 	connect(m_check, SIGNAL(triggered(bool)), SLOT(check()));
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
+
+	// Settings
+	KStandardAction::preferences(this, SLOT(settingsDialog()), actionCollection());
 
 
 	// Theme manager
@@ -259,14 +263,14 @@ void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 			m_columns = 18;
 			m_rows = 12;
 			break;
-//		case KGameDifficulty::configurable:
-//			TODO...
-//			break;
+		case KGameDifficulty::configurable:
+			m_gameWidget->popupText(i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Note: You can change<br />the parameters of<br />custom games in the<br />setting dialog."));
+			break;
 	}
+
 	m_level = level;
 	KBBPrefs::setLevel((int)(m_level));
-
-	startGame(m_ballNumber, m_columns, m_rows, m_sandboxMode);
+	startGame(m_sandboxMode);
 }
 
 
@@ -298,7 +302,37 @@ void KBBMainWindow::check()
 void KBBMainWindow::newGame()
 {
 	if (mayAbortGame())
-		startGame(m_ballNumber, m_columns, m_rows, false);
+		startGame(false);
+}
+
+
+void KBBMainWindow::settingsChanged()
+{
+	m_customBallNumber = m_levelConfig->balls();
+	m_customColumns = m_levelConfig->columns();
+	m_customRows = m_levelConfig->rows();
+	
+	if (m_level==KGameDifficulty::configurable) {
+		bool mayRestart = true;
+		if (m_gameDoc->gameReallyStarted())
+			if (KMessageBox::questionYesNo(this, i18n("Do you want to cancel the current custom game and start a new one with the new parameters?"), QString(), KGuiItem(i18n("Start new game"))) == KMessageBox::No)
+				mayRestart = false;
+
+		if (mayRestart)
+			startGame(m_sandboxMode);
+	}
+}
+
+
+void KBBMainWindow::settingsDialog()
+{
+	if (!KConfigDialog::showDialog("settings")) {
+		KConfigDialog *dialog = new KConfigDialog(this, "settings", KBBPrefs::self());
+		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
+		dialog->addPage(m_levelConfig, i18n("Custom game"), "games-difficult");
+		connect(dialog, SIGNAL(settingsChanged(const QString&)), this, SLOT(settingsChanged()));
+		dialog->show();
+	}
 }
 
 
@@ -307,11 +341,8 @@ void KBBMainWindow::solve()
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
 		KMessageBox::sorry(this, i18n("Sorry, you may not give up the tutorial."), i18n("Solve"));
 	} else {
-		if (m_gameDoc->numberOfBallsPlaced() != m_gameDoc->numberOfBallsToPlace())
-			if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give Up"))) != KMessageBox::Continue)
-				return;
-
-		solving();
+		if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
+			solving();
 	}
 }
 
@@ -319,7 +350,7 @@ void KBBMainWindow::solve()
 void KBBMainWindow::startSandbox()
 {
 	if (mayAbortGame()) {
-		startGame(m_ballNumber, m_columns, m_rows, true);
+		startGame(true);
 		m_gameWidget->popupText(i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Note: In the sandbox mode,<br />the solution is already displayed.<br />Have fun!"));
 	}
 }
@@ -348,7 +379,7 @@ bool KBBMainWindow::mayAbortGame()
 	bool mayAbort = true;
 
 	if (m_gameDoc->gameReallyStarted())
-		mayAbort = ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("End game"))) == KMessageBox::Continue );
+		mayAbort = ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("Start new game"))) == KMessageBox::Continue );
 
 	return mayAbort;
 }
@@ -364,12 +395,15 @@ void KBBMainWindow::solving()
 }
 
 
-void KBBMainWindow::startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool sandboxMode)
+void KBBMainWindow::startGame(bool sandboxMode)
 {
+	if (m_level==KGameDifficulty::configurable) {
+		m_ballNumber = m_customBallNumber;
+		m_columns = m_customColumns;
+		m_rows = m_customRows;
+	}
+
 	m_running = true;
-	m_ballNumber = newBallNumber;
-	m_columns = newColumnNumber;
-	m_rows = newRowNumber;
 	m_sandboxMode = sandboxMode;
 
 	m_solveAction->setEnabled(true);

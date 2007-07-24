@@ -31,10 +31,11 @@
 
 
 
-#include <QGraphicsScene>
-#include <QGraphicsSceneMouseEvent>
 #include <QGraphicsLineItem>
 #include <QGraphicsRectItem>
+#include <QGraphicsScene>
+#include <QGraphicsSceneMouseEvent>
+#include <QGraphicsView>
 #include <QPen>
 
 
@@ -48,11 +49,11 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsRectItem (0, scene)
+KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsRectItem (0, scene)
 {
 	m_columns = 1;
 	m_rows = 1;
-	m_widget = parent;
+	m_widget = 0;
 	m_scene = scene;
 
 	m_background = new KBBGraphicsItem(KBBScalableGraphicWidget::blackbox, m_scene, themeManager);
@@ -107,6 +108,12 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 }
 
 
+void KBBGraphicsItemBlackBox::setKBBScalableGraphicWidget(KBBScalableGraphicWidget* w)
+{
+	m_widget = w;
+}
+
+
 
 //
 // Private
@@ -117,5 +124,6 @@ void KBBGraphicsItemBlackBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	int x = (int)(event->pos().x() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
 	int y = (int)(event->pos().y() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
 	
-	m_widget->mouseBoxClick(event->button(), x + y*m_columns);
+	if (m_widget!=0)
+		m_widget->mouseBoxClick(event->button(), x + y*m_columns);
 }

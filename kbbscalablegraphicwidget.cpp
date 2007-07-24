@@ -75,6 +75,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	
 	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_themeManager);
+	m_blackbox->setKBBScalableGraphicWidget(this);
 	m_balls = new KBBGraphicsItemSet(m_scene);
 	m_cursor = new KBBGraphicsItemCursor(this, m_themeManager);
 	connect(m_cursor, SIGNAL(cursorAtNewPosition(int)), this, SLOT(cursorAtNewPosition(int)));
@@ -173,7 +174,7 @@ int KBBScalableGraphicWidget::moveBall(const int boxPositionFrom, const int boxP
 int KBBScalableGraphicWidget::moveMarkerNothing(const int boxPositionFrom, const int boxPositionTo)
 {
 	if (m_inputAccepted && (!m_markersNothing->containsVisible(boxPositionTo))) {
-		removeBall(boxPositionFrom);
+		removeBall(boxPositionTo);
 		return boxPositionTo;
 	} else
 		return boxPositionFrom;

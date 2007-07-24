@@ -36,6 +36,7 @@
 class QGraphicsLineItem;
 #include <QGraphicsRectItem>
 class QGraphicsScene;
+class QGraphicsView;
 #include <QList>
 #include <QPen>
 
@@ -47,7 +48,6 @@ class KBBGraphicsItem;
 
 /**
  * @brief The black box in the scalable graphic widget
- *
  */
 class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 {
@@ -55,8 +55,14 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 		/**
 		 * @brief Constructor
 		 */
-		KBBGraphicsItemBlackBox(KBBScalableGraphicWidget* parent, QGraphicsScene* scene, KBBThemeManager* themeManager);
-		
+		KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager);
+
+
+		/**
+		 * @brief Set the KBBScalableGraphicWidget
+		 */
+		void setKBBScalableGraphicWidget(KBBScalableGraphicWidget* w);
+
 		/**
 		 * @brief Define the (new) size of the black box
 		 *

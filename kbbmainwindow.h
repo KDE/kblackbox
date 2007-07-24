@@ -43,6 +43,7 @@ class KToggleAction;
 
 class KBBGameDoc;
 class KBBInfoWidget;
+class KBBLevelConfigurationWidget;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
 class KBBTutorial;
@@ -89,6 +90,16 @@ class KBBMainWindow : public KXmlGuiWindow
 		void newGame();
 
 		/**
+		 * @brief Settings changed
+		 */
+		void settingsChanged();
+
+		/**
+		 * @brief Show the settings dialog
+		 */
+		void settingsDialog();
+
+		/**
 		 * @brief Give up the current game
 		 *
 		 * This function is used when the player is giving up.
@@ -127,7 +138,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		/**
 		 * @brief Start a new game.
 		 */
-		void startGame(const int newBallNumber, const int newColumnNumber, const int newRowNumber, const bool newSandboxModeMode);
+		void startGame(bool newSandboxModeMode);
 
 
 		// Actions
@@ -157,6 +168,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		int m_columns;
 		KBBInfoWidget* m_infoWidget;
 		KGameDifficulty::standardLevel m_level;
+		KBBLevelConfigurationWidget* m_levelConfig;
 		int m_rows;
 		bool m_running;
 		bool m_sandboxMode;

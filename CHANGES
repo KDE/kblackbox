@@ -1,3 +1,9 @@
+2007-07-27 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Added a clock in the status bar.
+
+2007-07-24 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Added a setting dialog to set up the size and the number of balls of the custom game.
+
 2007-07-18 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Added support of drag-and-drop: it's now possible to move balls and markers over the black box.
 

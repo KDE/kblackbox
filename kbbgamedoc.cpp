@@ -34,9 +34,6 @@
 #include <QWidget>
 
 
-#include <kgamedifficulty.h>
-
-
 #include "kbbballsonboard.h"
 #include "kbbtutorial.h"
 
@@ -186,7 +183,7 @@ void KBBGameDoc::clean(const int columns, const int rows)
 void KBBGameDoc::setRunning(const bool r)
 {
 	m_gameReallyStarted = r;
-	KGameDifficulty::setRunning(r);
+	emit isRunning(r);
 }
 
 

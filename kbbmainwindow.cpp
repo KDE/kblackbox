@@ -38,6 +38,7 @@
 
 #include <kactioncollection.h>
 #include <kconfigdialog.h>
+#include <kgameclock.h>
 #include <kgamedifficulty.h>
 #include <kgamepopupitem.h>
 #include <kglobal.h>
@@ -66,10 +67,11 @@
 
 KBBMainWindow::KBBMainWindow()
 {
-	m_running = false;
+	m_boardEnabled = false;
 
 	// Status bar
 	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
+	statusBar()->insertItem(i18n("Time: 00:00"), STIME);
 	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
 
 
@@ -123,9 +125,10 @@ KBBMainWindow::KBBMainWindow()
 
 	// Board
 	m_gameDoc = new KBBGameDoc(this, m_tutorial);
-	connect( m_gameDoc, SIGNAL(updateStats()), this, SLOT(updateStats()) );
-	
-	
+	connect(m_gameDoc, SIGNAL(updateStats()), this, SLOT(updateStats()) );
+	connect(m_gameDoc, SIGNAL(isRunning(bool)), SLOT(setRunning(bool)));
+
+
 	// Game widget
 	m_gameWidget = new KBBScalableGraphicWidget(m_gameDoc, m_themeManager);
 	m_tutorial->setGameWidget(m_gameWidget, new KBBGraphicsItemTutorialMarker(m_gameWidget, m_themeManager, KBBTutorial::COLUMNS, KBBTutorial::ROWS));
@@ -180,6 +183,10 @@ KBBMainWindow::KBBMainWindow()
 	addAction(action);
 
 
+	m_gameClock = new KGameClock(this, KGameClock::MinSecOnly);
+	connect(m_gameClock, SIGNAL(timeChanged(const QString&)), SLOT(updateStats()));
+
+
 	//Read configuration options
 	m_customBallNumber = KBBPrefs::balls();
 	m_customColumns = KBBPrefs::columns();
@@ -203,30 +210,6 @@ KBBMainWindow::~KBBMainWindow()
 //
 // Public slots
 //
-
-void KBBMainWindow::updateStats()
-{
-	m_check->setEnabled(m_solveAction->isEnabled() && (m_gameDoc->numberOfBallsPlaced() == m_gameDoc->numberOfBallsToPlace()));
-	m_infoWidget->setEnabled(m_solveAction->isEnabled());
-
-	// 1. Status bar
-	if (m_tutorial->isVisible())
-		statusBar()->changeItem(i18n("Run: Tutorial"), SRUN );
-	if (!m_tutorial->isVisible()) {
-		if (m_running)
-			statusBar()->changeItem(i18n("Run: Yes"), SRUN );
-		else
-			statusBar()->changeItem(i18n("Run: No"), SRUN );
-	}
-	
-	statusBar()->changeItem( i18n("Size: %1 x %2", m_gameDoc->columns(), m_gameDoc->rows()), SSIZE );
-	
-	
-	// 2. Info Widget
-	m_infoWidget->setPlacedBalls(m_gameDoc->numberOfBallsPlaced());
-	m_infoWidget->setScore(m_gameDoc->getScore());
-}
-
 
 void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 {
@@ -271,6 +254,45 @@ void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 	m_level = level;
 	KBBPrefs::setLevel((int)(m_level));
 	startGame(m_sandboxMode);
+}
+
+
+void KBBMainWindow::setRunning(bool r)
+{
+	// Difficulty
+	KGameDifficulty::setRunning(r);
+
+	// Clock
+	if (r)
+		m_gameClock->resume();
+	else
+		m_gameClock->pause();
+}
+
+
+void KBBMainWindow::updateStats()
+{
+	m_check->setEnabled(m_solveAction->isEnabled() && (m_gameDoc->numberOfBallsPlaced() == m_gameDoc->numberOfBallsToPlace()));
+	m_infoWidget->setEnabled(m_solveAction->isEnabled());
+
+	// 1. Status bar
+	if (m_tutorial->isVisible())
+		statusBar()->changeItem(i18n("Run: Tutorial"), SRUN );
+	if (!m_tutorial->isVisible()) {
+		if (m_boardEnabled)
+			statusBar()->changeItem(i18n("Run: Yes"), SRUN );
+		else
+			statusBar()->changeItem(i18n("Run: No"), SRUN );
+	}
+
+	statusBar()->changeItem(i18n("Time: %1", m_gameClock->timeString()), STIME);
+
+	statusBar()->changeItem( i18n("Size: %1 x %2", m_gameDoc->columns(), m_gameDoc->rows()), SSIZE );
+	
+	
+	// 2. Info Widget
+	m_infoWidget->setPlacedBalls(m_gameDoc->numberOfBallsPlaced());
+	m_infoWidget->setScore(m_gameDoc->getScore());
 }
 
 
@@ -387,7 +409,7 @@ bool KBBMainWindow::mayAbortGame()
 
 void KBBMainWindow::solving()
 {
-	m_running = false;
+	m_boardEnabled = false;
 	m_solveAction->setEnabled(false);
 	m_gameDoc->gameOver();
 	m_gameWidget->solve(false);
@@ -403,7 +425,7 @@ void KBBMainWindow::startGame(bool sandboxMode)
 		m_rows = m_customRows;
 	}
 
-	m_running = true;
+	m_boardEnabled = true;
 	m_sandboxMode = sandboxMode;
 
 	m_solveAction->setEnabled(true);
@@ -415,6 +437,10 @@ void KBBMainWindow::startGame(bool sandboxMode)
 		m_gameWidget->solve(true);
 
 	m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
+
+	// Reset clock but don't start it yet.
+	m_gameClock->restart();
+	m_gameClock->pause();
 
 	updateStats();
 }

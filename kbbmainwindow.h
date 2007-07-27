@@ -36,6 +36,7 @@ class QAction;
 class QWidget;
 
 
+class KGameClock;
 #include <kgamedifficulty.h>
 class KToggleAction;
 #include <kxmlguiwindow.h>
@@ -65,14 +66,19 @@ class KBBMainWindow : public KXmlGuiWindow
 
 	public slots:
 		/**
-		 * @brief Displays game statistics on the status bar
-		 */
-		void updateStats();
-
-		/**
 		 * @brief Player changed the level
 		 */
 		void levelChanged(KGameDifficulty::standardLevel level);
+
+		/**
+		 * @brief Set if the game is running
+		 */
+		void setRunning(bool r);
+
+		/**
+		 * @brief Displays game statistics on the status bar
+		 */
+		void updateStats();
 
 
 	private slots:
@@ -123,7 +129,8 @@ class KBBMainWindow : public KXmlGuiWindow
 		 * Statusbar IDs.
 		 */
 		static const int SRUN = 0;
-		static const int SSIZE = 1;
+		static const int STIME = 1;
+		static const int SSIZE = 2;
 
 
 		/**
@@ -166,11 +173,12 @@ class KBBMainWindow : public KXmlGuiWindow
 		int m_ballNumber;
 		QWidget* m_centralWidget;
 		int m_columns;
+		KGameClock* m_gameClock;
 		KBBInfoWidget* m_infoWidget;
 		KGameDifficulty::standardLevel m_level;
 		KBBLevelConfigurationWidget* m_levelConfig;
 		int m_rows;
-		bool m_running;
+		bool m_boardEnabled;
 		bool m_sandboxMode;
 		KBBThemeManager* m_themeManager;
 		KBBTutorial* m_tutorial;

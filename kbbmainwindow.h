@@ -96,6 +96,11 @@ class KBBMainWindow : public KXmlGuiWindow
 		void newGame();
 
 		/**
+		 * @brief Pause the game.
+		 */
+		void pause(bool state);
+
+		/**
 		 * @brief Settings changed
 		 */
 		void settingsChanged();
@@ -149,8 +154,9 @@ class KBBMainWindow : public KXmlGuiWindow
 
 
 		// Actions
-		QAction *m_solveAction;
 		QAction *m_check;
+		QAction *m_pauseAction;
+		QAction *m_solveAction;
 
 
 		/**

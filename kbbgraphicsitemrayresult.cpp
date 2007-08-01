@@ -27,8 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbgraphicsitemrayresult.h"
+
+
 
 #include <QFont>
 #include <QGraphicsScene>
@@ -54,6 +55,7 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	m_elementIdResultBackgroundHighlight = themeManager->elementId(KBBScalableGraphicWidget::resultBackgroundHighlight);
 	m_number = NULL;
 	m_notNumber = NULL;
+	m_pause = false;
 	
 	float centerRadius = 3*KBBScalableGraphicWidget::RATIO/8.;
 	float radius = KBBScalableGraphicWidget::BORDER_SIZE/4.;
@@ -82,11 +84,11 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 		font.setWeight(QFont::DemiBold);
 		int offset;
 		if (rayNumber<10) {
-			font.setPixelSize(3*centerRadius/2);
+			font.setPixelSize((int)(3*centerRadius/2));
 			offset = 0;
 		} else {
-			font.setPixelSize(5*centerRadius/4);
-			offset = 1*centerRadius/6;
+			font.setPixelSize((int)(5*centerRadius/4));
+			offset = 1.*centerRadius/6;
 		}
 		m_number->setFont(font);
 		m_number->setPos(radius - centerRadius/2 - 2*offset, radius - centerRadius + offset);
@@ -111,7 +113,7 @@ void KBBGraphicsItemRayResult::cleanDelete()
 
 void KBBGraphicsItemRayResult::highlight(bool state)
 {
-	if (state)
+	if (state && !m_pause)
 		setElementId(m_elementIdResultBackgroundHighlight);
 	else
 		setElementId(m_elementIdResultBackground);
@@ -132,6 +134,17 @@ const int KBBGraphicsItemRayResult::position ()
 void KBBGraphicsItemRayResult::setOpposite(KBBGraphicsItemRayResult* opposite)
 {
 	m_opposite = opposite;
+}
+
+
+void KBBGraphicsItemRayResult::setPause(bool state)
+{
+	if (m_number!=NULL)
+		m_number->setVisible(!state);
+	if (m_notNumber!=NULL)
+		m_notNumber->setVisible(!state);
+
+	m_pause = state;
 }
 
 

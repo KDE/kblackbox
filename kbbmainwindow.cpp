@@ -86,8 +86,9 @@ KBBMainWindow::KBBMainWindow()
 	KGameDifficulty::addStandardLevel(KGameDifficulty::configurable);
 
 
-	// Game
+	// Menu "Game"
 	KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
+	m_pauseAction = KStandardGameAction::pause(this, SLOT(pause(bool)), actionCollection());
 	QAction* tutorial = actionCollection()->addAction("game_tutorial");
 	tutorial->setText(i18n("Start tutorial"));
 	tutorial->setIcon(KIcon("footprint"));
@@ -97,14 +98,14 @@ KBBMainWindow::KBBMainWindow()
 	sandbox->setText(i18n("New sandbox game"));
 	connect(sandbox, SIGNAL(triggered(bool)), SLOT(startSandbox()));
 
-	// Move
+	// Menu "Move"
 	m_check = actionCollection()->addAction("move_check");
 	m_check->setText(i18n("Check positions"));
 	m_check->setIcon(KIcon("ok"));
 	connect(m_check, SIGNAL(triggered(bool)), SLOT(check()));
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
 
-	// Settings
+	// Menu "Settings"
 	KStandardAction::preferences(this, SLOT(settingsDialog()), actionCollection());
 
 
@@ -267,6 +268,9 @@ void KBBMainWindow::setRunning(bool r)
 		m_gameClock->resume();
 	else
 		m_gameClock->pause();
+
+	// Pause
+	m_pauseAction->setEnabled(r);
 }
 
 
@@ -328,6 +332,20 @@ void KBBMainWindow::newGame()
 }
 
 
+void KBBMainWindow::pause(bool state)
+{
+	if (state) {
+		m_gameClock->pause();
+		m_gameWidget->popupText(i18n("Game paused.<br />Press \"%1\" to resume.", m_pauseAction->shortcut().toString()), 0);
+	} else {
+		m_gameClock->resume();
+		m_gameWidget->popupText("");
+	}
+
+	m_gameWidget->setPause(state);
+}
+
+
 void KBBMainWindow::settingsChanged()
 {
 	m_customBallNumber = m_levelConfig->balls();
@@ -383,8 +401,13 @@ void KBBMainWindow::startTutorial()
 	if (mayAbortGame()) {
 		m_gameDoc->startTutorial();
 		m_solveAction->setEnabled(true);
+		m_pauseAction->setChecked(false);
 		KGameDifficulty::setEnabled(false);
 		m_infoWidget->setGameParameters(KBBTutorial::BALLS, KBBTutorial::BALLS*3);
+
+		// Reset clock but don't start it yet.
+		m_gameClock->restart();
+		m_gameClock->pause();
 
 		updateStats();
 	}
@@ -429,6 +452,7 @@ void KBBMainWindow::startGame(bool sandboxMode)
 	m_sandboxMode = sandboxMode;
 
 	m_solveAction->setEnabled(true);
+	m_pauseAction->setChecked(false);
 	KGameDifficulty::setEnabled(true);
 	m_tutorial->hide();
 	m_gameDoc->newGame(m_ballNumber, m_columns, m_rows);

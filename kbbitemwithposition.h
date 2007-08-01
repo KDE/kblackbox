@@ -24,8 +24,6 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #ifndef KBBITEMWITHPOSITION_H
 #define KBBITEMWITHPOSITION_H
 
@@ -50,6 +48,13 @@ class KBBItemWithPosition
 		 * It's different from the normal destructor that only destroys this QGraphicsItem. By exiting KBlackBox, the QGraphicsScene is been destroyed and call in an arbitrary order the destructors of all QGraphicsItem.s. So the dependent items may be destroy before this one: That's why we cannot always destroy them in the normal destructor of this class.
 		 */
 		virtual void cleanDelete();
+
+		/**
+		 * @brief Should the element changes if the game is paused?
+		 * Do nothing.
+		 * Reimplement this methode to do something if the game is paused.
+		 */
+		virtual void setPause(bool state);
 };
 
 #endif // KBBITEMWITHPOSITION_H

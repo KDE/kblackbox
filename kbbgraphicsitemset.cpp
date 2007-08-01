@@ -98,6 +98,17 @@ void KBBGraphicsItemSet::insert(KBBItemWithPosition* item)
 }
 
 
+KBBItemWithPosition* KBBGraphicsItemSet::item(int position)
+{
+	KBBItemWithPosition* r = NULL;
+
+	for (int i=0;i<m_items.count();i++)
+		if (m_items[i]->position()==position)
+			r = m_items[i];
+	return r;
+}
+
+
 void KBBGraphicsItemSet::remove(int position)
 {
 	int i = indexOf(position);

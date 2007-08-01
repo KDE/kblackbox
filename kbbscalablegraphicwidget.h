@@ -77,11 +77,6 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		static int const RATIO = 25;
 
 		/**
-		 * @brief Time the score message remains displayed
-		 */
-		static int const TIMEOUT_INFOSCORE = 5000;
-
-		/**
 		 * @brief Every graphic items
 		 *
 		 * Values are used to define the relative heigths between the displayed graphic items.
@@ -133,7 +128,16 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		int moveBall(const int boxPositionFrom, const int boxPositionTo);
 		int moveMarkerNothing(const int boxPositionFrom, const int boxPositionTo);
 		void newGame(const int columns, const int rows);
-		void popupText(const QString& text);
+
+		/**
+		 * @brief Message to display
+		 *
+		 * @param text Message. Attention: Message should not be too wide.
+		 * @param time Time (in ms) the message remains displayed. 0 = forever.
+		 */
+		void popupText(const QString& text, int time = 5000);
+
+		void setPause(bool state);
 		void removeAllBalls();
 		void removeBall(const int boxPosition);
 		void removeRay();
@@ -207,6 +211,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		KBBGameDoc* m_gameDoc;
 		KGamePopupItem* m_infoScore;
 		bool m_inputAccepted;
+		bool m_pause;
 		int m_rayNumber;
 		
 		int m_rows;

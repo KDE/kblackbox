@@ -83,7 +83,12 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		 * @param opposite Correspondent item with the same "number".
 		 */
 		void setOpposite(KBBGraphicsItemRayResult* opposite);
-		
+
+		/**
+		 * @brief Set the pause state
+		 */
+		void setPause(bool state);
+
 
 	private:
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
@@ -94,6 +99,7 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		QGraphicsSvgItem* m_notNumber;
 		QGraphicsSimpleTextItem* m_number;
 		KBBGraphicsItemRayResult* m_opposite;
+		bool m_pause;
 		QGraphicsScene* m_scene;
 		KBBScalableGraphicWidget* m_widget;
 };

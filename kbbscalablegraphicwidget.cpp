@@ -65,6 +65,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_themeManager = themeManager;
 	m_columns = 1;
 	m_rows = 1;
+	m_pause = false;
 
 
 	setFrameStyle(QFrame::NoFrame);
@@ -90,7 +91,6 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	
 	// Information message about the score
 	m_infoScore = new KGamePopupItem();
-	m_infoScore->setMessageTimeout(TIMEOUT_INFOSCORE);
 	m_infoScore->setMessageIcon(QPixmap()); // No icon, because they are no scalable.
 	m_scene->addItem(m_infoScore); // it hides itself by default
 
@@ -105,7 +105,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 
 void KBBScalableGraphicWidget::addBall(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_balls->containsVisible(boxPosition))&& (!m_ballsUnsure->containsVisible(boxPosition))) {
+	if (!m_pause && m_inputAccepted && (!m_balls->containsVisible(boxPosition))&& (!m_ballsUnsure->containsVisible(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
 		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_markersNothing->remove(boxPosition);
@@ -122,7 +122,7 @@ void KBBScalableGraphicWidget::addBallUnsure(const int boxPosition)
 
 void KBBScalableGraphicWidget::addMarkerNothing(const int boxPosition)
 {
-	if (m_inputAccepted && (!m_markersNothing->containsVisible(boxPosition))) {
+	if (!m_pause && m_inputAccepted && (!m_markersNothing->containsVisible(boxPosition))) {
 		m_markersNothing->insert(new KBBGraphicsItemOnBox(markerNothing, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_balls->remove(boxPosition);
 		m_ballsUnsure->remove(boxPosition);
@@ -133,10 +133,12 @@ void KBBScalableGraphicWidget::addMarkerNothing(const int boxPosition)
 
 void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 {
-	if (!m_inputAccepted) {
-		m_solutionRay->draw(m_boardBalls, borderPosition);
+	if (!m_pause) {
+		if (!m_inputAccepted) {
+			m_solutionRay->draw(m_boardBalls, borderPosition);
+		}
+		m_playerRay->draw(m_boardBallsPlaced, borderPosition);
 	}
-	m_playerRay->draw(m_boardBallsPlaced, borderPosition);
 }
 
 
@@ -161,7 +163,7 @@ void KBBScalableGraphicWidget::mouseBoxClick(const Qt::MouseButton button, const
 
 int KBBScalableGraphicWidget::moveBall(const int boxPositionFrom, const int boxPositionTo)
 {
-	if (m_inputAccepted && (!m_balls->containsVisible(boxPositionTo)) && (!m_ballsUnsure->containsVisible(boxPositionTo))) {
+	if (!m_pause && m_inputAccepted && (!m_balls->containsVisible(boxPositionTo)) && (!m_ballsUnsure->containsVisible(boxPositionTo))) {
 		m_boardBallsPlaced->remove(boxPositionFrom);
 		m_boardBallsPlaced->add(boxPositionTo);
 		m_markersNothing->remove(boxPositionTo);
@@ -173,7 +175,7 @@ int KBBScalableGraphicWidget::moveBall(const int boxPositionFrom, const int boxP
 
 int KBBScalableGraphicWidget::moveMarkerNothing(const int boxPositionFrom, const int boxPositionTo)
 {
-	if (m_inputAccepted && (!m_markersNothing->containsVisible(boxPositionTo))) {
+	if (!m_pause && m_inputAccepted && (!m_markersNothing->containsVisible(boxPositionTo))) {
 		removeBall(boxPositionTo);
 		return boxPositionTo;
 	} else
@@ -185,6 +187,7 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 {
 	m_rayNumber = 0;
 	m_boardBallsPlaced = m_gameDoc->m_ballsPlaced;
+	setPause(false);
 	
 	// remove old ray results, all placed balls, all markers "nothing" and all solutions
 	m_rayResults->clear();
@@ -220,9 +223,24 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 }
 
 
-void KBBScalableGraphicWidget::popupText(const QString& text)
+void KBBScalableGraphicWidget::popupText(const QString& text, int time)
 {
-	m_infoScore->showMessage( text, KGamePopupItem::TopLeft );
+	if (text=="")
+		m_infoScore->forceHide();
+	else {
+		m_infoScore->setMessageTimeout(time);
+		m_infoScore->showMessage(text, KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
+	}
+}
+
+
+void KBBScalableGraphicWidget::setPause(bool state)
+{
+	m_pause = state;
+	for (int i=0;i<2*(m_rows+m_columns);i++) {
+		if (m_rayResults->containsVisible(i))
+			m_rayResults->item(i)->setPause(state);
+	}
 }
 
 
@@ -259,7 +277,7 @@ void KBBScalableGraphicWidget::removeAllBalls()
 
 void KBBScalableGraphicWidget::removeBall(const int boxPosition)
 {
-	if (m_inputAccepted) {
+	if (!m_pause && m_inputAccepted) {
 		m_balls->remove(boxPosition);
 		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
@@ -285,6 +303,8 @@ void KBBScalableGraphicWidget::solve(const bool continueGame)
 	m_boardBalls = m_gameDoc->m_balls;
 	
 	setInputAccepted(continueGame);
+	if (!continueGame)
+		setPause(false);
 	
 	for (int i=0; i<(m_columns * m_rows); i++) {
 		if ((m_balls->containsVisible(i) || m_ballsUnsure->containsVisible(i)) && m_boardBalls->contains(i)) {
@@ -385,7 +405,7 @@ void KBBScalableGraphicWidget::drawBackground(QPainter* painter, const QRectF&)
 
 void KBBScalableGraphicWidget::removeMarkerNothing(const int boxPosition)
 {
-	if (m_inputAccepted) {
+	if (!m_pause && m_inputAccepted) {
 		m_markersNothing->remove(boxPosition);
 	}
 }
@@ -393,7 +413,7 @@ void KBBScalableGraphicWidget::removeMarkerNothing(const int boxPosition)
 
 void KBBScalableGraphicWidget::setBallUnsure(const int boxPosition, const bool unsure)
 {
-	if (m_inputAccepted) {
+	if (!m_pause && m_inputAccepted) {
 		if (unsure) {
 			m_balls->remove(boxPosition);
 			m_ballsUnsure->insert(new KBBGraphicsItemBall(unsureBall, this, m_themeManager, boxPosition, m_columns, m_rows));
@@ -440,7 +460,7 @@ void KBBScalableGraphicWidget::switchMarker()
 
 void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 {
-	if (m_gameDoc->mayShootRay(incomingPosition) && m_inputAccepted && m_lasers->containsVisible(incomingPosition)) {
+	if (!m_pause && m_gameDoc->mayShootRay(incomingPosition) && m_inputAccepted && m_lasers->containsVisible(incomingPosition)) {
 		const int outgoingPosition = m_gameDoc->shootRay(incomingPosition);
 		
 		KBBGraphicsItemRayResult* inRay;
@@ -464,6 +484,8 @@ void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 		
 		m_scene->update();
 		m_lasers->setVisible(incomingPosition, false);
+
+		popupText(""); // To Remove any displayed text quicker.
 	}
 }
 

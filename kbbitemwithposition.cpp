@@ -24,8 +24,6 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
-
 #include "kbbitemwithposition.h"
 
 
@@ -47,4 +45,9 @@ KBBItemWithPosition::~KBBItemWithPosition()
 void KBBItemWithPosition::cleanDelete()
 {
 	delete this;
+}
+
+
+void KBBItemWithPosition::setPause(bool)
+{
 }

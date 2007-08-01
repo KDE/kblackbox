@@ -69,6 +69,13 @@ class KBBGraphicsItemSet
 		void insert(KBBItemWithPosition* item);
 
 		/**
+		 * @brief Return the item at the given position
+		 *
+		 * @param position Position of the item.
+		 */
+		KBBItemWithPosition* item(int position);
+
+		/**
 		 * @brief Remove item at given position
 		 *
 		 * @param position Position of the item to be removed.

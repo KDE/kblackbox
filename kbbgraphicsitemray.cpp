@@ -82,10 +82,10 @@ void KBBGraphicsItemRay::draw(KBBBallsOnBoard* ballsOnBoard, const int borderPos
 	setSize(borderPosition, columns, rows);
 	path.moveTo(m_centerX, m_centerY);
 
-	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
-	const int r = KBBScalableGraphicWidget::RATIO;
-	int x;
-	int y;
+	const float b = (float) KBBScalableGraphicWidget::BORDER_SIZE;
+	const float r = (float) KBBScalableGraphicWidget::RATIO;
+	float x;
+	float y;
 	for (int i=0; i<points.count(); i++) {
 		x = b - r/2 + r*((points[i] % columns) + 1);
 		y = b - r/2 + r*((points[i] / columns) + 1);
@@ -93,9 +93,9 @@ void KBBGraphicsItemRay::draw(KBBBallsOnBoard* ballsOnBoard, const int borderPos
 	}
 	
 	if (oppositeBorderPosition!=KBBGameDoc::HIT_POSITION) {
-		int x1;
-		int y1;
-		centerCoordinate(oppositeBorderPosition, x1, y1, b/2);
+		float x1;
+		float y1;
+		centerCoordinate(oppositeBorderPosition, x1, y1, b/2.);
 		path.lineTo(x1,y1);
 	}
 	

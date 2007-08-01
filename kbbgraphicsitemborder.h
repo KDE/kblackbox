@@ -43,24 +43,24 @@ class KBBGraphicsItemBorder
 		/**
 		 * @brief Constructor
 		 */
-		KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset);
+		KBBGraphicsItemBorder(int borderPosition, int columns, int rows, float offset);
 		
-		void setSize(const int borderPosition, const int columns, const int rows);
+		void setSize(int borderPosition, int columns, int rows);
 
 
 	protected:
-		void centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset);
-		int centerX() const;
-		int centerY() const;
+		void centerCoordinate(int borderPosition, float &centerX, float &centerY, float offset);
+		float centerX() const;
+		float centerY() const;
 		const int rotation();
-		void setBorderPosition(const int borderPosition);
+		void setBorderPosition(int borderPosition);
 
 
 		int m_borderPosition;
-		int m_centerX;
-		int m_centerY;
+		float m_centerX;
+		float m_centerY;
 		int m_columns;
-		int m_offset;
+		float m_offset;
 		int m_rows;
 };
 

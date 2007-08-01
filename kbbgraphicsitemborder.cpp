@@ -39,7 +39,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBorder::KBBGraphicsItemBorder(const int borderPosition, const int columns, const int rows, const int offset)
+KBBGraphicsItemBorder::KBBGraphicsItemBorder(int borderPosition, int columns, int rows, float offset)
 {
 	m_offset = offset;
 	
@@ -52,7 +52,7 @@ KBBGraphicsItemBorder::KBBGraphicsItemBorder(const int borderPosition, const int
 // Public
 //
 
-void KBBGraphicsItemBorder::setSize(const int borderPosition, const int columns, const int rows)
+void KBBGraphicsItemBorder::setSize(int borderPosition, int columns, int rows)
 {
 	m_borderPosition = borderPosition;
 	m_columns = columns;
@@ -67,18 +67,18 @@ void KBBGraphicsItemBorder::setSize(const int borderPosition, const int columns,
 // Protected
 //
 
-void KBBGraphicsItemBorder::setBorderPosition(const int borderPosition)
+void KBBGraphicsItemBorder::setBorderPosition(int borderPosition)
 {
 	setSize(borderPosition, m_columns, m_rows);
 }
 
 
-void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &centerX, int &centerY, const int offset)
+void KBBGraphicsItemBorder::centerCoordinate(int borderPosition, float &centerX, float &centerY, float offset)
 {
-	const int b = KBBScalableGraphicWidget::BORDER_SIZE;
-	const int r = KBBScalableGraphicWidget::RATIO;
-	int x;
-	int y;
+	const float b = (float) KBBScalableGraphicWidget::BORDER_SIZE;
+	const float r = (float) KBBScalableGraphicWidget::RATIO;
+	float x;
+	float y;
 	if (borderPosition<m_columns) {
 		x = borderPosition*r + b;
 		y = offset;
@@ -98,13 +98,13 @@ void KBBGraphicsItemBorder::centerCoordinate(const int borderPosition, int &cent
 }
 
 
-int KBBGraphicsItemBorder::centerX() const
+float KBBGraphicsItemBorder::centerX() const
 {
 	return m_centerX;
 }
 
 
-int KBBGraphicsItemBorder::centerY() const
+float KBBGraphicsItemBorder::centerY() const
 {
 	return m_centerY;
 }

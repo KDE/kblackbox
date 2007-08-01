@@ -55,8 +55,8 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	m_number = NULL;
 	m_notNumber = NULL;
 	
-	int centerRadius = 3*KBBScalableGraphicWidget::RATIO/8;
-	int radius = KBBScalableGraphicWidget::BORDER_SIZE/4;
+	float centerRadius = 3*KBBScalableGraphicWidget::RATIO/8.;
+	float radius = KBBScalableGraphicWidget::BORDER_SIZE/4.;
 
 	m_opposite = this;
 	

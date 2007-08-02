@@ -2,9 +2,6 @@ project(kblackbox)
 
 add_subdirectory( pics ) 
 
-include_directories( ${CMAKE_SOURCE_DIR}/libkdegames  )
-
-
 ########### next target ###############
 
 set(kblackbox_SRCS

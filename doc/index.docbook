@@ -4,6 +4,9 @@
  <!ENTITY package "kdegames">
  <!ENTITY % addindex "IGNORE">
  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+
+	<!ENTITY Nicolas.Roffet '<personname><firstname>Nicolas</firstname><surname>Roffet</surname></personname>'>
+	<!ENTITY Nicolas.Roffet.mail '<email>nicolas-kde@roffet.com</email>'>
 ]>
 
 <book lang="&language;">
@@ -13,12 +16,23 @@
     
 <authorgroup>
 <author>
+&Nicolas.Roffet; &Nicolas.Roffet.mail;
+</author>
+
+<author>
 &Robert.Cimrman; &Robert.Cimrman.mail;
 </author>
 
 <author>
 &Philip.Rodrigues; &Philip.Rodrigues.mail;
 </author>
+
+<othercredit role="developer">
+&Nicolas.Roffet; &Nicolas.Roffet.mail;
+<!-- Uncomment this when xslt bug is fixed!
+<contrib>Developer</contrib>
+-->
+</othercredit>
 
 <othercredit role="developer">
 &Robert.Cimrman; &Robert.Cimrman.mail;
@@ -39,8 +53,8 @@
 </authorgroup>
 
 <copyright>
-<year>1998</year><year>2000</year>
-<holder>&Robert.Cimrman;</holder>
+<year>2007</year>
+<holder>&Nicolas.Roffet;</holder>
 </copyright>
 
 <copyright>
@@ -48,13 +62,17 @@
 <holder>&Philip.Rodrigues;</holder>
 </copyright>
 
+<copyright>
+<year>1998</year><year>2000</year>
+<holder>&Robert.Cimrman;</holder>
+</copyright>
+
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2005-12-10</date>
-<releaseinfo>0.3.0</releaseinfo>
+<date>2007-08-16</date>
+<releaseinfo>0.4.0</releaseinfo>
 
-<abstract><para>&kblackbox; is a superb graphical logical game, inspired
-by the <application>emacs</application> blackbox game.</para></abstract>
+<abstract><para>&kblackbox;: find the balls hidden in the black box by shooting laser beams!</para></abstract>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -62,6 +80,7 @@ by the <application>emacs</application> blackbox game.</para></abstract>
 <keyword>kdegames</keyword>
 <keyword>blackbox</keyword>
 <keyword>game</keyword>
+<keyword>Black box</keyword>
 </keywordset>
 
 </bookinfo>
@@ -69,18 +88,19 @@ by the <application>emacs</application> blackbox game.</para></abstract>
 <chapter id="what-is-kblackbox">
 <title>What is &kblackbox;?</title>
 
-<para>&kblackbox; is a superb :-) graphical logical game, inspired by
+<para>&kblackbox; is a superb :-) graphical desktop logical game, inspired by
 the <application>emacs</application> blackbox game. A major part of this help
 file is based on the original <application>emacs</application>
-help. </para>
+help.</para>
 
 <para>&kblackbox; is a game of hide and seek played on a grid of
-boxes. Your opponent (the Random number generator, in this case) has
-hidden several balls within this box. By shooting rays into the box and
+boxes. The computer has
+hidden several balls within this box. By shooting beams into the box and
 observing where they emerge it is possible to deduce the positions of
-the hidden balls. The fewer rays you use to find the balls, the better
+the hidden balls.</para>
+<para>The fewer beams you use and the quicker you are to find the balls, the better
 (the lower) your score.</para>
-
+<para>See a description of the principles of black box games in Wikipedia: http://en.wikipedia.org/wiki/Black_Box_(game) .</para>
 </chapter>
 
 <chapter id="game-description">
@@ -98,78 +118,71 @@ explained.</para>
 
 <variablelist>
 <varlistentry>
-<term><interface>Black squares</interface></term>
-<listitem><para>The black box.  Here you must mark the squares you think
+<term><interface>The big black box in the middle</interface></term>
+<listitem><para>Here you must mark the positions you think
 a ball is in.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><interface>Green squares</interface></term>
-<listitem><para>These are the lasers, shooting rays of light when
-switched on.</para></listitem>
+<term><interface>Lasers around the box</interface></term>
+<listitem><para>The lasers are shooting beams of light when
+switched on. Then, they disappear and are replaced by an information about the interactions of the laser beam with the balls in the black box.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><interface>Light Gray squares</interface></term>
-<listitem><para>Nothing here of interest, this is just a
-border :-).</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><interface>Blue balls</interface></term>
+<term><interface>Balls</interface></term>
 <listitem><para><quote>There must be one there!</quote> you think.  These mark
-where you suspect a ball is placed in the black box.</para></listitem>
+where you suspect a ball is placed in the black box.</para>
+<para>At the end od the game, the right and wrong positions of the balls are also marked with "balls".</para>
+</listitem>
 </varlistentry>
 
 <varlistentry>
-<term><interface>Cyan balls</interface></term>
-<listitem><para>Show where the balls actually are.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><interface>Red balls</interface></term>
-<listitem><para>Incorrectly positioned balls you have marked are
-indicated in red.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><interface>Brown squares</interface></term>
-<listitem><para>Marking color</para></listitem>
+<term><interface>Markers for "free position"</interface></term>
+<listitem><para>You can use them to mark some positions where you are sure there is no ball.</para></listitem>
 </varlistentry>
 </variablelist>
-
-<note><para>The names of colors are used just for identifying the
-different types of the fields in this text. They <emphasis>might
-not</emphasis> be in any relation with the actual color of the
-fields. Simply said: the black box is in the center, around are the
-lasers and around them is the border. Remap the colors yourself
-:-). </para></note>
 
 </sect1>
 
 <sect1 id="user-interaction">
 <title>User Interaction</title>
 
+<sect2>
+<title>Using lasers and placing balls and markers</title>
 <para>The cursor can be moved around the box with the
 standard cursor movement keys or the mouse. Switching of lasers or
 marking of black boxes is done with the &LMB;, or by pressing the
 <keycap>Return</keycap> or &Enter; key.</para>
 
+<para>You can also drag and drop the balls and the markers with the mouse.</para>
+
 <para>You can mark the fields where you think a ball cannot be, too. Just press
 the &RMB;. It often helps you to find an area where a ball could possibly
-be. To clear any marks (blue or brown) press the
-&LMB;. Brown marks cannot overwrite blue
-marks. This way you cannot erase the blue marks (guessed balls) by accident when
-playing with the &RMB;. </para>
+be. To clear any marks, press the same key or mouse button again.</para>
+</sect2>
 
+<sect2>
+<title>End of the game</title>
 <para>When you think the configuration of balls you have placed is
-correct, press the &MMB;. You
+correct, press the "Done!" button. You
 will be informed whether you are correct or not, and be given your
-score. Your score is the number of letters and numbers around the
-outside of the box plus five for each incorrectly placed ball. If you
-placed any balls incorrectly, they will be indicated with red fields,
-and their actual positions indicated with cyan fields.</para>
+score.
+</para>
+<para>
+	If you placed any balls incorrectly, the right solution will be displayed.
+</para>
+</sect2>
 
+<sect2>
+<title>Score</title>
+<para>
+	The score increases with the time (1 point per second) and with the use of lasers: 3 points  if the laser beam hits a ball or exits at the entry point and 9 points if it exists at another entry point.  If you make a mistake, the score is set at the end of the game to 999, which is the maximum score.
+</para>
+<para>
+	The game starts as soon as you use the first laser. Before that, the time is not running and no point will be count for the score.
+</para>
+</sect2>
 </sect1>
 
 <sect1 id="game-rules">
@@ -177,51 +190,49 @@ and their actual positions indicated with cyan fields.</para>
 
 <para>You have to find balls hidden in the black box. Your means are
 limited - you can just fire lasers which are around the box. There are
-three possible outcomes for each ray you send into the box: </para>
+three possible outcomes for each beam you send into the box: </para>
 
 <anchor id="detour"/>
 <variablelist>
 
 <varlistentry>
 <term>Detour</term> 
-<listitem><para>The ray is deflected and emerges somewhere other than
+<listitem><para>The beam is deflected and emerges somewhere other than
 where you sent it in. On the playfield, detours are denoted by matching
-pairs of numbers - one where the ray went in, and the other where it
+pairs of numbers - one where the beam went in, and the other where it
 came out.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term>Reflection</term>
-<listitem><para>The ray is reflected and emerges in the same place it
-was sent in. On the playfield, reflections are denoted by the letter
-<guilabel>R</guilabel>.</para></listitem>
+<listitem><para>The beam is reflected and emerges in the same place it
+was sent in. On the playfield, reflections are denoted by a special sign.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term>Hit</term>
-<listitem><para>The ray strikes a ball directly and is absorbed. It does not
-emerge from the box. On the playfield, hits are denoted by the letter
-<guilabel>H</guilabel>.</para></listitem>
+<listitem><para>The beam strikes a ball and is absorbed. It does not
+emerge from the box. On the playfield, hits are denoted by a special sign.</para></listitem>
 </varlistentry>
 </variablelist>
 
-<para>The rules for how balls deflect rays are simple and are best shown by
+<para>The rules for how balls deflect beams are simple and are best shown by
 example.</para>
 
-<para>As a ray approaches a ball it is deflected ninety degrees. Rays
+<para>As a beam approaches a ball it is deflected ninety degrees. Beams
 can be deflected multiple times. In the diagrams below, the dashes
 represent empty box locations and the letter <guilabel>O</guilabel>
-represents a ball. The entrance and exit points of each ray are marked
+represents a ball. The entrance and exit points of each beam are marked
 with numbers as described under <link linkend="detour">Detour</link>
 above. Note that the entrance and exit points are always
 interchangeable. <guilabel>*</guilabel> denotes the path taken by the
-ray.</para>
+beam.</para>
 
 <para>Note carefully the relative positions of the ball and the ninety
 degree deflection it causes.</para>
 
 <screen>
-    1                                            
+    1
   - * - - - - - -         - - - - - - - -         - - - - - - - -       
   - * - - - - - -         - - - - - - - -         - - - - - - - -       
 1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
@@ -234,7 +245,7 @@ degree deflection it causes.</para>
 </screen>
 
 <para>
-As mentioned above, a reflection occurs when a ray emerges from the same
+As mentioned above, a reflection occurs when a beam emerges from the same
 point it was sent in. This can happen in several ways:
 </para>
 
@@ -250,14 +261,14 @@ R * * * * - - - -         - - - * - - - -          O - - - - - - -
 
 </screen>
 
-<para>In the first example, the ray is deflected downwards by the upper
+<para>In the first example, the beam is deflected downwards by the upper
 ball, then left by the lower ball, and finally retraces its path to its
 point of origin. The second example is similar. The third example is a
-bit anomalous but can be rationalized by realizing the ray never gets a
-chance to get into the box. Alternatively, the ray can be thought of as
+bit anomalous but can be rationalized by realizing the beam never gets a
+chance to get into the box. Alternatively, the beam can be thought of as
 being deflected downwards and immediately emerging from the box.</para>
 
-<para>A hit occurs when a ray runs straight into a ball:</para>
+<para>A hit occurs when a beam runs straight into a ball:</para>
 
 <screen>
   - - - - - - - -         - - - - - - - -          - - - - - - - -
@@ -276,6 +287,9 @@ example of a reflection.</para>
 
 </sect1>
 </chapter>
+
+
+
 <chapter id="gui-description">
 <title>&GUI; description</title>
 
@@ -295,167 +309,132 @@ any.)</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Give Up</guimenuitem></menuchoice></term>
-<listitem><para>Shows you positions of the balls.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Done</guimenuitem></menuchoice></term>
-<listitem><para>Checks whether all balls are placed. If yes, it terminates
-the current game, computes the final score and indicates real positions of
-the balls. The <mousebutton>middle</mousebutton> mouse button has the same
-function. </para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
-<guimenuitem>Resize</guimenuitem></menuchoice></term>
-<listitem><para>Resizes the main window, so that its contents fit perfectly. This is useful when you accidentally change the size of the
-window...</para></listitem>
+<term><menuchoice>
+<shortcut><keycap>P</keycap></shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Pause</guimenuitem></menuchoice></term>
+<listitem><para>Pause or continue the current game.</para><para>Note that the interaction results are hidden in a paused game.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
 </shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Quit</guimenuitem></menuchoice></term>
-<listitem><para>Quits &kblackbox;</para></listitem>
+<guimenuitem>Show High Scores...</guimenuitem></menuchoice></term>
+<listitem><para>Show the high score tables.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Game</guimenu>
+<guimenuitem>Start tutorial</guimenuitem></menuchoice></term>
+<listitem><para>Start the tutorial of the game. This is a user friendly way to learn the game rules.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Game</guimenu>
+<guimenuitem>New sandbox game</guimenuitem></menuchoice></term>
+<listitem><para>In this mode, the solution is displayed at the start of the game. This is useful to understand the game principles.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term>
+		<menuchoice>
+			<shortcut>
+				<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+			</shortcut>
+			<guimenu>Game</guimenu>
+			<guimenuitem>Quit</guimenuitem>
+		</menuchoice>
+	</term>
+	<listitem>
+		<para>This closes the window and quits &kblackbox;.</para>
+	</listitem>
 </varlistentry>
 </variablelist>
-
 </sect1>
 
-<sect1 id="settings-menu">
-<title>The <guimenu>Settings</guimenu> Menu</title>
+
+<sect1 id="move-menu">
+<title>The <guimenu>Move</guimenu> Menu</title>
 
 <variablelist>
 <varlistentry>
+	<term>
+		<menuchoice>
+			<guimenu>Game</guimenu>
+			<guimenuitem>Solve</guimenuitem>
+		</menuchoice>
+	</term>
+	<listitem>
+		<para>Use it to give up a game. It shows you the solution: the right positions of the balls.</para>
+	</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>Game</guimenu>
+<guimenuitem>Done!</guimenuitem></menuchoice></term>
+<listitem><para>When you placed all the balls, choose "Done!" to terminate
+the current game, to compute the final score and to display the real positions of
+the balls.</para></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+
+<sect1 id="settings-menu">
+<title>The <guimenu>Settings</guimenu> Menu</title>
+<para>Not: we discribe here only the menu items that are game specific and skip KDE standard menu items.</para>
+<variablelist>
+<varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Show/Hide Toolbar</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Difficulty</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
-<para>Shows or hides the &kblackbox; toolbar.</para>
+<para>Select the game difficulty. Harder games have more balls and bigger black box than easier games. You can also play with a custom difficulty level that you can set up in the setting dialog of &kblackbox;.</para>
+<para>Note: games with 4 balls or less can always be solved with certainty! That is not the case for games with 5 balls or more.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Show/Hide Statusbar</guimenuitem>
+<guimenu>Settings</guimenu><guimenuitem>Configure &kblackbox;...</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>Shows or hides the &kblackbox; status bar at the base of the screen.</para>
+<para>In this dialog, you can customize the number of balls, columns and rows of the black box in the custom difficulty level.</para>
 </listitem>
 </varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guisubmenu>Size</guisubmenu></menuchoice></term>
-<listitem><para>Sets the size of the game field (black box).  You may choose
-between <guimenuitem>8 x 8</guimenuitem>, <guimenuitem>10 x 10</guimenuitem> and
-<guimenuitem>12 x 12</guimenuitem>.  The default is <guimenuitem>8 x
-8</guimenuitem>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guisubmenu>Balls</guisubmenu></menuchoice></term>
-<listitem><para>Sets the number of balls in the black box. You may choose
-between <guimenuitem>4</guimenuitem> (the default), <guimenuitem>6</guimenuitem>
-or <guimenuitem>8</guimenuitem>.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Tutorial</guimenuitem></menuchoice></term>
-<listitem><para>Switches the tutorial mode on or off.  In tutorial mode,
-you can see where the balls actually are. Note that you have to start a new
-game for this change to take effect.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice></term>
-<listitem><para>Displays a standard &kde; shortcut configuration dialog, in
-which you can change the keyboard shortcuts used by &kblackbox;.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Configure Toolbars...</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>Brings up the standard &kde; toolbar configuration dialog to customize the &kblackbox; toolbar.</para>
-</listitem>
-</varlistentry>
-
 </variablelist>
 
 </sect1>
 
 <sect1 id="help">
 <title>The <guimenu>Help</guimenu> Menu</title>
-
 &help.menu.documentation;
-
 </sect1>
+
 
 <sect1 id="toolbar">
 <title>The Toolbar</title>
-
-<screenshot>
-<screeninfo>&kblackbox;'s toolbar</screeninfo>
-<mediaobject>
-<imageobject>
-<imagedata fileref="kblackboxtbar.png" format="PNG"/>
-</imageobject>
-</mediaobject>
-</screenshot>
-
 <para>The &kblackbox; toolbar offers quick access to the most commonly used
-&kblackbox; functions. From left to right, the icons are:</para>
-
-<variablelist>
-
-<varlistentry>
-<term><guiicon>New</guiicon></term>
-<listitem><para>Starts a new game.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guiicon>Give Up</guiicon></term>
-<listitem><para>Shows you positions of the balls.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guiicon>Done</guiicon></term>
-<listitem><para>Checks whether all balls are placed. If yes, it terminates
-the current game, computes the final score and indicates real positions of
-the balls. The <mousebutton>middle</mousebutton> mouse button has the same
-function. </para></listitem>
-</varlistentry>
-
-</variablelist>
+&kblackbox; functions.</para>
 </sect1>
 </chapter>
+
 
 <chapter id="credits-and-license">
 <title>Credits and License</title>
 
 <para>&kblackbox;</para>
 
-<para>Program Copyright 1998-2000 &Robert.Cimrman; &Robert.Cimrman.mail;</para>
+<para>Program: copyright 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail;, copyright 1998-2000 &Robert.Cimrman; &Robert.Cimrman.mail;</para>
 
 <para>Documentation by &Robert.Cimrman;.  Updated and converted to Docbook
-for &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;</para>
-
-<para>
-Current maintainer &Philip.Rodrigues; &Philip.Rodrigues.mail;
+for &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;.  Updated for &kde; 4.0 by &Nicolas.Roffet; &Nicolas.Roffet.mail;.  Former maintainer &Philip.Rodrigues; &Philip.Rodrigues.mail;
 </para>
 
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
@@ -468,14 +447,10 @@ Current maintainer &Philip.Rodrigues; &Philip.Rodrigues.mail;
 
 <appendix id="installation">
 <title>Installation</title>
-
 &install.intro.documentation;
-
 <sect1 id="compilation">
 <title>Compilation and Installation</title>
-
 &install.compile.documentation;
-
 </sect1>
 </appendix>
 
@@ -488,4 +463,3 @@ sgml-omittag: nil
 sgml-shorttag: t
 End:
 -->
-

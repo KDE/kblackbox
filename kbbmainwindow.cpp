@@ -53,7 +53,6 @@
 
 #include "kbbgamedoc.h"
 #include "kbbgraphicsitemtutorialmarker.h"
-#include "kbbinfowidget.h"
 #include "kbblevelconfigurationwidget.h"
 #include "kbbprefs.h"
 #include "kbbscalablegraphicwidget.h"

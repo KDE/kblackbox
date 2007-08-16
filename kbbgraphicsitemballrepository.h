@@ -4,9 +4,6 @@
 // A simple game inspired by an emacs module
 //
 /***************************************************************************
- *   Copyright (c) 1999-2000, Robert Cimrman                               *
- *   cimrman3@students.zcu.cz                                              *
- *                                                                         *
  *   Copyright (c) 2007, Nicolas Roffet                                    *
  *   nicolas-kde@roffet.com                                                *
  *                                                                         *
@@ -27,57 +24,51 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-#ifndef KBBGRAPHICSITEMBALL_H
-#define KBBGRAPHICSITEMBALL_H
+#ifndef KBBGRAPHICSITEMBALLREPOSITORY_H
+#define KBBGRAPHICSITEMBALLREPOSITORY_H
 
 
 
-class QTimer;
+#include <krandomsequence.h>
 
 
-#include "kbbgraphicsitemonbox.h"
-class KBBGraphicsItemInteractionInfo;
+#include "kbbgraphicsitem.h"
+class KBBGraphicsItemSet;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
 
 
 
 /**
- * @brief Ball on the scalable graphic widget
- *
- * A ball can be gray, red or gray with a question mark.
+ * @brief The balls the player has to place
  */
-class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
+class KBBGraphicsItemBallRepository : public KBBGraphicsItem
 {
 	Q_OBJECT
-	
+
+
 	public:
-		static const int TIME_TO_WAIT_BEFORE_SHOWING_INTERACTIONS = 1500;
-		
-		/**
-		 * @brief Constructor
-		 */
-		KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, int boxPosition, int columns, int rows);
+		KBBGraphicsItemBallRepository(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager);
 
 
-		~KBBGraphicsItemBall();
-
-
-	private slots:
-		void showInteractions();
+		int ballToTake() const;
+		void fillBallsOutside(int placed);
+		void newGame(int columns, int rows, int balls);
+		void removeBall(int outsidePosition);
 
 
 	private:
-		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
-		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
-		void init(KBBScalableGraphicWidget::itemType itemType, KBBThemeManager* themeManager);
-		void removeInteractionInfos();
-		
-		KBBGraphicsItemInteractionInfo* m_interactionInfos[8];
+		KBBGraphicsItemSet* m_ballsOutside;
+		KBBScalableGraphicWidget* m_parent;
 		KBBThemeManager* m_themeManager;
-		QTimer* m_timer;
-		
-		KBBScalableGraphicWidget::itemType m_ballType;
+
+		KRandomSequence m_random;
+
+		int m_columns;
+		int m_rows;
+		int m_width;
+		int m_height;
+		int m_ballToPlace;
 };
 
-#endif // KBBGRAPHICSITEMBALL_H
+#endif // KBBGRAPHICSITEMBALLREPOSITORY_H

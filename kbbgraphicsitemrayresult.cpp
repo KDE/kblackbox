@@ -82,10 +82,10 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 		QFont font;
 		font.setStyleHint(QFont::SansSerif);
 		font.setWeight(QFont::DemiBold);
-		int offset;
+		float offset;
 		if (rayNumber<10) {
 			font.setPixelSize((int)(3*centerRadius/2));
-			offset = 0;
+			offset = 0.;
 		} else {
 			font.setPixelSize((int)(5*centerRadius/4));
 			offset = 1.*centerRadius/6;
@@ -120,10 +120,12 @@ void KBBGraphicsItemRayResult::highlight(bool state)
 }
 
 
+void KBBGraphicsItemRayResult::highlightBoth(bool state)
+{
+	m_opposite->highlight(state);
+	highlight(state);
+}
 
-//
-// Public
-//
 
 const int KBBGraphicsItemRayResult::position ()
 {
@@ -148,21 +150,20 @@ void KBBGraphicsItemRayResult::setPause(bool state)
 }
 
 
+
 //
 // Private
 //
 
 void KBBGraphicsItemRayResult::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 {
-	m_opposite->highlight(true);
-	highlight(true);
+	highlightBoth(true);
 	m_widget->drawRay(position());
 }
 
 
 void KBBGraphicsItemRayResult::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 {
-	m_opposite->highlight(false);
-	highlight(false);
+	highlightBoth(false);
 	m_widget->removeRay();
 }

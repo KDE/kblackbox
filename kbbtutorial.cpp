@@ -99,11 +99,11 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 
 	QHBoxLayout *buttonLayout = new QHBoxLayout();
 	tutorialLayout->addLayout(buttonLayout);
-	m_buttonPrevious = new KPushButton(KIcon("go-previous"), i18n("&Previous"), this);
+	m_buttonPrevious = new KPushButton(KIcon("go-previous"), i18nc("Previous tutorial step", "&Previous"), this);
 	m_buttonPrevious->setWhatsThis(i18n("Go back to the previous tutorial step."));
 	connect(m_buttonPrevious, SIGNAL(clicked()), this, SLOT(previousStep()));
 	buttonLayout->addWidget(m_buttonPrevious);
-	m_buttonNext = new KPushButton(KIcon("go-next"), i18n("&Next"), this);
+	m_buttonNext = new KPushButton(KIcon("go-next"), i18nc("Next tutorial step", "&Next"), this);
 	m_buttonNext->setWhatsThis(i18n("Go to the next tutorial step."));
 	connect(m_buttonNext, SIGNAL(clicked()), this, SLOT(nextStep()));
 	m_buttonNext->setDefault(true);
@@ -165,7 +165,7 @@ void KBBTutorial::setStep(const int step)
 
 	switch (m_step) {
 		case FIRST_STEP:
-			m_gameWidget->newGame(KBBTutorial::COLUMNS, KBBTutorial::ROWS);
+			m_gameWidget->newGame(KBBTutorial::COLUMNS, KBBTutorial::ROWS, KBBTutorial::BALLS);
 			setTexts(i18n("Welcome!"), i18n("This tutorial will teach you how to play KBlackBox, using a simple example.<br /><br />We are playing with a square black box of 6 columns and 6 rows. It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /><br />The goal is to <b>find the positions of the balls.</b>"), i18n("Click on \"Next\""));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+1);
@@ -235,7 +235,7 @@ void KBBTutorial::setStep(const int step)
 			m_gameWidget->addBallUnsure(35);
 			break;
 		case FIRST_STEP+10:
-			setTexts(i18n("Let us play!"), i18n("<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /><br /><b>You can start to play.</b> Try to finish this tutorial game by yourself!<br /><br />Tip: We have sent in enough beams to deduce the positions of the 3 balls with certainty. Of course, you can use some more shots if needed."), i18n("Finish placing the balls and click on \"Check positions\" when you are done!"));
+			setTexts(i18n("Let us play!"), i18n("<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /><br /><b>You can start to play.</b> Try to finish this tutorial game by yourself!<br /><br />Tip: We have sent in enough beams to deduce the positions of the 3 balls with certainty. Of course, you can use some more shots if needed."), i18n("Finish placing the balls and click on \"Done!\" when you are done!"));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+9);
 			break;

@@ -72,6 +72,11 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		void highlight(bool state);
 
 		/**
+		 * @brief Highlight the item and the opposite one
+		 */
+		void highlightBoth(bool state);
+
+		/**
 		 * @brief Get the border position
 		 */
 		const int position();

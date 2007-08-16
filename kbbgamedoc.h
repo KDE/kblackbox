@@ -63,8 +63,12 @@ class KBBGameDoc : public QObject
 		 * This position is "virtual" and must be different to all other possible "real" border positions. (That's why we defined it as a negative (<0) position).
 		 */
 		static const int HIT_POSITION = -1;
-		
-		
+
+		static const int SCORE_LOST = 999;
+		static const int SCORE_ONE = 3;
+		static const int SCORE_TWO = 9;
+
+
 		/**
 		 * @brief Constructor
 		 */
@@ -89,11 +93,6 @@ class KBBGameDoc : public QObject
 		 */
 		bool gameReallyStarted();
 		
-		/**
-		 * @brief Get current score
-		 */
-		int getScore();
-
 		bool mayShootRay(const int incomingPosition) const;
 
 		/**
@@ -121,6 +120,11 @@ class KBBGameDoc : public QObject
 		int rows() const;
 
 		/**
+		 * @brief Get current score
+		 */
+		int score();
+
+		/**
 		 * @brief Shoot a ray
 		 * 
 		 * This is the main player action. A laser ray is shot from a border position, interacts with the balls in the black box and get out (or hit a ball).
@@ -139,6 +143,10 @@ class KBBGameDoc : public QObject
 
 		KBBBallsOnBoard* m_balls;
 		KBBBallsOnBoard* m_ballsPlaced;
+
+
+	public slots:
+		void timeChanged();
 
 
 	signals:
@@ -161,8 +169,8 @@ class KBBGameDoc : public QObject
 		int m_columns;
 		bool m_gameReallyStarted;
 		int m_rows;
-		KRandomSequence random;
-		int score;
+		KRandomSequence m_random;
+		int m_score;
 		KBBTutorial* m_tutorial;
 };
 

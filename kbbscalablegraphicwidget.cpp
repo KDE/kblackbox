@@ -31,19 +31,27 @@
 
 
 
+#include <QAction>
 #include <QColor>
+#include <QFont>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QLayout>
 #include <QPalette>
 #include <QResizeEvent>
 
 
-#include "kgamepopupitem.h"
+#include <kgamelcd.h>
+#include <kgamepopupitem.h>
+#include <kicon.h>
+#include <klocale.h>
+#include <kpushbutton.h>
 
 
 #include "kbbballsonboard.h"
 #include "kbbgamedoc.h"
 #include "kbbgraphicsitemball.h"
+#include "kbbgraphicsitemballrepository.h"
 #include "kbbgraphicsitemblackbox.h"
 #include "kbbgraphicsitemcursor.h"
 #include "kbbgraphicsitemlaser.h"
@@ -59,13 +67,15 @@
 // Constructor / Destructor
 //
 
-KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager)
+KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager, QAction* done)
 {
 	m_gameDoc = gameDoc;
 	m_themeManager = themeManager;
-	m_columns = 1;
-	m_rows = 1;
+	m_columns = -2;
+	m_rows = -2;
 	m_pause = false;
+	m_ballNumber = 0;
+	m_doneAction = done;
 
 
 	setFrameStyle(QFrame::NoFrame);
@@ -94,7 +104,30 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_infoScore->setMessageIcon(QPixmap()); // No icon, because they are no scalable.
 	m_scene->addItem(m_infoScore); // it hides itself by default
 
+	m_ballRepository = new KBBGraphicsItemBallRepository(this, themeManager);
+
 	setScene(m_scene);
+
+	m_doneButton = new KPushButton(m_doneAction->text(), this);
+	m_doneButton->setIcon(KIcon(m_doneAction->icon()));
+	m_doneButton->setWhatsThis(m_doneAction->whatsThis());
+	connect(m_doneButton, SIGNAL(clicked(bool)), m_doneAction, SLOT(trigger()));
+	QFont font;
+	font.setPointSize(m_doneButton->font().pointSize()+2);
+	font.setBold(true);
+	m_doneButton->setFont(font);
+
+	m_score = new KGameLCD(3, this);
+	m_score->setFrameStyle(QFrame::NoFrame);
+	m_score->setMaximumWidth(m_doneButton->width());
+	m_score->setFixedHeight((int)(1.5*m_doneButton->height()));
+	m_score->setHighlightColor(Qt::red);
+	m_score->setToolTip(i18n("Score"));
+	m_score->setWhatsThis(i18n("<qt><p>This is <b>your score</b>. You should try to get the smallest one you can.</p><p>The score increases:</p><ul><li>with the time : <b>1 point</b> per second.</li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits a ball or exits at the entry point,</li><li><b>9 points</b> if it exists at another entry point.</li></ul></li></ul></p></qt><p>Your score is set to <b>999</b> at the end of the game if you make a mistake.</p>"));
+
+	// TODO: not displayed... :(
+	setWhatsThis(i18n("<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is in the center.</li><li>On the left, there are the <b>balls</b> you have to place over the black box.</li><li>Around the black box, there are <b>lasers</b> that are replaced by <b>interaction informations</b> if you use them.</li></ul>"));
+
 }
 
 
@@ -103,12 +136,25 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 // Public
 //
 
-void KBBScalableGraphicWidget::addBall(const int boxPosition)
+void KBBScalableGraphicWidget::addBall(int boxPosition)
+{
+	addBall(boxPosition, KBBGraphicsItemOnBox::NO_POSITION);
+}
+
+
+void KBBScalableGraphicWidget::addBall(int boxPosition, int outsidePosition)
 {
 	if (!m_pause && m_inputAccepted && (!m_balls->containsVisible(boxPosition))&& (!m_ballsUnsure->containsVisible(boxPosition))) {
 		m_boardBallsPlaced->add(boxPosition);
 		m_balls->insert(new KBBGraphicsItemBall(playerBall, this, m_themeManager, boxPosition, m_columns, m_rows));
 		m_markersNothing->remove(boxPosition);
+		if (outsidePosition==KBBGraphicsItemOnBox::NO_POSITION) {
+			outsidePosition = m_ballRepository->ballToTake();
+		}
+		if (outsidePosition!=KBBGraphicsItemSet::NO_INDEX)
+			m_ballRepository->removeBall(outsidePosition);
+
+		updateDoneButton();
 	}
 }
 
@@ -144,13 +190,13 @@ void KBBScalableGraphicWidget::drawRay(const int borderPosition)
 
 void KBBScalableGraphicWidget::mouseBorderClick(const int borderPosition)
 {
-	m_cursor->setBorderPosition(borderPosition);
 	useLaser(borderPosition);
+	m_cursor->setBorderPosition(borderPosition);
 	m_cursor->hide();
 }
 
 
-void KBBScalableGraphicWidget::mouseBoxClick(const Qt::MouseButton button, const int boxPosition)
+void KBBScalableGraphicWidget::mouseBoxClick(const Qt::MouseButton button, int boxPosition)
 {
 	m_cursor->setBoxPosition(boxPosition);
 	if (button==Qt::RightButton)
@@ -163,13 +209,21 @@ void KBBScalableGraphicWidget::mouseBoxClick(const Qt::MouseButton button, const
 
 int KBBScalableGraphicWidget::moveBall(const int boxPositionFrom, const int boxPositionTo)
 {
+	int newPos = positionAfterMovingBall(boxPositionFrom, boxPositionTo);
+
 	if (!m_pause && m_inputAccepted && (!m_balls->containsVisible(boxPositionTo)) && (!m_ballsUnsure->containsVisible(boxPositionTo))) {
-		m_boardBallsPlaced->remove(boxPositionFrom);
-		m_boardBallsPlaced->add(boxPositionTo);
 		m_markersNothing->remove(boxPositionTo);
-		return boxPositionTo;
-	} else
-		return boxPositionFrom;
+		if (boxPositionFrom>=m_columns*m_rows) {
+			// ball moved from outside of the board
+			addBall(boxPositionTo, boxPositionFrom);
+		} else {
+			// ball moved from a board position
+			m_boardBallsPlaced->remove(boxPositionFrom);
+			m_boardBallsPlaced->add(boxPositionTo);
+		}
+	}
+
+	return newPos;
 }
 
 
@@ -183,12 +237,13 @@ int KBBScalableGraphicWidget::moveMarkerNothing(const int boxPositionFrom, const
 }
 
 
-void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
+void KBBScalableGraphicWidget::newGame(int columns, int rows, int ballNumber)
 {
 	m_rayNumber = 0;
 	m_boardBallsPlaced = m_gameDoc->m_ballsPlaced;
 	setPause(false);
-	
+	m_ballNumber = ballNumber;
+
 	// remove old ray results, all placed balls, all markers "nothing" and all solutions
 	m_rayResults->clear();
 	m_balls->clear();
@@ -208,29 +263,38 @@ void KBBScalableGraphicWidget::newGame(const int columns, const int rows)
 			m_lasers->setVisible(i, true);
 	}
 
+	m_ballRepository->newGame(columns, rows, ballNumber);
+
 	// set the new size if needed
 	if (m_columns!=columns || m_rows!=rows) {
 		m_columns = columns;
 		m_rows = rows;
 		m_blackbox->setSize(m_columns, m_rows);
 		m_cursor->setBoardSize(m_columns, m_rows);
-		m_scene->setSceneRect(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE);
+		m_scene->setSceneRect(m_ballRepository->x() - RATIO, 0, m_columns*RATIO + 2*BORDER_SIZE - m_ballRepository->x() + RATIO, m_rows*RATIO + 2*BORDER_SIZE);
 		resizeEvent(0);
 	}
-
-	
 	setInputAccepted(true);
 }
 
 
 void KBBScalableGraphicWidget::popupText(const QString& text, int time)
 {
-	if (text=="")
+	if (text.isEmpty())
 		m_infoScore->forceHide();
 	else {
 		m_infoScore->setMessageTimeout(time);
 		m_infoScore->showMessage(text, KGamePopupItem::TopLeft, KGamePopupItem::ReplacePrevious);
 	}
+}
+
+
+int KBBScalableGraphicWidget::positionAfterMovingBall(const int boxPositionFrom, const int boxPositionTo) const
+{
+	if (!m_pause && m_inputAccepted && (!m_balls->containsVisible(boxPositionTo)) && (!m_ballsUnsure->containsVisible(boxPositionTo))) {
+		return boxPositionTo;
+	} else
+		return boxPositionFrom;
 }
 
 
@@ -241,6 +305,8 @@ void KBBScalableGraphicWidget::setPause(bool state)
 		if (m_rayResults->containsVisible(i))
 			m_rayResults->item(i)->setPause(state);
 	}
+
+	updateDoneButton();
 }
 
 
@@ -255,15 +321,19 @@ void KBBScalableGraphicWidget::resizeEvent( QResizeEvent* )
 	if (sH*wW > sW*wH) {
 		// The widget is larger than the scene
 		qreal w =  wW*sH/wH;
-		m_rectBackground.setRect((sW-w)/2-offset, -offset, w + 2*offset, sH + 2*offset);
+		m_rectBackground.setRect((sW-w)/2-offset+m_ballRepository->x()-RATIO, -offset, w + 2*offset, sH + 2*offset);
 	} else {
 		// The scene is larger than the widget (or as large)
 		qreal h =  wH*sW/wW;
-		m_rectBackground.setRect(-offset, (sH-h)/2-offset, sW + 2*offset, h + 2*offset);
+		m_rectBackground.setRect(-offset+m_ballRepository->x()-RATIO, (sH-h)/2-offset, sW + 2*offset, h + 2*offset);
 	}
 	
 	// 2. Resize the scene to fit in the widget
-	fitInView(0, 0, m_columns*RATIO + 2*BORDER_SIZE, m_rows*RATIO + 2*BORDER_SIZE, Qt::KeepAspectRatio);
+	fitInView(m_ballRepository->x()-RATIO, 0, m_columns*RATIO + 2*BORDER_SIZE - m_ballRepository->x() + RATIO, m_rows*RATIO + 2*BORDER_SIZE, Qt::KeepAspectRatio);
+
+
+	m_doneButton->move(OFFSET_DONE_BUTTON, height() - m_doneButton->height() - OFFSET_DONE_BUTTON);
+	m_score->move(OFFSET_DONE_BUTTON, height() - m_score->height() - m_doneButton->height() - 3*OFFSET_DONE_BUTTON);
 }
 
 
@@ -281,6 +351,9 @@ void KBBScalableGraphicWidget::removeBall(const int boxPosition)
 		m_balls->remove(boxPosition);
 		m_ballsUnsure->remove(boxPosition);
 		m_boardBallsPlaced->remove(boxPosition);
+		m_ballRepository->fillBallsOutside(m_gameDoc->m_ballsPlaced->count());
+
+		updateDoneButton();
 	}
 }
 
@@ -295,6 +368,16 @@ void KBBScalableGraphicWidget::removeRay()
 QGraphicsScene* KBBScalableGraphicWidget::scene()
 {
 	return m_scene;
+}
+
+
+void KBBScalableGraphicWidget::setScore(int score)
+{
+	m_score->displayInt(score);
+	if ((score>35*m_ballNumber) && m_inputAccepted) {
+		m_score->highlight();
+		// TODO: This doesn't work as expected...
+	}
 }
 
 
@@ -324,11 +407,20 @@ void KBBScalableGraphicWidget::solve(const bool continueGame)
 // Public slots
 //
 
-void KBBScalableGraphicWidget::cursorAtNewPosition(const int borderPosition)
+void KBBScalableGraphicWidget::cursorAtNewPosition(int borderPosition)
 {
 	removeRay();
 	if ((borderPosition!=KBBGraphicsItemCursor::NO_POSITION) && m_cursor->isVisible())
 		drawRay(borderPosition);
+
+	// highlight
+	for (int i=0;i<2*(m_rows+m_columns);i++) {
+		if (m_rayResults->containsVisible(i))
+			m_rayResults->item(i)->highlight(false);
+	}
+	if (m_rayResults->containsVisible(borderPosition))
+		m_rayResults->item(borderPosition)->highlightBoth(true);
+
 }
 
 
@@ -402,7 +494,6 @@ void KBBScalableGraphicWidget::drawBackground(QPainter* painter, const QRectF&)
 // Private
 //
 
-
 void KBBScalableGraphicWidget::removeMarkerNothing(const int boxPosition)
 {
 	if (!m_pause && m_inputAccepted) {
@@ -435,6 +526,8 @@ void KBBScalableGraphicWidget::setInputAccepted(bool inputAccepted)
 		setFocusPolicy( Qt::NoFocus );
 		clearFocus();
 	}
+
+	updateDoneButton();
 }
 
 
@@ -455,6 +548,13 @@ void KBBScalableGraphicWidget::switchMarker()
 		removeMarkerNothing(m_cursor->boxPosition());
 	else
 		addMarkerNothing(m_cursor->boxPosition());
+}
+
+
+void KBBScalableGraphicWidget::updateDoneButton()
+{
+	m_doneButton->setEnabled(m_doneAction->isEnabled());
+	m_doneButton->setToolTip(m_doneAction->toolTip());
 }
 
 
@@ -486,6 +586,8 @@ void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 		m_lasers->setVisible(incomingPosition, false);
 
 		popupText(""); // To Remove any displayed text quicker.
+
+		cursorAtNewPosition(incomingPosition);
 	}
 }
 

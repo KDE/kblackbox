@@ -27,8 +27,9 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-
 #include "kbbgraphicsitemball.h"
+
+
 
 #include <QGraphicsSceneHoverEvent>
 #include <QTimer>
@@ -45,7 +46,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBall::KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows) : KBBGraphicsItemOnBox( itemType, parent, themeManager, boxPosition, columns, rows)
+KBBGraphicsItemBall::KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, int boxPosition, int columns, int rows) : KBBGraphicsItemOnBox( itemType, parent, themeManager, boxPosition, columns, rows)
 {
 	m_timer = NULL;
 	m_ballType = itemType;
@@ -152,7 +153,5 @@ void KBBGraphicsItemBall::removeInteractionInfos()
 		m_interactionInfos[i] = NULL;
 	}
 }
-
-
 
 #include "kbbgraphicsitemball.moc"

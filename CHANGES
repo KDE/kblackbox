@@ -1,3 +1,9 @@
+2007-08-16 Nicolas Roffet <nicolas-kde@roffet.com>
+	* Moved the elements of the left (score and balls) in the view itself.
+	* Added "What's this?" texts.
+	* Changed the way the score is calculated.
+	* Added highscores.
+
 2007-07-27 Nicolas Roffet <nicolas-kde@roffet.com>
 	* Added a clock in the status bar.
 

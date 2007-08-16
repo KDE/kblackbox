@@ -33,17 +33,21 @@
 #define KBBSCALABLEGRAPHICWIDGET_H
 
 
+class QAction;
 class QGraphicsScene;
 #include <QGraphicsView>
 class QResizeEvent;
 
 
+class KGameLCD;
 class KGamePopupItem;
+class KPushButton;
 
 
 class KBBBallsOnBoard;
 class KBBGameDoc;
 class KBBGraphicsItem;
+class KBBGraphicsItemBallRepository;
 class KBBGraphicsItemBlackBox;
 class KBBGraphicsItemCursor;
 class KBBGraphicsItemRay;
@@ -84,50 +88,52 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 */
 		enum itemType {
 			background=0,
-			blackbox=1,
-			blackboxGrid=2,
-			tutorialMarker=3,
-			markerNothing=4,
-			solutionRay=5,
-			playerRay=6,
-			resultBackground=7,
-			resultBackgroundHighlight=8,
-			resultReflection=9,
-			resultHit=10,
-			resultText=11,
-			solutionBall=12,
-			playerBall=13,
-			unsureBall=14,
-			wrongPlayerBall=15,
-			rightPlayerBall=16,
-			interactionInfoDeflection=17,
-			interactionInfoHit=18,
-			interactionInfoNothing=19,
-			interactionInfoReflection=20,
-			interactionInfoReflectionSym=21,
-			laser0=22,
-			laser90=23,
-			laser180=24,
-			laser270=25,
-			cursor=26
+			informationBackground=1,
+			blackbox=2,
+			blackboxGrid=3,
+			tutorialMarker=4,
+			markerNothing=5,
+			solutionRay=6,
+			playerRay=7,
+			resultBackground=8,
+			resultBackgroundHighlight=9,
+			resultReflection=10,
+			resultHit=11,
+			resultText=12,
+			solutionBall=13,
+			playerBall=14,
+			unsureBall=15,
+			wrongPlayerBall=16,
+			rightPlayerBall=17,
+			interactionInfoDeflection=18,
+			interactionInfoHit=19,
+			interactionInfoNothing=20,
+			interactionInfoReflection=21,
+			interactionInfoReflectionSym=22,
+			laser0=23,
+			laser90=24,
+			laser180=25,
+			laser270=26,
+			cursor=27
 		};
 		
 		
 		/**
 		 * @brief Constructor
 		 */
-		explicit KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager);
+		explicit KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager, QAction* done);
 
 
-		void addBall(const int boxPosition);
+		void addBall(int boxPosition);
+		void addBall(int boxPosition, int outsidePosition);
 		void addBallUnsure(const int boxPosition);
 		void addMarkerNothing(const int boxPosition);
 		void drawRay(const int borderPosition);
 		void mouseBorderClick(const int borderPosition);
-		void mouseBoxClick(const Qt::MouseButton button, const int boxPosition);
+		void mouseBoxClick(const Qt::MouseButton button, int boxPosition);
 		int moveBall(const int boxPositionFrom, const int boxPositionTo);
 		int moveMarkerNothing(const int boxPositionFrom, const int boxPositionTo);
-		void newGame(const int columns, const int rows);
+		void newGame(int columns, int rows, int ballNumber);
 
 		/**
 		 * @brief Message to display
@@ -137,13 +143,16 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 */
 		void popupText(const QString& text, int time = 5000);
 
+		int positionAfterMovingBall(const int boxPositionFrom, const int boxPositionTo) const;
+
 		void setPause(bool state);
 		void removeAllBalls();
 		void removeBall(const int boxPosition);
 		void removeRay();
 		void resizeEvent(QResizeEvent*);
 		QGraphicsScene* scene();
-		
+		void setScore(int score);
+
 		/**
 		 * @brief display the solution
 		 *
@@ -154,7 +163,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	public slots:
-		void cursorAtNewPosition(const int borderPosition);
+		void cursorAtNewPosition(int borderPosition);
 		void keyboardEnter();
 		void keyboardMoveDown();
 		void keyboardMoveLeft();
@@ -175,22 +184,27 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 */
 		static int const MINIMUM_SIZE = 250;
 
+		static int const OFFSET_DONE_BUTTON = 12;
+
+		void fillBallsOutside();
 		void removeMarkerNothing(const int boxPosition);
 		void setBallUnsure(const int boxPosition, const bool unsure);
 		void setInputAccepted(bool inputAccepted);
 		void switchBall();
 		void switchMarker();
+		void updateDoneButton();
 		void useLaser(const int incomingPosition);
 		
 		
 		// Graphics items
 		KBBGraphicsItemBlackBox* m_blackbox;
 		KBBGraphicsItemSet* m_balls;
-		KBBGraphicsItemCursor* m_cursor;
-		KBBGraphicsItemSet* m_markersNothing;
 		KBBGraphicsItemSet* m_ballsSolution;
 		KBBGraphicsItemSet* m_ballsUnsure;
+		KBBGraphicsItemCursor* m_cursor;
+		KBBGraphicsItemBallRepository* m_ballRepository;
 		KBBGraphicsItemSet* m_lasers;
+		KBBGraphicsItemSet* m_markersNothing;
 		KBBGraphicsItemSet* m_rayResults;
 		KBBGraphicsItemRay* m_playerRay;
 		KBBGraphicsItemRay* m_solutionRay;
@@ -205,9 +219,12 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		QRectF m_rectBackground;
 		
 		// Various member variables
+		int m_ballNumber;
 		KBBBallsOnBoard* m_boardBalls;
 		KBBBallsOnBoard* m_boardBallsPlaced;
 		int m_columns;
+		QAction* m_doneAction;
+		KPushButton* m_doneButton;
 		KBBGameDoc* m_gameDoc;
 		KGamePopupItem* m_infoScore;
 		bool m_inputAccepted;
@@ -216,6 +233,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		
 		int m_rows;
 		QGraphicsScene* m_scene; //TODO: Remove it because scene() already gives it back.
+		KGameLCD* m_score;
 		KBBThemeManager* m_themeManager;
 };
 

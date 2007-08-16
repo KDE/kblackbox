@@ -38,12 +38,12 @@ class QWidget;
 
 class KGameClock;
 #include <kgamedifficulty.h>
+class KScoreDialog;
 class KToggleAction;
 #include <kxmlguiwindow.h>
 
 
 class KBBGameDoc;
-class KBBInfoWidget;
 class KBBLevelConfigurationWidget;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
@@ -88,7 +88,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		 * This function is used when the player is done.
 		 * @see solve()
 		 */
-		void check();
+		void done();
 
 		/**
 		 * @brief Start a new game.
@@ -109,6 +109,11 @@ class KBBMainWindow : public KXmlGuiWindow
 		 * @brief Show the settings dialog
 		 */
 		void settingsDialog();
+
+		/**
+		 * @brief Show the highscores
+		 */
+		void showHighscores();
 
 		/**
 		 * @brief Give up the current game
@@ -154,7 +159,7 @@ class KBBMainWindow : public KXmlGuiWindow
 
 
 		// Actions
-		QAction *m_check;
+		QAction *m_doneAction;
 		QAction *m_pauseAction;
 		QAction *m_solveAction;
 
@@ -180,12 +185,12 @@ class KBBMainWindow : public KXmlGuiWindow
 		QWidget* m_centralWidget;
 		int m_columns;
 		KGameClock* m_gameClock;
-		KBBInfoWidget* m_infoWidget;
 		KGameDifficulty::standardLevel m_level;
 		KBBLevelConfigurationWidget* m_levelConfig;
 		int m_rows;
 		bool m_boardEnabled;
 		bool m_sandboxMode;
+		KScoreDialog* m_scoreDialog;
 		KBBThemeManager* m_themeManager;
 		KBBTutorial* m_tutorial;
 };

@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui name="kblackbox" version="12">
+<gui name="kblackbox" version="14">
 	<MenuBar>
 		<Menu name="game">
-			<text>Game</text>
 			<Action name="game_tutorial" />
 			<Action name="game_sandbox" />
 		</Menu>
 		<Menu name="move">
-			<text>Move</text>
-			<Action name="move_check" />
+			<Action name="move_done" />
 		</Menu>
 	</MenuBar>
 	<ToolBar name="mainToolBar">
-		<text>Main Toolbar</text>
 		<Action name="game_new" />
 		<Action name="game_tutorial" />
 		<Separator />
 		<Action name="game_pause" />
 		<Action name="move_solve" />
-		<Separator />
-		<Action name="options_configure" />
 	</ToolBar>
 </gui>

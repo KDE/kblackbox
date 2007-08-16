@@ -42,7 +42,7 @@
 
 int main( int argc, char **argv )
 {
-	KAboutData aboutData( "kblackbox", 0, ki18n("KBlackBox"), "0.4.0", ki18n("KDE Black Box Game: Find the hidden balls in the black box"), KAboutData::License_GPL, ki18n("(c) 2007, Nicolas Roffet\n(c) 1999-2000, Robert Cimrman"));
+	KAboutData aboutData( "kblackbox", 0, ki18n("KBlackBox"), "0.4.0", ki18n("Find the balls hidden in the black box by shooting laser beams!"), KAboutData::License_GPL, ki18n("(c) 2007, Nicolas Roffet\n(c) 1999-2000, Robert Cimrman"));
 	aboutData.addAuthor(ki18n("Nicolas Roffet"),ki18n("Developper of version 0.4."), "nicolas-kde@roffet.com");
 	aboutData.addAuthor(ki18n("Robert Cimrman"),ki18n("Original developper"), "cimrman3@students.zcu.cz");
 	aboutData.addCredit(ki18n("Johann Ollivier Lapeyre"), ki18n("Artist"), "johann.ollivierlapeyre@gmail.com");

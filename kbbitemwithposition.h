@@ -49,6 +49,10 @@ class KBBItemWithPosition
 		 */
 		virtual void cleanDelete();
 
+
+		virtual void highlight(bool);
+		virtual void highlightBoth(bool);
+
 		/**
 		 * @brief Should the element changes if the game is paused?
 		 * Do nothing.

@@ -34,11 +34,9 @@ class QLabel;
 #include <QWidget>
 
 
-class KPushButton;
 class KGameLCD;
 
 
-class KBBBallsGraphicWidget;
 class KBBThemeManager;
 
 
@@ -47,7 +45,6 @@ class KBBThemeManager;
  * @brief Widget displaying game information
  *
  * Displayed information: 
- * - the number of balls left to be placed on the black box
  * - the score
  */
 class KBBInfoWidget : public QWidget
@@ -60,17 +57,12 @@ class KBBInfoWidget : public QWidget
 		
 		
 		void setGameParameters(const int ballsToPlace, const int scoreLimit);
-		void setPlacedBalls(const int placedBalls);
 		void setScore(const int score);
 
 
 	private:
 		static const int BALL_SIZE = 50;
 		
-		QLabel* m_ballsTitle;
-		int m_ballsToPlace;
-		KBBBallsGraphicWidget* m_ballsWidget;
-		KPushButton* m_checkButton;
 		KGameLCD* m_score;
 		int m_scoreLimit;
 

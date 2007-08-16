@@ -76,6 +76,16 @@ const int KBBGraphicsItemOnBox::position ()
 
 
 //
+// Protected
+//
+
+void KBBGraphicsItemOnBox::removeInteractionInfos()
+{
+}
+
+
+
+//
 // Private
 //
 
@@ -84,9 +94,13 @@ int KBBGraphicsItemOnBox::boxPosition(qreal x, qreal y)
 	int r = (int)((y - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
 	int c = (int)((x - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO);
 
-	if ((r<0) || (r>=m_rows) || (c<0) || (c>=m_columns))
-		return NO_POSITION;
-	else
+	if ((r<0) || (r>=m_rows) || (c<0) || (c>=m_columns)) {
+		if (m_boxPosition>=m_columns*m_rows)
+			// Item is outside of the board
+			return m_boxPosition;
+		else
+			return NO_POSITION;
+	} else
 		return c+r*m_columns;
 }
 
@@ -99,11 +113,15 @@ bool KBBGraphicsItemOnBox::isMovable()
 
 void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
+	m_dragXPos = x();
+	m_dragYPos = y();
 	m_dragX = event->scenePos().x();
 	m_dragY = event->scenePos().y();
 
-	if (isMovable())
+	if (isMovable()) {
 		setCursor(Qt::ClosedHandCursor);
+		removeInteractionInfos();
+	}
 }
 
 
@@ -112,18 +130,31 @@ void KBBGraphicsItemOnBox::mouseReleaseEvent (QGraphicsSceneMouseEvent* event)
 	qreal dropX = event->scenePos().x();
 	qreal dropY = event->scenePos().y();
 
-	if ((dropX==m_dragX) && (dropY==m_dragY))
-		m_widget->mouseBoxClick(event->button(), position());
-	else if (isMovable()) {
+	if ((dropX==m_dragX) && (dropY==m_dragY)) {
+		setCursor(Qt::ArrowCursor);
+		if ((position()!=NO_POSITION) && (position()<(m_columns*m_rows)))
+			m_widget->mouseBoxClick(event->button(), position());
+	} else if (isMovable()) {
 		setCursor(Qt::ArrowCursor);
 
-		if ((boxPosition(dropX, dropY)==NO_POSITION) || (boxPosition(dropX, dropY)==boxPosition(m_dragX, m_dragY)))
-			setBoxPosition(boxPosition(m_dragX, m_dragY));
+		if ((boxPosition(dropX, dropY)==NO_POSITION) || (boxPosition(dropX, dropY)==boxPosition(m_dragX, m_dragY)) || (boxPosition(dropX, dropY)>=m_columns*m_rows))
+			// Cancel move
+			setPos(m_dragXPos, m_dragYPos);
 		else {
 			if (m_itemType==KBBScalableGraphicWidget::markerNothing)
 				setBoxPosition(m_widget->moveMarkerNothing(boxPosition(m_dragX, m_dragY), boxPosition(dropX, dropY)));
-			else
-				setBoxPosition(m_widget->moveBall(boxPosition(m_dragX, m_dragY), boxPosition(dropX, dropY)));
+			else {
+				int newPos = m_widget->positionAfterMovingBall(boxPosition(m_dragX, m_dragY), boxPosition(dropX, dropY));
+
+				// if we do move from outside the board. Because in this case and if the move is OK, we will destroy ourself to put a "real" new ball over the board... So we cannot do anything else more after calling m_widget->moveBall()...
+				if ((m_boxPosition==NO_POSITION) || (m_boxPosition>=(m_columns*m_rows))) {
+					if (newPos==m_boxPosition)
+						setPos(m_dragXPos, m_dragYPos);
+					else
+						m_widget->moveBall(boxPosition(m_dragX, m_dragY), boxPosition(dropX, dropY));
+				} else
+					setBoxPosition(m_widget->moveBall(boxPosition(m_dragX, m_dragY), boxPosition(dropX, dropY)));
+			}
 		}
 	}
 }
@@ -133,5 +164,8 @@ void KBBGraphicsItemOnBox::setBoxPosition(int boxPosition)
 {
 	m_boxPosition = boxPosition;
 
-	setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % m_columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / m_columns));
+	if ((boxPosition!=NO_POSITION) && (boxPosition<m_columns*m_rows)) {
+		QPointF p((qreal) (KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition % m_columns)), (qreal) (KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPosition / m_columns)));
+		setPos(p);
+	}
 }

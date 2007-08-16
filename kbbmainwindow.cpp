@@ -44,6 +44,7 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <highscore/kscoredialog.h>
 #include <kstandarddirs.h>
 #include <kstandardgameaction.h>
 #include <kstatusbar.h>
@@ -69,10 +70,17 @@ KBBMainWindow::KBBMainWindow()
 {
 	m_boardEnabled = false;
 
+	//Read configuration options
+	m_customBallNumber = KBBPrefs::balls();
+	m_customColumns = KBBPrefs::columns();
+	m_customRows = KBBPrefs::rows();
+
+
 	// Status bar
-	statusBar()->insertItem(i18n("Run: yesno"), SRUN);
-	statusBar()->insertItem(i18n("Time: 00:00"), STIME);
-	statusBar()->insertItem(i18n("Size: 00 x 00"), SSIZE);
+	statusBar()->insertPermanentItem("", SRUN, 1);
+	statusBar()->insertPermanentItem(i18n("Time: 00:00"), STIME, 1);
+	statusBar()->insertPermanentItem(i18n("Size: 00 x 00"), SSIZE);
+	statusBar()->setItemAlignment(SRUN, Qt::AlignLeft & Qt::AlignVCenter);
 
 
 	// Difficulty
@@ -92,18 +100,25 @@ KBBMainWindow::KBBMainWindow()
 	QAction* tutorial = actionCollection()->addAction("game_tutorial");
 	tutorial->setText(i18n("Start tutorial"));
 	tutorial->setIcon(KIcon("footprint"));
+	tutorial->setWhatsThis(i18n("<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to learn the rules of the game. Start it if you do not know them!</qt>"));
 	connect(tutorial, SIGNAL(triggered(bool)), SLOT(startTutorial()));
 	KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 	QAction* sandbox = actionCollection()->addAction("game_sandbox");
 	sandbox->setText(i18n("New sandbox game"));
+	sandbox->setToolTip(i18n("Start a new sandbox game"));
+	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not realy funny and you should try to start a real game!</p></qt>"));
 	connect(sandbox, SIGNAL(triggered(bool)), SLOT(startSandbox()));
+	KStandardGameAction::highscores(this, SLOT(showHighscores()), actionCollection());
 
 	// Menu "Move"
-	m_check = actionCollection()->addAction("move_check");
-	m_check->setText(i18n("Check positions"));
-	m_check->setIcon(KIcon("ok"));
-	connect(m_check, SIGNAL(triggered(bool)), SLOT(check()));
+	m_doneAction = actionCollection()->addAction("move_done");
+	m_doneAction->setText(i18n("Done!"));
+	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the right possitions of the balls and see how they interact with laser beams, you should use the lasers that are disposed around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is possible to click here only if you placed the right number of balls.</p></qt>"));
+	m_doneAction->setIcon(KIcon("ok"));
+	connect(m_doneAction, SIGNAL(triggered(bool)), SLOT(done()));
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
+	m_solveAction->setToolTip(i18n("Give up the game"));
+	m_solveAction->setWhatsThis(i18n("<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The solution will be displayed.</p><p>If you placed all the balls and do not want to give up, choose \"Done!\".</p></qt>"));
 
 	// Menu "Settings"
 	KStandardAction::preferences(this, SLOT(settingsDialog()), actionCollection());
@@ -114,10 +129,6 @@ KBBMainWindow::KBBMainWindow()
 	if (!QFile(svgzFile).exists())
 		svgzFile = KStandardDirs::locate("appdata", "pics/kblackbox.svgz");
 	m_themeManager = new KBBThemeManager(svgzFile);
-	
-	
-	// Info widget
-	m_infoWidget = new KBBInfoWidget(m_themeManager, m_check);
 	
 	
 	// Tutorial widget
@@ -131,7 +142,7 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Game widget
-	m_gameWidget = new KBBScalableGraphicWidget(m_gameDoc, m_themeManager);
+	m_gameWidget = new KBBScalableGraphicWidget(m_gameDoc, m_themeManager, m_doneAction);
 	m_tutorial->setGameWidget(m_gameWidget, new KBBGraphicsItemTutorialMarker(m_gameWidget, m_themeManager, KBBTutorial::COLUMNS, KBBTutorial::ROWS));
 
 
@@ -140,7 +151,6 @@ KBBMainWindow::KBBMainWindow()
 	QHBoxLayout *widgetLayout = new QHBoxLayout();
 	widgetLayout->setMargin(0);
 	m_centralWidget->setLayout(widgetLayout);
-	widgetLayout->addWidget(m_infoWidget);
 	widgetLayout->addWidget(m_gameWidget);
 	widgetLayout->addWidget(m_tutorial);
 	setCentralWidget(m_centralWidget);
@@ -186,17 +196,15 @@ KBBMainWindow::KBBMainWindow()
 
 	m_gameClock = new KGameClock(this, KGameClock::MinSecOnly);
 	connect(m_gameClock, SIGNAL(timeChanged(const QString&)), SLOT(updateStats()));
+	connect(m_gameClock, SIGNAL(timeChanged(const QString&)), m_gameDoc, SLOT(timeChanged()));
 
-
-	//Read configuration options
-	m_customBallNumber = KBBPrefs::balls();
-	m_customColumns = KBBPrefs::columns();
-	m_customRows = KBBPrefs::rows();
 
 	levelChanged((KGameDifficulty::standardLevel) (KBBPrefs::level()));
 	KGameDifficulty::setLevel(m_level);
 
-	newGame();
+	// Highscores
+	m_scoreDialog = new KScoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
+
 	setupGUI();
 }
 
@@ -238,13 +246,13 @@ void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 			m_rows = 12;
 			break;
 		case KGameDifficulty::veryHard:
-			m_ballNumber = 10;
+			m_ballNumber = 11;
 			m_columns = 14;
 			m_rows = 10;
 			break;
 		case KGameDifficulty::extremelyHard:
-			m_ballNumber = 12;
-			m_columns = 18;
+			m_ballNumber = 15;
+			m_columns = 20;
 			m_rows = 12;
 			break;
 		case KGameDifficulty::configurable:
@@ -264,9 +272,10 @@ void KBBMainWindow::setRunning(bool r)
 	KGameDifficulty::setRunning(r);
 
 	// Clock
-	if (r)
+	if (r) {
 		m_gameClock->resume();
-	else
+		m_gameDoc->timeChanged(); // It's important to end the current seconde before pausing so that the player cannot cheat with pause.
+	} else
 		m_gameClock->pause();
 
 	// Pause
@@ -276,17 +285,38 @@ void KBBMainWindow::setRunning(bool r)
 
 void KBBMainWindow::updateStats()
 {
-	m_check->setEnabled(m_solveAction->isEnabled() && (m_gameDoc->numberOfBallsPlaced() == m_gameDoc->numberOfBallsToPlace()));
-	m_infoWidget->setEnabled(m_solveAction->isEnabled());
+	int ballsLeftToPlace = m_gameDoc->numberOfBallsToPlace() - m_gameDoc->numberOfBallsPlaced();
 
-	// 1. Status bar
+	m_doneAction->setEnabled(m_solveAction->isEnabled() && (ballsLeftToPlace==0));
+
+	if (ballsLeftToPlace<0)
+		m_doneAction->setToolTip(i18np("First, you need to remove 1 ball from the black box.", "First, you need to remove %1 balls from the black box.", -ballsLeftToPlace));
+	else if (ballsLeftToPlace==0) {
+		m_doneAction->setToolTip(i18n("To check if you successful guessed the ball positions, click here!"));
+	} else if (ballsLeftToPlace>0) {
+		m_doneAction->setToolTip(i18np("You need to place 1 more ball on the black box.", "You need to place %1 more balls on the black box.", ballsLeftToPlace));
+	}
+
+	if (!m_boardEnabled)
+		m_doneAction->setToolTip(i18n("Game over."));
+	if (m_pauseAction->isChecked())
+		m_doneAction->setToolTip(i18n("Game paused."));
+
+
+	// Status bar
 	if (m_tutorial->isVisible())
-		statusBar()->changeItem(i18n("Run: Tutorial"), SRUN );
+		statusBar()->changeItem(i18n("Tutorial"), SRUN );
 	if (!m_tutorial->isVisible()) {
-		if (m_boardEnabled)
-			statusBar()->changeItem(i18n("Run: Yes"), SRUN );
-		else
-			statusBar()->changeItem(i18n("Run: No"), SRUN );
+		if (m_boardEnabled) {
+			if (ballsLeftToPlace<0) {
+				statusBar()->changeItem((i18np("1 ball too much!", "%1 balls too much!", -ballsLeftToPlace)), SRUN);
+			} else if (ballsLeftToPlace==0) {
+				statusBar()->changeItem(i18n("No more ball to place"), SRUN);
+			} else if (ballsLeftToPlace>0) {
+				statusBar()->changeItem(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace), SRUN);
+			}	
+		} else
+			statusBar()->changeItem(i18n("Game over"), SRUN );
 	}
 
 	statusBar()->changeItem(i18n("Time: %1", m_gameClock->timeString()), STIME);
@@ -295,8 +325,7 @@ void KBBMainWindow::updateStats()
 	
 	
 	// 2. Info Widget
-	m_infoWidget->setPlacedBalls(m_gameDoc->numberOfBallsPlaced());
-	m_infoWidget->setScore(m_gameDoc->getScore());
+	m_gameWidget->setScore(m_gameDoc->score());
 }
 
 
@@ -305,21 +334,31 @@ void KBBMainWindow::updateStats()
 // Private slots
 //
 
-void KBBMainWindow::check()
+void KBBMainWindow::done()
 {
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
-		KMessageBox::sorry(this, i18n("Please first finish the tutorial.\nCheck the positions of the balls when you have reached the last step."), i18n("Check positions"));
+		KMessageBox::sorry(this, i18n("Clicking on \"Done!\" is the normal way to check the positions of the balls at the end of the game. However, it is not possible in the tutorial to end the game before you reached the last step.\nPlease first finish the tutorial."), i18n("Check positions"));
 	} else {
 		solving();
 
-		const int score = m_gameDoc->getScore();
+		const int score = m_gameDoc->score();
 		QString s;
-		if (score <= (m_ballNumber*3)) {
+		if (score <= (m_ballNumber*35)) {
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />You did really well!", score);
 			if (m_sandboxMode)
 				s += QString("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it does not count<br />because <b>it is the sandbox!</b>");
 		} else
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
+
+		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (KGameDifficulty::level() != KGameDifficulty::configurable) && (score<KBBGameDoc::SCORE_LOST)) {
+			m_scoreDialog->setConfigGroup(KGameDifficulty::levelString());
+	
+			KScoreDialog::FieldInfo scoreInfo;
+			scoreInfo[KScoreDialog::Score].setNum(score);
+			if(m_scoreDialog->addScore(scoreInfo, KScoreDialog::LessIsMore) != 0)
+				m_scoreDialog->exec();
+		}
+
 		m_gameWidget->popupText(s);
 	}
 }
@@ -341,7 +380,9 @@ void KBBMainWindow::pause(bool state)
 		m_gameClock->resume();
 		m_gameWidget->popupText("");
 	}
+	m_solveAction->setEnabled(!state);
 
+	updateStats();
 	m_gameWidget->setPause(state);
 }
 
@@ -376,12 +417,22 @@ void KBBMainWindow::settingsDialog()
 }
 
 
+void KBBMainWindow::showHighscores()
+{
+	m_scoreDialog->setConfigGroup( KGameDifficulty::levelString() );
+	m_scoreDialog->exec();
+}
+
+
 void KBBMainWindow::solve()
 {
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
 		KMessageBox::sorry(this, i18n("Sorry, you may not give up the tutorial."), i18n("Solve"));
 	} else {
-		if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
+		if (m_gameDoc->numberOfBallsToPlace()==m_gameDoc->numberOfBallsPlaced()) {
+			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed right.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
+				solving();
+		} else if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
 			solving();
 	}
 }
@@ -403,7 +454,6 @@ void KBBMainWindow::startTutorial()
 		m_solveAction->setEnabled(true);
 		m_pauseAction->setChecked(false);
 		KGameDifficulty::setEnabled(false);
-		m_infoWidget->setGameParameters(KBBTutorial::BALLS, KBBTutorial::BALLS*3);
 
 		// Reset clock but don't start it yet.
 		m_gameClock->restart();
@@ -434,6 +484,7 @@ void KBBMainWindow::solving()
 {
 	m_boardEnabled = false;
 	m_solveAction->setEnabled(false);
+	m_doneAction->setEnabled(false);
 	m_gameDoc->gameOver();
 	m_gameWidget->solve(false);
 	updateStats();
@@ -456,11 +507,9 @@ void KBBMainWindow::startGame(bool sandboxMode)
 	KGameDifficulty::setEnabled(true);
 	m_tutorial->hide();
 	m_gameDoc->newGame(m_ballNumber, m_columns, m_rows);
-	m_gameWidget->newGame(m_columns, m_rows);
+	m_gameWidget->newGame(m_columns, m_rows, m_ballNumber);
 	if (m_sandboxMode)
 		m_gameWidget->solve(true);
-
-	m_infoWidget->setGameParameters(m_ballNumber, m_ballNumber*3);
 
 	// Reset clock but don't start it yet.
 	m_gameClock->restart();

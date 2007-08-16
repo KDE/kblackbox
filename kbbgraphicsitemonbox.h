@@ -62,6 +62,8 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 
 
 	protected:
+		virtual void removeInteractionInfos();
+
 		KBBScalableGraphicWidget* m_widget;
 		int m_columns;
 		int m_rows;
@@ -75,6 +77,9 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 		void setBoxPosition(int boxPosition);
 		
 		int m_boxPosition;
+		int m_boxOutsidePosition;
+		qreal m_dragXPos;
+		qreal m_dragYPos;
 		qreal m_dragX;
 		qreal m_dragY;
 		KBBScalableGraphicWidget::itemType m_itemType;

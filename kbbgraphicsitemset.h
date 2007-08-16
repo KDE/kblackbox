@@ -50,6 +50,18 @@ class KBBGraphicsItemSet
 		~KBBGraphicsItemSet();
 
 
+		static const int NO_INDEX = -1;
+
+		/**
+		 * @brief A position of an item (anyone of them)
+		 */
+		int anyItemPosition();
+
+		/**
+		 * @brief Number of items
+		 */
+		int count() const;
+
 		/**
 		 * @brief Remove all items
 		 */
@@ -89,8 +101,6 @@ class KBBGraphicsItemSet
 
 
 	private:
-		static const int NO_INDEX = -1;
-
 		bool contains(int position);
 		int indexOf(int position);
 

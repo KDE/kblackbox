@@ -60,6 +60,21 @@ KBBGraphicsItemSet::~KBBGraphicsItemSet()
 // Public
 //
 
+int KBBGraphicsItemSet::anyItemPosition()
+{
+	if (m_items.count()>0)
+		return m_items.last()->position();
+	else
+		return NO_INDEX;
+}
+
+
+int KBBGraphicsItemSet::count() const
+{
+	return m_items.count();
+}
+
+
 void KBBGraphicsItemSet::clear()
 {
 	while (m_items.count()>0) {

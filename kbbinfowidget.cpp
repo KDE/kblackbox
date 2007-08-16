@@ -30,18 +30,12 @@
 
 #include <QAction>
 #include <QGroupBox>
-#include <QLabel>
 #include <QVBoxLayout>
 #include <QWidget>
 
 
 #include <kgamelcd.h>
-#include <kicon.h>
 #include <klocale.h>
-#include <kpushbutton.h>
-
-
-#include "kbbballsgraphicwidget.h"
 
 
 
@@ -55,26 +49,6 @@ KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager, QAction* check)
 	m_scoreLimitDefinied = false;
 	QVBoxLayout *mainLayout = new QVBoxLayout();
 	setMaximumWidth(3*BALL_SIZE);
-
-	
-	// 1st part: balls and check button
-	QGroupBox *ballsGroupBox = new QGroupBox(i18n("Balls"));
-	ballsGroupBox->setFlat(true);
-	QVBoxLayout *ballsLayout = new QVBoxLayout();
-	m_ballsTitle = new QLabel(this);
-	m_ballsTitle->setWordWrap(true);
-	ballsLayout->addWidget(m_ballsTitle);
-	m_ballsWidget = new KBBBallsGraphicWidget(themeManager);
-	m_ballsWidget->setMinimumWidth(BALL_SIZE);
-	ballsLayout->addWidget(m_ballsWidget);
-	ballsGroupBox->setLayout(ballsLayout);
-	mainLayout->addWidget(ballsGroupBox);
-
-	// Check button
-	m_checkButton = new KPushButton(check->text(), this);
-	m_checkButton->setIcon(KIcon(check->icon()));
-	mainLayout->addWidget(m_checkButton);
-	connect(m_checkButton, SIGNAL(clicked(bool)), check, SLOT(trigger()));
 
 	// 2nd part: score
 	QGroupBox *scoreGroupBox = new QGroupBox(i18n("Score"));
@@ -100,31 +74,8 @@ KBBInfoWidget::KBBInfoWidget(KBBThemeManager* themeManager, QAction* check)
 
 void KBBInfoWidget::setGameParameters(const int ballsToPlace, const int scoreLimit)
 {
-	m_ballsToPlace = ballsToPlace;
 	m_scoreLimit = scoreLimit;
 	m_scoreLimitDefinied = true;
-	
-	m_ballsWidget->setBallsToPlace(ballsToPlace);
-}
-
-
-void KBBInfoWidget::setPlacedBalls(const int placedBalls)
-{
-	m_ballsWidget->setPlacedBalls(placedBalls);
-	
-	int ballsLeftToPlace = m_ballsToPlace - placedBalls;
-	if (ballsLeftToPlace<0) {
-		m_ballsTitle->setText(i18np("1 ball too much", "%1 balls too much", -ballsLeftToPlace));
-		m_ballsTitle->setToolTip(i18np("You need to remove 1 ball from the black box.", "You need to remove %1 balls from the black box.", -ballsLeftToPlace));
-	} else if (ballsLeftToPlace==0) {
-		m_ballsTitle->setText(i18n("No more ball to place."));
-		m_ballsTitle->setToolTip(i18n("If you think you are done: click on \"Solve\" to check if you successful guessed the ball positions!"));
-	} else if (ballsLeftToPlace>0) {
-		m_ballsTitle->setText(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace));
-		m_ballsTitle->setToolTip(i18np("You need to place 1 more ball on the black box.\n", "You need to place %1 more balls on the black box.\n", ballsLeftToPlace) + i18np("You will be done after having found the positions of the ball.", "You will be done after having found the positions of the %1 balls.", m_ballsToPlace));
-	}
-
-	m_checkButton->setEnabled(ballsLeftToPlace==0);
 }
 
 

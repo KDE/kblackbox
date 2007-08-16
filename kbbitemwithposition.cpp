@@ -48,6 +48,16 @@ void KBBItemWithPosition::cleanDelete()
 }
 
 
+void KBBItemWithPosition::highlight(bool)
+{
+}
+
+
+void KBBItemWithPosition::highlightBoth(bool)
+{
+}
+
+
 void KBBItemWithPosition::setPause(bool)
 {
 }

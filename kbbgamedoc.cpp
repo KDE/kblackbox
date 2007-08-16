@@ -50,7 +50,7 @@ KBBGameDoc::KBBGameDoc(KBBMainWindow *parent, KBBTutorial* tutorial) : QObject(p
 	m_rows = 1;
 	m_tutorial = tutorial;
 	
-	random.setSeed(0);
+	m_random.setSeed(0);
 	
 	m_balls = new KBBBallsOnBoard(this, m_columns, m_rows);
 	m_ballsPlaced = new KBBBallsOnBoard(this, m_columns, m_rows);
@@ -75,19 +75,14 @@ void KBBGameDoc::gameOver()
 	setRunning(false);
 	
 	// Compute final score
-	setScore( score + 5*m_ballsPlaced->numberOfBallsNotIn(m_balls) );
+	if (m_ballsPlaced->numberOfBallsNotIn(m_balls)>0)
+		setScore(SCORE_LOST);
 }
 
 
 bool KBBGameDoc::gameReallyStarted()
 {
 	return m_gameReallyStarted;
-}
-
-
-int KBBGameDoc::getScore()
-{
-	return score;
 }
 
 
@@ -108,7 +103,7 @@ void KBBGameDoc::newGame(int balls, int columns, int rows)
 	int boxPos;
 	for (int i = 0; i < balls; i++) {
 		do {
-			boxPos = random.getLong(m_columns * m_rows);
+			boxPos = m_random.getLong(m_columns * m_rows);
 		} while (m_balls->contains(boxPos));
 		m_balls->add(boxPos);
 	}
@@ -133,14 +128,20 @@ int KBBGameDoc::rows() const
 }
 
 
+int KBBGameDoc::score()
+{
+	return m_score;
+}
+
+
 int KBBGameDoc::shootRay( int borderPosition )
 {
 	int outgoingBorderPosition = m_balls->oppositeBorderPosition(borderPosition);
 	
 	if ((outgoingBorderPosition == HIT_POSITION) || (borderPosition == outgoingBorderPosition))
-		setScore( score + 1);
+		setScore(m_score + SCORE_ONE);
 	else
-		setScore( score + 2);
+		setScore(m_score + SCORE_TWO);
 	
 	if (!m_tutorial->isVisible())
 		setRunning(true);
@@ -161,6 +162,12 @@ void KBBGameDoc::startTutorial()
 }
 
 
+void KBBGameDoc::timeChanged()
+{
+	setScore(m_score+1);
+}
+
+
 
 //
 // Private
@@ -174,7 +181,7 @@ void KBBGameDoc::clean(const int columns, const int rows)
 	// Clear
 	setRunning(false);
 	m_ballsPlaced->newBoard(m_columns, m_rows);
-	setScore(0);
+	setScore(-1); // -1 because a signal "timeChanged" will be send at the beginning and the score will be set to 0.
 
 	m_balls->newBoard(m_columns, m_rows);
 }
@@ -189,7 +196,10 @@ void KBBGameDoc::setRunning(const bool r)
 
 void KBBGameDoc::setScore( int n )
 {
-	score = n;
+	if (n<1000)
+		m_score = n;
+	else
+		m_score = 999;
 	emit updateStats();
 }
 

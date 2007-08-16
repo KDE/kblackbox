@@ -3,11 +3,11 @@ project(kblackbox)
 add_subdirectory(pics)
 
 set(kblackbox_SRCS
-    kbbballsgraphicwidget.cpp
     kbbballsonboard.cpp
     kbbgamedoc.cpp
     kbbgraphicsitem.cpp
     kbbgraphicsitemball.cpp
+    kbbgraphicsitemballrepository.cpp
     kbbgraphicsitemblackbox.cpp
     kbbgraphicsitemborder.cpp
     kbbgraphicsitemcursor.cpp
@@ -18,7 +18,6 @@ set(kblackbox_SRCS
     kbbgraphicsitemrayresult.cpp
     kbbgraphicsitemset.cpp
     kbbgraphicsitemtutorialmarker.cpp
-    kbbinfowidget.cpp
     kbbitemwithposition.cpp
     kbblevelconfigurationpreview.cpp
     kbblevelconfigurationwidget.cpp

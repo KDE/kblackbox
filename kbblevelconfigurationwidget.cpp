@@ -35,7 +35,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	l->addWidget(kcfg_balls, 0, 0, 1, 2);
 	kcfg_balls->setMinimum(1);
 	kcfg_balls->setValue(b);
-	kcfg_balls->setSuffix(i18n(" ball(s)"));
+	kcfg_balls->setSuffix(i18nc("A number between 1 and 99 is displayed in front of it.", " ball(s)"));
 	connect(kcfg_balls, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
 	kcfg_columns = new QSpinBox(this);
@@ -44,7 +44,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_columns->setMinimum(2);
 	kcfg_columns->setMaximum(30);
 	kcfg_columns->setValue(c);
-	kcfg_columns->setSuffix(i18n(" columns"));
+	kcfg_columns->setSuffix(i18nc("A number between 2 and 30 is displayed in front of it.", " columns"));
 	connect(kcfg_columns, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
 	kcfg_rows = new QSpinBox(this);
@@ -53,7 +53,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_rows->setMinimum(2);
 	kcfg_rows->setMaximum(30);
 	kcfg_rows->setValue(r);
-	kcfg_rows->setSuffix(i18n(" rows"));
+	kcfg_rows->setSuffix(i18nc("A number between 2 and 30 is displayed in front of it.", " rows"));
 	connect(kcfg_rows, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
 	m_view = new KBBLevelConfigurationPreview(this, themeManager);

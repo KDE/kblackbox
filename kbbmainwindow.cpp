@@ -105,7 +105,7 @@ KBBMainWindow::KBBMainWindow()
 	QAction* sandbox = actionCollection()->addAction("game_sandbox");
 	sandbox->setText(i18n("New sandbox game"));
 	sandbox->setToolTip(i18n("Start a new sandbox game"));
-	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not realy funny and you should try to start a real game!</p></qt>"));
+	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not really fun and you should try to start a real game!</p></qt>"));
 	connect(sandbox, SIGNAL(triggered(bool)), SLOT(startSandbox()));
 	KStandardGameAction::highscores(this, SLOT(showHighscores()), actionCollection());
 

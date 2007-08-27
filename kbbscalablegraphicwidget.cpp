@@ -123,7 +123,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_score->setFixedHeight((int)(1.5*m_doneButton->height()));
 	m_score->setHighlightColor(Qt::red);
 	m_score->setToolTip(i18n("Score"));
-	m_score->setWhatsThis(i18n("<qt><p>This is <b>your score</b>. You should try to get the smallest one you can.</p><p>The score increases:</p><ul><li>with the time : <b>1 point</b> per second.</li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits a ball or exits at the entry point,</li><li><b>9 points</b> if it exists at another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</b> at the end of the game if you make a mistake.</p></qt>"));
+	m_score->setWhatsThis(i18n("<qt><p>This is <b>your score</b>. You should try to get the smallest one you can.</p><p>The score increases:<ul><li>with the time : <b>1 point</b> per second.</li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits a ball or exits at the entry point,</li><li><b>9 points</b> if it exists at another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</b> at the end of the game if you make a mistake.</p></qt>"));
 
 	// TODO: not displayed... :(
 	setWhatsThis(i18n("<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is in the center.</li><li>On the left, there are the <b>balls</b> you have to place over the black box.</li><li>Around the black box, there are <b>lasers</b> that are replaced by <b>interaction information</b> if you use them.</li></ul></qt>"));

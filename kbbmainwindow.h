@@ -27,14 +27,11 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA               *
  ***************************************************************************/
 
-#ifndef KBBMAINWINDOW_H
-#define KBBMAINWINDOW_H
-
-
+#ifndef KBLACKBOX_KBBMAINWINDOW_H
+#define KBLACKBOX_KBBMAINWINDOW_H
 
 class QAction;
 class QWidget;
-
 
 class KGameClock;
 #include <kgamedifficulty.h>
@@ -42,14 +39,11 @@ class KScoreDialog;
 class KToggleAction;
 #include <kxmlguiwindow.h>
 
-
 class KBBGameDoc;
 class KBBLevelConfigurationWidget;
 class KBBScalableGraphicWidget;
 class KBBThemeManager;
 class KBBTutorial;
-
-
 
 /**
 * @brief Main window of the game KBlackBox
@@ -195,4 +189,4 @@ class KBBMainWindow : public KXmlGuiWindow
 		KBBTutorial* m_tutorial;
 };
 
-#endif // KBBMAINWINDOW_H
+#endif // KBLACKBOX_KBBMAINWINDOW_H

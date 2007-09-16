@@ -36,7 +36,6 @@ class QWidget;
 class KGameClock;
 #include <kgamedifficulty.h>
 class KScoreDialog;
-class KToggleAction;
 #include <kxmlguiwindow.h>
 
 class KBBGameDoc;

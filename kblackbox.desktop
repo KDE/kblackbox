@@ -41,6 +41,7 @@ GenericName[ta]=கறுப்புபெட்டி லாஜிக் வ�
 GenericName[uk]=Гра на логіку (чорний ящик)
 GenericName[wa]=Djeu d' lodjike noere boesse
 GenericName[x-test]=xxBlackbox Logic Gamexx
+GenericName[zh_CN]=黑箱逻辑游戏
 GenericName[zh_TW]=黑盒子智力遊戲
 Exec=kblackbox -caption "%c"
 Name=KBlackBox

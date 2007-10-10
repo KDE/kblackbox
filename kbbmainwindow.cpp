@@ -97,13 +97,14 @@ KBBMainWindow::KBBMainWindow()
 	KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
 	m_pauseAction = KStandardGameAction::pause(this, SLOT(pause(bool)), actionCollection());
 	QAction* tutorial = actionCollection()->addAction("game_tutorial");
-	tutorial->setText(i18n("Start tutorial"));
+	tutorial->setText(i18n("Start Tutorial"));
 	tutorial->setIcon(KIcon("footprint"));
+	tutorial->setToolTip(i18n("Start tutorial"));
 	tutorial->setWhatsThis(i18n("<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to learn the rules of the game. Start it if you do not know them!</qt>"));
 	connect(tutorial, SIGNAL(triggered(bool)), SLOT(startTutorial()));
 	KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 	QAction* sandbox = actionCollection()->addAction("game_sandbox");
-	sandbox->setText(i18n("New sandbox game"));
+	sandbox->setText(i18n("New Sandbox Game"));
 	sandbox->setToolTip(i18n("Start a new sandbox game"));
 	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not really fun and you should try to start a real game!</p></qt>"));
 	connect(sandbox, SIGNAL(triggered(bool)), SLOT(startSandbox()));

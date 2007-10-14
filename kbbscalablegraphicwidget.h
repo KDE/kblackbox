@@ -122,6 +122,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 * @brief Constructor
 		 */
 		explicit KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBThemeManager* themeManager, QAction* done);
+		~KBBScalableGraphicWidget();
 
 
 		void addBall(int boxPosition);

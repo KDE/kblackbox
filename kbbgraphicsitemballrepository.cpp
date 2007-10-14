@@ -55,6 +55,12 @@ KBBGraphicsItemBallRepository::KBBGraphicsItemBallRepository(KBBScalableGraphicW
 }
 
 
+KBBGraphicsItemBallRepository::~KBBGraphicsItemBallRepository()
+{
+	delete m_ballsOutside;
+}
+
+
 
 //
 // Public

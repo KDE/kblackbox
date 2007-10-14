@@ -131,6 +131,21 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 }
 
 
+KBBScalableGraphicWidget::~KBBScalableGraphicWidget()
+{
+	delete m_balls;
+	delete m_markersNothing;
+	delete m_ballsSolution;
+	delete m_ballsUnsure;
+	delete m_lasers;
+	delete m_rayResults;
+
+	delete m_ballRepository;
+
+	delete m_scene;
+}
+
+
 
 //
 // Public

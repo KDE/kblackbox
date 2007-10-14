@@ -212,6 +212,9 @@ KBBMainWindow::KBBMainWindow()
 KBBMainWindow::~KBBMainWindow()
 {
 	KBBPrefs::self()->writeConfig();
+
+	delete m_gameWidget;
+	delete m_themeManager;
 }
 
 

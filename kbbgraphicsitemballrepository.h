@@ -49,6 +49,7 @@ class KBBGraphicsItemBallRepository : public KBBGraphicsItem
 
 	public:
 		KBBGraphicsItemBallRepository(KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager);
+		~KBBGraphicsItemBallRepository();
 
 
 		int ballToTake() const;

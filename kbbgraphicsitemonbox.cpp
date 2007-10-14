@@ -127,6 +127,9 @@ void KBBGraphicsItemOnBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 
 void KBBGraphicsItemOnBox::mouseReleaseEvent (QGraphicsSceneMouseEvent* event)
 {
+	// Let's Qt handle the drag en drop
+	QGraphicsItem::mouseReleaseEvent(event);
+
 	qreal dropX = event->scenePos().x();
 	qreal dropY = event->scenePos().y();
 

@@ -206,6 +206,9 @@ KBBMainWindow::KBBMainWindow()
 	m_scoreDialog = new KScoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
 
 	setupGUI();
+
+	// start a new game
+	startGame(false);
 }
 
 

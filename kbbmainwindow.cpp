@@ -416,7 +416,7 @@ void KBBMainWindow::settingsDialog()
 	if (!KConfigDialog::showDialog("settings")) {
 		KConfigDialog *dialog = new KConfigDialog(this, "settings", KBBPrefs::self());
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
-		dialog->addPage(m_levelConfig, i18n("Custom game"), "games-difficult");
+		dialog->addPage(m_levelConfig, i18n("Custom game"), "games-config-custom");
 		connect(dialog, SIGNAL(settingsChanged(const QString&)), this, SLOT(settingsChanged()));
 		dialog->show();
 	}

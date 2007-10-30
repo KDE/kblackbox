@@ -36,19 +36,19 @@
 #include <QWidget>
 
 
-#include <kactioncollection.h>
-#include <kconfigdialog.h>
-#include <kgameclock.h>
-#include <kgamedifficulty.h>
-#include <kgamepopupitem.h>
-#include <kglobal.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <highscore/kscoredialog.h>
-#include <kstandarddirs.h>
-#include <kstandardgameaction.h>
-#include <kstatusbar.h>
-#include <ktoggleaction.h>
+#include <KActionCollection>
+#include <KConfigDialog>
+#include <KGameClock>
+#include <KGameDifficulty>
+#include <KGamePopupItem>
+#include <KGlobal>
+#include <KLocale>
+#include <KMessageBox>
+#include <KScoreDialog>
+#include <KStandardDirs>
+#include <KStandardGameAction>
+#include <KStatusBar>
+#include <KToggleAction>
 
 
 #include "kbbgamedoc.h"

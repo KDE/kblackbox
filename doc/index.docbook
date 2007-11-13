@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" ?>
+<?xml version="1.0" ?>
 <!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kblackbox;">
@@ -12,7 +12,7 @@
  
 <book lang="&language;"> <!-- do not change this! -->
 <bookinfo>
-	<title>The &kappname; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
+	<title>The &kblackbox; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
 <!-- List of immidiate authors begins here. -->
 <!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
@@ -46,7 +46,7 @@
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-	<para>This documentation describes the game of &kappname; version &kappversion;</para>
+	<para>This documentation describes the game of &kblackbox; version &kappversion;</para>
 </abstract>
  
 <!--List of relevan keywords-->
@@ -279,14 +279,14 @@ any.)</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Game</guimenu>
-<guimenuitem>Start tutorial</guimenuitem></menuchoice></term>
+<guimenuitem>Start Tutorial</guimenuitem></menuchoice></term>
 <listitem><para>Start the tutorial of the game. This is a user friendly way to learn the game rules.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Game</guimenu>
-<guimenuitem>New sandbox game</guimenuitem></menuchoice></term>
+<guimenuitem>New Sandbox Game</guimenuitem></menuchoice></term>
 <listitem><para>In this mode, the solution is displayed at the start of the game. This is useful to understand the game principles.</para></listitem>
 </varlistentry>
 
@@ -382,76 +382,72 @@ the balls.</para></listitem>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
- <answer><para>&kappname; loads directly into the game mode. So you can start playing right away.</para></answer>
+ <answer><para>&kblackbox; loads directly into the game mode. So you can start playing right away.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
- <answer><para>To pause &kappname; you can use <menuchoice>
+ <answer><para>To pause &kblackbox; you can use <menuchoice>
 <shortcut><keycap>P</keycap></shortcut>
 <guimenu>Game</guimenu>
 <guimenuitem>Pause</guimenuitem></menuchoice> on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
- <answer><para>&kappname; does not allow for theme changes at this time.</para></answer>
+ <answer><para>&kblackbox; does not allow for theme changes at this time.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have made a mistake. Can I undo? </para></question>
- <answer><para>&kappname; has no undo feature. Instead, the second <mousebutton>&LMB;</mousebutton> click on the ball will remove it from the game board. Also, you can drag and drop the balls instead of removing them.</para></answer>
+ <answer><para>&kblackbox; has no undo feature. Instead, the second &LMB; click on the ball will remove it from the game board. Also, you can drag and drop the balls instead of removing them.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>Can I use keyboard? </para></question>
- <answer><para>Yes. You can use the directional keys to control the cursor, <keycap>Eneter</keycap> to place and remove balls, and <keycap>Spacebar</keycap> to place 'empty' marks.</para></answer>
+ <answer><para>Yes. You can use the directional keys to control the cursor, &Enter; to place and remove balls, and <keycap>Spacebar</keycap> to place 'empty' marks.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I can't figure out what to do here! Are there hints? </para></question>
- <answer><para>&kappname; does not have a Hint feature. However, it features a tutorial mode. To access the tutorial mode use <menuchoice>
+ <question><para>I cannot figure out what to do here! Are there hints? </para></question>
+ <answer><para>&kblackbox; does not have a Hint feature. However, it features a tutorial mode. To access the tutorial mode use <menuchoice>
 <guimenu>Game</guimenu>
-<guimenuitem>Start tutorial</guimenuitem></menuchoice> on the menubar.</para></answer>
+<guimenuitem>Start Tutorial</guimenuitem></menuchoice> on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
-  <answer><para>&kappname; has no save feature at the moment.</para></answer>
+ <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
+  <answer><para>&kblackbox; has no save feature at the moment.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>Where are the high scores?</para></question>
- <answer><para>To access the highscores dialog use <menuchoice>
+ <answer><para>To access the high scores dialog use <menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
 </shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Show High Scores...</guimenuitem></menuchoice> on the mnubar.</para></answer>
+<guimenuitem>Show High Scores...</guimenuitem></menuchoice> on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>
- <answer><para>To access the &kappname; configuration dialog use <menuchoice>
+ <answer><para>To access the &kblackbox; configuration dialog use <menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Configure &kblackbox;...</guimenuitem>
 </menuchoice> on the menubar.</para></answer>
 </qandaentry>
 
 </qandaset>
 </chapter>
-  
+
 <chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
  
 <para>
-&kappname;  <!-- do not change this! -->
+&kblackbox;  <!-- do not change this! -->
 </para>
 <!--List all the copyright holders here-->
 <para>
-Program copyright [year from]-[year to] [first name] [last name] <email>[email address]</email>
+Program copyright 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; and 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail;
 </para>
 <para>
-Graphics copyright [year to] [first name] [last name] <email>[email address]</email>
+Documentation copyright by &Robert.Cimrman;. Updated and converted to Docbook
+for &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;. Reviewed by &Philip.Rodrigues; &Philip.Rodrigues.mail;
 </para>
-<para>
-Documentation copyright [year from]-[year to] [first name] [last name] <email>[email address]</email>
-</para>
+
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
- 
- 
-<!-- !!!do not change ANYTHING after this line!!!! -->
 &underFDL;
 &underGPL;
  

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+﻿<?xml version="1.0" ?>
 <!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "&kblackbox;">
@@ -73,19 +73,10 @@
 	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
  
 <!--Short game description starts here. 3-4 sentences (paragraphs)-->
-	<para>&kblackbox; is a superb :-) graphical desktop logical game, inspired by
-the <application>emacs</application> blackbox game. A major part of this help
-file is based on the original <application>emacs</application>
-help.</para>
+	<para>&kblackbox; is a nice logical game, inspired by the <application>emacs</application> blackbox game. A major part of this help file is based on the original <application>emacs</application> help.</para>
 
-<para>&kblackbox; is a game of hide and seek played on a grid of
-boxes. The computer has
-hidden several balls within this box. By shooting beams into the box and
-observing where they emerge it is possible to deduce the positions of
-the hidden balls.</para>
-<para>The fewer beams you use and the quicker you are to find the balls, the better
-(the lower) your score.</para>
-<para>See a description of the principles of black box games in Wikipedia: http://en.wikipedia.org/wiki/Black_Box_(game) .</para>
+<para>&kblackbox; is a game of hide and seek played on a grid of boxes. The computer has hidden several balls within this box. By shooting beams into the box and observing where they emerge it is possible to deduce the positions of the hidden balls.</para>
+<para>The fewer beams you use and the quicker you are to find the balls, the better (the lower) your score.</para>
 </chapter>
  
 <chapter id="howto"><title>How to play</title> <!-- do not change this! -->
@@ -93,34 +84,26 @@ the hidden balls.</para>
 	<note><title>Objective:</title><para>Use laser beams to deduce the placement of the atomic particles inside the black box.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 
-<para>Using lasers and placing balls and markers deduce the position of the hideden atoms inside the black box.</para>
-<para>The cursor can be moved around the box with the
-standard cursor movement keys or the mouse. Switching of lasers or
-marking of black boxes is done with the &LMB;, or by pressing the
-<keycap>Return</keycap> or &Enter; key.</para>
+<para>Use lasers and plae balls and markers on the game board to deduce the position of the hideden atoms inside the black box.</para>
+<para>
+	The game starts as soon as you use the first laser. Before that, the time is not running and no point will be count for the score.
+</para>
+<para>The cursor can be moved around the box with the standard cursor movement keys or the mouse. Switching of lasers or marking of black boxes is done with the &LMB;, or by pressing the <keycap>Return</keycap> or &Enter; key.</para>
 
 <para>You can also drag and drop the balls and the markers with the mouse.</para>
 
-<para>You can mark the fields where you think a ball cannot be, too. Just press
-the &RMB;. It often helps you to find an area where a ball could possibly
+<para>You can mark the fields where you think a ball cannot be, too. Just press the &RMB;. It often helps you to find an area where a ball could possibly
 be. To clear any marks, press the same key or mouse button again.</para>
 
-<para>End of the game</para>
-<para>When you think the configuration of balls you have placed is
-correct, press the "Done!" button. You
-will be informed whether you are correct or not, and be given your
-score.
+<para>When you think the configuration of balls you have placed is correct, press the <guibutton>Done!</guibutton> button. You
+will be informed whether you are correct or not, and be given your score.
 </para>
 <para>
 	If you placed any balls incorrectly, the right solution will be displayed.
 </para>
 
-<para>Score</para>
 <para>
-	The score increases with the time (1 point per second) and with the use of lasers: 3 points  if the laser beam hits a ball or exits at the entry point and 9 points if it exists at another entry point.  If you make a mistake, the score is set at the end of the game to 999, which is the maximum score.
-</para>
-<para>
-	The game starts as soon as you use the first laser. Before that, the time is not running and no point will be count for the score.
+	The score increases with the time (1 point per second) and with the use of lasers: 3 points if the laser beam hits a ball or exits at the entry point and 9 points if it exists at another entry point.  If you make a mistake, the score is set at the end of the game to 999, which is the maximum score.
 </para>
 </chapter>
  
@@ -128,18 +111,14 @@ score.
 	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
 	<sect1 id="game-rules"><title>Game Rules</title>
 
-<para>You have to find balls hidden in the black box. Your means are
-limited - you can just fire lasers which are around the box. There are
-three possible outcomes for each beam you send into the box: </para>
+<para>You have to find balls hidden in the black box. Your means are limited - you can just fire lasers which are around the box. There are three possible outcomes for each beam you send into the box: </para>
 
 <anchor id="detour"/>
 <variablelist>
 
 <varlistentry>
 <term>Detour</term> 
-<listitem><para>The beam is deflected and emerges somewhere other than
-where you sent it in. On the playfield, detours are denoted by matching
-pairs of numbers - one where the beam went in, and the other where it
+<listitem><para>The beam is deflected and emerges somewhere other than where you sent it in. On the playfield, detours are denoted by matching pairs of numbers - one where the beam went in, and the other where it
 came out.</para></listitem>
 </varlistentry>
 
@@ -227,8 +206,7 @@ example of a reflection.</para>
 
 </sect1>
 </chapter>
- 
- 
+  
 <chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
 <!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist> and <varlistentry>. Split the chapter into sections using <sect1(2,3)> for better viewing.-->
  <sect1 id="game-board-descritpion">
@@ -359,7 +337,7 @@ the balls.</para></listitem>
 
 <sect1 id="settings-menu">
 <title>The <guimenu>Settings</guimenu> Menu</title>
-<para>Not: we discribe here only the menu items that are game specific and skip KDE standard menu items.</para>
+<para>Not: we discribe here only the menu items that are game specific and skip &kde; standard menu items.</para>
 <variablelist>
 <varlistentry>
 <term><menuchoice>
@@ -389,19 +367,18 @@ the balls.</para></listitem>
 &help.menu.documentation;
 </sect1>
 </chapter>
- 
- 
+  
 <chapter id="faq"><title>Frequently asked questions</title> <!-- do not change this! -->
 <!--This chapter is for frequently asked questions. Please use <qandaset> <qandaentry> only!-->
 <qandaset>
 <!--Following is a standard list of FAQ questions.-->
 <qandaentry>
 <question><para>Who made this game?</para></question>
- <answer><para>The kdegames team. You can find their website here.</para></answer>
+ <answer><para>The kdegames team. You can find their website <ulink url="http://games.kde.org">here</ulink>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>Where can I get cheatcodes? </para></question>
- <answer><para>You can't get cheatcodes for KDE games.</para></answer>
+ <answer><para>You cannot get cheatcodes for &kde; games.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
@@ -437,7 +414,7 @@ the balls.</para></listitem>
   <answer><para>&kappname; has no save feature at the moment.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>Where are the highscores?</para></question>
+ <question><para>Where are the high scores?</para></question>
  <answer><para>To access the highscores dialog use <menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
@@ -454,12 +431,7 @@ the balls.</para></listitem>
 
 </qandaset>
 </chapter>
- 
-<chapter id="configuration"><title>Game Configuration</title> <!-- do not change this! -->
-<!--This section describes configuration GUI. If your game is configured using menubar exclusively, please remove this section.-->
-<para>This section describes configuration GUI.</para>
-</chapter>
- 
+  
 <chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
  
@@ -484,8 +456,7 @@ Documentation copyright [year from]-[year to] [first name] [last name] <email>[e
 &underGPL;
  
 </chapter>
- 
- 
+  
 <appendix id="installation">
 <title>Installation</title>
  

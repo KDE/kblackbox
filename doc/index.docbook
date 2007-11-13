@@ -1,19 +1,20 @@
 <?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
- <!ENTITY kappname "&kblackbox;">
- <!ENTITY package "kdegames">
- <!ENTITY % addindex "IGNORE">
- <!ENTITY % English "INCLUDE" > <!-- change language only here -->
-
-	<!ENTITY Nicolas.Roffet '<personname><firstname>Nicolas</firstname><surname>Roffet</surname></personname>'>
-	<!ENTITY Nicolas.Roffet.mail '<email>nicolas-kde@roffet.com</email>'>
+  <!ENTITY kappname "&kblackbox;">
+  <!ENTITY kappversion "0.4.0"><!--Applicaion version. Use this variable everywhere it's needed.-->
+  <!ENTITY docversion "1.0"><!--Document version. Use this variable everywhere it's needed.-->
+  <!ENTITY docupdate "2007-08-16"><!--Document version. Use this variable everywhere it's needed.-->
+  <!ENTITY package "kdegames">  <!-- do not change this! -->
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"> <!-- do not change this! -->
 ]>
-
-<book lang="&language;">
-
+ 
+<book lang="&language;"> <!-- do not change this! -->
 <bookinfo>
-<title>&kblackbox; Game Manual</title>
-    
+	<title>The &kappname; Handbook</title> <!-- This is the title of the docbook. Live as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
 <author>
 &Nicolas.Roffet; &Nicolas.Roffet.mail;
@@ -27,25 +28,8 @@
 &Philip.Rodrigues; &Philip.Rodrigues.mail;
 </author>
 
-<othercredit role="developer">
-&Nicolas.Roffet; &Nicolas.Roffet.mail;
-<!-- Uncomment this when xslt bug is fixed!
-<contrib>Developer</contrib>
--->
-</othercredit>
-
-<othercredit role="developer">
-&Robert.Cimrman; &Robert.Cimrman.mail;
-<!-- Uncomment this when xslt bug is fixed!
-<contrib>Developer</contrib>
--->
-</othercredit>
-
 <othercredit role="reviewer">
 &Lauri.Watts; &Lauri.Watts.mail;
-<!-- Uncomment this when xslt bug is fixed!
-<contrib>Reviewer</contrib>
--->
 </othercredit>
 
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -56,39 +40,40 @@
 <year>2007</year>
 <holder>&Nicolas.Roffet;</holder>
 </copyright>
-
-<copyright>
-<year>2001-2003</year>
-<holder>&Philip.Rodrigues;</holder>
-</copyright>
-
-<copyright>
-<year>1998</year><year>2000</year>
-<holder>&Robert.Cimrman;</holder>
-</copyright>
-
-<legalnotice>&FDLNotice;</legalnotice>
-
-<date>2007-08-16</date>
-<releaseinfo>0.4.0</releaseinfo>
-
-<abstract><para>&kblackbox;: find the balls hidden in the black box by shooting laser beams!</para></abstract>
-
+ 
+<date>&docupdate;</date><!-- Date of (re)writing, ro update. Use the variable definitions within header to change this value.-->
+<releaseinfo>&docversion;</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para>This documentation describes the game of &kappname; version &kappversion;</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
 <keywordset>
-<keyword>KDE</keyword>
-<keyword>KBlackBox</keyword>
-<keyword>kdegames</keyword>
-<keyword>blackbox</keyword>
-<keyword>game</keyword>
-<keyword>Black box</keyword>
+	<keyword>KDE</keyword> <!-- do not change this! -->
+	<keyword>kdegames</keyword> <!-- do not change this! -->
+	<keyword>game</keyword> <!-- do not change this! -->
+	<keyword>Kblackbox</keyword>
+	<keyword>puzzle</keyword>
+	<keyword>board</keyword>
+	<keyword>atoms</keyword>
+	<keyword>beams</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword>one player</keyword>
+<!--All other relevant keywords-->
+	<keyword>hidden atoms</keyword>
+	<keyword>find</keyword>
+	<keyword>search</keyword>
 </keywordset>
-
 </bookinfo>
-
-<chapter id="what-is-kblackbox">
-<title>What is &kblackbox;?</title>
-
-<para>&kblackbox; is a superb :-) graphical desktop logical game, inspired by
+<!--Content begins here: -->
+<chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
+	<note><title>Gametype:</title><para>Puzzle, Board</para></note><!-- Game genre. use as many as necessary.Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para>&kblackbox; is a superb :-) graphical desktop logical game, inspired by
 the <application>emacs</application> blackbox game. A major part of this help
 file is based on the original <application>emacs</application>
 help.</para>
@@ -102,54 +87,13 @@ the hidden balls.</para>
 (the lower) your score.</para>
 <para>See a description of the principles of black box games in Wikipedia: http://en.wikipedia.org/wiki/Black_Box_(game) .</para>
 </chapter>
+ 
+<chapter id="howto"><title>How to play</title> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note><title>Objective:</title><para>Use laser beams to deduce the placement of the atomic particles inside the black box.</para></note><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 
-<chapter id="game-description">
-<title>Game Description</title>
-
-<para>In the first part of this section a description of the game board
-will be given.  The second part deals with user interaction with the
-game board and finally in the third part the actual game rules are
-explained.</para>
-
-<sect1 id="game-board-descritpion">
-<title>Game Board Description</title>
-
-<para>The following types of field are found on the game board: </para>
-
-<variablelist>
-<varlistentry>
-<term><interface>The big black box in the middle</interface></term>
-<listitem><para>Here you must mark the positions you think
-a ball is in.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><interface>Lasers around the box</interface></term>
-<listitem><para>The lasers are shooting beams of light when
-switched on. Then, they disappear and are replaced by an information about the interactions of the laser beam with the balls in the black box.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><interface>Balls</interface></term>
-<listitem><para><quote>There must be one there!</quote> you think.  These mark
-where you suspect a ball is placed in the black box.</para>
-<para>At the end od the game, the right and wrong positions of the balls are also marked with "balls".</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><interface>Markers for "free position"</interface></term>
-<listitem><para>You can use them to mark some positions where you are sure there is no ball.</para></listitem>
-</varlistentry>
-</variablelist>
-
-</sect1>
-
-<sect1 id="user-interaction">
-<title>User Interaction</title>
-
-<sect2>
-<title>Using lasers and placing balls and markers</title>
+<para>Using lasers and placing balls and markers deduce the position of the hideden atoms inside the black box.</para>
 <para>The cursor can be moved around the box with the
 standard cursor movement keys or the mouse. Switching of lasers or
 marking of black boxes is done with the &LMB;, or by pressing the
@@ -160,10 +104,8 @@ marking of black boxes is done with the &LMB;, or by pressing the
 <para>You can mark the fields where you think a ball cannot be, too. Just press
 the &RMB;. It often helps you to find an area where a ball could possibly
 be. To clear any marks, press the same key or mouse button again.</para>
-</sect2>
 
-<sect2>
-<title>End of the game</title>
+<para>End of the game</para>
 <para>When you think the configuration of balls you have placed is
 correct, press the "Done!" button. You
 will be informed whether you are correct or not, and be given your
@@ -172,21 +114,19 @@ score.
 <para>
 	If you placed any balls incorrectly, the right solution will be displayed.
 </para>
-</sect2>
 
-<sect2>
-<title>Score</title>
+<para>Score</para>
 <para>
 	The score increases with the time (1 point per second) and with the use of lasers: 3 points  if the laser beam hits a ball or exits at the entry point and 9 points if it exists at another entry point.  If you make a mistake, the score is set at the end of the game to 999, which is the maximum score.
 </para>
 <para>
 	The game starts as soon as you use the first laser. Before that, the time is not running and no point will be count for the score.
 </para>
-</sect2>
-</sect1>
-
-<sect1 id="game-rules">
-<title>Game Rules</title>
+</chapter>
+ 
+<chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"><title>Game Rules</title>
 
 <para>You have to find balls hidden in the black box. Your means are
 limited - you can just fire lasers which are around the box. There are
@@ -287,11 +227,43 @@ example of a reflection.</para>
 
 </sect1>
 </chapter>
+ 
+ 
+<chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist> and <varlistentry>. Split the chapter into sections using <sect1(2,3)> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title>Game Board Description</title>
 
+<para>The following types of field are found on the game board: </para>
 
+<variablelist>
+<varlistentry>
+<term><interface>The big black box in the middle</interface></term>
+<listitem><para>Here you must mark the positions you think
+a ball is in.</para></listitem>
+</varlistentry>
 
-<chapter id="gui-description">
-<title>&GUI; description</title>
+<varlistentry>
+<term><interface>Lasers around the box</interface></term>
+<listitem><para>The lasers are shooting beams of light when
+switched on. Then, they disappear and are replaced by an information about the interactions of the laser beam with the balls in the black box.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><interface>Balls</interface></term>
+<listitem><para><quote>There must be one there!</quote> you think.  These mark
+where you suspect a ball is placed in the black box.</para>
+<para>At the end od the game, the right and wrong positions of the balls are also marked with "balls".</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><interface>Markers for "free position"</interface></term>
+<listitem><para>You can use them to mark some positions where you are sure there is no ball.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
 
 <sect1 id="game-menu">
 <title>The <guimenu>Game</guimenu> Menu</title>
@@ -412,54 +384,138 @@ the balls.</para></listitem>
 
 </sect1>
 
-<sect1 id="help">
-<title>The <guimenu>Help</guimenu> Menu</title>
+<sect1 id="help"><!--This is a standard Help menubar entry. Only change if needed.-->
+<title>The <guimenuitem>Help</guimenuitem> Menu</title>
 &help.menu.documentation;
 </sect1>
-
-
-<sect1 id="toolbar">
-<title>The Toolbar</title>
-<para>The &kblackbox; toolbar offers quick access to the most commonly used
-&kblackbox; functions.</para>
-</sect1>
 </chapter>
+ 
+ 
+<chapter id="faq"><title>Frequently asked questions</title> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset> <qandaentry> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+<question><para>Who made this game?</para></question>
+ <answer><para>The kdegames team. You can find their website here.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Where can I get cheatcodes? </para></question>
+ <answer><para>You can't get cheatcodes for KDE games.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I start a new game? </para></question>
+ <answer><para>&kappname; loads directly into the game mode. So you can start playing right away.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I pause the game? </para></question>
+ <answer><para>To pause &kappname; you can use <menuchoice>
+<shortcut><keycap>P</keycap></shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Pause</guimenuitem></menuchoice> on the menubar.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the way this game looks. Can I? </para></question>
+ <answer><para>&kappname; does not allow for theme changes at this time.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have made a mistake. Can I undo? </para></question>
+ <answer><para>&kappname; has no undo feature. Instead, the second <mousebutton>&LMB;</mousebutton> click on the ball will remove it from the game board. Also, you can drag and drop the balls instead of removing them.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Can I use keyboard? </para></question>
+ <answer><para>Yes. You can use the directional keys to control the cursor, <keycap>Eneter</keycap> to place and remove balls, and <keycap>Spacebar</keycap> to place 'empty' marks.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I can't figure out what to do here! Are there hints? </para></question>
+ <answer><para>&kappname; does not have a Hint feature. However, it features a tutorial mode. To access the tutorial mode use <menuchoice>
+<guimenu>Game</guimenu>
+<guimenuitem>Start tutorial</guimenuitem></menuchoice> on the menubar.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
+  <answer><para>&kappname; has no save feature at the moment.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Where are the highscores?</para></question>
+ <answer><para>To access the highscores dialog use <menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Show High Scores...</guimenuitem></menuchoice> on the mnubar.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the game configuration. Where do I go? </para></question>
+ <answer><para>To access the &kappname; configuration dialog use <menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Configure &kblackbox;...</guimenuitem>
+</menuchoice> on the menubar.</para></answer>
+</qandaentry>
 
-
-<chapter id="credits-and-license">
-<title>Credits and License</title>
-
-<para>&kblackbox;</para>
-
-<para>Program: copyright 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail;, copyright 1998-2000 &Robert.Cimrman; &Robert.Cimrman.mail;</para>
-
-<para>Documentation by &Robert.Cimrman;.  Updated and converted to Docbook
-for &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;.  Updated for &kde; 4.0 by &Nicolas.Roffet; &Nicolas.Roffet.mail;.  Former maintainer &Philip.Rodrigues; &Philip.Rodrigues.mail;
+</qandaset>
+</chapter>
+ 
+<chapter id="configuration"><title>Game Configuration</title> <!-- do not change this! -->
+<!--This section describes configuration GUI. If your game is configured using menubar exclusively, please remove this section.-->
+<para>This section describes configuration GUI.</para>
+</chapter>
+ 
+<chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para>
+&kappname;  <!-- do not change this! -->
 </para>
-
+<!--List all the copyright holders here-->
+<para>
+Program copyright [year from]-[year to] [first name] [last name] <email>[email address]</email>
+</para>
+<para>
+Graphics copyright [year to] [first name] [last name] <email>[email address]</email>
+</para>
+<para>
+Documentation copyright [year from]-[year to] [first name] [last name] <email>[email address]</email>
+</para>
 <!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-
+ 
+ 
+<!-- !!!do not change ANYTHING after this line!!!! -->
 &underFDL;
 &underGPL;
-
+ 
 </chapter>
-
-
+ 
+ 
 <appendix id="installation">
 <title>Installation</title>
+ 
 &install.intro.documentation;
-<sect1 id="compilation">
+ 
+ 
+<sect1 id="Compilation">
 <title>Compilation and Installation</title>
+ 
 &install.compile.documentation;
+ 
 </sect1>
 </appendix>
-
+ 
+&documentation.index; 
 </book>
-
 <!--
 Local Variables:
 mode: sgml
-sgml-omittag: nil
-sgml-shorttag: t
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
 End:
 -->

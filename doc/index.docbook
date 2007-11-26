@@ -57,12 +57,12 @@
 	<keyword>Kblackbox</keyword>
 	<keyword>puzzle</keyword>
 	<keyword>board</keyword>
-	<keyword>atoms</keyword>
+	<keyword>balls</keyword>
 	<keyword>beams</keyword>
 <!--Number of possible players. It can be: One, Two,..., Multiplayer-->
 	<keyword>one player</keyword>
 <!--All other relevant keywords-->
-	<keyword>hidden atoms</keyword>
+	<keyword>hidden balls</keyword>
 	<keyword>find</keyword>
 	<keyword>search</keyword>
 </keywordset>
@@ -81,10 +81,10 @@
  
 <chapter id="howto"><title>How to play</title> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
-	<note><title>Objective:</title><para>Use laser beams to deduce the placement of the atomic particles inside the black box.</para></note><!--Describe the objective of the game.-->
+	<note><title>Objective:</title><para>Use laser beams to deduce the placement of the balls inside the black box.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 
-<para>Use lasers and plae balls and markers on the game board to deduce the position of the hideden atoms inside the black box.</para>
+<para>Use lasers and place balls and markers on the game board to deduce the position of the hidden balls inside the black box.</para>
 <para>
 	The game starts as soon as you use the first laser. Before that, the time is not running and no point will be count for the score.
 </para>
@@ -231,7 +231,7 @@ switched on. Then, they disappear and are replaced by an information about the i
 <term><interface>Balls</interface></term>
 <listitem><para><quote>There must be one there!</quote> you think.  These mark
 where you suspect a ball is placed in the black box.</para>
-<para>At the end od the game, the right and wrong positions of the balls are also marked with "balls".</para>
+<para>At the end of the game, the right and wrong positions of the balls are also marked with "balls".</para>
 </listitem>
 </varlistentry>
 

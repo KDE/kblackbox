@@ -337,7 +337,7 @@ the balls.</para></listitem>
 
 <sect1 id="settings-menu">
 <title>The <guimenu>Settings</guimenu> Menu</title>
-<para>Note: we discribe here only the menu items that are game specific and skip &kde; standard menu items.</para>
+<para>Note: we describe here only the menu items that are game specific and skip &kde; standard menu items.</para>
 <variablelist>
 <varlistentry>
 <term><menuchoice>

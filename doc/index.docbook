@@ -79,7 +79,7 @@
 <para>The fewer beams you use and the quicker you are to find the balls, the better (the lower) your score.</para>
 </chapter>
  
-<chapter id="howto"><title>How to play</title> <!-- do not change this! -->
+<chapter id="howto"><title>How to Play</title> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
 	<note><title>Objective:</title><para>Use laser beams to deduce the placement of the balls inside the black box.</para></note><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
@@ -341,7 +341,7 @@ the balls.</para></listitem>
 <variablelist>
 <varlistentry>
 <term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Difficulty</guimenuitem>
+<guimenu>Settings</guimenu><guisubmenu>Difficulty</guisubmenu>
 </menuchoice>
 </term>
 <listitem>

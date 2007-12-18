@@ -31,11 +31,11 @@ set(kblackbox_SRCS
 kde4_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
 set(kblackbox_icons
-	hi16-app-kblackbox.png
-	hi32-app-kblackbox.png
-	hi48-app-kblackbox.png
-	hi64-app-kblackbox.png
-	hi128-app-kblackbox.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi16-app-kblackbox.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi32-app-kblackbox.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi48-app-kblackbox.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi64-app-kblackbox.png
+	${CMAKE_CURRENT_SOURCE_DIR}/hi128-app-kblackbox.png
 )
 kde4_add_win32_app_icon(kblackbox_SRCS ${kblackbox_icons})
 kde4_add_executable(kblackbox ${kblackbox_SRCS})

@@ -1,6 +1,7 @@
 [Desktop Entry]
 GenericName=Blackbox Logic Game
 GenericName[be]=Лагічная гульня з чорнай скрыняй
+GenericName[bn]=যুক্তির খেলা ব্ল্যাকবক্স
 GenericName[ca]=Joc de lògica Blackbox
 GenericName[cs]=Logická hra s černou skříňkou
 GenericName[cy]=Gêm Resymeg Blackbox
@@ -36,6 +37,7 @@ GenericName[pt]=Jogo de Lógica Caixa Preta
 GenericName[pt_BR]=Jogo lógico de Caixa Preta
 GenericName[ru]=Логическая игра с чёрным ящиком
 GenericName[se]=Logihkkaspeallu Blackbox
+GenericName[sk]=Blackbox logická hra
 GenericName[sl]=Logična igra Blackbox
 GenericName[sr]=Логичка игра црне кутије
 GenericName[sr@latin]=Logička igra crne kutije
@@ -50,6 +52,7 @@ Exec=kblackbox -caption "%c"
 Name=KBlackBox
 Name[af]=Kblackbox
 Name[be]=Чорная скрыня
+Name[bn]=কে-ব্ল্যাকবক্স
 Name[hu]=Fekete doboz
 Name[is]=Svarti kassinn
 Name[ne]=केडीई कालोबाकस

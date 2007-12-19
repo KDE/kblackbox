@@ -31,7 +31,6 @@
 
 
 
-#include <QWidget>
 
 
 #include "kbbballsonboard.h"

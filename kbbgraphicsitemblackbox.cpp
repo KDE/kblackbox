@@ -36,7 +36,6 @@
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
-#include <QPen>
 
 
 #include "kbbgraphicsitem.h"

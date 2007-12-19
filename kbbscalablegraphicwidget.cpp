@@ -32,12 +32,9 @@
 
 
 #include <QAction>
-#include <QColor>
 #include <QFont>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QLayout>
-#include <QPalette>
 #include <QResizeEvent>
 
 

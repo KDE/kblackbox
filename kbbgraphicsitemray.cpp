@@ -30,7 +30,6 @@
 
 #include "kbbgraphicsitemray.h"
 
-#include <QColor>
 #include <QGraphicsScene>
 #include <QList>
 #include <QPainterPath>

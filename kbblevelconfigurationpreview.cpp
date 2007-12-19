@@ -12,7 +12,6 @@ You should have received a copy of the GNU Library General Public License along 
 
 
 
-#include <QGridLayout>
 
 
 #include <krandomsequence.h>

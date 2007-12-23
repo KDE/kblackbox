@@ -558,8 +558,10 @@ void KBBScalableGraphicWidget::switchMarker()
 		setBallUnsure(m_cursor->boxPosition(), true);
 	else if (m_markersNothing->containsVisible(m_cursor->boxPosition()))
 		removeMarkerNothing(m_cursor->boxPosition());
-	else
+        else{
+		removeBall(m_cursor->boxPosition());
 		addMarkerNothing(m_cursor->boxPosition());
+        }
 }
 
 

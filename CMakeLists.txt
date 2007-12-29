@@ -39,7 +39,7 @@ set(kblackbox_icons
 )
 kde4_add_win32_app_icon(kblackbox_SRCS ${kblackbox_icons})
 kde4_add_executable(kblackbox ${kblackbox_SRCS})
-target_link_libraries(kblackbox ${KDE4_KDEUI_LIBS} ${QT_QT3SUPPORT_LIBRARY} kdegames)
+target_link_libraries(kblackbox ${KDE4_KDEUI_LIBS} kdegames)
 
 
 install(TARGETS kblackbox  DESTINATION ${BIN_INSTALL_DIR})

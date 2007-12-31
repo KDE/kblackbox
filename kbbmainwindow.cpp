@@ -114,7 +114,7 @@ KBBMainWindow::KBBMainWindow()
 	m_doneAction = actionCollection()->addAction("move_done");
 	m_doneAction->setText(i18n("Done!"));
 	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the right possitions of the balls and see how they interact with laser beams, you should use the lasers that are disposed around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is possible to click here only if you placed the right number of balls.</p></qt>"));
-	m_doneAction->setIcon(KIcon("ok"));
+	m_doneAction->setIcon(KIcon("dialog-ok"));
 	connect(m_doneAction, SIGNAL(triggered(bool)), SLOT(done()));
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
 	m_solveAction->setToolTip(i18n("Give up the game"));

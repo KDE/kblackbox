@@ -30,14 +30,7 @@ set(kblackbox_SRCS
 
 kde4_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
-set(kblackbox_icons
-	${CMAKE_CURRENT_SOURCE_DIR}/hi16-app-kblackbox.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi32-app-kblackbox.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi48-app-kblackbox.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi64-app-kblackbox.png
-	${CMAKE_CURRENT_SOURCE_DIR}/hi128-app-kblackbox.png
-)
-kde4_add_app_icon(kblackbox_SRCS ${kblackbox_icons})
+#kde4_add_app_icon(kblackbox_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kblackbox.png")
 kde4_add_executable(kblackbox ${kblackbox_SRCS})
 target_link_libraries(kblackbox ${KDE4_KDEUI_LIBS} kdegames)
 

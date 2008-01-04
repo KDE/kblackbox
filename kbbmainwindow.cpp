@@ -182,13 +182,13 @@ KBBMainWindow::KBBMainWindow()
 	addAction(action);
 	
 	action = actionCollection()->addAction("switch_ball");
-	action->setText(i18n("Switch ball or shoot laser"));
+	action->setText(i18n("Switch Ball or Shoot Laser"));
 	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardEnter()));
 	action->setShortcut(Qt::Key_Return);
 	addAction(action);
 	
 	action = actionCollection()->addAction("switch_marker");
-	action->setText(i18n("Switch marker"));
+	action->setText(i18n("Switch Marker"));
 	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardSpace()));
 	action->setShortcut(Qt::Key_Space);
 	addAction(action);
@@ -416,7 +416,7 @@ void KBBMainWindow::settingsDialog()
 	if (!KConfigDialog::showDialog("settings")) {
 		KConfigDialog *dialog = new KConfigDialog(this, "settings", KBBPrefs::self());
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
-		dialog->addPage(m_levelConfig, i18n("Custom game"), "games-config-custom");
+		dialog->addPage(m_levelConfig, i18n("Custom Game"), "games-config-custom");
 		connect(dialog, SIGNAL(settingsChanged(const QString&)), this, SLOT(settingsChanged()));
 		dialog->show();
 	}

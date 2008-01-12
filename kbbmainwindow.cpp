@@ -418,6 +418,7 @@ void KBBMainWindow::settingsDialog()
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
 		dialog->addPage(m_levelConfig, i18n("Custom game"), "games-config-custom");
 		connect(dialog, SIGNAL(settingsChanged(const QString&)), this, SLOT(settingsChanged()));
+                dialog->setHelp(QString(), "kblackbox");
 		dialog->show();
 	}
 }

@@ -69,7 +69,6 @@ Name[uk]=Чорна скринька
 Name[x-test]=xxKBlackBoxxx
 Name[zh_TW]=KBlackBox 黑盒子
 Icon=kblackbox
-Path=
 X-DocPath=kblackbox/index.html
 Type=Application
 Terminal=false

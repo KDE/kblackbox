@@ -136,7 +136,7 @@ void KBBGraphicsItemSet::remove(int position)
 }
 
 
-void KBBGraphicsItemSet::setVisible(int position, const bool visible)
+void KBBGraphicsItemSet::setVisible(const int position, const bool visible)
 {
 	int i = indexOf(position);
 

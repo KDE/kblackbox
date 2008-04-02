@@ -79,7 +79,7 @@ KBBMainWindow::KBBMainWindow()
 	statusBar()->insertPermanentItem("", SRUN, 1);
 	statusBar()->insertPermanentItem(i18n("Time: 00:00"), STIME, 1);
 	statusBar()->insertPermanentItem(i18n("Size: 00 x 00"), SSIZE);
-	statusBar()->setItemAlignment(SRUN, Qt::AlignLeft & Qt::AlignVCenter);
+	statusBar()->setItemAlignment(SRUN, Qt::AlignLeft | Qt::AlignVCenter);
 
 
 	// Difficulty

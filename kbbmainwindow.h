@@ -35,7 +35,6 @@ class QWidget;
 
 class KGameClock;
 #include <kgamedifficulty.h>
-class KScoreDialog;
 #include <kxmlguiwindow.h>
 
 class KBBGameDoc;
@@ -183,7 +182,6 @@ class KBBMainWindow : public KXmlGuiWindow
 		int m_rows;
 		bool m_boardEnabled;
 		bool m_sandboxMode;
-		KScoreDialog* m_scoreDialog;
 		KBBThemeManager* m_themeManager;
 		KBBTutorial* m_tutorial;
 };

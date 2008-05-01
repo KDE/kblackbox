@@ -202,9 +202,7 @@ KBBMainWindow::KBBMainWindow()
 	levelChanged((KGameDifficulty::standardLevel) (KBBPrefs::level()));
 	KGameDifficulty::setLevel(m_level);
 
-	// Highscores
-	m_scoreDialog = new KScoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
-
+	
 	setupGUI();
 
 	// start a new game
@@ -357,12 +355,14 @@ void KBBMainWindow::done()
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
 
 		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (KGameDifficulty::level() != KGameDifficulty::Configurable) && (score<KBBGameDoc::SCORE_LOST)) {
-			m_scoreDialog->setConfigGroup(KGameDifficulty::levelString());
+			KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
+			scoreDialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings());
+			scoreDialog.setConfigGroup(KGameDifficulty::localizedLevelString());
 	
 			KScoreDialog::FieldInfo scoreInfo;
 			scoreInfo[KScoreDialog::Score].setNum(score);
-			if(m_scoreDialog->addScore(scoreInfo, KScoreDialog::LessIsMore) != 0)
-				m_scoreDialog->exec();
+			if(scoreDialog.addScore(scoreInfo, KScoreDialog::LessIsMore) != 0)
+				scoreDialog.exec();
 		}
 
 		m_gameWidget->popupText(s);
@@ -426,8 +426,10 @@ void KBBMainWindow::settingsDialog()
 
 void KBBMainWindow::showHighscores()
 {
-	m_scoreDialog->setConfigGroup( KGameDifficulty::levelString() );
-	m_scoreDialog->exec();
+	KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
+	scoreDialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings());
+	scoreDialog.setConfigGroup( KGameDifficulty::localizedLevelString() );
+	scoreDialog.exec();
 }
 
 

@@ -35,7 +35,7 @@ kde4_add_executable(kblackbox ${kblackbox_SRCS})
 target_link_libraries(kblackbox ${KDE4_KDEUI_LIBS} kdegames)
 
 
-install(TARGETS kblackbox  DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kblackbox  ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES kblackbox.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR})
 install(FILES kblackboxui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kblackbox)
 

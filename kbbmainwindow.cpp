@@ -381,7 +381,7 @@ void KBBMainWindow::pause(bool state)
 {
 	if (state) {
 		m_gameClock->pause();
-		m_gameWidget->popupText(i18n("Game paused.<br />Press \"%1\" to resume.", m_pauseAction->shortcut().toString()), 0);
+		m_gameWidget->popupText(i18n("Game paused.<br />Press \"%1\" to resume.", m_pauseAction->shortcut().toString(QKeySequence::NativeText)), 0);
 	} else {
 		m_gameClock->resume();
 		m_gameWidget->popupText("");

@@ -68,7 +68,7 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBB
 // Public
 //
 
-const int KBBGraphicsItemLaser::position ()
+int KBBGraphicsItemLaser::position ()
 {
 	return m_borderPosition;
 }

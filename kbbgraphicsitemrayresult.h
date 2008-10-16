@@ -79,7 +79,7 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		/**
 		 * @brief Get the border position
 		 */
-		const int position();
+		int position();
 
 		/**
 		 * @brief Define the opposite "ray result" item

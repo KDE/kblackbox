@@ -52,7 +52,7 @@ class KBBGraphicsItemBorder
 		void centerCoordinate(int borderPosition, float &centerX, float &centerY, float offset);
 		float centerX() const;
 		float centerY() const;
-		const int rotation();
+		int rotation();
 		void setBorderPosition(int borderPosition);
 
 

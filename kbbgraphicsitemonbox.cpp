@@ -68,7 +68,7 @@ KBBGraphicsItemOnBox::KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType it
 // Public
 //
 
-const int KBBGraphicsItemOnBox::position ()
+int KBBGraphicsItemOnBox::position ()
 {
 	return m_boxPosition;
 }

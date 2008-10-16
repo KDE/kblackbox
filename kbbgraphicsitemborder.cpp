@@ -110,7 +110,7 @@ float KBBGraphicsItemBorder::centerY() const
 }
 
 
-const int KBBGraphicsItemBorder::rotation()
+int KBBGraphicsItemBorder::rotation()
 {
 	if (m_borderPosition<m_columns) {
 		return 0;

@@ -103,7 +103,7 @@ void KBBBallsOnBoard::borderPositionToAbsolutePosition(int borderPosition, int p
 }
 
 
-const int KBBBallsOnBoard::columns()
+int KBBBallsOnBoard::columns()
 {
 	return m_columns;
 }
@@ -190,7 +190,7 @@ void KBBBallsOnBoard::remove(int boxPosition)
 }
 
 
-const int KBBBallsOnBoard::rows()
+int KBBBallsOnBoard::rows()
 {
 	return m_rows;
 }

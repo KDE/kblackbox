@@ -58,7 +58,7 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 
 		KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows);
 		
-		const int position();
+		int position();
 
 
 	protected:

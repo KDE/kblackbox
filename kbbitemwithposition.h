@@ -38,7 +38,7 @@ class KBBItemWithPosition
 {
 	public:
 		virtual ~KBBItemWithPosition();
-		virtual const int position() = 0;
+		virtual int position() = 0;
 
 		/**
 		 * @brief Destructor for dependent QGraphicsItem

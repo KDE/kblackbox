@@ -106,7 +106,7 @@ class KBBBallsOnBoard : public QObject
 		 */
 		void borderPositionToAbsolutePosition(int borderPosition, int position[DIM_MAX]);
 		
-		const int columns();
+		int columns();
 		
 		/**
 		 * @brief Check if there is a ball at the given position in the black box
@@ -160,7 +160,7 @@ class KBBBallsOnBoard : public QObject
 		 */
 		void remove(int boxPosition);
 		
-		const int rows();
+		int rows();
 
 
 	signals:

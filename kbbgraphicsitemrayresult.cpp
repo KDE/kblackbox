@@ -127,7 +127,7 @@ void KBBGraphicsItemRayResult::highlightBoth(bool state)
 }
 
 
-const int KBBGraphicsItemRayResult::position ()
+int KBBGraphicsItemRayResult::position ()
 {
 	return m_borderPosition;
 }

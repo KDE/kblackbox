@@ -65,7 +65,7 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsIte
 		/**
 		 * @brief Get the border position
 		 */
-		const int position();
+		int position();
 
 
 	private:

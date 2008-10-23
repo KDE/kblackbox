@@ -272,7 +272,7 @@ any.)</para></listitem>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
 </shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Show High Scores...</guimenuitem></menuchoice></term>
+<guimenuitem>Show High Scores</guimenuitem></menuchoice></term>
 <listitem><para>Show the high score tables.</para></listitem>
 </varlistentry>
 
@@ -420,7 +420,7 @@ the balls.</para></listitem>
 <keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
 </shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Show High Scores...</guimenuitem></menuchoice> on the menubar.</para></answer>
+<guimenuitem>Show High Scores</guimenuitem></menuchoice> on the menubar.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the game configuration. Where do I go? </para></question>

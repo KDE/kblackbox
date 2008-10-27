@@ -157,7 +157,7 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Keyboard only
-	QAction* action = actionCollection()->addAction( "move_down" );
+	KAction* action = actionCollection()->addAction( "move_down" );
 	action->setText( i18n("Move Down") );
 	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveDown()));
 	action->setShortcut(Qt::Key_Down);

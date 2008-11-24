@@ -32,7 +32,7 @@ kde4_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
 kde4_add_app_icon(kblackbox_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-app-kblackbox.png")
 kde4_add_executable(kblackbox ${kblackbox_SRCS})
-target_link_libraries(kblackbox ${KDE4_KDEUI_LIBS} kdegames)
+target_link_libraries(kblackbox ${QT_QTXML_LIBRARY} ${KDE4_KDEUI_LIBS} kdegames)
 
 
 install(TARGETS kblackbox  ${INSTALL_TARGETS_DEFAULT_ARGS})

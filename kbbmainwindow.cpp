@@ -357,6 +357,7 @@ void KBBMainWindow::done()
 		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (KGameDifficulty::level() != KGameDifficulty::Configurable) && (score<KBBGameDoc::SCORE_LOST)) {
 			KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
 			scoreDialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings());
+			scoreDialog.setConfigGroupWeights(KGameDifficulty::levelWeights());
 			scoreDialog.setConfigGroup(KGameDifficulty::localizedLevelString());
 	
 			KScoreDialog::FieldInfo scoreInfo;
@@ -428,6 +429,7 @@ void KBBMainWindow::showHighscores()
 {
 	KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
 	scoreDialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings());
+	scoreDialog.setConfigGroupWeights(KGameDifficulty::levelWeights());
 	scoreDialog.setConfigGroup( KGameDifficulty::localizedLevelString() );
 	scoreDialog.exec();
 }

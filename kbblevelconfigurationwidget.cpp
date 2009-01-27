@@ -33,7 +33,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_balls->setObjectName("kcfg_balls");
 	l->addWidget(kcfg_balls, 0, 0, 1, 2);
 	kcfg_balls->setMinimum(1);
- 	kcfg_balls->setValue(b);
+	kcfg_balls->setValue(b);
 	connect(kcfg_balls, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
 	kcfg_columns = new QSpinBox(this);

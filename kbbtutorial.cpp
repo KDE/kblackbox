@@ -228,7 +228,7 @@ void KBBTutorial::setStep(const int step)
 			}
 			break;
 		case FIRST_STEP+9:
-			setTexts(i18n("Marking balls"), i18n("When you have worked out where a ball is, please use the left mouse button to mark it. To remove a ball, use the left mouse button again. Last tip: If you are not sure about a position, you can use a right click on a ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br />Example: We marked one position as sure, the other one as unsure."), i18n("Click on \"Next\"."));
+			setTexts(i18n("Marking balls"), i18n("When you have worked out where a ball is, please use the left mouse button to mark it. To remove a ball mark, use the left mouse button again. Last tip: If you are not sure about a position, you can use a right click on a ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br />Example: We marked one position as sure, the other one as unsure."), i18n("Click on \"Next\"."));
 			m_laserToUse = MAY_NOT_USE;
 			setNewStepMaxAllowed(FIRST_STEP+10);
 			m_gameWidget->addBall(33);

@@ -113,7 +113,7 @@ KBBMainWindow::KBBMainWindow()
 	// Menu "Move"
 	m_doneAction = actionCollection()->addAction("move_done");
 	m_doneAction->setText(i18nc("This is the last action of a game to check the result, when the user is done.", "Done!"));
-	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the right possitions of the balls and see how they interact with laser beams, you should use the lasers that are disposed around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is possible to click here only if you placed the right number of balls.</p></qt>"));
+	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the correct positions of the balls and see how they interact with laser beams, you should use the lasers that are positioned around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is only possible to click here if you have placed the correct number of balls.</p></qt>"));
 	m_doneAction->setIcon(KIcon("dialog-ok"));
 	connect(m_doneAction, SIGNAL(triggered(bool)), SLOT(done()));
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
@@ -260,7 +260,7 @@ void KBBMainWindow::levelChanged(KGameDifficulty::standardLevel level)
 			m_rows = 12;
 			break;
 		case KGameDifficulty::Configurable:
-			m_gameWidget->popupText(i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Note: You can change<br />the parameters of<br />custom games in the<br />setting dialog."));
+			m_gameWidget->popupText(i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Note: You can change<br />the parameters of<br />custom games in the<br />Settings dialog."));
 			break;
 	}
 
@@ -296,7 +296,7 @@ void KBBMainWindow::updateStats()
 	if (ballsLeftToPlace<0)
 		m_doneAction->setToolTip(i18np("First, you need to remove 1 ball from the black box.", "First, you need to remove %1 balls from the black box.", -ballsLeftToPlace));
 	else if (ballsLeftToPlace==0) {
-		m_doneAction->setToolTip(i18n("To check if you successful guessed the ball positions, click here!"));
+		m_doneAction->setToolTip(i18n("To check if you successfully guessed the ball positions, click here!"));
 	} else if (ballsLeftToPlace>0) {
 		m_doneAction->setToolTip(i18np("You need to place 1 more ball on the black box.", "You need to place %1 more balls on the black box.", ballsLeftToPlace));
 	}
@@ -313,9 +313,9 @@ void KBBMainWindow::updateStats()
 	if (!m_tutorial->isVisible()) {
 		if (m_boardEnabled) {
 			if (ballsLeftToPlace<0) {
-				statusBar()->changeItem((i18np("1 ball too much!", "%1 balls too much!", -ballsLeftToPlace)), SRUN);
+				statusBar()->changeItem((i18np("1 ball too many!", "%1 balls too many!", -ballsLeftToPlace)), SRUN);
 			} else if (ballsLeftToPlace==0) {
-				statusBar()->changeItem(i18n("No more ball to place"), SRUN);
+				statusBar()->changeItem(i18n("No more balls to place"), SRUN);
 			} else if (ballsLeftToPlace>0) {
 				statusBar()->changeItem(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace), SRUN);
 			}	
@@ -352,7 +352,7 @@ void KBBMainWindow::done()
 			if (m_sandboxMode)
 				s += QString("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it does not count<br />because <b>it is the sandbox!</b>");
 		} else
-			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
+			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practise.", score);
 
 		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (KGameDifficulty::level() != KGameDifficulty::Configurable) && (score<KBBGameDoc::SCORE_LOST)) {
 			KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
@@ -438,10 +438,10 @@ void KBBMainWindow::showHighscores()
 void KBBMainWindow::solve()
 {
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
-		KMessageBox::sorry(this, i18n("Sorry, you may not give up the tutorial."), i18n("Solve"));
+		KMessageBox::sorry(this, i18n("Sorry, you may not give up during the tutorial."), i18n("Solve"));
 	} else {
 		if (m_gameDoc->numberOfBallsToPlace()==m_gameDoc->numberOfBallsPlaced()) {
-			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed right.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
+			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed correctly.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
 				solving();
 		} else if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
 			solving();

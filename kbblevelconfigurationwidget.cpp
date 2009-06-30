@@ -13,11 +13,9 @@ You should have received a copy of the GNU Library General Public License along 
 
 
 #include <QGridLayout>
-#include <QSpinBox>
-
 
 #include <klocale.h>
-
+#include <KNumInput>
 
 #include "kbblevelconfigurationpreview.h"
 #include "kbbscalablegraphicwidget.h"
@@ -29,27 +27,30 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 {
 	QGridLayout *l = new QGridLayout(this);
 
-	kcfg_balls = new QSpinBox(this);
+	kcfg_balls = new KIntSpinBox(this);
 	kcfg_balls->setObjectName("kcfg_balls");
 	l->addWidget(kcfg_balls, 0, 0, 1, 2);
 	kcfg_balls->setMinimum(1);
 	kcfg_balls->setValue(b);
+	kcfg_balls->setSuffix(ki18ncp("A number between 1 and 99 is displayed in front of it.", " ball", " balls"));
 	connect(kcfg_balls, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
-	kcfg_columns = new QSpinBox(this);
+	kcfg_columns = new KIntSpinBox(this);
 	kcfg_columns->setObjectName("kcfg_columns");
 	l->addWidget(kcfg_columns, 1, 1);
 	kcfg_columns->setMinimum(2);
 	kcfg_columns->setMaximum(30);
 	kcfg_columns->setValue(c);
+	kcfg_columns->setSuffix(ki18ncp("A number between 2 and 30 is displayed in front of it.", " column", " columns"));
 	connect(kcfg_columns, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
-	kcfg_rows = new QSpinBox(this);
+	kcfg_rows = new KIntSpinBox(this);
 	kcfg_rows->setObjectName("kcfg_rows");
 	l->addWidget(kcfg_rows, 2, 0);
 	kcfg_rows->setMinimum(2);
 	kcfg_rows->setMaximum(30);
 	kcfg_rows->setValue(r);
+	kcfg_rows->setSuffix(ki18ncp("A number between 2 and 30 is displayed in front of it.", " row", " rows"));
 	connect(kcfg_rows, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
 	m_view = new KBBLevelConfigurationPreview(this, themeManager);
@@ -81,9 +82,6 @@ void KBBLevelConfigurationWidget::boxSizeChanged()
 {
 	kcfg_balls->setMaximum(qMin(99, columns()*rows() - 1));
 	m_view->preview(balls(), columns(), rows());
-	kcfg_balls->setSuffix(i18ncp("A number between 1 and 99 is displayed in front of it.", " ball", " balls", kcfg_balls->value()));
-	kcfg_columns->setSuffix(i18ncp("A number between 2 and 30 is displayed in front of it.", " column", " columns", kcfg_columns->value()));
-	kcfg_rows->setSuffix(i18ncp("A number between 2 and 30 is displayed in front of it.", " row", " rows", kcfg_rows->value()));
 }
 
 

@@ -13,7 +13,7 @@ You should have received a copy of the GNU Library General Public License along 
 
 
 
-class QSpinBox;
+class KIntSpinBox;
 #include <QWidget>
 
 
@@ -40,9 +40,9 @@ class KBBLevelConfigurationWidget : public QWidget
 		void boxSizeChanged();
 
 	private:
-		QSpinBox* kcfg_balls;
-		QSpinBox* kcfg_columns;
-		QSpinBox* kcfg_rows;
+		KIntSpinBox* kcfg_balls;
+		KIntSpinBox* kcfg_columns;
+		KIntSpinBox* kcfg_rows;
 
 		KBBLevelConfigurationPreview* m_view;
 };

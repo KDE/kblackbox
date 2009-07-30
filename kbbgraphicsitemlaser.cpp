@@ -51,9 +51,9 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBB
 	m_widget = parent;
 	
 	const int radius = KBBScalableGraphicWidget::RATIO/2;
-	if (rotation()==90) {
+	if (rotationAngle()==90) {
 		setPos(m_centerX - 3*radius, m_centerY - radius);
-	} else if (rotation()==180) {
+	} else if (rotationAngle()==180) {
 		setPos(m_centerX - radius, m_centerY - 3*radius);
 	} else {
 		setPos(m_centerX - radius, m_centerY - radius);

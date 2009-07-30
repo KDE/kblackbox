@@ -71,7 +71,7 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 		else
 			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultHit, m_scene, themeManager);
 		m_notNumber->translate(radius,radius);
-		m_notNumber->rotate(rotation());
+		m_notNumber->rotate(rotationAngle());
 		m_notNumber->translate(-radius,-radius);
 		m_notNumber->setPos(m_centerX - radius, m_centerY - radius);
 	} else {

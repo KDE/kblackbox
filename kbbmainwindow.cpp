@@ -352,7 +352,7 @@ void KBBMainWindow::done()
 			if (m_sandboxMode)
 				s += QString("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it does not count<br />because <b>it is the sandbox!</b>");
 		} else
-			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practise.", score);
+			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
 
 		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (KGameDifficulty::level() != KGameDifficulty::Configurable) && (score<KBBGameDoc::SCORE_LOST)) {
 			KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);

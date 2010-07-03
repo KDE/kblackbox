@@ -218,7 +218,7 @@ QString KBBThemeManager::value(const KBBScalableGraphicWidget::itemType itemType
 		node = node.nextSibling();
 	}
 	
-	QStringList styleList = style.split(";");
+	QStringList styleList = style.split(';');
 	for (int i = 0; i < styleList.size(); i++) {
 		styleList.replace(i, styleList.at(i).trimmed());
 		if (styleList.at(i).startsWith(styleElement + ':')) {

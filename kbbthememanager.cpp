@@ -35,7 +35,7 @@
 
 
 #include <kfilterdev.h>
-#include <ksvgrenderer.h>
+#include <qsvgrenderer.h>
 
 
 #include "kbbscalablegraphicwidget.h"
@@ -182,7 +182,7 @@ Qt::PenStyle KBBThemeManager::style(const KBBScalableGraphicWidget::itemType ite
 }
 
 
-KSvgRenderer* KBBThemeManager::svgRenderer()
+QSvgRenderer* KBBThemeManager::svgRenderer()
 {
 	return &m_svgRenderer;
 }

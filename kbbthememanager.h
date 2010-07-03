@@ -34,7 +34,7 @@
 class QString;
 
 
-#include <ksvgrenderer.h>
+#include <qsvgrenderer.h>
 
 
 #include "kbbscalablegraphicwidget.h"
@@ -92,7 +92,7 @@ class KBBThemeManager
 		 * 
 		 * @return The SVG renderer
 		 */
-		KSvgRenderer* svgRenderer();
+		QSvgRenderer* svgRenderer();
 		
 		/**
 		 * @brief Get the width of the item
@@ -142,7 +142,7 @@ class KBBThemeManager
 		 *
 		 * The SVG renderer is shared by all SVG graphic items.
 		 */
-		KSvgRenderer m_svgRenderer;
+		QSvgRenderer m_svgRenderer;
 };
 
 #endif // KBBTHEMEMANAGER_H

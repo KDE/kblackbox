@@ -96,14 +96,14 @@ KBBMainWindow::KBBMainWindow()
 	// Menu "Game"
 	KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
 	m_pauseAction = KStandardGameAction::pause(this, SLOT(pause(bool)), actionCollection());
-	QAction* tutorial = actionCollection()->addAction("game_tutorial");
+	QAction* tutorial = actionCollection()->addAction( QLatin1String( "game_tutorial" ));
 	tutorial->setText(i18n("Start Tutorial"));
-	tutorial->setIcon(KIcon("footprint"));
+	tutorial->setIcon(KIcon( QLatin1String( "footprint" )));
 	tutorial->setToolTip(i18n("Start tutorial"));
 	tutorial->setWhatsThis(i18n("<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to learn the rules of the game. Start it if you do not know them!</qt>"));
 	connect(tutorial, SIGNAL(triggered(bool)), SLOT(startTutorial()));
 	KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-	QAction* sandbox = actionCollection()->addAction("game_sandbox");
+	QAction* sandbox = actionCollection()->addAction( QLatin1String( "game_sandbox" ));
 	sandbox->setText(i18n("New Sandbox Game"));
 	sandbox->setToolTip(i18n("Start a new sandbox game"));
 	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not really fun and you should try to start a real game!</p></qt>"));
@@ -111,10 +111,10 @@ KBBMainWindow::KBBMainWindow()
 	KStandardGameAction::highscores(this, SLOT(showHighscores()), actionCollection());
 
 	// Menu "Move"
-	m_doneAction = actionCollection()->addAction("move_done");
+	m_doneAction = actionCollection()->addAction( QLatin1String( "move_done" ));
 	m_doneAction->setText(i18nc("This is the last action of a game to check the result, when the user is done.", "Done!"));
 	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the correct positions of the balls and see how they interact with laser beams, you should use the lasers that are positioned around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is only possible to click here if you have placed the correct number of balls.</p></qt>"));
-	m_doneAction->setIcon(KIcon("dialog-ok"));
+	m_doneAction->setIcon(KIcon( QLatin1String( "dialog-ok" )));
 	connect(m_doneAction, SIGNAL(triggered(bool)), SLOT(done()));
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
 	m_solveAction->setToolTip(i18n("Give up the game"));
@@ -157,37 +157,37 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Keyboard only
-	KAction* action = actionCollection()->addAction( "move_down" );
+	KAction* action = actionCollection()->addAction( QLatin1String(  "move_down" ) );
 	action->setText( i18n("Move Down") );
 	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveDown()));
 	action->setShortcut(Qt::Key_Down);
 	addAction(action);
 	
-	action = actionCollection()->addAction( "move_up" );
+	action = actionCollection()->addAction( QLatin1String(  "move_up" ) );
 	action->setText( i18n("Move Up") );
 	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveUp()));
 	action->setShortcut(Qt::Key_Up);
 	addAction(action);
 	
-	action = actionCollection()->addAction( "move_left" );
+	action = actionCollection()->addAction( QLatin1String(  "move_left" ) );
 	action->setText( i18n("Move Left") );
 	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveLeft()));
 	action->setShortcut(Qt::Key_Left);
 	addAction(action);
 	
-	action = actionCollection()->addAction( "move_right" );
+	action = actionCollection()->addAction( QLatin1String(  "move_right" ) );
 	action->setText( i18n("Move Right") );
 	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveRight()));
 	action->setShortcut(Qt::Key_Right);
 	addAction(action);
 	
-	action = actionCollection()->addAction("switch_ball");
+	action = actionCollection()->addAction( QLatin1String( "switch_ball" ));
 	action->setText(i18n("Switch Ball or Shoot Laser"));
 	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardEnter()));
 	action->setShortcut(Qt::Key_Return);
 	addAction(action);
 	
-	action = actionCollection()->addAction("switch_marker");
+	action = actionCollection()->addAction( QLatin1String( "switch_marker" ));
 	action->setText(i18n("Switch Marker"));
 	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardSpace()));
 	action->setShortcut(Qt::Key_Space);

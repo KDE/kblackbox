@@ -36,7 +36,7 @@ target_link_libraries(kblackbox ${QT_QTXML_LIBRARY} ${KDE4_KDEUI_LIBS} kdegames)
 
 
 install(TARGETS kblackbox  ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES kblackbox.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS kblackbox.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR})
 install(FILES kblackboxui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kblackbox)
 
 kde4_install_icons(${ICON_INSTALL_DIR})

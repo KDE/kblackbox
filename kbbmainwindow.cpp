@@ -159,25 +159,25 @@ KBBMainWindow::KBBMainWindow()
 	// Keyboard only
 	KAction* action = actionCollection()->addAction( QLatin1String(  "move_down" ) );
 	action->setText( i18n("Move Down") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveDown()));
+	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveDown()));
 	action->setShortcut(Qt::Key_Down);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_up" ) );
 	action->setText( i18n("Move Up") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveUp()));
+	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveUp()));
 	action->setShortcut(Qt::Key_Up);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_left" ) );
 	action->setText( i18n("Move Left") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveLeft()));
+	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveLeft()));
 	action->setShortcut(Qt::Key_Left);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_right" ) );
 	action->setText( i18n("Move Right") );
-	connect(action, SIGNAL(triggered(bool) ), m_gameWidget, SLOT(keyboardMoveRight()));
+	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveRight()));
 	action->setShortcut(Qt::Key_Right);
 	addAction(action);
 	
@@ -195,8 +195,8 @@ KBBMainWindow::KBBMainWindow()
 
 
 	m_gameClock = new KGameClock(this, KGameClock::MinSecOnly);
-	connect(m_gameClock, SIGNAL(timeChanged(const QString&)), SLOT(updateStats()));
-	connect(m_gameClock, SIGNAL(timeChanged(const QString&)), m_gameDoc, SLOT(timeChanged()));
+	connect(m_gameClock, SIGNAL(timeChanged(QString)), SLOT(updateStats()));
+	connect(m_gameClock, SIGNAL(timeChanged(QString)), m_gameDoc, SLOT(timeChanged()));
 
 
 	levelChanged((KGameDifficulty::standardLevel) (KBBPrefs::level()));
@@ -418,7 +418,7 @@ void KBBMainWindow::settingsDialog()
 		KConfigDialog *dialog = new KConfigDialog(this, "settings", KBBPrefs::self());
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
 		dialog->addPage(m_levelConfig, i18n("Custom Game"), "games-config-custom");
-		connect(dialog, SIGNAL(settingsChanged(const QString&)), this, SLOT(settingsChanged()));
+		connect(dialog, SIGNAL(settingsChanged(QString)), this, SLOT(settingsChanged()));
                 dialog->setHelp(QString(), "kblackbox");
 		dialog->show();
 	}

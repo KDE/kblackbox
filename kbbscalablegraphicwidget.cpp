@@ -35,10 +35,10 @@
 #include <QFont>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QLCDNumber>
 #include <QResizeEvent>
 
 
-#include <kgamelcd.h>
 #include <kgamepopupitem.h>
 #include <kicon.h>
 #include <klocale.h>
@@ -114,11 +114,10 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	font.setBold(true);
 	m_doneButton->setFont(font);
 
-	m_score = new KGameLCD(3, this);
+	m_score = new QLCDNumber(3, this);
 	m_score->setFrameStyle(QFrame::NoFrame);
 	m_score->setMaximumWidth(m_doneButton->width());
 	m_score->setFixedHeight((int)(1.5*m_doneButton->height()));
-	m_score->setHighlightColor(Qt::red);
 	m_score->setToolTip(i18n("Score"));
 	m_score->setWhatsThis(i18n("<qt><p>This is <b>your score</b>. You should try to get the lowest possible.</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</b> at the end of the game if you make a mistake.</p></qt>"));
 
@@ -385,11 +384,7 @@ QGraphicsScene* KBBScalableGraphicWidget::scene()
 
 void KBBScalableGraphicWidget::setScore(int score)
 {
-	m_score->displayInt(score);
-	if ((score>35*m_ballNumber) && m_inputAccepted) {
-		m_score->highlight();
-		// TODO: This doesn't work as expected...
-	}
+	m_score->display(score);
 }
 
 

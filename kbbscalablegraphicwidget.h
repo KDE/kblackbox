@@ -36,10 +36,10 @@
 class QAction;
 class QGraphicsScene;
 #include <QGraphicsView>
+class QLCDNumber;
 class QResizeEvent;
 
 
-class KGameLCD;
 class KGamePopupItem;
 class KPushButton;
 
@@ -234,7 +234,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		
 		int m_rows;
 		QGraphicsScene* m_scene; //TODO: Remove it because scene() already gives it back.
-		KGameLCD* m_score;
+		QLCDNumber* m_score;
 		KBBThemeManager* m_themeManager;
 };
 

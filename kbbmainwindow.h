@@ -34,8 +34,8 @@ class QAction;
 class QWidget;
 
 class KGameClock;
-#include <kgamedifficulty.h>
 #include <kxmlguiwindow.h>
+#include <KgDifficulty>
 
 class KBBGameDoc;
 class KBBLevelConfigurationWidget;
@@ -60,7 +60,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		/**
 		 * @brief Player changed the level
 		 */
-		void levelChanged(KGameDifficulty::standardLevel level);
+		void levelChanged();
 
 		/**
 		 * @brief Set if the game is running
@@ -177,7 +177,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		QWidget* m_centralWidget;
 		int m_columns;
 		KGameClock* m_gameClock;
-		KGameDifficulty::standardLevel m_level;
+		KgDifficultyLevel::StandardLevel m_level;
 		KBBLevelConfigurationWidget* m_levelConfig;
 		int m_rows;
 		bool m_boardEnabled;

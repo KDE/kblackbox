@@ -39,8 +39,8 @@
 <holder>&Nicolas.Roffet;</holder>
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice> 
-<date>2007-08-16</date><!-- Date of (re)writing, or update.-->
-<releaseinfo>&kappversion;</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
+<date>2012-08-06</date><!-- Date of (re)writing, or update.-->
+<releaseinfo>&kappversion; (&kde; 4.9)</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
@@ -313,7 +313,7 @@ any.)</para></listitem>
 <varlistentry>
 	<term>
 		<menuchoice>
-			<guimenu>Game</guimenu>
+			<guimenu>Move</guimenu>
 			<guimenuitem>Solve</guimenuitem>
 		</menuchoice>
 	</term>
@@ -323,7 +323,7 @@ any.)</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Game</guimenu>
+<term><menuchoice><guimenu>Move</guimenu>
 <guimenuitem>Done!</guimenuitem></menuchoice></term>
 <listitem><para>When you placed all the balls, choose "Done!" to terminate
 the current game, to compute the final score and to display the real positions of

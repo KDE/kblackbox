@@ -1,7 +1,11 @@
 [Desktop Entry]
 GenericName=Blackbox Logic Game
+GenericName[uk]=Гра на логіку (чорний скринька)
+GenericName[x-test]=xxBlackbox Logic Gamexx
 Exec=kblackbox -caption "%c"
 Name=KBlackBox
+Name[uk]=Чорна скринька
+Name[x-test]=xxKBlackBoxxx
 Icon=kblackbox
 X-DocPath=kblackbox/index.html
 Type=Application

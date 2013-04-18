@@ -283,8 +283,8 @@ void KBBScalableGraphicWidget::newGame(int columns, int rows, int ballNumber)
 		m_blackbox->setSize(m_columns, m_rows);
 		m_cursor->setBoardSize(m_columns, m_rows);
 		m_scene->setSceneRect(m_ballRepository->x() - RATIO, 0, m_columns*RATIO + 2*BORDER_SIZE - m_ballRepository->x() + RATIO, m_rows*RATIO + 2*BORDER_SIZE);
-		resizeEvent(0);
 	}
+	resizeEvent(0);
 	setInputAccepted(true);
 }
 

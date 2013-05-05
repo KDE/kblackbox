@@ -39,8 +39,8 @@
 <holder>&Nicolas.Roffet;</holder>
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice> 
-<date>2012-08-06</date><!-- Date of (re)writing, or update.-->
-<releaseinfo>&kappversion; (&kde; 4.9)</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
+<date>2013-05-05</date><!-- Date of (re)writing, or update.-->
+<releaseinfo>&kappversion; (&kde; 4.11)</releaseinfo><!-- Application version number. Use the variable definitions within header to change this value.-->
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
@@ -210,6 +210,18 @@ example of a reflection.</para>
  <sect1 id="game-board-descritpion">
 <title>Game Board Description</title>
 
+<screenshot>
+<screeninfo>&kblackbox; Game Board</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>&kblackbox; Game Board</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
 <para>The following types of field are found on the game board: </para>
 
 <variablelist>
@@ -241,8 +253,8 @@ where you suspect a ball is placed in the black box.</para>
 
 </sect1>
 
-<sect1 id="game-menu">
-<title>The <guimenu>Game</guimenu> Menu</title>
+<sect1 id="menu">
+<title>Menu Items</title>
 
 <variablelist>
 <varlistentry>
@@ -302,14 +314,7 @@ any.)</para></listitem>
 		<para>This closes the window and quits &kblackbox;.</para>
 	</listitem>
 </varlistentry>
-</variablelist>
-</sect1>
 
-
-<sect1 id="move-menu">
-<title>The <guimenu>Move</guimenu> Menu</title>
-
-<variablelist>
 <varlistentry>
 	<term>
 		<menuchoice>
@@ -329,14 +334,7 @@ any.)</para></listitem>
 the current game, to compute the final score and to display the real positions of
 the balls.</para></listitem>
 </varlistentry>
-</variablelist>
-</sect1>
 
-
-<sect1 id="settings-menu">
-<title>The <guimenu>Settings</guimenu> Menu</title>
-<para>Note: we describe here only the menu items that are game specific and skip &kde; standard menu items.</para>
-<variablelist>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu><guisubmenu>Difficulty</guisubmenu>
@@ -348,21 +346,14 @@ the balls.</para></listitem>
 </listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guimenuitem>Configure &kblackbox;...</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>In this dialog, you can customize the number of balls, columns and rows of the black box in the custom difficulty level.</para>
-</listitem>
-</varlistentry>
 </variablelist>
+<para>
+Additionally &kblackbox; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items, for more information read the sections about the <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
+</para>
 
-</sect1>
-
-<sect1 id="help"><!--This is a standard Help menubar entry. Only change if needed.-->
-<title>The <guimenu>Help</guimenu> Menu</title>
-&help.menu.documentation;
 </sect1>
 </chapter>
 

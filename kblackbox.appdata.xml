@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<component type="desktop">
+  <id>kblackbox.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>KBlackbox</name>
+  <summary>Blackbox Logic Game</summary>
+  <description>
+    <p>
+      KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls.
+      The position of the hidden balls can be deduced by shooting beams into the box.
+    </p>
+  </description>
+  <url type="homepage">http://games.kde.org/game.php?game=kblackbox</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kblackbox</url>
+  <url type="help">http://docs.kde.org/stable/en/kdegames/kblackbox/index.html</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://kde.org/images/screenshots/kblackbox.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+</component>

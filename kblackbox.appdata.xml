@@ -1,15 +1,28 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <component type="desktop">
   <id>kblackbox.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBlackbox</name>
+  <name xml:lang="de">KBlackbox</name>
+  <name xml:lang="nl">Kblackbox</name>
+  <name xml:lang="pl">KBlackbox</name>
+  <name xml:lang="uk">KBlackbox</name>
+  <name xml:lang="x-test">xxKBlackboxxx</name>
   <summary>Blackbox Logic Game</summary>
+  <summary xml:lang="nl">Blackbox: Logisch spel</summary>
+  <summary xml:lang="pl">Gra logiczna - Czarna skrzynka</summary>
+  <summary xml:lang="uk">Гра на логіку (чорний скринька)</summary>
+  <summary xml:lang="x-test">xxBlackbox Logic Gamexx</summary>
   <description>
     <p>
       KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls.
       The position of the hidden balls can be deduced by shooting beams into the box.
     </p>
+    <p xml:lang="nl">KBlackbox is een spel met verstoppertje spelen op een raster van dozen waar de computer verschillende ballen heeft verborgen. De positie van de verborgen ballen kunnen afgeleid worden door stralen in de doos te schieten.</p>
+    <p xml:lang="pl">KBlackbox jest grą w chowanego na siatce pól, na których komputer ukrył kilka z kul. Położenie ukrytych kul można wywnioskować poprzez wystrzeliwanie promieni na pola.</p>
+    <p xml:lang="uk">KBlackbox — гра у знаходження кульок, прихованих комп’ютером на полі. Розташування прихованих кульок можна визначити за допомогою просвічування поля променями.</p>
+    <p xml:lang="x-test">xxKBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.xx</p>
   </description>
   <url type="homepage">http://games.kde.org/game.php?game=kblackbox</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kblackbox</url>

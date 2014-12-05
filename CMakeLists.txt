@@ -12,6 +12,7 @@ find_package(KF5 REQUIRED COMPONENTS
     Config 
     WidgetsAddons 
     Config 
+    Archive
     I18n 
     GuiAddons 
     ConfigWidgets 
@@ -67,12 +68,12 @@ kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
 kde4_add_app_icon(kblackbox_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kblackbox.png")
 add_executable(kblackbox ${kblackbox_SRCS})
-target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg)
+target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg KF5::KDELibs4Support KF5::Archive)
 
 
 install(TARGETS kblackbox  ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS kblackbox.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR})
 install(FILES kblackbox.appdata.xml  DESTINATION  share/appdata)
-install(FILES kblackboxui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kblackbox)
+install(FILES kblackboxui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kblackbox)
 
-ecm_install_icons(${ICON_INSTALL_DIR})
+ecm_install_icons(ICONS hi128-apps-kblackbox.png  hi16-apps-kblackbox.png  hi22-apps-kblackbox.png  hi32-apps-kblackbox.png  hi48-apps-kblackbox.png  hi64-apps-kblackbox.png DESTINATION ${ICON_INSTALL_DIR})

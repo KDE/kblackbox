@@ -48,6 +48,7 @@
 #include <KStandardGameAction>
 #include <KStatusBar>
 #include <KToggleAction>
+#include <kicon.h>
 
 
 #include "kbbgamedoc.h"
@@ -75,10 +76,10 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Status bar
-	statusBar()->insertPermanentItem("", SRUN, 1);
-	statusBar()->insertPermanentItem(i18n("Time: 00:00"), STIME, 1);
-	statusBar()->insertPermanentItem(i18n("Size: 00 x 00"), SSIZE);
-	statusBar()->setItemAlignment(SRUN, Qt::AlignLeft | Qt::AlignVCenter);
+    //QT5 statusBar()->insertPermanentItem("", SRUN, 1);
+    //QT5 statusBar()->insertPermanentItem(i18n("Time: 00:00"), STIME, 1);
+    //QT5 statusBar()->insertPermanentItem(i18n("Size: 00 x 00"), SSIZE);
+    //QT5 statusBar()->setItemAlignment(SRUN, Qt::AlignLeft | Qt::AlignVCenter);
 
 
 	// Difficulty
@@ -157,7 +158,7 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Keyboard only
-	KAction* action = actionCollection()->addAction( QLatin1String(  "move_down" ) );
+	QAction * action = actionCollection()->addAction( QLatin1String(  "move_down" ) );
 	action->setText( i18n("Move Down") );
 	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveDown()));
 	action->setShortcut(Qt::Key_Down);
@@ -306,24 +307,26 @@ void KBBMainWindow::updateStats()
 
 
 	// Status bar
-	if (m_tutorial->isVisible())
-		statusBar()->changeItem(i18n("Tutorial"), SRUN );
+    if (m_tutorial->isVisible()) {
+        //QT5 statusBar()->changeItem(i18n("Tutorial"), SRUN );
+    }
 	if (!m_tutorial->isVisible()) {
 		if (m_boardEnabled) {
 			if (ballsLeftToPlace<0) {
-				statusBar()->changeItem((i18np("1 ball too many!", "%1 balls too many!", -ballsLeftToPlace)), SRUN);
+                //QT5 statusBar()->changeItem((i18np("1 ball too many!", "%1 balls too many!", -ballsLeftToPlace)), SRUN);
 			} else if (ballsLeftToPlace==0) {
-				statusBar()->changeItem(i18n("No more balls to place"), SRUN);
+                //QT5 statusBar()->changeItem(i18n("No more balls to place"), SRUN);
 			} else if (ballsLeftToPlace>0) {
-				statusBar()->changeItem(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace), SRUN);
+                //QT5 statusBar()->changeItem(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace), SRUN);
 			}	
-		} else
-			statusBar()->changeItem(i18n("Game over"), SRUN );
+        } else {
+            //QT5 statusBar()->changeItem(i18n("Game over"), SRUN );
+        }
 	}
 
-	statusBar()->changeItem(i18n("Time: %1", m_gameClock->timeString()), STIME);
+    //QT5 statusBar()->changeItem(i18n("Time: %1", m_gameClock->timeString()), STIME);
 
-	statusBar()->changeItem( i18n("Size: %1 x %2", m_gameDoc->columns(), m_gameDoc->rows()), SSIZE );
+    //QT5 statusBar()->changeItem( i18n("Size: %1 x %2", m_gameDoc->columns(), m_gameDoc->rows()), SSIZE );
 	
 	
 	// 2. Info Widget
@@ -415,7 +418,7 @@ void KBBMainWindow::settingsDialog()
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
 		dialog->addPage(m_levelConfig, i18n("Custom Game"), "games-config-custom");
 		connect(dialog, SIGNAL(settingsChanged(QString)), this, SLOT(settingsChanged()));
-                dialog->setHelp(QString(), "kblackbox");
+                //QT5 dialog->setHelp(QString(), "kblackbox");
 		dialog->show();
 	}
 }
@@ -435,7 +438,7 @@ void KBBMainWindow::solve()
 		KMessageBox::sorry(this, i18n("Sorry, you may not give up during the tutorial."), i18n("Solve"));
 	} else {
 		if (m_gameDoc->numberOfBallsToPlace()==m_gameDoc->numberOfBallsPlaced()) {
-			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed correctly.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
+			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed correctly.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
 				solving();
 		} else if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
 			solving();

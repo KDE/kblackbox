@@ -48,19 +48,20 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemRay::KBBGraphicsItemRay(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager) : KBBGraphicsItemBorder(0, 1, 1, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem (0, scene)
+KBBGraphicsItemRay::KBBGraphicsItemRay(KBBScalableGraphicWidget::itemType itemType, QGraphicsScene* scene, KBBThemeManager* themeManager) : KBBGraphicsItemBorder(0, 1, 1, KBBScalableGraphicWidget::BORDER_SIZE/2), QGraphicsPathItem (0)
 {
-	QPen pen;
-	
-	pen.setColor(themeManager->color(itemType));
-	pen.setStyle(themeManager->style(itemType));
-	pen.setWidthF(themeManager->width(itemType));
-	setZValue(themeManager->zValue(itemType));
-	
-	pen.setJoinStyle(Qt::RoundJoin);
-	pen.setCapStyle(Qt::RoundCap);
-	
-	setPen(pen);
+    scene->addItem(this);
+    QPen pen;
+
+    pen.setColor(themeManager->color(itemType));
+    pen.setStyle(themeManager->style(itemType));
+    pen.setWidthF(themeManager->width(itemType));
+    setZValue(themeManager->zValue(itemType));
+
+    pen.setJoinStyle(Qt::RoundJoin);
+    pen.setCapStyle(Qt::RoundCap);
+
+    setPen(pen);
 }
 
 

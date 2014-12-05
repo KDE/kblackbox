@@ -78,7 +78,8 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 		QString text;
 		text.setNum(rayNumber);
 
-		m_number = new QGraphicsSimpleTextItem ( text, this, scene);
+        m_number = new QGraphicsSimpleTextItem ( text, this);
+        scene->addItem(m_number);
 		QFont font;
 		font.setStyleHint(QFont::SansSerif);
 		font.setWeight(QFont::DemiBold);

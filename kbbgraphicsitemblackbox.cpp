@@ -48,8 +48,9 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsRectItem (0, scene)
+KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsRectItem (0)
 {
+    scene->addItem(this);
 	m_columns = 1;
 	m_rows = 1;
 	m_widget = 0;
@@ -90,10 +91,16 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 		m_lines.clear();
 	
 		// add new lines
-		for (int i=0; i<m_columns+1; i++)
-			m_lines.append(new QGraphicsLineItem( b + i*r, b, b + i*r, b + m_rows*r, this, m_scene));
-		for (int i=0; i<m_rows+1; i++)
-			m_lines.append(new QGraphicsLineItem(  b, b + i*r, b + m_columns*r,  b + i*r, this, m_scene));
+        for (int i=0; i<m_columns+1; i++) {
+            QGraphicsLineItem *item = new QGraphicsLineItem( b + i*r, b, b + i*r, b + m_rows*r, this);
+            m_scene->addItem(item);
+            m_lines.append(item);
+        }
+        for (int i=0; i<m_rows+1; i++) {
+            QGraphicsLineItem *item = new QGraphicsLineItem(  b, b + i*r, b + m_columns*r,  b + i*r, this);
+            m_scene->addItem(item);
+            m_lines.append(item);
+        }
 		
 		// set line style
 		for (int i=0; i<m_lines.count(); i++) {

@@ -14,7 +14,7 @@ You should have received a copy of the GNU Library General Public License along 
 
 #include <QGridLayout>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <KNumInput>
 
 #include "kbblevelconfigurationpreview.h"

@@ -36,8 +36,8 @@
 #include <QVBoxLayout>
 
 
-#include <kicon.h>
-#include <klocale.h>
+#include <QIcon>
+#include <KLocalizedString>
 #include <kpushbutton.h>
 #include <ktextedit.h>
 
@@ -87,7 +87,7 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 	tutorialLayout->addLayout(actionLayout);
 	QLabel* iconLabel = new QLabel(this);
 	iconLabel->setFixedSize(24, 24);
-	iconLabel->setPixmap(KIcon( QLatin1String( "go-next" )).pixmap(24, 24));
+	iconLabel->setPixmap(QIcon::fromTheme( QLatin1String( "go-next" )).pixmap(24, 24));
 	actionLayout->addWidget(iconLabel, 0, Qt::AlignVCenter);
 	m_playerAction = new QLabel(this);
 	m_playerAction->setWhatsThis(i18n("Describes what you should do to reach the next tutorial step."));
@@ -99,11 +99,11 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 
 	QHBoxLayout *buttonLayout = new QHBoxLayout();
 	tutorialLayout->addLayout(buttonLayout);
-	m_buttonPrevious = new KPushButton(KIcon( QLatin1String( "go-previous") ), i18nc("Previous tutorial step", "&Previous"), this);
+	m_buttonPrevious = new KPushButton(QIcon::fromTheme( QLatin1String( "go-previous") ), i18nc("Previous tutorial step", "&Previous"), this);
 	m_buttonPrevious->setWhatsThis(i18n("Go back to the previous tutorial step."));
 	connect(m_buttonPrevious, SIGNAL(clicked()), this, SLOT(previousStep()));
 	buttonLayout->addWidget(m_buttonPrevious);
-	m_buttonNext = new KPushButton(KIcon( QLatin1String( "go-next")) , i18nc("Next tutorial step", "&Next"), this);
+	m_buttonNext = new KPushButton(QIcon::fromTheme( QLatin1String( "go-next")) , i18nc("Next tutorial step", "&Next"), this);
 	m_buttonNext->setWhatsThis(i18n("Go to the next tutorial step."));
 	connect(m_buttonNext, SIGNAL(clicked()), this, SLOT(nextStep()));
 	m_buttonNext->setDefault(true);

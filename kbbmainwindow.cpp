@@ -41,14 +41,14 @@
 #include <KGameClock>
 #include <KGamePopupItem>
 #include <KGlobal>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KMessageBox>
 #include <KScoreDialog>
 #include <KStandardDirs>
 #include <KStandardGameAction>
 #include <KStatusBar>
 #include <KToggleAction>
-#include <kicon.h>
+#include <QIcon>
 
 
 #include "kbbgamedoc.h"
@@ -99,7 +99,7 @@ KBBMainWindow::KBBMainWindow()
 	m_pauseAction = KStandardGameAction::pause(this, SLOT(pause(bool)), actionCollection());
 	QAction* tutorial = actionCollection()->addAction( QLatin1String( "game_tutorial" ));
 	tutorial->setText(i18n("Start Tutorial"));
-	tutorial->setIcon(KIcon( QLatin1String( "footprint" )));
+	tutorial->setIcon(QIcon::fromTheme( QLatin1String( "footprint" )));
 	tutorial->setToolTip(i18n("Start tutorial"));
 	tutorial->setWhatsThis(i18n("<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to learn the rules of the game. Start it if you do not know them!</qt>"));
 	connect(tutorial, SIGNAL(triggered(bool)), SLOT(startTutorial()));
@@ -115,7 +115,7 @@ KBBMainWindow::KBBMainWindow()
 	m_doneAction = actionCollection()->addAction( QLatin1String( "move_done" ));
 	m_doneAction->setText(i18nc("This is the last action of a game to check the result, when the user is done.", "Done!"));
 	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the correct positions of the balls and see how they interact with laser beams, you should use the lasers that are positioned around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is only possible to click here if you have placed the correct number of balls.</p></qt>"));
-	m_doneAction->setIcon(KIcon( QLatin1String( "dialog-ok" )));
+	m_doneAction->setIcon(QIcon::fromTheme( QLatin1String( "dialog-ok" )));
 	connect(m_doneAction, SIGNAL(triggered(bool)), SLOT(done()));
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
 	m_solveAction->setToolTip(i18n("Give up the game"));

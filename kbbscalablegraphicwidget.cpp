@@ -42,7 +42,7 @@
 #include <kgamepopupitem.h>
 #include <QIcon>
 #include <KLocalizedString>
-#include <kpushbutton.h>
+#include <QPushButton>
 
 
 #include "kbbballsonboard.h"
@@ -105,7 +105,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 
 	setScene(m_scene);
 
-	m_doneButton = new KPushButton(m_doneAction->text(), this);
+	m_doneButton = new QPushButton(m_doneAction->text(), this);
 	m_doneButton->setIcon(QIcon(m_doneAction->icon()));
 	m_doneButton->setWhatsThis(m_doneAction->whatsThis());
 	connect(m_doneButton, SIGNAL(clicked(bool)), m_doneAction, SLOT(trigger()));

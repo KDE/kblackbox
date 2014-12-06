@@ -36,7 +36,7 @@ class QProgressBar;
 class QWidget;
 
 
-class KPushButton;
+class QPushButton;
 class KTextEdit;
 
 
@@ -181,8 +181,8 @@ class KBBTutorial : public QGroupBox
 		void showMarker(const int laserPosition) const;
 
 
-		KPushButton* m_buttonNext;
-		KPushButton* m_buttonPrevious;
+		QPushButton* m_buttonNext;
+		QPushButton* m_buttonPrevious;
 		KTextEdit* m_explanation;
 		KBBScalableGraphicWidget* m_gameWidget;
 		int m_laserToUse;

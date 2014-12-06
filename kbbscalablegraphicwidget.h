@@ -41,7 +41,7 @@ class QResizeEvent;
 
 
 class KGamePopupItem;
-class KPushButton;
+class QPushButton;
 
 
 class KBBBallsOnBoard;
@@ -225,7 +225,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		KBBBallsOnBoard* m_boardBallsPlaced;
 		int m_columns;
 		QAction* m_doneAction;
-		KPushButton* m_doneButton;
+		QPushButton* m_doneButton;
 		KBBGameDoc* m_gameDoc;
 		KGamePopupItem* m_infoScore;
 		bool m_inputAccepted;

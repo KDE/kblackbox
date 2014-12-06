@@ -38,7 +38,7 @@
 
 #include <QIcon>
 #include <KLocalizedString>
-#include <kpushbutton.h>
+#include <QPushButton>
 #include <ktextedit.h>
 
 
@@ -99,11 +99,11 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 
 	QHBoxLayout *buttonLayout = new QHBoxLayout();
 	tutorialLayout->addLayout(buttonLayout);
-	m_buttonPrevious = new KPushButton(QIcon::fromTheme( QLatin1String( "go-previous") ), i18nc("Previous tutorial step", "&Previous"), this);
+	m_buttonPrevious = new QPushButton(QIcon::fromTheme( QLatin1String( "go-previous") ), i18nc("Previous tutorial step", "&Previous"), this);
 	m_buttonPrevious->setWhatsThis(i18n("Go back to the previous tutorial step."));
 	connect(m_buttonPrevious, SIGNAL(clicked()), this, SLOT(previousStep()));
 	buttonLayout->addWidget(m_buttonPrevious);
-	m_buttonNext = new KPushButton(QIcon::fromTheme( QLatin1String( "go-next")) , i18nc("Next tutorial step", "&Next"), this);
+	m_buttonNext = new QPushButton(QIcon::fromTheme( QLatin1String( "go-next")) , i18nc("Next tutorial step", "&Next"), this);
 	m_buttonNext->setWhatsThis(i18n("Go to the next tutorial step."));
 	connect(m_buttonNext, SIGNAL(clicked()), this, SLOT(nextStep()));
 	m_buttonNext->setDefault(true);

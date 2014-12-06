@@ -40,15 +40,15 @@
 #include <KConfigDialog>
 #include <KGameClock>
 #include <KGamePopupItem>
-#include <KGlobal>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KScoreDialog>
-#include <KStandardDirs>
+
 #include <KStandardGameAction>
-#include <KStatusBar>
+#include <QStatusBar>
 #include <KToggleAction>
 #include <QIcon>
+#include <QStandardPaths>
 
 
 #include "kbbgamedoc.h"
@@ -128,7 +128,7 @@ KBBMainWindow::KBBMainWindow()
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
 	if (!QFile(svgzFile).exists())
-		svgzFile = KStandardDirs::locate("appdata", "pics/kblackbox.svgz");
+		svgzFile = QStandardPaths::locate(QStandardPaths::DataLocation, "pics/kblackbox.svgz");
 	m_themeManager = new KBBThemeManager(svgzFile);
 	
 	
@@ -211,7 +211,7 @@ KBBMainWindow::KBBMainWindow()
 
 KBBMainWindow::~KBBMainWindow()
 {
-	KBBPrefs::self()->writeConfig();
+	KBBPrefs::self()->save();
 
 	delete m_gameWidget;
 	delete m_themeManager;

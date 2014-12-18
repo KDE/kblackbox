@@ -528,4 +528,4 @@ void KBBMainWindow::startGame(bool sandboxMode)
 
 
 
-#include "kbbmainwindow.moc"
+

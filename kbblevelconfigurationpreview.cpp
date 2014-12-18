@@ -95,4 +95,4 @@ void KBBLevelConfigurationPreview::resizeEvent( QResizeEvent* )
 }
 
 
-#include "kbblevelconfigurationpreview.moc"
+

@@ -13,13 +13,12 @@ You should have received a copy of the GNU Library General Public License along 
 
 
 
-class KIntSpinBox;
 #include <QWidget>
 
 
 class KBBLevelConfigurationPreview;
 class KBBThemeManager;
-
+class KPluralHandlingSpinBox;
 
 
 /**
@@ -40,9 +39,9 @@ class KBBLevelConfigurationWidget : public QWidget
 		void boxSizeChanged();
 
 	private:
-		KIntSpinBox* kcfg_balls;
-		KIntSpinBox* kcfg_columns;
-		KIntSpinBox* kcfg_rows;
+		KPluralHandlingSpinBox* kcfg_balls;
+		KPluralHandlingSpinBox* kcfg_columns;
+		KPluralHandlingSpinBox* kcfg_rows;
 
 		KBBLevelConfigurationPreview* m_view;
 };

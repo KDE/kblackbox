@@ -15,7 +15,7 @@ You should have received a copy of the GNU Library General Public License along 
 #include <QGridLayout>
 
 #include <KLocalizedString>
-#include <KNumInput>
+#include <KPluralHandlingSpinBox>
 
 #include "kbblevelconfigurationpreview.h"
 #include "kbbscalablegraphicwidget.h"
@@ -27,7 +27,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 {
 	QGridLayout *l = new QGridLayout(this);
 
-	kcfg_balls = new KIntSpinBox(this);
+	kcfg_balls = new KPluralHandlingSpinBox(this);
 	kcfg_balls->setObjectName( QLatin1String("kcfg_balls" ));
 	l->addWidget(kcfg_balls, 0, 0, 1, 2);
 	kcfg_balls->setMinimum(1);
@@ -35,7 +35,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_balls->setSuffix(ki18ncp("A number between 1 and 99 is displayed in front of it.", " ball", " balls"));
 	connect(kcfg_balls, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
-	kcfg_columns = new KIntSpinBox(this);
+	kcfg_columns = new KPluralHandlingSpinBox(this);
 	kcfg_columns->setObjectName( QLatin1String("kcfg_columns" ));
 	l->addWidget(kcfg_columns, 1, 1);
 	kcfg_columns->setMinimum(2);
@@ -44,7 +44,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_columns->setSuffix(ki18ncp("A number between 2 and 30 is displayed in front of it.", " column", " columns"));
 	connect(kcfg_columns, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
 
-	kcfg_rows = new KIntSpinBox(this);
+	kcfg_rows = new KPluralHandlingSpinBox(this);
 	kcfg_rows->setObjectName( QLatin1String("kcfg_rows" ));
 	l->addWidget(kcfg_rows, 2, 0);
 	kcfg_rows->setMinimum(2);
@@ -85,4 +85,3 @@ void KBBLevelConfigurationWidget::boxSizeChanged()
 }
 
 
-#include "kbblevelconfigurationwidget.moc"

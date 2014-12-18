@@ -601,4 +601,4 @@ void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 }
 
 
-#include "kbbscalablegraphicwidget.moc"
+

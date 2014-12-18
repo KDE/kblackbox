@@ -258,4 +258,4 @@ bool KBBBallsOnBoard::positionInTheBox( int position[DIM_MAX] )
 	return !((position[DIM_X] < 2) || (position[DIM_X] > m_columns + 1) || (position[DIM_Y] < 2) || (position[DIM_Y] > m_rows + 1));
 }
 
-#include "kbbballsonboard.moc"
+

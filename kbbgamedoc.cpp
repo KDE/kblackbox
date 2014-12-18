@@ -202,4 +202,4 @@ void KBBGameDoc::setScore( int n )
 	emit updateStats();
 }
 
-#include "kbbgamedoc.moc"
+

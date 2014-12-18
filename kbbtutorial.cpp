@@ -312,4 +312,4 @@ void KBBTutorial::showMarker(const int laserPosition) const
 	}
 }
 
-#include "kbbtutorial.moc"
+

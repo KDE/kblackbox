@@ -154,4 +154,4 @@ void KBBGraphicsItemBall::removeInteractionInfos()
 	}
 }
 
-#include "kbbgraphicsitemball.moc"
+

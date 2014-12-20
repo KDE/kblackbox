@@ -12,11 +12,9 @@ find_package(KF5 REQUIRED COMPONENTS
     Config 
     WidgetsAddons 
     Config 
-    Archive
     I18n 
     GuiAddons 
     ConfigWidgets 
-    ItemViews 
     IconThemes 
     TextWidgets
     XmlGui

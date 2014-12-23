@@ -23,6 +23,7 @@
   <name xml:lang="sr-ijekavianlatin">K‑crna‑kutija</name>
   <name xml:lang="uk">KBlackbox</name>
   <name xml:lang="x-test">xxKBlackboxxx</name>
+  <name xml:lang="zh-TW">KBlackBox</name>
   <summary>Blackbox Logic Game</summary>
   <summary xml:lang="ca">Joc de lògica Blackbox</summary>
   <summary xml:lang="cs">Logická hra s černou skříňkou</summary>
@@ -41,6 +42,7 @@
   <summary xml:lang="sr-ijekavianlatin">Logička igra crne kutije</summary>
   <summary xml:lang="uk">Гра на логіку (чорний скринька)</summary>
   <summary xml:lang="x-test">xxBlackbox Logic Gamexx</summary>
+  <summary xml:lang="zh-TW">黑盒子智力遊戲</summary>
   <description>
     <p>
       KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls.
@@ -62,6 +64,7 @@
     <p xml:lang="sr-ijekavianlatin">K‑crna‑kutija je igra skrivanja i nalaženja na mreži kutija gde je računar sakrio nekoliko loptica. Položaj skrivenih loptica izvodi se na osnovu ispaljivanja zrakova u kutije.</p>
     <p xml:lang="uk">KBlackbox — гра у знаходження кульок, прихованих комп’ютером на полі. Розташування прихованих кульок можна визначити за допомогою просвічування поля променями.</p>
     <p xml:lang="x-test">xxKBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.xx</p>
+    <p xml:lang="zh-TW">KBlackbox 是一款益智遊戲。您要打出探照燈，依照反射的規則找出黑盒子內所有藏起來的球。</p>
   </description>
   <url type="homepage">http://games.kde.org/game.php?game=kblackbox</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kblackbox</url>

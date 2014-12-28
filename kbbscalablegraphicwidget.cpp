@@ -86,7 +86,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_blackbox->setKBBScalableGraphicWidget(this);
 	m_balls = new KBBGraphicsItemSet(m_scene);
 	m_cursor = new KBBGraphicsItemCursor(this, m_themeManager);
-	connect(m_cursor, SIGNAL(cursorAtNewPosition(int)), this, SLOT(cursorAtNewPosition(int)));
+	connect(m_cursor, &KBBGraphicsItemCursor::cursorAtNewPosition, this, &KBBScalableGraphicWidget::cursorAtNewPosition);
 	m_markersNothing = new KBBGraphicsItemSet(m_scene);
 	m_ballsSolution = new KBBGraphicsItemSet(m_scene);
 	m_ballsUnsure = new KBBGraphicsItemSet(m_scene);
@@ -108,7 +108,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_doneButton = new QPushButton(m_doneAction->text(), this);
 	m_doneButton->setIcon(QIcon(m_doneAction->icon()));
 	m_doneButton->setWhatsThis(m_doneAction->whatsThis());
-	connect(m_doneButton, SIGNAL(clicked(bool)), m_doneAction, SLOT(trigger()));
+	connect(m_doneButton, &QPushButton::clicked, m_doneAction, &QAction::trigger);
 	QFont font;
 	font.setPointSize(m_doneButton->font().pointSize()+2);
 	font.setBold(true);

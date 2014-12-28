@@ -33,7 +33,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_balls->setMinimum(1);
 	kcfg_balls->setValue(b);
 	kcfg_balls->setSuffix(ki18ncp("A number between 1 and 99 is displayed in front of it.", " ball", " balls"));
-	connect(kcfg_balls, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
+	connect(kcfg_balls, static_cast<void (KPluralHandlingSpinBox::*)(int)>(&KPluralHandlingSpinBox::valueChanged), this, &KBBLevelConfigurationWidget::boxSizeChanged);
 
 	kcfg_columns = new KPluralHandlingSpinBox(this);
 	kcfg_columns->setObjectName( QLatin1String("kcfg_columns" ));
@@ -42,7 +42,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_columns->setMaximum(30);
 	kcfg_columns->setValue(c);
 	kcfg_columns->setSuffix(ki18ncp("A number between 2 and 30 is displayed in front of it.", " column", " columns"));
-	connect(kcfg_columns, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
+	connect(kcfg_columns, static_cast<void (KPluralHandlingSpinBox::*)(int)>(&KPluralHandlingSpinBox::valueChanged), this, &KBBLevelConfigurationWidget::boxSizeChanged);
 
 	kcfg_rows = new KPluralHandlingSpinBox(this);
 	kcfg_rows->setObjectName( QLatin1String("kcfg_rows" ));
@@ -51,7 +51,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	kcfg_rows->setMaximum(30);
 	kcfg_rows->setValue(r);
 	kcfg_rows->setSuffix(ki18ncp("A number between 2 and 30 is displayed in front of it.", " row", " rows"));
-	connect(kcfg_rows, SIGNAL(valueChanged(int)), this, SLOT(boxSizeChanged()));
+	connect(kcfg_rows, static_cast<void (KPluralHandlingSpinBox::*)(int)>(&KPluralHandlingSpinBox::valueChanged), this, &KBBLevelConfigurationWidget::boxSizeChanged);
 
 	m_view = new KBBLevelConfigurationPreview(this, themeManager);
 	l->addWidget(m_view, 2, 1);

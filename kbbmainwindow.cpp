@@ -102,13 +102,13 @@ KBBMainWindow::KBBMainWindow()
 	tutorial->setIcon(QIcon::fromTheme( QLatin1String( "footprint" )));
 	tutorial->setToolTip(i18n("Start tutorial"));
 	tutorial->setWhatsThis(i18n("<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to learn the rules of the game. Start it if you do not know them!</qt>"));
-	connect(tutorial, SIGNAL(triggered(bool)), SLOT(startTutorial()));
+	connect(tutorial, &QAction::triggered, this, &KBBMainWindow::startTutorial);
 	KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 	QAction* sandbox = actionCollection()->addAction( QLatin1String( "game_sandbox" ));
 	sandbox->setText(i18n("New Sandbox Game"));
 	sandbox->setToolTip(i18n("Start a new sandbox game"));
 	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not really fun and you should try to start a real game!</p></qt>"));
-	connect(sandbox, SIGNAL(triggered(bool)), SLOT(startSandbox()));
+	connect(sandbox, &QAction::triggered, this, &KBBMainWindow::startSandbox);
 	KStandardGameAction::highscores(this, SLOT(showHighscores()), actionCollection());
 
 	// Menu "Move"
@@ -116,7 +116,7 @@ KBBMainWindow::KBBMainWindow()
 	m_doneAction->setText(i18nc("This is the last action of a game to check the result, when the user is done.", "Done!"));
 	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the correct positions of the balls and see how they interact with laser beams, you should use the lasers that are positioned around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is only possible to click here if you have placed the correct number of balls.</p></qt>"));
 	m_doneAction->setIcon(QIcon::fromTheme( QLatin1String( "dialog-ok" )));
-	connect(m_doneAction, SIGNAL(triggered(bool)), SLOT(done()));
+	connect(m_doneAction, &QAction::triggered, this, &KBBMainWindow::done);
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
 	m_solveAction->setToolTip(i18n("Give up the game"));
 	m_solveAction->setWhatsThis(i18n("<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The solution will be displayed.</p><p>If you placed all the balls and do not want to give up, choose \"Done!\".</p></qt>"));
@@ -138,8 +138,8 @@ KBBMainWindow::KBBMainWindow()
 
 	// Board
 	m_gameDoc = new KBBGameDoc(this, m_tutorial);
-	connect(m_gameDoc, SIGNAL(updateStats()), this, SLOT(updateStats()) );
-	connect(m_gameDoc, SIGNAL(isRunning(bool)), SLOT(setRunning(bool)));
+	connect(m_gameDoc, &KBBGameDoc::updateStats, this, &KBBMainWindow::updateStats);
+	connect(m_gameDoc, &KBBGameDoc::isRunning, this, &KBBMainWindow::setRunning);
 
 
 	// Game widget
@@ -160,44 +160,44 @@ KBBMainWindow::KBBMainWindow()
 	// Keyboard only
 	QAction * action = actionCollection()->addAction( QLatin1String(  "move_down" ) );
 	action->setText( i18n("Move Down") );
-	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveDown()));
+	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveDown);
 	action->setShortcut(Qt::Key_Down);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_up" ) );
 	action->setText( i18n("Move Up") );
-	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveUp()));
+	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveUp);
 	action->setShortcut(Qt::Key_Up);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_left" ) );
 	action->setText( i18n("Move Left") );
-	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveLeft()));
+	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveLeft);
 	action->setShortcut(Qt::Key_Left);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_right" ) );
 	action->setText( i18n("Move Right") );
-	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardMoveRight()));
+	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveRight);
 	action->setShortcut(Qt::Key_Right);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String( "switch_ball" ));
 	action->setText(i18n("Switch Ball or Shoot Laser"));
-	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardEnter()));
+	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardEnter);
 	action->setShortcut(Qt::Key_Return);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String( "switch_marker" ));
 	action->setText(i18n("Switch Marker"));
-	connect(action, SIGNAL(triggered(bool)), m_gameWidget, SLOT(keyboardSpace()));
+	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardSpace);
 	action->setShortcut(Qt::Key_Space);
 	addAction(action);
 
 
 	m_gameClock = new KGameClock(this, KGameClock::MinSecOnly);
-	connect(m_gameClock, SIGNAL(timeChanged(QString)), SLOT(updateStats()));
-	connect(m_gameClock, SIGNAL(timeChanged(QString)), m_gameDoc, SLOT(timeChanged()));
+	connect(m_gameClock, &KGameClock::timeChanged, this, &KBBMainWindow::updateStats);
+	connect(m_gameClock, &KGameClock::timeChanged, m_gameDoc, &KBBGameDoc::timeChanged);
 
 
 	levelChanged();
@@ -417,7 +417,7 @@ void KBBMainWindow::settingsDialog()
 		KConfigDialog *dialog = new KConfigDialog(this, "settings", KBBPrefs::self());
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
 		dialog->addPage(m_levelConfig, i18n("Custom Game"), "games-config-custom");
-		connect(dialog, SIGNAL(settingsChanged(QString)), this, SLOT(settingsChanged()));
+		connect(dialog, &KConfigDialog::settingsChanged, this, &KBBMainWindow::settingsChanged);
                 //QT5 dialog->setHelp(QString(), "kblackbox");
 		dialog->show();
 	}

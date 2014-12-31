@@ -12,7 +12,7 @@
   <name xml:lang="es">KBlackbox</name>
   <name xml:lang="it">KBlackbox</name>
   <name xml:lang="nl">Kblackbox</name>
-  <name xml:lang="pl">KBlackbox</name>
+  <name xml:lang="pl">KCzarnaSkrzynka</name>
   <name xml:lang="pt">KBlackbox</name>
   <name xml:lang="pt-BR">KBlackbox</name>
   <name xml:lang="sk">KBlackbox</name>
@@ -31,7 +31,7 @@
   <summary xml:lang="es">Juego de lógica Blackbox</summary>
   <summary xml:lang="it">Gioco di logica Blackbox 	</summary>
   <summary xml:lang="nl">Blackbox: Logisch spel</summary>
-  <summary xml:lang="pl">Gra logiczna - Czarna skrzynka</summary>
+  <summary xml:lang="pl">KCzarnaSkrzynka - Gra logiczna</summary>
   <summary xml:lang="pt">Jogo de Lógica Blackbox</summary>
   <summary xml:lang="pt-BR">Jogo lógico de Caixa Preta</summary>
   <summary xml:lang="sk">Logická hra - čierna skrinka</summary>
@@ -53,7 +53,7 @@
     <p xml:lang="es">KBlackbox es un juego de escondite consistente en una retícula de cajas en las que la máquina ha escondido varias bolas. La posición de estas bolas puede ser deducida disparando rayos a las cajas.</p>
     <p xml:lang="it">KBlackbox è un gioco di cerca e trova, giocato su un reticolo di celle. Il computer ha nascosto delle sfere in queste celle. Sparando dei raggi laser nella scatola si può dedurre la posizione delle sfere nascoste.</p>
     <p xml:lang="nl">KBlackbox is een spel met verstoppertje spelen op een raster van dozen waar de computer verschillende ballen heeft verborgen. De positie van de verborgen ballen kunnen afgeleid worden door stralen in de doos te schieten.</p>
-    <p xml:lang="pl">KBlackbox jest grą w chowanego na siatce pól, na których komputer ukrył kilka z kul. Położenie ukrytych kul można wywnioskować poprzez wystrzeliwanie promieni na pola.</p>
+    <p xml:lang="pl">KCzarnaSkrzynka jest grą w chowanego na siatce pól, na których komputer ukrył kilka z kul. Położenie ukrytych kul można wywnioskować poprzez wystrzeliwanie promieni na pola.</p>
     <p xml:lang="pt">O KBlackbox é um jogo de escondidas, jogado sobre uma grelha de caixas em que o computador escolheu diversas bolas. A posição das bolas escondidas pode ser deduzida se disparar raios para as caixas.</p>
     <p xml:lang="pt-BR">KBlackbox é um jogo de esconde-esconde, jogado sobre uma grade de caixas, onde o computador escolheu diversas bolas. A posição das bolas escondidas pode ser deduzida se disparar raios contra as caixas.</p>
     <p xml:lang="sk">KBlackbox je hra na schovávačku hraná na mriežke polí, kde počítač má skrytých niekoľko guličiek. Polohu skrytých guliek môžete zistiť tým, že strieľate lúče do krabice.</p>

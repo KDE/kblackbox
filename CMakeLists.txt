@@ -75,3 +75,5 @@ install(FILES kblackbox.appdata.xml  DESTINATION  share/appdata)
 install(FILES kblackboxui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kblackbox)
 
 ecm_install_icons(ICONS hi128-apps-kblackbox.png  hi16-apps-kblackbox.png  hi22-apps-kblackbox.png  hi32-apps-kblackbox.png  hi48-apps-kblackbox.png  hi64-apps-kblackbox.png DESTINATION ${ICON_INSTALL_DIR})
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

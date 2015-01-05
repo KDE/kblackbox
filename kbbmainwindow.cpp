@@ -161,37 +161,37 @@ KBBMainWindow::KBBMainWindow()
 	QAction * action = actionCollection()->addAction( QLatin1String(  "move_down" ) );
 	action->setText( i18n("Move Down") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveDown);
-	action->setShortcut(Qt::Key_Down);
+    actionCollection()->setDefaultShortcut(action, Qt::Key_Down);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_up" ) );
 	action->setText( i18n("Move Up") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveUp);
-	action->setShortcut(Qt::Key_Up);
+    actionCollection()->setDefaultShortcut(action,Qt::Key_Up);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_left" ) );
 	action->setText( i18n("Move Left") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveLeft);
-	action->setShortcut(Qt::Key_Left);
+    actionCollection()->setDefaultShortcut(action, Qt::Key_Left);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String(  "move_right" ) );
 	action->setText( i18n("Move Right") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveRight);
-	action->setShortcut(Qt::Key_Right);
+    actionCollection()->setDefaultShortcut(action, Qt::Key_Right);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String( "switch_ball" ));
 	action->setText(i18n("Switch Ball or Shoot Laser"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardEnter);
-	action->setShortcut(Qt::Key_Return);
+    actionCollection()->setDefaultShortcut(action, Qt::Key_Return);
 	addAction(action);
 	
 	action = actionCollection()->addAction( QLatin1String( "switch_marker" ));
 	action->setText(i18n("Switch Marker"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardSpace);
-	action->setShortcut(Qt::Key_Space);
+    actionCollection()->setDefaultShortcut(action, Qt::Key_Space);
 	addAction(action);
 
 

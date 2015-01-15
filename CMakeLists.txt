@@ -61,7 +61,7 @@ kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
 kde4_add_app_icon(kblackbox_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kblackbox.png")
 add_executable(kblackbox ${kblackbox_SRCS})
-target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg KF5::I18n KF5::Archive KF5::TextWidgets)
+target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg KF5::I18n KF5::Archive KF5::TextWidgets KF5::DBusAddons)
 
 
 install(TARGETS kblackbox  ${INSTALL_TARGETS_DEFAULT_ARGS})

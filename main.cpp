@@ -39,11 +39,13 @@
 
 
 #include "kbbmainwindow.h"
-
+#include <KDBusService>
 
 
 int main( int argc, char **argv )
 {
+    QApplication application(argc, argv);
+
     Kdelibs4ConfigMigrator migrate(QStringLiteral("kblackbox"));
     migrate.setConfigFiles(QStringList() << QStringLiteral("kblackboxrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("kblackboxui.rc"));
@@ -53,7 +55,6 @@ int main( int argc, char **argv )
 	aboutData.addAuthor(i18n("Nicolas Roffet"),i18n("Developer of version 0.4."), "nicolas-kde@roffet.com");
 	aboutData.addAuthor(i18n("Robert Cimrman"),i18n("Original developer"), "cimrman3@students.zcu.cz");
 	aboutData.addCredit(i18n("Johann Ollivier Lapeyre"), i18n("Artist"), "johann.ollivierlapeyre@gmail.com");
-    QApplication application(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
@@ -61,7 +62,7 @@ int main( int argc, char **argv )
     aboutData.setupCommandLine(&parser);
     parser.process(application);
     aboutData.processCommandLine(&parser);
-
+    KDBusService service;
 
 	if (application.isSessionRestored())
 		kRestoreMainWindows<KBBMainWindow>();

@@ -65,7 +65,7 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 
 	m_progression = new QProgressBar(this);
 	m_progression->setTextVisible(true);
-	m_progression->setFormat("%v / %m");
+    m_progression->setFormat(QLatin1Literal("%v / %m"));
 	m_progression->setMinimum(FIRST_STEP-1);
 	m_progression->setMaximum(LAST_STEP);
 	m_progression->setWhatsThis(i18n("Displays the progress of the tutorial."));
@@ -94,7 +94,7 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 	m_playerAction->setAlignment(Qt::AlignLeft);
 	m_playerAction->setWordWrap(true);
 	m_playerAction->setFrameStyle(QFrame::StyledPanel);
-	m_playerAction->setStyleSheet("border-style: none");
+    m_playerAction->setStyleSheet(QLatin1Literal("border-style: none"));
 	actionLayout->addWidget(m_playerAction, 0, Qt::AlignVCenter);
 
 	QHBoxLayout *buttonLayout = new QHBoxLayout();
@@ -138,7 +138,7 @@ bool KBBTutorial::mayShootRay(const int incomingPosition)
 			return true;
 		} else {
 			// Highlight m_playerAction to show what the player has to do
-			m_playerAction->setStyleSheet("color: black; background-color: #de0000");
+            m_playerAction->setStyleSheet(QLatin1Literal("color: black; background-color: #de0000"));
 			QTimer::singleShot(HIGHLIGHT_TIME, this, SLOT(restoreStyle()));
 			return false;
 		}
@@ -274,7 +274,7 @@ void KBBTutorial::previousStep()
 
 void KBBTutorial::restoreStyle()
 {
-	m_playerAction->setStyleSheet("color: palette(text); background-color: palette(window)");
+    m_playerAction->setStyleSheet(QLatin1Literal("color: palette(text); background-color: palette(window)"));
 }
 
 
@@ -294,9 +294,9 @@ void KBBTutorial::setNewStepMaxAllowed(const int newStepMax)
 
 void KBBTutorial::setTexts(const QString &title, const QString &text, const QString &action)
 {
-	m_title->setText("<qt><strong>" + title + "</strong></qt>");
-	m_explanation->setText("<qt>" + text + "</qt>");
-	m_playerAction->setText("<qt><b>" + action + "</b></qt>");
+    m_title->setText(QLatin1String("<qt><strong>") + title + QLatin1String("</strong></qt>"));
+    m_explanation->setText(QLatin1String("<qt>") + text + QLatin1String("</qt>"));
+    m_playerAction->setText(QLatin1String("<qt><b>") + action + QLatin1String("</b></qt>"));
 }
 
 

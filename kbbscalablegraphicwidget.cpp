@@ -594,7 +594,7 @@ void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 		m_scene->update();
 		m_lasers->setVisible(incomingPosition, false);
 
-		popupText(""); // To Remove any displayed text quicker.
+        popupText(QString()); // To Remove any displayed text quicker.
 
 		cursorAtNewPosition(incomingPosition);
 	}

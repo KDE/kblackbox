@@ -53,7 +53,7 @@ KBBGameDoc::KBBGameDoc(KBBMainWindow *parent, KBBTutorial* tutorial) : QObject(p
 	
 	m_balls = new KBBBallsOnBoard(this, m_columns, m_rows);
 	m_ballsPlaced = new KBBBallsOnBoard(this, m_columns, m_rows);
-	connect(m_ballsPlaced, SIGNAL(changes()), parent, SLOT(updateStats()));
+    connect(m_ballsPlaced, &KBBBallsOnBoard::changes, parent, &KBBMainWindow::updateStats);
 }
 
 

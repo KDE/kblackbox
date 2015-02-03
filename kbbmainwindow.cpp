@@ -128,7 +128,7 @@ KBBMainWindow::KBBMainWindow()
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
 	if (!QFile(svgzFile).exists())
-		svgzFile = QStandardPaths::locate(QStandardPaths::DataLocation, "pics/kblackbox.svgz");
+        svgzFile = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1Literal("pics/kblackbox.svgz"));
 	m_themeManager = new KBBThemeManager(svgzFile);
 	
 	
@@ -351,7 +351,7 @@ void KBBMainWindow::done()
 		if (score <= (m_ballNumber*35)) {
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />You did really well!", score);
 			if (m_sandboxMode)
-				s += QString("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it does not count<br />because <b>it is the sandbox!</b>");
+                s += QString::fromLatin1("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it does not count<br />because <b>it is the sandbox!</b>");
 		} else
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
 
@@ -384,7 +384,7 @@ void KBBMainWindow::pause(bool state)
 		m_gameWidget->popupText(i18n("Game paused.<br />Press \"%1\" to resume.", m_pauseAction->shortcut().toString(QKeySequence::NativeText)), 0);
 	} else {
 		m_gameClock->resume();
-		m_gameWidget->popupText("");
+        m_gameWidget->popupText(QString());
 	}
 	m_solveAction->setEnabled(!state);
 
@@ -413,10 +413,10 @@ void KBBMainWindow::settingsChanged()
 
 void KBBMainWindow::settingsDialog()
 {
-	if (!KConfigDialog::showDialog("settings")) {
-		KConfigDialog *dialog = new KConfigDialog(this, "settings", KBBPrefs::self());
+    if (!KConfigDialog::showDialog(QLatin1Literal("settings"))) {
+        KConfigDialog *dialog = new KConfigDialog(this, QLatin1Literal("settings"), KBBPrefs::self());
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
-		dialog->addPage(m_levelConfig, i18n("Custom Game"), "games-config-custom");
+        dialog->addPage(m_levelConfig, i18n("Custom Game"), QLatin1Literal("games-config-custom"));
 		connect(dialog, &KConfigDialog::settingsChanged, this, &KBBMainWindow::settingsChanged);
                 //QT5 dialog->setHelp(QString(), "kblackbox");
 		dialog->show();

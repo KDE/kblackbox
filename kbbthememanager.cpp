@@ -74,7 +74,7 @@ KBBThemeManager::KBBThemeManager(const QString &svgzFileName)
 
 QColor KBBThemeManager::color(const KBBScalableGraphicWidget::itemType itemType)
 {
-	return QColor(value(itemType, "stroke"));
+    return QColor(value(itemType, QLatin1Literal("stroke")));
 }
 
 
@@ -84,88 +84,88 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 	
 	switch (itemType) {
 		case KBBScalableGraphicWidget::background:
-			eId = "background";
+            eId = QLatin1Literal("background");
 			break;
 		case KBBScalableGraphicWidget::blackbox:
-			eId = "blackbox";
+            eId = QLatin1Literal("blackbox");
 			break;
 		case KBBScalableGraphicWidget::blackboxGrid:
-			eId = "blackbox_grid";
+            eId = QLatin1Literal("blackbox_grid");
 			break;
 		case KBBScalableGraphicWidget::cursor:
-			eId = "cursor";
+            eId = QLatin1Literal("cursor");
 			break;
 		case KBBScalableGraphicWidget::informationBackground:
-			eId = "information_background";
+            eId = QLatin1Literal("information_background");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoDeflection:
-			eId = "interaction_info_deflection";
+            eId = QLatin1Literal("interaction_info_deflection");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoHit:
-			eId = "interaction_info_hit";
+            eId = QLatin1Literal("interaction_info_hit");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoNothing:
-			eId = "interaction_info_nothing";
+            eId = QLatin1Literal("interaction_info_nothing");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoReflection:
-			eId = "interaction_info_reflection";
+            eId = QLatin1Literal("interaction_info_reflection");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoReflectionSym:
-			eId = "interaction_info_reflection_sym";
+            eId = QLatin1Literal("interaction_info_reflection_sym");
 			break;
 		case KBBScalableGraphicWidget::laser0:
-			eId = "laser_0";
+            eId = QLatin1Literal("laser_0");
 			break;
 		case KBBScalableGraphicWidget::laser90:
-			eId = "laser_90";
+            eId = QLatin1Literal("laser_90");
 			break;
 		case KBBScalableGraphicWidget::laser180:
-			eId = "laser_180";
+            eId = QLatin1Literal("laser_180");
 			break;
 		case KBBScalableGraphicWidget::laser270:
-			eId = "laser_270";
+            eId = QLatin1Literal("laser_270");
 			break;
 		case KBBScalableGraphicWidget::markerNothing:
-			eId = "marker_nothing";
+            eId = QLatin1Literal("marker_nothing");
 			break;
 		case KBBScalableGraphicWidget::playerBall:
-			eId = "player_ball";
+            eId = QLatin1Literal("player_ball");
 			break;
 		case KBBScalableGraphicWidget::playerRay:
-			eId = "player_ray";
+            eId = QLatin1Literal("player_ray");
 			break;
 		case KBBScalableGraphicWidget::resultBackground:
-			eId = "result_background";
+            eId = QLatin1Literal("result_background");
 			break;
 		case KBBScalableGraphicWidget::resultBackgroundHighlight:
-			eId = "result_background_highlight";
+            eId = QLatin1Literal("result_background_highlight");
 			break;
 		case KBBScalableGraphicWidget::resultHit:
-			eId = "result_hit";
+            eId = QLatin1Literal("result_hit");
 			break;
 		case KBBScalableGraphicWidget::resultReflection:
-			eId = "result_reflection";
+            eId = QLatin1Literal("result_reflection");
 			break;
 		case KBBScalableGraphicWidget::rightPlayerBall:
-			eId = "right_player_ball";
+            eId = QLatin1Literal("right_player_ball");
 			break;
 		case KBBScalableGraphicWidget::solutionBall:
-			eId = "solution_ball";
+            eId = QLatin1Literal("solution_ball");
 			break;
 		case KBBScalableGraphicWidget::solutionRay:
-			eId = "solution_ray";
+            eId = QLatin1Literal("solution_ray");
 			break;
 		case KBBScalableGraphicWidget::tutorialMarker:
-			eId = "tutorial_marker";
+            eId = QLatin1Literal("tutorial_marker");
 			break;
 		case KBBScalableGraphicWidget::unsureBall:
-			eId = "unsure_ball";
+            eId = QLatin1Literal("unsure_ball");
 			break;
 		case KBBScalableGraphicWidget::wrongPlayerBall:
-			eId = "wrong_player_ball";
+            eId = QLatin1Literal("wrong_player_ball");
 			break;
 		default:
-			eId = "none";
+            eId = QLatin1Literal("none");
 			break;
 	}
 	
@@ -175,7 +175,7 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 
 Qt::PenStyle KBBThemeManager::style(const KBBScalableGraphicWidget::itemType itemType)
 {
-	if (value(itemType, "stroke-dasharray")=="none") {
+    if (value(itemType, QLatin1Literal("stroke-dasharray"))==QLatin1String("none")) {
 		return Qt::SolidLine;
 	} else
 		return Qt::DotLine;
@@ -190,7 +190,7 @@ QSvgRenderer* KBBThemeManager::svgRenderer()
 
 qreal KBBThemeManager::width(const KBBScalableGraphicWidget::itemType itemType)
 {
-	return value(itemType, "stroke-width").toFloat();
+    return value(itemType, QLatin1Literal("stroke-width")).toFloat();
 }
 
 
@@ -208,20 +208,20 @@ int KBBThemeManager::zValue(const KBBScalableGraphicWidget::itemType itemType)
 QString KBBThemeManager::value(const KBBScalableGraphicWidget::itemType itemType, const QString &styleElement)
 {
 	const QString id = elementId(itemType);
-	QString style("");
-	QString v("");
+    QString style;
+    QString v;
 	
 	QDomNode node = m_root.firstChild();
 	while(!node.isNull()) {
-		if (node.toElement().attribute("id") == id)
-			style = node.toElement().attribute("style");
+        if (node.toElement().attribute(QLatin1Literal("id")) == id)
+            style = node.toElement().attribute(QLatin1Literal("style"));
 		node = node.nextSibling();
 	}
 	
-	QStringList styleList = style.split(';');
+    QStringList styleList = style.split(QLatin1Char(';'));
 	for (int i = 0; i < styleList.size(); i++) {
 		styleList.replace(i, styleList.at(i).trimmed());
-		if (styleList.at(i).startsWith(styleElement + ':')) {
+        if (styleList.at(i).startsWith(styleElement + QLatin1Char(':'))) {
 			QString s = styleList.at(i);
 			v = s.right(s.length()-styleElement.length()-1);
 		}

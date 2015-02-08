@@ -64,6 +64,9 @@ int main( int argc, char **argv )
     aboutData.processCommandLine(&parser);
     KDBusService service;
 
+    application.setWindowIcon(QIcon::fromTheme(QStringLiteral("kblackbox")));
+
+
 	if (application.isSessionRestored())
 		kRestoreMainWindows<KBBMainWindow>();
 	else {

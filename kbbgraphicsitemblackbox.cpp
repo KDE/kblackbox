@@ -93,12 +93,10 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 		// add new lines
         for (int i=0; i<m_columns+1; i++) {
             QGraphicsLineItem *item = new QGraphicsLineItem( b + i*r, b, b + i*r, b + m_rows*r, this);
-            m_scene->addItem(item);
             m_lines.append(item);
         }
         for (int i=0; i<m_rows+1; i++) {
             QGraphicsLineItem *item = new QGraphicsLineItem(  b, b + i*r, b + m_columns*r,  b + i*r, this);
-            m_scene->addItem(item);
             m_lines.append(item);
         }
 		

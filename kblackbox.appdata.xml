@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBlackbox</name>
+  <name xml:lang="ca">KBlackbox</name>
   <name xml:lang="cs">KBlackBox</name>
   <name xml:lang="da">KBlackbox</name>
   <name xml:lang="de">KBlackbox</name>
@@ -11,7 +12,7 @@
   <name xml:lang="es">KBlackbox</name>
   <name xml:lang="it">KBlackbox</name>
   <name xml:lang="nl">Kblackbox</name>
-  <name xml:lang="pl">KBlackbox</name>
+  <name xml:lang="pl">KCzarnaSkrzynka</name>
   <name xml:lang="pt">KBlackbox</name>
   <name xml:lang="pt-BR">KBlackbox</name>
   <name xml:lang="sk">KBlackbox</name>
@@ -20,15 +21,18 @@
   <name xml:lang="sr-Latn">K‑crna‑kutija</name>
   <name xml:lang="sr-ijekavian">К‑црна‑кутија</name>
   <name xml:lang="sr-ijekavianlatin">K‑crna‑kutija</name>
+  <name xml:lang="sv">Svarta lådan</name>
   <name xml:lang="uk">KBlackbox</name>
   <name xml:lang="x-test">xxKBlackboxxx</name>
+  <name xml:lang="zh-TW">KBlackBox</name>
   <summary>Blackbox Logic Game</summary>
+  <summary xml:lang="ca">Joc de lògica Blackbox</summary>
   <summary xml:lang="cs">Logická hra s černou skříňkou</summary>
   <summary xml:lang="en-GB">Blackbox Logic Game</summary>
   <summary xml:lang="es">Juego de lógica Blackbox</summary>
   <summary xml:lang="it">Gioco di logica Blackbox 	</summary>
   <summary xml:lang="nl">Blackbox: Logisch spel</summary>
-  <summary xml:lang="pl">Gra logiczna - Czarna skrzynka</summary>
+  <summary xml:lang="pl">KCzarnaSkrzynka - Gra logiczna</summary>
   <summary xml:lang="pt">Jogo de Lógica Blackbox</summary>
   <summary xml:lang="pt-BR">Jogo lógico de Caixa Preta</summary>
   <summary xml:lang="sk">Logická hra - čierna skrinka</summary>
@@ -37,18 +41,21 @@
   <summary xml:lang="sr-Latn">Logička igra crne kutije</summary>
   <summary xml:lang="sr-ijekavian">Логичка игра црне кутије</summary>
   <summary xml:lang="sr-ijekavianlatin">Logička igra crne kutije</summary>
+  <summary xml:lang="sv">Svart låda logiskt spel</summary>
   <summary xml:lang="uk">Гра на логіку (чорний скринька)</summary>
   <summary xml:lang="x-test">xxBlackbox Logic Gamexx</summary>
+  <summary xml:lang="zh-TW">黑盒子智力遊戲</summary>
   <description>
     <p>
       KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls.
       The position of the hidden balls can be deduced by shooting beams into the box.
     </p>
+    <p xml:lang="ca">El KBlackbox és un joc de fet i amagar que es juga en una graella de quadres a on l'ordinador ha amagat diverses boles. La posició de les boles amagades es pot deduir disparant feixos en el quadre.</p>
     <p xml:lang="en-GB">KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.</p>
     <p xml:lang="es">KBlackbox es un juego de escondite consistente en una retícula de cajas en las que la máquina ha escondido varias bolas. La posición de estas bolas puede ser deducida disparando rayos a las cajas.</p>
     <p xml:lang="it">KBlackbox è un gioco di cerca e trova, giocato su un reticolo di celle. Il computer ha nascosto delle sfere in queste celle. Sparando dei raggi laser nella scatola si può dedurre la posizione delle sfere nascoste.</p>
     <p xml:lang="nl">KBlackbox is een spel met verstoppertje spelen op een raster van dozen waar de computer verschillende ballen heeft verborgen. De positie van de verborgen ballen kunnen afgeleid worden door stralen in de doos te schieten.</p>
-    <p xml:lang="pl">KBlackbox jest grą w chowanego na siatce pól, na których komputer ukrył kilka z kul. Położenie ukrytych kul można wywnioskować poprzez wystrzeliwanie promieni na pola.</p>
+    <p xml:lang="pl">KCzarnaSkrzynka jest grą w chowanego na siatce pól, na których komputer ukrył kilka z kul. Położenie ukrytych kul można wywnioskować poprzez wystrzeliwanie promieni na pola.</p>
     <p xml:lang="pt">O KBlackbox é um jogo de escondidas, jogado sobre uma grelha de caixas em que o computador escolheu diversas bolas. A posição das bolas escondidas pode ser deduzida se disparar raios para as caixas.</p>
     <p xml:lang="pt-BR">KBlackbox é um jogo de esconde-esconde, jogado sobre uma grade de caixas, onde o computador escolheu diversas bolas. A posição das bolas escondidas pode ser deduzida se disparar raios contra as caixas.</p>
     <p xml:lang="sk">KBlackbox je hra na schovávačku hraná na mriežke polí, kde počítač má skrytých niekoľko guličiek. Polohu skrytých guliek môžete zistiť tým, že strieľate lúče do krabice.</p>
@@ -57,8 +64,10 @@
     <p xml:lang="sr-Latn">K‑crna‑kutija je igra skrivanja i nalaženja na mreži kutija gde je računar sakrio nekoliko loptica. Položaj skrivenih loptica izvodi se na osnovu ispaljivanja zrakova u kutije.</p>
     <p xml:lang="sr-ijekavian">К‑црна‑кутија је игра скривања и налажења на мрежи кутија где је рачунар сакрио неколико лоптица. Положај скривених лоптица изводи се на основу испаљивања зракова у кутије.</p>
     <p xml:lang="sr-ijekavianlatin">K‑crna‑kutija je igra skrivanja i nalaženja na mreži kutija gde je računar sakrio nekoliko loptica. Položaj skrivenih loptica izvodi se na osnovu ispaljivanja zrakova u kutije.</p>
+    <p xml:lang="sv">Svara lådan är ett kurragömmaspel som spelas på ett rutmönster av lådor där datorn har dolt flera kulor. Positionen för de dolda kulorna kan bestämmas genom att skjuta in strålar i lådan.</p>
     <p xml:lang="uk">KBlackbox — гра у знаходження кульок, прихованих комп’ютером на полі. Розташування прихованих кульок можна визначити за допомогою просвічування поля променями.</p>
     <p xml:lang="x-test">xxKBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.xx</p>
+    <p xml:lang="zh-TW">KBlackbox 是一款益智遊戲。您要打出探照燈，依照反射的規則找出黑盒子內所有藏起來的球。</p>
   </description>
   <url type="homepage">http://games.kde.org/game.php?game=kblackbox</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kblackbox</url>

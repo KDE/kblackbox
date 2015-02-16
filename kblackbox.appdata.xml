@@ -10,6 +10,7 @@
   <name xml:lang="de">KBlackbox</name>
   <name xml:lang="en-GB">KBlackbox</name>
   <name xml:lang="es">KBlackbox</name>
+  <name xml:lang="fr">KBlackbox</name>
   <name xml:lang="it">KBlackbox</name>
   <name xml:lang="nl">Kblackbox</name>
   <name xml:lang="pl">KCzarnaSkrzynka</name>
@@ -30,6 +31,7 @@
   <summary xml:lang="cs">Logická hra s černou skříňkou</summary>
   <summary xml:lang="en-GB">Blackbox Logic Game</summary>
   <summary xml:lang="es">Juego de lógica Blackbox</summary>
+  <summary xml:lang="fr">Jeu de logique Blackbox</summary>
   <summary xml:lang="it">Gioco di logica Blackbox 	</summary>
   <summary xml:lang="nl">Blackbox: Logisch spel</summary>
   <summary xml:lang="pl">KCzarnaSkrzynka - Gra logiczna</summary>
@@ -53,6 +55,7 @@
     <p xml:lang="ca">El KBlackbox és un joc de fet i amagar que es juga en una graella de quadres a on l'ordinador ha amagat diverses boles. La posició de les boles amagades es pot deduir disparant feixos en el quadre.</p>
     <p xml:lang="en-GB">KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.</p>
     <p xml:lang="es">KBlackbox es un juego de escondite consistente en una retícula de cajas en las que la máquina ha escondido varias bolas. La posición de estas bolas puede ser deducida disparando rayos a las cajas.</p>
+    <p xml:lang="fr">KBlackbox est un jeu de logique où il faut trouver des billes cachées. La position des billes cachées peut être déduite en envoyant des rayons dans la boîte.</p>
     <p xml:lang="it">KBlackbox è un gioco di cerca e trova, giocato su un reticolo di celle. Il computer ha nascosto delle sfere in queste celle. Sparando dei raggi laser nella scatola si può dedurre la posizione delle sfere nascoste.</p>
     <p xml:lang="nl">KBlackbox is een spel met verstoppertje spelen op een raster van dozen waar de computer verschillende ballen heeft verborgen. De positie van de verborgen ballen kunnen afgeleid worden door stralen in de doos te schieten.</p>
     <p xml:lang="pl">KCzarnaSkrzynka jest grą w chowanego na siatce pól, na których komputer ukrył kilka z kul. Położenie ukrytych kul można wywnioskować poprzez wystrzeliwanie promieni na pola.</p>

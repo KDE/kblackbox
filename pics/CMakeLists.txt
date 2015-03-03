@@ -2,4 +2,4 @@
 
 install( FILES 
          kblackbox.svgz
-         DESTINATION  ${DATA_INSTALL_DIR}/kblackbox/pics )
+         DESTINATION  ${KDE_INSTALL_DATADIR}/kblackbox/pics )

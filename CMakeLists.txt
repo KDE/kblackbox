@@ -3,7 +3,7 @@ project(kblackbox)
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.3.0")
 
-find_package(ECM 1.3.0 REQUIRED CONFIG)
+find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Svg)
@@ -23,6 +23,7 @@ include(ECMInstallIcons)
 include(KDEInstallDirs)
 include(KDECompilerSettings)
 include(KDECMakeSettings)
+include(ECMAddAppIcon)
 
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
@@ -60,16 +61,17 @@ set(kblackbox_SRCS
 
 kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
-kde4_add_app_icon(kblackbox_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kblackbox.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kblackbox.png")
+ecm_add_app_icon(kblackbox_SRCS ICONS ${ICONS_SRCS})
 add_executable(kblackbox ${kblackbox_SRCS})
 target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg KF5::I18n KF5::Archive KF5::TextWidgets KF5::DBusAddons)
 
 
-install(TARGETS kblackbox  ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR})
+install(TARGETS kblackbox  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES kblackbox.appdata.xml  DESTINATION  share/appdata)
-install(FILES kblackboxui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kblackbox)
+install(FILES kblackboxui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kblackbox)
 
-ecm_install_icons(ICONS hi128-apps-kblackbox.png  hi16-apps-kblackbox.png  hi22-apps-kblackbox.png  hi32-apps-kblackbox.png  hi48-apps-kblackbox.png  hi64-apps-kblackbox.png DESTINATION ${ICON_INSTALL_DIR})
+ecm_install_icons(ICONS hi128-apps-kblackbox.png  hi16-apps-kblackbox.png  hi22-apps-kblackbox.png  hi32-apps-kblackbox.png  hi48-apps-kblackbox.png  hi64-apps-kblackbox.png DESTINATION ${KDE_INSTALL_ICONDIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -28,6 +28,7 @@
   <name xml:lang="sv">Svarta lådan</name>
   <name xml:lang="uk">KBlackbox</name>
   <name xml:lang="x-test">xxKBlackboxxx</name>
+  <name xml:lang="zh-CN">KBlackbox</name>
   <name xml:lang="zh-TW">KBlackBox</name>
   <summary>Blackbox Logic Game</summary>
   <summary xml:lang="bs">Logička igra crna kutija</summary>
@@ -51,6 +52,7 @@
   <summary xml:lang="sv">Svart låda logiskt spel</summary>
   <summary xml:lang="uk">Гра на логіку (чорний скринька)</summary>
   <summary xml:lang="x-test">xxBlackbox Logic Gamexx</summary>
+  <summary xml:lang="zh-CN">黑箱逻辑游戏</summary>
   <summary xml:lang="zh-TW">黑盒子智力遊戲</summary>
   <description>
     <p>

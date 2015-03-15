@@ -61,7 +61,7 @@ set(kblackbox_SRCS
 
 kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/hi*-apps-kblackbox.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kblackbox.png")
 ecm_add_app_icon(kblackbox_SRCS ICONS ${ICONS_SRCS})
 add_executable(kblackbox ${kblackbox_SRCS})
 target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg KF5::I18n KF5::Archive KF5::TextWidgets KF5::DBusAddons)
@@ -72,6 +72,6 @@ install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES kblackbox.appdata.xml  DESTINATION  share/appdata)
 install(FILES kblackboxui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kblackbox)
 
-ecm_install_icons(ICONS hi128-apps-kblackbox.png  hi16-apps-kblackbox.png  hi22-apps-kblackbox.png  hi32-apps-kblackbox.png  hi48-apps-kblackbox.png  hi64-apps-kblackbox.png DESTINATION ${KDE_INSTALL_ICONDIR})
+ecm_install_icons(ICONS 128-apps-kblackbox.png  16-apps-kblackbox.png  22-apps-kblackbox.png  32-apps-kblackbox.png  48-apps-kblackbox.png  64-apps-kblackbox.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

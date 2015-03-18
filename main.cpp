@@ -44,12 +44,12 @@
 
 int main( int argc, char **argv )
 {
-    QApplication application(argc, argv);
-
     Kdelibs4ConfigMigrator migrate(QStringLiteral("kblackbox"));
     migrate.setConfigFiles(QStringList() << QStringLiteral("kblackboxrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("kblackboxui.rc"));
     migrate.migrate();
+
+    QApplication application(argc, argv);
 
     KAboutData aboutData( QLatin1String("kblackbox"), i18n("KBlackBox"), QLatin1String("0.5.0"), i18n("Find the balls hidden in the black box by shooting laser beams!"), KAboutLicense::GPL, i18n("(c) 2007, Nicolas Roffet\n(c) 1999-2000, Robert Cimrman"), QLatin1String("http://games.kde.org/kblackbox") );
     aboutData.addAuthor(i18n("Nicolas Roffet"),i18n("Developer of version 0.4."), QLatin1String("nicolas-kde@roffet.com"));

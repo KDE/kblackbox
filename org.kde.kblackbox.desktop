@@ -136,6 +136,6 @@ Icon=kblackbox
 X-DocPath=kblackbox/index.html
 Type=Application
 Terminal=false
-X-KDE-StartupNotify=true
+StartupNotify=true
 X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;BoardGame;

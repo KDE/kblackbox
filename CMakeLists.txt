@@ -67,7 +67,7 @@ target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg KF5::
 
 install(TARGETS kblackbox  ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR})
-install(FILES kblackbox.appdata.xml  DESTINATION  share/appdata)
+install(FILES kblackbox.appdata.xml  DESTINATION  ${DATA_INSTALL_DIR}/appdata)
 install(FILES kblackboxui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kblackbox)
 
 ecm_install_icons(ICONS hi128-apps-kblackbox.png  hi16-apps-kblackbox.png  hi22-apps-kblackbox.png  hi32-apps-kblackbox.png  hi48-apps-kblackbox.png  hi64-apps-kblackbox.png DESTINATION ${ICON_INSTALL_DIR})

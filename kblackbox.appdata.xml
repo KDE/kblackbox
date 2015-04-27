@@ -15,6 +15,7 @@
   <name xml:lang="fr">KBlackbox</name>
   <name xml:lang="gl">KBlackbox</name>
   <name xml:lang="it">KBlackbox</name>
+  <name xml:lang="ko">KBlackBox</name>
   <name xml:lang="nl">Kblackbox</name>
   <name xml:lang="pl">KCzarnaSkrzynka</name>
   <name xml:lang="pt">KBlackbox</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="fr">Jeu de logique Blackbox</summary>
   <summary xml:lang="gl">Xogo de lóxica Blackbox</summary>
   <summary xml:lang="it">Gioco di logica Blackbox 	</summary>
+  <summary xml:lang="ko">블랙박스 논리 게임</summary>
   <summary xml:lang="nl">Blackbox: Logisch spel</summary>
   <summary xml:lang="pl">KCzarnaSkrzynka - Gra logiczna</summary>
   <summary xml:lang="pt">Jogo de Lógica Blackbox</summary>
@@ -65,6 +67,7 @@
     <p xml:lang="fr">KBlackbox est un jeu de logique où il faut trouver des billes cachées. La position des billes cachées peut être déduite en envoyant des rayons dans la boîte.</p>
     <p xml:lang="gl">KBlackbox é un xogo das agachadas que toma lugar nunha grade de caixas nas que o computador agochou varias bólas. Podes lanzar raios á caixa para deducir a posición das bólas.</p>
     <p xml:lang="it">KBlackbox è un gioco di cerca e trova, giocato su un reticolo di celle. Il computer ha nascosto delle sfere in queste celle. Sparando dei raggi laser nella scatola si può dedurre la posizione delle sfere nascoste.</p>
+    <p xml:lang="ko">KBlackbox는 컴퓨터가 숨겨 놓은 공을 찾는 게임입니다. 숨은 공의 위치는 상자에 빔을 비추어서 알 수 있습니다.</p>
     <p xml:lang="nl">KBlackbox is een spel met verstoppertje spelen op een raster van dozen waar de computer verschillende ballen heeft verborgen. De positie van de verborgen ballen kunnen afgeleid worden door stralen in de doos te schieten.</p>
     <p xml:lang="pl">KCzarnaSkrzynka jest grą w chowanego na siatce pól, na których komputer ukrył kilka z kul. Położenie ukrytych kul można wywnioskować poprzez wystrzeliwanie promieni na pola.</p>
     <p xml:lang="pt">O KBlackbox é um jogo de escondidas, jogado sobre uma grelha de caixas em que o computador escolheu diversas bolas. A posição das bolas escondidas pode ser deduzida se disparar raios para as caixas.</p>

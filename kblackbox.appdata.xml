@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBlackbox</name>
+  <name xml:lang="ast">KBlackbox</name>
   <name xml:lang="bs">KBlackBox</name>
   <name xml:lang="ca">KBlackbox</name>
   <name xml:lang="cs">KBlackBox</name>
@@ -32,6 +33,7 @@
   <name xml:lang="zh-CN">KBlackbox</name>
   <name xml:lang="zh-TW">KBlackBox</name>
   <summary>Blackbox Logic Game</summary>
+  <summary xml:lang="ast">Xuegu de llóxica Blackbox</summary>
   <summary xml:lang="bs">Logička igra crna kutija</summary>
   <summary xml:lang="ca">Joc de lògica Blackbox</summary>
   <summary xml:lang="cs">Logická hra s černou skříňkou</summary>
@@ -62,6 +64,7 @@
       KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls.
       The position of the hidden balls can be deduced by shooting beams into the box.
     </p>
+    <p xml:lang="ast">KBlackbox ye un xuegu del esconderite xugáu nun rexáu de caxes u l'ordenador anubrió delles boles. La posición de les boles anubríes puen deducise pol disparu de rayos a la caxa.</p>
     <p xml:lang="ca">El KBlackbox és un joc de fet i amagar que es juga en una graella de quadres a on l'ordinador ha amagat diverses boles. La posició de les boles amagades es pot deduir disparant feixos en el quadre.</p>
     <p xml:lang="en-GB">KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.</p>
     <p xml:lang="es">KBlackbox es un juego de escondite consistente en una retícula de cajas en las que la máquina ha escondido varias bolas. La posición de estas bolas puede ser deducida disparando rayos a las cajas.</p>

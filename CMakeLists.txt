@@ -7,14 +7,14 @@ find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Svg)
-find_package(KF5 REQUIRED COMPONENTS 
+find_package(KF5 REQUIRED COMPONENTS
     Archive
-    CoreAddons 
-    Config 
-    Config 
-    I18n 
-    GuiAddons 
-    IconThemes 
+    CoreAddons
+    Config
+    DocTools
+    I18n
+    GuiAddons
+    IconThemes
     XmlGui)
 
 find_package(KF5KDEGames 4.9.0 REQUIRED)

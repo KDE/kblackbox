@@ -94,8 +94,7 @@ void KBBGraphicsItemBallRepository::newGame(int columns, int rows, int balls)
 	m_ballsOutside->clear();
 
 	m_ballToPlace = balls;
-	scale(1./m_width, 1./m_height);
-
+	setTransform(QTransform::fromScale(1./m_width, 1./m_height), true);
 
 	m_height = (rows/2);
 	if (rows % 2 > 0)
@@ -104,7 +103,7 @@ void KBBGraphicsItemBallRepository::newGame(int columns, int rows, int balls)
 	if (balls % m_height > 0)
 		m_width++;
 
-	scale(m_width/1., m_height/1.);
+	setTransform(QTransform::fromScale(m_width/1., m_height/1.), true);
 
 	setPos((-(m_width+1)*KBBScalableGraphicWidget::RATIO), KBBScalableGraphicWidget::RATIO);
 

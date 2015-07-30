@@ -59,7 +59,7 @@ KBBGraphicsItemLaser::KBBGraphicsItemLaser(KBBScalableGraphicWidget* parent, KBB
 		setPos(m_centerX - radius, m_centerY - radius);
 	}
 	
-	setAcceptsHoverEvents(true);
+	setAcceptHoverEvents(true);
 }
 
 

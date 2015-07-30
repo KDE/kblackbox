@@ -14,7 +14,8 @@ find_package(KF5 REQUIRED COMPONENTS
     DocTools
     I18n
     GuiAddons
-    IconThemes
+    DBusAddons
+    TextWidgets
     XmlGui)
 
 find_package(KF5KDEGames 4.9.0 REQUIRED)

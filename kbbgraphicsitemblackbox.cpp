@@ -74,7 +74,7 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphic
 
 void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 {
-	m_background->scale(1./m_columns, 1./m_rows);
+	m_background->setTransform(QTransform::fromScale(1./m_columns, 1./m_rows), true);
 
 	if ((m_columns!=columns) || (m_rows!=rows)) {
 		m_columns = columns;
@@ -108,7 +108,7 @@ void KBBGraphicsItemBlackBox::setSize(const int columns, const int rows)
 		m_background->setPos(b, b);
 	}
 	
-	m_background->scale(m_columns/1., m_rows/1.);
+	m_background->setTransform(QTransform::fromScale(m_columns/1., m_rows/1.), true);
 }
 
 

@@ -70,9 +70,9 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultReflection, m_scene, themeManager);
 		else
 			m_notNumber = new KBBGraphicsItem(KBBScalableGraphicWidget::resultHit, m_scene, themeManager);
-		m_notNumber->translate(radius,radius);
-		m_notNumber->rotate(rotationAngle());
-		m_notNumber->translate(-radius,-radius);
+		m_notNumber->setTransform(QTransform::fromTranslate(radius,radius), true);
+		m_notNumber->setTransform(QTransform().rotate(rotationAngle()), true);
+		m_notNumber->setTransform(QTransform::fromTranslate(-radius,-radius), true);
 		m_notNumber->setPos(m_centerX - radius, m_centerY - radius);
 	} else {
 		QString text;
@@ -94,7 +94,7 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 		m_number->setPos(radius - centerRadius/2 - 2*offset, radius - centerRadius + offset);
 		m_number->setZValue(themeManager->zValue(KBBScalableGraphicWidget::resultText));
 	}
-	setAcceptsHoverEvents(true);
+	setAcceptHoverEvents(true);
 }
 
 

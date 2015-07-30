@@ -44,7 +44,7 @@ KBBGraphicsItemInteractionInfo::KBBGraphicsItemInteractionInfo( KBBScalableGraph
 {
 	m_themeManager = themeManager;
 	setPos(x, y);
-	rotate(rotation);
+	setTransform(QTransform().rotate(rotation), true);
 	setType(type);
 }
 

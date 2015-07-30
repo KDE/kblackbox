@@ -52,7 +52,7 @@ KBBGraphicsItemBall::KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType item
 	m_ballType = itemType;
 	m_themeManager = themeManager;
 	
-	setAcceptsHoverEvents(true);
+	setAcceptHoverEvents(true);
 	
 	for (int i=0; i<8;i++)
 		m_interactionInfos[i] = NULL;

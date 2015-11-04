@@ -13,7 +13,6 @@ find_package(KF5 REQUIRED COMPONENTS
     Config
     DocTools
     I18n
-    GuiAddons
     DBusAddons
     TextWidgets
     XmlGui)

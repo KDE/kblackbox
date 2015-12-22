@@ -33,6 +33,7 @@
 
 #include <QFile>
 #include <QHBoxLayout>
+#include <QPointer>
 #include <QWidget>
 
 
@@ -356,13 +357,14 @@ void KBBMainWindow::done()
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
 
 		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (Kg::difficultyLevel() != KgDifficultyLevel::Custom) && (score<KBBGameDoc::SCORE_LOST)) {
-			KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
-			scoreDialog.initFromDifficulty(Kg::difficulty());
-	
+			QPointer<KScoreDialog> scoreDialog = new KScoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
+			scoreDialog->initFromDifficulty(Kg::difficulty());
+
 			KScoreDialog::FieldInfo scoreInfo;
 			scoreInfo[KScoreDialog::Score].setNum(score);
-			if(scoreDialog.addScore(scoreInfo, KScoreDialog::LessIsMore) != 0)
-				scoreDialog.exec();
+			if(scoreDialog->addScore(scoreInfo, KScoreDialog::LessIsMore) != 0)
+				scoreDialog->exec();
+			delete scoreDialog;
 		}
 
 		m_gameWidget->popupText(s);

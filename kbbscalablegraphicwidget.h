@@ -83,7 +83,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		/**
 		 * @brief Every graphic items
 		 *
-		 * Values are used to define the relative heigths between the displayed graphic items.
+		 * Values are used to define the relative heights between the displayed graphic items.
 		 * @see KBBThemeManager::zValue(const KBBScalableGraphicWidget::itemType itemType);
 		 */
 		enum itemType {

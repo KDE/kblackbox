@@ -46,7 +46,7 @@ class KBBItemWithPosition;
 class KBBGraphicsItemSet
 {
 	public:
-		KBBGraphicsItemSet(QGraphicsScene* scene);
+		explicit KBBGraphicsItemSet(QGraphicsScene* scene);
 		~KBBGraphicsItemSet();
 
 

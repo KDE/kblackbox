@@ -57,7 +57,7 @@ class KBBThemeManager
 		 * The constructor opens the SVGZ file, creates the SVG renderer and gets the DOM root node.
 		 * @param &svgzFileName Path to the SVGZ file
 		 */
-		KBBThemeManager(const QString &svgzFileName);
+		explicit KBBThemeManager(const QString &svgzFileName);
 		
 		
 		/**

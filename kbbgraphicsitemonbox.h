@@ -77,7 +77,6 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 		void setBoxPosition(int boxPosition);
 		
 		int m_boxPosition;
-		int m_boxOutsidePosition;
 		qreal m_dragXPos;
 		qreal m_dragYPos;
 		qreal m_dragX;

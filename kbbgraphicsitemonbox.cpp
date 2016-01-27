@@ -29,11 +29,8 @@
 
 #include "kbbgraphicsitemonbox.h"
 
-
-
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
-
 
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsiteminteractioninfo.h"

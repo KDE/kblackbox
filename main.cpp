@@ -69,12 +69,12 @@ int main( int argc, char **argv )
     application.setWindowIcon(QIcon::fromTheme(QStringLiteral("kblackbox")));
 
 
-	if (application.isSessionRestored())
-		kRestoreMainWindows<KBBMainWindow>();
-	else {
-		KBBMainWindow *mainWindow = new KBBMainWindow;
-		mainWindow->show();
-	}
+    if (application.isSessionRestored())
+        kRestoreMainWindows<KBBMainWindow>();
+    else {
+        KBBMainWindow *mainWindow = new KBBMainWindow;
+        mainWindow->show();
+    }
 
-	return application.exec();
+    return application.exec();
 }

@@ -36,7 +36,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <kdelibs4configmigrator.h>
-
+#include <KCrash>
 
 #include "kbbmainwindow.h"
 #include <KDBusService>
@@ -58,6 +58,7 @@ int main( int argc, char **argv )
     aboutData.setHomepage(QLatin1String("http://games.kde.org/kblackbox"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
+    KCrash::initialize();
     parser.addVersionOption();
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);

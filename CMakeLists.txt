@@ -2,20 +2,23 @@ project(kblackbox)
 
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.3.0")
+set (KF5_MIN_VERSION "5.15.0")
 
 find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Svg)
-find_package(KF5 REQUIRED COMPONENTS
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Archive
     CoreAddons
     Config
+    Crash
     DocTools
     I18n
     DBusAddons
     TextWidgets
-    XmlGui)
+    XmlGui
+)
 
 find_package(KF5KDEGames 4.9.0 REQUIRED)
 
@@ -64,7 +67,17 @@ kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kblackbox.png")
 ecm_add_app_icon(kblackbox_SRCS ICONS ${ICONS_SRCS})
 add_executable(kblackbox ${kblackbox_SRCS})
-target_link_libraries(kblackbox Qt5::Xml  KF5KDEGames KF5::XmlGui Qt5::Svg KF5::I18n KF5::Archive KF5::TextWidgets KF5::DBusAddons)
+target_link_libraries(kblackbox
+    Qt5::Xml
+    KF5KDEGames
+    KF5::XmlGui
+    Qt5::Svg
+    KF5::I18n
+    KF5::Archive
+    KF5::TextWidgets
+    KF5::DBusAddons
+    KF5::Crash
+)
 
 
 install(TARGETS kblackbox  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

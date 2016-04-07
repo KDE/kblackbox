@@ -129,10 +129,10 @@ KBBMainWindow::KBBMainWindow()
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
 	if (!QFile(svgzFile).exists())
-        svgzFile = QStandardPaths::locate(QStandardPaths::DataLocation, QLatin1Literal("pics/kblackbox.svgz"));
+        svgzFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1Literal("pics/kblackbox.svgz"));
 	m_themeManager = new KBBThemeManager(svgzFile);
-	
-	
+
+
 	// Tutorial widget
 	m_tutorial = new KBBTutorial(this);
 
@@ -164,31 +164,31 @@ KBBMainWindow::KBBMainWindow()
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveDown);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Down);
 	addAction(action);
-	
+
 	action = actionCollection()->addAction( QLatin1String(  "move_up" ) );
 	action->setText( i18n("Move Up") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveUp);
     actionCollection()->setDefaultShortcut(action,Qt::Key_Up);
 	addAction(action);
-	
+
 	action = actionCollection()->addAction( QLatin1String(  "move_left" ) );
 	action->setText( i18n("Move Left") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveLeft);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Left);
 	addAction(action);
-	
+
 	action = actionCollection()->addAction( QLatin1String(  "move_right" ) );
 	action->setText( i18n("Move Right") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveRight);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Right);
 	addAction(action);
-	
+
 	action = actionCollection()->addAction( QLatin1String( "switch_ball" ));
 	action->setText(i18n("Switch Ball or Shoot Laser"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardEnter);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Return);
 	addAction(action);
-	
+
 	action = actionCollection()->addAction( QLatin1String( "switch_marker" ));
 	action->setText(i18n("Switch Marker"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardSpace);
@@ -319,7 +319,7 @@ void KBBMainWindow::updateStats()
                 //QT5 statusBar()->changeItem(i18n("No more balls to place"), SRUN);
 			} else if (ballsLeftToPlace>0) {
                 //QT5 statusBar()->changeItem(i18np("1 ball to place", "%1 balls to place", ballsLeftToPlace), SRUN);
-			}	
+			}
         } else {
             //QT5 statusBar()->changeItem(i18n("Game over"), SRUN );
         }
@@ -328,8 +328,8 @@ void KBBMainWindow::updateStats()
     //QT5 statusBar()->changeItem(i18n("Time: %1", m_gameClock->timeString()), STIME);
 
     //QT5 statusBar()->changeItem( i18n("Size: %1 x %2", m_gameDoc->columns(), m_gameDoc->rows()), SSIZE );
-	
-	
+
+
 	// 2. Info Widget
 	m_gameWidget->setScore(m_gameDoc->score());
 }
@@ -400,7 +400,7 @@ void KBBMainWindow::settingsChanged()
 	m_customBallNumber = m_levelConfig->balls();
 	m_customColumns = m_levelConfig->columns();
 	m_customRows = m_levelConfig->rows();
-	
+
 	if (m_level==KgDifficultyLevel::Custom) {
 		bool mayRestart = true;
 		if (m_gameDoc->gameReallyStarted())

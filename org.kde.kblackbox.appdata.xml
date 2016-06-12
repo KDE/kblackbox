@@ -11,6 +11,7 @@
   <name xml:lang="cs">KBlackBox</name>
   <name xml:lang="da">KBlackbox</name>
   <name xml:lang="de">KBlackbox</name>
+  <name xml:lang="el">KBlackbox</name>
   <name xml:lang="en-GB">KBlackbox</name>
   <name xml:lang="es">KBlackbox</name>
   <name xml:lang="fi">KBlackbox</name>
@@ -43,6 +44,7 @@
   <summary xml:lang="ca-valencia">Joc de lògica Blackbox</summary>
   <summary xml:lang="cs">Logická hra s černou skříňkou</summary>
   <summary xml:lang="de">„Blackbox“-Spiel</summary>
+  <summary xml:lang="el">Παιχνίδι λογικής Blackbox</summary>
   <summary xml:lang="en-GB">Blackbox Logic Game</summary>
   <summary xml:lang="es">Juego de lógica Blackbox</summary>
   <summary xml:lang="fi">Logiikkapeli</summary>
@@ -77,6 +79,7 @@
     <p xml:lang="ca">El KBlackbox és un joc de fet i amagar que es juga en una graella de quadres a on l'ordinador ha amagat diverses boles. La posició de les boles amagades es pot deduir disparant feixos en el quadre.</p>
     <p xml:lang="ca-valencia">El KBlackbox és un joc de fet i amagar que es juga en una graella de quadres a on l'ordinador ha amagat diverses boles. La posició de les boles amagades es pot deduir disparant feixos en el quadre.</p>
     <p xml:lang="de">KBlackbox ist ein Versteckspiel, das auf einem Spielfeld gespielt wird, auf dem Schachteln in Reihen und Spalten mit darin versteckten Kugeln angeordnet sind.Um die Kugeln zu entdecken, müssen Sie Laserstrahlen in die Schachteln schießen und den Verlauf der Strahlen beobachten.</p>
+    <p xml:lang="el">Το KBlackbox είναι ένα παιχνίδι τύπου «κρυφτό» και παίζεται σε έναν κάνναβο κουτιών, όπου ο υπολογιστής έχει κρύψει πολλές σφαίρες. Η θέση των κρυμμένων σφαιρών μπορεί να εξαχθεί εκτοξεύοντας ακτίνες στο κουτί.</p>
     <p xml:lang="en-GB">KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.</p>
     <p xml:lang="es">KBlackbox es un juego de escondite consistente en una retícula de cajas en las que la máquina ha escondido varias bolas. La posición de estas bolas puede ser deducida disparando rayos a las cajas.</p>
     <p xml:lang="fi">KBlackBoxissä leikitään piilosta laatikoista koostuvasta ruudukossa, johon tietokone on piilottanut palloja. Piilopallojen sijainnin voi päätellä ampumalla laatikkoon säteitä.</p>

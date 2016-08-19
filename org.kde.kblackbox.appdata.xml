@@ -14,6 +14,7 @@
   <name xml:lang="el">KBlackbox</name>
   <name xml:lang="en-GB">KBlackbox</name>
   <name xml:lang="es">KBlackbox</name>
+  <name xml:lang="et">KBlackbox</name>
   <name xml:lang="fi">KBlackbox</name>
   <name xml:lang="fr">KBlackbox</name>
   <name xml:lang="gl">KBlackbox</name>
@@ -47,6 +48,7 @@
   <summary xml:lang="el">Παιχνίδι λογικής Blackbox</summary>
   <summary xml:lang="en-GB">Blackbox Logic Game</summary>
   <summary xml:lang="es">Juego de lógica Blackbox</summary>
+  <summary xml:lang="et">Blackboxi loogikamäng</summary>
   <summary xml:lang="fi">Logiikkapeli</summary>
   <summary xml:lang="fr">Jeu de logique Blackbox</summary>
   <summary xml:lang="gl">Xogo de lóxica Blackbox</summary>
@@ -82,6 +84,7 @@
     <p xml:lang="el">Το KBlackbox είναι ένα παιχνίδι τύπου «κρυφτό» και παίζεται σε έναν κάνναβο κουτιών, όπου ο υπολογιστής έχει κρύψει πολλές σφαίρες. Η θέση των κρυμμένων σφαιρών μπορεί να εξαχθεί εκτοξεύοντας ακτίνες στο κουτί.</p>
     <p xml:lang="en-GB">KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.</p>
     <p xml:lang="es">KBlackbox es un juego de escondite consistente en una retícula de cajas en las que la máquina ha escondido varias bolas. La posición de estas bolas puede ser deducida disparando rayos a las cajas.</p>
+    <p xml:lang="et">KBlackbox on otsimismäng kastivõrgustikus, kuhu arvuti on peitnud mõned pallid. Peidetud pallide asukohta saab ära arvata kasti valguskiiri lastes.</p>
     <p xml:lang="fi">KBlackBoxissä leikitään piilosta laatikoista koostuvasta ruudukossa, johon tietokone on piilottanut palloja. Piilopallojen sijainnin voi päätellä ampumalla laatikkoon säteitä.</p>
     <p xml:lang="fr">KBlackbox est un jeu de logique où il faut trouver des billes cachées. La position des billes cachées peut être déduite en envoyant des rayons dans la boîte.</p>
     <p xml:lang="gl">KBlackbox é un xogo das agachadas que toma lugar nunha grade de caixas nas que o computador agochou varias bólas. Podes lanzar raios á caixa para deducir a posición das bólas.</p>

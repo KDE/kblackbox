@@ -72,7 +72,7 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 
 
 	private:
-		void mousePressEvent (QGraphicsSceneMouseEvent* event);
+		void mousePressEvent (QGraphicsSceneMouseEvent* event) Q_DECL_OVERRIDE;
 		
 		KBBGraphicsItem* m_background;
 		int m_columns;

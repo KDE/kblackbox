@@ -62,24 +62,24 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		 * @brief Destructor of the class and dependent object
 		 * Call this methode to destroy simultaneously this QGraphicsItem and all other dependent QGraphicsItems: The number or the sign.
 		 */
-		void cleanDelete();
+		void cleanDelete() Q_DECL_OVERRIDE;
 
 		/**
 		 * @brief Highlight the item
 		 * 
 		 * Usually used when the mouse goes over the item or over the opposite item.
 		 */
-		void highlight(bool state);
+		void highlight(bool state) Q_DECL_OVERRIDE;
 
 		/**
 		 * @brief Highlight the item and the opposite one
 		 */
-		void highlightBoth(bool state);
+		void highlightBoth(bool state) Q_DECL_OVERRIDE;
 
 		/**
 		 * @brief Get the border position
 		 */
-		int position();
+		int position() Q_DECL_OVERRIDE;
 
 		/**
 		 * @brief Define the opposite "ray result" item
@@ -92,12 +92,12 @@ class KBBGraphicsItemRayResult : public KBBGraphicsItemBorder, public KBBGraphic
 		/**
 		 * @brief Set the pause state
 		 */
-		void setPause(bool state);
+		void setPause(bool state) Q_DECL_OVERRIDE;
 
 
 	private:
-		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
-		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
+		void hoverEnterEvent (QGraphicsSceneHoverEvent*) Q_DECL_OVERRIDE;
+		void hoverLeaveEvent (QGraphicsSceneHoverEvent*) Q_DECL_OVERRIDE;
 		
 		QString m_elementIdResultBackground;
 		QString m_elementIdResultBackgroundHighlight;

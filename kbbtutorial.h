@@ -80,7 +80,7 @@ class KBBTutorial : public QGroupBox
 		 *
 		 * Called by exiting the tutorial
 		 */
-		void hideEvent(QHideEvent*);
+		void hideEvent(QHideEvent*) Q_DECL_OVERRIDE;
 
 		/**
 		 * @brief May the player solve the running game?

@@ -65,13 +65,13 @@ class KBBGraphicsItemLaser : public KBBGraphicsItemBorder, public KBBGraphicsIte
 		/**
 		 * @brief Get the border position
 		 */
-		int position();
+		int position() Q_DECL_OVERRIDE;
 
 
 	private:
-		void hoverEnterEvent (QGraphicsSceneHoverEvent*);
-		void hoverLeaveEvent (QGraphicsSceneHoverEvent*);
-		void mousePressEvent (QGraphicsSceneMouseEvent* event);
+		void hoverEnterEvent (QGraphicsSceneHoverEvent*) Q_DECL_OVERRIDE;
+		void hoverLeaveEvent (QGraphicsSceneHoverEvent*) Q_DECL_OVERRIDE;
+		void mousePressEvent (QGraphicsSceneMouseEvent* event) Q_DECL_OVERRIDE;
 		
 		KBBScalableGraphicWidget* m_widget;
 };

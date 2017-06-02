@@ -150,7 +150,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		void removeAllBalls();
 		void removeBall(const int boxPosition);
 		void removeRay();
-		void resizeEvent(QResizeEvent*);
+		void resizeEvent(QResizeEvent*) Q_DECL_OVERRIDE;
 		QGraphicsScene* scene();
 		void setScore(int score);
 
@@ -174,7 +174,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 
 	protected:
-		void drawBackground(QPainter* painter, const QRectF&);
+		void drawBackground(QPainter* painter, const QRectF&) Q_DECL_OVERRIDE;
 
 
 	private:

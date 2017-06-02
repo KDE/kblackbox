@@ -58,7 +58,7 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 
 		KBBGraphicsItemOnBox(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, const int boxPosition, const int columns, const int rows);
 		
-		int position();
+		int position() Q_DECL_OVERRIDE;
 
 
 	protected:
@@ -72,8 +72,8 @@ class KBBGraphicsItemOnBox : public KBBGraphicsItem, public KBBItemWithPosition
 	private:
 		int boxPosition(qreal x, qreal y);
 		bool isMovable();
-		void mousePressEvent (QGraphicsSceneMouseEvent* event);
-		void mouseReleaseEvent (QGraphicsSceneMouseEvent* event);
+		void mousePressEvent (QGraphicsSceneMouseEvent* event) Q_DECL_OVERRIDE;
+		void mouseReleaseEvent (QGraphicsSceneMouseEvent* event) Q_DECL_OVERRIDE;
 		void setBoxPosition(int boxPosition);
 		
 		int m_boxPosition;

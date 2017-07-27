@@ -542,7 +542,7 @@ void KBBScalableGraphicWidget::switchBall()
 {
 	if ((m_balls->containsVisible(m_cursor->boxPosition())) || (m_ballsUnsure->containsVisible(m_cursor->boxPosition())))
 		removeBall(m_cursor->boxPosition());
-	else
+	else if (m_ballRepository->ballToTake() != KBBGraphicsItemSet::NO_INDEX)
 		addBall(m_cursor->boxPosition());
 }
 

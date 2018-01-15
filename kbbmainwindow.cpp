@@ -124,10 +124,12 @@ KBBMainWindow::KBBMainWindow()
 
 	// Menu "Settings"
 	KStandardAction::preferences(this, SLOT(settingsDialog()), actionCollection());
-	QAction* cursor = actionCollection()->addAction( QLatin1String( "toggle_cursor" ));
-	cursor->setText(i18n("Enable highlight under mouse"));
-	cursor->setCheckable(true);
-	connect(cursor, &QAction::triggered, this, &KBBMainWindow::toggleCursor);
+	m_toggleCursorAction = actionCollection()->addAction( QLatin1String( "toggle_cursor" ));
+	m_toggleCursorAction->setText(i18n("Enable highlight under mouse"));
+	m_toggleCursorAction->setCheckable(true);
+	const KConfigGroup group = KSharedConfig::openConfig()->group("default");
+	m_toggleCursorAction->setChecked(group.readEntry<bool>("highlight_enabled", true));
+	connect(m_toggleCursorAction, &QAction::triggered, this, &KBBMainWindow::toggleCursor);
 
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
@@ -207,6 +209,9 @@ KBBMainWindow::KBBMainWindow()
 	levelChanged();
 
 	setupGUI();
+
+	if (m_toggleCursorAction->isChecked())
+		toggleCursor();
 
 	// start a new game
 	startGame(false);
@@ -479,6 +484,9 @@ void KBBMainWindow::startTutorial()
 void KBBMainWindow::toggleCursor()
 {
 	m_gameWidget->toggleCursor();
+
+	KConfigGroup group = KSharedConfig::openConfig()->group("default");
+	group.writeEntry<bool>("highlight_enabled", m_toggleCursorAction->isChecked());
 }
 
 

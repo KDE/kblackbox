@@ -154,6 +154,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		QAction *m_doneAction;
 		QAction *m_pauseAction;
 		QAction *m_solveAction;
+		QAction *m_toggleCursorAction;
 
 
 		/**

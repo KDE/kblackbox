@@ -125,7 +125,7 @@ KBBMainWindow::KBBMainWindow()
 	// Menu "Settings"
 	KStandardAction::preferences(this, SLOT(settingsDialog()), actionCollection());
 	QAction* cursor = actionCollection()->addAction( QLatin1String( "toggle_cursor" ));
-	cursor->setText(i18n("Enable cursor under mouse"));
+	cursor->setText(i18n("Enable highlight under mouse"));
 	cursor->setCheckable(true);
 	connect(cursor, &QAction::triggered, this, &KBBMainWindow::toggleCursor);
 

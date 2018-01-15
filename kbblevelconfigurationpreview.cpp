@@ -31,7 +31,7 @@ KBBLevelConfigurationPreview::KBBLevelConfigurationPreview(QWidget *parent, KBBT
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setScene(new QGraphicsScene(0, 0, 2*KBBScalableGraphicWidget::BORDER_SIZE, 2*KBBScalableGraphicWidget::BORDER_SIZE, this));
-	m_blackbox = new KBBGraphicsItemBlackBox(this, scene(), themeManager);
+	m_blackbox = new KBBGraphicsItemBlackBox(this, scene(), themeManager, true);
 	m_themeManager = themeManager;
 }
 

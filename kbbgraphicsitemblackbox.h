@@ -43,19 +43,20 @@ class QGraphicsView;
 
 class KBBGraphicsItem;
 #include "kbbscalablegraphicwidget.h"
-
+#include <QObject>
 
 
 /**
  * @brief The black box in the scalable graphic widget
  */
-class KBBGraphicsItemBlackBox : public QGraphicsRectItem
+class KBBGraphicsItemBlackBox : public QObject, public QGraphicsRectItem
 {
+Q_OBJECT
 	public:
 		/**
 		 * @brief Constructor
 		 */
-		KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager);
+		KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager, bool isPreview);
 
 
 		/**
@@ -73,7 +74,9 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 
 	private:
 		void mousePressEvent (QGraphicsSceneMouseEvent* event) Q_DECL_OVERRIDE;
-		
+		void hoverMoveEvent (QGraphicsSceneHoverEvent* event) Q_DECL_OVERRIDE;
+		void hoverLeaveEvent (QGraphicsSceneHoverEvent* event) Q_DECL_OVERRIDE;
+
 		KBBGraphicsItem* m_background;
 		int m_columns;
 		QList<QGraphicsLineItem*> m_lines;
@@ -82,6 +85,10 @@ class KBBGraphicsItemBlackBox : public QGraphicsRectItem
 		QGraphicsScene* m_scene;
 		KBBScalableGraphicWidget* m_widget;
 		int m_zValueLines;
+ public:
+	  signals:
+		void hoverMoved(int);
+		void hoverExit();
 };
 
 #endif // KBBGRAPHICSITEMBLACKBOX_H

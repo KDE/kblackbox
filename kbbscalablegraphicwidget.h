@@ -162,8 +162,11 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		 */
 		void solve(const bool continueGame);
 
+		void toggleCursor();
 
 	public slots:
+	        void cursorOff();
+		void hoverMovePosition(int newPosition);
 		void cursorAtNewPosition(int borderPosition);
 		void keyboardEnter();
 		void keyboardMoveDown();
@@ -236,6 +239,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 		QGraphicsScene* m_scene; //TODO: Remove it because scene() already gives it back.
 		QLCDNumber* m_score;
 		KBBThemeManager* m_themeManager;
+		bool m_cursorFollowsMouse; //enable cursor following
 };
 
 #endif // KBBSCALABLEGRAPHICWIDGET_H

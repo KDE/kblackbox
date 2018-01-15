@@ -73,7 +73,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 	m_pause = false;
 	m_ballNumber = 0;
 	m_doneAction = done;
-
+	m_cursorFollowsMouse = false;
 
 	setFrameStyle(QFrame::NoFrame);
 	setCacheMode(QGraphicsView::CacheBackground);
@@ -82,7 +82,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 
 	m_scene = new QGraphicsScene( 0, 0, 2*BORDER_SIZE, 2*BORDER_SIZE, this );
 	
-	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_themeManager);
+	m_blackbox = new KBBGraphicsItemBlackBox(this, m_scene, m_themeManager, false);
 	m_blackbox->setKBBScalableGraphicWidget(this);
 	m_balls = new KBBGraphicsItemSet(m_scene);
 	m_cursor = new KBBGraphicsItemCursor(this, m_themeManager);
@@ -123,6 +123,7 @@ KBBScalableGraphicWidget::KBBScalableGraphicWidget(KBBGameDoc* gameDoc, KBBTheme
 
 	// TODO: not displayed... :(
 	setWhatsThis(i18n("<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is in the center.</li><li>On the left, there are the <b>balls</b> you have to place over the black box.</li><li>Around the black box, there are <b>lasers</b> that are replaced with <b>interaction information</b> if you use them.</li></ul></qt>"));
+	connect(m_blackbox, &KBBGraphicsItemBlackBox::hoverMoved, this, &KBBScalableGraphicWidget::hoverMovePosition);
 
 }
 
@@ -600,5 +601,25 @@ void KBBScalableGraphicWidget::useLaser(const int incomingPosition)
 	}
 }
 
+void KBBScalableGraphicWidget::hoverMovePosition(int pos)
+{
+	if (m_cursorFollowsMouse)
+	{
+		m_cursor->show();
+		m_cursor->setBoxPosition(pos);
+		m_cursor->updatePositions();
+	}
+}
 
+void KBBScalableGraphicWidget::toggleCursor()
+{
+	m_cursorFollowsMouse = !m_cursorFollowsMouse;
+	if (m_cursorFollowsMouse == false){
+		m_cursor->hide();
+	}
+}
+
+void KBBScalableGraphicWidget::cursorOff() {
+	m_cursor->hide();
+}
 

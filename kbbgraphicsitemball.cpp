@@ -135,6 +135,8 @@ void KBBGraphicsItemBall::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 		connect(m_timer, &QTimer::timeout, this, &KBBGraphicsItemBall::showInteractions);
 		m_timer->start(TIME_TO_WAIT_BEFORE_SHOWING_INTERACTIONS);
 	}
+
+	m_widget->hoverMovePosition(position());
 }
 
 

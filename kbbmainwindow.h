@@ -72,7 +72,6 @@ class KBBMainWindow : public KXmlGuiWindow
 		 */
 		void updateStats();
 
-
 	private slots:
 		/**
 		 * @brief Ends the current game
@@ -125,6 +124,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		 */
 		void startTutorial();
 
+		void toggleCursor();
 
 	private:
 		/**

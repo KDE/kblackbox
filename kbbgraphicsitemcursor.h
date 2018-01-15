@@ -67,14 +67,13 @@ class KBBGraphicsItemCursor : public KBBGraphicsItem
 		void setBoardSize(const int columns, const int rows);
 		void setBorderPosition(const int borderPosition);
 		void setBoxPosition(const int boxPosition);
-
+		void updatePositions();
 
 	signals:
 		void cursorAtNewPosition(const int borderPosition);
 
 
 	private:
-		void updatePositions();
 		
 		int m_boxPosition;
 		int m_borderPosition;

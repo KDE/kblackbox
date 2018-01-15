@@ -124,7 +124,10 @@ KBBMainWindow::KBBMainWindow()
 
 	// Menu "Settings"
 	KStandardAction::preferences(this, SLOT(settingsDialog()), actionCollection());
-
+	QAction* cursor = actionCollection()->addAction( QLatin1String( "toggle_cursor" ));
+	cursor->setText(i18n("Enable cursor under mouse"));
+	cursor->setCheckable(true);
+	connect(cursor, &QAction::triggered, this, &KBBMainWindow::toggleCursor);
 
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
@@ -473,6 +476,10 @@ void KBBMainWindow::startTutorial()
 	}
 }
 
+void KBBMainWindow::toggleCursor()
+{
+	m_gameWidget->toggleCursor();
+}
 
 
 //

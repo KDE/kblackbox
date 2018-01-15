@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gui name="kblackbox"
-     version="14"
+     version="15"
      xmlns="http://www.kde.org/standards/kxmlgui/1.0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.kde.org/standards/kxmlgui/1.0
@@ -12,6 +12,9 @@
 		</Menu>
 		<Menu name="move">
 			<Action name="move_done" />
+		</Menu>
+		<Menu name="settings">
+		  <Action name="toggle_cursor" />
 		</Menu>
 	</MenuBar>
 	<ToolBar name="mainToolBar">

@@ -48,7 +48,7 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager) : QGraphicsRectItem (0)
+KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager, bool isPreview) : QGraphicsRectItem (0)
 {
     scene->addItem(this);
 	m_columns = 1;
@@ -64,6 +64,9 @@ KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphic
 	m_penLines.setColor(themeManager->color(g));
 	m_penLines.setStyle(themeManager->style(g));
 	m_penLines.setWidthF(themeManager->width(g));
+	//accept hover events unless the central widget is a preview (crashes the program)
+	if (!isPreview)
+		setAcceptHoverEvents(true);
 }
 
 
@@ -130,4 +133,16 @@ void KBBGraphicsItemBlackBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	
 	if (m_widget!=0)
 		m_widget->mouseBoxClick(event->button(), x + y*m_columns);
+}
+
+void KBBGraphicsItemBlackBox::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
+{
+	m_widget->cursorOff();
+}
+
+void KBBGraphicsItemBlackBox::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
+{
+	int x = (int)(event->pos().x() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
+	int y = (int)(event->pos().y() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
+	emit hoverMoved(x + y*m_columns);
 }

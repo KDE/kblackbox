@@ -65,7 +65,6 @@ GenericName[zh_TW]=黑盒子智力遊戲
 Exec=kblackbox -qwindowtitle %c
 Name=KBlackBox
 Name[af]=Kblackbox
-Name[ast]=KBlackBox
 Name[be]=Чорная скрыня
 Name[bn]=কে-ব্ল্যাকবক্স
 Name[br]=KBlackBox

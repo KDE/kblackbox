@@ -108,6 +108,7 @@
   <url type="homepage">http://games.kde.org/game.php?game=kblackbox</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kblackbox</url>
   <url type="help">http://docs.kde.org/stable/en/kdegames/kblackbox/index.html</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kblackbox&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
       <image>http://kde.org/images/screenshots/kblackbox.png</image>

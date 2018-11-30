@@ -62,7 +62,7 @@ KBBGraphicsItemSet::~KBBGraphicsItemSet()
 
 int KBBGraphicsItemSet::anyItemPosition()
 {
-	if (m_items.count()>0)
+        if (!m_items.isEmpty())
 		return m_items.last()->position();
 	else
 		return NO_INDEX;

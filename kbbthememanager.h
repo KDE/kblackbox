@@ -34,7 +34,7 @@
 class QString;
 
 
-#include <qsvgrenderer.h>
+#include <QSvgRenderer>
 
 
 #include "kbbscalablegraphicwidget.h"

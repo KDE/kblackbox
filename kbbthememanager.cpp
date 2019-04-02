@@ -35,7 +35,7 @@
 
 
 #include <kfilterdev.h>
-#include <qsvgrenderer.h>
+#include <QSvgRenderer>
 
 
 #include "kbbscalablegraphicwidget.h"

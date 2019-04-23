@@ -54,7 +54,7 @@ KBBThemeManager::KBBThemeManager(const QString &svgzFileName)
 	
 	// 2. for non SVG items
 	QFile svgzFile(svgzFileName);
-	QIODevice *f = KFilterDev::device(&svgzFile, QString::fromLatin1("application/x-gzip"), false);
+	QIODevice *f = KFilterDev::device(&svgzFile, QStringLiteral("application/x-gzip"), false);
 	
 	if (f) {
 		QDomDocument doc;
@@ -74,7 +74,7 @@ KBBThemeManager::KBBThemeManager(const QString &svgzFileName)
 
 QColor KBBThemeManager::color(const KBBScalableGraphicWidget::itemType itemType)
 {
-    return QColor(value(itemType, QLatin1Literal("stroke")));
+    return QColor(value(itemType, QStringLiteral("stroke")));
 }
 
 
@@ -84,88 +84,88 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 	
 	switch (itemType) {
 		case KBBScalableGraphicWidget::background:
-            eId = QLatin1Literal("background");
+            eId = QStringLiteral("background");
 			break;
 		case KBBScalableGraphicWidget::blackbox:
-            eId = QLatin1Literal("blackbox");
+            eId = QStringLiteral("blackbox");
 			break;
 		case KBBScalableGraphicWidget::blackboxGrid:
-            eId = QLatin1Literal("blackbox_grid");
+            eId = QStringLiteral("blackbox_grid");
 			break;
 		case KBBScalableGraphicWidget::cursor:
-            eId = QLatin1Literal("cursor");
+            eId = QStringLiteral("cursor");
 			break;
 		case KBBScalableGraphicWidget::informationBackground:
-            eId = QLatin1Literal("information_background");
+            eId = QStringLiteral("information_background");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoDeflection:
-            eId = QLatin1Literal("interaction_info_deflection");
+            eId = QStringLiteral("interaction_info_deflection");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoHit:
-            eId = QLatin1Literal("interaction_info_hit");
+            eId = QStringLiteral("interaction_info_hit");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoNothing:
-            eId = QLatin1Literal("interaction_info_nothing");
+            eId = QStringLiteral("interaction_info_nothing");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoReflection:
-            eId = QLatin1Literal("interaction_info_reflection");
+            eId = QStringLiteral("interaction_info_reflection");
 			break;
 		case KBBScalableGraphicWidget::interactionInfoReflectionSym:
-            eId = QLatin1Literal("interaction_info_reflection_sym");
+            eId = QStringLiteral("interaction_info_reflection_sym");
 			break;
 		case KBBScalableGraphicWidget::laser0:
-            eId = QLatin1Literal("laser_0");
+            eId = QStringLiteral("laser_0");
 			break;
 		case KBBScalableGraphicWidget::laser90:
-            eId = QLatin1Literal("laser_90");
+            eId = QStringLiteral("laser_90");
 			break;
 		case KBBScalableGraphicWidget::laser180:
-            eId = QLatin1Literal("laser_180");
+            eId = QStringLiteral("laser_180");
 			break;
 		case KBBScalableGraphicWidget::laser270:
-            eId = QLatin1Literal("laser_270");
+            eId = QStringLiteral("laser_270");
 			break;
 		case KBBScalableGraphicWidget::markerNothing:
-            eId = QLatin1Literal("marker_nothing");
+            eId = QStringLiteral("marker_nothing");
 			break;
 		case KBBScalableGraphicWidget::playerBall:
-            eId = QLatin1Literal("player_ball");
+            eId = QStringLiteral("player_ball");
 			break;
 		case KBBScalableGraphicWidget::playerRay:
-            eId = QLatin1Literal("player_ray");
+            eId = QStringLiteral("player_ray");
 			break;
 		case KBBScalableGraphicWidget::resultBackground:
-            eId = QLatin1Literal("result_background");
+            eId = QStringLiteral("result_background");
 			break;
 		case KBBScalableGraphicWidget::resultBackgroundHighlight:
-            eId = QLatin1Literal("result_background_highlight");
+            eId = QStringLiteral("result_background_highlight");
 			break;
 		case KBBScalableGraphicWidget::resultHit:
-            eId = QLatin1Literal("result_hit");
+            eId = QStringLiteral("result_hit");
 			break;
 		case KBBScalableGraphicWidget::resultReflection:
-            eId = QLatin1Literal("result_reflection");
+            eId = QStringLiteral("result_reflection");
 			break;
 		case KBBScalableGraphicWidget::rightPlayerBall:
-            eId = QLatin1Literal("right_player_ball");
+            eId = QStringLiteral("right_player_ball");
 			break;
 		case KBBScalableGraphicWidget::solutionBall:
-            eId = QLatin1Literal("solution_ball");
+            eId = QStringLiteral("solution_ball");
 			break;
 		case KBBScalableGraphicWidget::solutionRay:
-            eId = QLatin1Literal("solution_ray");
+            eId = QStringLiteral("solution_ray");
 			break;
 		case KBBScalableGraphicWidget::tutorialMarker:
-            eId = QLatin1Literal("tutorial_marker");
+            eId = QStringLiteral("tutorial_marker");
 			break;
 		case KBBScalableGraphicWidget::unsureBall:
-            eId = QLatin1Literal("unsure_ball");
+            eId = QStringLiteral("unsure_ball");
 			break;
 		case KBBScalableGraphicWidget::wrongPlayerBall:
-            eId = QLatin1Literal("wrong_player_ball");
+            eId = QStringLiteral("wrong_player_ball");
 			break;
 		default:
-            eId = QLatin1Literal("none");
+            eId = QStringLiteral("none");
 			break;
 	}
 	
@@ -175,7 +175,7 @@ QString KBBThemeManager::elementId(const KBBScalableGraphicWidget::itemType item
 
 Qt::PenStyle KBBThemeManager::style(const KBBScalableGraphicWidget::itemType itemType)
 {
-    if (value(itemType, QLatin1Literal("stroke-dasharray"))==QLatin1String("none")) {
+    if (value(itemType, QStringLiteral("stroke-dasharray"))==QLatin1String("none")) {
 		return Qt::SolidLine;
 	} else
 		return Qt::DotLine;
@@ -190,7 +190,7 @@ QSvgRenderer* KBBThemeManager::svgRenderer()
 
 qreal KBBThemeManager::width(const KBBScalableGraphicWidget::itemType itemType)
 {
-    return value(itemType, QLatin1Literal("stroke-width")).toFloat();
+    return value(itemType, QStringLiteral("stroke-width")).toFloat();
 }
 
 
@@ -213,8 +213,8 @@ QString KBBThemeManager::value(const KBBScalableGraphicWidget::itemType itemType
 	
 	QDomNode node = m_root.firstChild();
 	while(!node.isNull()) {
-        if (node.toElement().attribute(QLatin1Literal("id")) == id)
-            style = node.toElement().attribute(QLatin1Literal("style"));
+        if (node.toElement().attribute(QStringLiteral("id")) == id)
+            style = node.toElement().attribute(QStringLiteral("style"));
 		node = node.nextSibling();
 	}
 	

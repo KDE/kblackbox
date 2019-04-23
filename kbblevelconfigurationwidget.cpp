@@ -28,7 +28,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	QGridLayout *l = new QGridLayout(this);
 
 	kcfg_balls = new KPluralHandlingSpinBox(this);
-	kcfg_balls->setObjectName( QLatin1String("kcfg_balls" ));
+	kcfg_balls->setObjectName( QStringLiteral("kcfg_balls" ));
 	l->addWidget(kcfg_balls, 0, 0, 1, 2);
 	kcfg_balls->setMinimum(1);
 	kcfg_balls->setValue(b);
@@ -36,7 +36,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	connect(kcfg_balls, static_cast<void (KPluralHandlingSpinBox::*)(int)>(&KPluralHandlingSpinBox::valueChanged), this, &KBBLevelConfigurationWidget::boxSizeChanged);
 
 	kcfg_columns = new KPluralHandlingSpinBox(this);
-	kcfg_columns->setObjectName( QLatin1String("kcfg_columns" ));
+	kcfg_columns->setObjectName( QStringLiteral("kcfg_columns" ));
 	l->addWidget(kcfg_columns, 1, 1);
 	kcfg_columns->setMinimum(2);
 	kcfg_columns->setMaximum(30);
@@ -45,7 +45,7 @@ KBBLevelConfigurationWidget::KBBLevelConfigurationWidget(QWidget *parent, int c,
 	connect(kcfg_columns, static_cast<void (KPluralHandlingSpinBox::*)(int)>(&KPluralHandlingSpinBox::valueChanged), this, &KBBLevelConfigurationWidget::boxSizeChanged);
 
 	kcfg_rows = new KPluralHandlingSpinBox(this);
-	kcfg_rows->setObjectName( QLatin1String("kcfg_rows" ));
+	kcfg_rows->setObjectName( QStringLiteral("kcfg_rows" ));
 	l->addWidget(kcfg_rows, 2, 0);
 	kcfg_rows->setMinimum(2);
 	kcfg_rows->setMaximum(30);

@@ -92,20 +92,20 @@ KBBMainWindow::KBBMainWindow()
 		1000, QByteArray("config"), i18nc("Difficulty level title", "Configurable")
 	));
 	KgDifficultyGUI::init(this);
-	connect(Kg::difficulty(), SIGNAL(currentLevelChanged(const KgDifficultyLevel*)), SLOT(levelChanged()));
+	connect(Kg::difficulty(), &KgDifficulty::currentLevelChanged, this, &KBBMainWindow::levelChanged);
 
 
 	// Menu "Game"
 	KStandardGameAction::gameNew(this, SLOT(newGame()), actionCollection());
 	m_pauseAction = KStandardGameAction::pause(this, SLOT(pause(bool)), actionCollection());
-	QAction* tutorial = actionCollection()->addAction( QLatin1String( "game_tutorial" ));
+	QAction* tutorial = actionCollection()->addAction( QStringLiteral( "game_tutorial" ));
 	tutorial->setText(i18n("Start Tutorial"));
-	tutorial->setIcon(QIcon::fromTheme( QLatin1String( "footprint" )));
+	tutorial->setIcon(QIcon::fromTheme( QStringLiteral( "footprint" )));
 	tutorial->setToolTip(i18n("Start tutorial"));
 	tutorial->setWhatsThis(i18n("<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to learn the rules of the game. Start it if you do not know them!</qt>"));
 	connect(tutorial, &QAction::triggered, this, &KBBMainWindow::startTutorial);
 	KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-	QAction* sandbox = actionCollection()->addAction( QLatin1String( "game_sandbox" ));
+	QAction* sandbox = actionCollection()->addAction( QStringLiteral( "game_sandbox" ));
 	sandbox->setText(i18n("New Sandbox Game"));
 	sandbox->setToolTip(i18n("Start a new sandbox game"));
 	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not really fun and you should try to start a real game!</p></qt>"));
@@ -113,10 +113,10 @@ KBBMainWindow::KBBMainWindow()
 	KStandardGameAction::highscores(this, SLOT(showHighscores()), actionCollection());
 
 	// Menu "Move"
-	m_doneAction = actionCollection()->addAction( QLatin1String( "move_done" ));
+	m_doneAction = actionCollection()->addAction( QStringLiteral( "move_done" ));
 	m_doneAction->setText(i18nc("This is the last action of a game to check the result, when the user is done.", "Done!"));
 	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the correct positions of the balls and see how they interact with laser beams, you should use the lasers that are positioned around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is only possible to click here if you have placed the correct number of balls.</p></qt>"));
-	m_doneAction->setIcon(QIcon::fromTheme( QLatin1String( "dialog-ok" )));
+	m_doneAction->setIcon(QIcon::fromTheme( QStringLiteral( "dialog-ok" )));
 	connect(m_doneAction, &QAction::triggered, this, &KBBMainWindow::done);
 	m_solveAction = KStandardGameAction::solve(this, SLOT(solve()), actionCollection());
 	m_solveAction->setToolTip(i18n("Give up the game"));
@@ -124,7 +124,7 @@ KBBMainWindow::KBBMainWindow()
 
 	// Menu "Settings"
 	KStandardAction::preferences(this, SLOT(settingsDialog()), actionCollection());
-	m_toggleCursorAction = actionCollection()->addAction( QLatin1String( "toggle_cursor" ));
+	m_toggleCursorAction = actionCollection()->addAction( QStringLiteral( "toggle_cursor" ));
 	m_toggleCursorAction->setText(i18n("Enable highlight under mouse"));
 	m_toggleCursorAction->setCheckable(true);
 	const KConfigGroup group = KSharedConfig::openConfig()->group("default");
@@ -134,7 +134,7 @@ KBBMainWindow::KBBMainWindow()
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
 	if (!QFile(svgzFile).exists())
-        svgzFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, QLatin1Literal("pics/kblackbox.svgz"));
+        svgzFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("pics/kblackbox.svgz"));
 	m_themeManager = new KBBThemeManager(svgzFile);
 
 
@@ -164,37 +164,37 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Keyboard only
-	QAction * action = actionCollection()->addAction( QLatin1String(  "move_down" ) );
+	QAction * action = actionCollection()->addAction( QStringLiteral(  "move_down" ) );
 	action->setText( i18n("Move Down") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveDown);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Down);
 	addAction(action);
 
-	action = actionCollection()->addAction( QLatin1String(  "move_up" ) );
+	action = actionCollection()->addAction( QStringLiteral(  "move_up" ) );
 	action->setText( i18n("Move Up") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveUp);
     actionCollection()->setDefaultShortcut(action,Qt::Key_Up);
 	addAction(action);
 
-	action = actionCollection()->addAction( QLatin1String(  "move_left" ) );
+	action = actionCollection()->addAction( QStringLiteral(  "move_left" ) );
 	action->setText( i18n("Move Left") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveLeft);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Left);
 	addAction(action);
 
-	action = actionCollection()->addAction( QLatin1String(  "move_right" ) );
+	action = actionCollection()->addAction( QStringLiteral(  "move_right" ) );
 	action->setText( i18n("Move Right") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveRight);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Right);
 	addAction(action);
 
-	action = actionCollection()->addAction( QLatin1String( "switch_ball" ));
+	action = actionCollection()->addAction( QStringLiteral( "switch_ball" ));
 	action->setText(i18n("Switch Ball or Shoot Laser"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardEnter);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Return);
 	addAction(action);
 
-	action = actionCollection()->addAction( QLatin1String( "switch_marker" ));
+	action = actionCollection()->addAction( QStringLiteral( "switch_marker" ));
 	action->setText(i18n("Switch Marker"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardSpace);
     actionCollection()->setDefaultShortcut(action, Qt::Key_Space);
@@ -360,7 +360,7 @@ void KBBMainWindow::done()
 		if (score <= (m_ballNumber*35)) {
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />You did really well!", score);
 			if (m_sandboxMode)
-                s += QString::fromLatin1("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it does not count<br />because <b>it is the sandbox!</b>");
+                s += QLatin1String("<br /><br />") + i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "But it does not count<br />because <b>it is the sandbox!</b>");
 		} else
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
 
@@ -423,10 +423,10 @@ void KBBMainWindow::settingsChanged()
 
 void KBBMainWindow::settingsDialog()
 {
-    if (!KConfigDialog::showDialog(QLatin1Literal("settings"))) {
-        KConfigDialog *dialog = new KConfigDialog(this, QLatin1Literal("settings"), KBBPrefs::self());
+    if (!KConfigDialog::showDialog(QStringLiteral("settings"))) {
+        KConfigDialog *dialog = new KConfigDialog(this, QStringLiteral("settings"), KBBPrefs::self());
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
-        dialog->addPage(m_levelConfig, i18n("Custom Game"), QLatin1Literal("games-config-custom"));
+        dialog->addPage(m_levelConfig, i18n("Custom Game"), QStringLiteral("games-config-custom"));
 		connect(dialog, &KConfigDialog::settingsChanged, this, &KBBMainWindow::settingsChanged);
                 //QT5 dialog->setHelp(QString(), "kblackbox");
 		dialog->show();

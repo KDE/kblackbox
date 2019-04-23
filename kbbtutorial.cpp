@@ -65,7 +65,7 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 
 	m_progression = new QProgressBar(this);
 	m_progression->setTextVisible(true);
-    m_progression->setFormat(QLatin1Literal("%v / %m"));
+    m_progression->setFormat(QStringLiteral("%v / %m"));
 	m_progression->setMinimum(FIRST_STEP-1);
 	m_progression->setMaximum(LAST_STEP);
 	m_progression->setWhatsThis(i18n("Displays the progress of the tutorial."));
@@ -87,23 +87,23 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 	tutorialLayout->addLayout(actionLayout);
 	QLabel* iconLabel = new QLabel(this);
 	iconLabel->setFixedSize(24, 24);
-	iconLabel->setPixmap(QIcon::fromTheme( QLatin1String( "go-next" )).pixmap(24, 24));
+	iconLabel->setPixmap(QIcon::fromTheme( QStringLiteral( "go-next" )).pixmap(24, 24));
 	actionLayout->addWidget(iconLabel, 0, Qt::AlignVCenter);
 	m_playerAction = new QLabel(this);
 	m_playerAction->setWhatsThis(i18n("Describes what you should do to reach the next tutorial step."));
 	m_playerAction->setAlignment(Qt::AlignLeft);
 	m_playerAction->setWordWrap(true);
 	m_playerAction->setFrameStyle(QFrame::StyledPanel);
-    m_playerAction->setStyleSheet(QLatin1Literal("border-style: none"));
+    m_playerAction->setStyleSheet(QStringLiteral("border-style: none"));
 	actionLayout->addWidget(m_playerAction, 0, Qt::AlignVCenter);
 
 	QHBoxLayout *buttonLayout = new QHBoxLayout();
 	tutorialLayout->addLayout(buttonLayout);
-	m_buttonPrevious = new QPushButton(QIcon::fromTheme( QLatin1String( "go-previous") ), i18nc("Previous tutorial step", "&Previous"), this);
+	m_buttonPrevious = new QPushButton(QIcon::fromTheme( QStringLiteral( "go-previous") ), i18nc("Previous tutorial step", "&Previous"), this);
 	m_buttonPrevious->setWhatsThis(i18n("Go back to the previous tutorial step."));
 	connect(m_buttonPrevious, &QPushButton::clicked, this, &KBBTutorial::previousStep);
 	buttonLayout->addWidget(m_buttonPrevious);
-	m_buttonNext = new QPushButton(QIcon::fromTheme( QLatin1String( "go-next")) , i18nc("Next tutorial step", "&Next"), this);
+	m_buttonNext = new QPushButton(QIcon::fromTheme( QStringLiteral( "go-next")) , i18nc("Next tutorial step", "&Next"), this);
 	m_buttonNext->setWhatsThis(i18n("Go to the next tutorial step."));
 	connect(m_buttonNext, &QPushButton::clicked, this, &KBBTutorial::nextStep);
 	m_buttonNext->setDefault(true);
@@ -138,8 +138,8 @@ bool KBBTutorial::mayShootRay(const int incomingPosition)
 			return true;
 		} else {
 			// Highlight m_playerAction to show what the player has to do
-            m_playerAction->setStyleSheet(QLatin1Literal("color: black; background-color: #de0000"));
-			QTimer::singleShot(HIGHLIGHT_TIME, this, SLOT(restoreStyle()));
+            m_playerAction->setStyleSheet(QStringLiteral("color: black; background-color: #de0000"));
+			QTimer::singleShot(HIGHLIGHT_TIME, this, &KBBTutorial::restoreStyle);
 			return false;
 		}
 }
@@ -274,7 +274,7 @@ void KBBTutorial::previousStep()
 
 void KBBTutorial::restoreStyle()
 {
-    m_playerAction->setStyleSheet(QLatin1Literal("color: palette(text); background-color: palette(window)"));
+    m_playerAction->setStyleSheet(QStringLiteral("color: palette(text); background-color: palette(window)"));
 }
 
 

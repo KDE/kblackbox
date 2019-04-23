@@ -51,11 +51,11 @@ int main( int argc, char **argv )
     migrate.setUiFiles(QStringList() << QStringLiteral("kblackboxui.rc"));
     migrate.migrate();
     KLocalizedString::setApplicationDomain("kblackbox");
-    KAboutData aboutData( QLatin1String("kblackbox"), i18n("KBlackBox"), QLatin1String("0.5.0"), i18n("Find the balls hidden in the black box by shooting laser beams!"), KAboutLicense::GPL, i18n("(c) 2007, Nicolas Roffet\n(c) 1999-2000, Robert Cimrman"));
-    aboutData.addAuthor(i18n("Nicolas Roffet"),i18n("Developer of version 0.4."), QLatin1String("nicolas-kde@roffet.com"));
-    aboutData.addAuthor(i18n("Robert Cimrman"),i18n("Original developer"), QLatin1String("cimrman3@students.zcu.cz"));
-    aboutData.addCredit(i18n("Johann Ollivier Lapeyre"), i18n("Artist"), QLatin1String("johann.ollivierlapeyre@gmail.com"));
-    aboutData.setHomepage(QLatin1String("http://games.kde.org/kblackbox"));
+    KAboutData aboutData( QStringLiteral("kblackbox"), i18n("KBlackBox"), QStringLiteral("0.5.0"), i18n("Find the balls hidden in the black box by shooting laser beams!"), KAboutLicense::GPL, i18n("(c) 2007, Nicolas Roffet\n(c) 1999-2000, Robert Cimrman"));
+    aboutData.addAuthor(i18n("Nicolas Roffet"),i18n("Developer of version 0.4."), QStringLiteral("nicolas-kde@roffet.com"));
+    aboutData.addAuthor(i18n("Robert Cimrman"),i18n("Original developer"), QStringLiteral("cimrman3@students.zcu.cz"));
+    aboutData.addCredit(i18n("Johann Ollivier Lapeyre"), i18n("Artist"), QStringLiteral("johann.ollivierlapeyre@gmail.com"));
+    aboutData.setHomepage(QStringLiteral("http://games.kde.org/kblackbox"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     KCrash::initialize();

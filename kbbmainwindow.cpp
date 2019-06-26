@@ -40,14 +40,12 @@
 #include <KActionCollection>
 #include <KConfigDialog>
 #include <KGameClock>
-#include <KGamePopupItem>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KScoreDialog>
 
 #include <KStandardGameAction>
 #include <QStatusBar>
-#include <KToggleAction>
 #include <QIcon>
 #include <QStandardPaths>
 

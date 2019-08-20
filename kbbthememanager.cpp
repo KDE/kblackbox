@@ -54,7 +54,7 @@ KBBThemeManager::KBBThemeManager(const QString &svgzFileName)
 	
 	// 2. for non SVG items
 	QFile svgzFile(svgzFileName);
-	QIODevice *f = KFilterDev::device(&svgzFile, QStringLiteral("application/x-gzip"), false);
+	KCompressionDevice *f = new KCompressionDevice(&svgzFile, false, KCompressionDevice::GZip);
 	
 	if (f) {
 		QDomDocument doc;

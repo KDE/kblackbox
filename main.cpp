@@ -56,7 +56,7 @@ int main( int argc, char **argv )
     aboutData.addAuthor(i18n("Nicolas Roffet"),i18n("Developer of version 0.4."), QStringLiteral("nicolas-kde@roffet.com"));
     aboutData.addAuthor(i18n("Robert Cimrman"),i18n("Original developer"), QStringLiteral("cimrman3@students.zcu.cz"));
     aboutData.addCredit(i18n("Johann Ollivier Lapeyre"), i18n("Artist"), QStringLiteral("johann.ollivierlapeyre@gmail.com"));
-    aboutData.setHomepage(QStringLiteral("http://games.kde.org/kblackbox"));
+    aboutData.setHomepage(QStringLiteral("https://kde.org/applications/games/org.kde.kblackbox"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     KCrash::initialize();

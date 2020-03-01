@@ -108,13 +108,13 @@
     <p xml:lang="x-test">xxKBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.xx</p>
     <p xml:lang="zh-TW">KBlackbox 是一款益智遊戲。您要打出探照燈，依照反射的規則找出黑盒子內所有藏起來的球。</p>
   </description>
-  <url type="homepage">http://games.kde.org/game.php?game=kblackbox</url>
+  <url type="homepage">https://games.kde.org/game.php?game=kblackbox</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kblackbox</url>
-  <url type="help">http://docs.kde.org/stable/en/kdegames/kblackbox/index.html</url>
+  <url type="help">https://docs.kde.org/?application=kblackbox</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kblackbox&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
-      <image>http://kde.org/images/screenshots/kblackbox.png</image>
+      <image>https://cdn.kde.org/screenshots/kblackbox/kblackbox.png</image>
     </screenshot>
   </screenshots>
   <project_group>KDE</project_group>

@@ -39,7 +39,7 @@
 #include <QResizeEvent>
 
 
-#include <kgamepopupitem.h>
+#include <KGamePopupItem>
 #include <QIcon>
 #include <KLocalizedString>
 #include <QPushButton>

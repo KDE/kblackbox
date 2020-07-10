@@ -35,7 +35,7 @@
 #include <KAboutData>
 #include <QApplication>
 #include <QCommandLineParser>
-#include <kdelibs4configmigrator.h>
+#include <Kdelibs4ConfigMigrator>
 #include <KCrash>
 
 #include "kbbmainwindow.h"

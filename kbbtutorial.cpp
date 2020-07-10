@@ -39,7 +39,7 @@
 #include <QIcon>
 #include <KLocalizedString>
 #include <QPushButton>
-#include <ktextedit.h>
+#include <KTextEdit>
 
 
 #include "kbbgraphicsitemtutorialmarker.h"

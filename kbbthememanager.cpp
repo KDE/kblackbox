@@ -34,7 +34,7 @@
 #include <QStringList>
 
 
-#include <kfilterdev.h>
+#include <KFilterDev>
 #include <QSvgRenderer>
 
 

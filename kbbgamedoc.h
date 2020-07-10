@@ -36,7 +36,7 @@
 #include <QObject>
 
 
-#include <krandomsequence.h>
+#include <KRandomSequence>
 
 
 class KBBBallsOnBoard;

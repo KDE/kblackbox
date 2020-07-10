@@ -14,7 +14,7 @@ You should have received a copy of the GNU Library General Public License along 
 
 
 
-#include <krandomsequence.h>
+#include <KRandomSequence>
 
 
 #include "kbbgraphicsitem.h"

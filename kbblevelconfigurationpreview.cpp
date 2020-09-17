@@ -10,19 +10,13 @@ You should have received a copy of the GNU Library General Public License along 
 
 #include "kbblevelconfigurationpreview.h"
 
-
-
-
-
-#include <KRandomSequence>
-
-
 #include "kbbgraphicsitem.h"
 #include "kbbgraphicsitemblackbox.h"
 #include "kbbgraphicsitemset.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
-
+// Qt
+#include <QRandomGenerator>
 
 
 KBBLevelConfigurationPreview::KBBLevelConfigurationPreview(QWidget *parent, KBBThemeManager* themeManager) : QGraphicsView(parent)
@@ -47,13 +41,12 @@ void KBBLevelConfigurationPreview::preview(int balls, int columns, int rows)
 		m_balls.removeLast();
 	}
 	QList<int> ballPos;
-	KRandomSequence random;
-	random.setSeed(0);
+	QRandomGenerator random(QRandomGenerator::global()->generate());
 	int boxPos;
 	KBBGraphicsItem* item;
 	for (int i=0;i<balls;i++) {
 		do {
-			boxPos = random.getLong(columns*rows);
+			boxPos = random.bounded(columns*rows);
 		} while (ballPos.contains(boxPos));
 		item = new KBBGraphicsItem(KBBScalableGraphicWidget::playerBall, scene(), m_themeManager);
 		item->setPos(KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPos % columns), KBBScalableGraphicWidget::BORDER_SIZE + KBBScalableGraphicWidget::RATIO*(boxPos / columns));

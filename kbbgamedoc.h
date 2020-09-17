@@ -32,12 +32,8 @@
 #ifndef KBBGAMEDOC_H
 #define KBBGAMEDOC_H
 
-
 #include <QObject>
-
-
-#include <KRandomSequence>
-
+#include <QRandomGenerator>
 
 class KBBBallsOnBoard;
 #include "kbbmainwindow.h"
@@ -169,7 +165,7 @@ class KBBGameDoc : public QObject
 		int m_columns;
 		bool m_gameReallyStarted;
 		int m_rows;
-		KRandomSequence m_random;
+		QRandomGenerator m_random;
 		int m_score;
 		KBBTutorial* m_tutorial;
 };

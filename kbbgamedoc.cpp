@@ -42,14 +42,14 @@
 // Constructor / Destructor
 //
 
-KBBGameDoc::KBBGameDoc(KBBMainWindow *parent, KBBTutorial* tutorial) : QObject(parent)
+KBBGameDoc::KBBGameDoc(KBBMainWindow *parent, KBBTutorial* tutorial)
+    : QObject(parent)
+    , m_random(QRandomGenerator::global()->generate())
 {
 	setRunning(false);
 	m_columns = 1;
 	m_rows = 1;
 	m_tutorial = tutorial;
-	
-	m_random.setSeed(0);
 	
 	m_balls = new KBBBallsOnBoard(this, m_columns, m_rows);
 	m_ballsPlaced = new KBBBallsOnBoard(this, m_columns, m_rows);
@@ -102,7 +102,7 @@ void KBBGameDoc::newGame(int balls, int columns, int rows)
 	int boxPos;
 	for (int i = 0; i < balls; i++) {
 		do {
-			boxPos = m_random.getLong(m_columns * m_rows);
+			boxPos = m_random.bounded(m_columns * m_rows);
 		} while (m_balls->contains(boxPos));
 		m_balls->add(boxPos);
 	}

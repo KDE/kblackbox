@@ -107,4 +107,6 @@ install(FILES kblackboxui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kblackbox)
 
 ecm_install_icons(ICONS 128-apps-kblackbox.png  16-apps-kblackbox.png  22-apps-kblackbox.png  32-apps-kblackbox.png  48-apps-kblackbox.png  64-apps-kblackbox.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
 
+ki18n_install(po)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

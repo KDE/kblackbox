@@ -27,11 +27,6 @@
 #ifndef KBBGRAPHICSITEMBALLREPOSITORY_H
 #define KBBGRAPHICSITEMBALLREPOSITORY_H
 
-
-
-#include <KRandomSequence>
-
-
 #include "kbbgraphicsitem.h"
 class KBBGraphicsItemSet;
 class KBBScalableGraphicWidget;
@@ -62,8 +57,6 @@ class KBBGraphicsItemBallRepository : public KBBGraphicsItem
 		KBBGraphicsItemSet* m_ballsOutside;
 		KBBScalableGraphicWidget* m_parent;
 		KBBThemeManager* m_themeManager;
-
-		KRandomSequence m_random;
 
 		int m_columns;
 		int m_rows;

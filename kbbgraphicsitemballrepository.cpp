@@ -49,8 +49,6 @@ KBBGraphicsItemBallRepository::KBBGraphicsItemBallRepository(KBBScalableGraphicW
 	m_height = 1;
 	m_ballToPlace = 0;
 
-	m_random.setSeed(0);
-
 	m_ballsOutside = new KBBGraphicsItemSet(parent->scene());
 }
 

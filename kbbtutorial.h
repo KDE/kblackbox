@@ -113,7 +113,7 @@ class KBBTutorial : public QGroupBox
 		void start();
 
 
-	private slots:
+	private Q_SLOTS:
 		/**
 		 * @brief Go to the next tutorial step
 		 */

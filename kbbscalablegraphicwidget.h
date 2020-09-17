@@ -164,7 +164,7 @@ class KBBScalableGraphicWidget : public QGraphicsView
 
 		void toggleCursor();
 
-	public slots:
+	public Q_SLOTS:
 	        void cursorOff();
 		void hoverMovePosition(int newPosition);
 		void cursorAtNewPosition(int borderPosition);

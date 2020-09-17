@@ -144,7 +144,7 @@ int KBBGameDoc::shootRay( int borderPosition )
 	
 	if (!m_tutorial->isVisible())
 		setRunning(true);
-	emit updateStats();
+	Q_EMIT updateStats();
 
 	return outgoingBorderPosition;
 }
@@ -189,7 +189,7 @@ void KBBGameDoc::clean(const int columns, const int rows)
 void KBBGameDoc::setRunning(const bool r)
 {
 	m_gameReallyStarted = r;
-	emit isRunning(r);
+	Q_EMIT isRunning(r);
 }
 
 
@@ -199,7 +199,7 @@ void KBBGameDoc::setScore( int n )
 		m_score = n;
 	else
 		m_score = 999;
-	emit updateStats();
+	Q_EMIT updateStats();
 }
 
 

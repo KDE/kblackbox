@@ -34,7 +34,7 @@ class KBBLevelConfigurationPreview : public QGraphicsView
 		KBBLevelConfigurationPreview(QWidget *parent, KBBThemeManager* themeManager);
 
 
-	public slots:
+	public Q_SLOTS:
 		void preview(int balls, int columns, int rows);
 
 
@@ -49,7 +49,7 @@ class KBBLevelConfigurationPreview : public QGraphicsView
 		KBBThemeManager* m_themeManager;
 
 
-	private slots:
+	private Q_SLOTS:
 		void resizeEvent(QResizeEvent*) Q_DECL_OVERRIDE;
 };
 

@@ -163,7 +163,7 @@ class KBBBallsOnBoard : public QObject
 		int rows();
 
 
-	signals:
+	Q_SIGNALS:
 		void changes();
 
 

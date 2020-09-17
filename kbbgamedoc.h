@@ -145,11 +145,11 @@ class KBBGameDoc : public QObject
 		KBBBallsOnBoard* m_ballsPlaced;
 
 
-	public slots:
+	public Q_SLOTS:
 		void timeChanged();
 
 
-	signals:
+	Q_SIGNALS:
 		void isRunning(bool);
 		void updateStats();
 

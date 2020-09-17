@@ -86,7 +86,7 @@ Q_OBJECT
 		KBBScalableGraphicWidget* m_widget;
 		int m_zValueLines;
  public:
-	  signals:
+	  Q_SIGNALS:
 		void hoverMoved(int);
 		void hoverExit();
 };

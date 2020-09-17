@@ -63,7 +63,7 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 		~KBBGraphicsItemBall();
 
 
-	private slots:
+	private Q_SLOTS:
 		void showInteractions();
 
 

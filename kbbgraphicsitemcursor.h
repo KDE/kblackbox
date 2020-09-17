@@ -69,7 +69,7 @@ class KBBGraphicsItemCursor : public KBBGraphicsItem
 		void setBoxPosition(const int boxPosition);
 		void updatePositions();
 
-	signals:
+	Q_SIGNALS:
 		void cursorAtNewPosition(const int borderPosition);
 
 

@@ -56,7 +56,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		~KBBMainWindow();
 
 
-	public slots:
+	public Q_SLOTS:
 		/**
 		 * @brief Player changed the level
 		 */
@@ -72,7 +72,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		 */
 		void updateStats();
 
-	private slots:
+	private Q_SLOTS:
 		/**
 		 * @brief Ends the current game
 		 *

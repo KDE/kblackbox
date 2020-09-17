@@ -35,7 +35,7 @@ class KBBLevelConfigurationWidget : public QWidget
 		int columns() const;
 		int rows() const;
 
-	private slots:
+	private Q_SLOTS:
 		void boxSizeChanged();
 
 	private:

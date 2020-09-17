@@ -210,7 +210,7 @@ void KBBGraphicsItemCursor::updatePositions()
 	setBoxPosition(m_boxPosition);
 	setBorderPosition(m_borderPosition);
 	
-	emit cursorAtNewPosition(m_borderPosition);
+	Q_EMIT cursorAtNewPosition(m_borderPosition);
 }
 
 

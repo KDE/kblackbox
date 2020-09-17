@@ -78,7 +78,7 @@ int KBBBallsOnBoard::absolutePositionToBoxPosition(int position[DIM_MAX])
 void KBBBallsOnBoard::add(int boxPosition)
 {
 	m_balls.append(boxPosition);
-	emit changes();
+	Q_EMIT changes();
 }
 
 
@@ -126,7 +126,7 @@ void KBBBallsOnBoard::newBoard(const int columns, const int rows)
 	m_balls.clear();
 	m_columns = columns;
 	m_rows = rows;
-	emit changes();
+	Q_EMIT changes();
 }
 
 
@@ -186,7 +186,7 @@ void KBBBallsOnBoard::ray(const int borderPosition, QList<int> &points)
 void KBBBallsOnBoard::remove(int boxPosition)
 {
 	m_balls.removeAll(boxPosition);
-	emit changes();
+	Q_EMIT changes();
 }
 
 

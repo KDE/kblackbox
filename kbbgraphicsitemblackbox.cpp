@@ -50,6 +50,7 @@
 
 KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager, bool isPreview) : QGraphicsRectItem (nullptr)
 {
+    Q_UNUSED(parent); // TODO: check why not passing to QGraphicsRectItem?
     scene->addItem(this);
 	m_columns = 1;
 	m_rows = 1;

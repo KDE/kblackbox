@@ -48,12 +48,12 @@
 // Constructor / Destructor
 //
 
-KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager, bool isPreview) : QGraphicsRectItem (0)
+KBBGraphicsItemBlackBox::KBBGraphicsItemBlackBox(QGraphicsView* parent, QGraphicsScene* scene, KBBThemeManager* themeManager, bool isPreview) : QGraphicsRectItem (nullptr)
 {
     scene->addItem(this);
 	m_columns = 1;
 	m_rows = 1;
-	m_widget = 0;
+	m_widget = nullptr;
 	m_scene = scene;
 
 	m_background = new KBBGraphicsItem(KBBScalableGraphicWidget::blackbox, m_scene, themeManager);
@@ -131,7 +131,7 @@ void KBBGraphicsItemBlackBox::mousePressEvent (QGraphicsSceneMouseEvent* event)
 	int x = (int)(event->pos().x() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
 	int y = (int)(event->pos().y() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
 	
-	if (m_widget!=0)
+	if (m_widget!=nullptr)
 		m_widget->mouseBoxClick(event->button(), x + y*m_columns);
 }
 

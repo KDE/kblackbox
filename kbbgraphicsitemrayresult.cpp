@@ -53,8 +53,8 @@ KBBGraphicsItemRayResult::KBBGraphicsItemRayResult( KBBScalableGraphicWidget* pa
 	m_scene = scene;
 	m_elementIdResultBackground = themeManager->elementId(KBBScalableGraphicWidget::resultBackground);
 	m_elementIdResultBackgroundHighlight = themeManager->elementId(KBBScalableGraphicWidget::resultBackgroundHighlight);
-	m_number = NULL;
-	m_notNumber = NULL;
+	m_number = nullptr;
+	m_notNumber = nullptr;
 	m_pause = false;
 	
 	float centerRadius = 3*KBBScalableGraphicWidget::RATIO/8.;
@@ -141,9 +141,9 @@ void KBBGraphicsItemRayResult::setOpposite(KBBGraphicsItemRayResult* opposite)
 
 void KBBGraphicsItemRayResult::setPause(bool state)
 {
-	if (m_number!=NULL)
+	if (m_number!=nullptr)
 		m_number->setVisible(!state);
-	if (m_notNumber!=NULL)
+	if (m_notNumber!=nullptr)
 		m_notNumber->setVisible(!state);
 
 	m_pause = state;

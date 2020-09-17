@@ -497,7 +497,7 @@ bool KBBMainWindow::mayAbortGame()
 	bool mayAbort = true;
 
 	if (m_gameDoc->gameReallyStarted())
-		mayAbort = ( KMessageBox::warningContinueCancel(0, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("Start new game"))) == KMessageBox::Continue );
+		mayAbort = ( KMessageBox::warningContinueCancel(nullptr, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("Start new game"))) == KMessageBox::Continue );
 
 	return mayAbort;
 }

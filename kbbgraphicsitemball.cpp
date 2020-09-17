@@ -48,14 +48,14 @@
 
 KBBGraphicsItemBall::KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, int boxPosition, int columns, int rows) : KBBGraphicsItemOnBox( itemType, parent, themeManager, boxPosition, columns, rows)
 {
-	m_timer = NULL;
+	m_timer = nullptr;
 	m_ballType = itemType;
 	m_themeManager = themeManager;
 	
 	setAcceptHoverEvents(true);
 	
 	for (int i=0; i<8;i++)
-		m_interactionInfos[i] = NULL;
+		m_interactionInfos[i] = nullptr;
 }
 
 
@@ -73,7 +73,7 @@ KBBGraphicsItemBall::~KBBGraphicsItemBall()
 void KBBGraphicsItemBall::showInteractions()
 {
 	delete m_timer;
-	m_timer = NULL;
+	m_timer = nullptr;
 	
 	const int offsetX[8] = {0, 1, 2, 2, 2, 1, 0, 0};
 	const int offsetY[8] = {0, 0, 0, 1, 2, 2, 2, 1};
@@ -130,7 +130,7 @@ void KBBGraphicsItemBall::showInteractions()
 
 void KBBGraphicsItemBall::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 {
-	if (m_timer==NULL) {
+	if (m_timer==nullptr) {
 		m_timer = new QTimer(this);
 		connect(m_timer, &QTimer::timeout, this, &KBBGraphicsItemBall::showInteractions);
 		m_timer->start(TIME_TO_WAIT_BEFORE_SHOWING_INTERACTIONS);
@@ -143,7 +143,7 @@ void KBBGraphicsItemBall::hoverEnterEvent (QGraphicsSceneHoverEvent*)
 void KBBGraphicsItemBall::hoverLeaveEvent (QGraphicsSceneHoverEvent*)
 {
 	delete m_timer;
-	m_timer = NULL;
+	m_timer = nullptr;
 	removeInteractionInfos();
 }
 
@@ -152,7 +152,7 @@ void KBBGraphicsItemBall::removeInteractionInfos()
 {
 	for (int i=0; i<8;i++) {
 		delete m_interactionInfos[i];
-		m_interactionInfos[i] = NULL;
+		m_interactionInfos[i] = nullptr;
 	}
 }
 

@@ -53,8 +53,8 @@
 
 KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 {
-	m_marker = 0;
-	m_gameWidget = 0;
+	m_marker = nullptr;
+	m_gameWidget = nullptr;
 
 	setMinimumSize(QSize(WIDTH, WIDTH));
 	setFixedWidth(WIDTH);
@@ -155,7 +155,7 @@ void KBBTutorial::setGameWidget(KBBScalableGraphicWidget* gameWidget, KBBGraphic
 void KBBTutorial::setStep(const int step)
 {
 	Q_ASSERT((step>=FIRST_STEP) && (step<=LAST_STEP));
-	Q_ASSERT(m_gameWidget!=0);
+	Q_ASSERT(m_gameWidget!=nullptr);
 
 	m_step = step;
 	setNewStepMaxAllowed(m_step);
@@ -302,7 +302,7 @@ void KBBTutorial::setTexts(const QString &title, const QString &text, const QStr
 
 void KBBTutorial::showMarker(const int laserPosition) const
 {
-	Q_ASSERT(m_marker!=0);
+	Q_ASSERT(m_marker!=nullptr);
 
 	if (laserPosition==MAY_NOT_USE)
 		m_marker->hide();

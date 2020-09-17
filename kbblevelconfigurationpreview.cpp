@@ -61,7 +61,7 @@ void KBBLevelConfigurationPreview::preview(int balls, int columns, int rows)
 		m_balls.append(item);
 	}
 
-	resizeEvent(0);
+	resizeEvent(nullptr);
 }
 
 

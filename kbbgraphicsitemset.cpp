@@ -115,7 +115,7 @@ void KBBGraphicsItemSet::insert(KBBItemWithPosition* item)
 
 KBBItemWithPosition* KBBGraphicsItemSet::item(int position)
 {
-	KBBItemWithPosition* r = NULL;
+	KBBItemWithPosition* r = nullptr;
 
 	for (int i=0;i<m_items.count();i++)
 		if (m_items[i]->position()==position)

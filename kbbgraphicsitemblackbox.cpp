@@ -32,14 +32,12 @@
 
 
 #include <QGraphicsLineItem>
-#include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
 
 
 #include "kbbgraphicsitem.h"
-#include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 
 

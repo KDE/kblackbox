@@ -28,7 +28,6 @@
 #include "kbbballsgraphicwidget.h"
 
 #include <QGraphicsScene>
-#include <QGraphicsView>
 
 
 #include "kbbgraphicsitem.h"

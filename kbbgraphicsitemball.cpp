@@ -36,7 +36,6 @@
 
 
 #include "kbbgraphicsiteminteractioninfo.h"
-#include "kbbgraphicsitemonbox.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 

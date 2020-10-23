@@ -32,9 +32,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 
-#include "kbbgraphicsitem.h"
 #include "kbbgraphicsiteminteractioninfo.h"
-#include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 

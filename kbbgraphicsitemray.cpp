@@ -38,8 +38,6 @@
 
 #include "kbbballsonboard.h"
 #include "kbbgamedoc.h"
-#include "kbbgraphicsitemborder.h"
-#include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 
 

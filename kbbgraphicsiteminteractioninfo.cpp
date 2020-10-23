@@ -30,7 +30,6 @@
 
 
 #include "kbbgraphicsiteminteractioninfo.h"
-#include "kbbgraphicsitem.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 

@@ -27,11 +27,8 @@
 
 #include "kbbgraphicsitem.h"
 
-#include <QGraphicsScene>
-#include <QGraphicsSvgItem>
 
 
-#include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 
 

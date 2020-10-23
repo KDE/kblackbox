@@ -35,10 +35,8 @@
 
 
 #include <KFilterDev>
-#include <QSvgRenderer>
 
 
-#include "kbbscalablegraphicwidget.h"
 
 
 

@@ -30,7 +30,6 @@
 
 #include "kbbballsonboard.h"
 
-#include <QObject>
 
 
 #include "kbbgamedoc.h"

@@ -34,9 +34,6 @@
 
 
 
-#include "kbbgraphicsitem.h"
-#include "kbbgraphicsitemborder.h"
-#include "kbbitemwithposition.h"
 #include "kbbscalablegraphicwidget.h"
 #include "kbbthememanager.h"
 

@@ -34,7 +34,6 @@
 #include <QAction>
 #include <QFont>
 #include <QGraphicsScene>
-#include <QGraphicsView>
 #include <QLCDNumber>
 #include <QResizeEvent>
 

@@ -8,8 +8,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(kblackbox VERSION ${RELEASE_SERVICE_VERSION})
 
-set (QT_MIN_VERSION "5.10.0")
-set (KF5_MIN_VERSION "5.55.0")
+set (QT_MIN_VERSION "5.12.0")
+set (KF5_MIN_VERSION "5.68.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -27,7 +27,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     XmlGui
 )
 
-find_package(KF5KDEGames 4.9.0 REQUIRED)
+find_package(KF5KDEGames 7.3.0 REQUIRED)
 
 include(FeatureSummary)
 include(ECMInstallIcons)
@@ -43,6 +43,7 @@ add_definitions(
     -DQT_NO_CAST_FROM_BYTEARRAY
     -DQT_NO_URL_CAST_FROM_STRING
     -DQT_USE_QSTRINGBUILDER
+    -DQT_NO_FOREACH
     -DQT_NO_KEYWORDS
     -DQT_STRICT_ITERATORS
     -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT
@@ -51,10 +52,6 @@ add_definitions(
     -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x053700
     -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
 )
-if (${KF5Config_VERSION} STRGREATER "5.56.0")
-        add_definitions(-DQT_NO_FOREACH)
-        MESSAGE(STATUS "compile without foreach")
-endif()
 
 add_subdirectory(pics)
 add_subdirectory(doc)

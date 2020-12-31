@@ -73,9 +73,9 @@ Q_OBJECT
 
 
 	private:
-		void mousePressEvent (QGraphicsSceneMouseEvent* event) Q_DECL_OVERRIDE;
-		void hoverMoveEvent (QGraphicsSceneHoverEvent* event) Q_DECL_OVERRIDE;
-		void hoverLeaveEvent (QGraphicsSceneHoverEvent* event) Q_DECL_OVERRIDE;
+		void mousePressEvent (QGraphicsSceneMouseEvent* event) override;
+		void hoverMoveEvent (QGraphicsSceneHoverEvent* event) override;
+		void hoverLeaveEvent (QGraphicsSceneHoverEvent* event) override;
 
 		KBBGraphicsItem* m_background;
 		int m_columns;

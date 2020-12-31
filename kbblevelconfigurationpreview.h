@@ -39,7 +39,7 @@ class KBBLevelConfigurationPreview : public QGraphicsView
 
 
 	protected:
-		void drawBackground(QPainter* painter, const QRectF&) Q_DECL_OVERRIDE;
+		void drawBackground(QPainter* painter, const QRectF&) override;
 
 
 	private:
@@ -50,7 +50,7 @@ class KBBLevelConfigurationPreview : public QGraphicsView
 
 
 	private Q_SLOTS:
-		void resizeEvent(QResizeEvent*) Q_DECL_OVERRIDE;
+		void resizeEvent(QResizeEvent*) override;
 };
 
 

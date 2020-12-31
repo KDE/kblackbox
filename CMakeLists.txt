@@ -86,6 +86,8 @@ ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KBLACKBOX VERSION_H
 
 kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
 
+qt5_add_resources(kblackbox_SRCS kblackbox.qrc)
+
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kblackbox.png")
 ecm_add_app_icon(kblackbox_SRCS ICONS ${ICONS_SRCS})
 add_executable(kblackbox ${kblackbox_SRCS})
@@ -105,7 +107,6 @@ target_link_libraries(kblackbox
 install(TARGETS kblackbox  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kblackbox.appdata.xml  DESTINATION  ${KDE_INSTALL_METAINFODIR})
-install(FILES kblackboxui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kblackbox)
 
 ecm_install_icons(ICONS 128-apps-kblackbox.png  16-apps-kblackbox.png  22-apps-kblackbox.png  32-apps-kblackbox.png  48-apps-kblackbox.png  64-apps-kblackbox.png DESTINATION ${KDE_INSTALL_ICONDIR} THEME hicolor)
 

@@ -68,7 +68,6 @@ Q_OBJECT
  public:
 	  Q_SIGNALS:
 		void hoverMoved(int);
-		void hoverExit();
 };
 
 #endif // KBBGRAPHICSITEMBLACKBOX_H

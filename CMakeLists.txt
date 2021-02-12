@@ -80,13 +80,12 @@ set(kblackbox_SRCS
     kbbthememanager.cpp
     kbbtutorial.cpp
     main.cpp
+    kblackbox.qrc
 )
 
 ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KBLACKBOX VERSION_HEADER kblackbox_version.h)
 
 kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
-
-qt5_add_resources(kblackbox_SRCS kblackbox.qrc)
 
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*-apps-kblackbox.png")
 ecm_add_app_icon(kblackbox_SRCS ICONS ${ICONS_SRCS})

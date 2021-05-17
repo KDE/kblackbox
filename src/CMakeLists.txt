@@ -1,4 +1,11 @@
-set(kblackbox_SRCS
+ecm_setup_version(${RELEASE_SERVICE_VERSION}
+    VARIABLE_PREFIX KBLACKBOX
+    VERSION_HEADER kblackbox_version.h
+)
+
+add_executable(kblackbox)
+
+target_sources(kblackbox PRIVATE
     kbbballsonboard.cpp
     kbbgamedoc.cpp
     kbbgraphicsitem.cpp
@@ -26,17 +33,10 @@ set(kblackbox_SRCS
     kblackbox.qrc
 )
 
-ecm_setup_version(${RELEASE_SERVICE_VERSION}
-    VARIABLE_PREFIX KBLACKBOX
-    VERSION_HEADER kblackbox_version.h
-)
-
-kconfig_add_kcfg_files(kblackbox_SRCS kbbprefs.kcfgc)
+kconfig_add_kcfg_files(kblackbox kbbprefs.kcfgc)
 
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-kblackbox.png")
-ecm_add_app_icon(kblackbox_SRCS ICONS ${ICONS_SRCS})
-
-add_executable(kblackbox ${kblackbox_SRCS})
+ecm_add_app_icon(kblackbox ICONS ${ICONS_SRCS})
 
 target_link_libraries(kblackbox
     KF5KDEGames

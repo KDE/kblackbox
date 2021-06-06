@@ -46,8 +46,8 @@ target_link_libraries(kblackbox
     KF5::TextWidgets
     KF5::DBusAddons
     KF5::Crash
-    Qt5::Svg
-    Qt5::Xml
+    Qt::Svg
+    Qt::Xml
 )
 
 install(TARGETS kblackbox  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

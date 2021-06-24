@@ -35,12 +35,12 @@
 <holder>&Nicolas.Roffet;</holder>
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice> 
-<date>2016-05-09</date>
-<releaseinfo>0.5.0 (Applications 16.04)</releaseinfo>
+<date>2021-06-24</date>
+<releaseinfo>KDE Gear 21.04</releaseinfo>
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-	<para>This documentation describes the game of &kblackbox; version 0.5.0</para>
+	<para>This documentation describes the game of &kblackbox; version 21.04</para>
 </abstract>
  
 <!--List of relevan keywords-->
@@ -67,7 +67,7 @@
 	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
  
 <!--Short game description starts here. 3-4 sentences (paragraphs)-->
-	<para>&kblackbox; is a nice logical game, inspired by the <application>emacs</application> blackbox game. A major part of this help file is based on the original <application>emacs</application> help.</para>
+	<para>&kblackbox; is a nice logical game, inspired by the &Emacs; blackbox game. A major part of this help file is based on the original &Emacs; help.</para>
 
 <para>&kblackbox; is a game of hide and seek played on a grid of boxes. The computer has hidden several balls within this box. By shooting beams into the box and observing where they emerge it is possible to deduce the positions of the hidden balls.</para>
 <para>The fewer beams you use and the quicker you are to find the balls, the better (the lower) your score.</para>
@@ -237,7 +237,7 @@ switched on. Then, they disappear and are replaced by an information about the i
 <term><interface>Balls</interface></term>
 <listitem><para><quote>There must be one there!</quote> you think.  These mark
 where you suspect a ball is placed in the black box.</para>
-<para>At the end of the game, the right and wrong positions of the balls are also marked with "balls".</para>
+<para>At the end of the game, the right and wrong positions of the balls are also marked with <quote>balls</quote>.</para>
 </listitem>
 </varlistentry>
 
@@ -322,7 +322,7 @@ any.)</para></listitem>
 <varlistentry>
 <term><menuchoice><guimenu>Move</guimenu>
 <guimenuitem>Done!</guimenuitem></menuchoice></term>
-<listitem><para>When you placed all the balls, choose "Done!" to terminate
+<listitem><para>When you placed all the balls, choose <guilabel>Done!</guilabel> to terminate
 the current game, to compute the final score and to display the real positions of
 the balls.</para></listitem>
 </varlistentry>
@@ -334,7 +334,9 @@ the balls.</para></listitem>
 </term>
 <listitem>
 <para>Select the game difficulty. Harder games have more balls and bigger black box than easier games. You can also play with a custom difficulty level that you can set up in the setting dialog of &kblackbox;.</para>
-<para>Note: games with 4 balls or less can always be solved with certainty! That is not the case for games with 5 balls or more.</para>
+<note>
+<para>Games with 4 balls or less can always be solved with certainty! That is not the case for games with 5 balls or more.</para>
+</note>
 </listitem>
 </varlistentry>
 
@@ -355,7 +357,7 @@ of the &kde; Fundamentals.
 <!--Following is a standard list of FAQ questions.-->
 <qandaentry>
  <question><para>Can I use the keyboard to play this game? </para></question>
- <answer><para>Yes. You can use the directional keys to control the cursor, &Enter; to place and remove balls, and <keycap>Spacebar</keycap> to place 'empty' marks.</para></answer>
+ <answer><para>Yes. You can use the directional keys to control the cursor, &Enter; to place and remove balls, and &Space; to place <quote>empty</quote> marks.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>

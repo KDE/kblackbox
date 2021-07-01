@@ -9,18 +9,12 @@
 
 #include "kbbthememanager.h"
 
+#include <KCompressionDevice>
+
 #include <QColor>
 #include <QDomDocument>
 #include <QFile>
-
 #include <QStringList>
-
-
-#include <KFilterDev>
-
-
-
-
 
 //
 // Constructor / Destructor

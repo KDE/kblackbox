@@ -111,6 +111,7 @@
     <p xml:lang="tr">KBlackbox bilgisayarın bir çok top sakladığı kutuların ızgarası üzerinde oynana bir saklambaç oyunudur. Gizli topların konumu kutuya vuran ışınlardan çıkartılabilir.</p>
     <p xml:lang="uk">KBlackbox — гра у знаходження кульок, прихованих комп’ютером на полі. Розташування прихованих кульок можна визначити за допомогою просвічування поля променями.</p>
     <p xml:lang="x-test">xxKBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls. The position of the hidden balls can be deduced by shooting beams into the box.xx</p>
+    <p xml:lang="zh-CN">KBlackbox 是一款在方格中捉迷藏的游戏，而电脑会在方格中隐藏一些球。通过射出光柱即可推导出隐藏球的位置。</p>
     <p xml:lang="zh-TW">KBlackbox 是一款益智遊戲。您要打出探照燈，依照反射的規則找出黑盒子內所有藏起來的球。</p>
   </description>
   <url type="homepage">https://games.kde.org/games/kblackbox</url>

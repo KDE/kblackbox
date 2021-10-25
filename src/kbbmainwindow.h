@@ -33,7 +33,7 @@ class KBBMainWindow : public KXmlGuiWindow
 
 	public:
 		KBBMainWindow();
-		~KBBMainWindow();
+		~KBBMainWindow() override;
 
 
 	public Q_SLOTS:

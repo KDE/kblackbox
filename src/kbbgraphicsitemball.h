@@ -40,7 +40,7 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 		KBBGraphicsItemBall(KBBScalableGraphicWidget::itemType itemType, KBBScalableGraphicWidget* parent, KBBThemeManager* themeManager, int boxPosition, int columns, int rows);
 
 
-		~KBBGraphicsItemBall();
+		~KBBGraphicsItemBall() override;
 
 
 	private Q_SLOTS:

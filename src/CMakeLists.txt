@@ -6,28 +6,52 @@ ecm_setup_version(${RELEASE_SERVICE_VERSION}
 add_executable(kblackbox)
 
 target_sources(kblackbox PRIVATE
+    kbbballsgraphicwidget.cpp
+    kbbballsgraphicwidget.h
     kbbballsonboard.cpp
+    kbbballsonboard.h
     kbbgamedoc.cpp
-    kbbgraphicsitem.cpp
+    kbbgamedoc.h
     kbbgraphicsitemball.cpp
+    kbbgraphicsitemball.h
     kbbgraphicsitemballrepository.cpp
+    kbbgraphicsitemballrepository.h
     kbbgraphicsitemblackbox.cpp
+    kbbgraphicsitemblackbox.h
     kbbgraphicsitemborder.cpp
+    kbbgraphicsitemborder.h
+    kbbgraphicsitem.cpp
     kbbgraphicsitemcursor.cpp
+    kbbgraphicsitemcursor.h
+    kbbgraphicsitem.h
     kbbgraphicsiteminteractioninfo.cpp
+    kbbgraphicsiteminteractioninfo.h
     kbbgraphicsitemlaser.cpp
+    kbbgraphicsitemlaser.h
     kbbgraphicsitemonbox.cpp
+    kbbgraphicsitemonbox.h
     kbbgraphicsitemray.cpp
+    kbbgraphicsitemray.h
     kbbgraphicsitemrayresult.cpp
+    kbbgraphicsitemrayresult.h
     kbbgraphicsitemset.cpp
+    kbbgraphicsitemset.h
     kbbgraphicsitemtutorialmarker.cpp
+    kbbgraphicsitemtutorialmarker.h
     kbbitemwithposition.cpp
+    kbbitemwithposition.h
     kbblevelconfigurationpreview.cpp
+    kbblevelconfigurationpreview.h
     kbblevelconfigurationwidget.cpp
+    kbblevelconfigurationwidget.h
     kbbmainwindow.cpp
+    kbbmainwindow.h
     kbbscalablegraphicwidget.cpp
+    kbbscalablegraphicwidget.h
     kbbthememanager.cpp
+    kbbthememanager.h
     kbbtutorial.cpp
+    kbbtutorial.h
     main.cpp
 
     kblackbox.qrc

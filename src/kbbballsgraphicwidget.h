@@ -48,7 +48,7 @@ class KBBBallsGraphicWidget : public QGraphicsView
 		 * @brief Event: widget has been resized
 		 * This happens for instance when the main window has been resized.
 		 */
-		void resizeEvent(QResizeEvent*);
+		void resizeEvent(QResizeEvent*) override;
 		
 		/**
 		 * @brief Define the number of balls to place on the black box

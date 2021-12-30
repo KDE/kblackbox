@@ -70,9 +70,13 @@ target_link_libraries(kblackbox
     KF5::TextWidgets
     KF5::DBusAddons
     KF5::Crash
-    Qt::Svg
-    Qt::Xml
+    Qt${QT_MAJOR_VERSION}::Svg
+    Qt${QT_MAJOR_VERSION}::Xml
 )
+
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(kblackbox Qt6::SvgWidgets)
+endif()
 
 install(TARGETS kblackbox  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})

@@ -1,5 +1,6 @@
 [Desktop Entry]
 GenericName=Blackbox Logic Game
+GenericName[ar]=لعبة المنطق الصندوق الأسود
 GenericName[be]=Лагічная гульня з чорнай скрыняй
 GenericName[bn]=যুক্তির খেলা ব্ল্যাকবক্স
 GenericName[bs]=Logička igra crna kutija
@@ -66,6 +67,7 @@ GenericName[zh_TW]=黑盒子智力遊戲
 Exec=kblackbox -qwindowtitle %c
 Name=KBlackBox
 Name[af]=Kblackbox
+Name[ar]=الصندوق الأسود ك
 Name[be]=Чорная скрыня
 Name[bn]=কে-ব্ল্যাকবক্স
 Name[br]=KBlackBox

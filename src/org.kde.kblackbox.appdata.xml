@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KBlackbox</name>
+  <name xml:lang="ar">الصندوق الأسود ك</name>
   <name xml:lang="bs">KBlackBox</name>
   <name xml:lang="ca">KBlackbox</name>
   <name xml:lang="ca-valencia">KBlackbox</name>
@@ -41,6 +42,7 @@
   <name xml:lang="zh-CN">KBlackbox</name>
   <name xml:lang="zh-TW">KBlackBox</name>
   <summary>Blackbox Logic Game</summary>
+  <summary xml:lang="ar">لعبة المنطق الصندوق الأسود</summary>
   <summary xml:lang="bs">Logička igra crna kutija</summary>
   <summary xml:lang="ca">Joc de lògica Blackbox</summary>
   <summary xml:lang="ca-valencia">Joc de lògica Blackbox</summary>
@@ -82,6 +84,7 @@
       KBlackbox is a game of hide and seek played on a grid of boxes where the computer has hidden several balls.
       The position of the hidden balls can be deduced by shooting beams into the box.
     </p>
+    <p xml:lang="ar">الصندوق الأسود ك هي لعبة إخفاء حيث تلعب على شبكة من الصناديق قام الحاسوب بإخفاء عدة كرات فيها. يمكن استنتاج موضع الكرات المخفية بإطلاق أشعة على الصندوق.</p>
     <p xml:lang="ca">El KBlackbox és un joc de fet i amagar que es juga en una quadrícula a on l'ordinador ha amagat diverses boles. La posició de les boles amagades es pot deduir disparant feixos a dins del quadre.</p>
     <p xml:lang="ca-valencia">El KBlackbox és un joc de fet i amagar que es juga en una quadrícula a on l'ordinador ha amagat diverses boles. La posició de les boles amagades es pot deduir disparant feixos a dins del quadre.</p>
     <p xml:lang="da">KBlackbox er gemmeleg spillet på et gitter af bokse hvor computeren har glemt adskillige bolde. De skjulte boldes placering kan deduceres ved at skyde stråler ind i boksene.</p>

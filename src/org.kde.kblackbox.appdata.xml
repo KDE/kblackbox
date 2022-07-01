@@ -5,6 +5,7 @@
   <project_license>GPL-2.0+</project_license>
   <name>KBlackbox</name>
   <name xml:lang="ar">الصندوق الأسود ك</name>
+  <name xml:lang="bg">KBlackbox</name>
   <name xml:lang="bs">KBlackBox</name>
   <name xml:lang="ca">KBlackbox</name>
   <name xml:lang="ca-valencia">KBlackbox</name>
@@ -43,6 +44,7 @@
   <name xml:lang="zh-TW">KBlackBox</name>
   <summary>Blackbox Logic Game</summary>
   <summary xml:lang="ar">لعبة المنطق الصندوق الأسود</summary>
+  <summary xml:lang="bg">Логическа игра Blackbox</summary>
   <summary xml:lang="bs">Logička igra crna kutija</summary>
   <summary xml:lang="ca">Joc de lògica Blackbox</summary>
   <summary xml:lang="ca-valencia">Joc de lògica Blackbox</summary>

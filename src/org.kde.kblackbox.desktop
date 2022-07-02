@@ -2,6 +2,7 @@
 GenericName=Blackbox Logic Game
 GenericName[ar]=لعبة المنطق الصندوق الأسود
 GenericName[be]=Лагічная гульня з чорнай скрыняй
+GenericName[bg]=Логическа игра Blackbox
 GenericName[bn]=যুক্তির খেলা ব্ল্যাকবক্স
 GenericName[bs]=Logička igra crna kutija
 GenericName[ca]=Joc de lògica Blackbox
@@ -69,6 +70,7 @@ Name=KBlackBox
 Name[af]=Kblackbox
 Name[ar]=الصندوق الأسود ك
 Name[be]=Чорная скрыня
+Name[bg]=KBlackBox
 Name[bn]=কে-ব্ল্যাকবক্স
 Name[br]=KBlackBox
 Name[bs]=KBlackBox

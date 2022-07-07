@@ -390,7 +390,9 @@ void KBBMainWindow::settingsChanged()
 	if (m_level==KgDifficultyLevel::Custom) {
 		bool mayRestart = true;
 		if (m_gameDoc->gameReallyStarted())
-			if (KMessageBox::questionYesNo(this, i18n("Do you want to cancel the current custom game and start a new one with the new parameters?"), QString(), KGuiItem(i18n("Start new game"))) == KMessageBox::No)
+			if (KMessageBox::questionYesNo(this, i18n("Do you want to cancel the current custom game and start a new one with the new parameters?"), QString(),
+			    KGuiItem(i18nc("@action:button", "Start New Game"), QStringLiteral("view-refresh")),
+			    KStandardGuiItem::cont()) == KMessageBox::No)
 				mayRestart = false;
 
 		if (mayRestart)

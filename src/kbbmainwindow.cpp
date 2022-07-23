@@ -329,7 +329,7 @@ void KBBMainWindow::updateStats()
 void KBBMainWindow::done()
 {
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
-		KMessageBox::sorry(this, i18n("Clicking on \"Done!\" is the normal way to check the positions of the balls at the end of the game. However, it is not possible in the tutorial to end the game before you reached the last step.\nPlease first finish the tutorial."), i18n("Check positions"));
+		KMessageBox::information(this, i18n("Clicking on \"Done!\" is the normal way to check the positions of the balls at the end of the game. However, it is not possible in the tutorial to end the game before you reached the last step.\nPlease first finish the tutorial."), i18n("Check positions"));
 	} else {
 		solving();
 
@@ -425,7 +425,7 @@ void KBBMainWindow::showHighscores()
 void KBBMainWindow::solve()
 {
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
-		KMessageBox::sorry(this, i18n("Sorry, you may not give up during the tutorial."), i18n("Solve"));
+		KMessageBox::information(this, i18n("Sorry, you may not give up during the tutorial."), i18n("Solve"));
 	} else {
 		if (m_gameDoc->numberOfBallsToPlace()==m_gameDoc->numberOfBallsPlaced()) {
 			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed correctly.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)

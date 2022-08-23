@@ -141,7 +141,6 @@ Name[zh_TW]=KBlackBox 黑盒子
 Icon=kblackbox
 X-DocPath=kblackbox/index.html
 Type=Application
-Terminal=false
 StartupNotify=true
 X-DBUS-StartupType=Multi
 Categories=Qt;KDE;Game;BoardGame;

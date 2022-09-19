@@ -127,6 +127,10 @@
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kblackbox</url>
   <url type="help">https://docs.kde.org/?application=kblackbox</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kblackbox&amp;source=appdata</url>
+  <launchable type="desktop-id">org.kde.kblackbox.desktop</launchable>
+  <provides>
+    <binary>kblackbox</binary>
+  </provides>
   <screenshots>
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/kblackbox/kblackbox.png</image>

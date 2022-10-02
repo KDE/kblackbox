@@ -1,0 +1,665 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Manual de &kblackbox;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+<othercredit role="translator"
+> <firstname
+>Rocío</firstname
+> <surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traducción</contrib
+> </othercredit
+><othercredit role="translator"
+> <firstname
+>Rafael</firstname
+> <surname
+>Osuna</surname
+> <affiliation
+><address
+><email
+>rosuna@wol.es</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Miguel</firstname
+> <surname
+>Revilla Rodríguez</surname
+> <affiliation
+><address
+><email
+>yo@miguelrevilla.com</email
+></address
+></affiliation
+> <contrib
+>Traductor</contrib
+> </othercredit
+> <othercredit role="translator"
+> <firstname
+>Kira</firstname
+> <surname
+>J. Fernández</surname
+> <affiliation
+><address
+><email
+>kirajfdez@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Traductora</contrib
+> </othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>2021-06-24</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Esta documentación describe el juego &kblackbox; versión 21.04</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>juego</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kblackbox</keyword>
+	<keyword
+>rompecabezas</keyword>
+	<keyword
+>tablero</keyword>
+	<keyword
+>bolas</keyword>
+	<keyword
+>rayos</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>un jugador</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>bolas ocultas</keyword>
+	<keyword
+>encontrar</keyword>
+	<keyword
+>buscar</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introducción</title
+> <!-- do not change this! -->
+	<note
+><title
+>Tipo de juego:</title
+><para
+>Rompecabezas, Tablero</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Número de posibles jugadores:</title
+><para
+>Uno</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>&kblackbox; es un simpático juego de lógica inspirado en el juego blackbox de &Emacs;. La mayor parte de esta ayuda está basada en la ayuda original de &Emacs;.</para>
+
+<para
+>&kblackbox; es un juego de ocultación y búsqueda que se lleva a cabo en una malla de cajas. La máquina ha ocultado varias bolas en la caja. Disparando rayos en la caja y observando dónde tratan de emerger, es posible deducir las posiciones de las bolas ocultas.</para>
+<para
+>Cuantos menos rayos utilice para hallar las bolas, mejor (más baja) puntuación tendrá.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Cómo jugar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Objetivo:</title
+><para
+>Utilice los rayos láser para deducir el emplazamiento de las bolas dentro de la caja negra.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Utilice los láser y sitúe las bolas y marcadores en el tablero de juego para deducir la posición de las bolas ocultas dentro de la caja negra.</para>
+<para
+>La partida se inicia tan pronto como utilice el primer láser. Antes de esto, no se iniciará el cronómetro y no se contará la puntuación. </para>
+<para
+>El cursor se puede mover alrededor de la caja con las teclas estándar de movimiento del cursor o con el ratón. El cambio de los láseres o la marca de cajas negras se hace con el &LMB; del ratón o pulsando las teclas <keycap
+>Retorno</keycap
+> o Intro.</para>
+
+<para
+>También puede arrastrar y soltar las bolas y los marcadores con el ratón.</para>
+
+<para
+>Puede marcar los campos en los que sospeche que no hay ninguna bola. Basta con que pulse el &RMB; del ratón. Esto normalmente ayuda a delimitar una zona en la que podría haber una bola. Para limpiar las marcas pulse la misma tecla o de nuevo el botón del ratón.</para>
+
+<para
+>Cuando piense que la configuración de las bolas que ha colocado es correcta, pulse el botón <guibutton
+>¡Hecho!</guibutton
+>. Se le informará si es correcto o no y se le dará la puntuación. </para>
+<para
+>Si coloca cualquier bola de manera incorrecta, se mostrará la solución correcta. </para>
+
+<para
+>La puntuación se incrementa con el tiempo (1 punto por segundo) y con el uso de los láser: 3 puntos si el rayo láser golpea una bola o sale por el punto de entrada y 9 puntos si sale por otro punto de entrada. Si comete un error, la puntuación se establece a 999 al final del juego, que es la puntuación máxima. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Reglas del juego, estrategias y consejos</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Reglas del juego</title>
+
+<para
+>Debe encontrar las bolas ocultas en la caja negra. Los medios para ello son limitados: únicamente puede disparar rayos láser desde el exterior de la caja. Hay tres posibilidades para cada rayo que dispara: </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Desvío</term
+> 
+<listitem
+><para
+>El rayo refleja y aparece en un lugar diferente al que lo envió. En el campo de juego los desvíos se indican por pares de números coincidentes: uno donde entró el rayo y el otro donde salió.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Reflexión</term>
+<listitem
+><para
+>El rayo se refleja y emerge en el mismo lugar al que fue enviado. En el campo de la juego las reflexiones se indican con un símbolo especial.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Impacto</term>
+<listitem
+><para
+>El rayo impacta directamente con la bola y es absorbido. No sale de la caja. En el campo de juego, los impactos se indican con un símbolo especial.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Las reglas sobre la forma en que las bolas reflejan los rayos son sencillas y se entienden mejor en un ejemplo.</para>
+
+<para
+>Al acercase un rayo a una bola, este se refleja y se desvía noventa grados. Los rayos pueden reflejarse varias veces. En el diagrama inferior, los guiones representan ubicaciones de la caja vacías y la letra <guilabel
+>O</guilabel
+> representa una bola. Los puntos de entrada y salida de cada rayo están indicados con números tal y como se describe en la sección <link linkend="detour"
+>Desvío</link
+>, vista anteriormente. Tenga en cuenta que los puntos de entrada y salida son siempre intercambiables. <guilabel
+>*</guilabel
+> indica el camino utilizado por el rayo.</para>
+
+<para
+>Fíjese atentamente en las posiciones relativas de la bola y el desvío de noventa grados que provoca.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Como se ha mencionado antes, las reflexiones aparecen cuando un rayo emerge en el mismo punto desde el que fue enviado. Esto puede ocurrir de varias maneras: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>En el primer ejemplo, el rayo es desviado hacia abajo por la bola superior, a continuación a la izquierda por la bola inferior, y finalmente recorre el mismo camino hasta su punto de origen. El segundo ejemplo es similar. El tercer ejemplo es un poco más raro, pero comprensible si se entiende que el rayo nunca tiene la oportunidad de entrar en la caja. Además, se puede pensar que el rayo se desvía hacia abajo y emerge de la caja inmediatamente.</para>
+
+<para
+>Los impactos se producen cuando un rayo choca directamente con una bola:</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Asegúrese de comparar el segundo ejemplo del un impacto con el primer ejemplo de una reflexión.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Vista general de la interfaz</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Descripción del tablero de juego</title>
+
+<screenshot>
+<screeninfo
+>Tablero de juego de &kblackbox;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Tablero de juego de &kblackbox;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>En el tablero de juego se encuentran estos tipos de campos: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>La gran caja negra en el centro</interface
+></term>
+<listitem
+><para
+>Aquí debe marcar las posiciones en las que crea que hay una bola.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Láser alrededor de la caja</interface
+></term>
+<listitem
+><para
+>Los láser son rayos de luz que se disparan cuando se enciende el interruptor. A continuación, desaparecen y se reemplazan por una información acerca de las interacciones del rayo láser con las bolas en la caja negra.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Bolas</interface
+></term>
+<listitem
+><para
+>Usted pensará: «¡alguna tendrá que haber!». Sirven para marcar los cuadros de la caja negra en los que usted sospecha que hay una bola.</para>
+<para
+>Al final de la partida, se marcan las posiciones correctas e incorrectas de las bolas con «bolas».</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Marcadores para «posición libre»</interface
+></term>
+<listitem
+><para
+>Puede utilizarlos para marcar algunas posiciones en las que esté seguro de que no hay ninguna bola.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Opciones de menú</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Nuevo</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Comienza una nueva partida (y abandona la actual en caso de haberla).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Detiene o continúa con el juego actual.</para
+><para
+>Tenga en cuenta que los resultados de interacción se ocultan en un juego detenido.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Mostrar mejores puntuaciones...</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Muestra la tabla de mejores puntuaciones.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Juego</guimenu
+> <guimenuitem
+>Iniciar tutorial</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Inicia el tutorial del juego. Es una forma amigable de enseñar al usuario las reglas del juego.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Juego</guimenu
+> <guimenuitem
+>Nueva partida de caja de arena</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>En este modo, la solución se muestra al inicio de la partida. Es práctico para entender los principios del juego.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Salir</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Cierra la ventana y sale de &kblackbox;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mover</guimenu
+> <guimenuitem
+>Resolver</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Utilícelo para dejar una partida. Muestra la solución: las posiciones correctas de las bolas.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mover</guimenu
+> <guimenuitem
+>¡Hecho!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Cuando coloque todas las bolas, elija <guilabel
+>Terminado</guilabel
+> para terminar la partida actual, para calcular la puntuación final y mostrar la posición real de las bolas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guisubmenu
+>Dificultad</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Selecciona la dificultad del juego. Los juegos más complicados tienen más bolas y cajas negras más grandes que los juegos fáciles. También puede jugar con un nivel personalizado que puede configurar en el diálogo de preferencias de &kblackbox;.</para>
+<note>
+<para
+>Los juegos con 4 bolas o menos se pueden resolver siempre con seguridad, lo que no ocurre para los juegos con 5 bolas o más.</para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Además &kblackbox; tiene las opciones de menú <guimenu
+>Preferencias</guimenu
+> y <guimenu
+>Ayuda</guimenu
+> comunes de &kde;. Para obtener más información, consulte las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menú «Preferencias»</ulink
+> y <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menú «Ayuda» </ulink
+> de «Aspectos básicos de &kde;». </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Preguntas frecuentes</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>¿Puedo usar el teclado para jugar a este juego? </para
+></question>
+ <answer
+><para
+>Sí. Puede utilizar las teclas de dirección para controlar el cursor, &Enter; para colocar y eliminar las bolas y la &Space; para colocar marcas de «vacío».</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Tengo que salir de la partida, pero aún no ha finalizado ¿puedo guardar mi progreso?</para
+></question>
+  <answer
+><para
+>&kblackbox; no tiene la funcionalidad de guardar por el momento.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Créditos y licencia</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox;. </para>
+<!--List all the copyright holders here-->
+<para
+>Derechos de autor del programa 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; y 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>Derechos de autor de la documentación de &Robert.Cimrman;. Actualizada y convertida a Docbook para &kde; 2.0 por &Lauri.Watts; &Lauri.Watts.mail;. Revisada por &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Traducido por Rocío Gallego <email
+>traducciones@rociogallego.com</email
+>, Rafael Osuna <email
+>rosuna@wol.es</email
+>, Miguel Revilla Rodríguez <email
+>yo@miguelrevilla.com</email
+> y Kira J. Fernańdez <email
+>kirajfdez@gmail.com</email
+>.</para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

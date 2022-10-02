@@ -1,0 +1,643 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kblackbox;">
+  <!ENTITY kappversion "0.4.0"
+><!--Applicaion version. Use this variable everywhere it's needed.-->
+  <!ENTITY package "kdegames"
+>  <!-- do not change this! -->
+  <!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>&kblackbox;i käsiraamat</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>2013-05-05</date
+><!-- Date of (re)writing, or update.-->
+<releaseinfo
+>&kappversion; (&kde; 4.11)</releaseinfo
+><!-- Application version number. Use the variable definitions within header to change this value.-->
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>See käsiraamat kirjeldab mängu &kblackbox; versiooni &kappversion;.</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>mäng</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kblackbox</keyword>
+	<keyword
+>mõistatus</keyword>
+	<keyword
+>lauamäng</keyword>
+	<keyword
+>pallid</keyword>
+	<keyword
+>kiired</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>üks mängija</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>peidetud pallid</keyword>
+	<keyword
+>otsimine</keyword>
+	<keyword
+>otsing</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Sissejuhatus</title
+> <!-- do not change this! -->
+	<note
+><title
+>Mängu tüüp:</title
+><para
+>mõistatus, lauamäng</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Mängijate arv:</title
+><para
+>Üks</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>&kblackbox; on vahva loogikamäng, mis sai inspiratsiooni <application
+>emacs</application
+>i blackbox'ist. Suurem osa sellest käsiraamatustki tugineb <application
+>emacs</application
+>i algupärasele abifailile.</para>
+
+<para
+>&kblackbox; on peitusemäng kastikeste ruudustikus. Arvuti on sinna ära peitnud mitu palli. Tulistades kasti kiiri ning vaadates, kuhu nad välja jõuavad, on võimalik ära arvata peidetud pallide asukoht.</para>
+<para
+>Mida vähem kiiri sa pallide leidmiseks tulistad, seda parem (väiksem) on sinu tulemus.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Kuidas mängida</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Eesmärk:</title
+><para
+>arvata laserikiiri kasutades ära pallide asukoht mustas kastis.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Kasuta lasereid ning aseta mänguväljale palle ja markereid peidetud pallide asukoha äraarvamiseks mustas kastis.</para>
+<para
+>Mäng algab kohe, kui lased välja esimese laserikiire. Enne seda ajaarvestus seisab ning punkte ei loeta. </para>
+<para
+>Kursorit saab liigutada ümber kasti tavapäraste kursori liigutamise klahvidega või hiirega. Laserite vahetamine või mustade kastide märkimine käib &HVNga; või siis vajutusega klahvile <keycap
+>Return</keycap
+> ehk &Enter;.</para>
+
+<para
+>Samuti võib palle ja markereid lohistada hiirega.</para>
+
+<para
+>Ära saab märkida ka välju, kus sinu arvates kindlasti palle ei ole. Selleks klõpsa &HPNga;. See aitab tihtipeale paremini üles leida ala, kus pallid peituda võivad. Märkide kustutamiseks vajuta uuesti sama klahvi või hiirenuppu.</para>
+
+<para
+>Kui arvad, et asetatud pallid on kõik õiges kohas, klõpsa nupule <guibutton
+>Valmis!</guibutton
+> Seejärel antakse teada, kas sul oli õigus või mitte, ning näidatakse kogutud punktide arvu. </para>
+<para
+>Kui oled asetanud mõne palli valesti, näidatakse ka õiget lahendust. </para>
+
+<para
+>Tulemus suureneb vastavalt kulutatud ajale (1 punkt iga sekundi eest) ja laserikiirte kasutamisele: 3 punkti, kui kiir tabab palli või väljub sisenemispunktis, ning 9 punkti, kui see väljub mõnes muus sisenemispunktis. Kui teed vea, määratakse mängu lõpus tulemuseks 999, mis on maksimaalne tulemus. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Mängureeglid, strateegia ja nõuanded</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Mängureeglid</title>
+
+<para
+>Pallid on peidetud musta kasti. Sinu võimalused pole tegelikult väga suured - ainus, mida sa saad teha, on tulistada kasti ümber seatud lasereid. Iga kasti tulistatud laserikiir võib kaasa tuua ühe kolmest järgmisest tulemusest: </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Kõrvalekalle</term
+> 
+<listitem
+><para
+>Kiir kaldub kõrvale ning jõuab teise kohta kui see, kuhu sina soovisid seda jõudvat. Mänguväljal tähistatakse kõrvalekaldeid ühesuguste numbritega, millest üks asub seal, kus kiir välja tulistati, ning teine seal, kuhu see jõudis.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Peegeldus</term>
+<listitem
+><para
+>Kiir peegeldub ning jõuab tagasi samasse kohta, kust ta välja tulistati. Mänguväljal tähistatakse peegeldusi erimärgiga.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Tabamus</term>
+<listitem
+><para
+>Kiir tabab otse palli ning neeldub selles, jõudmata kastist välja. Mänguväljal märgitakse tabamusi erimärgiga.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Reeglid, kuidas pallid kiiri kõrvale kallutavad, on üsna lihtsad ning kõige paremini selgitatavad näite abil.</para>
+
+<para
+>Kui kiir pallile läheneb, kaldub ta kõrvale 90 kraadi. Kiir võib mitu korda kõrvale kalduda. Alltoodud diagrammidel tähistavad kriipsud tühje kaste ning täht <guilabel
+>O</guilabel
+> palli. Iga kiire algus- ja lõpp-punkt on märgitud numbritega, nagu seda on kirjeldatud eespool <link linkend="detour"
+>kõrvalekalde</link
+> juures. Pane tähele, et numbrid algus- ja lõpp-punkti juures on alati ühesugused. <guilabel
+>*</guilabel
+> tähistab kiire teekonda.</para>
+
+<para
+>Uuri hoolikalt palli positsiooni ja seda, kuidas ta põhjustab kiire kõrvalekaldumise 90-kraadise nurga all.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Nagu eespool märgitud, toimub peegeldumine, kui kiir jõuab tagasi oma lähtepunkti. See võib juhtuda mitmel moel: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Esimeses näites kallutab ülemine pall kiire alla, alumine pall vasakule ning lõpuks on kiir sunnitud lähtepunkti tagasi pöörduma. Teine näide on samalaadne. Kolmas on omamoodi erakordne, kuid siin tuleb lihtsalt aru saada, et kiirel polegi mingit võimalust kasti jõuda. Teine võimalus on seda võtta nii, et kiir kallutatakse alla juba enne kasti jõudmist.</para>
+
+<para
+>Tabamus toimub siis, kui kiir põrkab otse vastu palli:</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Võrdle kindlasti tabamuse teist näidet peegelduse esimese näitega.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Liidese tutvustus</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Mängulaua kirjeldus</title>
+
+<screenshot>
+<screeninfo
+>&kblackbox;i mängulaud</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>&kblackbox;i mängulaud</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Mängulaual võib näha järgmisi elemente: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>Suur must kast keskel</interface
+></term>
+<listitem
+><para
+>Siin tuleb ära märkida ruudud, kus arvad palli olevat.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Laserid kasti ümber</interface
+></term>
+<listitem
+><para
+>Laserid tulistavad kiire välja ja seejärel kaovad, jättes endast maha teabe selle kohta, mis juhtus kiirega kastis.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Pallid</interface
+></term>
+<listitem
+><para
+><quote
+>Siin peab küll üks olema!</quote
+> arvad sa. Need märgivad kohta, kus sa arvad mustas ruudus peituvat palli.</para>
+<para
+>Mängu lõpus tähistatakse ka pallide õiged ja valed asukohad "pallidega".</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>"Vaba asukoha" markerid</interface
+></term>
+<listitem
+><para
+>Nendega saab märkida asukohad, kus sinu arvates kindlasti palli ei asu.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Menüükirjed</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Uus</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Käivitab uue mängu (ja lõpetab käimasoleva, kui see eksisteerib).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Paus</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Teeb mängus pausi või jätkab peatatud mängu.</para
+><para
+>Pane tähele, et pausi ajaks on kiirte tulistamise tulemused varjatud.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Näita rekordeid</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Näitab rekordite tabelit.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Treening</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Käivitab mängu tutvustuse. See on kasutajasõbralik viis saada selgeks mängureeglid.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Uus liivakastimäng</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Selles režiimis näidatakse juba alguses lahendust. Sellest on abi mängu põhimõtete omandamisel.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+	<term>
+		<menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+> </menuchoice>
+	</term>
+	<listitem>
+		<para
+>Sulgeb akna ja lõpetab &kblackbox;i töö.</para>
+	</listitem>
+</varlistentry>
+
+<varlistentry>
+	<term>
+		<menuchoice
+><guimenu
+>Liikumine</guimenu
+><guimenuitem
+>Lahenda</guimenuitem
+> </menuchoice>
+	</term>
+	<listitem>
+		<para
+>Selle abil saab mängu kiiresti lõpetada: valimisel näidatakse lahendust ehk pallide tegelikku asukohta.</para>
+	</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Liikumine</guimenu
+> <guimenuitem
+>Valmis!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Kui oled kõik pallid asetanud, siis lõpetab see käsk mängu, arvutab lõpptulemuse ning näitab ära pallide tegeliku asukoha.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+><guisubmenu
+>Raskusaste</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Võimaldab määrata mängu raskusastme. Raskemas mängus on rohkem palle ja suurem must kast kui lihtsamas. Samuti võib mängida kohandatud raskusastmega, mille tingimused saab kindlaks määrata &kblackbox;i seadistustedialoogis.</para>
+<para
+>Märkus: nelja või vähema palliga mänge saab kindlasti alati lahendada. Viie või enama palli puhul võíb asi mõnigi kord päris keeruline olla.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Lisaks on &kblackbox;il tavapärased &kde; <guimenu
+>seadistuste</guimenu
+> ja <guimenu
+>abi</guimenu
+>menüü elemendid, mille kohta leiab rohkem teavet &kde; põhialuste käsiraamatu osadest <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Menüü Seadistused</ulink
+> ja <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menüü Abi</ulink
+>. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Korduma kippuvad küsimused</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Kas mängida saab ka klaviatuuri abil? </para
+></question>
+ <answer
+><para
+>Jah. Kursori liikumist saab juhtida nooleklahvidega, &Enter; võimaldab palle asetada ja eemaldada ning <keycap
+>tühikuklahv</keycap
+> asetada tühja ruudu markereid.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ma pean mängust väljuma, aga mäng ei ole veel läbi. Kas ma saan oma seisu salvestada?</para
+></question>
+  <answer
+><para
+>&kblackbox; ei paku praegu salvestamisvõimalust.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Autorid ja litsents</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox; </para>
+<!--List all the copyright holders here-->
+<para
+>Rakenduse autoriõigus 1999-2000: &Robert.Cimrman; &Robert.Cimrman.mail; ja 2007: &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>Dokumentatsiooni autoriõigus: &Robert.Cimrman;. Uuendas ja teisendas Docbooki &kde; 2.0 tarbeks: &Lauri.Watts; &Lauri.Watts.mail;. Korrektuur: &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@smail.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+  
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+ 
+&install.intro.documentation;
+ 
+ 
+<sect1 id="Compilation">
+<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+</appendix>
+ 
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

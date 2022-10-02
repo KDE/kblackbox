@@ -1,0 +1,723 @@
+# translation of kblackbox.po to Chinese Traditional
+# Hydonsingore Sie <hydonsingore@mail.educities.edu.tw>, 2003.
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007, 2008.
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2008, 2009, 2010.
+# Franklin Weng <franklin@goodhorse.idv.tw>, 2012, 2015.
+# pan93412 <pan93412@gmail.com>, 2018, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kblackbox\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2019-10-11 17:57+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.08.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "薛景中,Hydonsingore Sie, Frank Weng (a.k.a. Franklin)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"shyue@sonoma.com.tw,hydonsingore@mail.educities.edu.tw,franklin@goodhorse."
+"idv.tw"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " 顆球"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " 欄"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " 列"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "可設定"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "開始教學"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "開始教學"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt>「教學」遊戲提供您一個友善、互動、快速的方式來學習如何進行此遊戲。如果您"
+"對此遊戲不瞭解，現在就開始「教學」遊戲！</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "沙箱模式新遊戲"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "沙箱模式新遊戲"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p>在「沙箱模式」中，遊戲開始就將球的位置都標出來了。這可用於瞭解遊戲中的"
+"各種反射方式。</p> <p>瞭解之後，您就可以開始進行真正的遊戲了。</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "完成！"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt> <ul><li>首先，您要把所有的球擺進箱子裡。要猜測球的正確位置，您要參考它們"
+"對雷射光束的反應。您必須使用放置在旁邊的雷射槍向黑箱子打入雷射光束。</li> "
+"<li><b>當您認為您已經完成之後，</b>您就點擊這裡。</li></ul> <p>注意，您只有在"
+"擺進正確數量的球之後，才能點擊這裡。</p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "放棄此遊戲"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>若是您打算放棄目前的遊戲，請按「解決」鍵，會顯示出正確的解答。</p> <p>"
+"若是您已經所有的球擺進去，而不是要放棄，請按「完成」。</p></qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr "啟用游標下標示"
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "下移"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "上移"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "左移"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "右移"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "切換球或擊發雷射"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "切換標記"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr "注意：您可以在「設定」<br /> 對話框中改變自訂遊戲的<br /> 參數。"
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "首先，您必須從黑箱子裡移除 %1 顆球"
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr "點擊這裡來檢查您是否已成功猜對所有的球的位置。"
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "您還需要擺放 %1 顆球進黑箱子裡。"
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "遊戲結束。"
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "遊戲暫停。"
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"按下「完成」檢查球的位置。不過，在教學遊戲中您必須進到最後一步驟才能結束此遊"
+"戲。請先完成教學遊戲。"
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "檢查位置"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "您的最後得分是：%1。<br />您做得不錯。"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr "不過本次遊戲不算分<br />因為是沙箱模式。"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr "您的最後得分是：%1。<br />我想您需要多加練習。"
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "遊戲已暫停。<br />按 \"%1\" 繼續遊戲。"
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr "您確定要取消目前的自訂遊戲，並以新參數重新開始遊戲嗎？"
+
+#: kbbmainwindow.cpp:394
+#, fuzzy, kde-format
+#| msgid "Start new game"
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "開始新遊戲"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "自訂遊戲"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "抱歉，您不能放棄教學遊戲。"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "解決"
+
+#: kbbmainwindow.cpp:431
+#, kde-format
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"您已經把所有的球都擺進去了。\n"
+"現在您應該按下「完成」來結束遊戲，並看看您擺放的位置是否正確。\n"
+"您確定要放棄此遊戲嗎？"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "放棄"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "您應該擺放 %1 顆球。\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "您已擺放 %1 顆球。\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "您確定要放棄這盤遊戲嗎？"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr "注意：在沙箱模式中，<br />會直接顯示解答。<br />祝玩得愉快。"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "這會結束目前的遊戲。"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "開始新遊戲"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "得分"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>這是您的分數。分數越低越好。</p> <p>分數會依以下情況持續增加：</p> "
+"<p><ul><li>時間：<b>每秒增加 1 分</b>。</li> <li>使用雷射次數： <ul><li>若雷"
+"射光打中球，或是從入口反射出來，增加<b> 3 分</b>。</li> <li>若是從其他地方出"
+"來，則增加<b> 9 分</b>。</li> </ul></li></ul></p> <p>若是您沒有猜對球的位置，"
+"則分數會直接變成 999 分。</p></qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>這裡是<b>主要遊戲區</b>。</p> <ul><li>黑盒子在正中央。</li> <li>左方是"
+"您要擺進黑盒子裡的球。</li> <li>在黑盒子週圍，有雷射槍。在使用後會有反射資"
+"訊。</li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "教學"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "顯示教學進度。"
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr "描述您要怎樣才能進到教學的下一步。"
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "前一步(&P)"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "跳到前一步的教學步驟。"
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "下一步(&N)"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "跳到下一步的教學步驟。"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "歡迎！"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"此教學會用一個簡單的範例來教導您如何玩此遊戲。<br /><br /> 我們用 6x6 的棋"
+"盤，有三顆球隱藏在裡面，並且周邊布置了 24 組雷射。<br /><br /> 遊戲的目的是要"
+"找到球的位置。"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "點擊「下一步」"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "黑盒子的規則"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"藏起來的球是看不到的，但是我們可以用雷射光打進黑盒子中不同的點，並且看看雷射"
+"光是否會跑出盒子，若是有跑出盒子的話，從哪裡出來。<br /><br /> 球雖然藏起來看"
+"不見，但是雷射光照射後會有不同的反應。"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr "請點擊標記的雷射來擊發雷射光進入黑盒子中。"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "沒有反應"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"如果雷射光沒有碰到任何球，它會從進入點的反方向出。<br /><br /> 例如：我們在盒"
+"子裡放了三顆球（假設）。它們都沒有對射入的雷射光做出反應。<br /><br /> 每一組"
+"光的進入與射出點都有不同的編號。"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr "擊發雷射光來看第一種反應。"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "命中"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"直接打中球的話就是「命中」。直接命中球的話，雷射光不會從黑盒子裡出來。<br /"
+"><br /> 例如：這個光可能直接命中球，不過目前為止我們還不能得知球的真正位置。"
+"還有很多其它的可能性。"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr "擊發雷射光來看第二種反應。"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "簡單偏向"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"這種反應叫做「偏向」，雷射光並不是直接命中球，但是直接通過了球的某一邊。雷射"
+"光偏向的角度是 90 度。<br /><br />例如：球放在這裡會讓雷射光往上偏向 \"2\"。"
+"這個位置是「可能」的位置，但還有其他的可能性。"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr "點擊「下一步」來看看在這種偏向的情形下，球還有可能會擺在什麼位置。"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "幾種偏向"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"您可以看到，在黑盒子裡的反應可以很複雜。<br /> 雷射光進入後，從位置 2 出來，"
+"根據這種偏向推測，球的位置有可能是這樣的組合。"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "擊發標記的雷射光來看看另一種結果。"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "反射"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"如果雷射光從進入點直接出來，叫做「反射」。<br /><br />例如：我們放兩顆球在裡"
+"面，這種狀況會造成反射。"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr "擊發標記的雷射來看另一種反射的組合。"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "特殊反射"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"如果球在盒子的邊緣（旁邊沒有其它的球），射進黑盒子的光線打到球的邊邊就會造成"
+"反射。<br /><br /> 例如：以下的組合就會造成反射。"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "快完成了。點擊「下一步」。"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "標記「自由位置」"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"我們確定頭兩欄裡沒有球。如果有些光進入位置 1 會造成命中或偏移。此時用滑鼠右鍵"
+"（或其他鍵盤快捷鍵）您可以放個標記為「自由位置」。<br /><br /> 例如：我們已經"
+"為您放了 12 標記在頭兩欄。"
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "點擊「下一步」。"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "標記球"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"如果您已經知道球的位置，您可以用滑鼠左鍵來標記球的位置。要移除此標記，則再按"
+"一次左鍵即可。最後一個提示：如果您不確定球的位置，您也可以用滑鼠右鍵放一個問"
+"號「？」表示您不確定。<br /><br /> 例如：我們標記一個位置為確定，另一個為不確"
+"定。"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "開始玩吧！"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>恭喜！</b>您現在知道「黑盒子」遊戲所有的規則了。<br /><br />您現在可以開始"
+"玩了。先試著自己完成這份教學遊戲！<br /><br />提示：我們可以射進足夠的光線進"
+"入黑盒子，猜猜看三顆球確實的位置。當然需要的話也可以用更多的雷射光。"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "將所有的球找出來，完成後點擊「完成」。"
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr "目前圖形元素主題的檔案。（SVGZ 檔，包含路徑與副檔名）"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "自訂困難等級中的球數"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "自訂困難等級中棋盤的行數"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "自訂困難等級中棋盤的列數"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "發射雷射光束，找出球在黑盒子裡的位置。"
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "0.4 版開發者"
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "原始開發者"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "美工"

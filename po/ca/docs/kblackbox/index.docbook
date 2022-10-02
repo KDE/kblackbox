@@ -1,0 +1,605 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Catalan  "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>El manual del &kblackbox;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+&traductor.Antoni.Bella; 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>24 de juny de 2021</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Aquesta documentació descriu el joc &kblackbox; versió 21.04</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>joc</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kblackbox</keyword>
+	<keyword
+>trencaclosques</keyword>
+	<keyword
+>tauler</keyword>
+	<keyword
+>boles</keyword>
+	<keyword
+>feixos</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>un jugador</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>boles amagades</keyword>
+	<keyword
+>troba</keyword>
+	<keyword
+>cerca</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introducció</title
+> <!-- do not change this! -->
+	<note
+><title
+>Tipus de joc:</title
+><para
+>Trencaclosques, tauler</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Nombre de possibles jugadors:</title
+><para
+>Un</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>El &kblackbox; és un bon joc de lògica, inspirat en el joc quadre negre de l'&Emacs;. La major part d'aquest fitxer d'ajuda es basa en l'ajuda original de l'&Emacs;.</para>
+
+<para
+>El &kblackbox; és un joc de fet i amagar que es juga en una quadrícula. L'ordinador ha amagat diverses boles dins d'aquest quadre. Es disparen feixos contra el quadre i s'observa per on emergeixen, així serà possible deduir les posicions de les boles amagades.</para>
+<para
+>Com menys feixos utilitzeu i més ràpid trobeu les boles, millor (més baixa) serà la vostra puntuació.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Com jugar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Objectiu:</title
+><para
+>Utilitzar els feixos làser per a deduir la ubicació de les boles dins del quadre negre.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Utilitzeu làsers, poseu boles i marcadors sobre el tauler de joc per a deduir la posició de les boles amagades dins del quadre negre.</para>
+<para
+>El joc començarà tan aviat com utilitzeu el primer làser. Abans d'això, el temps no passa i no es comptarà cap punt per a la puntuació. </para>
+<para
+>El cursor es pot moure al voltant del quadre amb les tecles estàndard de moviment del cursor o amb el ratolí. El canvi de làser o el marcatge dels quadres negres es realitza amb el &BER; o prement la tecla &Intro;.</para>
+
+<para
+>També podeu arrossegar i deixar anar les boles i els marcadors amb el ratolí.</para>
+
+<para
+>També podeu marcar els camps on creieu que no hi pot haver una bola. Senzillament premeu el &BDR;. Sovint us ajudarà a trobar una àrea on possiblement podria haver-n'hi una. Per a netejar les marques, torneu a prémer la mateixa tecla o el botó del ratolí.</para>
+
+<para
+>Quan creieu que és correcta la configuració de les boles que heu emplaçat, premeu el botó <guibutton
+>Fet!</guibutton
+>. Se us informarà si està correcta o no, i se us donarà la puntuació. </para>
+<para
+>Si emplaceu alguna bola de forma incorrecta, es mostrarà la solució correcta. </para>
+
+<para
+>La puntuació va augmentant amb el temps (1 punt per segon) i amb l'ús dels làsers: 3 punts si el feix làser impacta una bola o surt pel punt d'entrada i 9 punts si surt per un altre punt d'entrada. Si cometeu un error, la puntuació s'establirà al final del joc a 999, la qual és la puntuació màxima. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Les regles del joc, estratègies i consells</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Les regles del joc</title>
+
+<para
+>Heu de trobar les boles amagades en el quadre negre. Els vostres mitjans són limitats: només podeu disparar els làsers que estan al voltant del quadre. Hi ha tres resultats possibles per a cada feix que envieu contra el quadre: </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Desviat</term
+> 
+<listitem
+><para
+>El feix és desviat i emergeix en algun lloc diferent al lloc on l'heu enviat. En el camp de joc, els desviats s'indiquen mitjançant parells de números coincidents: un per on ha entrat el feix i l'altre per on ha sortit.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Reflectit</term>
+<listitem
+><para
+>El feix és reflectit i emergeix en el mateix lloc en el qual s'ha enviat. En el camp de joc, els reflectits s'indiquen amb un signe especial.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Impacte</term>
+<listitem
+><para
+>El feix colpeja una bola i és absorbit. No surt del quadre. En el camp de joc, els impactes s'indiquen amb un signe especial.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Les regles sobre com les boles desvien els feixos són senzilles i es mostren millor amb un exemple.</para>
+
+<para
+>Quan un feix s'acosta a una bola, és desviat noranta graus. Els feixos es poden desviar múltiples vegades. En els diagrames a continuació, els guions representen ubicacions de quadres buits i la lletra <guilabel
+>O</guilabel
+> representa una bola. Els punts d'entrada i de sortida de cada feix estan marcats amb nombres i ja s'ha descrit anteriorment a <link linkend="detour"
+>Desviat</link
+>. Cal tenir present que els punts d'entrada i de sortida sempre són intercanviables. <guilabel
+>*</guilabel
+> denota el camí recorregut pel feix.</para>
+
+<para
+>Observeu acuradament les posicions relatives de la bola i al desviament de noranta graus que causa.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Com s'ha esmentat anteriorment, un reflectit succeeix quan un feix emergeix des del mateix punt en què s'ha enviat. Això pot succeir de diverses maneres: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>En el primer exemple, el feix és desviat cap avall per la bola de dalt, després cap a l'esquerra per la bola de sota i finalment torna sobre el seu camí fins al seu punt d'origen. El segon exemple és similar. El tercer exemple és una mica anòmal, però es pot racionalitzar en adonar-vos que el feix mai té l'oportunitat d'entrar dins del quadre. De manera alternativa, es pot pensar que el feix és desviat cap avall i emergeix immediatament des del quadre.</para>
+
+<para
+>Un impacte succeeix quan un feix xoca directament contra una bola:</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Assegureu-vos de comparar el segon exemple d'un impacte amb el primer exemple de reflectit.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Resum de la interfície</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Descripció del tauler de joc</title>
+
+<screenshot>
+<screeninfo
+>Tauler de joc del &kblackbox;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Tauler de joc del &kblackbox;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>En el tauler de joc es troben els tipus de camp següents: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>El quadre negre gran en el mig</interface
+></term>
+<listitem
+><para
+>Aquí haureu de marcar les posicions on creieu que es troba una bola.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Làsers al voltant del quadre</interface
+></term>
+<listitem
+><para
+>Els làsers disparen feixos de llum quan s'encenen. Després, desapareixen i són substituïts per una informació sobre les interaccions del feix làser amb les boles en el quadre negre.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Boles</interface
+></term>
+<listitem
+><para
+>Penseu <quote
+>N'hi ha d'haver una!</quote
+>. Aquestes marquen el lloc on sospiteu que s'ubica una bola en el quadre negre.</para>
+<para
+>Al final del joc, les posicions correctes i incorrectes de les boles també es marcaran amb &nbsp;<quote
+>boles</quote
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Marcadors per a «posició lliure»</interface
+></term>
+<listitem
+><para
+>Podeu utilitzar-los per a marcar algunes posicions on esteu segur que no hi ha cap bola.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Elements de menú</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Comença una partida nova (i abandona l'actual, si n'hi ha cap).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>P</keycap
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Posa en pausa o continua la partida actual.</para
+><para
+>Cal tenir en compte que els resultats de la interacció s'ocultaran en un joc en pausa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Mostra les puntuacions</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Mostra la taula de puntuacions.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Inicia una partida d'aprenentatge</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Inicia el programa d'aprenentatge de la partida. Aquesta és una manera fàcil per a aprendre les regles del joc.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Partida nova a l'entorn de proves</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>En aquest mode, la solució es mostrarà al començament de la partida. Això és útil per a comprendre els principis del joc.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Tanca la finestra i surt del &kblackbox;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mou</guimenu
+> <guimenuitem
+>Resol</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Empreu-lo per a abandonar una partida. Us mostra la solució: les posicions correctes de les boles.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mou</guimenu
+> <guimenuitem
+>Fet!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Quan hàgiu emplaçat totes les boles, trieu <guilabel
+>Fet!</guilabel
+> per a acabar la partida actual, calcular la puntuació final i mostrar les posicions reals de les boles.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guisubmenu
+>Dificultat</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Selecciona la dificultat del joc. Els jocs més difícils tenen més boles i un quadre negre més gran que els jocs més fàcils. També podreu jugar amb un nivell de dificultat personalitzat que podeu configurar en el diàleg de configuració del &nbsp;&kblackbox;.</para>
+<note>
+<para
+>Els jocs amb 4 boles o menys es poden resoldre sempre amb tota certesa! Aquest no és el cas dels jocs amb 5 boles o més.</para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>De manera addicional, el &kblackbox; té la configuració comuna al &kde; i els elements dels menús <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Per a obtenir més informació, llegiu les seccions sobre <ulink url="help:/fundamentals/menus.html#menus-settings"
+>El menú Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Preguntes més freqüents</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Puc utilitzar el teclat per a jugar a aquest joc? </para
+></question>
+ <answer
+><para
+>Sí. Podeu utilitzar les tecles de direcció per a controlar el cursor, &Intro; per a col·locar i eliminar les boles, i &Space; per a posar les marques de <quote
+>buit</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>He de sortir del joc ara, però encara no he acabat. Puc desar el meu progrés?</para
+></question>
+  <answer
+><para
+>En aquest moment, el &kblackbox; no té cap característica de desament.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Crèdits i llicència</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox; </para>
+<!--List all the copyright holders here-->
+<para
+>Copyright del programa 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; i 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>Copyright de la documentació per en &Robert.Cimrman;. Actualitzada i convertida a Docbook per al &kde; 2.0 per en &Lauri.Watts; &Lauri.Watts.mail;. Revisada per en &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

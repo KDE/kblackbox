@@ -1,0 +1,784 @@
+# Translation of kblackbox.po to Catalan (Valencian)
+# Copyright (C) 2000-2022 This_file_is_part_of_KDE
+#
+# Francesc J Devesa i Berenguer <frandeve@hotmail.com>, 2000, 2001.
+# Albert Astals Cid <aacid@kde.org>, 2003, 2007, 2008, 2009.
+# Josep M. Ferrer <txemaq@gmail.com>, 2005, 2007, 2008, 2009, 2010, 2011, 2012, 2015, 2017, 2018, 2019, 2020, 2022.
+# Aleix Pol <aleixpol@gmail.com>, 2007.
+# Manuel Tortosa <manutortosa@gmail.com>, 2009.
+# Manuel Tortosa Moreno <manutortosa@gmail.com>, 2009, 2010.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kblackbox\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2022-07-30 13:12+0200\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Francesc J. Devesa i Berenguer, Albert Astals Cid, Aleix Pol Gonzalez,Manuel "
+"Tortosa"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"frandeve@hotmail.com,aacid@kde.org,aleixpol@gmail.com,manutortosa@gmail.com"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " bola"
+msgstr[1] " boles"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " columna"
+msgstr[1] " columnes"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " fila"
+msgstr[1] " files"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "Configurable"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "Inicia una partida d'aprenentatge"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "Inicia una partida d'aprenentatge"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt>La <b>partida d'aprenentatge</b> és una manera fàcil i interactiva "
+"d'aprendre les regles del joc. Inicia-la si no les coneixes!</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "Partida nova en l'entorn de proves"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "Inicia una partida nova en l'entorn de proves"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p>En una <b>partida en l'entorn de proves</b>, la solució es dibuixa "
+"des del començament. Açò és útil per a comprendre les normes del joc.</"
+"p><p>De totes maneres, després d'una estona no és tan divertit, llavors "
+"hauríeu de començar una partida real!</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "Fet!"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>Primer, heu de posar totes les boles en el quadro negre. Per a "
+"deduir les posicions correctes de les boles i veure com reaccionen als "
+"feixos làser, haureu d'utilitzar els làsers que estan posicionats al voltant "
+"del quadro negre.</li><li><b>Quan creieu que heu acabat</b>, cliqueu ací.</"
+"li></ul><p>Cal tindre en compte que només és possible clicar ací si heu "
+"emplaçat el nombre correcte de boles.</p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "Renúncia de la partida"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>Escolliu «<b>Resol</b>» si voleu renunciar de la partida actual. Es "
+"mostrarà la solució.</p><p>Si heu emplaçat totes les boles però no voleu "
+"renunciar, escolliu «Fet!».</p></qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr "Habilita el ressaltat davall el ratolí"
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "Mou avall"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "Mou amunt"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "Mou a l'esquerra"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "Mou a la dreta"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "Escolliu bola o tir làser"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "Escolliu un marcador"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+"Nota: Podeu canviar<br />els paràmetres de les<br />partides "
+"personalitzades<br />en el diàleg de configuració."
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "Primer, heu de traure 1 bola del quadro negre."
+msgstr[1] "Primer, heu de traure %1 boles del quadro negre."
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr ""
+"Per a assegurar-vos que s'ha endevinat correctament la posició de les boles, "
+"cliqueu ací!"
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "Heu d'emplaçar 1 bola més en el quadro negre."
+msgstr[1] "Heu d'emplaçar %1 boles més en el quadro negre."
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "S'ha acabat la partida."
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "Joc en pausa."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"La manera normal d'assegurar les posicions de les boles al final de la "
+"partida és clicant «Fet!». De totes maneres, en la partida d'aprenentatge no "
+"és possible acabar-la abans que s'haja arribat a l'últim pas.\n"
+"Per favor, acabeu primer la partida d'aprenentatge."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "Marca les posicions"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "La vostra puntuació final és: %1<br />Ho heu fet realment bé!"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr ""
+"Però no compta<br />perquè <b>esta és una partida en l'entorn de proves!</b>"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr ""
+"La vostra puntuació final és: %1.<br />Em pareix que vos cal practicar més."
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "Joc en pausa.<br />Premeu «%1» per a continuar."
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr ""
+"Voleu cancel·lar la partida personalitzada actual i començar-ne una de nova "
+"amb els paràmetres nous?"
+
+#: kbbmainwindow.cpp:394
+#, kde-format
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "Comença una partida nova"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "Partida personalitzada"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "Ho sentim, no podeu eixir durant la partida d'aprenentatge."
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "Resol"
+
+#: kbbmainwindow.cpp:431
+#, kde-format
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"Heu emplaçat totes les boles. Magnífic!\n"
+"Ara heu de clicar a «Fet!» per a acabar el joc i comprovar si ho heu fet "
+"correctament.\n"
+"Llavors, segur que voleu abandonar esta partida?"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "Renuncio"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "Heu d'emplaçar %1 bola!\n"
+msgstr[1] "Heu d'emplaçar %1 boles!\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "Heu emplaçat %1.\n"
+msgstr[1] "Heu emplaçat %1.\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "Segur que voleu deixar esta partida?"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr ""
+"Nota: en el mode de l'entorn de proves,<br />la solució ja està dibuixada."
+"<br/>Divertiu-vos!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "Açò serà el final d'esta partida!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "Comença una partida nova"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "Puntuació"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>Esta és <b>la vostra puntuació</b>. Heu d'intentar traure la més "
+"xicoteta que pugueu.</p><p>La puntuació s'incrementa:<ul><li>amb el temps: "
+"<b>1 punt</b> per segon.</li><li>amb l'ús de làsers:<ul><li><b>3 punts</b> "
+"si el feix làser impacta amb una bola o ix pel punt d'entrada,</li><li><b>9 "
+"punts</b> si existix en un altre punt d'entrada.</li></ul></li></ul></"
+"p><p>Si cometeu algun error, la vostra puntuació serà <b>999</b> al final de "
+"la partida.</p></qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>Esta és l'<b>àrea principal de joc</b>. </p><ul><li>El <b>quadro "
+"negre</b> està al centre.</li><li>A l'esquerra, hi ha les <b>boles</b> que "
+"heu d'emplaçar dins el quadro negre.</li><li>Al voltant del quadro negre hi "
+"ha <b>làsers</b> que si els utilitzeu són substituïts per <b>informació "
+"interactiva</b>.</li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "Partida d'aprenentatge"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "Mostra el progrés de la partida d'aprenentatge."
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr ""
+"Descriu el que heu de fer per a passar al següent pas de la partida "
+"d'aprenentatge."
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "&Anterior"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "Va arrere fins al pas anterior en la partida d'aprenentatge."
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "&Següent"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "Avança fins al pas següent en la partida d'aprenentatge."
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "Us donem la benvinguda!"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"Esta partida d'aprenentatge vos ensenyarà com jugar a KBlackBox fent servir "
+"un exemple senzill.<br /><br />Estem jugant amb un quadro negre de 6 "
+"columnes i 6 files. Té 3 boles <b>amagades</b> dins i 24 làsers al voltant."
+"<br /><br />La finalitat és <b>trobar les posicions de les boles.</b>"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "Cliqueu a «Següent»"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "Principis del quadro negre"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"Les boles no són visibles, però podem disparar feixos làser dins el quadro "
+"per diferents punts d'entrada i observar si els feixos làser n'ixen, i si "
+"n'ixen, per on ho fan.<br /><br />Els feixos làser interactuen amb les boles "
+"de diferents maneres."
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr ""
+"Per favor, cliqueu sobre el làser marcat per a disparar un feix contra el "
+"quadro negre."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "Sense interacció"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"Si un feix làser no interactua amb cap bola en el quadro negre, eixirà pel "
+"punt oposat al punt d'entrada.<br /><br />Exemple: suposeu que tenim 3 boles "
+"en el quadro, com es mostra. No afectaran el feix làser «1».<br /><br /"
+">Mentre el joc progressa, cada parella de punts d'entrada/eixida és marcat "
+"amb un número diferent."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr ""
+"Ara dispareu el làser marcat per a descobrir el primer tipus d'interacció."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "Impacte"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"Un impacte directe sobre una bola s'anomena «<b>impacte</b>». Un feix que "
+"xoca amb una bola <b>no</b> ix del quadro negre.<br /><br />Exemple: El feix "
+"podria haver xocat amb una bola a la posició mostrada, però la posició "
+"exacta de l'impacte no és segura: Hi ha altres possibilitats."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr "Dispareu el làser marcat per a descobrir el segon tipus d'interacció."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "Desviat simple"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"La interacció d'un feix que no impacta exactament amb una bola, però toca el "
+"costat d'una, s'anomena «<b>desviament</b>». L'angle de desviament del feix "
+"és sempre de <b>90 graus</b>. <br /><br />Exemple: La bola mostrada podria "
+"desviar el feix «2» cap amunt, com es mostra, però esta <b>no</b> és l'única "
+"possibilitat."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"Cliqueu a «Següent» per a veure una altra combinació de boles que desvien el "
+"feix làser com es mostra."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "Diversos desviats"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"Com podeu veure, les interaccions dins del quadro negre són una mica "
+"complicades!<br />Un feix làser entrant i eixint a les posicions «2» pot "
+"haver estat desviat per esta combinació de 3 boles."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "Dispareu el làser marcat per a descobrir un resultat d'un altre tipus."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "Reflectit"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"Si el feix làser ix del quadro negre <b>en el punt d'entrada</b>, és perquè "
+"ha sigut reflectit cap arrere dins del quadro negre.<br /><br />Exemple: Hem "
+"emplaçat 2 boles en una disposició que vos duria a esta situació."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr "Dispareu el làser marcat per a veure un altre cas de reflectit."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "Reflectit especial"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"Si una bola es troba <b>a la vora del quadro</b> (amb cap altra bola a "
+"prop), un feix que apunta directament contra el quadro negre encara causarà "
+"un reflectit cap arrere.<br /><br />Exemple: La configuració mostrada pot "
+"causar un reflectit cap arrere."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "Quasi acabat. Cliqueu a «Següent»."
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "Marcador per a «posició lliure»"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"Estem segurs que no hi ha cap bola en les 2 primeres columnes. Si n'hi "
+"haguera, el feix que entra per la posició «1» impactaria alguna bola o seria "
+"desviat per una bola en la columna 2. Podeu marcar una «posició lliure» fent "
+"clic dret (vegeu també les dreceres de teclat).<br /><br />Exemple: Hi ha 12 "
+"marcadors en les primeres 2 columnes."
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "Cliqueu a «Següent»."
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "Marcant les boles"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"Quan hàgeu deduït on es troba la bola, feu ús del botó esquerre del ratolí "
+"per a marcar-ho. Per a traure una marca de bola, utilitzeu el botó esquerre "
+"de nou. Últim consell: Si no segur de la posició, podeu utilitzar el clic "
+"dret sobre una bola per a marcar-la com a «no segura» (vegeu també les "
+"dreceres de teclat).<br /><br />Exemple: Hem marcat una posició com a segura "
+"i una altra com a no segura."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "Juguem!"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>Felicitats!</b> Ara sabeu <b>totes les regles</b> de KBlackBox.<br /><br /"
+"><b>Ja podeu començar a jugar.</b> Intenteu acabar la partida d'aprenentatge "
+"per vosaltres mateixos!<br /><br />Ajuda: Hem posat suficients feixos per a "
+"deduir les posicions de les 3 boles amb certesa. Per descomptat, podeu fer-"
+"ne servir més si ho creieu necessari."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "Cliqueu a «Fet!» quan hàgeu acabat de col·locar les boles!"
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr ""
+"Fitxer amb el tema actual dels elements gràfics (fitxer SVGZ amb camí i "
+"extensió de fitxer)"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "Nombre de boles per al nivell personalitzat"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr ""
+"Nombre de columnes del tauler per al nivell de dificultat personalitzat"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "Nombre de files del tauler per al nivell de dificultat personalitzat"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "Busqueu les boles amagades en el quadro negre disparant feixos làser!"
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "Desenvolupador de la versió 0.4."
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "Desenvolupador original"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "Artista"

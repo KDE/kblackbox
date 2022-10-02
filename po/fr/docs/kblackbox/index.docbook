@@ -1,0 +1,607 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Manuel de &kblackbox;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+&traducteurEricBischoff; &traducteurLudovicGrossard;&traducteurXavierBesnard; 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>24-06-2021</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Cette documentation décrit le jeu &kblackbox; en version 21.04.</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>jeu</keyword
+> <!-- do not change this! -->
+	<keyword
+>KBlackBox</keyword>
+	<keyword
+>puzzle</keyword>
+	<keyword
+>plateau</keyword>
+	<keyword
+>billes</keyword>
+	<keyword
+>rayons</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>un joueur</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>billes cachées</keyword>
+	<keyword
+>trouver</keyword>
+	<keyword
+>chercher</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introduction</title
+> <!-- do not change this! -->
+	<note
+><title
+>Type de jeu : </title
+><para
+>Puzzle, plateau</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Nombre possible de joueurs : </title
+><para
+>Un</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>&kblackbox; est un superbe jeu de logique, inspiré du jeu Blackbox de &Emacs;. La majeure partie de cette documentation provient de l'aide originale de la version sous &Emacs; .</para>
+
+<para
+>&kblackbox; est un jeu consistant à localiser dans un quadrillage des objets cachés. L'ordinateur a caché plusieurs billes sur le plateau de jeu. En lançant des rayons sur celui ci et en regardant à quel endroit ils en ressortent, il est possible d'en déduire la position des billes cachées.</para>
+<para
+>Le score sera le plus élevé si vous utilisez le moins de rayons possibles et si vous trouvez les billes le plus vite possible.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Comment jouer</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Objectif : </title
+><para
+>Utiliser les rayons laser pour déduire l'emplacement des billes sur le plateau de jeu.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Utilisez les rayons laser et placez les billes et les repères sur le plateau de jeu pour en déduire la position des billes cachées.</para>
+<para
+>La partie démarre dès que vous utilisez un premier rayon laser. Avant cela, le temps n'est pas compté et aucun point de score n'est attribué. </para>
+<para
+>Le curseur peut être déplacé autour du plateau au moyen des touches standards de déplacement du curseur ou de la souris. Le déclenchement des lasers ou les repères s'effectue au moyen du &BGS;, ou en appuyant sur les touches <keycap
+>Retour chariot</keycap
+> ou &Enter;.</para>
+
+<para
+>Vous pouvez aussi déplacer les billes et les repères avec la souris.</para>
+
+<para
+>Vous pouvez également marquer les emplacements où aucune bille ne peut se trouver. Appuyez simplement sur le &BDS;. Ceci vous aidera souvent à trouver un endroit où une bille peut se trouver. Pour effacer toutes les repères, appuyez sur la même touche ou sur le bouton de souris.</para>
+
+<para
+>Si vous pensez que le placement des billes que vous avez effectué est correct, cliquez sur le bouton <guibutton
+>Terminé ! </guibutton
+>. Une boîte de dialogue vous indiquera si le placement des billes est correct ou non, et vous donnera votre score. </para>
+<para
+>Si vous placez des billes de manière incorrecte, la bonne solution sera affichée. </para>
+
+<para
+>Le score augmente avec le temps (un point par seconde) et avec l'utilisation des lasers : trois points si le rayon laser touche une bille ou une entrée valable à cet endroit, et neuf points si une entrée existe à un autre endroit. Si vous faites une erreur, le score s'affiche à la fin de la partie à 999, lequel est le score maximal. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Règles du jeu, stratégies et astuces</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Règles du jeu</title>
+
+<para
+>Vous devez localiser les billes cachées sur le plateau de jeu. Vos moyens sont limités. Vous ne pouvez que déclencher les lasers situés autour du plateau. Il y a trois possibilités lorsque vous envoyez un rayon sur le plateau : </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Déviation</term
+> 
+<listitem
+><para
+>Le rayon est dévié et ressort quelque part ailleurs. Sur le plateau de jeu, les déviations sont repérées par des paires de nombres : un à l'endroit où le rayon a été envoyé, et l'autre à l'endroit où il est ressorti.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Réflection</term>
+<listitem
+><para
+>Le rayon est réfléchi et ressort à l'endroit même où il a été émis. Sur le plateau de jeu, les réflexions sont repérées par une lettre spéciale.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Collision</term>
+<listitem
+><para
+>Le rayon frappe une bille de plein fouet et est absorbé. Il ne ressort pas du plateau. Sur le plateau de jeu, les collisions sont repérées par un caractère spécial.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Les règles qui régissent la réflexion des rayons sont simples et s'expliquent plus aisément en montrant quelques exemples.</para>
+
+<para
+>Lorsqu'un rayon arrive au voisinage d'une bille, il est dévié de quatre-vingt-dix degrés. Les rayons peuvent être déviés plusieurs fois. Sur le diagramme ci-dessous, les tirets représentent des positions vides et la lettre <guilabel
+>O</guilabel
+> représente une bille. Les points d'entrée et de sortie de chaque rayon sont marqués par des nombres comme décrit au paragraphe <link linkend="detour"
+>Déviation</link
+> ci-dessus. Remarquez que les points d'entrée et de sortie sont toujours interchangeables. Le signe <guilabel
+>*</guilabel
+> indique le trajet suivi par le rayon.</para>
+
+<para
+>Remarquez les positions de la bille et les déviations de quatre-vingt-dix degrés qu'elle cause.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Comme mentionné précédemment, une réflexion se produit lorsqu'un rayon émerge à l'endroit même d'où il est parti. Ceci peut se produire pour différentes raisons : </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Dans le premier exemple, le rayon est dévié vers le bas par la bille supérieure, puis immédiatement vers la gauche par celle du dessous, et, finalement, il revient jusqu'à son point de départ. Le deuxième exemple est similaire. Le troisième exemple est un peu curieux, mais s'explique si on prend en considération que le rayon ne peut tout simplement pas se placer sur le plateau. On peut aussi considérer que le rayon a été dévié vers le bas et est immédiatement ressorti du plateau.</para>
+
+<para
+>Une collision se produit lorsqu'un rayon frappe une bille de plein fouet :</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Prenez soin de comparer le deuxième exemple de collision avec le premier exemple de réflexion.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Vue d'ensemble de l'interface</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Description du plateau de jeu</title>
+
+<screenshot>
+<screeninfo
+>Jeu de plateau &kblackbox;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Jeu de plateau &kblackbox;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>On trouve les types de cases suivants sur le plateau de jeu : </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>La grosse boîte noire sur le milieu</interface
+></term>
+<listitem
+><para
+>Vous y marquez les positions où vous pensez que les billes se trouvent.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Les lasers autour du plateau</interface
+></term>
+<listitem
+><para
+>Les lasers sont tirés sur les billes quand ils entrent en contact. Ils disparaissent ensuite et son remplacés par une information à propos des interactions du laser avec les billes sur le plateau de jeu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Billes</interface
+></term>
+<listitem
+><para
+>Vous pensez sans doute <quote
+>Il fallait bien en mettre ! </quote
+>. Elles indiquent les positions où vous suspectez qu'une bille se trouve dans le plateau.</para>
+<para
+>À la fin de la partie, les bonnes et mauvaises positions des billes sont aussi marquées avec des <quote
+>billes</quote
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Repères pour « emplacement libre »</interface
+></term>
+<listitem
+><para
+>Vous pouvez les utiliser pour marquer les positions où vous êtes sur qu'il n'y a aucune bille.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Éléments de menu</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Nouveau</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Démarre une nouvelle partie (et abandonne la précédente, s'il y en a une).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Pause</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Mettre en pause ou continuer la partie courante</para
+><para
+>Remarquez que les résultats d'interaction sont cachés pendant une partie en pause.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Afficher les meilleurs scores</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Afficher les meilleurs scores.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Démarrer le tutoriel</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Démarrer le tutoriel du jeu. Une manière simple d'apprendre les règles du jeu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Nouveau</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Dans ce mode, la solution est affichée au démarrage de la partie. C'est utile pour comprendre les principes du jeu.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Quitter</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Cette action ferme la fenêtre et quitte &kblackbox;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Déplacer</guimenu
+> <guimenuitem
+>Trouver la solution</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Affiche la solution du jeu : la bonne position de toutes les billes.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Déplacer</guimenu
+> <guimenuitem
+>Terminé !</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Quand vous avez placé toutes les billes, sélectionnez « Terminé ! » pour terminer la partie courante, calculer le score final et afficher les positions réelles des billes.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guisubmenu
+>Difficulté</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Sélectionner la difficulté du jeu. Les parties en mode « difficile » ont plus de billes et un plateau de jeu plus grand que les autres modes de jeu. Vous pouvez aussi jouer avec un niveau de difficulté personnalisé que vous pouvez configurer dans le menu <guimenu
+>Configuration</guimenu
+> de &kblackbox;.</para>
+<note>
+<para
+>Les parties avec quatre billes ou moins sont toujours sûr d'être résolues. Ce n'est pas le cas avec les parties de cinq billes ou plus.</para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>De plus, &kblackbox; possède des éléments communs de menu &kde; <guimenu
+>Configuration</guimenu
+> et <guimenu
+>Aide</guimenu
+>. Pour plus d'informations, veuillez consulter les sections <ulink url="help:/fundamentals/menus.html#menus-settings"
+> Menu de configuration</ulink
+> et <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu d'aide</ulink
+> des fondamentaux de &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Foire aux questions</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Puis-je utiliser le clavier pour jouer à ce jeu ? </para
+></question>
+ <answer
+><para
+>Oui. Vous pouvez utiliser les touches de flèches pour contrôler le curseur, la touche &Enter; pour placer et supprimer les billes et la touche &Space; pour placer des repères <quote
+>vides</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je veux quitter le jeu maintenant, mais ma partie n'est pas terminée. Puis je l'enregistrer ?</para
+></question>
+  <answer
+><para
+>&kblackbox; n'implante pas cette fonctionnalité pour le moment.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Remerciements et licence</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox; </para>
+<!--List all the copyright holders here-->
+<para
+>Copyright du programme 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; et 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>Copyright de la documentation par &Robert.Cimrman;. Mise à jour et converti vers Docbook pour &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;. Relu par &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Traduction française par &EricBischoff; et &LudovicGrossard;.</para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

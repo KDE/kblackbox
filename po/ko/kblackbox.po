@@ -1,0 +1,772 @@
+# Korean translation for kdegames
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the kdegames package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+# Shinjo Park <kde@peremen.name>, 2010, 2013, 2015, 2019, 2020, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdegames\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2022-07-13 14:14+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조,Bundo,bluekyu"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name,bundo@bundo.biz,bluekyu.dev@gmail.com"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " 공"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " 열"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " 행"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "설정 가능"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "튜토리얼 시작"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "튜토리얼 시작"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt><b>튜토리얼</b>을 통해서 게임의 규칙을 빠르고 쉽게 익혀 나갈 수 있습니"
+"다. 게임 규칙을 모른다면 튜토리얼을 시작하세요!</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "새 샌드박스 게임"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "새 샌드박스 게임 시작"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p><b>샌드 박스 게임</b>에서는 게임 시작 시에 풀이가 나타나 있습니다. 게"
+"임 원리를 이해하는 데 유용합니다.</p><p>그러나 몇 판 하다 보면 재미가 없어집"
+"니다. 진짜 게임을 시작해 보세요!</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "완료!"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>먼저 검은 상자에 모든 공을 놓아야 합니다. 공의 올바른 위치를 추측"
+"하고 레이저 빔을 맞았을 때 어떻게 되는지 보려면 검은 상자 주변에 있는 레이저"
+"를 사용해야 합니다.</li><li><b>다 되었다고 생각하면</b> 여기를 클릭하십시오."
+"</li></ul><p>올바른 공 개수만큼을 놓았을 때에만 여기를 누를 수 있습니다.</"
+"p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "게임 포기"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>현재 게임을 포기하려면 \"<b>풀기</b>\"를 선택하십시오. 풀이법이 표시됩"
+"니다.</p><p>공을 모두 놓았고 포기하고 싶지 않으면 \"완료!\"를 선택하십시오.</"
+"p></qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr "마우스를 올렸을 때 강조하기"
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "아래로 이동"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "위로 이동"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "왼쪽으로 이동"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "오른쪽으로 이동"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "공 바꾸기 또는 레이저 발사"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "표시 바꾸기"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+"참고: 설정 창에서<br />사용자 게임의<br />변수를<br />바꿀 수 있습니다."
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "먼저 검은 상자에서 공 %1개를 제거해야 합니다."
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr "공의 위치를 성공적으로 추측했는지 확인하려면 여기를 클릭하세요!"
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "검은 상자에 공 %1개를 더 놓아야 합니다."
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "게임이 끝났습니다."
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "게임이 일시 정지되었습니다."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"\"완료\"를 클릭하는 것은 게임이 끝났을 때 공의 위치를 확인하는 일반적인 방법"
+"입니다. 그러나 튜토리얼을 진행하는 동안에는 마지막 단계에 도달하기 전에 게임"
+"을 끝낼 수 없습니다.\n"
+"먼저 튜토리얼을 완료해 주십시오."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "위치 확인"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "최종 점수: %1.<br />정말 잘했습니다!"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr ""
+"그러나 점수가 계산되지 않습니다!<br />왜냐하면 <b>샌드박스이기 때문입니다!</"
+"b>"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr "최종 점수: %1.<br />연습이 더 필요합니다."
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "게임이 중지되었습니다.<br />다시 시작하려면 \"%1\"을(를) 누르세요."
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr "현재 사용자 게임을 취소하고 새 설정으로 새 게임을 시작하겠습니까?"
+
+#: kbbmainwindow.cpp:394
+#, kde-format
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "새 게임 시작"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "사용자 정의 게임"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "죄송합니다. 튜토리얼 중에 포기할 수 없습니다."
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "풀기"
+
+#: kbbmainwindow.cpp:431
+#, kde-format
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"모든 공을 놓았습니다. 훌륭합니다!\n"
+"올바르게 추측했는지를 확인하고 게임을 끝내려면 지금 \"완료!\"를 클릭해야 합니"
+"다.\n"
+"그런데 정말로 이 게임을 포기하겠습니까?"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "포기하기"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "공 %1개를 놓아야 합니다!\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "공 %1개를 놓았습니다.\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "이 게임을 정말로 포기하시겠습니까?"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr ""
+"참고: 연습 모드에서는<br />풀이가 이미 표시되어 있습니다.<br />재미있게 즐기"
+"세요!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "현재 게임을 끝냅니다!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "새 게임 시작"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "점수"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p><b>점수</b>입니다. 최소 점수를 얻어야 합니다.</p><p>점수 증가 조건:"
+"<ul><li>시간: 1초당 <b>1점</b>.</li><li>레이저 사용: <ul><li>레이저 빔이 공"
+"에 맞거나 입구에서 끝난다면 <b>3점</b></li><li>다른 입구에서 끝난다면 <b>9점"
+"</b></li></ul></li></ul></p><p>게임 중에 실수했다면 최종 점수는 <b>999점</b>"
+"이 됩니다.</p></qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>여기는 <b>주 게임 영역</b>입니다.</p><ul><li>중심에 <b>검은 상자</b>"
+"가 있습니다.</li><li>왼쪽에는 검은 상자에 놓아야 하는 <b>공</b>이 있습니다.</"
+"li><li>검은 상자 주위에는 <b>레이저</b>가 있으며 레이저를 켜면 <b>상호작용 정"
+"보</b>를 표시합니다.</li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "튜토리얼"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "튜토리얼의 진행 과정을 표시합니다."
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr "다음 튜토리얼 단계로 넘어갈 때 해야 할 것을 설명합니다."
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "이전(&P)"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "이전 튜토리얼 단계로 돌아갑니다."
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "다음(&N)"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "다음 튜토리얼 단계로 넘어갑니다."
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "환영합니다!"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"이 튜토리얼은 KBlackBox 진행 방법을 간단한 예제로 안내합니다.<br /><br />지"
+"금 진행하는 게임은 6행 6열의 검은 사각형 상자입니다. 상자 속에는 공 3개가 <b>"
+"숨어</b> 있고 주변에는 레이저 탐침 24개가 있습니다.<br /><br />게임의 목표는 "
+"<b>공의 위치를 찾는 것</b>입니다."
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "\"다음\"을 클릭하십시오"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "검은 상자의 원리"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"공은 보이지 않지만 상자의 다양한 입구에 레이저 빔을 쏴서 레이저 빔이 상자 밖"
+"으로 진행하는지, 만약 상자 밖으로 진행하면 어디로 나가는지를 관찰할 수 있습니"
+"다.<br /><br />레이저 빔과 상자는 다양한 방법으로 상호작용합니다."
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr "검은 상자 안으로 레이저 빔을 발사하려면 표시된 레이저를 클릭하십시오."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "상호작용 없음"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"레이저 빔이 검은 상자 안의 공과 상호작용하지 않았다면 반대편 입구로 돌아 나옵"
+"니다.<br /><br />예제: 여기에 표시된 것처럼 상자에 공이 3개 들어 있다고 가정"
+"합시다. 레이저 빔 \"1\"에는 영향을 주지 않습니다.<br /><br />게임이 진행되면"
+"서 각각 입구/출구 쌍은 다른 번호로 표시됩니다."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr "첫 번째 상호작용을 알아 보려면 표시된 레이저를 발사하십시오."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "충돌"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"공에 직접 맞으면 \"<b>충돌</b>\"했다라고 표현합니다. 공에 맞은 레이저 빔은 검"
+"은 상자에서 나오지 <b>않습니다</b>.<br /><br />예제: 레이저 빔이 표시된 위치"
+"에 있는 공에 맞았지만 어디에서 맞았는지는 확실하지 않습니다. 여러 경우가 있"
+"을 수도 있습니다."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr "두 번째 상호작용을 알아 보려면 표시된 레이저를 발사하십시오."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "단순한 굴절"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"공에 레이저 빔이 맞지 않았지만 한 측면을 겨냥했다면 \"<b>굴절</b>\"이라고 합"
+"니다. 빔의 굴절각은 항상 <b>90도</b>입니다.<br /><br />예제: 표시된 공은 레이"
+"저 빔 \"2\"를 위쪽으로 굴절시켰지만 <b>다른 가능성</b>이 있을 수도 있습니다."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"표시된 것처럼 레이저 빔을 굴절시키는 다른 경우에 대해서 알아보려면 \"다음"
+"\"을 클릭하십시오."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "몇 가지 굴절"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"여기에서 볼 수 있는 것처럼 검은 상자 안에서 상호작용은 아주 복잡할 수 있습니"
+"다!<br />위치 \"2\"에서 들어가고 나온 레이저 빔은 공 세 개가 이렇게 배열되어 "
+"있을 때 안에서 굴절되었을 수도 있습니다."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "다른 결과를 알아보려면 표시된 레이저를 발사하십시오."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "반사"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"레이저 빔이 <b>입구</b>를 통해서 검은 상자를 떠난다면 검은 상자 안에서 뒤쪽으"
+"로 반사된 것입니다.<br /><br />예제: 다음과 같이 공 두 개가 배치되어 있다면 "
+"레이저 빔이 반사됩니다."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr ""
+"또 다른 뒤쪽으로 반사된 결과를 알아보려면 표시된 레이저를 발사하십시오."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "특별한 반사"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"근처에 다른 공이 없고 공이 <b>상자의 모서리</b>에 있다면 검은 상자 옆으로 발"
+"사된 빔이 뒤쪽으로 반사됩니다.<br /><br />예제: 다음과 같이 공이 배치되어 있"
+"다면 빔이 뒤쪽으로 반사됩니다."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "거의 끝났습니다. \"다음\"을 클릭하십시오."
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "\"빈 위치\" 표시"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"첫 두 개의 열에 공이 없다는 것을 확신할 수 있습니다. 만약 공이 있었다면 "
+"\"1\"번 위치로 들어간 빔이 공에 맞거나 2번 열에 있는 공 때문에 굴절되었을 수 "
+"있습니다. 마우스 오른쪽 단추로 클릭하거나 키보드 단축키를 사용해서 \"빈 위치"
+"\"를 표시할 수 있습니다.<br /><br />예제: 첫 두 열에 표시 12개가 있습니다."
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "\"다음\"을 클릭하십시오."
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "공 표시하기"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"공이 있는 위치를 알아냈다면 마우스 왼쪽 단추를 클릭해서 표시할 수 있습니다. "
+"공 표시를 삭제하려면 다시 왼쪽 단추로 클릭하십시오. 마지막 팁: 위치를 확신할 "
+"수 없다면 공을 마우스 오른쪽 단추로 누르거나 키보드 단축키로 \"확실하지 않음"
+"\"으로 표시할 수 있습니다.<br /><br />예제: 위치 하나는 표시하고, 하나는 확실"
+"하지 않음으로 표시했습니다."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "이제 시작합시다!"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>축하합니다!</b> 이제 KBlackBox의 모든 규칙을 알게 되었습니다.<br /><br /"
+"><b>플레이를 시작할 수 있습니다.</b> 직접 튜토리얼 게임을 마칠 수 있도록 노력"
+"해 보세요!<br /><br />팁: 공 세 개의 위치를 확신할 수 있을 만큼의 빔을 발사했"
+"습니다. 필요하다면 더 발사할 수 있습니다."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "공 놓기를 마치고 끝나면 \"완료!\"를 클릭하세요!"
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr ""
+"현재 테마 그래픽 구성 요소의 확장자입니다(SVGZ 파일, 파일 경로와 파일 확장자 "
+"포함)"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "사용자 난이도에서 공의 개수"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "사용자 난이도에서 보드의 열의 개수"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "사용자 난이도에서 보드의 행의 개수"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "레이저 빔을 발사해서 검은 상자 안에 있는 숨은 공을 찾으세요!"
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "버전 0.4 개발."
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "원 개발자"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "그래픽"
+
+#~ msgid "Time: 00:00"
+#~ msgstr "시간: 00:00"
+
+#~ msgid "Size: 00 x 00"
+#~ msgstr "크기: 00 x 00"
+
+#~ msgid "1 ball too many!"
+#~ msgid_plural "%1 balls too many!"
+#~ msgstr[0] "공 %1개가 더 많음"
+
+#~ msgid "No more balls to place"
+#~ msgstr "놓을 공이 더 없음"
+
+#~ msgid "1 ball to place"
+#~ msgid_plural "%1 balls to place"
+#~ msgstr[0] "놓을 공 %1개"
+
+#~ msgid "Game over"
+#~ msgstr "게임 끝"
+
+#~ msgid "Time: %1"
+#~ msgstr "시간: %1"
+
+#~ msgid "Size: %1 x %2"
+#~ msgstr "크기: %1 x %2"

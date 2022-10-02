@@ -1,0 +1,779 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sairan Kikkarin <sairan@computer.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2012-07-30 08:21+0600\n"
+"Last-Translator: Sairan Kikkarin\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Сайран Киккарин"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sairan@computer.org"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " доп"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " баған"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " жол"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "Баптамалы"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "Үйретуді бастау"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "Үйренуді бастау"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt><b>Үйрену</b> сабағы - ойынның ережелерін білудің ең оңай және тез жолы. "
+"Оларды білмесеңіз үйренуді бастаңыз!</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "Жаңа үйрету ойын"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "Жаңа үйрету ойынын бастау"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p><b>Үйрету ойында</b> шешімі бірден көрсетіледі. Ол ойынның "
+"қағидаларын түсінуге көмектеседі.</p><p>Кейін, оларды түсінген соң, бұндай "
+"ойын қызық болмайды. Сонда шын ойын басталады!</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "Дайын!"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>Біріншіден, қара жәшігінде барлық доптарының орнын табу керек. "
+"Оларды жәшіктің жан-жағынан орналасқан лазерлер сәулелерінің шағылысуына "
+"қарап болжап табуға болады.</li><li><b>Тауып болдым деп ойласаңыз</b>, "
+"осында түртіңіз.</li></ul><p>Доптардың дұрыс санын тапқан соң ғана түрте "
+"алатынды ескеріңіз.</p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "Болды, шешіп бер"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>Ойнап жатқан ойынды доғарам десеңіз \"<b>Шешімі</b>\" дегенді "
+"басыңыз. Ойынның шешімі көрсетіледі.</p><p>Егер бүкілін таптым деп "
+"берілмейтін болсаңыз \"Дайын!\" дегенді басыңыз.</p></qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr ""
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "Төмендету"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "Жоғарлату"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "Сол жаққа"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "Оң жаққа"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "Доп не лазерін ауыстыру"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "Маркерді ауыстыру"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+"Ескерту: Өзіндік ойының<br />параметрлерін<br />өзгерту үшін<br />Баптау "
+"диалогын қолданыңыз."
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "Алдымен қара жәшіктен %1 допты кетіру керек."
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr "Тапқаныңыз дұрыс па екенін тексеру үшін осында түртіңіз!"
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "Қара жәшікте тағы %1 допты табу керек."
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "Ойын бітті."
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "Ойын аялдап тұр."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"\"Дайын!\" дегенді басу - ойының аяғында нәтижесін тексерудің кәдімгі жолы. "
+"Бірақ үйреніп жатқанда, соңғы қадамына жетпей ойынды аяқтауға болмайды.\n"
+"Алдымен үйренуді бітіріңіз."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "Нәтижесін тексеру"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "Ұпайыңыз: %1.<br />Жақсы!"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr "Бірақ есептелмейді<br />өйткені <b>бұл үйрету ғой!</b>"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr "Ұпайыңыз: %1.<br />Әлі тәжірибе жинау керек."
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "Ойын аялдап тұр.<br />Жалғастыруға \"%1\" деңіз."
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr "Осы ойыңызды доғарып жаңасын басқа параметрлерімен бастамақсыз ба?"
+
+#: kbbmainwindow.cpp:394
+#, fuzzy, kde-format
+#| msgid "Start new game"
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "Жаңа ойынды бастау"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "Өзгеше ойын"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "Ғафу етіңіз, үйренгенде жеңілдім дей алмайсыз."
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "Шешімі"
+
+#: kbbmainwindow.cpp:431
+#, fuzzy, kde-format
+#| msgid ""
+#| "You placed all the balls. Great!\n"
+#| "You should now click on \"Done!\" to end the game and check if you "
+#| "guessed correctly.\n"
+#| "So, do you really want to give up this game?"
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"Бүкіл болжамдар жасалды. Бәрекелді!\n"
+"Енді ойынды аяқтап нәтижелерін тексеру үшін \"Дайын!\" дегенді басыңыз.\n"
+"Сонымен, шын болды ма?"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "Жә, болды"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "%1 доп орнын болжау керек!\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "%1 болжам жасалды.\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "Шын болды доғарам дейсіз бе?"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr ""
+"Ескерту: Үйрету режімінде,<br />шешімі көрсетілген.<br />Қайылы болсын!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "Бұл ойнап жатқан ойынды аяқтайды!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "Жаңа ойынды бастау"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "Ұпайы"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>Бұл <b>ұпайыңыз</b>. Бұл көрсеткішті мейілінше азайту керек.</"
+"p><p>Оны үлкейтетіні:<ul><li>жұмсаған уақыт: секунд сайын <b>1 ұпай</b>.</"
+"li><li>лазерді қолдануы:<ul><li><b>3 ұпай</b> лазер сәулесі допқа тисе не "
+"кіру нүктеден шығса,</li><li><b>9 ұпай</b> басқа кіру нүктеден шықса.</li></"
+"ul></li></ul></p><p>Қате жасасаңыз, айынның аяғында ұпайы <b>999</b> деп "
+"жазылады.</p></qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>Бұл <b>ойынның негізгі алаңы</b>.</p><ul><li>Ортасында <b>қара жәшік</"
+"b>.</li><li>Сол жақта, қара жәшікте орналасатын <b>доптар</b>.</"
+"li><li>Жағалай <b>лазерлер</b>. Оларды пайдаланса оңың орнына <b>нәтиже "
+"мәліметі</b> көрсетіледі.</li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "Үйрену"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "Үйретудің барысын көрсету."
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr " Келесі үйрету кезеңінде қандай нәтижеге жету керегін көрсету."
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "&Алдыңғы"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "Алдыңғы үйрету кезеңіне қайту."
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "&Келесі"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "Келесі үйрету кезеңіне қайту."
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "Қош келдіңіз!"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"Бұл қарапайым мысал негізінде KBlackBox ойынын ойнауды үйрету.<br /><br /"
+">Ойын 6 х 6 өлшемді қара жәшігінің мысалында көрсетіледі. Жәшіктің ішінде 3 "
+"доп <b>тығылған</b> және жағалай 24 лазер орналасқан.<br /><br />Мақсат - "
+"<b>доптардың орнын табу.</b>"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "\"Келесі\" дегенді түртіңіз"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "Қара жәшік негіздемесі"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"Доптар көрінбейді, біз жағалай орналасқан лазерлерден атып, сәулесі шықан "
+"жерін талдап доп тұрған орынды болжай аламыз.<br /><br /> Лазер сәулесі "
+"доптан түрлі жолымен шағылады."
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr "Қара жәшік ішіне сәулесін жіберу үшін белгілеген лазерді түртіңіз."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "Тиген жоқ"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"Егер лазер сәулесі ештеңеге тимей өтсе, ол қарсы жағынан шығады.<br /><br /"
+">Мысалы: 3 доптың жәшіктегі орыны көрсетілген. Олар \"1\" деген лазер "
+"сәулесіне ешбір әсер етпейді.<br /><br />Ойын барысында сәуленің кіру/шығу "
+"жері бір нөмірімен белгіленеді."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr ""
+"Енді сәулемен доптың әрекеттесуінің бірінші түрімен танысу үшін белгіленген "
+"лазерді түртіңіз."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "Дәл тию"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"Сәулесі тура допқа тигені \"<b>дәл тию</b>\" деп аталады. Дәл тиген сәуле "
+"қара жәшіктен <b>шықпайды</b>.<br /><br />Мысалы: сәуле көрсетілген жердегі "
+"допқа дәл тиіп, бірақ оның нақты орналасқан орнын анықтамайды: түрлі басқа "
+"да мүмкіндіктер бар."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr ""
+"Енді әрекеттесуінің екінші түрімен танысу үшін белгіленген лазерді түртіңіз."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "Жәй ауытқу"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"Сәуленің допқа дәл тимей бір шетіне тиіп бұрылғанын <b>ауытқу</b> деп "
+"атайды. Ауытқу бұрышы әрқашанда <b>90 градус</b> болады.<br /> <br />Мысалы: "
+"көрсетілген доп \"2\" деген сәулені ауытады, бірақ ол жалғыз мүмкіндігі "
+"<b>емес</b>."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"Көрсетілген ауытқуды туғызатын басқа жағдайды көру үшін \"Келесі\" дегенді "
+"түртіңіз."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "Бірнешелік ауытқу"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"Көрсетілгендей, қара жәшіктегі әрекеттесулер күрделі бола алады!<br /> \"2\" "
+"деп белгіленген жағдай көрсетілген 3 допқа соғылғанның нәтижесі бола алады."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "Нәтиженің басқа түрімен танысу үшін белгіленген лазерді түртіңіз."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "Шағылыс"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"Сәуле кірген жерінен қайта шыққан жағдайды <b>шағылыс</b> деп атайды.<br /"
+"><br />Мысалы: Сондай шағылысты туғызатын 2 доп көрсетілген."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr ""
+"Шағылысты туғызатын басқа жағдайды көру үшін белгіленген лазерді түртіңіз."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "Ерекше шағылыс"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"Егерде доп жәшіктің <b>ең шетінде</b> (қасында басқалары жоқ болып) тұрса, "
+"жақыннан жіберілген сәуле қайтарылып шағылысады.<br /><br />Мысалы: "
+"Көрсетілген жағдай кері шағылысты туғызады."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "Бітуге жақын. \"Келесі\" дегенді түртіңіз."
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "\"Бос орын\" белгісі"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"Алғашқы 2 бағанда доптар жоқ екеніне көзіміз жеті. Әйтпесе, \"1\" деген "
+"сәуле дәл тиер еді, немесе \"2\" деген сәуле 2-бағанынан аутылар еді. Ол "
+"бағандарды тышқанның оң батырмасымен (не сәйкесті перне тіркесімімен) \"бос "
+"орын\" деп белгілеп қоюға болады. <br /><br />Мысалы: Алғашқы 2 бағанға 12 "
+"белгі қойылды."
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "\"Келесі\" дегенді түртіңіз."
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "Доптарды белгілеу"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"Доптың орыны анықталған соң, оны тышқанның сол жақ батырмасымен белгілеп "
+"қойыңыз. Белгіні алып тастау үшін оны сол батырмасымен қайта түртіңіз. Орын "
+"күмән туғызатын болса - допты тышқанның оң батырмасымен (не сәйкесті перне "
+"тіркесімімен) \"күмәнді\" деп белгілеп қоюға болады.<br /><br />Мысалы: Бір "
+"анықталған және бір күмәнді орын белгілеп қойылды."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "Ойнайық!"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>Бәрекелді!</b> Енді KBlackBox-тың ойын <b>ережелерін</b> түгел "
+"меңгердіңіз.<br /><br /><b>ойындқ бастай аласыз.</b> Осы үйрену ойынды "
+"өзіңіз бітіріп көріңіз!<br /><br />Ишара: Біз доп орындарын анықтауға "
+"жеткілікті мәліметке иеміз. Әрине, қаласаныз, қосымша атқылауға да болады."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "Доптар орынын тауып, \"Дайын!\" дегенді басыңыз!"
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr ""
+"Қазіргі нақышының графикалық элементтер файлы (SVGZ файлы, жолы мен файл "
+"атауының жұрнағы көрсетілген)"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "Өзіндік ойын деңгейінің доптар саны"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "Өзіндік ойын деңгейінің өріс бағандар саны"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "Өзіндік ойын деңгейінің өріс жолдар саны"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "Лазермен атқылап қара жәшікте тығылған доптарды табу."
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "0.4-нүсқасын құрастырушысы."
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "Бастапқы құрастырушысы"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "Көркемдеушісі"
+
+#~ msgid "Time: 00:00"
+#~ msgstr "Уақыты: 00:00"
+
+#~ msgid "Size: 00 x 00"
+#~ msgstr "Өлшемі: 00 x 00"
+
+#~ msgid "1 ball too many!"
+#~ msgid_plural "%1 balls too many!"
+#~ msgstr[0] "%1 доп тым көп!"
+
+#~ msgid "No more balls to place"
+#~ msgstr "Доптар түгел табылғандай"
+
+#~ msgid "1 ball to place"
+#~ msgid_plural "%1 balls to place"
+#~ msgstr[0] "%1 допты табу керек"
+
+#~ msgid "Game over"
+#~ msgstr "Ойын бітті"
+
+#~ msgid "Time: %1"
+#~ msgstr "Уақыты: %1"
+
+#~ msgid "Size: %1 x %2"
+#~ msgstr "Өлшемі: %1 x %2"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Қиындық деңгейі"

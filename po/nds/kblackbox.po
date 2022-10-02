@@ -1,0 +1,804 @@
+# translation of kblackbox.po to Low Saxon
+# Translation of kblackbox.po to Low Saxon
+#
+# Manfred Wiese <m.j.wiese@web.de>, 2006, 2008, 2009, 2011.
+# Sönke Dibbern <s_dibbern@web.de>, 2006, 2007, 2009, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kblackbox\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2014-05-13 19:12+0200\n"
+"Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Manfred Wiese, Sönke Dibbern"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "m.j.wiese@web.de, s_dibbern@web.de"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " Kugel"
+msgstr[1] " Kugeln"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " Striep"
+msgstr[1] " Striepen"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " Reeg"
+msgstr[1] " Regen"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "Instellbor"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "Inföhren starten"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "Inföhren starten"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt>Mit de <b>Inföhren</b> laat sik de Speelregeln gau, eenfach un "
+"interaktiv lehren. Kiek se Di an, wenn Du ehr nich kennst!</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "Nieg Övenspeel"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "Nieg Övenspeel starten"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p>In en <b>Övenspeel</b>, warrt an'n Speelanfang de Lösen wiest. Dit "
+"hülpt, de Speelregeln to verstahn.</p><p>Dat warrt aver gau dröhnig, un Een "
+"schull beter en echt Speel starten.</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "Fardig!"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>Toeerst muttst Du all Kugeln op de swatte Kist platzeren. Du "
+"kannst de Lasers rund de swatte Kist bruken, wenn Du der Kugeln ehr richtig "
+"Positschonen un Bedregen op Laserstrahlen pröven wullt.</li><li>Klick hier, "
+"<b>wenn Du meenst, allens passt</b>.</li></ul><p>Beacht, Du kannst hier "
+"bloots denn klicken, wenn Du de richtige Tall vun Kugeln platzeert hest.</"
+"p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "Speel opgeven"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>Köör \"<b>Lösen</b>\", wenn Du dat aktuelle Speel opgeven wullt. Denn "
+"warrt de Lösen wiest.</p><p>Wenn Du all Kugeln platzeert hest, un nich "
+"opgeven wullt, köör \"Fardig!\".</p></qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr ""
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "Na nerrn"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "Na baven"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "Na links"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "Na rechts"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "Kugel wesseln oder Laser afscheten"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "Mark wesseln"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+"Beacht: Egen Spelen<br />laat sik binnen den<br />Instellendialoog<br /"
+">instellen."
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "Du muttst toeerst een Kugel ut de swatte Kist wegmaken."
+msgstr[1] "Du muttst toeerst %1 Kugeln ut de swatte Kist wegmaken."
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr ""
+"Klick hier, wenn Du kieken wullt, wat Du de Kugelsteed richtig raadt hest."
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "Du muttst noch een Kugel mehr op de swatte Kist platzeren."
+msgstr[1] "Du muttst noch %1 Kugeln mehr op de swatte Kist platzeren."
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "Speel vörbi."
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "Speel anhollen."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"Mit en Klick op \"Fardig!\" warrt normalerwies an't Speelenn de "
+"Kugelpositschonen pröövt. Wielt de Inföhren lett sik dat Speel aver nich "
+"beennen, ehr dat redig vörbi is.\n"
+"Bitte beenn toeerst de Inföhren."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "Positschonen pröven"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "Dien Pünkt: %1.<br />Goot speelt!"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr "Dat tellt aver nich,<br />wiel dat en <b>Övenspeel</b> is!"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr "Dien Pünkt: %1.<br />Du muttst wull noch wat öven."
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "Speel ünnerbraken<br />Drück op \"%1\", wenn Du wiedermaken wullt."
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr ""
+"Wullt Du dat aktuelle egen Speel redig afbreken un en nieg Speel mit niegen "
+"Instellen starten?"
+
+#: kbbmainwindow.cpp:394
+#, fuzzy, kde-format
+#| msgid "Start new game"
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "Nieg Speel starten"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "Egen Speel"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "Deit mi leed, Du kannst binnen de Inföhren nich opgeven."
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "Lösen"
+
+#: kbbmainwindow.cpp:431
+#, fuzzy, kde-format
+#| msgid ""
+#| "You placed all the balls. Great!\n"
+#| "You should now click on \"Done!\" to end the game and check if you "
+#| "guessed correctly.\n"
+#| "So, do you really want to give up this game?"
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"Du hest de Kugeln all platzeert. Goot!\n"
+"Klick nu op \"Fardig!\" wenn Du dat Speel afsluten un Dien Köör pröven "
+"wullt.\n"
+"Wullt Du dit Speel redig opgeven?"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "Opgeven"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "Du muttst %1 Kugel platzeren!\n"
+msgstr[1] "Du muttst %1 Kugeln platzeren!\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "Du hest %1 platzeert.\n"
+msgstr[1] "Du hest %1 platzeert.\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "Wullt Du dit Speel redig opgeven?"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr "Beacht: In Övenspelen<br />warrt de Lösen al wiest.<br />Veel Pläseer!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "Dit warrt dat lopen Speel beennen!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "Nieg Speel starten"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "Pünkt"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>Dit sünd <b>Dien Pünkt</b>. Versöök, dat Du as wenig as mööglich "
+"kriggst.</p><p>De Pünkt warrt mehr:<ul><li>Mit de Tiet: <b>1 Punkt</b> per "
+"Sekunn.</li><li>Bi Laserbruuk:<ul><li><b>3 Pünkt</b>, wenn de Laser en Kugel "
+"drippt oder wedder bi den Ingangspunkt rutgeiht,</li><li><b>9 Pünkt</b>, "
+"wenn he bi en anner Ingangspunkt wedder rutgeiht.</li></ul></li></ul></"
+"p><p>Wenn Du en Fehler maakst, warrt Dien Pünkt an't Speelenn op <b>999</b> "
+"sett.</p></qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>Dit is dat <b>Hööft-Speelfeld</b>.</p><ul><li>De <b>swatte Kist</b> "
+"liggt in de Merrn.</li><li>Linkerhand sünd de <b>Kugeln</b>, de Du op ehr "
+"platzeren muttst.</li><li>Rund de swatte Kist sünd <b>Lasers</b>, de bi "
+"Bruuk <b>Informatschonen</b> utgeevt.</li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "Inföhren"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "Wiest dat Vörankamen binnen de Inföhren."
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr "Beschrievt, wat Du för't Wiederkamen maken muttst."
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "&Verleden"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "Na de verleden Inföhrenstoop torüchgahn"
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "&Nakamen"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "Na de nakamen Inföhrenstoop gahn"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "Willkamen!"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"Disse Inföhren verkloort Di mit en eenfach Bispeel, wodennig KBlackBox "
+"speelt warrt.<br /><br />Wi speelt mit en veereckicg swatte Kist mit söss "
+"Striepen un söss Regen. De swatte Kist bargt dree <b>versteken</b> Kugeln un "
+"24 Laser-Endoskopen ümto.<br /><br />Een mutt de <b>Kugeln ehr Positschonen "
+"rutfinnen.</b>"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "Klick op \"Nakamen\""
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "Regeln för de swatte Kist"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"De Kugeln sünd nich sichtbor, man wi köönt vun verscheden Ingangspünkt mit "
+"Laserstrohlen na de Kist rinscheten, un denn kieken, wat un woneem se wedder "
+"ut de Kist rutkaamt.<br /><br />De Laserstrohlen reageert ünnerscheedlich op "
+"de Kugeln."
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr ""
+"Bitte klick op den markeerten Laser, wenn Du in de swatte Kist rinscheten "
+"wullt."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "Keen Akschoon"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"Wenn en Laserstrohl mit keen Kugel binnen de Kist reageert, kummt he "
+"gegenöver vun em sien Ingangspunkt wedder ut de Kist rut.<br /><br /"
+">Bispeel: Wenn de Kist dree Kugeln as angeven bargt, lenkt se den "
+"Laserstrohl \"1\" nich af.<br /><br />Wielt dat Speel warrt elk Poor vun "
+"Ingang-/Utgangpünkt mit en anner Nummer markeert."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr ""
+"Nu scheet den markeerten Laser af, dormit de eerste Akschoon in Gang kummt."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "Dreper"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"En Direktinslag op en Kugel warrt \"<b>Dreper</b>\" nöömt. Wenn en Strohl en "
+"Kugel drippt, kummt he <b>nich</b> mehr ut de swatte Kist rut..<br /><br /"
+">Bispeel: De Strohl hett villicht en Kugel bi de wiest Positschoon drapen, "
+"man den Dreper sien naue Positschoon is nich seker: Dat gifft noch veel mehr "
+"Mööglichkeiten."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr ""
+"Scheet den markeerten Laser af, dormit de twete Akschoon in Gang kummt."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "Eenfach Aflenken"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"Wenn en Strahl keen Kugel redig drippt, aver na ehr Siet teelt, warrt dat "
+"\"<b>Aflenken</b>\" nöömt. Den Strohl sien Aflenkwinkel is jümmers <b>90 "
+"Graad</b>.<br /><br />Bispeel: De wieste Kugel lenkt Strohl \"2\" na baven "
+"af, dat is aver <b>nich</b> de enkelte Mööglichkeit."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"Klick op \"Nakamen\", wenn Du mehr Kugelanornen mit disse "
+"Laserstrohlaflenken ankieken wullt."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "Verscheden Aflenken"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"As Du sehn kannst, köönt de Akschonen binnen de swatte Kist bannig "
+"vigeliensch wesen!<br />En Laserstrohl, de bi de Positschonen \"2\" rin- un "
+"rutgeiht, wöör villicht mit disse Opstellen vun dree Kugeln torüchstohlt."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "Scheet den markeerten Laser af, dormit en anner Resultaat rutkummt."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "Torüchstrahlen"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"Wenn de Laserstrohl de swatte Kist <b>bi den Ingangspunkt</b> verlett, wöör "
+"he binnen ehr torüchstrohlt.<br /><br />BIspeel: Wi hebbt för Di twee Kugeln "
+"so platzeert, dat se to solk en Torüchstrohlen föhrt."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr ""
+"Scheet den markeerten Laser af, wenn Du en anner Torüchstrahen sehn wullt."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "Besünner Torüchstrahlen"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"Wenn en Kugel <b>an de Kistkant</b> liggt (ahn anner Kugeln ümto), warrrt en "
+"Strohl, de direktemang neven ehr in de swatte Kist ringeiht, torüchstrohlt."
+"<br /><br />Bispeel: De wiest Opbuu kann to en Torüchstrohlen föhren."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "Meist fardig. Klick op \"Nakamen\"."
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "Mark för \"leddig Positschoon\""
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"Wi sünd seker, dat de eersten twee Striepen keen Kugeln mehr bargt. Anners "
+"wöör de Strohl bi Ingangspositschoon \"1\" en Kugel drepen oder vun en Kugel "
+"binnen Striep 2 aflenkt. \"Leddig Positschonen\" laat sik mit en Rechtsklick "
+"markeren. (Kiek ok bi de Tastkombinatschonen).<br /><br />Bispeel: Dat gifft "
+"12 Marken binnen de eersten twee Striepen."
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "Klick op \"Nakamen\"."
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "Kugeln markeren"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"Wenn Du rutfunnen hest, woneem en Kugel liggt, markeer ehr mit den linken "
+"Muusknoop. Wenn Du en Kugelmark wegdoon wullt, bruuk den linken Muusknoop "
+"nochmaal. Noch en Tipp: Wenn Du bi en Kugel ehr Steed nich seker büst, "
+"markeer ehr mit de rechte Muustast as \"nich seker\". (Kiek ok bi de "
+"Tastkombinatschonen.)<br /><br />Bispeel: Wi hebbt een Positschoon as seker "
+"markeert un en anner as nich seker."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "Fangt wi an!"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b> Graleren</b> Du kennst nu <b>all Regeln</b> vun KBlackBox.<br /><br /"
+"><b>Nu kannat Du anfangen.</b> Versöök, dat Du dit Inföhrenspeel sülvst "
+"beenst!<br /><br />Henwies: Wi hebbt noog Strohlen inbuut, dormit sik de "
+"dree Kugeln ehr Positschonen seker rutfinnen laat. Du kannst aver ok noch "
+"mehr Schööt bruken, wenn nödig."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "Platzeer all Dien Kugeln un klick op \"Fardig!\", wenn Du sowiet büst."
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr ""
+"Datei vun't aktuelle Grafikelementen-Muster. (SVGZ-Datei mit Padd un "
+"Dateiverwiedern)"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "Tall vun Kugeln för egen Speelstoop"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "Tall vun Striepen för egen Speelstoop"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "Tall vun Regen för egen Speelstoop"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "Mit Laserstrohlern de versteken Kugeln binnen en swatt Kist finnen."
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"(c) 2007: Nicolas Roffet\n"
+"(c) 1999-2000: Robert Cimrman"
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "Schriever vun Verschoon 0.4."
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "Orginaalschriever"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "Künstler"
+
+#~ msgid "Time: 00:00"
+#~ msgstr "Tiet: 00:00"
+
+#~ msgid "Size: 00 x 00"
+#~ msgstr "Grött: 00 x 00"
+
+#~ msgid "1 ball too many!"
+#~ msgid_plural "%1 balls too many!"
+#~ msgstr[0] "Een Kugel toveel!"
+#~ msgstr[1] "%1 Kugeln toveel!"
+
+#~ msgid "No more balls to place"
+#~ msgstr "Keen Kugeln för't Platzeren mehr över"
+
+#~ msgid "1 ball to place"
+#~ msgid_plural "%1 balls to place"
+#~ msgstr[0] "1 Kugel to platzeren"
+#~ msgstr[1] "%1 Kugeln to platzeren"
+
+#~ msgid "Game over"
+#~ msgstr "Speel vörbi"
+
+#~ msgid "Time: %1"
+#~ msgstr "Tiet: %1"
+
+#~ msgid "Size: %1 x %2"
+#~ msgstr "Grött: %1 x %2"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Speelstoop"

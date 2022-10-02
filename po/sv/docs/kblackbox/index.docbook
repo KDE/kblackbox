@@ -1,0 +1,629 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Swedish "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Handbok Svarta lådan</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>2021-06-24</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Denna dokumentation beskriver spelet Svarta lådan, version 21.04</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>spel</keyword
+> <!-- do not change this! -->
+	<keyword
+>Svarta lådan</keyword>
+	<keyword
+>problemlösning</keyword>
+	<keyword
+>bräde</keyword>
+	<keyword
+>kulor</keyword>
+	<keyword
+>strålar</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>en spelare</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>dolda kulor</keyword>
+	<keyword
+>hitta</keyword>
+	<keyword
+>sök</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Inledning</title
+> <!-- do not change this! -->
+	<note
+><title
+>Speltyp:</title
+><para
+>Problemlösning, brädspel</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Antal möjliga spelare:</title
+><para
+>En</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>Svarta lådan är ett roligt grafiskt logikspel, som är inspirerat av &Emacs; blackbox. Stora delar av den här hjälpfilen är baserad på den ursprungliga &Emacs;-hjälpen.</para>
+
+<para
+>Svarta lådan är ett kurragömmaspel som spelas på ett rutnät av lådor. Datorn har gömt flera kulor inne i lådan. Genom att skjuta strålar in i lådan och se var de kommer ut är det möjligt att sluta sig till positionerna för de dolda kulorna.</para>
+<para
+>Ju färre strålar du använder för att hitta kulorna, och ju snabbare du hittar kulorna, desto bättre (lägre) poäng.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Hur man spelar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Syfte:</title
+><para
+>Använd laserstrålar för att räkna ut placeringen av kulorna inne i den svarta lådan.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Använd lasrar och placera kulor och markörer på spelbrädet för att räkna ut positionen för de dolda kulorna inne i den svarta lådan.</para>
+<para
+>Spelet börjar så fort du använder den första lasern. Innan det, löper inte tiden och inga poäng räknas. </para>
+<para
+>Markören kan flyttas runt i lådan med de vanliga piltangenterna eller med musen. Aktivering av lasrar eller markering av svarta lådor görs med <mousebutton
+>vänster</mousebutton
+> musknapp, eller genom att trycka på returtangenten eller <keycap
+>Enter</keycap
+>.</para>
+
+<para
+>Du kan också dra och släppa kulorna och markörerna med musen.</para>
+
+<para
+>Du kan också markera fält där du tror att en kula inte kan finnas. Tryck bara på <mousebutton
+>höger</mousebutton
+> musknapp. Det hjälper ofta till att hitta ett område där en kula möjligen kan finnas. För att rensa en markering tryck på samma tangent eller musknapp igen.</para>
+
+<para
+>När du tror att kulornas utplacering är riktig, klicka på knappen <guibutton
+>Klar!</guibutton
+>. Du blir informerad om du har rätt eller inte, och får dina poäng. </para>
+<para
+>Om du placerade några kulor på fel plats, visas den riktiga lösningen. </para>
+
+<para
+>Poängen ökar med tiden (1 poäng/sekund) och med användning av lasrar: 3 poäng om laserstrålen träffar en kula eller går ut där den gick in, och 9 poäng om den går ut på något annat ställe. Om du begår ett misstag, blir poängen 999 vid spelets slut, vilket är maximal poäng. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Spelets regler, strategier och tips</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Spelregler</title>
+
+<para
+>Du ska hitta kulorna som är dolda i den svarta lådan. Dina tillgångar är begränsade, du kan bara skjuta lasrar som finns runt om lådan. Det finns tre möjliga resultat för varje stråle som du skickar in i lådan. </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Omväg</term
+> 
+<listitem
+><para
+>Strålen avlänkas och kommer ut någon annanstans än där du skickade in den. På spelbrädet anges omvägar med matchande par av nummer, ett där strålen gick in och det andra där strålen kom ut.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Reflektion</term>
+<listitem
+><para
+>Strålen reflekteras och kommer ut på samma ställe där den skickades in. På spelbrädet anges reflektioner med ett särskilt tecken.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Träff</term>
+<listitem
+><para
+>Strålen träffar kulan direkt och absorberas. Den kommer inte ut från lådan. På spelbrädet anges träffar med ett särskilt tecken.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Reglerna för hur kulor avlänkar strålar är enkla och visas bäst med exempel.</para>
+
+<para
+>När en stråle når en kula avlänkas den 90 grader. Strålar kan avlänkas flera gånger. I diagrammen nedanför, representerar strecken tomma platser och bokstaven <guilabel
+>O</guilabel
+> representerar en kula. In- och utpunkterna för varje stråle markeras med nummer, som beskrivs vid <link linkend="detour"
+>Omväg</link
+> ovan. Observera att in- och utpunkterna kan alltid bytas. <guilabel
+>*</guilabel
+> anger vägen som strålen tar.</para>
+
+<para
+>Observera noga den relativa positionen för kulan och den avlänkning på 90 grader som den orsakar.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Som nämnts ovan, sker en reflektion när en stråle kommer ut från samma punkt där den skickades in. Det här kan ske på flera olika sätt: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>I det första exemplet avlänkas strålen neråt av den övre kulan, sedan vänster av den nedre kulan, och går till sist samma väg tillbaka till startpunkten. Det andra exemplet är liknande. Det tredje exemplet är lite avvikande, men kan förstås genom att inse att strålen aldrig får en chans att komma in i lådan. Som ett alternativ, kan det anses att strålen avlänkas neråt och omedelbart kommer ut från lådan.</para>
+
+<para
+>En träff inträffar när en stråle går rakt in i en kula:</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Se till att jämföra det andra exemplet på en träff med det första exemplet på en reflektion.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Översikt av gränssnittet</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Beskrivning av spelbrädet</title>
+
+<screenshot>
+<screeninfo
+>Svarta lådans spelbräde</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Svarta lådans spelbräde</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Följande typer av fält finns på spelbrädet: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>Den stora svarta lådan i mitten</interface
+></term>
+<listitem
+><para
+>Du måste markera positionerna där du tror en kula finns.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Lasrar omkring lådan</interface
+></term>
+<listitem
+><para
+>Lasrarna skjuter ljusstrålar när de är på. Därefter försvinner de och ersätts med information om hur laserstrålen påverkades av kulorna i den svarta lådan.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Kulor</interface
+></term>
+<listitem
+><para
+><quote
+>Här måste det finnas en!</quote
+> tror du. De här markerar var du misstänker att en kula är placerad i den svarta lådan.</para>
+<para
+>När spelet är slut markeras också kulornas rätta och felaktiga positioner med <quote
+>kulor</quote
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Markörer för "ledig plats"</interface
+></term>
+<listitem
+><para
+>Du kan använda dem för att markera vissa platser där du är säker på att det inte finns någon kula.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Menyalternativ</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Ny</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Startar ett nytt spel (och överger det nuvarande, om det finns något).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Paus</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Gör paus eller fortsätt nuvarande spel.</para
+><para
+>Observera att resultaten av påverkan döljs vid paus i spelet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Visa bästa resultat</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Visa tabellen med bästa resultat.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Starta övning</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Starta spelets övning. Det är ett användarvänligt sätt att lära sig spelets regler.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Nytt sandlådespel</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Lösningen visas när spelet startas med det här läget. Det är användbart för att förstå spelets principer.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Detta stänger fönstret och avslutar Svarta lådan.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Flytta</guimenu
+> <guimenuitem
+>Lös</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Använd detta för att ge upp ett spel. Det visar lösningen: kulornas rätta platser.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Flytta</guimenu
+> <guimenuitem
+>Klar!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>När du placerat alla kulor, välj <guilabel
+>Klar!</guilabel
+> för att avsluta det nuvarande spelet, beräkna slutresultatet och visa de verkliga positionerna för kulorna.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guisubmenu
+>Svårighet</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Väljer spelets svårighetsgrad. Svårare spel har flera kulor och större svarta lådor än enklare spel. Du kan också spela med en egen svårighetsnivå som ställs in i Svarta lådans inställningsdialogruta.</para>
+<note>
+<para
+>Spel med 4 kulor eller färre har alltid en entydig lösning! Det är inte fallet för spel med 5 kulor eller fler.</para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Dessutom har Svarta lådan de vanliga menyalternativen <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> i &kde;. För mer information, läs avsnitten  <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s Grunder. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Vanliga frågor</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Kan man använda tangentbordet för att spela? </para
+></question>
+ <answer
+><para
+>Ja. Du kan använda piltangenterna för att styra markören, returtangenten för att placera och ta bort kulor, och <keycap
+>mellanslag</keycap
+> för att placera markörer för <quote
+>tomma</quote
+> platser.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag måste avsluta spelet nu, men jag är inte klar än. Kan man spara det man har gjort?</para
+></question>
+  <answer
+><para
+>Svarta lådan har för närvarande ingen funktion för att spara spelet.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Tack till och licens</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox; </para>
+<!--List all the copyright holders here-->
+<para
+>Program copyright 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; och 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>Dokumentation copyright av &Robert.Cimrman;. Uppdaterad och överförd till Docbook för &kde; 2.0 av &Lauri.Watts; &Lauri.Watts.mail;. Granskad av &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

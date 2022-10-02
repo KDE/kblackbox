@@ -1,0 +1,795 @@
+#
+#
+# Szüts Attila <szuts25@dpg.hu>, 1999.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2015.
+# Balázs Úr <urbalazs@gmail.com>, 2012.
+# Kristof Kiszel <kiszel.kristof@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.3\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2021-09-28 13:51+0200\n"
+"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.03.80\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf,Szántó Tamás,Szüts Attila"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kiszel.kristof@gmail.com,tszanto@interware.hu,szuts25@dpg.hu"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " golyó"
+msgstr[1] " golyó"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " oszlop"
+msgstr[1] " oszlop"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " sor"
+msgstr[1] " sor"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "Beállítható"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "Oktatójáték indítása"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "Oktatójáték indítása"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt>Az <b>oktatójáték</b> segítségével könnyen, gyorsan meg lehet tanulni a "
+"játékszabályokat. Ha most játszik először, indítsa el!</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "Új oktatójáték"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "Oktatójáték kezdése"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p><b>Oktatójátékban</b> már a játék kezdetén látható a megoldás. Így "
+"könnyebben meg lehet érteni a játékszabályokat.</p><p>Ha már tisztában van a "
+"szabályokkal, kezdjen bele egy igazi játékba!</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "Kész!"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>Előszer be kell rakni az összes golyót a fekete dobozba. A "
+"golyók helyének kitalálásához kapcsoljon be lézereket a doboz szélén, és "
+"figyelje meg, hol jut ki a fénysugár.</li><li><b>ha úgy érzi, hogy kitalálta "
+"a golyók helyét</b>, kattintson ide.</li></ul><p>Csak akkor tud "
+"idekattintani, ha a megfelelő számú golyó már el van helyezve.</p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "A játék feladása"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>Válassza a \"<b>Megoldás</b>\" lehetőséget, ha fel szeretné adni a "
+"játékot. Ekkor megjelenik a megoldás.</p><p>Ha lerakta az összes golyót és "
+"nem akarja feladni a játékot, kattintson a \"Kész\" gombra.</p></qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr "Kiemelés bekapcsolása a kurzor alatt"
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "Lefelé"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "Felfelé"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "Balra"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "Jobbra"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "Másik golyóra váltás vagy a lézer bekapcsolása"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "Kapcsolójel"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+"Megjegyzés: az<br />egyedi játékok<br />paraméterei<br />megváltoztathatók a "
+"beállítóablakban."
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "El kell távolítani 1 golyót a fekete dobozból."
+msgstr[1] "El kell távolítani %1 golyót a fekete dobozból."
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr "Kattintson ide, ha tudni szeretné, jó-e a megoldás."
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "Még 1 golyót le kell rakni."
+msgstr[1] "Még %1 golyót le kell rakni."
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "Vége a játéknak."
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "Szünet."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"Igazi játékban a \"Kész\" gombra kell kattintani az elrendezés helyességének "
+"ellenőrzéséhez. Oktatójátékban azonban ez nem lehetséges, végig kell menni "
+"az összes lépésen.\n"
+"Fejezze be az oktatójátékot."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "A pozíciók ellenőrzése"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "Végső pontszám: %1.<br />Kitűnően játszott!"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr "De nem menthető el az eredmény,<br />mert ez egy <b>oktatójáték.</b>"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr "A végső pontszáma: %1.<br />Van még mit gyakorolni…"
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "A játék szünetel.<br />Folytatás: %1"
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr ""
+"Biztosan abba szeretné hagyni ezt az egyedi játékot, és újat kezd új "
+"paraméterekkel?"
+
+#: kbbmainwindow.cpp:394
+#, fuzzy, kde-format
+#| msgid "Start new game"
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "Új játék"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "Egyedi játék"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "Az oktatójátékot nem lehet feladni."
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "Megoldás"
+
+#: kbbmainwindow.cpp:431
+#, kde-format
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"Sikerült minden golyót elhelyezni.\n"
+"Kattintson a „Kész!” gombra a futó játék befejezéséhez, a megoldás "
+"helyességének ellenőrzéséhez.\n"
+"Biztosan fel szeretné adni a játékot?"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "Feladom..."
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "%1 golyót kell lerakni.\n"
+msgstr[1] "%1 golyót kell lerakni.\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "%1 golyót helyezett el.\n"
+msgstr[1] "%1 golyót helyezett el.\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "Biztosan fel szeretné adni?"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr ""
+"Megjegyzés: oktatójátékban<br />a megoldás már a játék elején látható.<br /"
+">Jó szórakozást!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "Ezzel befejeződik a mostani játék!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "Új játék"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "Pontszám"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>Itt látható az <b>elért pontszám</b>. Ebben a játékban a kisebb "
+"pontszám jobb eredménynek számít!</p><p>A pontszám nő, ha:<ul><li>telik az "
+"idő - minden másodperc <b>1 pontot</b> ér.</li><li>lézer aktiválásakor:"
+"<ul><li><b>3 pontot</b> ér, ha a lézer golyóba ütközik vagy a belépési "
+"helyen lép ki,</li><li><b>9 pontot</b> ér, ha egy másik ponton lép ki.</li></"
+"ul></li></ul></p><p>Hibázás esetén <b>999</b> lesz a kapott pontszám.</p></"
+"qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>Itt látható a <b>fő játéktér</b>.</p><ul><li>Középen áll a <b>fekete "
+"doboz</b>.</li><li>Bal oldalon láthatóak a fekete dobozba helyezendő "
+"<b>golyók</b>.</li><li>A fekete doboz mellett <b>lézerek</b> láthatók, "
+"melyek helyén <b>visszaverődési adatok</b> jelennek meg használat után.</"
+"li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "Oktatójáték"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "Kiírja, melyik fázisnál tart az oktatójáték."
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr "Leírja, mi a teendő az oktatójáték következő lépésében."
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "&Vissza"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "Ugrás az oktatójáték előző lépésére."
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "&Tovább"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "Ugrás az oktatójáték következő lépésére."
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "Üdvözöljük!"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"Egy mintajátékon keresztül bemutatjuk a játékszabályokat.<br /><br />A "
+"fekete doboznak ebben a játékban 6 sora és 6 oszlopa lesz. 3 golyó van "
+"<b>elrejtve</b> a dobozban, és 24 lézer található a doboz körül.<br /><br /"
+">A játék célja <b>a golyók helyzetének meghatározása.</b>"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "Kattintson a \"Tovább\" gombra"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "A fekete doboz jellemzői"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"A golyók nem láthatók, de pozíciójuk kikövetkeztethető, ha a dobozba egy "
+"lézert irányít és megfigyeli, hol jut ki a sugár (ha kijut egyáltalán).<br /"
+"><br />A lézer többféle módon változtathat irányt a golyókba ütközve."
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr "Kattintson a megjelölt lézerre: ekkor fénysugár jut a fekete dobozba."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "Nincs visszaverődés"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"Ha egy lézer nem ütközik golyóba, akkor a bejutási ponttal ellentétes "
+"végpontnál jut ki a dobozból.<br /><br />Példa: 3 golyó van elhelyezve a "
+"dobozban az ábrán látható módon. Egyik sincs az \"1\" jelű lézer útjában."
+"<br /><br />Minden bekapcsolt lézernél megjelenik, hol lép be illetve ki a "
+"sugár a dobozból."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr "Aktiválja a lézert az első típusú visszaverődés megtekintéséhez."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "Találat"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"Az egyik lehetséges eset, hogy a lézer \"<b>telibe talál</b>\" egy golyót. "
+"Ebben az esetben a sugár <b>nem</b> fog kilépni a dobozból.<br /><br /"
+">Példa: lehet, hogy a sugár telibe talált egy golyót a mutatott pozíciónál, "
+"de a golyó pontos pozíciója nem biztos ennyi információ alapján."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr ""
+"Aktiválja a megjelölt lézert a második típusú visszaverődés megtekintéséhez."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "Egyszerű visszaverődés"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"Ha a lézer nem találja telibe a golyót, de érinti valamelyik részét, "
+"\"<b>visszaverődés</b>\" történik. A visszaverődés szöge mindig <b>90 fok</"
+"b>.<br /><br />Például: a képen látható golyó felfelé veri vissza a \"2\" "
+"jelű lézert, de <b>nem</b> ez az egyetlen lehetőség."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"Kattintson a \"Tovább\" gombra, ha további lehetséges variációkat szeretne "
+"megtekinteni olyan golyóelrendezésre, mely ilyen visszaverődést okoz."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "Többszörös visszaverődés"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"Ahogy látható, a fekete dobozban elég komplikált utat járhat be egy lézer "
+"fénye.<br />A bemutatott 3 golyó segítségével elérhető, hogy a lézer a \"2\" "
+"jelű pontban lép be és itt is lép ki."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "Kapcsolja be a megjelölt lézert egy másik lehetőség kipróbálásához."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "Visszaverődés"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"Ha a lézer a fekete dobozt <b>a belépési pontban hagyja el</b>, akkor teljes "
+"visszaverődés történt.<br /><br />Példa: úgy helyeztünk el két golyót, hogy "
+"a bejutó lézer teljes visszaverődést szenvedjen."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr "Aktiválja a megjelölt lézert a teljes visszaverődés bemutatásához."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "Speciális visszaverődés"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"Ha egy golyó <b>a doboz szélén</b> van elhelyezve (és mellette nincs más "
+"golyó), akkor egy mellé helyezett, befelé irányzott lézer teljesen "
+"visszaverődik.<br /><br />Példa: a képen látható elrendezés teljes "
+"visszaverődést eredményez."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "Majdnem kész... Kattintson a \"Tovább\" gombra."
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "A \"szabad pozíció\" megjelölése"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"Nyilvánvaló, hogy az első két oszlopban nincs golyó. Ha lenne, az \"1\" "
+"pontnál belépő lézer golyóba ütközne vagy visszaverődne egy golyóról a 2. "
+"oszlopban. A jobb egérgombbal kattintva lehet \"szabad pozíciót\" megjelölni "
+"(és a megfelelő billetyűparanccsal).<br /><br />Példa: az első két oszlopban "
+"12 jelölés található."
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "Kattintson a \"Tovább\" gombra."
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "Golyók megjelölése"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"Ha sikerült kitalálni egy golyó helyét, jelölje meg azt a bal egérgombbal "
+"kattintva. Egy már lerakott golyó szintén a bal egérgombbal távolítható el. "
+"Még egy tipp: ha nem teljesen biztos egy golyó pozíciójában, kattintson rá a "
+"jobb egérgombbal. A golyó ilyenkor \"nem biztos\" jelölést kap. (Lásd a "
+"billentyűparancsok listáját.)<br /><br />Például: az egyik golyót biztosnak, "
+"a másikat bizonytalannak jelöltük meg."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "Indítás"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>Gratulálunk!</b> Most már ismeri a játék <b>összes szabályát</b>.<br /"
+"><br /><b>Kezdjen el egy igazi játékot!</b> Fejezze be segítség nélkül a "
+"mintajátékot.<br /><br />Tipp: elég lézert aktiváltunk ahhoz, hogy könnyen "
+"kitalálható legyen a 3 golyó helye. Szükség esetén kapcsoljon be további "
+"lézereket."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "Rakja le a golyókat majd kattintson a \"Kész\" gombra."
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr ""
+"Az aktív téma fájlja (SVGZ-fájl elérési úttal és kiterjesztéssel együtt)"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "A golyók száma egyedi nehézségi szintnél"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "Az oszlopok száma egyedi nehézségi szint esetén"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "A sorok száma egyedi nehézségi szint esetén"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr ""
+"Golyók helyzetét kell meghatározni egy fekete dobozban lézerek segítségével."
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"(c) Nicolas Roffet, 2007.\n"
+"(c) Robert Cimrman, 1999-2000."
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "A 0.4-es verzió fejlesztője"
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "Eredeti fejlesztő"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "Grafika"
+
+#~ msgid "Time: 00:00"
+#~ msgstr "Idő: 00.00"
+
+#~ msgid "Size: 00 x 00"
+#~ msgstr "Méret: 00 x 00"
+
+#~ msgid "1 ball too many!"
+#~ msgid_plural "%1 balls too many!"
+#~ msgstr[0] "1 golyóval több van lerakva a kelleténél!"
+#~ msgstr[1] "%1 golyóval több van lerakva a kelleténél!"
+
+#~ msgid "No more balls to place"
+#~ msgstr "Nincs több lerakható golyó"
+
+#~ msgid "1 ball to place"
+#~ msgid_plural "%1 balls to place"
+#~ msgstr[0] "1 golyót kell lerakni"
+#~ msgstr[1] "%1 golyót kell lerakni"
+
+#~ msgid "Game over"
+#~ msgstr "Vége a játéknak"
+
+#~ msgid "Time: %1"
+#~ msgstr "Idő: %1"
+
+#~ msgid "Size: %1 x %2"
+#~ msgstr "Méret: %1 x %2"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Nehézségi szint"

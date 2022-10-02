@@ -1,0 +1,639 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Manuale di &kblackbox;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+<othercredit role="translator"
+><firstname
+>Andrea</firstname
+> <surname
+>Celli</surname
+><affiliation
+><address
+><email
+>andrea.celli@libero.it</email
+></address
+></affiliation
+><firstname
+>Valter</firstname
+> <surname
+>Mura</surname
+><affiliation
+><address
+><email
+>valtermura@gmail.com</email
+></address
+></affiliation
+><contrib
+> Traduzione della documentazione</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>2021-06-24</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Questa documentazione descrive il gioco &kblackbox;, versione 21.04</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>gioco</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kblackbox</keyword>
+	<keyword
+>rompicapo</keyword>
+	<keyword
+>da tavolo</keyword>
+	<keyword
+>sfere</keyword>
+	<keyword
+>raggi</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>un giocatore</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>sfere nascoste</keyword>
+	<keyword
+>trovare</keyword>
+	<keyword
+>cercare</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introduzione</title
+> <!-- do not change this! -->
+	<note
+><title
+>Tipo di gioco:</title
+><para
+>Rompicapo da tavolo</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Numero giocatori ammessi:</title
+><para
+>Uno</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>&kblackbox; è un simpatico gioco di logica, ispirato al gioco blackbox di &Emacs;. Gran parte di questo manuale è basato sul manuale originale di &Emacs;.</para>
+
+<para
+>&kblackbox; è un gioco di cerca e trova, giocato su un reticolo di celle. Il computer ha nascosto delle sfere in queste celle. Sparando dei raggi laser nella scatola e osservando dove emergono è possibile dedurre la posizione delle sfere nascoste.</para>
+<para
+>Il tuo punteggio sarà tanto migliore (basso) quanti meno raggi spari e quanto più velocemente trovi le sfere.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Come si gioca</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Scopo del gioco:</title
+><para
+>Utilizza i raggi laser per dedurre la posizione delle sfere nascoste nella scatola nera.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Utilizza i laser e disponi sfere e contrassegni per dedurre la posizione delle sfere nascoste nella scatola nera.</para>
+<para
+>La partita inizia non appena spari il primo laser. Prima di ciò il cronometro è fermo e nessun punto ti viene addebitato. </para>
+<para
+>Il cursore può essere mosso in giro per la scatola nera con le abituali frecce o con il mouse. L'attivazione dei laser e il marcamento di una cella sono ottenuti con il &LMB; o premendo i tasti <keycap
+>Ritorno a capo</keycap
+> o &Enter;.</para>
+
+<para
+>Puoi anche trascinare le sfere e i contrassegni con il mouse.</para>
+
+<para
+>Puoi contrassegnare le celle dove tu pensi che non ci siano sfere. Basta premere il &RMB;. Questo spesso aiuta a delimitare la zona in cui potrebbero stare le sfere. Per eliminare ogni contrassegno premi di nuovo lo stesso tasto della tastiera o del mouse.</para>
+
+<para
+>Quando pensi che la disposizione che hai dato alle sfere sia quella giusta, premi il pulsante <guibutton
+>Fatto!</guibutton
+>. Ti verrà detto se hai indovinato o no e sarà mostrato il tuo punteggio. </para>
+<para
+>Se hai messo una sfera fuori posto, verrà mostrata la soluzione giusta. </para>
+
+<para
+>Il punteggio aumenta con il tempo (1 punto al secondo) e con l'uso del laser: 3 punti se il raggio colpisce una sfera o esce da dove era entrato, 9 punti se esce da un altro punto. Se fai un errore, il punteggio finale sarà il massimo possibile: 999 punti. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Regole di gioco, strategie e suggerimenti</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Regole di gioco</title>
+
+<para
+>Devi trovare le sfere nascoste nella scatola nera. I mezzi a tua disposizione sono limitati: puoi solo attivare i laser che stanno attorno alla scatola. Ogni raggio che invii all'interno della scatola può uscire in tre modi: </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Deviazione</term
+> 
+<listitem
+><para
+>Il raggio viene deviato ed esce da qualche parte, diversa dal punto da cui lo hai lanciato. Sul piano di gioco le deviazioni sono indicate da una coppia di numeri uguali, uno dove il raggio è entrato e l'altro dove è uscito.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Riflessione</term>
+<listitem
+><para
+>Il raggio viene riflesso ed emerge nello stesso punto da cui è stato sparato. Sul piano di gioco la riflessione è indicata con la lettera <guilabel
+>R</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Collisione</term>
+<listitem
+><para
+>Il raggio colpisce in pieno una sfera e viene assorbito. Non esce più dalla scatola. Sul piano di gioco, le collisioni sono indicate con segno speciale.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Le regole con cui le sfere riflettono i raggi sono semplici e si spiegano meglio con degli esempi.</para>
+
+<para
+>Quando un raggio sfiora una sfera è deviato di 90°. I raggi possono essere deviati più di una volta. Nei diagrammi seguenti, i trattini rappresentano celle vuote e le lettere <guilabel
+>O</guilabel
+> delle sfere. I punti di ingresso e di uscita di ogni raggio sono denotati con un numero come descritto nel paragrafo <link linkend="detour"
+>Deviazione</link
+>. Nota che il punto di ingresso e di uscita sono interscambiabili. Gli <guilabel
+>*</guilabel
+> segnano il percorso seguito dal raggio.</para>
+
+<para
+>Osserva attentamente le posizioni relative delle sfere e le deviazioni di 90° che causano.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Come già detto, abbiamo una riflessione quando un raggio esce dallo stesso punto da cui era entrato. Questo può succedere in diversi casi: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Nel primo esempio, il raggio è deviato verso il basso dalla sfera superiore, poi a sinistra da quella inferiore e, alla fine, ripercorre la strada verso il suo punto di origine. Il secondo esempio è simile. Il terzo esempio è un po' anomalo, ma può essere compreso pensando che il raggio non ha mai la possibilità di entrare nella scatola. Altrimenti, si può pensare che il raggio sia immediatamente deviato verso il basso, uscendo subito dalla scatola.</para>
+
+<para
+>Una collisione avviene quando un raggio arriva dritto contro una sfera.</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Non tralasciare di confrontare il secondo esempio di collisione con il primo di riflessione.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>L'interfaccia grafica</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Descrizione del piano gioco</title>
+
+<screenshot>
+<screeninfo
+>&kblackbox; Tavoliere</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>&kblackbox; Tavoliere</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>L'ambiente di gioco contiene i seguenti tipi di oggetti: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>La grande scatola nera nel mezzo</interface
+></term>
+<listitem
+><para
+>Al suo interno devi marcare le celle in cui pensi sia nascosta una sfera.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>I laser attorno alla scatola</interface
+></term>
+<listitem
+><para
+>I laser quando vengono attivati sparano un raggio di luce. Dopo di che scompaiono e vengono sostituiti da un'informazione sulle eventuali interazioni che hanno avuto con le sfere contenute nella scatola.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Sfere</interface
+></term>
+<listitem
+><para
+><quote
+>Servivano proprio!</quote
+> avrai pensato. Queste segnano le celle della scatola nera in cui tu sospetti ci sia una sfera.</para>
+<para
+>Alla fine della partita altre <quote
+>sfere</quote
+> contrassegneranno le posizioni in cui stanno le sfere e i tuoi errori.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Contrassegno di "libero"</interface
+></term>
+<listitem
+><para
+>Puoi usarlo per contrassegnare le posizioni in cui sei sicuro che non ci siano sfere.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Le voci del menu</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Nuova</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Avvia una nuova partita (e abbandona quella eventualmente in corso).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Sospende o riavvia la partita in corso.</para
+><para
+>Nota che i risultati delle interazioni vengono nascosti quando il gioco è in pausa.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Mostra classifiche</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Mostra i migliori risultati in classifica.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Partita</guimenu
+> <guimenuitem
+>Avvia esercitazione</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Avvia una partita di esercitazione. È un modo simpatico per imparare le regole del gioco.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Partita</guimenu
+> <guimenuitem
+>Nuova esercitazione</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>In questa modalità la soluzione viene mostrata fin dall'inizio. È utile per imparare i principi del gioco.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Chiude la finestra e termina &kblackbox;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Sposta</guimenu
+> <guimenuitem
+>Soluzione</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Usa questa opzione se vuoi desistere. Ti verrà mostrata la soluzione, ossia la posizione corretta delle sfere.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Sposta</guimenu
+> <guimenuitem
+>Fatto!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Quando avrai collocato tutte le sfere, premi <guilabel
+>Fatto</guilabel
+> per terminare la partita in corso. Verrà calcolato il punteggio finale ed indicata la vera disposizione delle sfere.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+><guimenuitem
+>Difficoltà</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Permette di scegliere la difficoltà del gioco. Rispetto ai giochi più facili, quelli più difficili hanno più sfere e una scatola nera più grande. Puoi anche giocare ad un livello di difficoltà personalizzato. Puoi impostarlo nel modulo di configurazione di &kblackbox;.</para>
+<note>
+<para
+>I giochi con al più quattro sfere possono essere sempre risolti senza indeterminazioni! Questo non è garantito se ci sono cinque o più sfere. </para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Inoltre &kblackbox; ha le voci di menu <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+> comuni a tutto &kde;. Per ulteriori informazioni leggere le sezioni relative <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Impostazioni</ulink
+> e <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Aiuto</ulink
+> dei Fondamentali di &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Domande frequenti (FAQ)</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Posso giocare con la tastiera? </para
+></question>
+ <answer
+><para
+>Sì. Puoi usare le freccette direzionali per spostare il cursore, &Enter; per collocare o rimuovere una sfera e &Space; per segnare una casella come <quote
+>libera</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Devo lasciare la partita, ma non ho ancora finito. Posso salvare quello che ho fatto?</para
+></question>
+  <answer
+><para
+>Per il momento, &kblackbox; non prevede la possibilità di salvare la partita in corso.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Riconoscimenti e licenza</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox; </para>
+<!--List all the copyright holders here-->
+<para
+>Copyright sul programma: 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; e 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>Documentazione di &Robert.Cimrman;. Aggiornata e convertita in formato docbook per &kde;-2.0 da &Lauri.Watts; &Lauri.Watts.mail;. Aggiornata da &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Traduzione della documentazione e dell'interfaccia grafica: Andrea Celli <email
+>andrea.celli@libero.it</email
+></para
+><para
+>Traduzione dell'interfaccia grafica: Andrea Rizzi <email
+>rizzi@kde.org</email
+></para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

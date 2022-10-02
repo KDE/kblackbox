@@ -1,0 +1,937 @@
+# translation of kblackbox.po into Russian
+# KDE2 - kblackbox.pot Russian translation.
+# Copyright (C) 2001, KDE Team
+#
+# Konstantin Volckov <goldhead@linux.ru.net>, 2001.
+# Gregory Mokhin <mok@kde.ru>, 2005.
+# Nick Shaforostoff <shaforostoff@kde.ru>, 2008.
+# Evgeniy Ivanov <powerfox@kde.ru>, 2008.
+# Artem Sereda <overmind88@gmail.com>, 2009, 2013.
+# Alexander Potashev <aspotashev@gmail.com>, 2010, 2011, 2015.
+# Alexander Lakhin <exclusion@gmail.com>, 2013.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2020.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kblackbox\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2022-09-06 16:32+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.04.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Константин Волков,Ростислав Окулов,Николай Шафоростов,Александр Лахин"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"goldhead@linux.ru.net,ru.silvercry@mail.ru,shaforostoff@kde.ru,"
+"exclusion@gmail.com"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " шар"
+msgstr[1] " шара"
+msgstr[2] " шаров"
+msgstr[3] " шар"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " столбец"
+msgstr[1] " столбца"
+msgstr[2] " столбцов"
+msgstr[3] " столбец"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " строка"
+msgstr[1] " строки"
+msgstr[2] " строк"
+msgstr[3] " строка"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "Настраиваемый"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "Начать обучение"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "Начать обучение"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt>Режим <b>обучения</b> — это быстрый и простой способ изучить правила "
+"игры. Пройдите обучение, если вы не знаете правила!</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "Пробная игра"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "Начать пробную игру"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p>В <b>пробной игре</b>, решения показываются в начале игры. Это "
+"полезно для понимания принципов игры.</p><p>Тем не менее, потом это уже не "
+"будет интересно и вы сможете начать играть без подсказок!</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "Готово!"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>Сначала вам нужно указать расположения всех шаров в чёрном "
+"ящике. Чтобы вычислить первые анализируйте поведение лазерных лучей, которые "
+"отклоняются при встрече с шаром. Лазеры расположены по краям чёрного ящика.</"
+"li><li><b>Когда всё будет готово</b>, щёлкните здесь.</li></ul><p>Замечание: "
+"Здесь можно щёлкнуть только в том случае, если вы расставили правильное "
+"количество шаров.</p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "Сдаюсь"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>Нажмите <b>Решить</b>, если хотите бросить текущую игру, и вы увидите "
+"готовое решение.</p><p>Если же вы расставили все шары и не хотите сдаваться, "
+"нажмите «Готово!».</p></qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr "Выделять позицию под курсором"
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "Вниз"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "Вверх"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "Влево"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "Вправо"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "Переключение шара или выстрел"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "Переключение метки"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+"Вы можете изменить<br />параметры<br />настраиваемой игры<br />в диалоге "
+"Настройка."
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "Сначала удалите %1 шар из чёрного ящика."
+msgstr[1] "Сначала удалите %1 шара из чёрного ящика."
+msgstr[2] "Сначала удалите %1 шаров из чёрного ящика."
+msgstr[3] "Сначала удалите %1 шар из чёрного ящика."
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr "Чтобы проверить правильность выбора позиции шара, нажмите здесь."
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "Вам нужно поставить ещё %1 шар."
+msgstr[1] "Вам нужно поставить ещё %1 шара."
+msgstr[2] "Вам нужно поставить ещё %1 шаров."
+msgstr[3] "Вам нужно поставить ещё %1 шар."
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "Игра закончена."
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "Игра приостановлена."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"Обычно проверить расстановку шаров и закончить игру можно, нажав кнопку "
+"«Готово!». Однако в режиме обучения игру можно завершить, только дойдя до "
+"последнего шага.\n"
+"Пожалуйста, закончите урок."
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "Проверить позиции"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "Ваш результат: %1<br />Вы очень неплохо играли!"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr "Но это не считается, <br />потому что <b>это только пробная игра!</b>"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr "Ваш результат: %1. <br />Потренируйтесь ещё."
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "Игра приостановлена. <br />Нажмите «%1» для продолжения."
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr "Вы хотите отменить текущую игру и начать новую с другими параметрами?"
+
+#: kbbmainwindow.cpp:394
+#, kde-format
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "Начать новую игру"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "Настраиваемый вариант игры"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "Сдаться, получив решение, в режиме обучения нельзя."
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "Решение"
+
+#: kbbmainwindow.cpp:431
+#, kde-format
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"Вы разместили все шары. Великолепно!\n"
+"Теперь нажмите «Готово!» для завершения игры и проверки правильности "
+"расстановки шаров.\n"
+"Вы действительно хотите проверить?"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "Сдаться"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "Вы должны поместить %1 шар!\n"
+msgstr[1] "Вы должны поместить %1 шара\n"
+msgstr[2] "Вы должны поместить %1 шаров\n"
+msgstr[3] "Вы должны поместить %1 шар!\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "Вы разместили %1 шар.\n"
+msgstr[1] "Вы разместили %1 шара.\n"
+msgstr[2] "Вы разместили %1 шаров.\n"
+msgstr[3] "Вы разместили %1 шар.\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "Вы действительно хотите сдаться?"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr "Замечание: В режиме пробной игры <br />решения уже показаны."
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "Так вы закончите игру!"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "Начать новую игру"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "Счёт"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>Это ваши <b>очки</b>. Чем меньше их вы наберёте, тем лучше.</"
+"p><p>Очки насчитываются<ul><li>за время: <b>1</b> в секунду</li><li>за "
+"применение лазеров:<ul><li><b>3</b>, если луч попадает в шар или выходит "
+"через точку входа</li><li><b>9</b>, если он выходит через другую точку.</"
+"li></ul></li></ul></p><p>Если вы допустите ошибку, в конце игры вы получите "
+"<b>999</b> очков.</p></qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>Это <b>главное игровое поле</b>.</p><ul><li><b>Чёрный ящик</b> в "
+"центре.</li><li>Слева находятся <b>шары</b>, которые вы должны распределить "
+"по чёрному ящику.</li><li>Вокруг чёрного ящика находятся <b>лазеры</b>, "
+"которые заменяются <b>информацией о прохождении через шар</b> после их "
+"включения.</li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "Обучение"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "Показывает прогресс урока."
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr "Описание того, чего вы должны достигнуть в следующем шаге."
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "Назад"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "Перейти к предыдущему этапу урока."
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "&Вперёд"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "Перейти к следующему этапу урока."
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "Добро пожаловать!"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"В этом уроке вы научитесь играть в KBlackBox на простом примере.<br /><br /"
+">Мы играем на квадратном поле размером 6x6. В нём <b>спрятано</b> 3 шара, а "
+"по периметру стоят 24 лазера.<br /><br />Цель — <b>вычислить расположение "
+"шаров</b>."
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "Нажмите кнопку «Вперёд»"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "Принципы игры"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"Шары невидимы, но по тому, как ведут себя лучи, пускаемые в чёрный ящик, "
+"(где выходят из ящика), можно вычислить расположение шаров. <br /><br /"
+">Лазерные лучи могут взаимодействовать с шарами по-разному."
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr "Щёлкните помеченный лазер, чтобы пустить луч в чёрный ящик."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "Нет взаимодействия"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"Если лазерный луч прошёл мимо шаров внутри чёрного ящика, то он выходит с "
+"противоположной стороны от входа. <br /><br />Например, предположим, что в "
+"чёрном ящике есть 3 шара в показанных позициях. Они не повлияют на "
+"траекторию луча 1.<br /><br />Далее по ходу игры каждая пара входных/"
+"выходных точек будет помечаться разными номерами."
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr ""
+"Теперь выстрелите помеченным лазером, чтобы увидеть первый тип "
+"взаимодействия."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "Попадание"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"Выстрел прямо в шар считается «<b>попаданием</b>». Луч, попадающий в шар, "
+"<b>не</b> выходит из чёрного ящика.<br /><br />Пример: Этот луч попал в шар "
+"в показанной позиции, хотя точное положение шара мы ещё не знаем. Возможны "
+"разные варианты."
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr ""
+"Выстрелите помеченным лазером, чтобы открыть второй тип взаимодействия."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "Простое преломление"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"Взаимодействие луча, при котором он не попадает непосредственно в шар, а "
+"касается его и отклоняется в сторону, называется «<b>преломлением</b>». Угол "
+"преломления всегда <b>90 градусов</b>.<br /><br />Пример: показанный шар "
+"преломляет луч 2 вверх, но это <b>не</b> единственный возможный вариант."
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"Нажмите «Вперёд», чтобы посмотреть другую комбинацию шаров, преломляющих луч "
+"по-другому."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "Несколько преломлений"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"Как показано здесь, взаимодействия в чёрном ящике могут быть весьма сложными!"
+"<br />Лазерный луч, с теми же точками входа и выхода под номером 2 мог "
+"преломиться трижды."
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "Выстрелите помеченным лазером, чтобы открыть следующий эффект."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "Отражение"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"Если лазерный луч вышел из чёрного ящика <b>в той же точке, из которой был "
+"пущен,</b> это значит, что он отразился внутри чёрного ящика.<br /><br />В "
+"данном примере для достижения этого эффекта мы разместили в ящике два шара."
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr ""
+"Выстрелите помеченным лазером, чтобы увидеть ещё один пример обратного "
+"отражения."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "Особое отражение"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"Если шар находится <b>у края чёрного ящика</b> (и рядом нет других шаров), "
+"луч, попавший в чёрный ящик непосредственно около него, отразится обратно."
+"<br /><br />Конфигурация, которая вызывает обратное отражение луча, показана "
+"на экране."
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "Осталось совсем немного. Нажмите «Вперёд»."
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "Метки «свободных позиций»"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"Мы уверены, что в первых двух столбцах шаров нет. Если бы они там были, луч, "
+"вошедший в точке 1, попал бы в шар или преломился бы шаром в столбце 2. Вы "
+"можете пометить вычисленные «свободные позиции» правой кнопкой мыши (или "
+"комбинацией клавиш).<br /><br />В данном примере показаны 12 меток в первых "
+"двух столбцах."
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "Нажмите «Вперёд»."
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "Расстановка шаров"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"Когда вы точно выяснили, где находится шар, пометьте это место левой кнопкой "
+"мыши. Чтобы удалить метку, нажмите левую кнопку ещё раз. Последняя "
+"подсказка: если вы не уверены в его расположении, вы можете пометить, что "
+"это место «под вопросом», щёлкнув его правой кнопкой (или нажав комбинацию "
+"клавиш).<br /><br />Например, здесь одна позиция помечена как точно "
+"определённая, а вторая — «под вопросом»."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "Давайте сыграем!"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>Поздравляем!</b> Теперь вы знаете <b>все правила</b> KBlackBox.<br /><br /"
+"><b>Вы можете начать играть.</b> Попробуйте пройти эту обучающую игру "
+"самостоятельно!<br /><br />Мы уже послали достаточно лучей для того, чтобы "
+"точно определить позиции трёх шаров. Разумеется, вы можете использовать "
+"больше выстрелов для проверки своих предположений."
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "Укажите расположение шаров и нажмите «Готово!»."
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr ""
+"Файл с графическими элементами оформления (имя файла SVGZ с путём и "
+"расширением)."
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "Число шаров для настраиваемого уровня сложности"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "Число столбцов поля для настраиваемого уровня сложности"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "Число строк поля для настраиваемого уровня сложности"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "Найдите шары, скрытые в чёрном ящике, пуская в него лучи лазера!"
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"© Nicolas Roffet, 2007\n"
+"© Robert Cimrman, 1999-2000"
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "Разработчик версии 0.4"
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "Первоначальный разработчик"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "Художник"
+
+#~ msgid "Time: 00:00"
+#~ msgstr "Время: 00:00"
+
+#~ msgid "Size: 00 x 00"
+#~ msgstr "Размер: 00 x 00"
+
+#~ msgid "1 ball too many!"
+#~ msgid_plural "%1 balls too many!"
+#~ msgstr[0] "На %1 шар больше, чем нужно"
+#~ msgstr[1] "На %1 шара больше, чем нужно"
+#~ msgstr[2] "На %1 шаров больше, чем нужно"
+#~ msgstr[3] "На %1 шар больше, чем нужно"
+
+#~ msgid "No more balls to place"
+#~ msgstr "Все шары расставлены"
+
+#~ msgid "1 ball to place"
+#~ msgid_plural "%1 balls to place"
+#~ msgstr[0] "Осталось расставить %1 шар"
+#~ msgstr[1] "Осталось расставить %1 шара"
+#~ msgstr[2] "Осталось расставить %1 шаров"
+#~ msgstr[3] "Осталось расставить %1 шар"
+
+#~ msgid "Game over"
+#~ msgstr "Игра закончена"
+
+#~ msgid "Time: %1"
+#~ msgstr "Время: %1"
+
+#~ msgid "Size: %1 x %2"
+#~ msgstr "Размер: %1 x %2"
+
+#~ msgid "Difficulty level"
+#~ msgstr "Уровень сложности"
+
+#~ msgctxt "A number between 1 and 99 is displayed in front of it."
+#~ msgid " ball(s)"
+#~ msgstr " шар(ов)"
+
+#, fuzzy
+#~ msgid "Balls"
+#~ msgstr "&Шары"
+
+#~ msgid "Run: yesno"
+#~ msgstr "Запустить: да/нет"
+
+#, fuzzy
+#~| msgid "&Tutorial"
+#~ msgid "Run: Tutorial"
+#~ msgstr "&Обучение"
+
+#, fuzzy
+#~ msgid "Run: Yes"
+#~ msgstr "Запустить: да/нет"
+
+#, fuzzy
+#~ msgid "Run: No"
+#~ msgstr "Ход: "
+
+#, fuzzy
+#~| msgid "Move Up"
+#~ msgid "Move"
+#~ msgstr "Вверх"
+
+#, fuzzy
+#~| msgid "End Game"
+#~ msgid "End game"
+#~ msgstr "Закончить игру"
+
+#~ msgid "&Size"
+#~ msgstr "&Размер"
+
+#~ msgid "  8 x  8 "
+#~ msgstr "  8 x 8 "
+
+#~ msgid " 10 x 10 "
+#~ msgstr " 10 x 10 "
+
+#~ msgid " 12 x 12 "
+#~ msgstr " 12 x 12 "
+
+#, fuzzy
+#~ msgid " 18 x 12 "
+#~ msgstr " 12 x 12 "
+
+#~ msgid "&Balls"
+#~ msgstr "&Шары"
+
+#, fuzzy
+#~ msgid "8 balls"
+#~ msgstr "&Шары"
+
+#, fuzzy
+#~ msgid "10 balls"
+#~ msgstr "&Шары"
+
+#, fuzzy
+#~ msgid "Tutorial mode"
+#~ msgstr "&Обучение"
+
+#~ msgid "Trigger Action"
+#~ msgstr "Действие по событию"
+
+#, fuzzy
+#~ msgid "You're done!"
+#~ msgstr "Konstantin Volckov"
+
+#, fuzzy
+#~ msgid ""
+#~ "You should place %1 balls!\n"
+#~ "You have placed %2.\n"
+#~ "Do you want to give up this game?"
+#~ msgstr ""
+#~ "Необходимо положить %1 шара(ов)!\n"
+#~ "Вы же положили %2."
+
+#~ msgid "Score: 0000"
+#~ msgstr "Очки: 0000"
+
+#~ msgid "Placed: 00 / 00"
+#~ msgstr "Всего: 00 / 00"
+
+#, fuzzy
+#~ msgid "Placed: %1 / %2"
+#~ msgstr "Всего: 00 / 00"
+
+#~ msgid "Size: "
+#~ msgstr "Размер: "
+
+#~ msgid "Placed: "
+#~ msgstr "Размещение: "
+
+#~ msgid "&Give Up"
+#~ msgstr "&Сдаюсь"
+
+#~ msgid "&Resize"
+#~ msgstr "&Изменить размер"
+
+#~ msgid " 4 "
+#~ msgstr " 4 "
+
+#~ msgid " 6 "
+#~ msgstr " 6 "
+
+#~ msgid " 8 "
+#~ msgstr " 8 "

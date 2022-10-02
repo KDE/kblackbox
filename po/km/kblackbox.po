@@ -1,0 +1,767 @@
+# translation of kblackbox.po to Khmer
+# Auk Piseth <piseth_dv@khmeros.info>, 2006, 2007, 2008.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2007, 2008, 2009.
+# Morn Met, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kblackbox\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2009-10-28 08:37+0700\n"
+"Last-Translator: Morn Met\n"
+"Language-Team: Khmer <kde-i18n-doc@kde.org>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
+"X-Language: km-KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "A number between 1 and 99 is displayed in front of it."
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] " បាល់"
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " column"
+msgid_plural " columns"
+msgstr[0] " ជួរ​ឈរ"
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "A number between 2 and 30 is displayed in front of it."
+msgid " row"
+msgid_plural " rows"
+msgstr[0] " ជួរដេក"
+
+#: kbbmainwindow.cpp:70
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr "អាច​កំណត់​រចនាសម្ព័ន្ធ​បាន"
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid "Start Tutorial"
+msgstr "ចាប់​ផ្តើម​​ការ​​បង្រៀន"
+
+#: kbbmainwindow.cpp:82
+#, kde-format
+msgid "Start tutorial"
+msgstr "ចាប់ផ្ដើម​កា​របង្រៀន"
+
+#: kbbmainwindow.cpp:83
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt> <b>​ការ​បង្រៀន​</b> គឺ​ជា​មធ្យោបាយ​អន្តរ​សកម្ម ដែល​​រហ័ស និង​ងាយ​ស្រួល​ប្រើ​ ដើម្បី​​ស្វែង​យល់​អំពី​ក្បួន​របស់​"
+"ល្បែង​ ។ ចាប់​ផ្ដើម​វា បើ​សិន​ជា​មិន​ដឹង​អំពី​ពួក​វា !</qt>"
+
+#: kbbmainwindow.cpp:87
+#, kde-format
+msgid "New Sandbox Game"
+msgstr "ល្បែង Sandbox ថ្មី"
+
+#: kbbmainwindow.cpp:88
+#, kde-format
+msgid "Start a new sandbox game"
+msgstr "ចាប់​ផ្ដើម​ល្បែង​ sandbox ថ្មី​"
+
+#: kbbmainwindow.cpp:89
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p>នៅ​ក្នុង<b>ល្បែង sandbox</b> ដំណោះស្រាយ​ត្រូវ​បាន​បង្ហាញ​នៅ​ពេល​ចាប់ផ្ដើម​ល្បែង ។ វា​មាន​"
+"ប្រយោជន៍​សំខាន់​ណាស់ សម្រាប់​ការ​ស្វែង​យល់​អំពី​គោលការណ៍​របស់​ល្បែង ។</p><p>ទោះ​ជា​យ៉ាង​ណា​ក៏​ដោយ ៖ បន្ទាប់​ពី​"
+"មួយ​រយៈ​ពេល​មក វា​ពិត​ជា​មិន​រីករាយ​ទេ ដូច្នេះ​​អ្នក​គួរ​តែ​ព្យាយាម​ចាប់ផ្ដើម​ល្បែង​ពិតប្រាកដ​វិញ​ !</p></qt>"
+
+#: kbbmainwindow.cpp:95
+#, kde-format
+msgctxt ""
+"This is the last action of a game to check the result, when the user is done."
+msgid "Done!"
+msgstr "ធ្វើ​រួច !"
+
+#: kbbmainwindow.cpp:96
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>ដំបូង អ្នក​ត្រូវ​ដាក់​បាល់​ទាំងអស់​នៅ​លើ​ប្រអប់​ខ្មៅ ។ ដើម្បី​ទាយ​ទីតាំង​ត្រឹមត្រូវ​របស់​បាល់ និង​មើល​ពី​"
+"របៀប​ដែល​ពួកវា​មាន​ទំនាក់​ទំនង​​ជា​មួយ​នឹង​ពន្លឺ​​ឡាស៊ែរ អ្នក​គួរ​តែ​ប្រើ​ឡាស៊ែរ​ដែល​ត្រូវ​បាន​ដាក់​ជុំវិញ​ប្រអប់​ខ្មៅ​ផង​"
+"ដែរ ។</li><li><b>នៅ​ពេល​ដែល​អ្នក​គិត​ថា អ្នក​បាន​ធ្វើ​រួចហើយ​</b> អ្នក​គួរ​តែ​ចុច​ទីនេះ ។</li></"
+"ul><p>ចំណាំ​ថា វា​អាច​ចុច​នៅ​ទីនេះ ក្នុង​ករណី​ដែល​បាន​ដាក់​ចំនួន​បាល់​ត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ​ ។</p></qt>"
+
+#: kbbmainwindow.cpp:100
+#, kde-format
+msgid "Give up the game"
+msgstr "បោះបង់​ល្បែង"
+
+#: kbbmainwindow.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>ជ្រើស \"<b>ដោះស្រាយ</b>\" ប្រសិន​បើ​អ្នក​ចង់​បោះបង់​ល្បែង​បច្ចុប្បន្ន ។ ដំណោះស្រាយ​នឹង​ត្រូវ​បាន​"
+"បង្ហាញ ។</p><p>ប្រសិន​បើ​អ្នក​បាន​ដាក់​បាល់​ទាំងអស់ និង​មិន​ចង់​បោះបង់​ទេ​ ជ្រើស \"ធ្វើ​រួច !\" ។</p></"
+"qt>"
+
+#: kbbmainwindow.cpp:106
+#, kde-format
+msgid "Enable highlight under mouse"
+msgstr ""
+
+#: kbbmainwindow.cpp:146
+#, kde-format
+msgid "Move Down"
+msgstr "ផ្លាស់​ទី​ចុះ​ក្រោម"
+
+#: kbbmainwindow.cpp:152
+#, kde-format
+msgid "Move Up"
+msgstr "ផ្លាស់​ទី​ឡើង​លើ"
+
+#: kbbmainwindow.cpp:158
+#, kde-format
+msgid "Move Left"
+msgstr "ផ្លាស់​ទី​ទៅ​ឆ្វេង"
+
+#: kbbmainwindow.cpp:164
+#, kde-format
+msgid "Move Right"
+msgstr "ផ្លាស់​ទី​ទៅ​ស្តាំ"
+
+#: kbbmainwindow.cpp:170
+#, kde-format
+msgid "Switch Ball or Shoot Laser"
+msgstr "ប្ដូរ​បាល់ ឬ​បាញ់​ឡាស៊ែរ"
+
+#: kbbmainwindow.cpp:176
+#, kde-format
+msgid "Switch Marker"
+msgstr "ប្ដូរ​ឧបករណ៍​សម្គាល់"
+
+#: kbbmainwindow.cpp:250
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+"ចំណាំ ៖ អ្នក​អាច​ផ្លាស់ប្ដូរ<br />ប៉ារ៉ាម៉ែត្រ​របស់<br />ល្បែង​ផ្ទាល់ខ្លួន​នៅ​ក្នុង<br />ប្រអប់​កំណត់ ។"
+
+#: kbbmainwindow.cpp:283
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] "ដំបូង អ្នក​ត្រូវ​តែ​យក​បាល់​ %1 ​ចេញ​ពី​ប្រអប់​ខ្មៅ​សិន ។"
+
+#: kbbmainwindow.cpp:285
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr "សូម​ចុច​ទីនេះ ! ដើម្បី​ពិនិត្យ​មើល​ថា​តើ​អ្នក​បាន​ទាយ​ទីតាំង​បាល់​ដោយ​ជោគជ័យ​ឬ​​អត់ ។"
+
+#: kbbmainwindow.cpp:287
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] "អ្នក​ត្រូវ​តែ​ដាក់​បាល់​ថែម​ទៀត %1 នៅ​លើ​ប្រអប់​ខ្មៅ ។"
+
+#: kbbmainwindow.cpp:291
+#, kde-format
+msgid "Game over."
+msgstr "ល្បែង​ចប់​ហើយ ។"
+
+#: kbbmainwindow.cpp:293
+#, kde-format
+msgid "Game paused."
+msgstr "បាន​ផ្អាក​ល្បែង ។"
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"ចុច​លើ​ \"ធ្វើ​​រួច​ !\" គឺ​ជា​វិធី​ធម្មតា​ ដើម្បី​ពិនិត្យ​មើល​ទីតាំង​របស់​បាល់​នៅ​ពេល​បញ្ចប់​ល្បែង​ ។ ទោះ​ជា​យ៉ាង​ណា "
+"វា​មិន​អាច​មាន​នៅ​ក្នុង​ការ​បង្រៀន​ សម្រាប់​បញ្ចប់​ល្បែង​ មុន​ពេល​ដែល​អ្នក​ឈាន​ដល់​ដំណាក់​កាល​ចុង​ក្រោយ​ទេ ។\n"
+"​សូម​បញ្ចប់​ការ​បង្រៀន​ជា​មុន​សិន ។"
+
+#: kbbmainwindow.cpp:332
+#, kde-format
+msgid "Check positions"
+msgstr "ពិនិត្យ​មើល​ទីតាំង"
+
+#: kbbmainwindow.cpp:339
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr "ពិន្ទុ​ចុងក្រោយ​របស់​អ្នក​គឺ ៖ %1 ។<br />អ្នក​ពិត​ជា​ធ្វើ​បាន​ល្អ​ណាស់ !"
+
+#: kbbmainwindow.cpp:341
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr "ប៉ុន្តែ​វា​មិន​រាប់<br />ពីព្រោះ <b>វា​ជា sandbox !</b>"
+
+#: kbbmainwindow.cpp:343
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr "ពិន្ទុ​ចុងក្រោយ​របស់​អ្នក​គឺ​ ៖ %1 ។<br />ខ្ញុំ​គិត​ថា អ្នក​គួរ​តែ​ហ្វឹកហាត់​​បន្ថែម​​ទៀត ។"
+
+#: kbbmainwindow.cpp:372
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "ល្បែង​បាន​ផ្អាក ។<br />ចុច \"%1\" ដើម្បី​បន្ត ។"
+
+#: kbbmainwindow.cpp:393
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr "តើ​អ្នក​ចង់​បោះបង់​ល្បែង​ផ្ទាល់​ខ្លួន​បច្ចុប្បន្ន និង​ចាប់ផ្ដើម​ល្បែង​ថ្មី​មួយ ​ជា​មួយ​នឹង​ប៉ារ៉ាម៉ែត្រ​ថ្មី​ឬ ?"
+
+#: kbbmainwindow.cpp:394
+#, fuzzy, kde-format
+#| msgid "Start new game"
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី"
+
+#: kbbmainwindow.cpp:409
+#, kde-format
+msgid "Custom Game"
+msgstr "ល្បែង​ផ្ទាល់​ខ្លួន"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "សូម​អភ័យ​ទោស​ អ្នក​ប្រហែល​ជា​មិន​អាច​បោះ​បង់​ល្បែង​​អំឡុង​ពេល​ការ​បង្រៀន​បាន​​ទេ​ ។"
+
+#: kbbmainwindow.cpp:428
+#, kde-format
+msgid "Solve"
+msgstr "ដោះស្រាយ"
+
+#: kbbmainwindow.cpp:431
+#, fuzzy, kde-format
+#| msgid ""
+#| "You placed all the balls. Great!\n"
+#| "You should now click on \"Done!\" to end the game and check if you "
+#| "guessed correctly.\n"
+#| "So, do you really want to give up this game?"
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"អ្នក​បាន​ដាក់​បាល់​ទាំងអស់ ។ អស្ចារ្យ​មែន !\n"
+"ឥឡូវ​អ្នក​គួរតែ​​ចុច​លើ \"ធ្វើ​រួច !\" ដើម្បី​បញ្ចប់​ល្បែង និង​ពិនិត្យ​មើល​ ប្រសិន​បើ​អ្នកទាយ​បាន​​ត្រឹមត្រូវ ។\n"
+"ដូច្នេះ តើ​អ្នក​ពិត​ជា​ចង់​បោះបង់​ល្បែង​នេះ​មែនទេ ?"
+
+#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#, kde-format
+msgid "Give up"
+msgstr "បោះបង់"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] "អ្នក​គួរ​ដាក់បាល់ %1 !\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] "អ្នក​បាន​ដាក់ %1 ។\n"
+
+#: kbbmainwindow.cpp:433
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "តើ​អ្នក​ពិត​ជា​ចង់​បោះបង់​ល្បែង​នេះ​ឬ ?"
+
+#: kbbmainwindow.cpp:443
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr ""
+"ចំណាំ ៖ នៅ​ក្នុង​របៀប​  sandbox <br />ដំណោះស្រាយ​ត្រូវ​បាន​បង្ហាញ​រួច​ហើយ ។<br />សូម​រីករាយ​ចុះ !"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "នេះ​គឺ​ជា​ទី​បញ្ចប់​នៃ​ល្បែង​បច្ចុប្បន្ន !"
+
+#: kbbmainwindow.cpp:482
+#, kde-format
+msgid "Start new game"
+msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "ពិន្ទុ"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>នេះ​ជា <b>ពិន្ទុ​របស់​អ្នក</b> ។ អ្នក​គួរ​តែ​ព្យាយាម​ទទួល​អ្វីមួយ​ដែល​តូច​បំផុត​ ដែល​អ្នក​អាច​ធ្វើ​បាន "
+"។</p><p>ពិន្ទុ​កើន​ ៖<ul><li>ដោយ​ពេលវេលា ៖ <b>១ ពិន្ទុ</b> ក្នុង​មួយ វិនាទី ។</li><li>ដោយ​ប្រើ​"
+"ឡាស៊ែរ ៖<ul><li><b> ៣ ពិន្ទុ</b> ប្រសិន​បើ ​ពន្លឺ​ឡាស៊ែរ​បាញ់​​បាល់​ ឬ​ចាក​​ចេញ​នៅ​​ចំណុច​ចូល</"
+"li><li><b>៩ ពិន្ទុ</b> ប្រសិន​បើ ​វា​ចេញ​នៅ​ចំណុច​ចូល​ផ្សេង​ទៀត ។</li></ul></li></ul></"
+"p><p>ពិន្ទុ​របស់​អ្នក​ត្រូវ​បាន​កំណត់​ត្រឹម <b>៩​៩​៩</b> នៅ​ពេល​បញ្ចប់​ល្បែង ប្រសិន​បើ​អ្នក​មាន​កំហុស ។</p></"
+"qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>នេះ​គឺ​ជា​ <b>ផ្ទៃ​ល្បែង​មេ​</b> ។</p><ul><li><b>ប្រអប់​ខ្មៅ</b> នៅ​កណ្ដាល ។</"
+"li><li>នៅ​ខាង​ឆ្វេង មាន <b>បាល់</b> អ្នក​ត្រូវ​តែ​ដាក់​លើ​ប្រអប់​ខ្មៅ ។</li><li>នៅ​ជុំវិញ​ប្រអប់​ខ្មៅ "
+"មាន <b>ឡាស៊ែរ</b> ដែល​ត្រូវ​បាន​​ជំនួស​ដោយ​ <b>ព័ត៌មាន​អន្តរ​កម្ម</b> ប្រសិន​បើ​អ្នក​ប្រើ​ពួកវា ។</"
+"li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgid "Tutorial"
+msgstr "ការ​បង្រៀន"
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "បង្ហាញ​វឌ្ឍនភាព​​នៃ​កា​រ​បង្រៀន ។"
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr "ពិពណ៌នា​នូវ​អ្វី​ដែល​អ្នក​គួរ​តែ​ធ្វើ​ ដើម្បី​ឈាន​ទៅ​ដល់​ជំហាន​បង្រៀន​បន្ទាប់​ ។"
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "Previous tutorial step"
+msgid "&Previous"
+msgstr "មុន"
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "ត្រឡប់​ទៅ​ជំហាន​បង្រៀន​ពីមុន ។"
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "Next tutorial step"
+msgid "&Next"
+msgstr "បន្ទាប់"
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "ទៅ​កាន់​ជំហាន​បង្រៀន​បន្ទាប់ ។"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "សូម​ស្វាគមន៍ !"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"ការ​បង្រៀន​នេះ​នឹង​បង្រៀន​អ្នក​អំពី​វិធី​លេង KBlackBox ដោយ​ប្រើ​ឧទាហរណ៍​ធម្មតា ។<br /><br />យើង​កំពុង​"
+"តែ​លេង​ជាមួយ​ប្រអប់​​ការ៉េ​ខ្មៅ​​ដែល​មាន ៦ ជួ​ឈរ និង ៦ ជួ​ដេក ។ វា​មាន​បាល់ ៣ <b>លាក់​</b> នៅ​ក្នុង​វា និង​"
+"មាន​​ឡាស៊ែរ​ ២​៤ ស្ទង់​ជុំវិញ​វា ។<br /><br />គោលបំណង​គឺ <b>ត្រូវ​រក​ទីតាំង​របស់​បាល់ ។</b>"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "ចុច​លើ \"បន្ទាប់\""
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "គោលការណ៍​ប្រអប់​ខ្មៅ"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"មើល​មិន​ឃើញ​បាល់​ទេ ប៉ុន្តែ​យើង​អាច​បាញ់​ពន្លឺ​ឡាស៊ែរ​ទៅ​ក្នុង​ប្រអប់​នៅ​​ត្រង់​ចំណុច​ចូល​ផ្សេង​បាន ហើយ​អាច​សង្កេត​មើល​"
+"ថា តើ​ពន្លឺ​ឡាស៊ែរ​ចេញ​ពី​ប្រអប់​ឬ​អត់​ ប្រសិន​បើ​ពួក​វា​ចេញ តើ​វា​ចេញ​មក​ពីណា ។<br /><br />ពន្លឺ​ឡាស៊ែរ​មាន​"
+"ទំនាក់​ទំនង​ជា​មួយ​បាល់​តាម​វិធី​ផ្សេង​ៗ ។"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr "សូម​ចុច​លើ​ឡាស៊ែរ​ដែល​បាន​សម្គាល់​ ដើម្បី​បាញ់​ពន្លឺ​ទៅ​ក្នុង​ប្រអប់​ខ្មៅ។​"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "គ្មាន​អន្តរ​កម្ម"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"ប្រសិន​បើ ​ពន្លឺ​ឡាស៊ែរ​មិន​មាន​ទំនាក់​​ជា​មួយ​បាល់​នៅ​ក្នុង​ប្រអប់​ខ្មៅ​ទេ វា​នឹង​ចាក​​​ចេញ​នៅ​​ត្រង់​ចំណុច​ផ្សេង​ពី​ចំណុច​ចូល ។"
+"<br /><br />ឧទាហរណ៍ ៖ សន្មត​ថា​យើង​មាន​បាល់ ៣ នៅ​ក្នុង​ប្រអប់​ដូច​​ដែល​បាន​បង្ហាញ ។ ពួកវា​នឹង​មិន​ប៉ះពាល់​"
+"ដល់​ពន្លឺ​​ឡាស៊ែរ​ \"1\"ទេ ។<br /><br />ដោយ​សារ​តែ​​វឌ្ឍនភាព​របស់​ល្បែង គូរ​ចំណុច​ចូល​/ចេញ​នីមួយៗ​នឹង​ត្រូវ​"
+"បាន​សម្គាល់​ដោយ​លេខ​ផ្សេង​គ្នា ។"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr "ឥឡូវ​បាញ់​ឡាស៊ែរ​ដែល​បាន​សម្គាល់​ដើម្បី​រកមើល​ប្រភេទ​អន្តរ​កម្ម​ទី ១ ។"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "បាញ់"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"ការ​​ប៉ះ​ដោយ​ផ្ទាល់​នៅ​លើ​បាល់​ត្រូវ​បាន​ហៅ​ថា \"<b>បាញ់</b>\"។ ពន្លឺ​​ដែល​បាញ់​បាល់ <b>មិន</b> ចេញ​ពី​ប្រអប់​"
+"ខ្មៅ​ទេ ។<br /><br />ឧទាហរណ៍ ៖ ពន្លឺ​អាច​បាញ់​បាល់​នៅ​ត្រង់​​ទីតាំង​ដែល​បាន​បង្ហាញ ប៉ុន្តែ​ទីតាំង​​បាញ់​ប្រាកដ​"
+"មិន​ជាក់​ច្បាស់​ទេ ៖ អាច​មាន​លទ្ធភាព​ជា​ច្រើន​ ​។"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr "បាញ់​ឡាស៊ែរ​ដែល​បាន​សម្គាល់ ​ដើម្បី​រកមើល​ប្រភេទ​អន្តរ​កម្ម​ទី ២ ។"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "ការ​ប្លាត​ចេញ​​ធម្មតា"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"អន្តរ​កម្ម​របស់​ពន្លឺ​ដែល​មិន​បាន​បាញ់​ចំ​បាល់ ប៉ុន្តែ​​​​បាញ់​ចំ​​​ផ្នែក​ម្ខាង​របស់​វា ត្រូវ​បាន​ហៅថា \"<b>ប្លា​ត​​</b>"
+"\" ។ មុំ​ប្លាត​របស់​ពន្លឺ​ជា​និច្ច​កាល​គឺ​មាន​កម្រិត <b>៩​០ ដឺក្រេ​</b> ។<br /><br />ឧទាហរណ៍ ៖ បាល់​ដែល​"
+"បាន​​បង្ហាញ​នឹង​ប្លាត​​ពន្លឺ \"២\" ឡើង​លើ ដូច​បាន​បង្ហាញ ប៉ុន្តែ​វា​ <b>មិន</b>​អាច​ទៅ​រួច​ទេ ។"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"ចុច​លើ \"បន្ទាប់\" ដើម្បី​មើល​បន្សំ​ផ្សេងៗ​របស់​ទីតាំង​បាល់​ដែល​ប្លាត​ចេញ​​ពី​ពន្លឺ​ឡាស៊ែរ​ដូច​ដែល​បាន​បង្ហាញ ។"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "ការ​ប្លាត​ចេញ​ជា​ច្រើន"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"ដូច​ដែល​អ្នក​បាន​ឃើញ អន្តរ​កម្ម​នៅ​ក្នុង​ប្រអប់​ខ្មៅ​អាច​នឹង​មាន​ភាព​​ស្មុគស្មាញ​បំផុត​ !<br />ពន្លឺ​ឡាស៊ែរ​ដែល​ចូល "
+"និង​ចេញ​នៅ​ត្រង់​ទីតាំង​  \"២\" អាច​នឹង​ត្រូវ​​ប្លាត​ចេញ​ដោយ​ការ​កំណត់​រចនាសម្ព័ន្ធ​បាល់​ ៣ នេះ ។"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "បាញ់​ឡាស៊ែរ​ដែល​បាន​សម្គាល់​ដើម្បី​រក​មើល​ប្រភេទ​លទ្ធផល​ផ្សេង ។"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "ប្លាត​ចូល"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"ប្រសិន​បើ​ ពន្លឺ​ឡាស៊ែរ​ចេញពី​ប្រអប់​ខ្មៅ <b>នៅ​ចំណុច​ចូល</b> វា​នឹង​​ត្រូវ​​​ជះ​ត្រឡប់​ទៅ​​ក្នុង​ប្រអប់​ខ្មៅ​វិញ​ ។<br /"
+"><br />ឧទាហរណ៍ ៖ យើង​បាន​ដាក់​បាល់ ២ សម្រាប់​អ្នក​នៅ​ក្នុង​កា​រ​កំណត់​រចនាសម្ព័ន្ធ ដែល​នឹង​នាំ​ទៅ​រក​ការ​ជះ​"
+"ត្រឡប់​បែប​នោះ ។"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr "បាញ់​ឡាស៊ែរ​ដែល​បាន​សម្គាល់​ដើម្បី​មើល​ករណី​ជះ​ត្រឡប់​មក​វិញ​​ ។"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "ប្លាត​ចូល​ពិសេស"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"ប្រសិនបើ​បាល់​នៅ <b>គែម​ប្រអប់</b> (ដោយ​គ្មាន​បាល់​ផ្សេង​នៅ​ក្បែរ) ពន្លឺ​ដែល​​ប៉ង​​ទៅ​ក្នុង​ប្រអប់​ខ្មៅ​ដោយ​ផ្ទាល់​"
+"ក្រៅ​ពី​វា អាច​​បណ្ដាល​ឲ្យ​មាន​ការ​ជះ​ត្រឡប់ទៅវិញ ។<br /><br />ឧទាហរណ៍ ៖ ការ​កំណត់​រចនាសម្ព័ន្ធ​ដូច​ដែល​​​"
+"បាន​បង្ហាញ​អាច​បណ្ដាល​ឲ្យ​មាន​ការ​ជះ​ត្រឡប់​មក​វិញ​ ។"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "ជិត​រួច​ហើយ ។ ចុច​លើ \"បន្ទាប់\" ។"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "ឧបករណ៍​សម្គាល់​សម្រាប់ \"ទីតាំង​ទំនេរ\""
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"យើង​ប្រាកដ​ថា​ គ្មាន​បាល់​នៅ​ក្នុង​ជួរឈរ​ ២ ដំបូង ។ ប្រសិន​បើ​មាន​​ ពន្លឺ​ដែល​ចូល​នៅ​​ទីតាំង \"១\" នឹង​បាញ់​​បាល់ "
+"ឬ​ ត្រូវ​ផ្លាស់​ប្លាត​ចេញ​ដោយ​​បាល់​នៅ​ក្នុង​ជួរឈរ ២ ។ អ្នក​អាច​សម្គាល់​ \"ទីតាំង​ទំនេរ\" ដោយ​​ចុច​ប៊ូតុង​កណ្ដុរ​ស្ដាំ "
+"(សូម​មើល​ផ្លូវកាត់​លើ​​ក្ដារ​ចុច​ផង​ដែរ) ។<br /><br />ឧទាហរណ៍ ៖ មាន​សញ្ញា​​សម្គាល់​ចំនួន ១​២ នៅ​ក្នុង​"
+"ជួរឈរ​ ២ ដំបូង ។"
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "ចុច​\"បន្ទាប់\" ។"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "សម្គាល់​បាល់"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"នៅ​ពេល​អ្នក​បាន​​ធ្វើការ​​នៅ​ទីតាំង​ដែល​បាល់​ស្ថិត​នៅ​ សូម​​ប្រើ​ប៊ូតុង​កណ្ដុរ​ឆ្វេង​ដើម្បី​សម្គាល់​វា ។ ដើម្បី​យក​​បាល់​​"
+"ចេញ ប្រើ​ប៊ូតុង​កណ្ដុរ​ឆ្វេង​ម្ដង​ទៀត ។ ជំនួយ​ចុងក្រោយ ៖ ប្រសិន​បើ​អ្នក​មិន​ប្រាកដ​អំពី​ទីតាំង អ្នក​អាច​ប្រើ​ប៊ូតុង​"
+"កណ្ដុរ​ស្ដាំ​នៅ​លើ​បាល់​ដើម្បី​សម្គាល់​វា​ថា​ \"មិន​ប្រាកដ\" ។ (មើល​ផ្លូវកាត់​ក្ដារចុច​ផង​​​​​​ដែរ ។)<br /><br /"
+">ឧទាហរណ៍ ៖ យើង​បាន​សម្គាល់​​​ទីតាំង​មួយ​ថា​ប្រាកដ  ផ្សេង​ទៀត​ថា​​មិន​ប្រាកដ ។"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "តោះ​យើង​លេង !"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>សូម​អបអរ​សាទរ !</b> ឥឡូវ​អ្នក​ដឹង <b>ក្បួន​ទាំងអស់</b> សម្រាប់​លេង KBlackBox ។<br /><br /"
+"><b>អ្នក​អាច​ចាប់ផ្ដើម​លេង ។</b> ព្យាយាម​បញ្ចប់​ល្បែង​បង្រៀន​នេះ​ដោយ​ខ្លួន​អ្នក​ផ្ទាល់ !<br /><br /"
+">ជំនួយ ៖ យើ​ង​បាន​បញ្ជូន​ពន្លឺ​គ្រប់គ្រាន់​ដើម្បី​កំណត់​រក​ទីតាំង​របស់​បាល់ ៣ ​ដោយ​ភាព​ប្រាកដ​ប្រជា ។ តាមពិត អ្នក​"
+"អាច​បាញ់​ថែម​ទៀត​បាន​​ ប្រសិន​បើ​ចាំបាច់ ។"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "បញ្ចប់​កា​រដាក់​បាល់ រួច​​ចុច​លើ \"ធ្វើ​រួច !\" នៅ​ពេល​ដែល​អ្នក​បាន​ធ្វើ​រួច !"
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr "ឯកសារ​របស់​ស្បែក​បច្ចុប្បន្ន​របស់​ធាតុ​ក្រាហ្វិក ។ (ឯកសារ SVGZ ដែល​មាន​​ផ្លូវ និង​កន្ទុយ​ឯកសារ)"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "ចំនួន​បាល់​សម្រាប់​កម្រិត​ពិបាក​ផ្ទាល់ខ្លួន"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "ចំនួន​ជួរឈរ​របស់​ក្ដារ​សម្រាប់​កម្រិត​ពិបាក​ផ្ទាល់ខ្លួន"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "ចំនួន​ជួរដេក​របស់​ក្ដារ​សម្រាប់​កម្រិត​ពិបាក​ផ្ទាល់ខ្លួន"
+
+#: main.cpp:44
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox"
+
+#: main.cpp:46
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "រក​បាល់​ដែល​បាន​លាក់​នៅ​ក្នុង​ប្រអប់​ខ្មៅ​ដោយ​បាញ់​ពន្លឺ​ឡាស៊ែរ !"
+
+#: main.cpp:48
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"រក្សា​សិទ្ធិ​ឆ្នាំ ២​០​០​៧ ដោយ Nicolas Roffet\n"
+"រក្សា​សិទ្ធិ​ឆ្នាំ ១​៩​​​​​​​​​៩​៩-២​០​០​​​០ ដោយ Robert Cimrman"
+
+#: main.cpp:50
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "Nicolas Roffet"
+
+#: main.cpp:50
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "អ្នក​អភិវឌ្ឍន៍​កំណែ ០.៤ ។"
+
+#: main.cpp:51
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "Robert Cimrman"
+
+#: main.cpp:51
+#, kde-format
+msgid "Original developer"
+msgstr "អ្នក​អភិវឌ្ឍន៍​ដើម​"
+
+#: main.cpp:52
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:52
+#, kde-format
+msgid "Artist"
+msgstr "សិល្បករ"
+
+#~ msgid "Time: 00:00"
+#~ msgstr "ពេល​វេលា​៖ 00:00​"
+
+#~ msgid "Size: 00 x 00"
+#~ msgstr "ទំហំ ៖ 00 x 00"
+
+#~ msgid "1 ball too many!"
+#~ msgid_plural "%1 balls too many!"
+#~ msgstr[0] "បាល់ %1 ច្រើន​ពេក !"
+
+#~ msgid "No more balls to place"
+#~ msgstr "គ្មាន​បាល់​ត្រូវ​ដាក់​ទៀត​ទេ"
+
+#~ msgid "1 ball to place"
+#~ msgid_plural "%1 balls to place"
+#~ msgstr[0] "បាល់ %1 ត្រូវ​ដាក់"
+
+#~ msgid "Game over"
+#~ msgstr "ល្បែង​ចប់​ហើយ"
+
+#~ msgid "Time: %1"
+#~ msgstr "ពេលវេលា ៖ %1"
+
+#~ msgid "Size: %1 x %2"
+#~ msgstr "ទំហំ ៖ %1 x %2"
+
+#~ msgid "Difficulty level"
+#~ msgstr "កម្រិត​ពិបាក"

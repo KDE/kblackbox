@@ -1,0 +1,619 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Ukrainian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Підручник з &kblackbox;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>24 червня 2021 року</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>У цій документації описано гру &kblackbox; версії 21.04</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>гра</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kblackbox</keyword>
+	<keyword
+>головоломка</keyword>
+	<keyword
+>дошка</keyword>
+	<keyword
+>кульки</keyword>
+	<keyword
+>промені</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>один гравець</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>приховані кульки</keyword>
+	<keyword
+>знайти</keyword>
+	<keyword
+>пошук</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Вступ</title
+> <!-- do not change this! -->
+	<note
+><title
+>Тип гри:</title
+><para
+>Головоломка, гра на дошці</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Можлива кількість гравців:</title
+><para
+>Один</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>&kblackbox; — чудова гра для розвитку логічного мислення, зразком для написання якої була гра для &Emacs; з назвою «blackbox». Більшу частину цієї довідкової інформації засновано на довідці для гри-оригіналу у &Emacs;.</para>
+
+<para
+>&kblackbox; — це гра у знаходження кульок на полі. Комп’ютер ховає декілька кульок всередині скриньки. За допомогою надсилання променів до скриньки і наступного спостереження за їх взаємодією з вмістом скриньки можна визначити розташування прихованих кульок.</para>
+<para
+>Чим меншою кількістю лазерів ви скористаєтеся і чим швидше ви знайдете кульки, тим кращим (нижчим) буде ваш результат.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Як грати</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Мета:</title
+><para
+>Для визначення позицій кульок всередині чорної скриньки скористайтеся лазерними променями.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Для визначення розташування прихованих у чорній скриньці кульок скористайтеся лазерними променями, а також позначками кульок та порожніх клітинок.</para>
+<para
+>Гра починається одразу за пострілом першим лазером. До виконання цієї дії таймер не буде запущено, а отже, не відбуватиметься ніяких змін у кінцевому результаті. </para>
+<para
+>Курсор можна пересувати ігровим полем за допомогою стандартних клавіш зі стрілочками або за допомогою миші. Вмикання лазерів та позначення клітинок чорної скриньки можна здійснювати за допомогою лівої кнопки миші або за допомогою клавіші &Enter;.</para>
+
+<para
+>Крім того, ви можете перетягувати і скидати кульки і позначки за допомогою миші.</para>
+
+<para
+>Крім того, ви можете позначати і поля, у яких, як вам здається, кульок бути не може. Для цього просто клацніть правою кнопкою миші. Такі позначки часто допомагають визначити область, де можуть знаходитися кульки. Щоб вилучити будь-яку з позначок, достатньо повторно натиснути ту саму клавішу на клавіатурі або кнопку миші.</para>
+
+<para
+>Якщо ви впевнені, що правильно встановили розташування кульок, натисніть кнопку <guibutton
+>Готово!</guibutton
+>. Програма проінформує вас про те, чи правильно ви встановили розташування, і покаже остаточний результат. </para>
+<para
+>Якщо ви неправильно вказали позицію однієї з кульок, буде показано правильний розв’язок. </para>
+
+<para
+>З плином часу рахунок зростатиме (на одне очко за секунду), очки нараховуватимуться і за використання лазерів: 3 очки, якщо промінь влучить у кульку або повернеться у точку, з якої його було надіслано, і 9 очок, якщо точка виходу відрізнятиметься від точки входу. Якщо ви зробите помилку, наприкінці гри рахунок буде встановлено у значення 999, тобто максимальне значення рахунка. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Правила гри, стратегія та поради</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Правила гри</title>
+
+<para
+>Вам слід знайти кульки, сховані у чорній скриньці. Ваші можливості обмежено — ви можете лише пускати промені з лазерів, які розташовано навколо скриньки. Результатом взаємодії променя з вмістом скриньки може бути один з наступних наслідків: </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Відхилення</term
+> 
+<listitem
+><para
+>Промінь було відхилено: він вийшов зі скриньки у місці, яке відрізняється від точки входу. На ігровому полі відхилення позначаються відповідною парою чисел, — одне з них позначає точку входу променя, інше — точку виходу.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Відбиття</term>
+<listitem
+><para
+>Промінь було відбито: він повернувся у точку, звідки його було надіслано. На ігровому полі відбиття вказуються особливою позначкою.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Влучення</term>
+<listitem
+><para
+>Промінь влучив у кульку, після чого його було повністю поглинуто, — зі скриньки він не вийшов. На ігровому полі влучення вказуються особливою позначкою.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Правила, за якими кульки відхиляють промені прості, найкращим способом зрозуміти їх буде приклад. </para>
+
+<para
+>Промінь, який влучає у кульку, буде відхилено на кут у дев’яносто градусів. Протягом перебування у скриньці промені можуть відхилятися декілька разів. На наведених нижче діаграмах дефіси позначають порожні клітинки у скриньці, а літера <guilabel
+>O</guilabel
+> — кульку. Точки входу і виходу кожного з променів позначено числами, значення яких ми вже обговорювали у розділі <link linkend="detour"
+>Відхилення</link
+>. Пам’ятайте, що точки входу і виходу є взаємозамінними. Символи <guilabel
+>*</guilabel
+> позначають шлях променя.</para>
+
+<para
+>Ретельно вивчіть відносні розташування кульок і відхилення у дев’яносто градусів, які вони спричиняють.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Як вже згадувалося раніше, відбиття означає, що промінь повернувся до точки, звідки його було надіслано. Таке може статися за декількох умов: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>У першому з прикладів промінь було відхилено вниз верхньою кулькою, а потім ліворуч нижньою кулькою, нарешті, він повторив свій шлях до точки, звідки його було надіслано. Третій приклад можна розглядати як, певною мірою, виняток, але його можна зрозуміти як випадок, у якому промінь просто не потрапляє до скриньки. Іншими словами, промінь відхиляється вниз і тут само виходить зі скриньки.</para>
+
+<para
+>Влучення відбувається, якщо промінь проходить точно через кульку:</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Порівняйте другий приклад з влученням з першим прикладом з відбиттям.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Огляд інтерфейсу</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Опис ігрової дошки</title>
+
+<screenshot>
+<screeninfo
+>Ігрова дошка &kblackbox;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Ігрова дошка &kblackbox;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>На ігровій дошці можна знайти поля таких типів: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>Велика чорна панель посередині</interface
+></term>
+<listitem
+><para
+>На ній ви маєте позначати позиції, у яких, на вашу думку, розташовано кульки.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Лазери навколо скриньки</interface
+></term>
+<listitem
+><para
+>Лазери стріляють променями світла у скриньку після вмикання. Після пострілу лазер зникає, — його позначку буде замінено на позначку, яка відповідає результатам взаємодії лазерного променя з кульками у чорній скриньці.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>М'ячі</interface
+></term>
+<listitem
+><para
+>Вам здається, що <quote
+>Тут має бути одна з них!</quote
+>? Ці позначки призначено для полів у чорній скриньці, де, як ви підозрюєте, мають знаходитися кульки.</para>
+<para
+>Наприкінці гри правильні і неправильні позиції кульок також буде вказано позначкою «кулька».</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Позначки для «вільних полів»</interface
+></term>
+<listitem
+><para
+>Ви можете скористатися цими позначками, щоб вказати позиції, у яких, як вам здається, кульок немає.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Пункти меню</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Починає нову гру (і припиняю поточну гру, якщо ви уже граєте).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Пауза</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Призупиняє або поновлює поточну гру.</para
+><para
+>Пам’ятайте, що під час призупинки гри результати взаємодії буде приховано.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Показати найкращі результати</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Показує таблиці найкращих результатів.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Почати навчання</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Запускає навчальний курс гри. Це зручний для користувача спосіб вивчити правила гри.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Нова гра у пісочниці</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>За використання цього режиму розв’язок буде показано на початку гри. Це корисно для того, щоб зрозуміти принципи гри.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>За допомогою цього пункту меню можна закрити вікно і вийти з &kblackbox;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Хід</guimenu
+> <guimenuitem
+>Розв’язати</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Скористайтеся цим пунктом для того, щоб здатися у грі. Програма покаже вам розв’язок: правильне розташування кульок.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Хід</guimenu
+> <guimenuitem
+>Готово!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Після того, як ви розташуєте всі кульки, натисніть кнопку <guilabel
+>Готово!</guilabel
+>. Гру буде завершено, програма обчислить остаточний рахунок і покаже правильне розташування кульок.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Параметри</guimenu
+><guisubmenu
+>Складність</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Тут можна обрати складність гри. У складніших режимах гри буде більше кульок і більша чорна скринька, ніж у простіших варіантах. Крім того, ви можете грати на рівні з нетиповою складністю, параметри цього рівня можна налаштувати за допомогою діалогового вікна параметрів &kblackbox;.</para>
+<note>
+<para
+>Гра, у якій не більше 4 кульок, завжди має єдиний розв’язок! Це твердження не стосується ігор, у який 5 або більше кульок.</para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Крім того, у &kblackbox; передбачено типові для &kde; пункти меню <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+>. Щоб дізнатися більше, ознайомтеся з розділами щодо <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню «Параметри»</ulink
+> та <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню «Довідка»</ulink
+> підручника з основ роботи у &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Часті запитання</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Чи можна використовувати для гри клавіатуру? </para
+></question>
+ <answer
+><para
+>Так. Ви можете використовувати клавіші зі стрілками для керування курсором, &Enter; для встановлення або вилучення кульок, і <keycap
+>Пробіл</keycap
+> для встановлення міток «порожній».</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я змушений (змушена) перервати гру, але гру ще не завершено. Чи можу я зберегти поточний стан?</para
+></question>
+  <answer
+><para
+>У поточній версії &kblackbox; збереження ігор не передбачено.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Подяки і ліцензія</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox; </para>
+<!--List all the copyright holders here-->
+<para
+>Авторські права на програму належать &Robert.Cimrman; &Robert.Cimrman.mail;, ©1999–2000, і &Nicolas.Roffet; &Nicolas.Roffet.mail;, ©2007 </para>
+<para
+>Авторські права на документацію належать &Robert.Cimrman;. Автором оновлення і перетворення документації у формат Docbook для &kde; 2.0 є &Lauri.Watts; &Lauri.Watts.mail;. Рецензентом документації є &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

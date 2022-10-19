@@ -23,6 +23,7 @@
   <name xml:lang="hu">KBlackbox</name>
   <name xml:lang="id">KBlackbox</name>
   <name xml:lang="it">KBlackbox</name>
+  <name xml:lang="ka">KBlackbox</name>
   <name xml:lang="ko">KBlackBox</name>
   <name xml:lang="nl">Kblackbox</name>
   <name xml:lang="nn">KBlackbox</name>
@@ -62,6 +63,7 @@
   <summary xml:lang="hu">Fekete dobozos logikai játék</summary>
   <summary xml:lang="id">Permainan Logika Blackbox</summary>
   <summary xml:lang="it">Gioco di logica Blackbox</summary>
+  <summary xml:lang="ka">ლოგიკური თამაში Blackbox</summary>
   <summary xml:lang="ko">블랙박스 논리 게임</summary>
   <summary xml:lang="nl">Blackbox: Logisch spel</summary>
   <summary xml:lang="nn">Blackbox logikkspel</summary>

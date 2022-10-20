@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"POT-Creation-Date: 2022-10-20 00:43+0000\n"
 "PO-Revision-Date: 2020-06-26 14:11+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -57,23 +57,23 @@ msgid_plural " rows"
 msgstr[0] " rivi"
 msgstr[1] " riviä"
 
-#: kbbmainwindow.cpp:70
+#: kbbmainwindow.cpp:71
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr "Muu"
 
-#: kbbmainwindow.cpp:80
+#: kbbmainwindow.cpp:81
 #, kde-format
 msgid "Start Tutorial"
 msgstr "Käynnistä ohjattu peli"
 
-#: kbbmainwindow.cpp:82
+#: kbbmainwindow.cpp:83
 #, kde-format
 msgid "Start tutorial"
 msgstr "Käynnistä ohjattu peli"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -82,17 +82,17 @@ msgstr ""
 "<qt><b>Ohjattu peli</b> on nopea, käyttäjäystävällinen ja vuorovaikutteinen "
 "tapa oppia pelin säännöt. Käynnistä se, ellet tunne niitä!</qt>"
 
-#: kbbmainwindow.cpp:87
+#: kbbmainwindow.cpp:88
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "Uusi hiekkalaatikkopeli"
 
-#: kbbmainwindow.cpp:88
+#: kbbmainwindow.cpp:89
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "Aloita uusi hiekkalaatikkopeli"
 
-#: kbbmainwindow.cpp:89
+#: kbbmainwindow.cpp:90
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -105,14 +105,14 @@ msgstr ""
 "kuluttua se lakkaa olemasta hauskaa, ja sinun tulisi yrittää oikeaa peliä!</"
 "p></qt>"
 
-#: kbbmainwindow.cpp:95
+#: kbbmainwindow.cpp:96
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Valmis!"
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -128,12 +128,12 @@ msgstr ""
 "arvelet olevasi valmis</b> napsauta tästä.</li></ul><p>Huomaa, että voit "
 "napsauttaa tästä vasta sijoitettuasi oikean määrän palloja.</p></qt>"
 
-#: kbbmainwindow.cpp:100
+#: kbbmainwindow.cpp:101
 #, kde-format
 msgid "Give up the game"
 msgstr "Luovuta"
 
-#: kbbmainwindow.cpp:101
+#: kbbmainwindow.cpp:102
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -144,42 +144,42 @@ msgstr ""
 "pelin. Ratkaisu näytetään.</p><p>Jos olet sijoittanut kaikki pallot etkä "
 "halua luovuttaa, valitse ”Valmis!”.</p></qt>"
 
-#: kbbmainwindow.cpp:106
+#: kbbmainwindow.cpp:107
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr "Käytä korostusta hiiren alla"
 
-#: kbbmainwindow.cpp:146
+#: kbbmainwindow.cpp:147
 #, kde-format
 msgid "Move Down"
 msgstr "Siirrä alemmas"
 
-#: kbbmainwindow.cpp:152
+#: kbbmainwindow.cpp:153
 #, kde-format
 msgid "Move Up"
 msgstr "Siirrä ylemmäs"
 
-#: kbbmainwindow.cpp:158
+#: kbbmainwindow.cpp:159
 #, kde-format
 msgid "Move Left"
 msgstr "Siirrä vasemmalle"
 
-#: kbbmainwindow.cpp:164
+#: kbbmainwindow.cpp:165
 #, kde-format
 msgid "Move Right"
 msgstr "Siirrä oikealle"
 
-#: kbbmainwindow.cpp:170
+#: kbbmainwindow.cpp:171
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "Vaihda palloa tai laukaise laser"
 
-#: kbbmainwindow.cpp:176
+#: kbbmainwindow.cpp:177
 #, kde-format
 msgid "Switch Marker"
 msgstr "Vaihda merkkiä"
 
-#: kbbmainwindow.cpp:250
+#: kbbmainwindow.cpp:251
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -191,36 +191,36 @@ msgstr ""
 "Huomaa: Voit muuttaa<br />mukautettujen pelien<br />parametreja<br /> "
 "asetusikkunasta."
 
-#: kbbmainwindow.cpp:283
+#: kbbmainwindow.cpp:284
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
 msgstr[0] "Ensin on poistettava yksi pallo mustasta laatikosta."
 msgstr[1] "Ensin on poistettava %1 palloa mustasta laatikosta."
 
-#: kbbmainwindow.cpp:285
+#: kbbmainwindow.cpp:286
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr "Napsauta tästä tarkistaaksesi, arvasitko oikein pallojen sijainnit!"
 
-#: kbbmainwindow.cpp:287
+#: kbbmainwindow.cpp:288
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
 msgstr[0] "Vielä yksi pallo pitää sijoittaa mustaan laatikkoon."
 msgstr[1] "Vielä %1 palloa pitää sijoittaa mustaan laatikkoon."
 
-#: kbbmainwindow.cpp:291
+#: kbbmainwindow.cpp:292
 #, kde-format
 msgid "Game over."
 msgstr "Peli loppu."
 
-#: kbbmainwindow.cpp:293
+#: kbbmainwindow.cpp:294
 #, kde-format
 msgid "Game paused."
 msgstr "Peli on keskeytetty."
 
-#: kbbmainwindow.cpp:332
+#: kbbmainwindow.cpp:333
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -233,12 +233,12 @@ msgstr ""
 "viimeistä vaihetta.\n"
 "Lopeta ensin ohjattu peli."
 
-#: kbbmainwindow.cpp:332
+#: kbbmainwindow.cpp:333
 #, kde-format
 msgid "Check positions"
 msgstr "Tarkista sijainnit"
 
-#: kbbmainwindow.cpp:339
+#: kbbmainwindow.cpp:340
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -246,7 +246,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Loppupisteesi olivat: %1.<br />Pärjäsit todella hyvin!"
 
-#: kbbmainwindow.cpp:341
+#: kbbmainwindow.cpp:342
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -254,7 +254,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Mutta sillä ei ole väliä<br />koska <b>olet hiekkalaatikossa</b>!"
 
-#: kbbmainwindow.cpp:343
+#: kbbmainwindow.cpp:344
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -262,12 +262,12 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "Loppupisteesi olivat: %1.<br />Taidat tarvita lisää harjoitusta."
 
-#: kbbmainwindow.cpp:372
+#: kbbmainwindow.cpp:373
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "Peli on keskeytetty.<br />Jatka painamalla ”%1”."
 
-#: kbbmainwindow.cpp:393
+#: kbbmainwindow.cpp:399
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
@@ -276,29 +276,29 @@ msgstr ""
 "Haluatko perua käynnissä olevan mukautetun pelin ja aloittaa uuden uusilla "
 "parametreilla?"
 
-#: kbbmainwindow.cpp:394
+#: kbbmainwindow.cpp:400
 #, fuzzy, kde-format
 #| msgid "Start new game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Aloita uusi peli"
 
-#: kbbmainwindow.cpp:409
+#: kbbmainwindow.cpp:420
 #, kde-format
 msgid "Custom Game"
 msgstr "Mukautettu peli"
 
-#: kbbmainwindow.cpp:428
+#: kbbmainwindow.cpp:439
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Et voi luovuttaa ohjattua peliä."
 
-#: kbbmainwindow.cpp:428
+#: kbbmainwindow.cpp:439
 #, kde-format
 msgid "Solve"
 msgstr "Ratkaise"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:442
 #, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
@@ -311,31 +311,31 @@ msgstr ""
 "arvasitko oikein.\n"
 "Haluatko siis varmasti luovuttaa pelin?"
 
-#: kbbmainwindow.cpp:431 kbbmainwindow.cpp:433
+#: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
 #, kde-format
 msgid "Give up"
 msgstr "Luovuta"
 
-#: kbbmainwindow.cpp:433
+#: kbbmainwindow.cpp:444
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] "%1 pallo pitää sijoittaa!\n"
 msgstr[1] "%1 palloa pitää sijoittaa!\n"
 
-#: kbbmainwindow.cpp:433
+#: kbbmainwindow.cpp:444
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] "Olet sijoittanut %1.\n"
 msgstr[1] "Olet sijoittanut %1.\n"
 
-#: kbbmainwindow.cpp:433
+#: kbbmainwindow.cpp:444
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Haluatko varmasti luovuttaa pelin?"
 
-#: kbbmainwindow.cpp:443
+#: kbbmainwindow.cpp:454
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -346,12 +346,12 @@ msgid ""
 msgstr ""
 "Huomaa: hiekkalaatikkotilassa<br />ratkaisu näkyy aina.<br />Pidä hauskaa!"
 
-#: kbbmainwindow.cpp:482
+#: kbbmainwindow.cpp:493
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Peli loppuu tähän!"
 
-#: kbbmainwindow.cpp:482
+#: kbbmainwindow.cpp:493
 #, kde-format
 msgid "Start new game"
 msgstr "Aloita uusi peli"

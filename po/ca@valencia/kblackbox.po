@@ -463,7 +463,7 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr "Cliqueu a «Següent»"
+msgstr "Cliqueu en «Següent»"
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -565,8 +565,8 @@ msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
-"Cliqueu a «Següent» per a veure una altra combinació de boles que desvien el "
-"feix làser com es mostra."
+"Cliqueu en «Següent» per a veure una altra combinació de boles que desvien "
+"el feix làser com es mostra."
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -632,7 +632,7 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
-msgstr "Quasi acabat. Cliqueu a «Següent»."
+msgstr "Quasi acabat. Cliqueu en «Següent»."
 
 #: kbbtutorial.cpp:204
 #, kde-format
@@ -657,7 +657,7 @@ msgstr ""
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr "Cliqueu a «Següent»."
+msgstr "Cliqueu en «Següent»."
 
 #: kbbtutorial.cpp:213
 #, kde-format

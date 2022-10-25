@@ -315,7 +315,7 @@ msgid ""
 "So, do you really want to give up this game?"
 msgstr ""
 "Heu emplaçat totes les boles. Magnífic!\n"
-"Ara heu de clicar a «Fet!» per a acabar el joc i comprovar si ho heu fet "
+"Ara heu de clicar en «Fet!» per a acabar el joc i comprovar si ho heu fet "
 "correctament.\n"
 "Llavors, segur que voleu abandonar esta partida?"
 
@@ -703,7 +703,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
-msgstr "Cliqueu a «Fet!» quan hàgeu acabat de col·locar les boles!"
+msgstr "Cliqueu en «Fet!» quan hàgeu acabat de col·locar les boles!"
 
 #. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
 #: kblackbox.kcfg:9

@@ -676,7 +676,7 @@ msgstr ""
 "Quan hàgeu deduït on es troba la bola, feu ús del botó esquerre del ratolí "
 "per a marcar-ho. Per a traure una marca de bola, utilitzeu el botó esquerre "
 "de nou. Últim consell: Si no segur de la posició, podeu utilitzar el clic "
-"dret sobre una bola per a marcar-la com a «no segura» (vegeu també les "
+"dret damunt d'una bola per a marcar-la com a «no segura» (vegeu també les "
 "dreceres de teclat).<br /><br />Exemple: Hem marcat una posició com a segura "
 "i una altra com a no segura."
 

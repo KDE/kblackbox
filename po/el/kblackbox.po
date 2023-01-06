@@ -6,20 +6,20 @@
 # Spiros Georgaras <sng@hellug.gr>, 2005, 2006, 2007.
 # Toussis Manolis <manolis@koppermind.homelinux.org>, 2007, 2008, 2009.
 # Dimitris Kardarakos <dimkard@gmail.com>, 2014.
-# Stelios <sstavra@gmail.com>, 2016, 2020.
+# Stelios <sstavra@gmail.com>, 2016, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:43+0000\n"
-"PO-Revision-Date: 2020-09-06 17:33+0300\n"
+"PO-Revision-Date: 2023-01-05 11:02+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -281,8 +281,7 @@ msgstr ""
 "έναρξη ενός νέου με άλλες παραμέτρους;"
 
 #: kbbmainwindow.cpp:400
-#, fuzzy, kde-format
-#| msgid "Start new game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Έναρξη νέου παιχνιδιού"

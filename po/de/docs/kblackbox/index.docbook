@@ -1,151 +1,232 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
-  <!ENTITY % addindex "IGNORE"> <!-- do not change this! -->
+  <!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
 ]>
  
-<book id="kblackbox" lang="&language;"> <!-- do not change this! -->
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
 <bookinfo>
-	<title>The &kblackbox; Handbook</title> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+	<title
+>Das Handbuch zu &kblackbox;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
 <!-- List of immidiate authors begins here. -->
 <!--INPORTANT! - All other contributors: [to be determined] -->
 <authorgroup>
-<author>
-&Nicolas.Roffet; &Nicolas.Roffet.mail;
-</author>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
 
-<author>
-&Robert.Cimrman; &Robert.Cimrman.mail;
-</author>
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
 
-<author>
-&Philip.Rodrigues; &Philip.Rodrigues.mail;
-</author>
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
 
-<othercredit role="reviewer">
-&Lauri.Watts; &Lauri.Watts.mail;
-</othercredit>
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
 
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+<othercredit role="translator"
+><firstname
+>Maren</firstname
+><surname
+>Pakura</surname
+><affiliation
+><address
+><email
+>maren@kde.org</email
+></address
+></affiliation
+><contrib
+>Deutsche Übersetzung</contrib
+></othercredit
+> 
 
 </authorgroup>
 
 <copyright>
-<year>2007</year>
-<holder>&Nicolas.Roffet;</holder>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
 </copyright>
-<legalnotice>&FDLNotice;</legalnotice> 
-<date>2021-06-24</date>
-<releaseinfo>KDE Gear 21.04</releaseinfo>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>2021-06-24</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
-	<para>This documentation describes the game of &kblackbox; version 21.04</para>
+	<para
+>Dieses Handbuch beschreibt das Spiel &kblackbox; in der Version 21.04</para>
 </abstract>
  
 <!--List of relevan keywords-->
 <keywordset>
-	<keyword>KDE</keyword> <!-- do not change this! -->
-	<keyword>kdegames</keyword> <!-- do not change this! -->
-	<keyword>game</keyword> <!-- do not change this! -->
-	<keyword>Kblackbox</keyword>
-	<keyword>puzzle</keyword>
-	<keyword>board</keyword>
-	<keyword>balls</keyword>
-	<keyword>beams</keyword>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>Spiel</keyword
+> <!-- do not change this! -->
+	<keyword
+>Kblackbox</keyword>
+	<keyword
+>Rätsel</keyword>
+	<keyword
+>Brettspiel</keyword>
+	<keyword
+>Bälle</keyword>
+	<keyword
+>strahlen</keyword>
 <!--Number of possible players. It can be: One, Two,..., Multiplayer-->
-	<keyword>one player</keyword>
+	<keyword
+>ein Spieler</keyword>
 <!--All other relevant keywords-->
-	<keyword>hidden balls</keyword>
-	<keyword>find</keyword>
-	<keyword>search</keyword>
+	<keyword
+>versteckte Bälle</keyword>
+	<keyword
+>finden</keyword>
+	<keyword
+>suchen</keyword>
 </keywordset>
 </bookinfo>
 <!--Content begins here: -->
-<chapter id="introduction"><title>Introduction</title> <!-- do not change this! -->
-	<note><title>Gametype:</title><para>Puzzle, Board</para></note><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
-	<note><title>Number of possible players:</title><para>One</para></note><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+<chapter id="introduction"
+><title
+>Einführung</title
+> <!-- do not change this! -->
+	<note
+><title
+>Spieltyp:</title
+><para
+>Rätsel, Brettspiel</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Anzahl der Spieler:</title
+><para
+>Einer</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
  
 <!--Short game description starts here. 3-4 sentences (paragraphs)-->
-	<para>&kblackbox; is a nice logical game, inspired by the &Emacs; blackbox game. A major part of this help file is based on the original &Emacs; help.</para>
+	<para
+>&kblackbox; ist ein Logik-Spiel, angeregt durch das &Emacs;-Spiel Blackbox. Ein Großteil des Handbuchs basiert auf der ursprünglichen &Emacs;-Hilfe.</para>
 
-<para>&kblackbox; is a game of hide and seek played on a grid of boxes. The computer has hidden several balls within this box. By shooting beams into the box and observing where they emerge it is possible to deduce the positions of the hidden balls.</para>
-<para>The fewer beams you use and the quicker you are to find the balls, the better (the lower) your score.</para>
+<para
+>&kblackbox; ist ein Versteckspiel, das auf einem Spielfeld gespielt wird, auf dem Schachteln in Reihen und Spalten angeordnet sind. Der Gegner (in diesem Fall der Zufallsgenerator) hat Kugeln in diesen Schachteln versteckt. Um die Kugeln zu entdecken, müssen Sie Laserstrahlen in die Schachteln schießen und den Verlauf der Strahlen beobachten.</para>
+<para
+>Je weniger Laserstrahlen Sie dafür benötigen, um so besser (geringer) ist Ihre Punktzahl.</para>
 </chapter>
  
-<chapter id="howto"><title>How to Play</title> <!-- do not change this! -->
+<chapter id="howto"
+><title
+>Spielanleitung</title
+> <!-- do not change this! -->
 <!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
-	<note><title>Objective:</title><para>Use laser beams to deduce the placement of the balls inside the black box.</para></note><!--Describe the objective of the game.-->
+	<note
+><title
+>Ziel des Spiels:</title
+><para
+>Finden Sie die verstecken Bälle im Spielfeld, indem Sie Laserstrahlen abfeuern.</para
+></note
+><!--Describe the objective of the game.-->
 <!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
 
-<para>Use lasers and place balls and markers on the game board to deduce the position of the hidden balls inside the black box.</para>
-<para>
-	The game starts as soon as you use the first laser. Before that, the time is not running and no point will be count for the score.
-</para>
-<para>The cursor can be moved around the box with the standard cursor movement keys or the mouse. Switching of lasers or marking of black boxes is done with the &LMB;, or by pressing the <keycap>Return</keycap> or &Enter; key.</para>
+<para
+>Benutzen Sie die Laser und setzen Sie Bälle und Markierungen auf dem Spielfeld, um die Position der versteckten Bälle im Spiel zu finden.</para>
+<para
+>Das Spiel beginnt, sobald Sie den ersten Laser benutzen. Vorher werden weder die Zeit noch Punkte gezählt. </para>
+<para
+>Der Mauszeiger kann in der Box mit den Pfeiltasten oder der Maus bewegt werden. Die Laser können mit der &LMBn; oder der &Enter;-Taste eingeschaltet werden; ebenso können die Kugeln markiert werden.</para>
 
-<para>You can also drag and drop the balls and the markers with the mouse.</para>
+<para
+>Mit der Maus können Sie ebenfalls Bälle verschieben und Markierungen setzen.</para>
 
-<para>You can mark the fields where you think a ball cannot be, too. Just press the &RMB;. It often helps you to find an area where a ball could possibly
-be. To clear any marks, press the same key or mouse button again.</para>
+<para
+>Sie können auch die Felder markieren, in denen Sie keine Kugel vermuten. Drücken Sie einfach die &RMB;. Das hilft Ihnen oft ein Gebiet zu finden, in dem möglicherweise eine Kugel liegt. Um beliebige Markierungen zu löschen, drücken Sie noch einmal die gleiche Taste.</para>
 
-<para>When you think the configuration of balls you have placed is correct, press the <guibutton>Done!</guibutton> button. You
-will be informed whether you are correct or not, and be given your score.
-</para>
-<para>
-	If you placed any balls incorrectly, the right solution will be displayed.
-</para>
+<para
+>Wenn Sie glauben, dass die Anordnung der Bälle korrekt ist, klicken Sie auf <guibutton
+>Fertig!</guibutton
+>. Sie werden informiert, ob Sie richtig lagen und erhalten Ihre Punkte. </para>
+<para
+>Wenn Sie Bälle falsch platziert hatten, wird die richtige Lösung angezeigt. </para>
 
-<para>
-	The score increases with the time (1 point per second) and with the use of lasers: 3 points if the laser beam hits a ball or exits at the entry point and 9 points if it exists at another entry point.  If you make a mistake, the score is set at the end of the game to 999, which is the maximum score.
-</para>
+<para
+>Die Punktzahl steigt mit der Zeit (1 Punkt pro Sekunde) und Benutzung der Laser. Sie erhalten 3 Punkte, wenn der Laserstrahl einen Ball trifft oder am Eingangspunkt wieder austritt, und 9 Punkte, wenn er an einem anderen Eingangspunkt austritt. Wenn Sie einen Fehler machen, wird der Punktestand am Ende des Spiels auf 999 gesetzt. Das ist der höchstmögliche Punktestand. </para>
 </chapter>
  
-<chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title> <!-- do not change this! -->
+<chapter id="rules_and_tips"
+><title
+>Spielregeln, Spielstrategien und Tipps</title
+> <!-- do not change this! -->
 	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
-	<sect1 id="game-rules"><title>Game Rules</title>
+	<sect1 id="game-rules"
+><title
+>Spielregeln</title>
 
-<para>You have to find balls hidden in the black box. Your means are limited - you can just fire lasers which are around the box. There are three possible outcomes for each beam you send into the box: </para>
+<para
+>Sie müssen alle im Spielfeld versteckten Kugeln finden. Ihre Mittel sind begrenzt - Sie können nur die Laser um die Box herum abfeuern. Es gibt drei mögliche Ergebnisse für jeden Laserstrahl, den Sie in die Blackbox schicken: </para>
 
 <anchor id="detour"/>
 <variablelist>
 
 <varlistentry>
-<term>Detour</term> 
-<listitem><para>The beam is deflected and emerges somewhere other than where you sent it in. On the playfield, detours are denoted by matching pairs of numbers - one where the beam went in, and the other where it
-came out.</para></listitem>
+<term
+>Ablenkung</term
+> 
+<listitem
+><para
+>Der Strahl wird abgelenkt und tritt an einer anderen Stelle aus, als er reingeschickt wurde. Die Ablenkung wird auf dem Spielfeld durch zusammengehörige Zahlenpaare angezeigt - eine am Eintrittspunkt des Strahls, die andere am Austrittspunkt.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term>Reflection</term>
-<listitem><para>The beam is reflected and emerges in the same place it
-was sent in. On the playfield, reflections are denoted by a special sign.</para></listitem>
+<term
+>Reflexion</term>
+<listitem
+><para
+>Der Laserstrahl wird gespiegelt und tritt an der gleichen Stelle aus an der er eingetreten ist. Im Spielfeld werden Reflexionen durch ein entsprechendes Symbol gekennzeichnet.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term>Hit</term>
-<listitem><para>The beam strikes a ball and is absorbed. It does not
-emerge from the box. On the playfield, hits are denoted by a special sign.</para></listitem>
+<term
+>Treffer</term>
+<listitem
+><para
+>Der Laserstrahl trifft die Kugel direkt und wird absorbiert. Er tritt nicht aus der Blackbox aus. Auf dem Spielfeld wird ein Treffer durch entsprechendes Symbol gekennzeichnet.</para
+></listitem>
 </varlistentry>
 </variablelist>
 
-<para>The rules for how balls deflect beams are simple and are best shown by
-example.</para>
+<para
+>Die Regeln für die Ablenkung der Laserstrahlen an den Kugeln lässt sich am besten am Beispiel erklären.</para>
 
-<para>As a beam approaches a ball it is deflected ninety degrees. Beams
-can be deflected multiple times. In the diagrams below, the dashes
-represent empty box locations and the letter <guilabel>O</guilabel>
-represents a ball. The entrance and exit points of each beam are marked
-with numbers as described under <link linkend="detour">Detour</link>
-above. Note that the entrance and exit points are always
-interchangeable. <guilabel>*</guilabel> denotes the path taken by the
-beam.</para>
+<para
+>Wenn ein Laserstrahl eine Kugel erreicht, wird er um 90 Grad abgelenkt. Strahlen können beliebig oft abgelenkt werden. Im folgenden Diagramm stellen die Trennstriche leere Felder dar, der Buchstabe <guilabel
+>O</guilabel
+> steht für eine Kugel. Der Ein- und Austrittspunkt eines jeden Laserstrahls ist durch Nummern gekennzeichnet, wie unter <link linkend="detour"
+>Ablenkung</link
+> beschrieben. Beachten Sie, dass Ein- und Austrittspunkt eines Laserstrahls immer austauschbar sind. <guilabel
+>*</guilabel
+> zeigt den Weg an, den der Strahl geht.</para>
 
-<para>Note carefully the relative positions of the ball and the ninety
-degree deflection it causes.</para>
+<para
+>Beachten Sie die relative Position der Kugel und die 90-Grad-Ablenkung, die sie verursacht.</para>
 
-<screen>
-    1
+<screen
+>1
   - * - - - - - -         - - - - - - - -         - - - - - - - -       
   - * - - - - - -         - - - - - - - -         - - - - - - - -       
 1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
@@ -157,13 +238,11 @@ degree deflection it causes.</para>
                                 2                         3
 </screen>
 
-<para>
-As mentioned above, a reflection occurs when a beam emerges from the same
-point it was sent in. This can happen in several ways:
-</para>
+<para
+>Wie bereits erwähnt, tritt eine Reflexion genau dann auf, wenn der Laserstrahl dort austritt, wo er eingetreten ist. Das kann auf verschiedene Weise geschehen: </para>
 
-<screen>
-  - - - - - - - -         - - - - - - - -          - - - - - - - -
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
   - - - - O - - -         - - O - O - - -          - - - - - - - -
 R * * * * - - - -         - - - * - - - -          O - - - - - - -
   - - - - O - - -         - - - * - - - -        R - - - - - - - -
@@ -174,17 +253,14 @@ R * * * * - - - -         - - - * - - - -          O - - - - - - -
 
 </screen>
 
-<para>In the first example, the beam is deflected downwards by the upper
-ball, then left by the lower ball, and finally retraces its path to its
-point of origin. The second example is similar. The third example is a
-bit anomalous but can be rationalized by realizing the beam never gets a
-chance to get into the box. Alternatively, the beam can be thought of as
-being deflected downwards and immediately emerging from the box.</para>
+<para
+>Im ersten Beispiel wurde der Laserstrahl von der oberen Kugel nach unten abgelenkt, dann nach links durch die untere Kugel und nimmt so den ursprünglichen Weg wieder auf. Das zweite Beispiel ist ähnlich. Das dritte Beispiel ist ein wenig ungewöhnlich, aber es kann verstanden werden, wenn Sie erkennen, dass der Laserstrahl nie die Gelegenheit hat in die Blackbox zu gelangen. Anderenfalls könnte der Laserstrahl auch in die Blackbox eintreten und sofort wieder austreten, da er nach unten abgelenkt wurde.</para>
 
-<para>A hit occurs when a beam runs straight into a ball:</para>
+<para
+>Sie haben getroffen, wenn ein Laserstrahl direkt auf eine Kugel stößt:</para>
 
-<screen>
-  - - - - - - - -         - - - - - - - -          - - - - - - - -
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
   - - - - - - - -         - - - - - - - -          - - - - O - - -
   - - - - - - - -         - - - - O - - -        H * * * * - - - -
   - - - - - - - -       H * * * * O - - -          - - - * - - - -
@@ -195,198 +271,332 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 
 </screen>
 
-<para>Be sure to compare the second example of a hit with the first
-example of a reflection.</para>
+<para
+>Vergleichen Sie das zweite Beispiel des Treffers mit dem ersten Beispiel der Reflexion.</para>
 
 </sect1>
 </chapter>
   
-<chapter id="interface"><title>Interface Overview</title> <!-- do not change this! -->
-<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist> and <varlistentry>. Split the chapter into sections using <sect1(2,3)> for better viewing.-->
+<chapter id="interface"
+><title
+>Die Benutzeroberfläche</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
  <sect1 id="game-board-descritpion">
-<title>Game Board Description</title>
+<title
+>Spielfeldbeschreibung</title>
 
 <screenshot>
-<screeninfo>&kblackbox; Game Board</screeninfo>
+<screeninfo
+>&kblackbox; Spielfeld</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="gameboard.png" format="PNG"/>
 </imageobject>
 <textobject>
-<phrase>&kblackbox; Game Board</phrase>
+<phrase
+>&kblackbox; Spielfeld</phrase>
 </textobject>
 </mediaobject>
 </screenshot>
 
-<para>The following types of field are found on the game board: </para>
+<para
+>Es gibt die folgenden Bereiche auf dem Spielfeld: </para>
 
 <variablelist>
 <varlistentry>
-<term><interface>The big black box in the middle</interface></term>
-<listitem><para>Here you must mark the positions you think
-a ball is in.</para></listitem>
+<term
+><interface
+>Der schwarze Kasten in der Mitte</interface
+></term>
+<listitem
+><para
+>Sie müssen die Felder markieren, in denen Sie Kugeln vermuten.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><interface>Lasers around the box</interface></term>
-<listitem><para>The lasers are shooting beams of light when
-switched on. Then, they disappear and are replaced by an information about the interactions of the laser beam with the balls in the black box.</para></listitem>
+<term
+><interface
+>Die Laser um den Kasten</interface
+></term>
+<listitem
+><para
+>Eingeschaltete Laser schießen Lichtstrahlen, nach deren Verschwinden Informationen zu dem Wechselspiel von Laserstrahl und Bällen in der Blackbox erscheinen.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><interface>Balls</interface></term>
-<listitem><para><quote>There must be one there!</quote> you think.  These mark
-where you suspect a ball is placed in the black box.</para>
-<para>At the end of the game, the right and wrong positions of the balls are also marked with <quote>balls</quote>.</para>
+<term
+><interface
+>Bälle</interface
+></term>
+<listitem
+><para
+><quote
+>Da liegt eine!</quote
+> - denken Sie. Diese Marke zeigt an, wo Sie eine Kugel in der Blackbox vermuten.</para>
+<para
+>Bei Spielende werden die richtigen und falschen Positionen der Bälle auch als <quote
+>Bälle</quote
+> markiert.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><interface>Markers for "free position"</interface></term>
-<listitem><para>You can use them to mark some positions where you are sure there is no ball.</para></listitem>
+<term
+><interface
+>Markierungen für „freie Position“</interface
+></term>
+<listitem
+><para
+>Auf den Positionen, auf denen Sie keine Bälle vermuten, können Sie diese Markierung verwenden.</para
+></listitem>
 </varlistentry>
 </variablelist>
 
 </sect1>
 
 <sect1 id="menu">
-<title>Menu Items</title>
+<title
+>Menüeinträge</title>
 
 <variablelist>
 <varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>New</guimenuitem></menuchoice></term>
-<listitem><para>Starts a new game (and abandons the current, if
-any.)</para></listitem>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Neu</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Startet ein neues Spiel (und beendet ein bereits laufendes Spiel).</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<shortcut><keycap>P</keycap></shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Pause</guimenuitem></menuchoice></term>
-<listitem><para>Pause or continue the current game.</para><para>Note that the interaction results are hidden in a paused game.</para></listitem>
+<term
+><menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Pause</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Hält ein laufendes Spiel an oder startet es wieder.</para
+><para
+>Beachten Sie, dass die Ergebnisse von Wechselwirkungen bei einem pausierten Spiel versteckt werden.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Show High Scores</guimenuitem></menuchoice></term>
-<listitem><para>Show the high score tables.</para></listitem>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Bestenliste anzeigen</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Zeigt den Dialog mit der Bestenliste.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Game</guimenu>
-<guimenuitem>Start Tutorial</guimenuitem></menuchoice></term>
-<listitem><para>Start the tutorial of the game. This is a user friendly way to learn the game rules.</para></listitem>
+<term
+><menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Einführung beginnen</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Startet ein Einführungsspiel. Dies ist der beste Weg, die Spielregeln zu lernen.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Game</guimenu>
-<guimenuitem>New Sandbox Game</guimenuitem></menuchoice></term>
-<listitem><para>In this mode, the solution is displayed at the start of the game. This is useful to understand the game principles.</para></listitem>
+<term
+><menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Neues Sandkasten-Spiel</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>In diesem Modus wird die Lösung zu Beginn des Spiels angezeigt, um das Verständnis des Spielprinzips zu erleichtern.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
-</shortcut>
-<guimenu>Game</guimenu>
-<guimenuitem>Quit</guimenuitem>
-</menuchoice></term>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Beenden</guimenuitem
+> </menuchoice
+></term>
 <listitem>
-<para>This closes the window and quits &kblackbox;.</para>
+<para
+>Schließt das Fenster und beendet &kblackbox;.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Move</guimenu>
-<guimenuitem>Solve</guimenuitem>
-</menuchoice></term>
+<term
+><menuchoice
+><guimenu
+>Zug</guimenu
+> <guimenuitem
+>Lösen</guimenuitem
+> </menuchoice
+></term>
 <listitem>
-<para>Use it to give up a game. It shows you the solution: the right positions of the balls.</para>
+<para
+>Sie geben damit das Spiel auf. Die Lösung - die richtige Position der Bälle - wird dann angezeigt.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Move</guimenu>
-<guimenuitem>Done!</guimenuitem></menuchoice></term>
-<listitem><para>When you placed all the balls, choose <guilabel>Done!</guilabel> to terminate
-the current game, to compute the final score and to display the real positions of
-the balls.</para></listitem>
+<term
+><menuchoice
+><guimenu
+>Zug</guimenu
+> <guimenuitem
+>Fertig!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Wenn Sie alle Bälle gesetzt haben, drücken Sie <quote
+>Fertig!</quote
+> um das aktuelle Spiel zu beenden, den erreichten Punktestand zu errechnen und die richtigen Positionen der Bälle anzuzeigen.</para
+></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice>
-<guimenu>Settings</guimenu><guisubmenu>Difficulty</guisubmenu>
-</menuchoice>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guisubmenu
+>Schwierigkeit</guisubmenu
+> </menuchoice>
 </term>
 <listitem>
-<para>Select the game difficulty. Harder games have more balls and bigger black box than easier games. You can also play with a custom difficulty level that you can set up in the setting dialog of &kblackbox;.</para>
+<para
+>Wählt die Schwierigkeitsstufe des Spiels aus. Schwierigere Spiele enthalten mehr Bälle und eine größere Blackbox. Im Einstellungs-Menü von &kblackbox; können Sie die Schwierigkeitsstufe auch individuell anpassen.</para>
 <note>
-<para>Games with 4 balls or less can always be solved with certainty! That is not the case for games with 5 balls or more.</para>
+<para
+>Spiele mit 4 oder weniger Bällen sind mit Sicherheit lösbar, im Gegensatz zu Spielen mit 5 oder mehr Bällen.</para>
 </note>
 </listitem>
 </varlistentry>
 
 </variablelist>
-<para>
-Additionally &kblackbox; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
-menu items, for more information read the sections about the <ulink url="help:/fundamentals/menus.html#menus-settings"
->Settings Menu</ulink> and <ulink url="help:/fundamentals/menus.html#menus-help">Help Menu</ulink>
-of the &kde; Fundamentals.
-</para>
+<para
+>Zusätzlich hat &kblackbox; die bekannten &kde;-Einträge im Menü <guimenu
+>Einstellungen</guimenu
+> und <guimenu
+>Hilfe</guimenu
+>, weitere Informationen dazu finden Sie in den Abschnitten über die Menüs <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Einstellungen</ulink
+> und <ulink url="help:/fundamentals/menus.html#menus-help"
+>Hilfe</ulink
+> der &kde;-Grundlagen. </para>
 
 </sect1>
 </chapter>
 
-<chapter id="faq"><title>Frequently asked questions</title> <!-- do not change this! -->
-<!--This chapter is for frequently asked questions. Please use <qandaset> <qandaentry> only!-->
+<chapter id="faq"
+><title
+>Häufig gestellte Fragen</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
 <qandaset>
 <!--Following is a standard list of FAQ questions.-->
 <qandaentry>
- <question><para>Can I use the keyboard to play this game? </para></question>
- <answer><para>Yes. You can use the directional keys to control the cursor, &Enter; to place and remove balls, and &Space; to place <quote>empty</quote> marks.</para></answer>
+ <question
+><para
+>Kann ich mit der Tastatur spielen? </para
+></question>
+ <answer
+><para
+>Ja. Mit den Pfeiltasten können Sie den Cursor steuern, mit der &Enter;-Taste Bälle hinzufügen oder entfernen, und mit der &Space; können Sie leere Felder markieren.</para
+></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
-  <answer><para>&kblackbox; has no save feature at the moment.</para></answer>
+ <question
+><para
+>Ich muss das Spiel unterbrechen, kann ich den aktuellen Spielstand speichern?</para
+></question>
+  <answer
+><para
+>Nein, in &kblackbox; kann der aktuelle Spielstand zurzeit noch nicht gespeichert werden.</para
+></answer>
 </qandaentry>
 
 </qandaset>
 </chapter>
 
-<chapter id="credits"><title>Credits and License</title> <!-- do not change this! -->
+<chapter id="credits"
+><title
+>Danksagungen und Lizenz</title
+> <!-- do not change this! -->
 <!--This chapter is for credits and licenses.-->
  
-<para>
-&kblackbox;  <!-- do not change this! -->
-</para>
+<para
+>&kblackbox; </para>
 <!--List all the copyright holders here-->
-<para>
-Program copyright 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; and 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail;
-</para>
-<para>
-Documentation copyright by &Robert.Cimrman;. Updated and converted to Docbook
-for &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;. Reviewed by &Philip.Rodrigues; &Philip.Rodrigues.mail;
-</para>
+<para
+>Programm Copyright 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; und 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>Diese Dokumentation wurde von &Robert.Cimrman; geschrieben. &Lauri.Watts; &Lauri.Watts.mail; hat sie aktualisiert und für &kde; 2.0 in Docbock konvertiert. Überarbeitet von &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
 
-<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
-&underFDL;
-&underGPL;
- 
-</chapter>
+<para
+>Deutsche Übersetzung von Maren Pakura<email
+>maren@kde.org</email
+></para
+> &underFDL; &underGPL; </chapter>
   
 &documentation.index; 
 </book>

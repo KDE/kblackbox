@@ -64,13 +64,13 @@ ecm_add_app_icon(kblackbox ICONS ${ICONS_SRCS})
 
 target_link_libraries(kblackbox
     KF5KDEGames
-    KF5::CoreAddons
-    KF5::XmlGui
-    KF5::I18n
-    KF5::Archive
-    KF5::TextWidgets
-    KF5::DBusAddons
-    KF5::Crash
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::Archive
+    KF${KF_MAJOR_VERSION}::TextWidgets
+    KF${KF_MAJOR_VERSION}::DBusAddons
+    KF${KF_MAJOR_VERSION}::Crash
     Qt${QT_MAJOR_VERSION}::Svg
     Qt${QT_MAJOR_VERSION}::Xml
 )

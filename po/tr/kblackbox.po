@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:43+0000\n"
-"PO-Revision-Date: 2023-01-18 22:32+0300\n"
+"PO-Revision-Date: 2023-01-27 20:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -292,7 +292,7 @@ msgstr "Özel Oyun"
 #: kbbmainwindow.cpp:439
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
-msgstr "Üzgünüm, öğretici oyun esnasında oyunu bırakamazsınız."
+msgstr "Üzgünüm, öğretici oyun sırasında oyunu bırakamazsınız."
 
 #: kbbmainwindow.cpp:439
 #, kde-format

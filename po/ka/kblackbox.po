@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:43+0000\n"
-"PO-Revision-Date: 2022-10-08 11:57+0200\n"
+"PO-Revision-Date: 2023-02-03 10:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -197,7 +197,7 @@ msgstr "თამაში დასრულდა."
 #: kbbmainwindow.cpp:294
 #, kde-format
 msgid "Game paused."
-msgstr ""
+msgstr "თამაში შეჩერებულია."
 
 #: kbbmainwindow.cpp:333
 #, kde-format
@@ -282,7 +282,7 @@ msgstr ""
 #: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
 #, kde-format
 msgid "Give up"
-msgstr ""
+msgstr "დანებება"
 
 #: kbbmainwindow.cpp:444
 #, kde-format
@@ -301,7 +301,7 @@ msgstr[1] ""
 #: kbbmainwindow.cpp:444
 #, kde-format
 msgid "Do you really want to give up this game?"
-msgstr ""
+msgstr "გნებავთ, მიატოვოთ ეს თამაში?"
 
 #: kbbmainwindow.cpp:454
 #, kde-format
@@ -403,7 +403,7 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr ""
+msgstr "დააწკაპუნეთ \"შემდეგზე\""
 
 #: kbbtutorial.cpp:156
 #, kde-format

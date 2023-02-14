@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:43+0000\n"
-"PO-Revision-Date: 2023-01-24 07:23+0100\n"
+"PO-Revision-Date: 2023-02-13 07:10+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -78,12 +78,12 @@ msgstr ""
 #: kbbmainwindow.cpp:88
 #, kde-format
 msgid "New Sandbox Game"
-msgstr ""
+msgstr "საცდელი თამაში"
 
 #: kbbmainwindow.cpp:89
 #, kde-format
 msgid "Start a new sandbox game"
-msgstr ""
+msgstr "ახალი საცდელი თამაშის დაწყება"
 
 #: kbbmainwindow.cpp:90
 #, kde-format
@@ -115,7 +115,7 @@ msgstr ""
 #: kbbmainwindow.cpp:101
 #, kde-format
 msgid "Give up the game"
-msgstr ""
+msgstr "ვნებდები"
 
 #: kbbmainwindow.cpp:102
 #, kde-format
@@ -128,7 +128,7 @@ msgstr ""
 #: kbbmainwindow.cpp:107
 #, kde-format
 msgid "Enable highlight under mouse"
-msgstr ""
+msgstr "თაგუნას ქვეშ გამოკვეთის ჩართვა"
 
 #: kbbmainwindow.cpp:147
 #, kde-format
@@ -158,7 +158,7 @@ msgstr ""
 #: kbbmainwindow.cpp:177
 #, kde-format
 msgid "Switch Marker"
-msgstr ""
+msgstr "ჭდის გადართვა"
 
 #: kbbmainwindow.cpp:251
 #, kde-format
@@ -211,7 +211,7 @@ msgstr ""
 #: kbbmainwindow.cpp:333
 #, kde-format
 msgid "Check positions"
-msgstr ""
+msgstr "მდებარეობების გადამოწმება"
 
 #: kbbmainwindow.cpp:340
 #, kde-format
@@ -408,7 +408,7 @@ msgstr "დააწკაპუნეთ \"შემდეგზე\""
 #: kbbtutorial.cpp:156
 #, kde-format
 msgid "Black box principles"
-msgstr ""
+msgstr "შავი ყუთის პრინციპები"
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -427,7 +427,7 @@ msgstr ""
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "No interaction"
-msgstr ""
+msgstr "ურთიერთქმედების გარეშე"
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -447,7 +447,7 @@ msgstr ""
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Hit"
-msgstr ""
+msgstr "დარტყმა"
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -506,7 +506,7 @@ msgstr ""
 #: kbbtutorial.cpp:190
 #, kde-format
 msgid "Reflection"
-msgstr ""
+msgstr "ანარეკლი"
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -525,7 +525,7 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Special reflection"
-msgstr ""
+msgstr "სპეციალური ანარეკლი"
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -559,12 +559,12 @@ msgstr ""
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr ""
+msgstr "დააწკაპუნეთ \"შემდეგზე\"."
 
 #: kbbtutorial.cpp:213
 #, kde-format
 msgid "Marking balls"
-msgstr ""
+msgstr "ბურთების განლაგება"
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -579,7 +579,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Let us play!"
-msgstr ""
+msgstr "გვათამაშეთ!"
 
 #: kbbtutorial.cpp:220
 #, kde-format

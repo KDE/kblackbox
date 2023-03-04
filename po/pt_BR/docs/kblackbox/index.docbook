@@ -55,14 +55,14 @@
 >&FDLNotice;</legalnotice
 > 
 <date
->09/05/2016</date>
+>24/06/2021</date>
 <releaseinfo
->0.5.0 (Applications 16.04)</releaseinfo>
+>KDE Gear 21.04</releaseinfo>
  
 <!--Short description of this document. Do not change unless necessary!-->
 <abstract>
 	<para
->Esta documentação descreve o jogo &kblackbox; versão 0.5.0</para>
+>Esta documentação descreve o jogo &kblackbox; versão 21.04</para>
 </abstract>
  
 <!--List of relevan keywords-->
@@ -120,11 +120,7 @@
  
 <!--Short game description starts here. 3-4 sentences (paragraphs)-->
 	<para
->O &kblackbox; é um ótimo jogo de lógica, inspirado no blackbox do <application
->emacs</application
->. Uma grande parte deste arquivo de ajuda é baseada na ajuda original do <application
->emacs</application
->.</para>
+>O &kblackbox; é um ótimo jogo de lógica, inspirado no blackbox do &Emacs;. Uma grande parte deste arquivo de ajuda é baseada na ajuda original do &Emacs;.</para>
 
 <para
 >O &kblackbox; é um jogo de esconde-esconde jogado numa grade de caixas. O seu adversário (o gerador de números aleatórios, neste caso) possui várias bolas escondidas dentro desta caixa. Ao disparar raios para a caixa e observando se elas emergem, é possível deduzir as posições das bolas escondidas.</para>
@@ -346,7 +342,9 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 >deve haver uma aqui!</quote
 > Elas marcam onde você suspeita que uma bola esteja, dentro da caixa preta.</para>
 <para
->No fim do jogo, as posições corretas e incorretas das bolas são também marcadas com "bolas".</para>
+>No fim do jogo, as posições corretas e incorretas das bolas são também marcadas com <quote
+>bolas</quote
+>.</para>
 </listitem>
 </varlistentry>
 
@@ -509,7 +507,9 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 ></term>
 <listitem
 ><para
->Quando todas as bolas estiverem posicionadas, selecione "Pronto!" para terminar o jogo atual, calcular a pontuação final e indicar as posições reais das bolas.</para
+>Quando todas as bolas estiverem posicionadas, selecione <guilabel
+>Pronto!</guilabel
+>  para terminar o jogo atual, calcular a pontuação final e indicar as posições reais das bolas.</para
 ></listitem>
 </varlistentry>
 
@@ -525,8 +525,10 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 <listitem>
 <para
 >Seleciona a dificuldade do jogo. Os jogos mais difíceis possuem mais bolas e uma caixa negra maior que os jogos mais simples. Você poderá também jogar com um nível de dificuldade personalizado que poderá configurar na janela de configuração do &kblackbox;.</para>
+<note>
 <para
->Nota: os jogos com 4 bolas ou menos poderão sempre ser resolvidos com certeza! Isto não é o caso para os jogos com 5 ou mais bolas.</para>
+>Jogos com 4 bolas ou menos poderão sempre ser resolvidos com certeza! Isto não é o caso para os jogos com 5 ou mais bolas.</para>
+</note>
 </listitem>
 </varlistentry>
 
@@ -561,9 +563,9 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 ></question>
  <answer
 ><para
->Sim. Você poderá usar as teclas dos cursores para controlar o cursor, o &Enter; para colocar e remover bolas e o <keycap
->Espaço</keycap
-> para colocar marcas 'vazias'.</para
+>Sim. Você poderá usar as teclas dos cursores para controlar o cursor, o &Enter; para colocar e remover bolas e o &Space; para colocar marcas <quote
+>vazias</quote
+>.</para
 ></answer>
 </qandaentry>
 <qandaentry>

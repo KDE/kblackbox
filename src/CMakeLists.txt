@@ -62,8 +62,13 @@ kconfig_add_kcfg_files(kblackbox kbbprefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-kblackbox.png")
 ecm_add_app_icon(kblackbox ICONS ${ICONS_SRCS})
 
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(kblackbox KDEGames6)
+else()
+    target_link_libraries(kblackbox KF5KDEGames)
+endif()
+
 target_link_libraries(kblackbox
-    KF5KDEGames
     KF${KF_MAJOR_VERSION}::CoreAddons
     KF${KF_MAJOR_VERSION}::XmlGui
     KF${KF_MAJOR_VERSION}::I18n

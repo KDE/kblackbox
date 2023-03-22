@@ -3,15 +3,15 @@
 # Copyright (C) 1998, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 # Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
-#
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:43+0000\n"
-"PO-Revision-Date: 2007-12-31 04:28+0100\n"
-"Last-Translator: Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>\n"
+"PO-Revision-Date: 2023-03-20 22:43+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -31,34 +31,28 @@ msgid "Your emails"
 msgstr "wolfram@steloj.de, pedrotpmx@wanadoo.fr"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball(s)"
+#, kde-format
 msgctxt "A number between 1 and 99 is displayed in front of it."
 msgid " ball"
 msgid_plural " balls"
-msgstr[0] " globo(j)"
-msgstr[1] " globo(j)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " columns"
+#, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " column"
 msgid_plural " columns"
-msgstr[0] " kolumnoj"
-msgstr[1] " kolumnoj"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " rows"
+#, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " row"
 msgid_plural " rows"
-msgstr[0] " vicoj"
-msgstr[1] " vicoj"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbbmainwindow.cpp:71
 #, kde-format
@@ -109,22 +103,14 @@ msgstr ""
 "qt>"
 
 #: kbbmainwindow.cpp:96
-#, fuzzy, kde-format
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Ek!"
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><ul><li>First, you have to place all the balls on the black box. To "
-#| "guess the right possitions of the balls and see how they interact with "
-#| "laser beams, you should use the lasers that are disposed around the black "
-#| "box.</li><li><b>When you think you are done</b>, you should click here.</"
-#| "li></ul><p>Note that it is possible to click here only if you placed the "
-#| "right number of balls.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
 "guess the correct positions of the balls and see how they interact with "
@@ -133,11 +119,6 @@ msgid ""
 "li></ul><p>Note that it is only possible to click here if you have placed "
 "the correct number of balls.</p></qt>"
 msgstr ""
-"<qt><ul><li>Unue vi devas meti ĉiuj globojn en la nigrakesto. Por diveni la "
-"ĝustajn lokojn de la globoj, kaj vidi kiel ili reagas kun laseroj, vi devus "
-"uzi la lazerojn ĉirkaŭ la kesto.</li><li><b>Kiam vi konsideras, ke vi finis</"
-"b>, klaku ĉi tie.</li></ul><p>Notu, ke vi povas klaki ĉi tie nur se vi metis "
-"la korektan nombron da globoj.</p></qt>"
 
 #: kbbmainwindow.cpp:101
 #, kde-format
@@ -181,25 +162,17 @@ msgid "Move Right"
 msgstr "Movi dekstren"
 
 #: kbbmainwindow.cpp:171
-#, fuzzy, kde-format
-#| msgid "Switch ball or shoot laser"
+#, kde-format
 msgid "Switch Ball or Shoot Laser"
-msgstr "Komuti globon aŭ ŝalti laseron"
+msgstr ""
 
 #: kbbmainwindow.cpp:177
-#, fuzzy, kde-format
-#| msgid "Switch marker"
+#, kde-format
 msgid "Switch Marker"
-msgstr "Komuti markilon"
+msgstr ""
 
 #: kbbmainwindow.cpp:251
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The text may not be too wide. So please use some HTML-BR-tags to have "
-#| "something more or less as wide as in english. Thanks!"
-#| msgid ""
-#| "Note: You can change<br />the parameters of<br />custom games in the<br /"
-#| ">setting dialog."
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -207,8 +180,6 @@ msgid ""
 "Note: You can change<br />the parameters of<br />custom games in the<br /"
 ">Settings dialog."
 msgstr ""
-"Noto: vi povas ŝanĝi<br />la parametrojn de<br />propraj ludoj en la<br /"
-">agorda fenestro."
 
 #: kbbmainwindow.cpp:284
 #, kde-format
@@ -218,10 +189,9 @@ msgstr[0] "Vi bezonas unue forigi 1 globon el la nigrakesto."
 msgstr[1] "Vi bezonas unue forigi %1 globojn el la nigrakesto."
 
 #: kbbmainwindow.cpp:286
-#, fuzzy, kde-format
-#| msgid "To check if you successful guessed the ball positions, click here!"
+#, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
-msgstr "Por kontroli, ke vi ĝuste divenis la globajn lokojn, klaku ĉi tie!"
+msgstr ""
 
 #: kbbmainwindow.cpp:288
 #, kde-format
@@ -275,11 +245,7 @@ msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Sed ne gravas<br />ĉar <b>estas la testa ludo!</b>"
 
 #: kbbmainwindow.cpp:344
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The text may not be too wide. So please use some HTML-BR-tags to have "
-#| "something more or less as wide as in english. Thanks!"
-#| msgid "Your final score is: %1.<br />I guess you need more practice."
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -302,23 +268,20 @@ msgstr ""
 "parametroj?"
 
 #: kbbmainwindow.cpp:400
-#, fuzzy, kde-format
-#| msgid "Start new game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Komenci novan ludon"
+msgstr ""
 
 #: kbbmainwindow.cpp:420
-#, fuzzy, kde-format
-#| msgid "Custom game"
+#, kde-format
 msgid "Custom Game"
-msgstr "Propra ludo"
+msgstr ""
 
 #: kbbmainwindow.cpp:439
-#, fuzzy, kde-format
-#| msgid "Sorry, you may not give up the tutorial."
+#, kde-format
 msgid "Sorry, you may not give up during the tutorial."
-msgstr "Pardonu, vi ne povas kapitulaci la lernilon."
+msgstr ""
 
 #: kbbmainwindow.cpp:439
 #, kde-format
@@ -326,21 +289,13 @@ msgid "Solve"
 msgstr "Solvi"
 
 #: kbbmainwindow.cpp:442
-#, fuzzy, kde-format
-#| msgid ""
-#| "You placed all the balls. Great!\n"
-#| "You should now click on \"Done!\" to end the game and check if you "
-#| "guessed right.\n"
-#| "So, do you really want to give up this game?"
+#, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
 "You should now click on \"Done!\" to end the game and check if you guessed "
 "correctly.\n"
 "So, do you really want to give up this game?"
 msgstr ""
-"Vi metis ĉiujn globojn. Bonege!\n"
-"Vi klaku sur \"Ek!\" por fini la ludon kaj kontroli, se vi divenis ĝuste.\n"
-"Nu, ĉu vi vere volas kapitulaci tiun ludon?"
 
 #: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
 #, kde-format
@@ -727,10 +682,9 @@ msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
 #: main.cpp:50
-#, fuzzy, kde-format
-#| msgid "Developper of version 0.4."
+#, kde-format
 msgid "Developer of version 0.4."
-msgstr "Programisto de la versio 0.4."
+msgstr ""
 
 #: main.cpp:51
 #, kde-format
@@ -738,10 +692,9 @@ msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
 #: main.cpp:51
-#, fuzzy, kde-format
-#| msgid "Original developper"
+#, kde-format
 msgid "Original developer"
-msgstr "Origina programisto"
+msgstr ""
 
 #: main.cpp:52
 #, kde-format
@@ -752,39 +705,3 @@ msgstr "Johann Ollivier Lapeyre"
 #, kde-format
 msgid "Artist"
 msgstr "Artisto"
-
-#~ msgid "Time: 00:00"
-#~ msgstr "Tempo: 00:00"
-
-#~ msgid "Size: 00 x 00"
-#~ msgstr "Grandeco: 00 x 00"
-
-#, fuzzy
-#~| msgid "1 ball too much!"
-#~| msgid_plural "%1 balls too much!"
-#~ msgid "1 ball too many!"
-#~ msgid_plural "%1 balls too many!"
-#~ msgstr[0] "1 globo troe!"
-#~ msgstr[1] "%1 globoj troe!"
-
-#, fuzzy
-#~| msgid "No more ball to place"
-#~ msgid "No more balls to place"
-#~ msgstr "Neniu metebla globo"
-
-#~ msgid "1 ball to place"
-#~ msgid_plural "%1 balls to place"
-#~ msgstr[0] "1 globo metenda"
-#~ msgstr[1] "%1 globoj metendaj"
-
-#~ msgid "Game over"
-#~ msgstr "Ludfino"
-
-#~ msgid "Time: %1"
-#~ msgstr "Tempo: %1"
-
-#~ msgid "Size: %1 x %2"
-#~ msgstr "Grandeco: %1 x %2"
-
-#~ msgid "Difficulty level"
-#~ msgstr "Facileca nivelo"

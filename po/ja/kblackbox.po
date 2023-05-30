@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -36,7 +36,6 @@ msgctxt "A number between 1 and 99 is displayed in front of it."
 msgid " ball"
 msgid_plural " balls"
 msgstr[0] " ボール"
-msgstr[1] " ボール"
 
 #: kbblevelconfigurationwidget.cpp:40
 #, kde-format
@@ -44,7 +43,6 @@ msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " column"
 msgid_plural " columns"
 msgstr[0] " 列"
-msgstr[1] " 列"
 
 #: kbblevelconfigurationwidget.cpp:49
 #, kde-format
@@ -52,7 +50,6 @@ msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " row"
 msgid_plural " rows"
 msgstr[0] " 行"
-msgstr[1] " 行"
 
 #: kbbmainwindow.cpp:71
 #, kde-format
@@ -189,8 +186,7 @@ msgstr "カスタムゲームの設定<br />は設定ダイアログで変更<br
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
-msgstr[0] "先にブラックボックスからボールを 1 個取り除いてください。"
-msgstr[1] "先にブラックボックスからボールを %1 個取り除いてください。"
+msgstr[0] "先にブラックボックスからボールを %1 個取り除いてください。"
 
 #: kbbmainwindow.cpp:286
 #, kde-format
@@ -201,8 +197,7 @@ msgstr "ここをクリックしてボールの位置を正しく推測できた
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
-msgstr[0] "ブラックボックスの上にあと 1 個ボールを置いてください。"
-msgstr[1] "ブラックボックスの上にあと %1 個ボールを置いてください。"
+msgstr[0] "ブラックボックスの上にあと %1 個ボールを置いてください。"
 
 #: kbbmainwindow.cpp:292
 #, kde-format
@@ -319,14 +314,12 @@ msgstr "ギブアップ"
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] "ボールを %1 個置いてください。\n"
-msgstr[1] "ボールを %1 個置いてください。\n"
 
 #: kbbmainwindow.cpp:444
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] "%1 個置きました。\n"
-msgstr[1] "%1 個置きました。\n"
 
 #: kbbmainwindow.cpp:444
 #, kde-format

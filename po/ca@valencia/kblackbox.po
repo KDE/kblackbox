@@ -157,22 +157,22 @@ msgstr "Habilita el ressaltat davall el ratolí"
 #: kbbmainwindow.cpp:147
 #, kde-format
 msgid "Move Down"
-msgstr "Mou avall"
+msgstr "Mou cap avall"
 
 #: kbbmainwindow.cpp:153
 #, kde-format
 msgid "Move Up"
-msgstr "Mou amunt"
+msgstr "Mou cap amunt"
 
 #: kbbmainwindow.cpp:159
 #, kde-format
 msgid "Move Left"
-msgstr "Mou a l'esquerra"
+msgstr "Mou cap a l'esquerra"
 
 #: kbbmainwindow.cpp:165
 #, kde-format
 msgid "Move Right"
-msgstr "Mou a la dreta"
+msgstr "Mou cap a la dreta"
 
 #: kbbmainwindow.cpp:171
 #, kde-format

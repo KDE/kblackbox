@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:43+0000\n"
-"PO-Revision-Date: 2023-03-09 13:32+0300\n"
+"PO-Revision-Date: 2023-06-11 22:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -447,10 +447,11 @@ msgid ""
 "It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
 "><br />The goal is to <b>find the positions of the balls.</b>"
 msgstr ""
-"Bu öğretici oyun, basit örneklerle size KBlackBox'ı nasıl oynayabileceğinizi "
-"öğretmektedir. <br /><br /> 6 satır ve 6 sütundan oluşan bir kare bir kara "
-"kutu ile oynamaktayız. Kutunun içinde 3 top, çevresinde de 24 lazer sondası "
-"bulunmaktadır.<br /><br />Hedef, <b>topların doğru konumlarını bulmaktır.</b>"
+"Bu öğretici oyun, basit örneklerle size K Kara Kutu'yu nasıl "
+"oynayabileceğinizi öğretmektedir. <br /><br /> 6 satır ve 6 sütundan oluşan "
+"bir kare bir kara kutu ile oynamaktayız. Kutunun içinde 3 top, çevresinde de "
+"24 lazer sondası bulunmaktadır.<br /><br />Hedef, <b>topların doğru "
+"konumlarını bulmaktır.</b>"
 
 #: kbbtutorial.cpp:151
 #, kde-format
@@ -683,11 +684,11 @@ msgid ""
 "positions of the 3 balls with certainty. Of course, you can use some more "
 "shots if needed."
 msgstr ""
-"<b>Tebrikler!</b> Şu an KBlackBox'ın <b>bütün kurallarını</b> biliyorsunuz."
-"<br /><br /><b>Oynamaya başlayabilirsiniz.</b> Bu öğretici oyunu kendi "
-"başınıza bitirmeye çalışın!<br /><br /> İpucu: 3 topun da yerlerini doğru "
-"bir şekilde bulmak için yeterli miktarda ışın gönderdik. Tabi ki, gereksinim "
-"duyuyorsanız daha fazla ışın da gönderebilirsiniz."
+"<b>Tebrikler!</b> Artık K Kara Kutu'nun <b>bütün kurallarını</b> "
+"biliyorsunuz.<br /><br /><b>Oynamaya başlayabilirsiniz.</b> Bu öğretici "
+"oyunu kendi başınıza bitirmeye çalışın!<br /><br /> İpucu: 3 topun da "
+"yerlerini doğru bir şekilde bulmak için yeterli miktarda ışın gönderdik. "
+"Tabii ki, gereksinim duyuyorsanız daha fazla ışın da gönderebilirsiniz."
 
 #: kbbtutorial.cpp:220
 #, kde-format
@@ -727,7 +728,7 @@ msgstr "Özel zorluk düzeyi için oyundaki satır sayısı"
 #: main.cpp:44
 #, kde-format
 msgid "KBlackBox"
-msgstr "KBlackBox"
+msgstr "K Kara Kutu"
 
 #: main.cpp:46
 #, kde-format

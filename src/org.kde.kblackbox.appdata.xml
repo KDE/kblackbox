@@ -14,6 +14,7 @@
   <name xml:lang="de">KBlackbox</name>
   <name xml:lang="el">KBlackbox</name>
   <name xml:lang="en-GB">KBlackbox</name>
+  <name xml:lang="eo">KBlackbox</name>
   <name xml:lang="es">KBlackbox</name>
   <name xml:lang="et">KBlackbox</name>
   <name xml:lang="eu">KBlackbox</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="de">„Blackbox“-Spiel</summary>
   <summary xml:lang="el">Παιχνίδι λογικής Blackbox</summary>
   <summary xml:lang="en-GB">Blackbox Logic Game</summary>
+  <summary xml:lang="eo">Blackbox-Logikludo</summary>
   <summary xml:lang="es">Juego de lógica Blackbox</summary>
   <summary xml:lang="et">Blackboxi loogikamäng</summary>
   <summary xml:lang="eu">Blackbox logika-jokoa</summary>

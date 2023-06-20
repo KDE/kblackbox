@@ -543,7 +543,7 @@ msgid ""
 msgstr ""
 "A interacción dun raio que non bate directamente unha bóla, senón que lle "
 "pasa polo lado, chámase «<b>desvío</b>». O ángulo de desvío do raio sempre é "
-"de <b>90 graos</b>.<br /><br />Exemplo: a bóla mostrada desviará o raio «2» "
+"de <b>90 graos</b>.<br /><br />Exemplo: a bóla amosada desviará o raio «2» "
 "cara arriba, como se mostra, pero <b>non</b> é a única posibilidade."
 
 #: kbbtutorial.cpp:175

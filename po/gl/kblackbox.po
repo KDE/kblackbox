@@ -403,7 +403,7 @@ msgstr "Titorial"
 #: kbbtutorial.cpp:53
 #, kde-format
 msgid "Displays the progress of the tutorial."
-msgstr "Mostra o progreso do titorial."
+msgstr "Amosa o progreso do titorial."
 
 #: kbbtutorial.cpp:75
 #, kde-format

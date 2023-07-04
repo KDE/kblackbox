@@ -83,5 +83,4 @@ void KBBLevelConfigurationPreview::resizeEvent( QResizeEvent* )
 	fitInView(0.5*KBBScalableGraphicWidget::BORDER_SIZE, 0.5*KBBScalableGraphicWidget::BORDER_SIZE, scene()->width() - 1.5*KBBScalableGraphicWidget::BORDER_SIZE, scene()->height() - 1.5*KBBScalableGraphicWidget::BORDER_SIZE, Qt::KeepAspectRatio);
 }
 
-
-
+#include "moc_kbblevelconfigurationpreview.cpp"

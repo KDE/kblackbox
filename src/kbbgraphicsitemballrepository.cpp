@@ -96,4 +96,4 @@ void KBBGraphicsItemBallRepository::removeBall(int outsidePosition)
 	m_ballsOutside->remove(outsidePosition);
 }
 
-
+#include "moc_kbbgraphicsitemballrepository.cpp"

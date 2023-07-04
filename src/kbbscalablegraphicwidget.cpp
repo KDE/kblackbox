@@ -602,3 +602,4 @@ void KBBScalableGraphicWidget::cursorOff() {
 	m_cursor->hide();
 }
 
+#include "moc_kbbscalablegraphicwidget.cpp"

@@ -125,3 +125,5 @@ void KBBGraphicsItemBlackBox::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
 	int y = (int)(event->pos().y() - KBBScalableGraphicWidget::BORDER_SIZE)/KBBScalableGraphicWidget::RATIO;
 	Q_EMIT hoverMoved(x + y*m_columns);
 }
+
+#include "moc_kbbgraphicsitemblackbox.cpp"

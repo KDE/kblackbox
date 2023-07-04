@@ -534,6 +534,4 @@ void KBBMainWindow::startGame(bool sandboxMode)
 	updateStats();
 }
 
-
-
-
+#include "moc_kbbmainwindow.cpp"

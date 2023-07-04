@@ -182,4 +182,4 @@ void KBBGameDoc::setScore( int n )
 	Q_EMIT updateStats();
 }
 
-
+#include "moc_kbbgamedoc.cpp"

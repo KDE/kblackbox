@@ -195,4 +195,4 @@ void KBBGraphicsItemCursor::updatePositions()
 	Q_EMIT cursorAtNewPosition(m_borderPosition);
 }
 
-
+#include "moc_kbbgraphicsitemcursor.cpp"

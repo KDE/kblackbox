@@ -80,4 +80,4 @@ void KBBLevelConfigurationWidget::boxSizeChanged()
 	m_view->preview(balls(), columns(), rows());
 }
 
-
+#include "moc_kbblevelconfigurationwidget.cpp"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-20 00:43+0000\n"
-"PO-Revision-Date: 2023-02-13 07:10+0100\n"
+"PO-Revision-Date: 2023-08-08 06:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -240,7 +240,7 @@ msgstr ""
 #: kbbmainwindow.cpp:373
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
-msgstr ""
+msgstr "თამაში შეჩერებულია. <br />გასაგრძელებლად დააჭირეთ %1."
 
 #: kbbmainwindow.cpp:399
 #, kde-format
@@ -316,7 +316,7 @@ msgstr ""
 #: kbbmainwindow.cpp:493
 #, kde-format
 msgid "This will be the end of the current game!"
-msgstr ""
+msgstr "ეს თქვენს მიმდინარე თამაშს დაასრულებს!"
 
 #: kbbmainwindow.cpp:493
 #, kde-format
@@ -357,7 +357,7 @@ msgstr "სახელმძღვანელო"
 #: kbbtutorial.cpp:53
 #, kde-format
 msgid "Displays the progress of the tutorial."
-msgstr ""
+msgstr "აჩვენებს სახელმძღვანელოს მიმდინარეობას."
 
 #: kbbtutorial.cpp:75
 #, kde-format
@@ -608,19 +608,19 @@ msgstr ""
 #: kblackbox.kcfg:13
 #, kde-format
 msgid "Number of balls for custom difficulty level"
-msgstr ""
+msgstr "ხელით მითითებული დაფის ბურთების რაოდენობა"
 
 #. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
 #: kblackbox.kcfg:17
 #, kde-format
 msgid "Number of columns of the board for custom difficulty level"
-msgstr ""
+msgstr "ხელით მითითებული დაფის სვეტების რაოდენობა"
 
 #. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
 #: kblackbox.kcfg:21
 #, kde-format
 msgid "Number of rows of the board for custom difficuty level"
-msgstr ""
+msgstr "ხელით მითითებული დაფის მწკრივების რაოდენობა"
 
 #: main.cpp:44
 #, kde-format
@@ -630,7 +630,7 @@ msgstr "KBlackBox"
 #: main.cpp:46
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
-msgstr ""
+msgstr "იპოვეთ შავ ყუთში დამალული ბურთები ლაზერების სროლით!"
 
 #: main.cpp:48
 #, kde-format
@@ -638,6 +638,8 @@ msgid ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 msgstr ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
 
 #: main.cpp:50
 #, kde-format
@@ -647,7 +649,7 @@ msgstr "Nicolas Roffet"
 #: main.cpp:50
 #, kde-format
 msgid "Developer of version 0.4."
-msgstr ""
+msgstr "0.4 ვერსიის პროგრამისტი."
 
 #: main.cpp:51
 #, kde-format

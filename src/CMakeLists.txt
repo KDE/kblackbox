@@ -62,27 +62,19 @@ kconfig_add_kcfg_files(kblackbox kbbprefs.kcfgc)
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/icons/*-apps-kblackbox.png")
 ecm_add_app_icon(kblackbox ICONS ${ICONS_SRCS})
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kblackbox KDEGames6)
-else()
-    target_link_libraries(kblackbox KF5KDEGames)
-endif()
-
 target_link_libraries(kblackbox
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::Archive
-    KF${KF_MAJOR_VERSION}::TextWidgets
-    KF${KF_MAJOR_VERSION}::DBusAddons
-    KF${KF_MAJOR_VERSION}::Crash
-    Qt${QT_MAJOR_VERSION}::Svg
-    Qt${QT_MAJOR_VERSION}::Xml
+    KDEGames6
+    KF6::CoreAddons
+    KF6::XmlGui
+    KF6::I18n
+    KF6::Archive
+    KF6::TextWidgets
+    KF6::DBusAddons
+    KF6::Crash
+    Qt6::Svg
+    Qt6::SvgWidgets
+    Qt6::Xml
 )
-
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kblackbox Qt6::SvgWidgets)
-endif()
 
 install(TARGETS kblackbox  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})

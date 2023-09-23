@@ -7,38 +7,21 @@
     SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-
-
-
-#include <KLocalizedString>
-
-#include <KAboutData>
-#include <QApplication>
-#include <QCommandLineParser>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <Kdelibs4ConfigMigrator>
-#endif
-#include <KCrash>
-
 #include "kbbmainwindow.h"
 #include "kblackbox_version.h"
-#include <KDBusService>
 
+#include <KDBusService>
+#include <KLocalizedString>
+#include <KAboutData>
+#include <QCommandLineParser>
+#include <KCrash>
+
+#include <QApplication>
 
 int main( int argc, char **argv )
 {
-    // Fixes blurry icons with fractional scaling
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
-    
     QApplication application(argc, argv);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Kdelibs4ConfigMigrator migrate(QStringLiteral("kblackbox"));
-    migrate.setConfigFiles(QStringList() << QStringLiteral("kblackboxrc"));
-    migrate.setUiFiles(QStringList() << QStringLiteral("kblackboxui.rc"));
-    migrate.migrate();
-#endif
+
     KLocalizedString::setApplicationDomain("kblackbox");
     KAboutData aboutData( QStringLiteral("kblackbox"),
                           i18n("KBlackBox"),

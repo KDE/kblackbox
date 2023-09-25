@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-11 03:19+0200\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2017-09-28 17:59+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -33,7 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yugoslavia@canada.com,caslav.ilic@gmx.net,slsimic@gmail.com"
 
-#: kbblevelconfigurationwidget.cpp:35
+#: kbblevelconfigurationwidget.cpp:31
 #, kde-format
 msgctxt "A number between 1 and 99 is displayed in front of it."
 msgid " ball"
@@ -43,7 +43,7 @@ msgstr[1] " лоптице"
 msgstr[2] " лоптица"
 msgstr[3] " лоптица"
 
-#: kbblevelconfigurationwidget.cpp:44
+#: kbblevelconfigurationwidget.cpp:40
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " column"
@@ -53,7 +53,7 @@ msgstr[1] " колоне"
 msgstr[2] " колона"
 msgstr[3] " колона"
 
-#: kbblevelconfigurationwidget.cpp:53
+#: kbblevelconfigurationwidget.cpp:49
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " row"
@@ -64,23 +64,23 @@ msgstr[2] " редова"
 msgstr[3] " ред"
 
 # >> @item
-#: kbbmainwindow.cpp:90
+#: kbbmainwindow.cpp:66
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr "подесиво"
 
-#: kbbmainwindow.cpp:100
+#: kbbmainwindow.cpp:76
 #, kde-format
 msgid "Start Tutorial"
 msgstr "Покрени туторијал"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:78
 #, kde-format
 msgid "Start tutorial"
 msgstr "Покрени туторијал"
 
-#: kbbmainwindow.cpp:103
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -89,17 +89,17 @@ msgstr ""
 "<qt><i>Туторијал</i> је брз, предусретљив и интерактиван начин да научите "
 "правила игре. Покрените га уколико их не знате!</qt>"
 
-#: kbbmainwindow.cpp:107
+#: kbbmainwindow.cpp:83
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "Нова партија на полигону"
 
-#: kbbmainwindow.cpp:108
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "Покрени нову партију на полигону"
 
-#: kbbmainwindow.cpp:109
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -112,14 +112,14 @@ msgstr ""
 "ово престаје да буде забавно и требало би да започнете праву партију!</p></"
 "qt>"
 
-#: kbbmainwindow.cpp:115
+#: kbbmainwindow.cpp:91
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Готово!"
 
-#: kbbmainwindow.cpp:116
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -136,12 +136,12 @@ msgstr ""
 "уколико сте поставили исправан број лопти.</p></qt>"
 
 # rewrite-msgid: /the game//
-#: kbbmainwindow.cpp:120
+#: kbbmainwindow.cpp:96
 #, kde-format
 msgid "Give up the game"
 msgstr "Одустајем"
 
-#: kbbmainwindow.cpp:121
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -152,43 +152,43 @@ msgstr ""
 "и приказаће вам се решење.</p><p>Ако сте поставили све лоптице и не желите "
 "да одустанете, изаберите <i>Готово!</i>.</p></qt>"
 
-#: kbbmainwindow.cpp:126
+#: kbbmainwindow.cpp:102
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr ""
 
-#: kbbmainwindow.cpp:166
+#: kbbmainwindow.cpp:142
 #, kde-format
 msgid "Move Down"
 msgstr "Помери надоле"
 
-#: kbbmainwindow.cpp:172
+#: kbbmainwindow.cpp:148
 #, kde-format
 msgid "Move Up"
 msgstr "Помери нагоре"
 
-#: kbbmainwindow.cpp:178
+#: kbbmainwindow.cpp:154
 #, kde-format
 msgid "Move Left"
 msgstr "Помери улево"
 
-#: kbbmainwindow.cpp:184
+#: kbbmainwindow.cpp:160
 #, kde-format
 msgid "Move Right"
 msgstr "Помери удесно"
 
-#: kbbmainwindow.cpp:190
+#: kbbmainwindow.cpp:166
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "Промени лопту или опали ласер"
 
-#: kbbmainwindow.cpp:196
+#: kbbmainwindow.cpp:172
 #, kde-format
 msgid "Switch Marker"
 msgstr "Промени маркер"
 
 # rewrite-msgid: /Settings dialog/configuration dialog/
-#: kbbmainwindow.cpp:270
+#: kbbmainwindow.cpp:246
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -200,7 +200,7 @@ msgstr ""
 "<html>Напомена:<br />параметре посебне игре<br />можете променити у<br /"
 ">дијалогу за подешавање.</html>"
 
-#: kbbmainwindow.cpp:303
+#: kbbmainwindow.cpp:279
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
@@ -209,12 +209,12 @@ msgstr[1] "Прво морате да уклоните %1 лопте из црн
 msgstr[2] "Прво морате да уклоните %1 лопти из црне кутије."
 msgstr[3] "Прво морате да уклоните једну лопту из црне кутије."
 
-#: kbbmainwindow.cpp:305
+#: kbbmainwindow.cpp:281
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr "Кликните овде да проверите да ли сте успешно погодили положаје лопти!"
 
-#: kbbmainwindow.cpp:307
+#: kbbmainwindow.cpp:283
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
@@ -223,17 +223,17 @@ msgstr[1] "Треба да поставите још %1 лопте у црну �
 msgstr[2] "Треба да поставите још %1 лопти у црну кутију."
 msgstr[3] "Треба да поставите још једну лопту у црну кутију."
 
-#: kbbmainwindow.cpp:311
+#: kbbmainwindow.cpp:287
 #, kde-format
 msgid "Game over."
 msgstr "Крај игре."
 
-#: kbbmainwindow.cpp:313
+#: kbbmainwindow.cpp:289
 #, kde-format
 msgid "Game paused."
 msgstr "Игра је паузирана."
 
-#: kbbmainwindow.cpp:352
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -245,12 +245,12 @@ msgstr ""
 "на крају игре. Међутим, у туторијалу игру не можете завршити пре него што "
 "стигнете до последњег корака.</p><p>Прво завршите туторијал.</p></qt>"
 
-#: kbbmainwindow.cpp:352
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid "Check positions"
 msgstr "Провери положаје"
 
-#: kbbmainwindow.cpp:359
+#: kbbmainwindow.cpp:335
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -258,7 +258,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "<html>Коначни резултат: %1.<br />Ово је било баш добро!</html>"
 
-#: kbbmainwindow.cpp:361
+#: kbbmainwindow.cpp:337
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -266,7 +266,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Али се неће рачунати<br />пошто је <i>на полигону</i>!"
 
-#: kbbmainwindow.cpp:363
+#: kbbmainwindow.cpp:339
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -274,12 +274,12 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "<html>Коначни резултат: %1.<br />Треба више да вежбате.</html>"
 
-#: kbbmainwindow.cpp:392
+#: kbbmainwindow.cpp:368
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "<html>Игра је паузирана.<br />Притисните „%1“ за наставак.</html>"
 
-#: kbbmainwindow.cpp:413
+#: kbbmainwindow.cpp:390
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
@@ -288,27 +288,29 @@ msgstr ""
 "Желите ли да откажете текућу посебну партију и започнете нову са новим "
 "параметрима?"
 
-#: kbbmainwindow.cpp:413 kbbmainwindow.cpp:500
-#, kde-format
-msgid "Start new game"
+#: kbbmainwindow.cpp:391
+#, fuzzy, kde-format
+#| msgid "Start new game"
+msgctxt "@action:button"
+msgid "Start New Game"
 msgstr "Започни нову партију"
 
-#: kbbmainwindow.cpp:427
+#: kbbmainwindow.cpp:407
 #, kde-format
 msgid "Custom Game"
 msgstr "Посебна партија"
 
-#: kbbmainwindow.cpp:446
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Не можете одустати током туторијала."
 
-#: kbbmainwindow.cpp:446
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Solve"
 msgstr "Реши"
 
-#: kbbmainwindow.cpp:449
+#: kbbmainwindow.cpp:429
 #, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
@@ -321,12 +323,12 @@ msgstr ""
 "положаје.</p><p>Дакле, желите ли заиста да одустанете од ове партије?</p></"
 "qt>"
 
-#: kbbmainwindow.cpp:449 kbbmainwindow.cpp:451
+#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
 #, kde-format
 msgid "Give up"
 msgstr "Одустајем"
 
-#: kbbmainwindow.cpp:451
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
@@ -335,7 +337,7 @@ msgstr[1] "Треба да поставите %1 лопте!\n"
 msgstr[2] "Треба да поставите %1 лопти!\n"
 msgstr[3] "Треба да поставите једну лопту!\n"
 
-#: kbbmainwindow.cpp:451
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
@@ -344,12 +346,12 @@ msgstr[1] "Поставили сте %1.\n"
 msgstr[2] "Поставили сте %1.\n"
 msgstr[3] "Поставили сте %1.\n"
 
-#: kbbmainwindow.cpp:451
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Желите ли заиста да одустанете од ове партије?"
 
-#: kbbmainwindow.cpp:461
+#: kbbmainwindow.cpp:441
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -361,17 +363,22 @@ msgstr ""
 "<html>Напомена: У игри на полигону,<br />решење је већ приказано.<br /"
 ">Забавите се!</html>"
 
-#: kbbmainwindow.cpp:500
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Ово ће бити крај текуће партије!"
 
-#: kbbscalablegraphicwidget.cpp:121
+#: kbbmainwindow.cpp:480
+#, kde-format
+msgid "Start new game"
+msgstr "Започни нову партију"
+
+#: kbbscalablegraphicwidget.cpp:100
 #, kde-format
 msgid "Score"
 msgstr "Резултат"
 
-#: kbbscalablegraphicwidget.cpp:122
+#: kbbscalablegraphicwidget.cpp:101
 #, kde-format
 msgid ""
 "<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
@@ -388,7 +395,7 @@ msgstr ""
 "тачки уласка.</li></ul></li></ul></p><p>Резултат ће бити <i>999</i> на крају "
 "партије ако направите неку грешку.</p></qt>"
 
-#: kbbscalablegraphicwidget.cpp:125
+#: kbbscalablegraphicwidget.cpp:104
 #, kde-format
 msgid ""
 "<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
@@ -402,49 +409,49 @@ msgstr ""
 "кутију.</li><li>Око црне кутије налазе се <i>ласери</i> који ће бити "
 "замењени <i>подацима интеракције</i> ако их користите.</li></ul></qt>"
 
-#: kbbtutorial.cpp:54
+#: kbbtutorial.cpp:36
 #, kde-format
 msgid "Tutorial"
 msgstr "Туторијал"
 
-#: kbbtutorial.cpp:71
+#: kbbtutorial.cpp:53
 #, kde-format
 msgid "Displays the progress of the tutorial."
 msgstr "Приказује напредак туторијала."
 
-#: kbbtutorial.cpp:93
+#: kbbtutorial.cpp:75
 #, kde-format
 msgid "Describes what you should do to reach the next tutorial step."
 msgstr "Описује шта треба да урадите да бисте прешли на следећи корак."
 
-#: kbbtutorial.cpp:102
+#: kbbtutorial.cpp:84
 #, kde-format
 msgctxt "Previous tutorial step"
 msgid "&Previous"
 msgstr "&Претходни"
 
-#: kbbtutorial.cpp:103
+#: kbbtutorial.cpp:85
 #, kde-format
 msgid "Go back to the previous tutorial step."
 msgstr "Идите на претходни корак туторијала."
 
-#: kbbtutorial.cpp:106
+#: kbbtutorial.cpp:88
 #, kde-format
 msgctxt "Next tutorial step"
 msgid "&Next"
 msgstr "&Следећи"
 
-#: kbbtutorial.cpp:107
+#: kbbtutorial.cpp:89
 #, kde-format
 msgid "Go to the next tutorial step."
 msgstr "Идите на следећи корак туторијала."
 
-#: kbbtutorial.cpp:169
+#: kbbtutorial.cpp:151
 #, kde-format
 msgid "Welcome!"
 msgstr "Добро дошли!"
 
-#: kbbtutorial.cpp:169
+#: kbbtutorial.cpp:151
 #, kde-format
 msgid ""
 "This tutorial will teach you how to play KBlackBox, using a simple example."
@@ -457,17 +464,17 @@ msgstr ""
 "6 редова, која садржи 3 <i>скривене</i> лопте, а окружују је 24 ласерске "
 "сонде.</p><p>Циљ је <i>пронаћи положаје лопти.</i></p>"
 
-#: kbbtutorial.cpp:169
+#: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
 msgstr "<p>Кликните на <i>Следећи</i>.</p>"
 
-#: kbbtutorial.cpp:174
+#: kbbtutorial.cpp:156
 #, kde-format
 msgid "Black box principles"
 msgstr "Принципи црне кутије"
 
-#: kbbtutorial.cpp:174
+#: kbbtutorial.cpp:156
 #, kde-format
 msgid ""
 "The balls are not visible, but we can shoot laser beams into the box at "
@@ -480,18 +487,18 @@ msgstr ""
 "излази, где излази.</p><p>Ласерски зраци међудејствују са лоптама на "
 "различите начине.</p>"
 
-#: kbbtutorial.cpp:174
+#: kbbtutorial.cpp:156
 #, kde-format
 msgid "Please click on the marked laser to shoot a beam into the black box."
 msgstr ""
 "<p>Кликните на означени ласер да бисте испалили зрак у црну кутију.</p>"
 
-#: kbbtutorial.cpp:179
+#: kbbtutorial.cpp:161
 #, kde-format
 msgid "No interaction"
 msgstr "Без међудејства"
 
-#: kbbtutorial.cpp:179
+#: kbbtutorial.cpp:161
 #, kde-format
 msgid ""
 "If a laser beam does not interact with any ball in the black box, it comes "
@@ -506,17 +513,17 @@ msgstr ""
 "партија напредује, сваки пар улазно-излазних тачака означава се различитим "
 "бројем.</p>"
 
-#: kbbtutorial.cpp:179
+#: kbbtutorial.cpp:161
 #, kde-format
 msgid "Now shoot the marked laser to discover the first kind of interaction."
 msgstr "<p>Сада испалите означени ласер да откријете први начин дејства.</p>"
 
-#: kbbtutorial.cpp:187
+#: kbbtutorial.cpp:169
 #, kde-format
 msgid "Hit"
 msgstr "Погодак"
 
-#: kbbtutorial.cpp:187
+#: kbbtutorial.cpp:169
 #, kde-format
 msgid ""
 "A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
@@ -529,17 +536,17 @@ msgstr ""
 "приказаном положају, али тачан положај поготка није известан, јер има више "
 "могућности.</p>"
 
-#: kbbtutorial.cpp:187
+#: kbbtutorial.cpp:169
 #, kde-format
 msgid "Shoot the marked laser to discover the second kind of interaction."
 msgstr "<p>Испалите означени ласер да откријете другу врсту деловања.</p>"
 
-#: kbbtutorial.cpp:193
+#: kbbtutorial.cpp:175
 #, kde-format
 msgid "Simple deflection"
 msgstr "Једноставно скретање"
 
-#: kbbtutorial.cpp:193
+#: kbbtutorial.cpp:175
 #, kde-format
 msgid ""
 "The interaction of a beam that does not actually hit a ball, but aims to one "
@@ -553,7 +560,7 @@ msgstr ""
 "степени</i>.</p><p>Пример: Приказана лопта ће скренути зрак „2“ нагоре, како "
 "је приказано, али ово <i>није</i> једина могућност.</p>"
 
-#: kbbtutorial.cpp:193
+#: kbbtutorial.cpp:175
 #, kde-format
 msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
@@ -562,12 +569,12 @@ msgstr ""
 "<p>Кликните на <i>Следећи</i> да бисте видели други распоред лоптица које "
 "скрећу ласерски зрак како је приказано.</p>"
 
-#: kbbtutorial.cpp:200
+#: kbbtutorial.cpp:182
 #, kde-format
 msgid "Several deflections"
 msgstr "Више скретања"
 
-#: kbbtutorial.cpp:200
+#: kbbtutorial.cpp:182
 #, kde-format
 msgid ""
 "As you can see, interactions in the black box can be quite complicated!<br /"
@@ -578,17 +585,17 @@ msgstr ""
 "сложена!</p><p>Ласерски зрак који улази и излази на положајима „2“ може бити "
 "скренут и са овом поставом три лопте.</p>"
 
-#: kbbtutorial.cpp:200
+#: kbbtutorial.cpp:182
 #, kde-format
 msgid "Shoot the marked laser to discover another kind of result."
 msgstr "<p>Испалите означени ласер да бисте открили другачији резултат.</p>"
 
-#: kbbtutorial.cpp:208
+#: kbbtutorial.cpp:190
 #, kde-format
 msgid "Reflection"
 msgstr "Одбијање"
 
-#: kbbtutorial.cpp:208
+#: kbbtutorial.cpp:190
 #, kde-format
 msgid ""
 "If the laser beam leaves the black box <b>at the entry point</b>, it has "
@@ -600,19 +607,19 @@ msgstr ""
 "одбијен уназад у њој.</p><p>Пример: Наместили смо две лопте у поставу која "
 "би довела до таквог одбијања.</p>"
 
-#: kbbtutorial.cpp:208
+#: kbbtutorial.cpp:190
 #, kde-format
 msgid "Shoot the marked laser to see another backward reflection case."
 msgstr ""
 "<p>Испалите означени ласер да бисте видели још један случај повратног "
 "одбијања.</p>"
 
-#: kbbtutorial.cpp:215
+#: kbbtutorial.cpp:197
 #, kde-format
 msgid "Special reflection"
 msgstr "Посебно одбијање"
 
-#: kbbtutorial.cpp:215
+#: kbbtutorial.cpp:197
 #, kde-format
 msgid ""
 "If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
@@ -624,17 +631,17 @@ msgstr ""
 "ће до повратног одбијања зрака усмереног у црну кутију тачно поред ње.</"
 "p><p>Пример: Приказана постава може довести до повратног одбијања.</p>"
 
-#: kbbtutorial.cpp:215
+#: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
 msgstr "<p>Скоро смо готови. Кликните на <i>Следећи</i>.</p>"
 
-#: kbbtutorial.cpp:222
+#: kbbtutorial.cpp:204
 #, kde-format
 msgid "Marker for \"free position\""
 msgstr "Обележивач „слободног положаја“"
 
-#: kbbtutorial.cpp:222
+#: kbbtutorial.cpp:204
 #, kde-format
 msgid ""
 "We are sure there are no balls in the first 2 columns. If there were any, "
@@ -648,17 +655,17 @@ msgstr ""
 "обележити „слободни положај“ десним кликом миша (погледајте и пречице са "
 "тастатуре).</p><p>Пример: Има 12 обележивача у прве две колоне.</p>"
 
-#: kbbtutorial.cpp:222 kbbtutorial.cpp:231
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
 msgstr "<p>Кликните на <i>Следећи</i>.</p>"
 
-#: kbbtutorial.cpp:231
+#: kbbtutorial.cpp:213
 #, kde-format
 msgid "Marking balls"
 msgstr "Обележавање лопти"
 
-#: kbbtutorial.cpp:231
+#: kbbtutorial.cpp:213
 #, kde-format
 msgid ""
 "When you have worked out where a ball is, please use the left mouse button "
@@ -673,12 +680,12 @@ msgstr ""
 "„несигурно“ (погледајте и пречице са тастатуре.)</p><p>Пример: Обележили смо "
 "један положај као сигуран, а други као несигуран.</p>"
 
-#: kbbtutorial.cpp:238
+#: kbbtutorial.cpp:220
 #, kde-format
 msgid "Let us play!"
 msgstr "Хајде да играмо!"
 
-#: kbbtutorial.cpp:238
+#: kbbtutorial.cpp:220
 #, kde-format
 msgid ""
 "<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
@@ -693,7 +700,7 @@ msgstr ""
 "одредити положаје три лопте. Наравно, можете употребити још зрака ако вам је "
 "потребно.</p>"
 
-#: kbbtutorial.cpp:238
+#: kbbtutorial.cpp:220
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
 msgstr ""
@@ -726,17 +733,17 @@ msgstr "Број колона за посебан ниво тежине"
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Број редова за посебан ниво тежине"
 
-#: main.cpp:58
+#: main.cpp:27
 #, kde-format
 msgid "KBlackBox"
 msgstr "К‑црна‑кутија"
 
-#: main.cpp:58
+#: main.cpp:29
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr "Пронађите лопте скривене у црној кутији испаљивањем ласерских зрака!"
 
-#: main.cpp:58
+#: main.cpp:31
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -745,32 +752,32 @@ msgstr ""
 "© 2007, Никола Рофе\n"
 "© 1999–2000, Роберт Цимерман"
 
-#: main.cpp:59
+#: main.cpp:33
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Никола Рофе"
 
-#: main.cpp:59
+#: main.cpp:33
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Програмер верзије 0.4."
 
-#: main.cpp:60
+#: main.cpp:34
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Роберт Цимерман"
 
-#: main.cpp:60
+#: main.cpp:34
 #, kde-format
 msgid "Original developer"
 msgstr "Првобитни програмер"
 
-#: main.cpp:61
+#: main.cpp:35
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Јохан Оливје Лапер"
 
-#: main.cpp:61
+#: main.cpp:35
 #, kde-format
 msgid "Artist"
 msgstr "Цртач"

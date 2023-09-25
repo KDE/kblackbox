@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2012-12-11 20:07+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -56,23 +56,23 @@ msgid_plural " rows"
 msgstr[0] " rad"
 msgstr[1] " rader"
 
-#: kbbmainwindow.cpp:71
+#: kbbmainwindow.cpp:66
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr "Kan settes opp"
 
-#: kbbmainwindow.cpp:81
+#: kbbmainwindow.cpp:76
 #, kde-format
 msgid "Start Tutorial"
 msgstr "Start veileder"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:78
 #, kde-format
 msgid "Start tutorial"
 msgstr "Start veileder"
 
-#: kbbmainwindow.cpp:84
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -81,17 +81,17 @@ msgstr ""
 "<qt><b>Veilederen</b> er en rask, brukervennlig og interaktiv måte å lære "
 "spillets regler på. Start den hvis du ikke kjenner dem!</qt>"
 
-#: kbbmainwindow.cpp:88
+#: kbbmainwindow.cpp:83
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "Nytt sandkassespill"
 
-#: kbbmainwindow.cpp:89
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "Start et nytt sandkassespill"
 
-#: kbbmainwindow.cpp:90
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -103,14 +103,14 @@ msgstr ""
 "er nyttig for å lære prinsippene bak spillet.</p><p>Men etter en stund er "
 "det ikke gøy lenger, og du bør prøve de vanlige spillereglene.</p></qt>>"
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:91
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Ferdig!!"
 
-#: kbbmainwindow.cpp:97
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -125,12 +125,12 @@ msgstr ""
 "li><li><b>Når du tror du er ferdig</b>, klikker du her.</li></ul><p>Merk at "
 "du bare kan klikke her når du har plassert ut alle kulene.</p></qt>>"
 
-#: kbbmainwindow.cpp:101
+#: kbbmainwindow.cpp:96
 #, kde-format
 msgid "Give up the game"
 msgstr "Gi opp spillet"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -141,42 +141,42 @@ msgstr ""
 "vist.</p><p>Hvis du har plassert ut alle kulene, og ikke vil gi opp, velg "
 "<b>Ferdig!</b>.</p></qt>>"
 
-#: kbbmainwindow.cpp:107
+#: kbbmainwindow.cpp:102
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr ""
 
-#: kbbmainwindow.cpp:147
+#: kbbmainwindow.cpp:142
 #, kde-format
 msgid "Move Down"
 msgstr "Flytt ned"
 
-#: kbbmainwindow.cpp:153
+#: kbbmainwindow.cpp:148
 #, kde-format
 msgid "Move Up"
 msgstr "Flytt opp"
 
-#: kbbmainwindow.cpp:159
+#: kbbmainwindow.cpp:154
 #, kde-format
 msgid "Move Left"
 msgstr "Flytt til venstre"
 
-#: kbbmainwindow.cpp:165
+#: kbbmainwindow.cpp:160
 #, kde-format
 msgid "Move Right"
 msgstr "Flytt til høyre"
 
-#: kbbmainwindow.cpp:171
+#: kbbmainwindow.cpp:166
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "Bytt kule eller skyt laser"
 
-#: kbbmainwindow.cpp:177
+#: kbbmainwindow.cpp:172
 #, kde-format
 msgid "Switch Marker"
 msgstr "Bytt markør"
 
-#: kbbmainwindow.cpp:251
+#: kbbmainwindow.cpp:246
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -188,36 +188,36 @@ msgstr ""
 "Merk: Du kan endre<br />parametrene til<br />selvvalgte spill under<br /"
 "><b>Innstillinger</b>.."
 
-#: kbbmainwindow.cpp:284
+#: kbbmainwindow.cpp:279
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
 msgstr[0] "Først må du fjerne én kule fra den svarte boksen."
 msgstr[1] "Først må du fjerne %1 kuler fra den svarte boksen."
 
-#: kbbmainwindow.cpp:286
+#: kbbmainwindow.cpp:281
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr "Trykk her for å sjekke om du har klart å gjette hvor kulene er."
 
-#: kbbmainwindow.cpp:288
+#: kbbmainwindow.cpp:283
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
 msgstr[0] "Du må legge én kule til i den svarte boksen."
 msgstr[1] "Du må legge %1 kuler til i den svarte boksen."
 
-#: kbbmainwindow.cpp:292
+#: kbbmainwindow.cpp:287
 #, kde-format
 msgid "Game over."
 msgstr "Spillet er slutt."
 
-#: kbbmainwindow.cpp:294
+#: kbbmainwindow.cpp:289
 #, kde-format
 msgid "Game paused."
 msgstr "Spillet er pauset."
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -230,12 +230,12 @@ msgstr ""
 "du har kommet til siste steg.\n"
 "Fullfør opplæring først."
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid "Check positions"
 msgstr "Kontroller plasseringer"
 
-#: kbbmainwindow.cpp:340
+#: kbbmainwindow.cpp:335
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -243,7 +243,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Du fikk %1 poeng.<br />Veldig bra jobbet!"
 
-#: kbbmainwindow.cpp:342
+#: kbbmainwindow.cpp:337
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -251,7 +251,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Men det teller ikke,<br />siden du spilte i <b>sandkassen!</b>"
 
-#: kbbmainwindow.cpp:344
+#: kbbmainwindow.cpp:339
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -259,40 +259,40 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "Du fikk %1 poeng.<br />Her trengs det nok mer øvelse."
 
-#: kbbmainwindow.cpp:373
+#: kbbmainwindow.cpp:368
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "Spillet er pauset.<br /> Trykk «%1» for å fortsette."
 
-#: kbbmainwindow.cpp:399
+#: kbbmainwindow.cpp:390
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
 "new parameters?"
 msgstr "Vil du avbryte spilllet og starte et nytt med de nye parametrene?"
 
-#: kbbmainwindow.cpp:400
+#: kbbmainwindow.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr ""
 
-#: kbbmainwindow.cpp:420
+#: kbbmainwindow.cpp:407
 #, kde-format
 msgid "Custom Game"
 msgstr "Selvvalgt spill"
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Du kan ikke gi opp under opplæringen."
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Solve"
 msgstr "Løs"
 
-#: kbbmainwindow.cpp:442
+#: kbbmainwindow.cpp:429
 #, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
@@ -301,31 +301,31 @@ msgid ""
 "So, do you really want to give up this game?"
 msgstr ""
 
-#: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
 #, kde-format
 msgid "Give up"
 msgstr "Gi opp"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] "Du må plassere ut %1 kule!\n"
 msgstr[1] "Du bør plassere ut %1 kuler!\n"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] "Du har plassert %1.\n"
 msgstr[1] "Du har plassert %1.\n"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Er du sikker på at du vil gi opp dette splllet?"
 
-#: kbbmainwindow.cpp:454
+#: kbbmainwindow.cpp:441
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -335,12 +335,12 @@ msgid ""
 "fun!"
 msgstr "Merk: I sandkassen er<br />løsningen alt vist.<br />Kos deg!"
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Dette blir slutten på denne omgangen!"
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "Start new game"
 msgstr "Start nytt spill"
@@ -708,17 +708,17 @@ msgstr "Antall kolonner på brettet for selvvalgt vanskelighetsgrad"
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Antall rader på brettet for selvvalgt vanskelighetsgrad"
 
-#: main.cpp:44
+#: main.cpp:27
 #, kde-format
 msgid "KBlackBox"
 msgstr "KBlackBox"
 
-#: main.cpp:46
+#: main.cpp:29
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr "Finn kulene som er gjemt i den svarte boksen ved å skyte laserstråler."
 
-#: main.cpp:48
+#: main.cpp:31
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -727,32 +727,32 @@ msgstr ""
 "© 2007 Nicolas Roffet\n"
 "© 1999–2000 Robert Cimrman"
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Utvikler av versjon 0.4."
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Original developer"
 msgstr "Opprinnelig utvikler"
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Artist"
 msgstr "Kunstner"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: Fri Feb 19 1999 20:19:10+0200\n"
 "Last-Translator: Romuald Texier <texierr@worldnet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -50,43 +50,43 @@ msgid_plural " rows"
 msgstr[0] ""
 msgstr[1] ""
 
-#: kbbmainwindow.cpp:71
+#: kbbmainwindow.cpp:66
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr ""
 
-#: kbbmainwindow.cpp:81
+#: kbbmainwindow.cpp:76
 #, fuzzy, kde-format
 #| msgid "&Tutorial"
 msgid "Start Tutorial"
 msgstr "&Deskiñ"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:78
 #, fuzzy, kde-format
 #| msgid "&Tutorial"
 msgid "Start tutorial"
 msgstr "&Deskiñ"
 
-#: kbbmainwindow.cpp:84
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
 "learn the rules of the game. Start it if you do not know them!</qt>"
 msgstr ""
 
-#: kbbmainwindow.cpp:88
+#: kbbmainwindow.cpp:83
 #, fuzzy, kde-format
 #| msgid "KDE Blackbox Game"
 msgid "New Sandbox Game"
 msgstr "C'hoari BlackBox KDE"
 
-#: kbbmainwindow.cpp:89
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr ""
 
-#: kbbmainwindow.cpp:90
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -95,7 +95,7 @@ msgid ""
 "start a real game!</p></qt>"
 msgstr ""
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:91
 #, fuzzy, kde-format
 #| msgid "&Done"
 msgctxt ""
@@ -103,7 +103,7 @@ msgctxt ""
 msgid "Done!"
 msgstr "&Graet"
 
-#: kbbmainwindow.cpp:97
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -114,13 +114,13 @@ msgid ""
 "the correct number of balls.</p></qt>"
 msgstr ""
 
-#: kbbmainwindow.cpp:101
+#: kbbmainwindow.cpp:96
 #, fuzzy, kde-format
 #| msgid "Give Up"
 msgid "Give up the game"
 msgstr "Dilezel"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -128,42 +128,42 @@ msgid ""
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
 
-#: kbbmainwindow.cpp:107
+#: kbbmainwindow.cpp:102
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr ""
 
-#: kbbmainwindow.cpp:147
+#: kbbmainwindow.cpp:142
 #, kde-format
 msgid "Move Down"
 msgstr "Diskennit"
 
-#: kbbmainwindow.cpp:153
+#: kbbmainwindow.cpp:148
 #, kde-format
 msgid "Move Up"
 msgstr "Pignit"
 
-#: kbbmainwindow.cpp:159
+#: kbbmainwindow.cpp:154
 #, kde-format
 msgid "Move Left"
 msgstr "Fiñval d'a-gleiz"
 
-#: kbbmainwindow.cpp:165
+#: kbbmainwindow.cpp:160
 #, kde-format
 msgid "Move Right"
 msgstr "Fiñval d'a-zehou"
 
-#: kbbmainwindow.cpp:171
+#: kbbmainwindow.cpp:166
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr ""
 
-#: kbbmainwindow.cpp:177
+#: kbbmainwindow.cpp:172
 #, kde-format
 msgid "Switch Marker"
 msgstr ""
 
-#: kbbmainwindow.cpp:251
+#: kbbmainwindow.cpp:246
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -173,36 +173,36 @@ msgid ""
 ">Settings dialog."
 msgstr ""
 
-#: kbbmainwindow.cpp:284
+#: kbbmainwindow.cpp:279
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
 msgstr[0] ""
 msgstr[1] ""
 
-#: kbbmainwindow.cpp:286
+#: kbbmainwindow.cpp:281
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr ""
 
-#: kbbmainwindow.cpp:288
+#: kbbmainwindow.cpp:283
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
 msgstr[0] ""
 msgstr[1] ""
 
-#: kbbmainwindow.cpp:292
+#: kbbmainwindow.cpp:287
 #, kde-format
 msgid "Game over."
 msgstr ""
 
-#: kbbmainwindow.cpp:294
+#: kbbmainwindow.cpp:289
 #, kde-format
 msgid "Game paused."
 msgstr ""
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -211,12 +211,12 @@ msgid ""
 "Please first finish the tutorial."
 msgstr ""
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid "Check positions"
 msgstr ""
 
-#: kbbmainwindow.cpp:340
+#: kbbmainwindow.cpp:335
 #, fuzzy, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -224,7 +224,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Ho merk en diwezh : %d."
 
-#: kbbmainwindow.cpp:342
+#: kbbmainwindow.cpp:337
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -232,7 +232,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr ""
 
-#: kbbmainwindow.cpp:344
+#: kbbmainwindow.cpp:339
 #, fuzzy, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -240,43 +240,43 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "Ho merk en diwezh : %d."
 
-#: kbbmainwindow.cpp:373
+#: kbbmainwindow.cpp:368
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr ""
 
-#: kbbmainwindow.cpp:399
+#: kbbmainwindow.cpp:390
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
 "new parameters?"
 msgstr ""
 
-#: kbbmainwindow.cpp:400
+#: kbbmainwindow.cpp:391
 #, fuzzy, kde-format
 #| msgid "Start new game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Loc'hañ ur c'hoari nevez"
 
-#: kbbmainwindow.cpp:420
+#: kbbmainwindow.cpp:407
 #, fuzzy, kde-format
 #| msgid "Custom game"
 msgid "Custom Game"
 msgstr "C'hoari diouzoc'h"
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, fuzzy, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Ha fellout a ra deoc'h dilezel ?"
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, fuzzy, kde-format
 #| msgid "Score"
 msgid "Solve"
 msgstr "Merk"
 
-#: kbbmainwindow.cpp:442
+#: kbbmainwindow.cpp:429
 #, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
@@ -285,32 +285,32 @@ msgid ""
 "So, do you really want to give up this game?"
 msgstr ""
 
-#: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
 #, fuzzy, kde-format
 #| msgid "Give Up"
 msgid "Give up"
 msgstr "Dilezel"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] ""
 msgstr[1] ""
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] ""
 msgstr[1] ""
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Ha fellout a ra deoc'h dilezel ?"
 
-#: kbbmainwindow.cpp:454
+#: kbbmainwindow.cpp:441
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -320,12 +320,12 @@ msgid ""
 "fun!"
 msgstr ""
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Diwezh ar c'hoari-mañ e vo !"
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "Start new game"
 msgstr "Loc'hañ ur c'hoari nevez"
@@ -632,49 +632,49 @@ msgstr ""
 msgid "Number of rows of the board for custom difficuty level"
 msgstr ""
 
-#: main.cpp:44
+#: main.cpp:27
 #, kde-format
 msgid "KBlackBox"
 msgstr "KBlackBox"
 
-#: main.cpp:46
+#: main.cpp:29
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:31
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 msgstr ""
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr ""
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Robert Cimrman"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Original developer"
 msgstr ""
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr ""
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Artist"
 msgstr "Arzour"

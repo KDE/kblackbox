@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2012-07-30 08:21+0600\n"
 "Last-Translator: Sairan Kikkarin\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -48,23 +48,23 @@ msgid " row"
 msgid_plural " rows"
 msgstr[0] " жол"
 
-#: kbbmainwindow.cpp:71
+#: kbbmainwindow.cpp:66
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr "Баптамалы"
 
-#: kbbmainwindow.cpp:81
+#: kbbmainwindow.cpp:76
 #, kde-format
 msgid "Start Tutorial"
 msgstr "Үйретуді бастау"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:78
 #, kde-format
 msgid "Start tutorial"
 msgstr "Үйренуді бастау"
 
-#: kbbmainwindow.cpp:84
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -73,17 +73,17 @@ msgstr ""
 "<qt><b>Үйрену</b> сабағы - ойынның ережелерін білудің ең оңай және тез жолы. "
 "Оларды білмесеңіз үйренуді бастаңыз!</qt>"
 
-#: kbbmainwindow.cpp:88
+#: kbbmainwindow.cpp:83
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "Жаңа үйрету ойын"
 
-#: kbbmainwindow.cpp:89
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "Жаңа үйрету ойынын бастау"
 
-#: kbbmainwindow.cpp:90
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -95,14 +95,14 @@ msgstr ""
 "қағидаларын түсінуге көмектеседі.</p><p>Кейін, оларды түсінген соң, бұндай "
 "ойын қызық болмайды. Сонда шын ойын басталады!</p></qt>"
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:91
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Дайын!"
 
-#: kbbmainwindow.cpp:97
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -118,12 +118,12 @@ msgstr ""
 "осында түртіңіз.</li></ul><p>Доптардың дұрыс санын тапқан соң ғана түрте "
 "алатынды ескеріңіз.</p></qt>"
 
-#: kbbmainwindow.cpp:101
+#: kbbmainwindow.cpp:96
 #, kde-format
 msgid "Give up the game"
 msgstr "Болды, шешіп бер"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -134,42 +134,42 @@ msgstr ""
 "басыңыз. Ойынның шешімі көрсетіледі.</p><p>Егер бүкілін таптым деп "
 "берілмейтін болсаңыз \"Дайын!\" дегенді басыңыз.</p></qt>"
 
-#: kbbmainwindow.cpp:107
+#: kbbmainwindow.cpp:102
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr ""
 
-#: kbbmainwindow.cpp:147
+#: kbbmainwindow.cpp:142
 #, kde-format
 msgid "Move Down"
 msgstr "Төмендету"
 
-#: kbbmainwindow.cpp:153
+#: kbbmainwindow.cpp:148
 #, kde-format
 msgid "Move Up"
 msgstr "Жоғарлату"
 
-#: kbbmainwindow.cpp:159
+#: kbbmainwindow.cpp:154
 #, kde-format
 msgid "Move Left"
 msgstr "Сол жаққа"
 
-#: kbbmainwindow.cpp:165
+#: kbbmainwindow.cpp:160
 #, kde-format
 msgid "Move Right"
 msgstr "Оң жаққа"
 
-#: kbbmainwindow.cpp:171
+#: kbbmainwindow.cpp:166
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "Доп не лазерін ауыстыру"
 
-#: kbbmainwindow.cpp:177
+#: kbbmainwindow.cpp:172
 #, kde-format
 msgid "Switch Marker"
 msgstr "Маркерді ауыстыру"
 
-#: kbbmainwindow.cpp:251
+#: kbbmainwindow.cpp:246
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -181,34 +181,34 @@ msgstr ""
 "Ескерту: Өзіндік ойының<br />параметрлерін<br />өзгерту үшін<br />Баптау "
 "диалогын қолданыңыз."
 
-#: kbbmainwindow.cpp:284
+#: kbbmainwindow.cpp:279
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
 msgstr[0] "Алдымен қара жәшіктен %1 допты кетіру керек."
 
-#: kbbmainwindow.cpp:286
+#: kbbmainwindow.cpp:281
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr "Тапқаныңыз дұрыс па екенін тексеру үшін осында түртіңіз!"
 
-#: kbbmainwindow.cpp:288
+#: kbbmainwindow.cpp:283
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
 msgstr[0] "Қара жәшікте тағы %1 допты табу керек."
 
-#: kbbmainwindow.cpp:292
+#: kbbmainwindow.cpp:287
 #, kde-format
 msgid "Game over."
 msgstr "Ойын бітті."
 
-#: kbbmainwindow.cpp:294
+#: kbbmainwindow.cpp:289
 #, kde-format
 msgid "Game paused."
 msgstr "Ойын аялдап тұр."
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -220,12 +220,12 @@ msgstr ""
 "Бірақ үйреніп жатқанда, соңғы қадамына жетпей ойынды аяқтауға болмайды.\n"
 "Алдымен үйренуді бітіріңіз."
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid "Check positions"
 msgstr "Нәтижесін тексеру"
 
-#: kbbmainwindow.cpp:340
+#: kbbmainwindow.cpp:335
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -233,7 +233,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Ұпайыңыз: %1.<br />Жақсы!"
 
-#: kbbmainwindow.cpp:342
+#: kbbmainwindow.cpp:337
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -241,7 +241,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Бірақ есептелмейді<br />өйткені <b>бұл үйрету ғой!</b>"
 
-#: kbbmainwindow.cpp:344
+#: kbbmainwindow.cpp:339
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -249,41 +249,41 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "Ұпайыңыз: %1.<br />Әлі тәжірибе жинау керек."
 
-#: kbbmainwindow.cpp:373
+#: kbbmainwindow.cpp:368
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "Ойын аялдап тұр.<br />Жалғастыруға \"%1\" деңіз."
 
-#: kbbmainwindow.cpp:399
+#: kbbmainwindow.cpp:390
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
 "new parameters?"
 msgstr "Осы ойыңызды доғарып жаңасын басқа параметрлерімен бастамақсыз ба?"
 
-#: kbbmainwindow.cpp:400
+#: kbbmainwindow.cpp:391
 #, fuzzy, kde-format
 #| msgid "Start new game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Жаңа ойынды бастау"
 
-#: kbbmainwindow.cpp:420
+#: kbbmainwindow.cpp:407
 #, kde-format
 msgid "Custom Game"
 msgstr "Өзгеше ойын"
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Ғафу етіңіз, үйренгенде жеңілдім дей алмайсыз."
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Solve"
 msgstr "Шешімі"
 
-#: kbbmainwindow.cpp:442
+#: kbbmainwindow.cpp:429
 #, fuzzy, kde-format
 #| msgid ""
 #| "You placed all the balls. Great!\n"
@@ -300,29 +300,29 @@ msgstr ""
 "Енді ойынды аяқтап нәтижелерін тексеру үшін \"Дайын!\" дегенді басыңыз.\n"
 "Сонымен, шын болды ма?"
 
-#: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
 #, kde-format
 msgid "Give up"
 msgstr "Жә, болды"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] "%1 доп орнын болжау керек!\n"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] "%1 болжам жасалды.\n"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Шын болды доғарам дейсіз бе?"
 
-#: kbbmainwindow.cpp:454
+#: kbbmainwindow.cpp:441
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -333,12 +333,12 @@ msgid ""
 msgstr ""
 "Ескерту: Үйрету режімінде,<br />шешімі көрсетілген.<br />Қайылы болсын!"
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Бұл ойнап жатқан ойынды аяқтайды!"
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "Start new game"
 msgstr "Жаңа ойынды бастау"
@@ -700,17 +700,17 @@ msgstr "Өзіндік ойын деңгейінің өріс бағандар �
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Өзіндік ойын деңгейінің өріс жолдар саны"
 
-#: main.cpp:44
+#: main.cpp:27
 #, kde-format
 msgid "KBlackBox"
 msgstr "KBlackBox"
 
-#: main.cpp:46
+#: main.cpp:29
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr "Лазермен атқылап қара жәшікте тығылған доптарды табу."
 
-#: main.cpp:48
+#: main.cpp:31
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -719,32 +719,32 @@ msgstr ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "0.4-нүсқасын құрастырушысы."
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Original developer"
 msgstr "Бастапқы құрастырушысы"
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Artist"
 msgstr "Көркемдеушісі"

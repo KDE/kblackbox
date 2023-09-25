@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-25 01:39+0000\n"
 "PO-Revision-Date: 2023-01-05 11:02+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -56,23 +56,23 @@ msgid_plural " rows"
 msgstr[0] " γραμμή"
 msgstr[1] " γραμμές"
 
-#: kbbmainwindow.cpp:71
+#: kbbmainwindow.cpp:66
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr "Διαμορφώσιμο"
 
-#: kbbmainwindow.cpp:81
+#: kbbmainwindow.cpp:76
 #, kde-format
 msgid "Start Tutorial"
 msgstr "Έναρξη εκμάθησης"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:78
 #, kde-format
 msgid "Start tutorial"
 msgstr "Έναρξη εκμάθησης"
 
-#: kbbmainwindow.cpp:84
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -82,17 +82,17 @@ msgstr ""
 "να μάθετε τους κανόνες του παιχνιδιού. Ξεκινήστε την αν δεν γνωρίζετε τους "
 "κανόνες!</qt>"
 
-#: kbbmainwindow.cpp:88
+#: kbbmainwindow.cpp:83
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "Νέο παιχνίδι προπόνησης"
 
-#: kbbmainwindow.cpp:89
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "Έναρξη ενός νέου παιχνιδιού προπόνησης"
 
-#: kbbmainwindow.cpp:90
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -105,14 +105,14 @@ msgstr ""
 "μετά από μικρό διάστημα, δεν είναι ιδιαίτερα διασκεδαστικό και θα πρέπει να "
 "δοκιμάσετε να ξεκινήσετε ένα πραγματικό παιχνίδι!</p></qt>"
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:91
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Έτοιμο!"
 
-#: kbbmainwindow.cpp:97
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -129,12 +129,12 @@ msgstr ""
 "να κάνετε κλικ εδώ.</li></ul><p>Σημειώστε ότι μπορείτε να κάνετε κλικ εδώ "
 "μόνο αν έχετε τοποθετήσει το σωστό αριθμό μπαλών.</p></qt>"
 
-#: kbbmainwindow.cpp:101
+#: kbbmainwindow.cpp:96
 #, kde-format
 msgid "Give up the game"
 msgstr "Εγκατάλειψη του παιχνιδιού"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -145,42 +145,42 @@ msgstr ""
 "παιχνίδι. Θα γίνει εμφάνιση της λύσης.</p><p>Αν τοποθετήσατε όλες τις μπάλες "
 "και δεν επιθυμείτε να τα παρατήσετε, επιλέξτε το \"Έτοιμο!\".</p></qt>"
 
-#: kbbmainwindow.cpp:107
+#: kbbmainwindow.cpp:102
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr "Ενεργοποίηση τονισμού κάτω από το ποντίκι"
 
-#: kbbmainwindow.cpp:147
+#: kbbmainwindow.cpp:142
 #, kde-format
 msgid "Move Down"
 msgstr "Μετακίνηση κάτω"
 
-#: kbbmainwindow.cpp:153
+#: kbbmainwindow.cpp:148
 #, kde-format
 msgid "Move Up"
 msgstr "Μετακίνηση πάνω"
 
-#: kbbmainwindow.cpp:159
+#: kbbmainwindow.cpp:154
 #, kde-format
 msgid "Move Left"
 msgstr "Μετακίνηση αριστερά"
 
-#: kbbmainwindow.cpp:165
+#: kbbmainwindow.cpp:160
 #, kde-format
 msgid "Move Right"
 msgstr "Μετακίνηση δεξιά"
 
-#: kbbmainwindow.cpp:171
+#: kbbmainwindow.cpp:166
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "Εναλλαγή μπάλας ή ρίψη λέιζερ"
 
-#: kbbmainwindow.cpp:177
+#: kbbmainwindow.cpp:172
 #, kde-format
 msgid "Switch Marker"
 msgstr "Εναλλαγή σημαδιού"
 
-#: kbbmainwindow.cpp:251
+#: kbbmainwindow.cpp:246
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -192,38 +192,38 @@ msgstr ""
 "Σημείωση: Μπορείτε να τροποποιήσετε <br />τις παραμέτρους των <br /"
 ">προσαρμοσμένων παιχνιδιών στο <br />διάλογο ρύθμισης."
 
-#: kbbmainwindow.cpp:284
+#: kbbmainwindow.cpp:279
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
 msgstr[0] "Πρώτα, πρέπει να αφαιρέσετε 1 μπάλα από το μαύρο κουτί."
 msgstr[1] "Πρώτα, πρέπει να αφαιρέσετε %1 μπάλες από το μαύρο κουτί."
 
-#: kbbmainwindow.cpp:286
+#: kbbmainwindow.cpp:281
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr ""
 "Για να ελέγξετε αν μαντέψατε με επιτυχία τις θέσεις των μπαλών, κάντε κλικ "
 "εδώ!"
 
-#: kbbmainwindow.cpp:288
+#: kbbmainwindow.cpp:283
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
 msgstr[0] "Πρέπει να τοποθετήσετε 1 μπάλα ακόμη στο μαύρο κουτί."
 msgstr[1] "Πρέπει να τοποθετήσετε %1 μπάλες ακόμη στο μαύρο κουτί."
 
-#: kbbmainwindow.cpp:292
+#: kbbmainwindow.cpp:287
 #, kde-format
 msgid "Game over."
 msgstr "Τέλος παιχνιδιού."
 
-#: kbbmainwindow.cpp:294
+#: kbbmainwindow.cpp:289
 #, kde-format
 msgid "Game paused."
 msgstr "Παιχνίδι σε παύση."
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -236,12 +236,12 @@ msgstr ""
 "παιχνιδιού κατά την εκμάθηση πριν φτάσετε στο τελευταίο βήμα.\n"
 "Παρακαλώ τελειώστε πρώτα την εκμάθηση."
 
-#: kbbmainwindow.cpp:333
+#: kbbmainwindow.cpp:328
 #, kde-format
 msgid "Check positions"
 msgstr "Έλεγχος θέσεων"
 
-#: kbbmainwindow.cpp:340
+#: kbbmainwindow.cpp:335
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -249,7 +249,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Η τελική σας βαθμολογία είναι: %1.<br />Τα πήγατε πολύ καλά!"
 
-#: kbbmainwindow.cpp:342
+#: kbbmainwindow.cpp:337
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -257,7 +257,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Αλλά αυτή δεν μετρά<br />επειδή<b>είναι στην προπόνηση!</b>"
 
-#: kbbmainwindow.cpp:344
+#: kbbmainwindow.cpp:339
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -266,12 +266,12 @@ msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr ""
 "Η τελική σας βαθμολογία είναι: %1.<br />Λογικά χρειάζεστε επιπλέον εξάσκηση."
 
-#: kbbmainwindow.cpp:373
+#: kbbmainwindow.cpp:368
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "Παιχνίδι σε παύση.<br />Πιέστε \"%1\" για συνέχιση."
 
-#: kbbmainwindow.cpp:399
+#: kbbmainwindow.cpp:390
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
@@ -280,28 +280,28 @@ msgstr ""
 "Επιθυμείτε την ακύρωση του τρέχοντος προσαρμοσμένου παιχνιδιού και την "
 "έναρξη ενός νέου με άλλες παραμέτρους;"
 
-#: kbbmainwindow.cpp:400
+#: kbbmainwindow.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Έναρξη νέου παιχνιδιού"
 
-#: kbbmainwindow.cpp:420
+#: kbbmainwindow.cpp:407
 #, kde-format
 msgid "Custom Game"
 msgstr "Προσαρμοσμένο παιχνίδι"
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Δυστυχώς, δεν μπορείτε να εγκαταλείψετε την εκμάθηση."
 
-#: kbbmainwindow.cpp:439
+#: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Solve"
 msgstr "Λύση"
 
-#: kbbmainwindow.cpp:442
+#: kbbmainwindow.cpp:429
 #, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
@@ -314,31 +314,31 @@ msgstr ""
 "τον έλεγχο των θέσεων που μαντέψατε.\n"
 "Επιθυμείτε πραγματικά την εγκατάλειψη του παιχνιδιού;"
 
-#: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
 #, kde-format
 msgid "Give up"
 msgstr "Εγκατάλειψη"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] "Πρέπει να τοποθετήσετε %1 μπάλα!\n"
 msgstr[1] "Πρέπει να τοποθετήσετε %1 μπάλες!\n"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] "Τοποθετήσατε %1.\n"
 msgstr[1] "Τοποθετήσατε %1.\n"
 
-#: kbbmainwindow.cpp:444
+#: kbbmainwindow.cpp:431
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Επιθυμείτε πραγματικά να εγκαταλείψετε αυτό το παιχνίδι;"
 
-#: kbbmainwindow.cpp:454
+#: kbbmainwindow.cpp:441
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -350,12 +350,12 @@ msgstr ""
 "Σημείωση: Στη λειτουργία προπόνησης,<br />η λύση εμφανίζεται από την αρχή."
 "<br />Καλή διασκέδαση!"
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Αυτό θα είναι το τέλος του τρέχοντος παιχνιδιού!"
 
-#: kbbmainwindow.cpp:493
+#: kbbmainwindow.cpp:480
 #, kde-format
 msgid "Start new game"
 msgstr "Έναρξη νέου παιχνιδιού"
@@ -738,18 +738,18 @@ msgstr "Ο αριθμός των στηλών του πίνακα για προ�
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Ο αριθμός των γραμμών του πίνακα για προσαρμοσμένο επίπεδο δυσκολίας"
 
-#: main.cpp:44
+#: main.cpp:27
 #, kde-format
 msgid "KBlackBox"
 msgstr "KBlackBox"
 
-#: main.cpp:46
+#: main.cpp:29
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr ""
 "Βρείτε τις κρυμμένες μπάλες στο μαύρο κουτί χρησιμοποιώντας ακτίνες λέιζερ!"
 
-#: main.cpp:48
+#: main.cpp:31
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -758,32 +758,32 @@ msgstr ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:50
+#: main.cpp:33
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Προγραμματιστής της έκδοσης 0.4."
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:51
+#: main.cpp:34
 #, kde-format
 msgid "Original developer"
 msgstr "Αρχικός προγραμματιστής"
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:52
+#: main.cpp:35
 #, kde-format
 msgid "Artist"
 msgstr "Καλλιτέχνης"

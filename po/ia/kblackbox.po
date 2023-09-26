@@ -1,72 +1,71 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kblackbox package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# giovanni <g.sora@tiscali.it>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:39+0000\n"
-"PO-Revision-Date: 2023-09-25 12:05+0200\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
-"Language: ka\n"
+"PO-Revision-Date: 2023-09-25 12:48+0200\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Temuri Doghonadze"
+msgstr "Giovanni Sora"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Temuri.doghonadze@gmail.com"
+msgstr "g.sora@tiscali.it"
 
 #: kbblevelconfigurationwidget.cpp:31
 #, kde-format
 msgctxt "A number between 1 and 99 is displayed in front of it."
 msgid " ball"
 msgid_plural " balls"
-msgstr[0] " ბურთი"
-msgstr[1] " ბურთი"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbblevelconfigurationwidget.cpp:40
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " column"
 msgid_plural " columns"
-msgstr[0] " სვეტი"
-msgstr[1] " სვეტი"
+msgstr[0] "columna"
+msgstr[1] "columnas"
 
 #: kbblevelconfigurationwidget.cpp:49
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " row"
 msgid_plural " rows"
-msgstr[0] " მწკრივი"
-msgstr[1] " მწკრივი"
+msgstr[0] " Rango"
+msgstr[1] " Rangos"
 
 #: kbbmainwindow.cpp:66
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
-msgstr "მორგებადი"
+msgstr ""
 
 #: kbbmainwindow.cpp:76
 #, kde-format
 msgid "Start Tutorial"
-msgstr "სახელმძღვანელოს გაშვება"
+msgstr ""
 
 #: kbbmainwindow.cpp:78
 #, kde-format
 msgid "Start tutorial"
-msgstr "სახელმძღვანელოს გაშვება"
+msgstr ""
 
 #: kbbmainwindow.cpp:79
 #, kde-format
@@ -74,18 +73,16 @@ msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
 "learn the rules of the game. Start it if you do not know them!</qt>"
 msgstr ""
-"<qt><b>სახელმძღვანელო</b> სწრაფი, მომხმარებელზე მორგებული და ინტერაქტიული "
-"გზაა თამაშის წესებს სასწავლად. დაიწყეთ, თუ არ იცით ისინი!</qt>"
 
 #: kbbmainwindow.cpp:83
 #, kde-format
 msgid "New Sandbox Game"
-msgstr "საცდელი თამაში"
+msgstr ""
 
 #: kbbmainwindow.cpp:84
 #, kde-format
 msgid "Start a new sandbox game"
-msgstr "ახალი საცდელი თამაშის დაწყება"
+msgstr ""
 
 #: kbbmainwindow.cpp:85
 #, kde-format
@@ -95,16 +92,13 @@ msgid ""
 "p><p>However: after a while, it is not really fun and you should try to "
 "start a real game!</p></qt>"
 msgstr ""
-"<qt><p><b>ქვიშის ყუთის თამაშში</b>, პასუხი თამაშის დასაწყისშია ნაჩვენები. ეს "
-"თამაშის პრინციპების შესათვისებლადაა საჭირო.</p><p>მაგრამ, ცოტა ხნის შემდეგ "
-"ეს უკვე სახალისო აღარაა და ნამდვილი თამაში უნდა დაიწყოთ!</p></qt>"
 
 #: kbbmainwindow.cpp:91
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
-msgstr "მზდაა!"
+msgstr "Facite!"
 
 #: kbbmainwindow.cpp:92
 #, kde-format
@@ -116,17 +110,11 @@ msgid ""
 "li></ul><p>Note that it is only possible to click here if you have placed "
 "the correct number of balls.</p></qt>"
 msgstr ""
-"<qt><ul><li>ჯერ ყველა თქვენი ბურთი შავ ყუთში უნდა ჩაალაგოთ. იმისათვის, რომ "
-"მიხვდეთ ბურთებს სწორ მდებარეობას და დაინახოთ, როგორ ურთიერთქმედებენ ისინი "
-"ლაზერის სხივებთან, ლაზერის სხივები უნდა გამოიყენოთ, რომლებიც შავი ყუთის "
-"გარშემო ალაგია.</li><li><b>როცა დაასრულებთ</b>, აქ დააწკაპუნეთ.</li></"
-"ul><p>დაიმახსოვრეთ, რომ აქ დაწკაპუნება მხოლოდ მაშინ შეგეძლებათ, თუ სწორი "
-"რაოდენობის ბირთები დაალაგეთ.</p></qt>"
 
 #: kbbmainwindow.cpp:96
 #, kde-format
 msgid "Give up the game"
-msgstr "ვნებდები"
+msgstr ""
 
 #: kbbmainwindow.cpp:97
 #, kde-format
@@ -135,44 +123,41 @@ msgid ""
 "solution will be displayed.</p><p>If you placed all the balls and do not "
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
-"<qt><p>აირჩიეთ \"<b>ამოხსნა</b>\", თუ მიმდინარე თამაშის მიტოვება გნებავთ. "
-"პასუხი გამოჩნდება.</p><p>თუ დაალაგეთ ყველა ბურთი და მიტოვება არ ქნებავთ, "
-"აირჩით \"დასრულდა!\".<p></qt>"
 
 #: kbbmainwindow.cpp:102
 #, kde-format
 msgid "Enable highlight under mouse"
-msgstr "თაგუნას ქვეშ გამოკვეთის ჩართვა"
+msgstr ""
 
 #: kbbmainwindow.cpp:142
 #, kde-format
 msgid "Move Down"
-msgstr "ჩამოწევა"
+msgstr "Move a basso "
 
 #: kbbmainwindow.cpp:148
 #, kde-format
 msgid "Move Up"
-msgstr "აწევა"
+msgstr "Move in alto"
 
 #: kbbmainwindow.cpp:154
 #, kde-format
 msgid "Move Left"
-msgstr "მარცხნივ გაწევა"
+msgstr "Move a sinistra"
 
 #: kbbmainwindow.cpp:160
 #, kde-format
 msgid "Move Right"
-msgstr "მარჯვნივ გაწევა"
+msgstr "Move a dextera"
 
 #: kbbmainwindow.cpp:166
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
-msgstr "შეცვალეთ ბურთი ან ისროლეთ ლაზერი"
+msgstr ""
 
 #: kbbmainwindow.cpp:172
 #, kde-format
 msgid "Switch Marker"
-msgstr "ჭდის გადართვა"
+msgstr ""
 
 #: kbbmainwindow.cpp:246
 #, kde-format
@@ -183,38 +168,35 @@ msgid ""
 "Note: You can change<br />the parameters of<br />custom games in the<br /"
 ">Settings dialog."
 msgstr ""
-"შენიშვნა: თქვენი საკუთარი თამაშის <br />პარამეტრების<br />შეცვლა<br /"
-">მორგების ფანჯრიდან შეგიძლიათ."
 
 #: kbbmainwindow.cpp:279
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
-msgstr[0] "ჯერ გჭირდებათ შავი ყუთიდან 1 ბურთი წაშალოთ."
-msgstr[1] "ჯერ გჭირდებათ შავი ყუთიდან %1 ბურთი წაშალოთ."
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbbmainwindow.cpp:281
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr ""
-"შესამოწმებლად, სწორად მიხვდით ბურთის მდებარეობებს, თუ არა, აქ დააწკაპუნეთ!"
 
 #: kbbmainwindow.cpp:283
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
-msgstr[0] "გჭირდებათ, შავ ყუთზე კიდევ 1 ბურთი მოათავსოთ."
-msgstr[1] "გჭირდებათ, შავ ყუთზე კიდევ %1 ბურთი მოათავსოთ."
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbbmainwindow.cpp:287
 #, kde-format
 msgid "Game over."
-msgstr "თამაში დასრულდა."
+msgstr "Joco Terminate"
 
 #: kbbmainwindow.cpp:289
 #, kde-format
 msgid "Game paused."
-msgstr "თამაში შეჩერებულია."
+msgstr ""
 
 #: kbbmainwindow.cpp:328
 #, kde-format
@@ -224,15 +206,11 @@ msgid ""
 "the game before you reached the last step.\n"
 "Please first finish the tutorial."
 msgstr ""
-"\"დასრულებულია!\"-ზე დაწკაპუნება თამაშის ბოლოს ბურთების მდებარეობის "
-"შესამოწმებელი ჩვეულებრივი გზაა. მაგრამ, სახელმძღვანელოში ამას ვერ იზამთ, "
-"სანამ ბოლო საფეხურს არ მიაღწევთ.\n"
-"დაასრულეთ სახელმძღვანელო."
 
 #: kbbmainwindow.cpp:328
 #, kde-format
 msgid "Check positions"
-msgstr "მდებარეობების გადამოწმება"
+msgstr ""
 
 #: kbbmainwindow.cpp:335
 #, kde-format
@@ -240,7 +218,7 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />You did really well!"
-msgstr "თქვენი საბოლოო ქულაა: %1.<br /> კარგად გამოგივიდათ!"
+msgstr ""
 
 #: kbbmainwindow.cpp:337
 #, kde-format
@@ -248,7 +226,7 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
-msgstr "ეს არ ითვლება, <br />რადგან<b>ეს სენდბოქსია!</b>"
+msgstr ""
 
 #: kbbmainwindow.cpp:339
 #, kde-format
@@ -256,12 +234,12 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />I guess you need more practice."
-msgstr "თქვენი საბოლოო ქულაა: %1.<br /> როგორც მივხვდი, მეტი ვარჯიშია საჭირო."
+msgstr ""
 
 #: kbbmainwindow.cpp:368
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
-msgstr "თამაში შეჩერებულია. <br />გასაგრძელებლად დააჭირეთ %1."
+msgstr ""
 
 #: kbbmainwindow.cpp:390
 #, kde-format
@@ -269,29 +247,27 @@ msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
 "new parameters?"
 msgstr ""
-"გნებავთ გააუქმოთ თქვენი მიმდინარე თამაში და ახალი დაიწყოთ, ახალი "
-"პარამეტრებით?"
 
 #: kbbmainwindow.cpp:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "ახალი თამაშის დაწყება"
+msgstr ""
 
 #: kbbmainwindow.cpp:407
 #, kde-format
 msgid "Custom Game"
-msgstr "თანაშის მორგება"
+msgstr ""
 
 #: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
-msgstr "ვარჯიშის დროს ვერ დანებდებით."
+msgstr ""
 
 #: kbbmainwindow.cpp:426
 #, kde-format
 msgid "Solve"
-msgstr "ამოხსნა"
+msgstr "Solve..."
 
 #: kbbmainwindow.cpp:429
 #, kde-format
@@ -301,34 +277,30 @@ msgid ""
 "correctly.\n"
 "So, do you really want to give up this game?"
 msgstr ""
-"ყველა ბურთი მოათავსეთ. გადასარევია!\n"
-"ახლა დააწკაპუნეთ \"დასრულდა!\" თამაშს დასასრულებლად და შესამოწმებლად, სწორად "
-"თუ გამოიცანით.\n"
-"ასე რომ, მართლა გნებავთ თამაშის დასრულება?"
 
 #: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
 #, kde-format
 msgid "Give up"
-msgstr "დანებება"
+msgstr ""
 
 #: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
-msgstr[0] "უნდა მოათავსოთ %1 ბურთი!\n"
-msgstr[1] "უნდა მოათავსოთ %1 ბურთი!\n"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbbmainwindow.cpp:431
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
-msgstr[0] "მოათავსეთ %1.\n"
-msgstr[1] "მოათავსეთ %1.\n"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbbmainwindow.cpp:431
 #, kde-format
 msgid "Do you really want to give up this game?"
-msgstr "გნებავთ, მიატოვოთ ეს თამაში?"
+msgstr ""
 
 #: kbbmainwindow.cpp:441
 #, kde-format
@@ -339,22 +311,21 @@ msgid ""
 "Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
 "fun!"
 msgstr ""
-"შენიშვნა: სენდბოქსის რეჟიმში <br /> პასუხი უკვე ნაჩვენებია.<br />ისიამოვნეთ!"
 
 #: kbbmainwindow.cpp:480
 #, kde-format
 msgid "This will be the end of the current game!"
-msgstr "ეს თქვენს მიმდინარე თამაშს დაასრულებს!"
+msgstr ""
 
 #: kbbmainwindow.cpp:480
 #, kde-format
 msgid "Start new game"
-msgstr "ახალი თამაშის დაწყება"
+msgstr ""
 
 #: kbbscalablegraphicwidget.cpp:100
 #, kde-format
 msgid "Score"
-msgstr "ქულები"
+msgstr "Punctos"
 
 #: kbbscalablegraphicwidget.cpp:101
 #, kde-format
@@ -366,12 +337,6 @@ msgid ""
 "another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
 "b> at the end of the game if you make a mistake.</p></qt>"
 msgstr ""
-"<qt><p>ეს <b>თქვენი ქულებია</b>. უნდა აიღოთ, რაც შეიძლება ნაკლები.</"
-"p><p>ქულები იზრდება, როცა:<ul><li>დროსთან ერთად: <b>1 ქულით</b> წაში.</"
-"li><li>ლაზერებით:<ul><li><b>3 ქულა</b> თუ ლაზერის სხივი მოარტყავს ბურთს ან "
-"გამოვა შესვლის წერტილიდან,</li><li><b>9 ქულა</b> თუ სხვა შესვლის წერტილიდან "
-"გამოვა.</li></ul></li></ul></p><p>თქვენი ქულები <b>999</b> იქნება თამაშის "
-"ბოლოს, თუ შეცდომას დაუშვებთ.</p></qt>"
 
 #: kbbscalablegraphicwidget.cpp:104
 #, kde-format
@@ -382,54 +347,48 @@ msgid ""
 "b> that are replaced with <b>interaction information</b> if you use them.</"
 "li></ul></qt>"
 msgstr ""
-"<qt><p>თამაშის <b>მთავარი სათამაშო ადგილი</b>.</p><ul><li><b>black box</b>-"
-"თვის ცენტრშია.</li><li>მარცხნივ <b>ბურთებია</b>, რომლებიც შავ ყუთზე უნდა "
-"დაალაგოთ.</li><li>შავი ყუთის გარშემო არის <b>ლაზერები</b>, რომლებიც "
-"ჩანაცვლდება <b>ურთიერთობის ინფორმაციით</b>, თუ მათ გამოიყენებთ.</li></ul></"
-"qt>"
 
 #: kbbtutorial.cpp:36
 #, kde-format
 msgid "Tutorial"
-msgstr "სახელმძღვანელო"
+msgstr "Classe special (Tutorial)"
 
 #: kbbtutorial.cpp:53
 #, kde-format
 msgid "Displays the progress of the tutorial."
-msgstr "აჩვენებს სახელმძღვანელოს მიმდინარეობას."
+msgstr ""
 
 #: kbbtutorial.cpp:75
 #, kde-format
 msgid "Describes what you should do to reach the next tutorial step."
 msgstr ""
-"აღწერს, რა უნდა გააკეთოთ, რომ სახელმძღვანელოს შემდეგ საფეხურს მიაღწიოთ."
 
 #: kbbtutorial.cpp:84
 #, kde-format
 msgctxt "Previous tutorial step"
 msgid "&Previous"
-msgstr "&წინა"
+msgstr "&Previe"
 
 #: kbbtutorial.cpp:85
 #, kde-format
 msgid "Go back to the previous tutorial step."
-msgstr "სავარჯიშოს წინა ნაბიჯზე დაბრუნება."
+msgstr ""
 
 #: kbbtutorial.cpp:88
 #, kde-format
 msgctxt "Next tutorial step"
 msgid "&Next"
-msgstr "&შემდეგი"
+msgstr "Seque&nte"
 
 #: kbbtutorial.cpp:89
 #, kde-format
 msgid "Go to the next tutorial step."
-msgstr "სავარჯიშოს შემდეგ ნაბიჯზე გადასვლა."
+msgstr ""
 
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Welcome!"
-msgstr "მოგესალმებით!"
+msgstr "Benvenite!"
 
 #: kbbtutorial.cpp:151
 #, kde-format
@@ -443,12 +402,12 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr "დააწკაპუნეთ \"შემდეგზე\""
+msgstr ""
 
 #: kbbtutorial.cpp:156
 #, kde-format
 msgid "Black box principles"
-msgstr "შავი ყუთის პრინციპები"
+msgstr ""
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -458,20 +417,16 @@ msgid ""
 "they do, where they come out.<br /><br />The laser beams interact with the "
 "balls in various ways."
 msgstr ""
-"ბურთები ხილული არაა, მაგრამ ლაზერის სხივები ყუთს ბევრ შესასვლელ წერტილში "
-"შეგიძლიათ, ესროლოთ და დააკვირდეთ. ლაზერის სხივები ტოვებენ ყუთს, თუ არა და თუ "
-"კი, საიდან გამოდიან.<br /><br />ლაზერის სხივები ბურთებზე სხვადასხვანაირად "
-"ურთიერთქმედებს."
 
 #: kbbtutorial.cpp:156
 #, kde-format
 msgid "Please click on the marked laser to shoot a beam into the black box."
-msgstr "დააწკაპუნეთ მონიშნულ ლაზერზე, რათა სხივი შავ ყუთს ესროლოთ."
+msgstr ""
 
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "No interaction"
-msgstr "ურთიერთქმედების გარეშე"
+msgstr ""
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -486,12 +441,12 @@ msgstr ""
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "Now shoot the marked laser to discover the first kind of interaction."
-msgstr "ახლა მონიშნული ლაზერი ესროლეთ, რათა პირველი ურთიერთქმედება ნახოთ."
+msgstr ""
 
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Hit"
-msgstr "დარტყმა"
+msgstr ""
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -505,12 +460,12 @@ msgstr ""
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Shoot the marked laser to discover the second kind of interaction."
-msgstr "ისროლეთ დანიშნული ლაზერი, მეორე ტიპის ურთიერთქმედების სანახავად."
+msgstr ""
 
 #: kbbtutorial.cpp:175
 #, kde-format
 msgid "Simple deflection"
-msgstr "მარტივი გარდატეხა"
+msgstr ""
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -528,13 +483,11 @@ msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
-"დააწკაპუნეთ \"შემდეგს\", რომ იხილოთ ბურთების პოზიციების სხვა კომბინაცია, "
-"რომელიც ლაზერის სხივს ისე გარდატეხავს, როგორც ნაჩვენებია."
 
 #: kbbtutorial.cpp:182
 #, kde-format
 msgid "Several deflections"
-msgstr "რამდენიმე გარდატეხა"
+msgstr ""
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -543,19 +496,16 @@ msgid ""
 ">A laser beam entering and exiting at the positions \"2\" might have been "
 "deflected by this configuration of 3 balls."
 msgstr ""
-"როგორც ხედავთ, შავ ყუთში ურთიერთქმედებები საკმაოდ რთულია!<br />ლაზერის "
-"სხივი, რომელიც შეის პოზიციებზე \"2\", შეიძლება ამ სამი ბურთის კომბინაციის "
-"მიერ აირეკლა."
 
 #: kbbtutorial.cpp:182
 #, kde-format
 msgid "Shoot the marked laser to discover another kind of result."
-msgstr "ისროლეთ დანიშნული ლაზერი, სხვა ტიპის ურთიერთქმედების სანახავად."
+msgstr ""
 
 #: kbbtutorial.cpp:190
 #, kde-format
 msgid "Reflection"
-msgstr "ანარეკლი"
+msgstr "Reflexion"
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -569,12 +519,12 @@ msgstr ""
 #: kbbtutorial.cpp:190
 #, kde-format
 msgid "Shoot the marked laser to see another backward reflection case."
-msgstr "ისროლეთ დანიშნული ლაზერი სხვა უკან არეკვლის შემთხვევის სანახავად."
+msgstr ""
 
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Special reflection"
-msgstr "სპეციალური ანარეკლი"
+msgstr ""
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -588,12 +538,12 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
-msgstr "თითქმის დავასრულეთ. დააწკაპუნეთ \"შემდეგზე\"."
+msgstr ""
 
 #: kbbtutorial.cpp:204
 #, kde-format
 msgid "Marker for \"free position\""
-msgstr "სანიშნი \"თავისუფალ პოზიციისთვის\""
+msgstr ""
 
 #: kbbtutorial.cpp:204
 #, kde-format
@@ -608,12 +558,12 @@ msgstr ""
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr "დააწკაპუნეთ \"შემდეგზე\"."
+msgstr ""
 
 #: kbbtutorial.cpp:213
 #, kde-format
 msgid "Marking balls"
-msgstr "ბურთების განლაგება"
+msgstr ""
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -628,7 +578,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Let us play!"
-msgstr "გვათამაშეთ!"
+msgstr ""
 
 #: kbbtutorial.cpp:220
 #, kde-format
@@ -644,7 +594,6 @@ msgstr ""
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
 msgstr ""
-"დაასრულეთ ბურთების დალაგება და დააწკაპუნეთ \"დასრულდა!\" როცა დაასრულებთ!"
 
 #. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
 #: kblackbox.kcfg:9
@@ -653,26 +602,24 @@ msgid ""
 "File of the current theme of the graphic elements. (SVGZ file with path and "
 "file extension)"
 msgstr ""
-"გრაფიკული ელემენტების მიმდინარე თემის ფაილი. (SVGZ ფაილი ბილიკითა და ფაილის "
-"გაფართოებით)"
 
 #. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
 #: kblackbox.kcfg:13
 #, kde-format
 msgid "Number of balls for custom difficulty level"
-msgstr "ხელით მითითებული დაფის ბურთების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
 #: kblackbox.kcfg:17
 #, kde-format
 msgid "Number of columns of the board for custom difficulty level"
-msgstr "ხელით მითითებული დაფის სვეტების რაოდენობა"
+msgstr ""
 
 #. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
 #: kblackbox.kcfg:21
 #, kde-format
 msgid "Number of rows of the board for custom difficuty level"
-msgstr "ხელით მითითებული დაფის მწკრივების რაოდენობა"
+msgstr ""
 
 #: main.cpp:27
 #, kde-format
@@ -682,7 +629,7 @@ msgstr "KBlackBox"
 #: main.cpp:29
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
-msgstr "იპოვეთ შავ ყუთში დამალული ბურთები ლაზერების სროლით!"
+msgstr ""
 
 #: main.cpp:31
 #, kde-format
@@ -701,7 +648,7 @@ msgstr "Nicolas Roffet"
 #: main.cpp:33
 #, kde-format
 msgid "Developer of version 0.4."
-msgstr "0.4 ვერსიის პროგრამისტი."
+msgstr "Disveloppator de version 0.4."
 
 #: main.cpp:34
 #, kde-format
@@ -711,7 +658,7 @@ msgstr "Robert Cimrman"
 #: main.cpp:34
 #, kde-format
 msgid "Original developer"
-msgstr "საწყისი ავტორი"
+msgstr "Disveloppator original"
 
 #: main.cpp:35
 #, kde-format
@@ -721,4 +668,4 @@ msgstr "Johann Ollivier Lapeyre"
 #: main.cpp:35
 #, kde-format
 msgid "Artist"
-msgstr "შემსრულებელი"
+msgstr "Artista"

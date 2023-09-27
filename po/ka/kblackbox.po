@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:39+0000\n"
-"PO-Revision-Date: 2023-09-25 12:05+0200\n"
+"PO-Revision-Date: 2023-09-26 06:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -439,6 +439,10 @@ msgid ""
 "It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
 "><br />The goal is to <b>find the positions of the balls.</b>"
 msgstr ""
+"ეს კურსი გასწავლით KBlackBox-ის თამაშს, მარტივი მაგალითის გამოყენებით.<br /"
+"><br />ჩვენ ვთამაშობთ ოთხკუთხედი შავი ყუთით, რომელშიც 6 სვეტი და 6 სვეტია. "
+"ამ ყუთში <b>დამალულია</b> 3 ბურთი, გარედან კი 24 ლაზერია.<br /><br /"
+">მოსაგებად<b>ბურთის მდებარეობები უნდა იპოვოთ.</b>"
 
 #: kbbtutorial.cpp:151
 #, kde-format
@@ -482,6 +486,11 @@ msgid ""
 "><br />As the game progresses, each pair of entry/exit points is marked with "
 "a different number."
 msgstr ""
+"თუ ლაზერის სხივი შავ ყუთში მდებარე ბურთს არ დაეცა, ის შესვლის საწინააღმდეგო "
+"გამოსასვლელიდან გამოვა.<br /><br />მაგალითად: წარმოიდგინეთ, რომ გვაქვს 3 "
+"ბურთი ისე, როგორც ნაჩვენებია. ისინი არ იმოქმედებენ სხივზე \"1\"<br /><br /"
+">თამაშის მიმდინარეობისას თითოეული შესასვლელ/გამოსასვლელი წყვილი სხვადასხვა "
+"ნომრებითაა დანიშნული."
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -501,6 +510,10 @@ msgid ""
 "might have hit a ball at the position shown, but the exact position of the "
 "hit is not certain: There are many other possibilities."
 msgstr ""
+"ბურთზე პირდაპირ დარტყმას \"<b>მორტყმა</b> ჰქვია. სხივი, რომელიც ბურთს "
+"მოხვდება, ყუთიდან <b>არ</b>გამოვა.<br /><br />მაგალითად: სხივი შეიძლება, "
+"მითითებულ ადგილას მდებარე ბურთს მოხვდეს, მაგრამ ბურთის ზუსტი მდებარეობა "
+"ცნობილი არაა."
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -521,6 +534,10 @@ msgid ""
 "would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
 "possibility."
 msgstr ""
+"სხვისი დაცემა, რომელიც ბურთს არ მოხვედრია, მაგრამ დამიზნებული იყო მის ცალ "
+"მხარეს, \"<b>არეკვლილი</b>\" ეწოდება. სხვისი არეკვლის კუთხე ყოველთვის <b>90 "
+"გრადუსია</b>.<br /><br />მაგ: ბურთი, რომელიც სხივს 2 მაღლა უნდა აერეკლა, "
+"მაგრამ ეს ერთად-ერთი შესაძლებლობა <b>არაა</b>."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -565,6 +582,9 @@ msgid ""
 "placed 2 balls for you in a configuration that would lead to such a "
 "reflection."
 msgstr ""
+"თუ ლაზერის სხივი შავი ყუთიდს <b>შესასვლელთანვე</b> დატოვებს, ის შავ ყუთში "
+"უკან აირეკლეს.<br /><br />მაგალითად. ჩვენ მოვათავსეთ 2 ბურთი თქვენს "
+"კონფიგურაციაში, რომელსაც ამნაირ არეკვლამდე შეუძლია, მიგვიყვანოს."
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -584,6 +604,9 @@ msgid ""
 "reflection.<br /><br />Example: The configuration shown can cause a backward "
 "reflection."
 msgstr ""
+"თუ ბურთი <b>ყუთის წიბოსთანაა</b>, (და სიახლოვეში სხვა ბურთი არაა) და სხივი, "
+"რომელიც მას ზუსტად გვერდში მოხვდა, ის უკან აირეკლება.<br /><br /> მაგალითად: "
+"ნაჩვენებ კონფიგურაციას შეუძლია, უკან არეკვლა გამოიწვიოს."
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -604,6 +627,11 @@ msgid ""
 "(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
 "the first 2 columns."
 msgstr ""
+"ჩვენ დარწმუნებული ვართ, რომ პირველ ორ სვეტში ბურთი არაა. რომ იყოს, "
+"შესასვლელში \"1\" შესული სხივი ბურთს მოხვდებოდა, ან აირეკლებოდა სვეტში \"2\" "
+"არსებული ბურთის მიერ. შეგიძლიათ, \"თავისუფალი პოზიცია\" თაგუნას მარჯვენა "
+"წკაპით მონიშნოთ (იხ. კლავიატურის მალსახმობები).<br /><br />მაგ: პირველ 2 "
+"სვეტში 12 მარკერია."
 
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
@@ -624,6 +652,12 @@ msgid ""
 "ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
 ">Example: We marked one position as sure, the other one as unsure."
 msgstr ""
+"როცა გაარკვიეთ, სადაა ბურთი, მის დასანიშნად თაგუნას მარცხენა ღილაკი "
+"გამოიყენეთ. ბურთის ნიშნის მოსაცილებლად თაგუნას მარცხენა ღილაკით კიდევ ერთხელ "
+"დააწკაპუნეთ. ბოლო შენიშვნა: თუ მდებარეობის შესახებ დარწმუნებული არ "
+"ბრძანდებით, ბურთზე მარჯვენა წკაპი მას \"საეჭვოდ\" მონიშნავს (იხ კლავიატურის "
+"მალსახმობები.).<br /><br />მაგ: მოვნიშნეთ ერთი ბურთის მდებარეობა, როგორც "
+"აღმოჩენილი, მეორე კი საეჭვოდ."
 
 #: kbbtutorial.cpp:220
 #, kde-format
@@ -639,6 +673,11 @@ msgid ""
 "positions of the 3 balls with certainty. Of course, you can use some more "
 "shots if needed."
 msgstr ""
+"<b>გილოცავთ!</b> ახლა KBlackBox-ის <b>ყველა</b> წესი იცით.<br /><br /"
+"><b>შეგიძლიათ, თამაში დაიწყოთ.</b> სცადეთ, ეს სასწავლო თამაში თვითონ "
+"დაასრულოთ!<br /><br />შენიშვნა: ჩვენ გამოგიგზავნეთ საკმარისი სხვივი, რომ "
+"სამივე ბურთი იპოვოთ. მაგრამ, თუ დაგჭირდებათ, რა თქმა უნდა, მეტიც შეგიძლიათ, "
+"გამოიყენოთ."
 
 #: kbbtutorial.cpp:220
 #, kde-format

@@ -58,15 +58,15 @@ KBBMainWindow::KBBMainWindow()
 
 
 	// Difficulty
-	Kg::difficulty()->addStandardLevelRange(
-		KgDifficultyLevel::VeryEasy, KgDifficultyLevel::ExtremelyHard,
-		KgDifficultyLevel::Medium //default
+	KGameDifficulty::global()->addStandardLevelRange(
+		KGameDifficultyLevel::VeryEasy, KGameDifficultyLevel::ExtremelyHard,
+		KGameDifficultyLevel::Medium //default
 	);
-	Kg::difficulty()->addLevel(new KgDifficultyLevel(
+	KGameDifficulty::global()->addLevel(new KGameDifficultyLevel(
 		1000, QByteArray("config"), i18nc("Difficulty level title", "Configurable")
 	));
-	KgDifficultyGUI::init(this);
-	connect(Kg::difficulty(), &KgDifficulty::currentLevelChanged, this, &KBBMainWindow::levelChanged);
+	KGameDifficultyGUI::init(this);
+	connect(KGameDifficulty::global(), &KGameDifficulty::currentLevelChanged, this, &KBBMainWindow::levelChanged);
 
 
 	// Menu "Game"
@@ -208,41 +208,41 @@ KBBMainWindow::~KBBMainWindow()
 
 void KBBMainWindow::levelChanged()
 {
-	KgDifficultyLevel::StandardLevel level = Kg::difficultyLevel();
+	KGameDifficultyLevel::StandardLevel level = KGameDifficulty::globalLevel();
 	switch(level) {
-		case KgDifficultyLevel::VeryEasy:
+		case KGameDifficultyLevel::VeryEasy:
 			m_ballNumber = 2;
 			m_columns = 6;
 			m_rows = 6;
 			break;
-		case KgDifficultyLevel::Easy:
+		case KGameDifficultyLevel::Easy:
 		default:
 			m_ballNumber = 4;
 			m_columns = 8;
 			m_rows = 8;
-			level = KgDifficultyLevel::Medium;
+			level = KGameDifficultyLevel::Medium;
 			break;
-		case KgDifficultyLevel::Medium:
+		case KGameDifficultyLevel::Medium:
 			m_ballNumber = 6;
 			m_columns = 10;
 			m_rows = 10;
 			break;
-		case KgDifficultyLevel::Hard:
+		case KGameDifficultyLevel::Hard:
 			m_ballNumber = 8;
 			m_columns = 12;
 			m_rows = 12;
 			break;
-		case KgDifficultyLevel::VeryHard:
+		case KGameDifficultyLevel::VeryHard:
 			m_ballNumber = 11;
 			m_columns = 14;
 			m_rows = 10;
 			break;
-		case KgDifficultyLevel::ExtremelyHard:
+		case KGameDifficultyLevel::ExtremelyHard:
 			m_ballNumber = 15;
 			m_columns = 20;
 			m_rows = 12;
 			break;
-		case KgDifficultyLevel::Custom:
+		case KGameDifficultyLevel::Custom:
 			m_gameWidget->popupText(i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Note: You can change<br />the parameters of<br />custom games in the<br />Settings dialog."));
 			break;
 	}
@@ -255,7 +255,7 @@ void KBBMainWindow::levelChanged()
 void KBBMainWindow::setRunning(bool r)
 {
 	// Difficulty
-	Kg::difficulty()->setGameRunning(r);
+	KGameDifficulty::global()->setGameRunning(r);
 
 	// Clock
 	if (r) {
@@ -338,9 +338,9 @@ void KBBMainWindow::done()
 		} else
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
 
-		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (Kg::difficultyLevel() != KgDifficultyLevel::Custom) && (score<KBBGameDoc::SCORE_LOST)) {
+		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (KGameDifficulty::globalLevel() != KGameDifficultyLevel::Custom) && (score<KBBGameDoc::SCORE_LOST)) {
 			QPointer<KScoreDialog> scoreDialog = new KScoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
-			scoreDialog->initFromDifficulty(Kg::difficulty());
+			scoreDialog->initFromDifficulty(KGameDifficulty::global());
 
 			KScoreDialog::FieldInfo scoreInfo;
 			scoreInfo[KScoreDialog::Score].setNum(score);
@@ -383,7 +383,7 @@ void KBBMainWindow::settingsChanged()
 	m_customColumns = m_levelConfig->columns();
 	m_customRows = m_levelConfig->rows();
 
-	if (m_level==KgDifficultyLevel::Custom) {
+	if (m_level==KGameDifficultyLevel::Custom) {
 		bool mayRestart = true;
 		if (m_gameDoc->gameReallyStarted())
 			if (KMessageBox::questionTwoActions(this,
@@ -415,7 +415,7 @@ void KBBMainWindow::settingsDialog()
 void KBBMainWindow::showHighscores()
 {
 	KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
-	scoreDialog.initFromDifficulty(Kg::difficulty());
+	scoreDialog.initFromDifficulty(KGameDifficulty::global());
 	scoreDialog.exec();
 }
 
@@ -449,7 +449,7 @@ void KBBMainWindow::startTutorial()
 		m_gameDoc->startTutorial();
 		m_solveAction->setEnabled(true);
 		m_pauseAction->setChecked(false);
-		Kg::difficulty()->setEditable(false);
+		KGameDifficulty::global()->setEditable(false);
 
 		// Reset clock but don't start it yet.
 		m_gameClock->restart();
@@ -496,7 +496,7 @@ void KBBMainWindow::solving()
 
 void KBBMainWindow::startGame(bool sandboxMode)
 {
-	if (m_level==KgDifficultyLevel::Custom) {
+	if (m_level==KGameDifficultyLevel::Custom) {
 		m_ballNumber = m_customBallNumber;
 		m_columns = m_customColumns;
 		m_rows = m_customRows;
@@ -507,7 +507,7 @@ void KBBMainWindow::startGame(bool sandboxMode)
 
 	m_solveAction->setEnabled(true);
 	m_pauseAction->setChecked(false);
-	Kg::difficulty()->setEditable(true);
+	KGameDifficulty::global()->setEditable(true);
 	m_tutorial->hide();
 	m_gameDoc->newGame(m_ballNumber, m_columns, m_rows);
 	m_gameWidget->newGame(m_columns, m_rows, m_ballNumber);

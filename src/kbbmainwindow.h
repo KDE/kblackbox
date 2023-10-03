@@ -15,7 +15,7 @@ class QWidget;
 
 class KGameClock;
 #include <kxmlguiwindow.h>
-#include <KgDifficulty>
+#include <KGameDifficulty>
 
 class KBBGameDoc;
 class KBBLevelConfigurationWidget;
@@ -158,7 +158,7 @@ class KBBMainWindow : public KXmlGuiWindow
 		QWidget* m_centralWidget;
 		int m_columns;
 		KGameClock* m_gameClock;
-		KgDifficultyLevel::StandardLevel m_level;
+		KGameDifficultyLevel::StandardLevel m_level;
 		KBBLevelConfigurationWidget* m_levelConfig;
 		int m_rows;
 		bool m_boardEnabled;

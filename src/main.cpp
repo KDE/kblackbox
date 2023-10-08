@@ -29,6 +29,7 @@ int main( int argc, char **argv )
                           i18n("Find the balls hidden in the black box by shooting laser beams!"),
                           KAboutLicense::GPL,
                           i18n("(c) 2007, Nicolas Roffet\n(c) 1999-2000, Robert Cimrman"),
+                          QString(),
                           QStringLiteral("https://apps.kde.org/kblackbox"));
     aboutData.addAuthor(i18n("Nicolas Roffet"),i18n("Developer of version 0.4."), QStringLiteral("nicolas-kde@roffet.com"));
     aboutData.addAuthor(i18n("Robert Cimrman"),i18n("Original developer"), QStringLiteral("cimrman3@students.zcu.cz"));

@@ -28,15 +28,13 @@ KBBThemeManager::KBBThemeManager(const QString &svgzFileName)
 	
 	// 2. for non SVG items
 	QFile svgzFile(svgzFileName);
-	KCompressionDevice *f = new KCompressionDevice(&svgzFile, false, KCompressionDevice::GZip);
+	KCompressionDevice f(&svgzFile, false, KCompressionDevice::GZip);
 	
-	if (f) {
+	if (f.open(QIODevice::ReadOnly)) {
 		QDomDocument doc;
-		if (doc.setContent(f,true)) {
+		if (doc.setContent(&f,true)) {
 			m_root = doc.documentElement();
 		}
-		
-		delete f;
 	}
 }
 

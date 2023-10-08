@@ -33,12 +33,16 @@ int main( int argc, char **argv )
     aboutData.addAuthor(i18n("Nicolas Roffet"),i18n("Developer of version 0.4."), QStringLiteral("nicolas-kde@roffet.com"));
     aboutData.addAuthor(i18n("Robert Cimrman"),i18n("Original developer"), QStringLiteral("cimrman3@students.zcu.cz"));
     aboutData.addCredit(i18n("Johann Ollivier Lapeyre"), i18n("Artist"), QStringLiteral("johann.ollivierlapeyre@gmail.com"));
-    QCommandLineParser parser;
+
     KAboutData::setApplicationData(aboutData);
+
     KCrash::initialize();
+
+    QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
     parser.process(application);
     aboutData.processCommandLine(&parser);
+
     KDBusService service;
 
     application.setWindowIcon(QIcon::fromTheme(QStringLiteral("kblackbox")));

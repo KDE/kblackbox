@@ -32,7 +32,7 @@ KBBThemeManager::KBBThemeManager(const QString &svgzFileName)
 	
 	if (f.open(QIODevice::ReadOnly)) {
 		QDomDocument doc;
-		if (doc.setContent(&f,true)) {
+		if (doc.setContent(&f, QDomDocument::ParseOption::UseNamespaceProcessing)) {
 			m_root = doc.documentElement();
 		}
 	}

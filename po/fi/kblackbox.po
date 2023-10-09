@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:43+0000\n"
+"POT-Creation-Date: 2023-10-09 02:38+0000\n"
 "PO-Revision-Date: 2023-02-26 16:25+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -737,32 +737,32 @@ msgstr ""
 "© 2007 Nicolas Roffet\n"
 "© 1999–2000 Robert Cimrman"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Version 0.4 kehittäjä."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "Original developer"
 msgstr "Alkuperäinen kehittäjä"
 
-#: main.cpp:52
+#: main.cpp:53
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:52
+#: main.cpp:53
 #, kde-format
 msgid "Artist"
 msgstr "Taiteilija"

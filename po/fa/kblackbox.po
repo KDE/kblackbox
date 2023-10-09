@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:43+0000\n"
+"POT-Creation-Date: 2023-10-09 02:38+0000\n"
 "PO-Revision-Date: 2008-04-15 16:31+0330\n"
 "Last-Translator: Emil Sedgh <emilsedgh@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@lists.kde.org>\n"
@@ -710,33 +710,33 @@ msgid ""
 "(c) 1999-2000, Robert Cimrman"
 msgstr ""
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr ""
 
-#: main.cpp:50
+#: main.cpp:51
 #, fuzzy, kde-format
 #| msgid "Developper of version 0.4."
 msgid "Developer of version 0.4."
 msgstr "توسعه‌دهنده نسخه ۰.۴."
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgid "Robert Cimrman"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:52
 #, fuzzy, kde-format
 msgid "Original developer"
 msgstr "توسعه‌دهنده اصلی"
 
-#: main.cpp:52
+#: main.cpp:53
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr ""
 
-#: main.cpp:52
+#: main.cpp:53
 #, kde-format
 msgid "Artist"
 msgstr "هنرمند"

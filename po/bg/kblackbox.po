@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kblackbox.po 1660889 2023-09-25 02:02:18Z scripty $
+# $Id: kblackbox.po 1661987 2023-10-09 02:08:15Z scripty $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006.
 # Petar Toushkov <pt.launchpad@gmail.com>, 2009, 2010.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-10-09 01:44+0000\n"
 "PO-Revision-Date: 2022-07-10 10:10+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -755,32 +755,32 @@ msgstr ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:33
+#: main.cpp:34
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:33
+#: main.cpp:34
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Разработчик на версия 0.4."
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Original developer"
 msgstr "Първоначален разработчик"
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Artist"
 msgstr "Художник"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:39+0000\n"
+"POT-Creation-Date: 2023-10-09 01:44+0000\n"
 "PO-Revision-Date: 2010-09-24 16:38+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -640,32 +640,32 @@ msgid ""
 "(c) 1999-2000, Robert Cimrman"
 msgstr ""
 
-#: main.cpp:33
+#: main.cpp:34
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr ""
 
-#: main.cpp:33
+#: main.cpp:34
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr ""
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Robert Cimrman"
 msgstr ""
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Original developer"
 msgstr ""
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr ""
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Artist"
 msgstr "कलाकार"

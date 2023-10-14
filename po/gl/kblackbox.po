@@ -519,8 +519,8 @@ msgid ""
 msgstr ""
 "Un impacto directo nunha bóla é un «impacto». Un raio que bata nunha bóla "
 "<b>non</b> sairá da caixa negra.<b></b>Exemplo: o raio puido bater unha bóla "
-"na posición que se mostra, pero a posición exacta do impacto non é certa: "
-"hai outras posibilidades."
+"na posición que se amosa, pero a posición exacta do impacto non é certa: hai "
+"outras posibilidades."
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -613,7 +613,7 @@ msgid ""
 msgstr ""
 "Se unha bóla esta <b>no bordo da caixa</b> (sen outra bóla cerca), un raio "
 "que entre na caixa directamente xunto a ela provocará unha reflexión cara "
-"atrás.<br /><br />Exemplo: a configuración que se mostra provoca unha "
+"atrás.<br /><br />Exemplo: a configuración que se amosa provoca unha "
 "reflexión cara atrás."
 
 #: kbbtutorial.cpp:197

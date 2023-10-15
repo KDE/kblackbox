@@ -141,37 +141,37 @@ KBBMainWindow::KBBMainWindow()
 	QAction * action = actionCollection()->addAction( QStringLiteral(  "move_down" ) );
 	action->setText( i18n("Move Down") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveDown);
-    actionCollection()->setDefaultShortcut(action, Qt::Key_Down);
+	KActionCollection::setDefaultShortcut(action, Qt::Key_Down);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral(  "move_up" ) );
 	action->setText( i18n("Move Up") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveUp);
-    actionCollection()->setDefaultShortcut(action,Qt::Key_Up);
+	KActionCollection::setDefaultShortcut(action,Qt::Key_Up);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral(  "move_left" ) );
 	action->setText( i18n("Move Left") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveLeft);
-    actionCollection()->setDefaultShortcut(action, Qt::Key_Left);
+	KActionCollection::setDefaultShortcut(action, Qt::Key_Left);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral(  "move_right" ) );
 	action->setText( i18n("Move Right") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveRight);
-    actionCollection()->setDefaultShortcut(action, Qt::Key_Right);
+	KActionCollection::setDefaultShortcut(action, Qt::Key_Right);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral( "switch_ball" ));
 	action->setText(i18n("Switch Ball or Shoot Laser"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardEnter);
-    actionCollection()->setDefaultShortcut(action, Qt::Key_Return);
+	KActionCollection::setDefaultShortcut(action, Qt::Key_Return);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral( "switch_marker" ));
 	action->setText(i18n("Switch Marker"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardSpace);
-    actionCollection()->setDefaultShortcut(action, Qt::Key_Space);
+	KActionCollection::setDefaultShortcut(action, Qt::Key_Space);
 	addAction(action);
 
 

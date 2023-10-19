@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2023-10-19 01:40+0000\n"
 "PO-Revision-Date: 2010-03-28 18:14+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -47,23 +47,23 @@ msgid " row"
 msgid_plural " rows"
 msgstr[0] " แถว"
 
-#: kbbmainwindow.cpp:66
+#: kbbmainwindow.cpp:67
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr ""
 
-#: kbbmainwindow.cpp:76
+#: kbbmainwindow.cpp:77
 #, kde-format
 msgid "Start Tutorial"
 msgstr "ช่วยสอนเล่นเกม"
 
-#: kbbmainwindow.cpp:78
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid "Start tutorial"
 msgstr "ช่วยสอนเล่นเกม"
 
-#: kbbmainwindow.cpp:79
+#: kbbmainwindow.cpp:80
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -73,17 +73,17 @@ msgstr ""
 "และมีเคล็ดลับในการเล่นแบบใดบ้าง คุณควรดูบทช่วยสอนเล่นเกม หากคุณไม่ทราบถึงวิธีการเล่นเกมนี้ !</"
 "qt>"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "เกมกระบะทราย"
 
-#: kbbmainwindow.cpp:84
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "เริ่มเกมกระบะทรายใหม่"
 
-#: kbbmainwindow.cpp:85
+#: kbbmainwindow.cpp:86
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -96,14 +96,14 @@ msgstr ""
 "หลังจากที่เข้าใจและเล่นเกมนี้เป็นแล้ว คุณก็ควรจะทำการเล่นเกมจริงแทนดีกว่า "
 "เนื่องจากสนุกกว่าการเล่นที่เห็นเฉลยแล้ว !</p></qt>"
 
-#: kbbmainwindow.cpp:91
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "เสร็จแล้ว!"
 
-#: kbbmainwindow.cpp:92
+#: kbbmainwindow.cpp:93
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -119,12 +119,12 @@ msgstr ""
 "ul><p>โปรดทราบ คุณสามารถทำการคลิกที่นี่ได้ เมื่อคุณได้วางลูกบอลลงในตำแหน่งต่าง ๆ "
 "จนครบจำนวนลูกบอลแล้วเท่านั้น</p></qt>"
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid "Give up the game"
 msgstr "ขอยอมแพ้"
 
-#: kbbmainwindow.cpp:97
+#: kbbmainwindow.cpp:98
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -135,42 +135,42 @@ msgstr ""
 "และจะมีการเฉลยว่าลูกบอลอยู่ที่ใดบ้าง</p><p>หากคุณได้วางลูกบอลจนหมดแล้ว และไม่อยากจะยอมแพ้ "
 "ให้คลิกที่ \"เสร็จแล้ว!\" แทน</p></qt>"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:103
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr ""
 
-#: kbbmainwindow.cpp:142
+#: kbbmainwindow.cpp:143
 #, kde-format
 msgid "Move Down"
 msgstr "ย้ายลงด้านล่าง"
 
-#: kbbmainwindow.cpp:148
+#: kbbmainwindow.cpp:149
 #, kde-format
 msgid "Move Up"
 msgstr "ย้ายขึ้นด้านบน"
 
-#: kbbmainwindow.cpp:154
+#: kbbmainwindow.cpp:155
 #, kde-format
 msgid "Move Left"
 msgstr "ย้ายไปด้านซ้าย"
 
-#: kbbmainwindow.cpp:160
+#: kbbmainwindow.cpp:161
 #, kde-format
 msgid "Move Right"
 msgstr "ย้ายไปด้านขวา"
 
-#: kbbmainwindow.cpp:166
+#: kbbmainwindow.cpp:167
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "สลับลูกบอลหรือยิงแสงเลเซอร์"
 
-#: kbbmainwindow.cpp:172
+#: kbbmainwindow.cpp:173
 #, kde-format
 msgid "Switch Marker"
 msgstr "สลับเครื่องหมาย"
 
-#: kbbmainwindow.cpp:246
+#: kbbmainwindow.cpp:247
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -182,34 +182,34 @@ msgstr ""
 "โปรดทราบ: คุณได้แก้ไข<br />ค่าพารามิเตอร์ต่าง ๆ <br />ของเกมที่ปรับแต่งเอง <br /"
 ">ในกล่องตั้งค่าต่าง ๆ"
 
-#: kbbmainwindow.cpp:279
+#: kbbmainwindow.cpp:280
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
 msgstr[0] "คุณต้องเอาลูกบอลออกจากกล่องดำ %1 ลูกก่อน"
 
-#: kbbmainwindow.cpp:281
+#: kbbmainwindow.cpp:282
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr "เพื่อตรวจสอบว่าคุณเดาตำแหน่งลูกบอลได้สำเร็จหรือไม่ ให้คลิกที่นี่ !"
 
-#: kbbmainwindow.cpp:283
+#: kbbmainwindow.cpp:284
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
 msgstr[0] "คุณต้องการจะวางลูกบอล %1 ลูก ซึ่งมากกว่าบอลบนกล่องดำ"
 
-#: kbbmainwindow.cpp:287
+#: kbbmainwindow.cpp:288
 #, kde-format
 msgid "Game over."
 msgstr "จบเกม"
 
-#: kbbmainwindow.cpp:289
+#: kbbmainwindow.cpp:290
 #, kde-format
 msgid "Game paused."
 msgstr "เกมหยุดชั่วคราว"
 
-#: kbbmainwindow.cpp:328
+#: kbbmainwindow.cpp:329
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -222,12 +222,12 @@ msgstr ""
 "จนกว่าคุณจะถึงขั้นสุดท้ายในบทช่วยสอนเสียก่อน\n"
 "ดังนั้นโปรดเรียนรู้บทช่วยสอนการเล่นจนเสร็จสิ้นเสียก่อน"
 
-#: kbbmainwindow.cpp:328
+#: kbbmainwindow.cpp:329
 #, kde-format
 msgid "Check positions"
 msgstr "ตรวจสอบตำแหน่งต่าง ๆ"
 
-#: kbbmainwindow.cpp:335
+#: kbbmainwindow.cpp:336
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -235,7 +235,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "คะแนนของคุณคือ: %1<br />ทำได้ดีมาก !"
 
-#: kbbmainwindow.cpp:337
+#: kbbmainwindow.cpp:338
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -243,7 +243,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "แต่ไม่มีการนับ<br />เนื่องจาก <b>มันเป็นกระบะทราย !</b>"
 
-#: kbbmainwindow.cpp:339
+#: kbbmainwindow.cpp:340
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -251,12 +251,12 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "คะแนนของคุณคือ: %1<br />ขอแนะนำให้คุณฝึกหัดให้มากกว่านี้"
 
-#: kbbmainwindow.cpp:368
+#: kbbmainwindow.cpp:369
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "เกมถูกหยุดไว้ชั่วคราว<br />กด \"%1\" เพื่อกลับไปเล่นเกมต่อ"
 
-#: kbbmainwindow.cpp:390
+#: kbbmainwindow.cpp:391
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
@@ -265,29 +265,29 @@ msgstr ""
 "คุณต้องการจะยกเลิกเกมที่กำลังเล่นอยู่ในปัจจุบัน แล้วเริ่มเกมใหม่ที่มีการใช้พารามิเตอร์ใหม่ต่าง ๆ "
 "นี้หรือไม่ ?"
 
-#: kbbmainwindow.cpp:391
+#: kbbmainwindow.cpp:392
 #, fuzzy, kde-format
 #| msgid "Start new game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "เริ่มเกมใหม่"
 
-#: kbbmainwindow.cpp:407
+#: kbbmainwindow.cpp:408
 #, kde-format
 msgid "Custom Game"
 msgstr "ปรับแต่งเกมเอง"
 
-#: kbbmainwindow.cpp:426
+#: kbbmainwindow.cpp:427
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "ขออภัย คุณไม่สามารถยอมแพ้ในระหว่างการสอนเล่นเกมได้"
 
-#: kbbmainwindow.cpp:426
+#: kbbmainwindow.cpp:427
 #, kde-format
 msgid "Solve"
 msgstr "แก้ปัญหา"
 
-#: kbbmainwindow.cpp:429
+#: kbbmainwindow.cpp:430
 #, fuzzy, kde-format
 #| msgid ""
 #| "You placed all the balls. Great!\n"
@@ -305,29 +305,29 @@ msgstr ""
 "และตรวจสอบว่าคุณเดาตำแหน่งลูกบอลได้ถูกต้องหรือไม่\n"
 "แล้วคุณยังจะยอมแพ้ในเกมนี้อยู่อีกจริง ๆ หรือไม่ ?"
 
-#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
 #, kde-format
 msgid "Give up"
 msgstr "ขอยอมแพ้"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] "คุณควรจะวางบอล %1 ลูก !\n"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] "คุณได้วางลูกบอลไปแล้ว %1\n"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "คุณต้องการจะยอมแพ้ในเกมนี้จริง ๆ หรือไม่ ?"
 
-#: kbbmainwindow.cpp:441
+#: kbbmainwindow.cpp:442
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -339,12 +339,12 @@ msgstr ""
 "โปรดทราบ: ในโหมดกระบะทราย <br />จะมีการแสดงตำแหน่งลูกบอลจริงให้เห็นทั้งหมด <br /"
 ">ขอให้สนุกนะ !"
 
-#: kbbmainwindow.cpp:480
+#: kbbmainwindow.cpp:481
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "นี่จะเป็นการจบเกมปัจจุบันซึ่งคุณยังเล่นไม่จบ !"
 
-#: kbbmainwindow.cpp:480
+#: kbbmainwindow.cpp:481
 #, kde-format
 msgid "Start new game"
 msgstr "เริ่มเกมใหม่"

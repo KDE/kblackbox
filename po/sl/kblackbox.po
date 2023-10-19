@@ -2,7 +2,7 @@
 # Translation of kblackbox.po to Slovenian
 # SLOVENIAN TRANSLATION OF KDEGAMES.
 # Copyright (C) 2001, 2004, 2006, 2007 Free Software Foundation, Inc.
-# $Id: kblackbox.po 1661987 2023-10-09 02:08:15Z scripty $
+# $Id: kblackbox.po 1662680 2023-10-19 02:04:24Z scripty $
 # $Source$
 #
 # Marko Samastur <markos@elite.org>, 1999.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2023-10-19 01:40+0000\n"
 "PO-Revision-Date: 2022-07-09 15:40+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -74,23 +74,23 @@ msgstr[1] " vrstici"
 msgstr[2] " vrstice"
 msgstr[3] " vrstic"
 
-#: kbbmainwindow.cpp:66
+#: kbbmainwindow.cpp:67
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr "Nastavljivo"
 
-#: kbbmainwindow.cpp:76
+#: kbbmainwindow.cpp:77
 #, kde-format
 msgid "Start Tutorial"
 msgstr "Začni vodnik"
 
-#: kbbmainwindow.cpp:78
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid "Start tutorial"
 msgstr "Začni vodnik"
 
-#: kbbmainwindow.cpp:79
+#: kbbmainwindow.cpp:80
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -99,17 +99,17 @@ msgstr ""
 "<qt><b>Vodnik</b> je hiter, uporabniku prijazen in interaktiven način za "
 "učenje pravil igre. Začnite ga, če jih še ne poznate!</qt>"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "Nova igra v peskovniškem načinu"
 
-#: kbbmainwindow.cpp:84
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "Začnite novo igro v peskovniškem načinu"
 
-#: kbbmainwindow.cpp:85
+#: kbbmainwindow.cpp:86
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -121,14 +121,14 @@ msgstr ""
 "igre. To je uporabno za učenje načel igre.</p><p>Vseeno pa to po določenem "
 "času ni več zanimivo, zato bi morali poizkusiti začeti pravo igro!</p></qt>"
 
-#: kbbmainwindow.cpp:91
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Končano!"
 
-#: kbbmainwindow.cpp:92
+#: kbbmainwindow.cpp:93
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -144,12 +144,12 @@ msgstr ""
 "mislite, da ste končali</b>, kliknite tu.</li></ul><p>Sem lahko kliknete "
 "samo, če ste postavili pravilno število žogic.</p></qt>"
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid "Give up the game"
 msgstr "Predajte igro"
 
-#: kbbmainwindow.cpp:97
+#: kbbmainwindow.cpp:98
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -160,42 +160,42 @@ msgstr ""
 "rešitev.</p><p>Če ste postavili vse žogice in se ne želite predati, izberite "
 "\"Končano!\"</p></qt>"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:103
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr "Omogoči poudarjanje pod miško"
 
-#: kbbmainwindow.cpp:142
+#: kbbmainwindow.cpp:143
 #, kde-format
 msgid "Move Down"
 msgstr "Premakni dol"
 
-#: kbbmainwindow.cpp:148
+#: kbbmainwindow.cpp:149
 #, kde-format
 msgid "Move Up"
 msgstr "Premakni gor"
 
-#: kbbmainwindow.cpp:154
+#: kbbmainwindow.cpp:155
 #, kde-format
 msgid "Move Left"
 msgstr "Premakni levo"
 
-#: kbbmainwindow.cpp:160
+#: kbbmainwindow.cpp:161
 #, kde-format
 msgid "Move Right"
 msgstr "Premakni desno"
 
-#: kbbmainwindow.cpp:166
+#: kbbmainwindow.cpp:167
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "Zamenjaj žogico ali ustreli laser"
 
-#: kbbmainwindow.cpp:172
+#: kbbmainwindow.cpp:173
 #, kde-format
 msgid "Switch Marker"
 msgstr "Preklopi označevalnik"
 
-#: kbbmainwindow.cpp:246
+#: kbbmainwindow.cpp:247
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -206,7 +206,7 @@ msgid ""
 msgstr ""
 "Opomba: Parametre iger<br />po meri lahko<br />spremenite v<br />nastavitvah."
 
-#: kbbmainwindow.cpp:279
+#: kbbmainwindow.cpp:280
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
@@ -215,13 +215,13 @@ msgstr[1] "Najprej morate iz črne škatle odstraniti %1 žogici."
 msgstr[2] "Najprej morate iz črne škatle odstraniti %1 žogice."
 msgstr[3] "Najprej morate iz črne škatle odstraniti %1 žogic."
 
-#: kbbmainwindow.cpp:281
+#: kbbmainwindow.cpp:282
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr ""
 "Če želite preveriti, ali ste uspešno uganili položaj žogic, kliknite tukaj!"
 
-#: kbbmainwindow.cpp:283
+#: kbbmainwindow.cpp:284
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
@@ -230,17 +230,17 @@ msgstr[1] "V črno škatlo morate postaviti še %1 žogici."
 msgstr[2] "V črno škatlo morate postaviti še %1 žogice."
 msgstr[3] "V črno škatlo morate postaviti še %1 žogic."
 
-#: kbbmainwindow.cpp:287
+#: kbbmainwindow.cpp:288
 #, kde-format
 msgid "Game over."
 msgstr "Konec igre."
 
-#: kbbmainwindow.cpp:289
+#: kbbmainwindow.cpp:290
 #, kde-format
 msgid "Game paused."
 msgstr "Igra v premoru."
 
-#: kbbmainwindow.cpp:328
+#: kbbmainwindow.cpp:329
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -253,12 +253,12 @@ msgstr ""
 "koraka.\n"
 "Najprej zaključite vodnik."
 
-#: kbbmainwindow.cpp:328
+#: kbbmainwindow.cpp:329
 #, kde-format
 msgid "Check positions"
 msgstr "Preveri položaje"
 
-#: kbbmainwindow.cpp:335
+#: kbbmainwindow.cpp:336
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -266,7 +266,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Vaš končni rezultat je: %1.<br />Odrezali ste se zares dobro!"
 
-#: kbbmainwindow.cpp:337
+#: kbbmainwindow.cpp:338
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -274,7 +274,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Ampak to žal ne šteje<br />za <b>igro v peskovniškem načinu!</b>"
 
-#: kbbmainwindow.cpp:339
+#: kbbmainwindow.cpp:340
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -282,12 +282,12 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "Vaš končni rezultat je: %1.<br />Verjetno potrebujete več vaje."
 
-#: kbbmainwindow.cpp:368
+#: kbbmainwindow.cpp:369
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "Igra v premoru.<br />Pritisnite \"%1\" za nadaljevanje."
 
-#: kbbmainwindow.cpp:390
+#: kbbmainwindow.cpp:391
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
@@ -296,28 +296,28 @@ msgstr ""
 "Ali želite preklicati trenutno igro po meri in začeti novo z novimi "
 "parametri?"
 
-#: kbbmainwindow.cpp:391
+#: kbbmainwindow.cpp:392
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Začni novo igro"
 
-#: kbbmainwindow.cpp:407
+#: kbbmainwindow.cpp:408
 #, kde-format
 msgid "Custom Game"
 msgstr "Igra po meri"
 
-#: kbbmainwindow.cpp:426
+#: kbbmainwindow.cpp:427
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Na žalost se v vodniku ne morete predati."
 
-#: kbbmainwindow.cpp:426
+#: kbbmainwindow.cpp:427
 #, kde-format
 msgid "Solve"
 msgstr "Reši"
 
-#: kbbmainwindow.cpp:429
+#: kbbmainwindow.cpp:430
 #, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
@@ -330,12 +330,12 @@ msgstr ""
 "pravilno.\n"
 "Ali resnično želite predati igro?"
 
-#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
 #, kde-format
 msgid "Give up"
 msgstr "Predam se"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
@@ -344,7 +344,7 @@ msgstr[1] "Postaviti bi morali %1 žogici!\n"
 msgstr[2] "Postaviti bi morali %1 žogice!\n"
 msgstr[3] "Postaviti bi morali %1 žogic!\n"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
@@ -353,12 +353,12 @@ msgstr[1] "Postavili ste %1 žogici.\n"
 msgstr[2] "Postavili ste %1 žogice.\n"
 msgstr[3] "Postavili ste %1 žogic.\n"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Ali zares želite predati to igro?"
 
-#: kbbmainwindow.cpp:441
+#: kbbmainwindow.cpp:442
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -370,12 +370,12 @@ msgstr ""
 "Opomba: V igri v peskovniškem načinu<br />je rešitev že prikazana.<br /"
 ">Uživajte!"
 
-#: kbbmainwindow.cpp:480
+#: kbbmainwindow.cpp:481
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "To bo končalo trenutno igro!"
 
-#: kbbmainwindow.cpp:480
+#: kbbmainwindow.cpp:481
 #, kde-format
 msgid "Start new game"
 msgstr "Začni novo igro"

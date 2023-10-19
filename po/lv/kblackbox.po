@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-09 01:44+0000\n"
+"POT-Creation-Date: 2023-10-19 01:40+0000\n"
 "PO-Revision-Date: 2012-06-29 20:18+0300\n"
 "Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -56,23 +56,23 @@ msgstr[0] " rinda"
 msgstr[1] " rindas"
 msgstr[2] " rindu"
 
-#: kbbmainwindow.cpp:66
+#: kbbmainwindow.cpp:67
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
 msgstr "Konfigurējams"
 
-#: kbbmainwindow.cpp:76
+#: kbbmainwindow.cpp:77
 #, kde-format
 msgid "Start Tutorial"
 msgstr "Sākt pamācību"
 
-#: kbbmainwindow.cpp:78
+#: kbbmainwindow.cpp:79
 #, kde-format
 msgid "Start tutorial"
 msgstr "Sāk pamācību"
 
-#: kbbmainwindow.cpp:79
+#: kbbmainwindow.cpp:80
 #, kde-format
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
@@ -81,17 +81,17 @@ msgstr ""
 "<qt><b>Pamācība</b> ir ātrs un lietotājam draudzīgs interaktīvs veids, kā "
 "apgūt spēles noteikumus. Palaid to, ja nezini spēles noteikumus!</qt>"
 
-#: kbbmainwindow.cpp:83
+#: kbbmainwindow.cpp:84
 #, kde-format
 msgid "New Sandbox Game"
 msgstr "Jauna smilškastes spēle"
 
-#: kbbmainwindow.cpp:84
+#: kbbmainwindow.cpp:85
 #, kde-format
 msgid "Start a new sandbox game"
 msgstr "Sākt jaunu smilškastes spēli"
 
-#: kbbmainwindow.cpp:85
+#: kbbmainwindow.cpp:86
 #, kde-format
 msgid ""
 "<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
@@ -104,14 +104,14 @@ msgstr ""
 "nepavisam vairs nav jautri, un tev vajadzētu pamēģināt uzsākt īstu spēli.</"
 "p></qt>"
 
-#: kbbmainwindow.cpp:91
+#: kbbmainwindow.cpp:92
 #, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
 msgstr "Darīts!"
 
-#: kbbmainwindow.cpp:92
+#: kbbmainwindow.cpp:93
 #, kde-format
 msgid ""
 "<qt><ul><li>First, you have to place all the balls on the black box. To "
@@ -128,12 +128,12 @@ msgstr ""
 "ul><p>Ievēro, ka šeit noklikšķināt ir iespējams tikai tad, ja esi izvietojis "
 "pareizo skaitu bumbu.</p></qt>"
 
-#: kbbmainwindow.cpp:96
+#: kbbmainwindow.cpp:97
 #, kde-format
 msgid "Give up the game"
 msgstr "Padoties"
 
-#: kbbmainwindow.cpp:97
+#: kbbmainwindow.cpp:98
 #, kde-format
 msgid ""
 "<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
@@ -144,42 +144,42 @@ msgstr ""
 "atrisinājums.</p><p>Ja esi izvietojis visas bumbas un nevēlies padoties, "
 "izvēlies \"Darīts!\".</p></qt>"
 
-#: kbbmainwindow.cpp:102
+#: kbbmainwindow.cpp:103
 #, kde-format
 msgid "Enable highlight under mouse"
 msgstr ""
 
-#: kbbmainwindow.cpp:142
+#: kbbmainwindow.cpp:143
 #, kde-format
 msgid "Move Down"
 msgstr "Pārvietot lejup"
 
-#: kbbmainwindow.cpp:148
+#: kbbmainwindow.cpp:149
 #, kde-format
 msgid "Move Up"
 msgstr "Pārvietot augšup"
 
-#: kbbmainwindow.cpp:154
+#: kbbmainwindow.cpp:155
 #, kde-format
 msgid "Move Left"
 msgstr "Pārvietot pa kreisi"
 
-#: kbbmainwindow.cpp:160
+#: kbbmainwindow.cpp:161
 #, kde-format
 msgid "Move Right"
 msgstr "Pārvietot pa labi"
 
-#: kbbmainwindow.cpp:166
+#: kbbmainwindow.cpp:167
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
 msgstr "Pārslēgt bumbu vai izšaut no lāzera"
 
-#: kbbmainwindow.cpp:172
+#: kbbmainwindow.cpp:173
 #, kde-format
 msgid "Switch Marker"
 msgstr "Pārslēgt marķieri"
 
-#: kbbmainwindow.cpp:246
+#: kbbmainwindow.cpp:247
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -191,7 +191,7 @@ msgstr ""
 "Piezīme: pielāgoto<br />spēļu parametrus<br />vari mainīt dialoglogā<br /"
 ">'Iestatījumi'."
 
-#: kbbmainwindow.cpp:279
+#: kbbmainwindow.cpp:280
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
@@ -199,13 +199,13 @@ msgstr[0] "Vispirms tev no melnās kastes jāizņoņem %1 bumbu."
 msgstr[1] "Vispirms tev no melnās kastes jānoņem %1 bumbas."
 msgstr[2] "Vispirms tev no melnās kastes jānoņem %1 bumbas."
 
-#: kbbmainwindow.cpp:281
+#: kbbmainwindow.cpp:282
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr ""
 "Noklikšķini šeit, lai noskaidrotu, kā veicies ar bumbu novietojuma minēšanu!"
 
-#: kbbmainwindow.cpp:283
+#: kbbmainwindow.cpp:284
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
@@ -213,17 +213,17 @@ msgstr[0] "Tev uz melnās kastes jāvieto vēl %1 bumbu."
 msgstr[1] "Tev uz melnās kastes jāvieto vēl %1 bumbas."
 msgstr[2] "Tev uz melnās kastes jāvieto vēl %1 bumbas."
 
-#: kbbmainwindow.cpp:287
+#: kbbmainwindow.cpp:288
 #, kde-format
 msgid "Game over."
 msgstr "Spēles beigas."
 
-#: kbbmainwindow.cpp:289
+#: kbbmainwindow.cpp:290
 #, kde-format
 msgid "Game paused."
 msgstr "Spēle pauzēta."
 
-#: kbbmainwindow.cpp:328
+#: kbbmainwindow.cpp:329
 #, kde-format
 msgid ""
 "Clicking on \"Done!\" is the normal way to check the positions of the balls "
@@ -236,12 +236,12 @@ msgstr ""
 "pirms pēdējā soļa sasniegšanas.\n"
 "Lūdzu, vispirms pabeidz pamācību."
 
-#: kbbmainwindow.cpp:328
+#: kbbmainwindow.cpp:329
 #, kde-format
 msgid "Check positions"
 msgstr "Pārbaudīt pozīcijas"
 
-#: kbbmainwindow.cpp:335
+#: kbbmainwindow.cpp:336
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -249,7 +249,7 @@ msgctxt ""
 msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Tavs rezultāts ir: %1.<br />Tev tiešām labi sanāca!"
 
-#: kbbmainwindow.cpp:337
+#: kbbmainwindow.cpp:338
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -257,7 +257,7 @@ msgctxt ""
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Bet tas netiek ieskaitīts,<br />jo <b>tā ir smilškaste!</b>"
 
-#: kbbmainwindow.cpp:339
+#: kbbmainwindow.cpp:340
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -265,12 +265,12 @@ msgctxt ""
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr "Tavs rezultāts ir: %1.<br />Šķiet, tev vajadzēs vēl pavingrināties."
 
-#: kbbmainwindow.cpp:368
+#: kbbmainwindow.cpp:369
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
 msgstr "Spēle pauzēta.<br />Nospied \"%1\", lai turpinātu."
 
-#: kbbmainwindow.cpp:390
+#: kbbmainwindow.cpp:391
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
@@ -279,29 +279,29 @@ msgstr ""
 "Vai vēlies atcelt pašreizējo pielāgoto spēli un sākt jaunu ar citiem "
 "parametriem?"
 
-#: kbbmainwindow.cpp:391
+#: kbbmainwindow.cpp:392
 #, fuzzy, kde-format
 #| msgid "Start new game"
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Sākt jaunu spēli"
 
-#: kbbmainwindow.cpp:407
+#: kbbmainwindow.cpp:408
 #, kde-format
 msgid "Custom Game"
 msgstr "Pielāgota spēle"
 
-#: kbbmainwindow.cpp:426
+#: kbbmainwindow.cpp:427
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
 msgstr "Atvaino, tu nevari padoties pamācības laikā."
 
-#: kbbmainwindow.cpp:426
+#: kbbmainwindow.cpp:427
 #, kde-format
 msgid "Solve"
 msgstr "Atrisināt"
 
-#: kbbmainwindow.cpp:429
+#: kbbmainwindow.cpp:430
 #, fuzzy, kde-format
 #| msgid ""
 #| "You placed all the balls. Great!\n"
@@ -319,12 +319,12 @@ msgstr ""
 "pārbaudītu, vai esi uzminējis pareizi.\n"
 "Tātad -- vai tiešām vēlies padoties?"
 
-#: kbbmainwindow.cpp:429 kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
 #, kde-format
 msgid "Give up"
 msgstr "Padoties"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
@@ -332,7 +332,7 @@ msgstr[0] "Tev vajadzētu novietot %1 bumbu!\n"
 msgstr[1] "Tev vajadzētu novietot %1 bumbas!\n"
 msgstr[2] "Tev vajadzētu novietot %1 bumbas!\n"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
@@ -340,12 +340,12 @@ msgstr[0] "Tu esi novietojis %1.\n"
 msgstr[1] "Tu esi novietojis %1.\n"
 msgstr[2] "Tu esi novietojis %1.\n"
 
-#: kbbmainwindow.cpp:431
+#: kbbmainwindow.cpp:432
 #, kde-format
 msgid "Do you really want to give up this game?"
 msgstr "Vai tiešām vēlies padoties?"
 
-#: kbbmainwindow.cpp:441
+#: kbbmainwindow.cpp:442
 #, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
@@ -357,12 +357,12 @@ msgstr ""
 "Piezīme: smilškastes režīmā<br />atrisinājums jau ir parādīts.<br />Lai "
 "veicas!"
 
-#: kbbmainwindow.cpp:480
+#: kbbmainwindow.cpp:481
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Tās būs pašreizējās spēles beigas!"
 
-#: kbbmainwindow.cpp:480
+#: kbbmainwindow.cpp:481
 #, kde-format
 msgid "Start new game"
 msgstr "Sākt jaunu spēli"

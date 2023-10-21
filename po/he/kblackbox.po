@@ -26,7 +26,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Zanata 3.9.6\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -45,6 +46,8 @@ msgid " ball"
 msgid_plural " balls"
 msgstr[0] "&כדורים"
 msgstr[1] "&כדורים"
+msgstr[2] ""
+msgstr[3] ""
 
 #: kbblevelconfigurationwidget.cpp:40
 #, kde-format
@@ -53,6 +56,8 @@ msgid " column"
 msgid_plural " columns"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: kbblevelconfigurationwidget.cpp:49
 #, kde-format
@@ -61,6 +66,8 @@ msgid " row"
 msgid_plural " rows"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: kbbmainwindow.cpp:67
 #, kde-format
@@ -186,6 +193,8 @@ msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: kbbmainwindow.cpp:282
 #, kde-format
@@ -198,6 +207,8 @@ msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: kbbmainwindow.cpp:288
 #, kde-format
@@ -304,6 +315,8 @@ msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: kbbmainwindow.cpp:432
 #, kde-format
@@ -311,6 +324,8 @@ msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: kbbmainwindow.cpp:432
 #, fuzzy, kde-format

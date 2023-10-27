@@ -322,13 +322,9 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 ></term>
 <listitem
 ><para
->Penseu <quote
->N'hi ha d'haver una!</quote
->. Aquestes marquen el lloc on sospiteu que s'ubica una bola en el quadre negre.</para>
+>Penseu «N'hi ha d'haver una!». Aquestes marquen el lloc on sospiteu que s'ubica una bola en el quadre negre.</para>
 <para
->Al final del joc, les posicions correctes i incorrectes de les boles també es marcaran amb &nbsp;<quote
->boles</quote
->.</para>
+>Al final del joc, les posicions correctes i incorrectes de les boles també es marcaran amb &nbsp;«boles».</para>
 </listitem>
 </varlistentry>
 
@@ -547,9 +543,7 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 ></question>
  <answer
 ><para
->Sí. Podeu utilitzar les tecles de direcció per a controlar el cursor, &Intro; per a col·locar i eliminar les boles, i &Space; per a posar les marques de <quote
->buit</quote
->.</para
+>Sí. Podeu utilitzar les tecles de direcció per a controlar el cursor, &Intro; per a col·locar i eliminar les boles, i &Space; per a posar les marques de «buit».</para
 ></answer>
 </qandaentry>
 <qandaentry>

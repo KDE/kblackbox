@@ -102,7 +102,7 @@ KBBMainWindow::KBBMainWindow()
 	m_toggleCursorAction = actionCollection()->addAction( QStringLiteral( "toggle_cursor" ));
 	m_toggleCursorAction->setText(i18n("Enable highlight under mouse"));
 	m_toggleCursorAction->setCheckable(true);
-	const KConfigGroup group = KSharedConfig::openConfig()->group("default");
+	const KConfigGroup group = KSharedConfig::openConfig()->group(QStringLiteral("default"));
 	m_toggleCursorAction->setChecked(group.readEntry<bool>("highlight_enabled", true));
 	connect(m_toggleCursorAction, &QAction::triggered, this, &KBBMainWindow::toggleCursor);
 
@@ -464,7 +464,7 @@ void KBBMainWindow::toggleCursor()
 {
 	m_gameWidget->toggleCursor();
 
-	KConfigGroup group = KSharedConfig::openConfig()->group("default");
+	KConfigGroup group = KSharedConfig::openConfig()->group(QStringLiteral("default"));
 	group.writeEntry<bool>("highlight_enabled", m_toggleCursorAction->isChecked());
 }
 

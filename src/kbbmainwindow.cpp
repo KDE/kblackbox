@@ -20,7 +20,7 @@
 #include <KMessageBox>
 
 #include <KGameClock>
-#include <KScoreDialog>
+#include <KGameHighScoreDialog>
 #include <KGameStandardAction>
 
 #include <QStatusBar>
@@ -340,12 +340,12 @@ void KBBMainWindow::done()
 			s = i18nc("The text may not be too wide. So please use some HTML-BR-tags to have something more or less as wide as in english. Thanks!", "Your final score is: %1.<br />I guess you need more practice.", score);
 
 		if ((!m_tutorial->isVisible()) && (!m_sandboxMode) && (KGameDifficulty::globalLevel() != KGameDifficultyLevel::Custom) && (score<KBBGameDoc::SCORE_LOST)) {
-			QPointer<KScoreDialog> scoreDialog = new KScoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
+			QPointer<KGameHighScoreDialog> scoreDialog = new KGameHighScoreDialog(KGameHighScoreDialog::Score | KGameHighScoreDialog::Name, this);
 			scoreDialog->initFromDifficulty(KGameDifficulty::global());
 
-			KScoreDialog::FieldInfo scoreInfo;
-			scoreInfo[KScoreDialog::Score].setNum(score);
-			if(scoreDialog->addScore(scoreInfo, KScoreDialog::LessIsMore) != 0)
+			KGameHighScoreDialog::FieldInfo scoreInfo;
+			scoreInfo[KGameHighScoreDialog::Score].setNum(score);
+			if(scoreDialog->addScore(scoreInfo, KGameHighScoreDialog::LessIsMore) != 0)
 				scoreDialog->exec();
 			delete scoreDialog;
 		}
@@ -415,7 +415,7 @@ void KBBMainWindow::settingsDialog()
 
 void KBBMainWindow::showHighscores()
 {
-	KScoreDialog scoreDialog(KScoreDialog::Score | KScoreDialog::Name, this);
+	KGameHighScoreDialog scoreDialog(KGameHighScoreDialog::Score | KGameHighScoreDialog::Name, this);
 	scoreDialog.initFromDifficulty(KGameDifficulty::global());
 	scoreDialog.exec();
 }

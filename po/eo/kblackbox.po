@@ -10,55 +10,55 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-09 02:38+0000\n"
-"PO-Revision-Date: 2023-03-21 22:43+0100\n"
+"PO-Revision-Date: 2023-11-26 18:41+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Wolfram Diestel, Pierre-Marie Pédrot"
+msgstr "Wolfram Diestel,Pierre-Marie Pédrot,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "wolfram@steloj.de, pedrotpmx@wanadoo.fr"
+msgstr "wolfram@steloj.de,pedrotpmx@wanadoo.fr,okellogg@users.sourceforge.net"
 
 #: kbblevelconfigurationwidget.cpp:31
 #, kde-format
 msgctxt "A number between 1 and 99 is displayed in front of it."
 msgid " ball"
 msgid_plural " balls"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " pilko"
+msgstr[1] " pilkoj"
 
 #: kbblevelconfigurationwidget.cpp:40
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " column"
 msgid_plural " columns"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " kolumno"
+msgstr[1] " kolumnoj"
 
 #: kbblevelconfigurationwidget.cpp:49
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " row"
 msgid_plural " rows"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " vico"
+msgstr[1] " vicoj"
 
 #: kbbmainwindow.cpp:71
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
-msgstr ""
+msgstr "Agordebla"
 
 #: kbbmainwindow.cpp:81
 #, kde-format
@@ -119,6 +119,12 @@ msgid ""
 "li></ul><p>Note that it is only possible to click here if you have placed "
 "the correct number of balls.</p></qt>"
 msgstr ""
+"<qt><ul><li>Unue, vi devas meti ĉiujn pilkojn sur la nigran skatolon. Por "
+"diveni la ĝustajn poziciojn de la pilkoj kaj vidi kiel ili interagas kun "
+"laseraj radioj, vi devus uzi la laserojn kiuj estas poziciigitaj ĉirkaŭ la "
+"nigra skatolo.</li><li><b>Kiam vi pensas, ke vi finis</b>, vi devus klaki ĉi "
+"tie.</li></ul><p>Rimarku, ke ĉi tie eblas klaki nur se vi metis la ĝustan "
+"nombron da pilkoj.</p></qt>"
 
 #: kbbmainwindow.cpp:101
 #, kde-format
@@ -139,7 +145,7 @@ msgstr ""
 #: kbbmainwindow.cpp:107
 #, kde-format
 msgid "Enable highlight under mouse"
-msgstr ""
+msgstr "Ebligi emfazon sub muso"
 
 #: kbbmainwindow.cpp:147
 #, kde-format
@@ -164,15 +170,21 @@ msgstr "Movi dekstren"
 #: kbbmainwindow.cpp:171
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
-msgstr ""
+msgstr "Ŝalti Pilkon aŭ Pafi Laseron"
 
 #: kbbmainwindow.cpp:177
 #, kde-format
 msgid "Switch Marker"
-msgstr ""
+msgstr "Ŝalti Markilon"
 
 #: kbbmainwindow.cpp:251
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The text may not be too wide. So please use some HTML-BR-tags to have "
+#| "¦something more or less as wide as in english. Thanks!"
+#| msgid ""
+#| "Note: You can change<br />the parameters of<br />custom games in the<br /"
+#| ">Settings dialog."
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -180,6 +192,8 @@ msgid ""
 "Note: You can change<br />the parameters of<br />custom games in the<br /"
 ">Settings dialog."
 msgstr ""
+"Noto: Vi povas ŝanĝi<br />la parametrojn de<br />propraj ludoj en la<br /"
+">agorda dialogo."
 
 #: kbbmainwindow.cpp:284
 #, kde-format
@@ -191,7 +205,7 @@ msgstr[1] "Vi bezonas unue forigi %1 globojn el la nigrakesto."
 #: kbbmainwindow.cpp:286
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
-msgstr ""
+msgstr "Por kontroli ĉu vi sukcese divenis la pilkpoziciojn, alklaku ĉi tie!"
 
 #: kbbmainwindow.cpp:288
 #, kde-format
@@ -229,7 +243,11 @@ msgid "Check positions"
 msgstr "Kontroli lokojn"
 
 #: kbbmainwindow.cpp:340
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The text may not be too wide. So please use some HTML-BR-tags to have "
+#| "¦something more or less as wide as in english. Thanks!"
+#| msgid "Your final score is: %1.<br />You did really well!"
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -237,7 +255,11 @@ msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Via fina rezulto estas: %1.<br />Vi faris vere bone!"
 
 #: kbbmainwindow.cpp:342
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The text may not be too wide. So please use some HTML-BR-tags to have "
+#| "¦something more or less as wide as in english. Thanks!"
+#| msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -245,7 +267,11 @@ msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Sed ne gravas<br />ĉar <b>estas la testa ludo!</b>"
 
 #: kbbmainwindow.cpp:344
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The text may not be too wide. So please use some HTML-BR-tags to have "
+#| "¦something more or less as wide as in english. Thanks!"
+#| msgid "Your final score is: %1.<br />I guess you need more practice."
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -271,17 +297,17 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr ""
+msgstr "Komencu Novan Ludon"
 
 #: kbbmainwindow.cpp:420
 #, kde-format
 msgid "Custom Game"
-msgstr ""
+msgstr "Propra Ludo"
 
 #: kbbmainwindow.cpp:439
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
-msgstr ""
+msgstr "Pardonu, vi eble ne rezignas dum la lernilo."
 
 #: kbbmainwindow.cpp:439
 #, kde-format
@@ -296,6 +322,10 @@ msgid ""
 "correctly.\n"
 "So, do you really want to give up this game?"
 msgstr ""
+"Vi metis ĉiujn pilkojn. Bonege!\n"
+"Vi devus nun klaki sur \"Fine!\" por fini la ludon kaj kontroli ĉu vi ĝuste "
+"divenis.\n"
+"Do, ĉu vi vere volas rezigni ĉi tiun ludon?"
 
 #: kbbmainwindow.cpp:442 kbbmainwindow.cpp:444
 #, kde-format
@@ -322,7 +352,13 @@ msgid "Do you really want to give up this game?"
 msgstr "Ĉu vi vere volas kapitulaci tiun ludon?"
 
 #: kbbmainwindow.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "The text may not be too wide. So please use some HTML-BR-tags to have "
+#| "¦something more or less as wide as in english. Thanks!"
+#| msgid ""
+#| "Note: In the sandbox mode,<br />the solution is already displayed.<br /"
+#| ">Have fun!"
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -357,6 +393,12 @@ msgid ""
 "another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
 "b> at the end of the game if you make a mistake.</p></qt>"
 msgstr ""
+"<qt><p>Ĉi tio estas <b>via poentaro</b>. Vi devus provi akiri la plej "
+"malaltan eble.</p><p>La poentaro pliiĝas:<ul><li>kun la tempo: <b>1 poento</"
+"b> sekundo.</li><li>kun la uzo de laseroj:<ul><li><b>3 poentoj</b> se la "
+"lasera radio trafas pilkon aŭ eliras ĉe la enirpunkto,</li><li><b>9 poentoj</"
+"b> se ĝi eliras ĉe alia enirpunkto.</li></ul></li></ul></p><p>Via poentaro "
+"estas agordita al <b>999</b> ĉe la fino de la ludo se vi eraras.</p></qt>"
 
 #: kbbscalablegraphicwidget.cpp:104
 #, kde-format
@@ -367,6 +409,11 @@ msgid ""
 "b> that are replaced with <b>interaction information</b> if you use them.</"
 "li></ul></qt>"
 msgstr ""
+"<qt><p>Ĉi tio estas la <b>ĉefa ludareo</b>.</p><ul><li>La <b>nigra skatolo</"
+"b> estas en la centro.</li><li>Maldekstre, estas la <b>pilkoj</b> kiujn vi "
+"devas meti super la nigra skatolo.</li><li>Ĉirkaŭ la nigra skatolo, estas "
+"<b>laseroj</b> kiuj estas anstataŭigite per <b>interagaj informoj</b> se vi "
+"uzas ilin.</li></ul></qt>"
 
 #: kbbtutorial.cpp:36
 #, kde-format
@@ -442,11 +489,16 @@ msgid ""
 "they do, where they come out.<br /><br />The laser beams interact with the "
 "balls in various ways."
 msgstr ""
+"La pilkoj ne estas videblaj, sed ni povas pafi laserradiojn en la skatolon "
+"ĉe malsamaj enirpunktoj kaj observi ĉu la laserradioj forlasas la skatolon, "
+"kaj se ili faras, kie ili eliras.<br /><br />La laseraj radioj interagas kun "
+"la pilkoj en diversaj manieroj."
 
 #: kbbtutorial.cpp:156
 #, kde-format
 msgid "Please click on the marked laser to shoot a beam into the black box."
 msgstr ""
+"Bonvolu klaki sur la markita lasero por pafi trabon en la nigran skatolon."
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -462,11 +514,16 @@ msgid ""
 "><br />As the game progresses, each pair of entry/exit points is marked with "
 "a different number."
 msgstr ""
+"Se lasera radio ne interagas kun iu pilko en la nigra skatolo, ĝi eliras ĉe "
+"la punkto kontraŭ la enirpunkto.<br /><br />Ekzemplo: Supozu, ke ni havas 3 "
+"pilkojn en la skatolo kiel montrite. Ili ne influos laseran radion \"1\"."
+"<br /><br />Dum la ludo progresas, ĉiu paro de enir/elirpunktoj estas "
+"markita per malsama nombro."
 
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "Now shoot the marked laser to discover the first kind of interaction."
-msgstr ""
+msgstr "Nun pafu la markitan laseron por malkovri la unuan specon de interago."
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -481,11 +538,15 @@ msgid ""
 "might have hit a ball at the position shown, but the exact position of the "
 "hit is not certain: There are many other possibilities."
 msgstr ""
+"Rekta efiko al pilko nomiĝas \"<b>trafo</b>\". Trabo kiu trafas pilkon "
+"<b>ne</b> eliras el la nigra skatolo.<br /><br />Ekzemplo: La trabo eble "
+"trafis pilkon ĉe la montrita pozicio, sed la ĝusta pozicio de la trafo. ne "
+"estas certa: Estas multaj aliaj eblecoj."
 
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Shoot the marked laser to discover the second kind of interaction."
-msgstr ""
+msgstr "Pafu la markitan laseron por malkovri la duan specon de interago."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -501,6 +562,10 @@ msgid ""
 "would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
 "possibility."
 msgstr ""
+"La interago de trabo, kiu fakte ne trafas pilkon, sed celas al unu flanko de "
+"ĝi, nomiĝas \"<b>deflankiĝo</b>\". La deklinangulo de la trabo ĉiam estas "
+"<b>90 gradoj</b>.<br /><br />Ekzemplo: La montrita pilko deviigus trabon "
+"\"2\" supren, kiel montrite, sed ĉi tio estas <b >ne</b> la sola ebleco."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -508,6 +573,8 @@ msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
+"Klaku sur \"Sekva\" por vidi alian kombinaĵon de pilkaj pozicioj, kiuj "
+"deflankas la laseran radion kiel montrite."
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -521,11 +588,14 @@ msgid ""
 ">A laser beam entering and exiting at the positions \"2\" might have been "
 "deflected by this configuration of 3 balls."
 msgstr ""
+"Kiel vi povas vidi, interagoj en la nigra skatolo povas esti sufiĉe "
+"komplikaj!<br />Laserradio eniranta kaj eliranta ĉe la pozicioj \"2\" eble "
+"estis deturnita de ĉi tiu agordo de 3 pilkoj."
 
 #: kbbtutorial.cpp:182
 #, kde-format
 msgid "Shoot the marked laser to discover another kind of result."
-msgstr ""
+msgstr "Pafu la markitan laseron por malkovri alian specon de rezulto."
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -540,11 +610,14 @@ msgid ""
 "placed 2 balls for you in a configuration that would lead to such a "
 "reflection."
 msgstr ""
+"Se la lasera radio forlasas la nigran skatolon <b>ĉe la enirpunkto</b>, ĝi "
+"estas reflektita malantaŭen ene de la nigra skatolo.<br /><br />Ekzemplo: Ni "
+"metis 2 pilkojn por vi en agordo. tio kondukus al tia pripensado."
 
 #: kbbtutorial.cpp:190
 #, kde-format
 msgid "Shoot the marked laser to see another backward reflection case."
-msgstr ""
+msgstr "Pafu la markitan laseron por vidi alian malantaŭan reflektan kazon."
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -559,6 +632,10 @@ msgid ""
 "reflection.<br /><br />Example: The configuration shown can cause a backward "
 "reflection."
 msgstr ""
+"Se pilko estas <b>ĉe la rando de la skatolo</b> (sen alia pilko proksime), "
+"trabo kiu estas direktita en la nigran skatolon rekte apud ĝi kaŭzas "
+"malantaŭen reflektadon.<br /><br /> Ekzemplo: La montrita agordo povas kaŭzi "
+"malantaŭan reflektadon."
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -604,6 +681,12 @@ msgid ""
 "ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
 ">Example: We marked one position as sure, the other one as unsure."
 msgstr ""
+"Kiam vi eltrovis kie estas pilko, bonvolu uzi la maldekstran musbutonon por "
+"marki ĝin. Por forigi globmarkon, uzu la maldekstran musbutonon denove. "
+"Lasta konsileto: Se vi ne certas pri pozicio, vi povas uzi dekstran klakon "
+"sur pilko por marki ĝin kiel \"necerta\". (Vidu ankaŭ klavarajn "
+"ŝparvojojn.)<br /><br />Ekzemplo: Ni markis unu pozicion kiel certa, la "
+"alian kiel necerta."
 
 #: kbbtutorial.cpp:220
 #, kde-format
@@ -684,7 +767,7 @@ msgstr "Nicolas Roffet"
 #: main.cpp:51
 #, kde-format
 msgid "Developer of version 0.4."
-msgstr ""
+msgstr "Ellaboranto de versio 0.4."
 
 #: main.cpp:52
 #, kde-format
@@ -694,7 +777,7 @@ msgstr "Robert Cimrman"
 #: main.cpp:52
 #, kde-format
 msgid "Original developer"
-msgstr ""
+msgstr "Origina programisto"
 
 #: main.cpp:53
 #, kde-format

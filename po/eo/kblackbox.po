@@ -178,13 +178,7 @@ msgid "Switch Marker"
 msgstr "Ŝalti Markilon"
 
 #: kbbmainwindow.cpp:251
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The text may not be too wide. So please use some HTML-BR-tags to have "
-#| "¦something more or less as wide as in english. Thanks!"
-#| msgid ""
-#| "Note: You can change<br />the parameters of<br />custom games in the<br /"
-#| ">Settings dialog."
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -243,11 +237,7 @@ msgid "Check positions"
 msgstr "Kontroli lokojn"
 
 #: kbbmainwindow.cpp:340
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The text may not be too wide. So please use some HTML-BR-tags to have "
-#| "¦something more or less as wide as in english. Thanks!"
-#| msgid "Your final score is: %1.<br />You did really well!"
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -255,11 +245,7 @@ msgid "Your final score is: %1.<br />You did really well!"
 msgstr "Via fina rezulto estas: %1.<br />Vi faris vere bone!"
 
 #: kbbmainwindow.cpp:342
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The text may not be too wide. So please use some HTML-BR-tags to have "
-#| "¦something more or less as wide as in english. Thanks!"
-#| msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -267,11 +253,7 @@ msgid "But it does not count<br />because <b>it is the sandbox!</b>"
 msgstr "Sed ne gravas<br />ĉar <b>estas la testa ludo!</b>"
 
 #: kbbmainwindow.cpp:344
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The text may not be too wide. So please use some HTML-BR-tags to have "
-#| "¦something more or less as wide as in english. Thanks!"
-#| msgid "Your final score is: %1.<br />I guess you need more practice."
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
@@ -352,13 +334,7 @@ msgid "Do you really want to give up this game?"
 msgstr "Ĉu vi vere volas kapitulaci tiun ludon?"
 
 #: kbbmainwindow.cpp:454
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "The text may not be too wide. So please use some HTML-BR-tags to have "
-#| "¦something more or less as wide as in english. Thanks!"
-#| msgid ""
-#| "Note: In the sandbox mode,<br />the solution is already displayed.<br /"
-#| ">Have fun!"
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"

@@ -106,7 +106,7 @@
  
 <!--Short game description starts here. 3-4 sentences (paragraphs)-->
 	<para
->&kblackbox; est un superbe jeu de logique, inspiré du jeu Blackbox de &Emacs;. La majeure partie de cette documentation provient de l'aide originale de la version sous &Emacs; .</para>
+>&kblackbox; est un superbe jeu de logique, inspiré du jeu Blackbox de &Emacs;. La majeure partie de cette documentation provient de l'aide originale de la version sous &Emacs;.</para>
 
 <para
 >&kblackbox; est un jeu consistant à localiser dans un quadrillage des objets cachés. L'ordinateur a caché plusieurs billes sur le plateau de jeu. En lançant des rayons sur celui ci et en regardant à quel endroit ils en ressortent, il est possible d'en déduire la position des billes cachées.</para>

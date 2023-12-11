@@ -106,7 +106,7 @@
  
 <!--Short game description starts here. 3-4 sentences (paragraphs)-->
 	<para
->&kblackbox; est un superbe jeu de logique, inspiré du jeu Blackbox de &Emacs;. La majeure partie de cette documentation provient de l'aide originale de la version sous &Emacs; .</para>
+>&kblackbox; est un superbe jeu de logique, inspiré du jeu Blackbox de &Emacs;. La majeure partie de cette documentation provient de l'aide originale de la version sous &Emacs;.</para>
 
 <para
 >&kblackbox; est un jeu consistant à localiser dans un quadrillage des objets cachés. L'ordinateur a caché plusieurs billes sur le plateau de jeu. En lançant des rayons sur celui ci et en regardant à quel endroit ils en ressortent, il est possible d'en déduire la position des billes cachées.</para>
@@ -181,7 +181,7 @@
 
 <varlistentry>
 <term
->Réflection</term>
+>Réflexion</term>
 <listitem
 ><para
 >Le rayon est réfléchi et ressort à l'endroit même où il a été émis. Sur le plateau de jeu, les réflexions sont repérées par une lettre spéciale.</para
@@ -580,7 +580,7 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 <para
 >Copyright du programme 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; et 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
 <para
->Copyright de la documentation par &Robert.Cimrman;. Mise à jour et converti vers Docbook pour &kde; 2.0 by &Lauri.Watts; &Lauri.Watts.mail;. Relu par &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+>Copyright de la documentation par &Robert.Cimrman;. Mise à jour et converti vers Docbook pour &kde; 2.0 par &Lauri.Watts; &Lauri.Watts.mail;. Relu par &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
 
 <para
 >Traduction française par &EricBischoff; et &LudovicGrossard;.</para

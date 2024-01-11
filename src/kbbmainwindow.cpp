@@ -109,7 +109,7 @@ KBBMainWindow::KBBMainWindow()
 	// Theme manager
 	QString svgzFile = KBBPrefs::theme();
 	if (!QFile(svgzFile).exists())
-        svgzFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("pics/kblackbox.svgz"));
+        svgzFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("themes/default.svgz"));
 	m_themeManager = new KBBThemeManager(svgzFile);
 
 

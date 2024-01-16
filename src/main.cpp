@@ -22,7 +22,8 @@ int main( int argc, char **argv )
 {
     QApplication application(argc, argv);
 
-    KLocalizedString::setApplicationDomain("kblackbox");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kblackbox"));
+
     KAboutData aboutData( QStringLiteral("kblackbox"),
                           i18n("KBlackBox"),
                           QStringLiteral(KBLACKBOX_VERSION_STRING),

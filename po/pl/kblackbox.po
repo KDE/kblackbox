@@ -1,6 +1,6 @@
 # translation of kblackbox.po to Polish
 # translation of kblackbox.po to
-# Version: $Revision: 1662680 $
+# Version: $Revision: 1670167 $
 # Piotr Roszatycki <dexter@fnet.pl>, 1999.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2005, 2007, 2008, 2009.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2008.
@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:40+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2022-07-28 20:43+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -729,17 +729,17 @@ msgstr "Liczba kolumn planszy we własnym poziomie trudności"
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Liczba rzędów planszy we własnym poziomie trudności"
 
-#: main.cpp:27
+#: main.cpp:28
 #, kde-format
 msgid "KBlackBox"
 msgstr "KCzarnaSkrzynka"
 
-#: main.cpp:29
+#: main.cpp:30
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr "Znajdź kule ukryte w czarnej skrzynce, używając promieni lasera!"
 
-#: main.cpp:31
+#: main.cpp:32
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -748,32 +748,32 @@ msgstr ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Autor wersji 0.4."
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Original developer"
 msgstr "Oryginalny autor"
 
-#: main.cpp:36
+#: main.cpp:37
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:36
+#: main.cpp:37
 #, kde-format
 msgid "Artist"
 msgstr "Artysta"

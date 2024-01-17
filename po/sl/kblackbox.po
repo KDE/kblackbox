@@ -2,7 +2,7 @@
 # Translation of kblackbox.po to Slovenian
 # SLOVENIAN TRANSLATION OF KDEGAMES.
 # Copyright (C) 2001, 2004, 2006, 2007 Free Software Foundation, Inc.
-# $Id: kblackbox.po 1662680 2023-10-19 02:04:24Z scripty $
+# $Id: kblackbox.po 1670167 2024-01-17 01:06:47Z scripty $
 # $Source$
 #
 # Marko Samastur <markos@elite.org>, 1999.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:40+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2022-07-09 15:40+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -741,17 +741,17 @@ msgstr "Število stolpcev plošče za težavnostno stopnjo po meri"
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Število vrstic plošče za težavnostno stopnjo po meri"
 
-#: main.cpp:27
+#: main.cpp:28
 #, kde-format
 msgid "KBlackBox"
 msgstr "KBlackBox"
 
-#: main.cpp:29
+#: main.cpp:30
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr "S streli z laserji najdite žogice skrite v črni škatli!"
 
-#: main.cpp:31
+#: main.cpp:32
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -760,32 +760,32 @@ msgstr ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Razvijalec različice 0.4."
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Original developer"
 msgstr "Izvorni razvijalec"
 
-#: main.cpp:36
+#: main.cpp:37
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:36
+#: main.cpp:37
 #, kde-format
 msgid "Artist"
 msgstr "Umetnik"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-19 01:40+0000\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
 "PO-Revision-Date: 2023-01-05 11:02+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -738,18 +738,18 @@ msgstr "Ο αριθμός των στηλών του πίνακα για προ�
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Ο αριθμός των γραμμών του πίνακα για προσαρμοσμένο επίπεδο δυσκολίας"
 
-#: main.cpp:27
+#: main.cpp:28
 #, kde-format
 msgid "KBlackBox"
 msgstr "KBlackBox"
 
-#: main.cpp:29
+#: main.cpp:30
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr ""
 "Βρείτε τις κρυμμένες μπάλες στο μαύρο κουτί χρησιμοποιώντας ακτίνες λέιζερ!"
 
-#: main.cpp:31
+#: main.cpp:32
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -758,32 +758,32 @@ msgstr ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Προγραμματιστής της έκδοσης 0.4."
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:35
+#: main.cpp:36
 #, kde-format
 msgid "Original developer"
 msgstr "Αρχικός προγραμματιστής"
 
-#: main.cpp:36
+#: main.cpp:37
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:36
+#: main.cpp:37
 #, kde-format
 msgid "Artist"
 msgstr "Καλλιτέχνης"

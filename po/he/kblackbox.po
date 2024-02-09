@@ -13,19 +13,20 @@
 # Diego Iastrubni <elcuco@kde.org>, 2004, 2005.
 # Diego Iastrubni <elcuco@kde.org>, 2005, 2012.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2017-05-16 07:01-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2024-02-08 15:23+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -40,50 +41,50 @@ msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "A number between 1 and 99 is displayed in front of it."
 msgid " ball"
 msgid_plural " balls"
-msgstr[0] "&כדורים"
-msgstr[1] "&כדורים"
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] " כדור"
+msgstr[1] " כדורים"
+msgstr[2] " כדורים"
+msgstr[3] " כדורים"
 
 #: kbblevelconfigurationwidget.cpp:40
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " column"
 msgid_plural " columns"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] " עמודה"
+msgstr[1] " עמודות"
+msgstr[2] " עמודות"
+msgstr[3] " עמודות"
 
 #: kbblevelconfigurationwidget.cpp:49
 #, kde-format
 msgctxt "A number between 2 and 30 is displayed in front of it."
 msgid " row"
 msgid_plural " rows"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] " שורה"
+msgstr[1] " שורות"
+msgstr[2] " שורות"
+msgstr[3] " שורות"
 
 #: kbbmainwindow.cpp:67
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
-msgstr ""
+msgstr "נתון להגדרה"
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid "Start Tutorial"
-msgstr "ה&דגמה"
+msgstr "התחלת הדרכה"
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgid "Start tutorial"
-msgstr "ה&דגמה"
+msgstr "התחלת הדרכה"
 
 #: kbbmainwindow.cpp:80
 #, kde-format
@@ -93,14 +94,14 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgid "New Sandbox Game"
-msgstr "משחק קופסה שחורה ל־KDE"
+msgstr "משחק ארגז חול חדש"
 
 #: kbbmainwindow.cpp:85
 #, kde-format
 msgid "Start a new sandbox game"
-msgstr ""
+msgstr "התחלת משחק ארגז חול חדש"
 
 #: kbbmainwindow.cpp:86
 #, kde-format
@@ -112,11 +113,11 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
-msgstr "&סיים"
+msgstr "הסתיים!"
 
 #: kbbmainwindow.cpp:93
 #, kde-format
@@ -130,9 +131,9 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgid "Give up the game"
-msgstr "היכנע"
+msgstr "כניעה במשחק"
 
 #: kbbmainwindow.cpp:98
 #, kde-format
@@ -145,7 +146,7 @@ msgstr ""
 #: kbbmainwindow.cpp:103
 #, kde-format
 msgid "Enable highlight under mouse"
-msgstr ""
+msgstr "הפעלת הדגשה תחת סמן העכבר"
 
 #: kbbmainwindow.cpp:143
 #, kde-format
@@ -155,7 +156,7 @@ msgstr "למטה"
 #: kbbmainwindow.cpp:149
 #, kde-format
 msgid "Move Up"
-msgstr "הזז מעלה"
+msgstr "למעלה"
 
 #: kbbmainwindow.cpp:155
 #, kde-format
@@ -170,12 +171,12 @@ msgstr "ימינה"
 #: kbbmainwindow.cpp:167
 #, kde-format
 msgid "Switch Ball or Shoot Laser"
-msgstr ""
+msgstr "החלפת כדור או יריית לייזר"
 
 #: kbbmainwindow.cpp:173
 #, kde-format
 msgid "Switch Marker"
-msgstr ""
+msgstr "החלפת סמן"
 
 #: kbbmainwindow.cpp:247
 #, kde-format
@@ -191,34 +192,34 @@ msgstr ""
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "קודם צריך להסיר כדור מהקופסה השחורה."
+msgstr[1] "קודם צריך להסיר שני כדורים מהתיבה השחורה."
+msgstr[2] "קודם צריך להסיר %1 כדורים מהקופסה השחורה."
+msgstr[3] "קודם צריך להסיר %1 כדורים מהקופסה השחורה."
 
 #: kbbmainwindow.cpp:282
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
-msgstr ""
+msgstr "כדי לבדוק אם ניחשת נכון את כל ההצבות של הכדורים יש ללחוץ כאן!"
 
 #: kbbmainwindow.cpp:284
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "צריך להציב עוד כדור בקופסה השחורה."
+msgstr[1] "צריך להציב עוד שני כדורים בקופסה השחורה."
+msgstr[2] "צריך להציב עוד %1 כדורים בקופסה השחורה."
+msgstr[3] "צריך להציב עוד %1 כדורים בקופסה השחורה."
 
 #: kbbmainwindow.cpp:288
 #, kde-format
 msgid "Game over."
-msgstr ""
+msgstr "המשחק הסתיים."
 
 #: kbbmainwindow.cpp:290
 #, kde-format
 msgid "Game paused."
-msgstr ""
+msgstr "המשחק מושהה."
 
 #: kbbmainwindow.cpp:329
 #, kde-format
@@ -232,17 +233,15 @@ msgstr ""
 #: kbbmainwindow.cpp:329
 #, kde-format
 msgid "Check positions"
-msgstr ""
+msgstr "בדיקת הצבות"
 
 #: kbbmainwindow.cpp:336
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />You did really well!"
-msgstr ""
-"התוצאה הסופית שלך: %1\n"
-"הצלחת ממש טוב!"
+msgstr "התוצאה הסופית שלך: %1<br />תוצאה מרשימה לכל הדעות!"
 
 #: kbbmainwindow.cpp:338
 #, kde-format
@@ -250,50 +249,48 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
-msgstr ""
+msgstr "אבל זה לא נחשב<br />כיוון <b>שזה בארגז החול!</b>"
 
 #: kbbmainwindow.cpp:340
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />I guess you need more practice."
-msgstr ""
-"התוצאה הסופית שלך היא: %1\n"
-"אני חושב שאתה צריך לתרגל יותר."
+msgstr "התוצאה הסופית שלך היא: %1<br />אולי שווה להתאמן עוד קצת."
 
 #: kbbmainwindow.cpp:369
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
-msgstr ""
+msgstr "המשחק מושהה.<br />לחיצה על „%1” תמשיך במשחק."
 
 #: kbbmainwindow.cpp:391
 #, kde-format
 msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
 "new parameters?"
-msgstr ""
+msgstr "לבטל את המשחק הנוכחי שהותאם אישית ולהתחיל במשחק חדש עם משתנים חדשים?"
 
 #: kbbmainwindow.cpp:392
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr ""
+msgstr "התחלת משחק חדש"
 
 #: kbbmainwindow.cpp:408
 #, kde-format
 msgid "Custom Game"
-msgstr ""
+msgstr "משחק מותאם אישית"
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sorry, you may not give up during the tutorial."
-msgstr "האם אתה בטוח שברצונך להיכנע במשחק זה?"
+msgstr "אי אפשר להיכנע בהדרכה, סליחה."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
+#, kde-format
 msgid "Solve"
-msgstr "ניקוד: %1"
+msgstr "פתרון"
 
 #: kbbmainwindow.cpp:430
 #, kde-format
@@ -305,9 +302,9 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
+#, kde-format
 msgid "Give up"
-msgstr "היכנע"
+msgstr "להיכנע"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
@@ -328,9 +325,9 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: kbbmainwindow.cpp:432
-#, fuzzy, kde-format
+#, kde-format
 msgid "Do you really want to give up this game?"
-msgstr "האם אתה בטוח שברצונך להיכנע במשחק זה?"
+msgstr "באמת להיכנע במשחק הזה?"
 
 #: kbbmainwindow.cpp:442
 #, kde-format
@@ -350,12 +347,12 @@ msgstr "המשחק הנוכחי שלך יסתיים!"
 #: kbbmainwindow.cpp:481
 #, kde-format
 msgid "Start new game"
-msgstr ""
+msgstr "התחלת משחק חדש"
 
 #: kbbscalablegraphicwidget.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "Score"
-msgstr "ניקוד: %1"
+msgstr "ניקוד"
 
 #: kbbscalablegraphicwidget.cpp:101
 #, kde-format
@@ -379,46 +376,46 @@ msgid ""
 msgstr ""
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tutorial"
-msgstr "ה&דגמה"
+msgstr "הדרכה"
 
 #: kbbtutorial.cpp:53
 #, kde-format
 msgid "Displays the progress of the tutorial."
-msgstr ""
+msgstr "מציג את התקדמות המדריך."
 
 #: kbbtutorial.cpp:75
 #, kde-format
 msgid "Describes what you should do to reach the next tutorial step."
-msgstr ""
+msgstr "מתאר מה צריך לעשות כדי  להגיע לשלב הבא במדריך."
 
 #: kbbtutorial.cpp:84
 #, kde-format
 msgctxt "Previous tutorial step"
 msgid "&Previous"
-msgstr ""
+msgstr "ה&קודם"
 
 #: kbbtutorial.cpp:85
 #, kde-format
 msgid "Go back to the previous tutorial step."
-msgstr ""
+msgstr "חזרה לשלב הקודם בהדרכה."
 
 #: kbbtutorial.cpp:88
 #, kde-format
 msgctxt "Next tutorial step"
 msgid "&Next"
-msgstr ""
+msgstr "ה&בא"
 
 #: kbbtutorial.cpp:89
 #, kde-format
 msgid "Go to the next tutorial step."
-msgstr ""
+msgstr "חזרה לשלב הקודם בהדרכה."
 
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Welcome!"
-msgstr ""
+msgstr "ברוך בואך!"
 
 #: kbbtutorial.cpp:151
 #, kde-format
@@ -432,12 +429,12 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr ""
+msgstr "נא ללחוץ על „הבא”"
 
 #: kbbtutorial.cpp:156
 #, kde-format
 msgid "Black box principles"
-msgstr ""
+msgstr "עקרונות הקופסה השחורה"
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -451,12 +448,12 @@ msgstr ""
 #: kbbtutorial.cpp:156
 #, kde-format
 msgid "Please click on the marked laser to shoot a beam into the black box."
-msgstr ""
+msgstr "נא ללחוץ על הלייזר המסומן כדי לירות קרן על הקופסה השחורה."
 
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "No interaction"
-msgstr ""
+msgstr "ללא אינטראקציה"
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -476,7 +473,7 @@ msgstr ""
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Hit"
-msgstr ""
+msgstr "שיגור"
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -535,7 +532,7 @@ msgstr ""
 #: kbbtutorial.cpp:190
 #, kde-format
 msgid "Reflection"
-msgstr ""
+msgstr "החזר"
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -554,7 +551,7 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Special reflection"
-msgstr ""
+msgstr "החזר מיוחד"
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -568,12 +565,12 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
-msgstr ""
+msgstr "כמעט סיימנו. נא ללחוץ על „הבא”."
 
 #: kbbtutorial.cpp:204
 #, kde-format
 msgid "Marker for \"free position\""
-msgstr ""
+msgstr "סימון ל„מקום פנוי”"
 
 #: kbbtutorial.cpp:204
 #, kde-format
@@ -588,12 +585,12 @@ msgstr ""
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr ""
+msgstr "נא ללחוץ על „הבא”."
 
 #: kbbtutorial.cpp:213
-#, fuzzy, kde-format
+#, kde-format
 msgid "Marking balls"
-msgstr "&כדורים"
+msgstr "סימון כדורים"
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -608,7 +605,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Let us play!"
-msgstr ""
+msgstr "קדימה, למשחק!"
 
 #: kbbtutorial.cpp:220
 #, kde-format
@@ -667,33 +664,35 @@ msgid ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 msgstr ""
+"(c) 2007, ניקולס רופט\n"
+"(c) 1999‏-2000, רוברט צימרמן"
 
 #: main.cpp:35
 #, kde-format
 msgid "Nicolas Roffet"
-msgstr ""
+msgstr "ניקולס רופט"
 
 #: main.cpp:35
 #, kde-format
 msgid "Developer of version 0.4."
-msgstr ""
+msgstr "מפתח גרסה 0.4."
 
 #: main.cpp:36
 #, kde-format
 msgid "Robert Cimrman"
-msgstr ""
+msgstr "רוברט צימרמן"
 
 #: main.cpp:36
 #, kde-format
 msgid "Original developer"
-msgstr ""
+msgstr "מפתח מקורי"
 
 #: main.cpp:37
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
-msgstr ""
+msgstr "יוהאן אוליבייר לאפייר"
 
 #: main.cpp:37
 #, kde-format
 msgid "Artist"
-msgstr ""
+msgstr "אמן"

@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-08 15:23+0200\n"
+"PO-Revision-Date: 2024-02-12 14:10+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -92,6 +92,8 @@ msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
 "learn the rules of the game. Start it if you do not know them!</qt>"
 msgstr ""
+"<qt>ה<b>הדרכה</b> היא דרך מהירה, ידידותית ואינטראקטיבית ללמוד את כללי המשחק. "
+"כדאי להתחיל בזה אם הכללים לא ברורים לך עדיין!</qt>"
 
 #: kbbmainwindow.cpp:84
 #, kde-format
@@ -117,7 +119,7 @@ msgstr ""
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
-msgstr "הסתיים!"
+msgstr "סיימתי!"
 
 #: kbbmainwindow.cpp:93
 #, kde-format
@@ -229,6 +231,9 @@ msgid ""
 "the game before you reached the last step.\n"
 "Please first finish the tutorial."
 msgstr ""
+"לחיצה על „סיימתי!” היא הדרך הרגילה לבדוק את מקומות הכדורים בסוף המשחר. עם "
+"זאת, אי אפשר לסיים את משחק ההדרכה לפני הגעה לשלב האחרון.\n"
+"נא לסיים קודם את ההדרכה."
 
 #: kbbmainwindow.cpp:329
 #, kde-format
@@ -300,6 +305,9 @@ msgid ""
 "correctly.\n"
 "So, do you really want to give up this game?"
 msgstr ""
+"הצבת את כל הכדורים. מצוין!\n"
+"עכשיו צריך ללחוץ על „סיימתי!” כדי לסיים את המשחק ולבדוק האם ניחשת נכון.\n"
+"אז, באמת בא לך לוותר על המשחק הזה?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
 #, kde-format
@@ -492,7 +500,7 @@ msgstr ""
 #: kbbtutorial.cpp:175
 #, kde-format
 msgid "Simple deflection"
-msgstr ""
+msgstr "הסטה פשוטה"
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -514,7 +522,7 @@ msgstr ""
 #: kbbtutorial.cpp:182
 #, kde-format
 msgid "Several deflections"
-msgstr ""
+msgstr "כמה הסטות"
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -542,11 +550,14 @@ msgid ""
 "placed 2 balls for you in a configuration that would lead to such a "
 "reflection."
 msgstr ""
+"אם קרן הלייזר יוצאת מהקופסה השחורה <b>בנקודת הכניסה</b>, היא הוחזרה בתוך "
+"הקופסה השחורה.<br /><br />למשל: הצבנו 2 כדורים בשבילך בתצורה שתוביל להחזר "
+"שכזה."
 
 #: kbbtutorial.cpp:190
 #, kde-format
 msgid "Shoot the marked laser to see another backward reflection case."
-msgstr ""
+msgstr "יש לירות על הלייזר המסומן כדי לראות מקרה נוסף של החזר אחורה."
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -620,7 +631,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
-msgstr ""
+msgstr "נא לסיים להציב את הכדורים וללחוץ על „סיימתי!” כשסיימת!"
 
 #. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
 #: kblackbox.kcfg:9
@@ -629,24 +640,25 @@ msgid ""
 "File of the current theme of the graphic elements. (SVGZ file with path and "
 "file extension)"
 msgstr ""
+"קובץ לערכת העיצוב הנוכחית של הרכיבים הגרפיים. (קובץ SVGZ עם נתיב וסיומת)"
 
 #. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
 #: kblackbox.kcfg:13
 #, kde-format
 msgid "Number of balls for custom difficulty level"
-msgstr ""
+msgstr "מספר הכדורים לרמת קושי מותאמת אישית"
 
 #. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
 #: kblackbox.kcfg:17
 #, kde-format
 msgid "Number of columns of the board for custom difficulty level"
-msgstr ""
+msgstr "מספר העמודות של הלוח לרמת קושי מותאמת אישית"
 
 #. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
 #: kblackbox.kcfg:21
 #, kde-format
 msgid "Number of rows of the board for custom difficuty level"
-msgstr ""
+msgstr "מספר השורות של הלוח לרמת קושי מותאמת אישית"
 
 #: main.cpp:28
 #, kde-format
@@ -656,7 +668,7 @@ msgstr "KBlackBox"
 #: main.cpp:30
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
-msgstr ""
+msgstr "איתור הכדורים שמתחבאים בקופסה השחוהר על ידי שיגור קרני לייזר!"
 
 #: main.cpp:32
 #, kde-format

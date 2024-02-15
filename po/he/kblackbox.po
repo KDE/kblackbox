@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-12 14:10+0200\n"
+"PO-Revision-Date: 2024-02-13 08:36+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -476,7 +476,7 @@ msgstr ""
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "Now shoot the marked laser to discover the first kind of interaction."
-msgstr ""
+msgstr "עכשיו צריך לירות בלייזר המסומן כדי לחשוף את סוג האינטראקציה הראשון"
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -491,11 +491,14 @@ msgid ""
 "might have hit a ball at the position shown, but the exact position of the "
 "hit is not certain: There are many other possibilities."
 msgstr ""
+"פגיעה ישירה בכדור נקראת „<b>פגיעה</b>”. קרן שפוגעת בכדור <b>לא</b> מגיחה "
+"מהקופסה השחורה.<br /><br />למשל: יכול להיות הקרן פגעה בכדור במקום שמופיע, "
+"אבל מקום הפגיעה המדויק אינו ודאי: יש מגוון אפשרויות שונות."
 
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Shoot the marked laser to discover the second kind of interaction."
-msgstr ""
+msgstr "יש לירות בלייזר המסומן כדי לחשוף את סוג האינטראקציה השני."
 
 #: kbbtutorial.cpp:175
 #, kde-format

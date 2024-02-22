@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-02-20 10:57+0200\n"
+"PO-Revision-Date: 2024-02-20 23:14+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -189,6 +189,8 @@ msgid ""
 "Note: You can change<br />the parameters of<br />custom games in the<br /"
 ">Settings dialog."
 msgstr ""
+"לתשומת ליבך: אפשר לערוך<br />משתנים של<br />משחקים מותאמים אישית<br /"
+">בחלונית ההגדרות."
 
 #: kbbmainwindow.cpp:280
 #, kde-format
@@ -318,10 +320,10 @@ msgstr "להיכנע"
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "יש להציב כדור!\n"
+msgstr[1] "יש להציב שני כדורים!\n"
+msgstr[2] "יש להציב %1 כדורים!\n"
+msgstr[3] "יש להציב %1 כדורים!\n"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
@@ -615,6 +617,11 @@ msgid ""
 "ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
 ">Example: We marked one position as sure, the other one as unsure."
 msgstr ""
+"כשהצלחת להבין איפה הכדור נמצא, נא להשתמש בכפתור העכבר השמאלי כדי לסמן אותו. "
+"כדי להסיר את סימן הכדור, יש להשתמש שוב בכפתור העכבר השמאלי. עצה אחרונה: אם "
+"יש לך ספק בנוגע למקום, אפשר ללחוץ על כדור עם הכפתור הימני כדי לסמן אותו "
+"„בספק”. (יש גם קיצורי מקלדת.)<br /><br />לדוגמה: סימנו לך מקום אחד כוודאי, "
+"השני בספק."
 
 #: kbbtutorial.cpp:220
 #, kde-format

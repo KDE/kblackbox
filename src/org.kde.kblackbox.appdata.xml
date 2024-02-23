@@ -22,6 +22,7 @@
   <name xml:lang="fi">KBlackbox</name>
   <name xml:lang="fr">KBlackbox</name>
   <name xml:lang="gl">KBlackbox</name>
+  <name xml:lang="he">KBlackbox</name>
   <name xml:lang="hu">KBlackbox</name>
   <name xml:lang="ia">KBlackBox</name>
   <name xml:lang="id">KBlackbox</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="fi">Logiikkapeli</summary>
   <summary xml:lang="fr">Jeu de logique Blackbox</summary>
   <summary xml:lang="gl">Xogo de lóxica Blackbox</summary>
+  <summary xml:lang="he">משחק קופסה שחורה לוגי</summary>
   <summary xml:lang="hu">Fekete dobozos logikai játék</summary>
   <summary xml:lang="id">Permainan Logika Blackbox</summary>
   <summary xml:lang="it">Gioco di logica Blackbox</summary>
@@ -107,6 +109,7 @@
     <p xml:lang="fi">KBlackBoxissä leikitään piilosta laatikoista koostuvasta ruudukossa, johon tietokone on piilottanut palloja. Piilopallojen sijainnin voi päätellä ampumalla laatikkoon säteitä.</p>
     <p xml:lang="fr">KBlackbox est un jeu de logique où il faut trouver des billes cachées. La position des billes cachées peut être déduite en envoyant des rayons dans la boîte.</p>
     <p xml:lang="gl">KBlackbox é un xogo das agachadas que toma lugar nunha grade de caixas nas que o computador agochou varias bólas. Podes lanzar raios á caixa para deducir a posición das bólas.</p>
+    <p xml:lang="he">KBlackbox הוא משחק מחבואים שמשחקים אותו על רשת של תיבות בהן החביא המחשב מספר כדורים. אפשר לנסות להסיק איפה הכדורים הנסתרים על ידי ירי של קרניים לתוך הקופסה</p>
     <p xml:lang="hu">A KBlackbox egy négyzetrácson játszható bújócska, ahol a cél a számítógép által elrejtett labdák megtalálása. Ezek helyét a négyzetrácsba oldalról belőtt sugarakkal lehet kikövetkeztetni.</p>
     <p xml:lang="id">KBlackbox adalah permainan petak-umpet yang dimainkan pada sebuah kisi kotak-kotak tempat komputer menyembunyikan beberapa bola. Posisi bola tersembunyi dapat disimpulkan dengan menembakkan balok ke dalam kotak.</p>
     <p xml:lang="it">KBlackbox è un gioco di cerca e trova, giocato su un reticolo di celle. Il computer ha nascosto delle sfere in queste celle. Sparando dei raggi laser nella scatola si può dedurre la posizione delle sfere nascoste.</p>

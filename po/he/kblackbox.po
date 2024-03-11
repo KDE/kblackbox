@@ -19,14 +19,14 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-03-09 23:18+0200\n"
+"PO-Revision-Date: 2024-03-10 15:59+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -399,6 +399,10 @@ msgid ""
 "b> that are replaced with <b>interaction information</b> if you use them.</"
 "li></ul></qt>"
 msgstr ""
+"<qt><p>זאת <b>זירת המשחק הראשית</b>.</p><ul><li>ה<b>קופסה השחורה</b> נמצאת "
+"במרכז.</li><li>משמאל מופיעים ה<b>כדורים</b>, יש להציב אותם על הקופסה השחורה."
+"</li><li>מסביב לקופסה השחורה, יש <b>לייזרים</b> שמוחלפים ב<b>פרטי תגובתיות</"
+"b> כשנעשה בהם שימוש.</li></ul></qt>"
 
 #: kbbtutorial.cpp:36
 #, kde-format
@@ -450,6 +454,10 @@ msgid ""
 "It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
 "><br />The goal is to <b>find the positions of the balls.</b>"
 msgstr ""
+"המדריך הזה ילמד אותך איך לשחק ב־KBlackBox, תוך שימוש בדוגמה פשוטה.<br /><br /"
+">אנו משחקים עם קופסה שחורה מרובעת עם 6 עמודות ו־6 שורות. בתוכה <b>מוחבאים</"
+"b> 3 כדורים ומסביבה 24 בוחני לייזר.<br /><br />המטרה היא <b>למצוא את מקום "
+"הכדורים.</b>"
 
 #: kbbtutorial.cpp:151
 #, kde-format
@@ -469,6 +477,9 @@ msgid ""
 "they do, where they come out.<br /><br />The laser beams interact with the "
 "balls in various ways."
 msgstr ""
+"הכדורים אינם גלויים, אך אנו יכולים לירות קרני לייזר לתוך הקופסה דרך נקודות "
+"כניסה שונות ולהתבונן האם קרני הלייזר יוצאות מהקופסה, ואם הן כן, מאיפה הן "
+"יוצאות.<br /><br />קרני הלייזר מגיבות לכדורים במגוון דרכים."
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -478,7 +489,7 @@ msgstr "נא ללחוץ על הלייזר המסומן כדי לירות קרן 
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "No interaction"
-msgstr "ללא אינטראקציה"
+msgstr "ללא תגובה"
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -489,11 +500,15 @@ msgid ""
 "><br />As the game progresses, each pair of entry/exit points is marked with "
 "a different number."
 msgstr ""
+"אם קרן לייזר לא מגיבה לאף כדור בקופסה השחורה, היא יוצאת מהנקודה הנגדית "
+"לנקודת הכניסה.<br /><br />למשל: נניח שיש לנו 3 כדורים בקופסה כפי שמופיע. הם "
+"לא ישפיעו על קרן „1”.<br /><br />עם התקדמות המשחק, כל צמד של נקודות "
+"כניסה/יציאה יסומן במספר אחר."
 
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "Now shoot the marked laser to discover the first kind of interaction."
-msgstr "עכשיו צריך לירות בלייזר המסומן כדי לחשוף את סוג האינטראקציה הראשון"
+msgstr "עכשיו צריך לירות בלייזר המסומן כדי לחשוף את סוג התגובה הראשון"
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -515,7 +530,7 @@ msgstr ""
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Shoot the marked laser to discover the second kind of interaction."
-msgstr "יש לירות בלייזר המסומן כדי לחשוף את סוג האינטראקציה השני."
+msgstr "יש לירות בלייזר המסומן כדי לחשוף את סוג התגובה השני."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -531,6 +546,10 @@ msgid ""
 "would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
 "possibility."
 msgstr ""
+"התגובה של הקרן שלא פוגעת בכדור בפועל, אך מכוונת לאחד מצדדיו, נקראת „<b>הסטה</"
+"b>”. זווית ההסטה של הקרן היא תמיד ב־<b>90 מעלות</b>. <br /><br />למשל: הכדור "
+"שמופיע יסיט את קרן „2” כלפי מעלה, כפי שמופיע, אך זאת <b>אינה</b> האפשרות "
+"היחידה."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -538,6 +557,8 @@ msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
+"יש ללחוץ על „הבא” כדי לצפות בשילוב הבא של מקומות כדורים שמסיט את קרן הלייזר "
+"כפי שמופיע."
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -551,11 +572,13 @@ msgid ""
 ">A laser beam entering and exiting at the positions \"2\" might have been "
 "deflected by this configuration of 3 balls."
 msgstr ""
+"כפי שניתן לראות, אינטראקציות בתיבה השחורה יכולות להיות די מורכבות!<br /> קרן "
+"לייזר שנכנסת ויוצאת במקומות „2” יכולה לסטות על ידי הגדרה זו של 3 כדורים."
 
 #: kbbtutorial.cpp:182
 #, kde-format
 msgid "Shoot the marked laser to discover another kind of result."
-msgstr ""
+msgstr "יש לירות בלייזר המסומן כדי לחשוף סוג נוסף של תוצאה."
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -592,6 +615,9 @@ msgid ""
 "reflection.<br /><br />Example: The configuration shown can cause a backward "
 "reflection."
 msgstr ""
+"אם כדור נמצא <b>בקצה התיבה</b> (כשאין סביבו אף כדור אחר), קרן שמכוונת לתיבה "
+"השחורה שצמודה אליו תגרום להחזר הפוך.<br /><br />דוגמה: ההגדרות שמופיעות "
+"יכולות לגרום להחזר הפוך."
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -612,6 +638,10 @@ msgid ""
 "(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
 "the first 2 columns."
 msgstr ""
+"אנחנו יכולים להיות בטוחים שאין כדורים בשתי העמודות הראשונות. אילו היו שם "
+"כדורים כלשהם, הקרן שנכנסה ממקום „1” הייתה פוגעת בכדור או שהיא הייתה מוסטת על "
+"ידי כדור בעמודה 2. אפשר לסמן „מקום פנוי” עם לחצן העכבר הימני (יש לזה גם "
+"קיצורי מקשים).<br /><br />דוגמה: יש 12 סמנים בשתי העמודות הראשונות."
 
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format

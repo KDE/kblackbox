@@ -33,7 +33,7 @@
 // Constructor / Destructor
 //
 
-KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
+KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18nc("@title:group","Tutorial"), parent)
 {
 	m_marker = nullptr;
 	m_gameWidget = nullptr;
@@ -81,11 +81,11 @@ KBBTutorial::KBBTutorial(QWidget* parent) : QGroupBox(i18n("Tutorial"), parent)
 
 	QHBoxLayout *buttonLayout = new QHBoxLayout();
 	tutorialLayout->addLayout(buttonLayout);
-	m_buttonPrevious = new QPushButton(QIcon::fromTheme( QStringLiteral( "go-previous") ), i18nc("Previous tutorial step", "&Previous"), this);
+	m_buttonPrevious = new QPushButton(QIcon::fromTheme( QStringLiteral( "go-previous") ), i18nc("@action:button Previous tutorial step", "&Previous"), this);
 	m_buttonPrevious->setWhatsThis(i18n("Go back to the previous tutorial step."));
 	connect(m_buttonPrevious, &QPushButton::clicked, this, &KBBTutorial::previousStep);
 	buttonLayout->addWidget(m_buttonPrevious);
-	m_buttonNext = new QPushButton(QIcon::fromTheme( QStringLiteral( "go-next")) , i18nc("Next tutorial step", "&Next"), this);
+	m_buttonNext = new QPushButton(QIcon::fromTheme( QStringLiteral( "go-next")) , i18nc("@action:button Next tutorial step", "&Next"), this);
 	m_buttonNext->setWhatsThis(i18n("Go to the next tutorial step."));
 	connect(m_buttonNext, &QPushButton::clicked, this, &KBBTutorial::nextStep);
 	m_buttonNext->setDefault(true);

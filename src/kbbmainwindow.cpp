@@ -74,33 +74,33 @@ KBBMainWindow::KBBMainWindow()
 	KGameStandardAction::gameNew(this, &KBBMainWindow::newGame, actionCollection());
 	m_pauseAction = KGameStandardAction::pause(this, &KBBMainWindow::pause, actionCollection());
 	QAction* tutorial = actionCollection()->addAction( QStringLiteral( "game_tutorial" ));
-	tutorial->setText(i18n("Start Tutorial"));
+	tutorial->setText(i18nc("@action", "Start Tutorial"));
 	tutorial->setIcon(QIcon::fromTheme( QStringLiteral( "footprint" )));
-	tutorial->setToolTip(i18n("Start tutorial"));
+	tutorial->setToolTip(i18nc("@info:tooltip", "Start tutorial"));
 	tutorial->setWhatsThis(i18n("<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to learn the rules of the game. Start it if you do not know them!</qt>"));
 	connect(tutorial, &QAction::triggered, this, &KBBMainWindow::startTutorial);
 	KGameStandardAction::quit(this, &QWidget::close, actionCollection());
 	QAction* sandbox = actionCollection()->addAction( QStringLiteral( "game_sandbox" ));
-	sandbox->setText(i18n("New Sandbox Game"));
-	sandbox->setToolTip(i18n("Start a new sandbox game"));
+	sandbox->setText(i18nc("@action", "New Sandbox Game"));
+	sandbox->setToolTip(i18nc("@info:tooltip", "Start a new sandbox game"));
 	sandbox->setWhatsThis(i18n("<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning of the game. This is useful to understand the game principles.</p><p>However: after a while, it is not really fun and you should try to start a real game!</p></qt>"));
 	connect(sandbox, &QAction::triggered, this, &KBBMainWindow::startSandbox);
 	KGameStandardAction::highscores(this, &KBBMainWindow::showHighscores, actionCollection());
 
 	// Menu "Move"
 	m_doneAction = actionCollection()->addAction( QStringLiteral( "move_done" ));
-	m_doneAction->setText(i18nc("This is the last action of a game to check the result, when the user is done.", "Done!"));
+	m_doneAction->setText(i18nc("@action the last action of a game to check the result, when the user is done", "Done!"));
 	m_doneAction->setWhatsThis(i18n("<qt><ul><li>First, you have to place all the balls on the black box. To guess the correct positions of the balls and see how they interact with laser beams, you should use the lasers that are positioned around the black box.</li><li><b>When you think you are done</b>, you should click here.</li></ul><p>Note that it is only possible to click here if you have placed the correct number of balls.</p></qt>"));
 	m_doneAction->setIcon(QIcon::fromTheme( QStringLiteral( "dialog-ok" )));
 	connect(m_doneAction, &QAction::triggered, this, &KBBMainWindow::done);
 	m_solveAction = KGameStandardAction::solve(this, &KBBMainWindow::solve, actionCollection());
-	m_solveAction->setToolTip(i18n("Give up the game"));
+	m_solveAction->setToolTip(i18nc("@info:tooltip", "Give up the game"));
 	m_solveAction->setWhatsThis(i18n("<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The solution will be displayed.</p><p>If you placed all the balls and do not want to give up, choose \"Done!\".</p></qt>"));
 
 	// Menu "Settings"
 	KStandardAction::preferences(this, &KBBMainWindow::settingsDialog, actionCollection());
 	m_toggleCursorAction = actionCollection()->addAction( QStringLiteral( "toggle_cursor" ));
-	m_toggleCursorAction->setText(i18n("Enable highlight under mouse"));
+	m_toggleCursorAction->setText(i18nc("@option:check", "Enable Highlight under Mouse"));
 	m_toggleCursorAction->setCheckable(true);
 	const KConfigGroup group = KSharedConfig::openConfig()->group(QStringLiteral("default"));
 	m_toggleCursorAction->setChecked(group.readEntry<bool>("highlight_enabled", true));
@@ -140,37 +140,37 @@ KBBMainWindow::KBBMainWindow()
 
 	// Keyboard only
 	QAction * action = actionCollection()->addAction( QStringLiteral(  "move_down" ) );
-	action->setText( i18n("Move Down") );
+	action->setText( i18nc("@action", "Move Down") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveDown);
 	KActionCollection::setDefaultShortcut(action, Qt::Key_Down);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral(  "move_up" ) );
-	action->setText( i18n("Move Up") );
+	action->setText( i18nc("@action", "Move Up") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveUp);
 	KActionCollection::setDefaultShortcut(action,Qt::Key_Up);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral(  "move_left" ) );
-	action->setText( i18n("Move Left") );
+	action->setText( i18nc("@action", "Move Left") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveLeft);
 	KActionCollection::setDefaultShortcut(action, Qt::Key_Left);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral(  "move_right" ) );
-	action->setText( i18n("Move Right") );
+	action->setText( i18nc("@action", "Move Right") );
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardMoveRight);
 	KActionCollection::setDefaultShortcut(action, Qt::Key_Right);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral( "switch_ball" ));
-	action->setText(i18n("Switch Ball or Shoot Laser"));
+	action->setText(i18nc("@action", "Switch Ball or Shoot Laser"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardEnter);
 	KActionCollection::setDefaultShortcut(action, Qt::Key_Return);
 	addAction(action);
 
 	action = actionCollection()->addAction( QStringLiteral( "switch_marker" ));
-	action->setText(i18n("Switch Marker"));
+	action->setText(i18nc("@action", "Switch Marker"));
 	connect(action, &QAction::triggered, m_gameWidget, &KBBScalableGraphicWidget::keyboardSpace);
 	KActionCollection::setDefaultShortcut(action, Qt::Key_Space);
 	addAction(action);
@@ -326,7 +326,7 @@ void KBBMainWindow::updateStats()
 void KBBMainWindow::done()
 {
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
-		KMessageBox::information(this, i18n("Clicking on \"Done!\" is the normal way to check the positions of the balls at the end of the game. However, it is not possible in the tutorial to end the game before you reached the last step.\nPlease first finish the tutorial."), i18n("Check positions"));
+		KMessageBox::information(this, i18n("Clicking on \"Done!\" is the normal way to check the positions of the balls at the end of the game. However, it is not possible in the tutorial to end the game before you reached the last step.\nPlease first finish the tutorial."), i18nc("@title:window", "Check Positions"));
 	} else {
 		solving();
 
@@ -405,7 +405,7 @@ void KBBMainWindow::settingsDialog()
     if (!KConfigDialog::showDialog(QStringLiteral("settings"))) {
         KConfigDialog *dialog = new KConfigDialog(this, QStringLiteral("settings"), KBBPrefs::self());
 		m_levelConfig = new KBBLevelConfigurationWidget(dialog, m_customBallNumber, m_customColumns, m_customRows, m_themeManager);
-        dialog->addPage(m_levelConfig, i18n("Custom Game"), QStringLiteral("games-config-custom"));
+        dialog->addPage(m_levelConfig, i18nc("@title:tab", "Custom Game"), QStringLiteral("games-config-custom"));
 		connect(dialog, &KConfigDialog::settingsChanged, this, &KBBMainWindow::settingsChanged);
                 //QT5 dialog->setHelp(QString(), "kblackbox");
 		dialog->show();
@@ -424,12 +424,12 @@ void KBBMainWindow::showHighscores()
 void KBBMainWindow::solve()
 {
 	if (m_tutorial->isVisible() && !m_tutorial->maySolve()) {
-		KMessageBox::information(this, i18n("Sorry, you may not give up during the tutorial."), i18n("Solve"));
+		KMessageBox::information(this, i18n("Sorry, you may not give up during the tutorial."), i18nc("@title:window", "Solve"));
 	} else {
 		if (m_gameDoc->numberOfBallsToPlace()==m_gameDoc->numberOfBallsPlaced()) {
-			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed correctly.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
+			if (KMessageBox::warningContinueCancel(this, i18n("You placed all the balls. Great!\nYou should now click on \"Done!\" to end the game and check if you guessed correctly.\nSo, do you really want to give up this game?"), QString(), KGuiItem(i18nc("@action:button", "Give Up"))) == KMessageBox::Continue)
 				solving();
-		} else if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18n("Give up"))) == KMessageBox::Continue)
+		} else if (KMessageBox::warningContinueCancel(this, i18np("You should place %1 ball!\n", "You should place %1 balls!\n", m_gameDoc->numberOfBallsToPlace()) + i18np("You have placed %1.\n", "You have placed %1.\n", m_gameDoc->numberOfBallsPlaced()) + i18n("Do you really want to give up this game?"), QString(), KGuiItem(i18nc("@action:button", "Give Up"))) == KMessageBox::Continue)
 			solving();
 	}
 }
@@ -478,7 +478,7 @@ bool KBBMainWindow::mayAbortGame()
 	bool mayAbort = true;
 
 	if (m_gameDoc->gameReallyStarted())
-		mayAbort = ( KMessageBox::warningContinueCancel(nullptr, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18n("Start new game"))) == KMessageBox::Continue );
+		mayAbort = ( KMessageBox::warningContinueCancel(nullptr, i18n("This will be the end of the current game!"), QString(), KGuiItem(i18nc("@action:button", "Start New Game"), QStringLiteral("document-new"))) == KMessageBox::Continue );
 
 	return mayAbort;
 }

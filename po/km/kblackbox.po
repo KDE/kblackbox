@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-04-29 00:37+0000\n"
 "PO-Revision-Date: 2009-10-28 08:37+0700\n"
 "Last-Translator: Morn Met\n"
 "Language-Team: Khmer <kde-i18n-doc@kde.org>\n"
@@ -29,22 +29,31 @@ msgid "Your emails"
 msgstr "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, kde-format
-msgctxt "A number between 1 and 99 is displayed in front of it."
+#, fuzzy, kde-format
+#| msgctxt "A number between 1 and 99 is displayed in front of it."
+#| msgid " ball"
+#| msgid_plural " balls"
+msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
 msgstr[0] " បាល់"
 
 #: kbblevelconfigurationwidget.cpp:40
-#, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+#, fuzzy, kde-format
+#| msgctxt "A number between 2 and 30 is displayed in front of it."
+#| msgid " column"
+#| msgid_plural " columns"
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
 msgstr[0] " ជួរ​ឈរ"
 
 #: kbblevelconfigurationwidget.cpp:49
-#, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+#, fuzzy, kde-format
+#| msgctxt "A number between 2 and 30 is displayed in front of it."
+#| msgid " row"
+#| msgid_plural " rows"
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
 msgstr[0] " ជួរដេក"
@@ -56,12 +65,16 @@ msgid "Configurable"
 msgstr "អាច​កំណត់​រចនាសម្ព័ន្ធ​បាន"
 
 #: kbbmainwindow.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start Tutorial"
+msgctxt "@action"
 msgid "Start Tutorial"
 msgstr "ចាប់​ផ្តើម​​ការ​​បង្រៀន"
 
 #: kbbmainwindow.cpp:79
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start tutorial"
+msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr "ចាប់ផ្ដើម​កា​របង្រៀន"
 
@@ -75,12 +88,16 @@ msgstr ""
 "ល្បែង​ ។ ចាប់​ផ្ដើម​វា បើ​សិន​ជា​មិន​ដឹង​អំពី​ពួក​វា !</qt>"
 
 #: kbbmainwindow.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Sandbox Game"
+msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "ល្បែង Sandbox ថ្មី"
 
 #: kbbmainwindow.cpp:85
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start a new sandbox game"
+msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "ចាប់​ផ្ដើម​ល្បែង​ sandbox ថ្មី​"
 
@@ -97,9 +114,13 @@ msgstr ""
 "មួយ​រយៈ​ពេល​មក វា​ពិត​ជា​មិន​រីករាយ​ទេ ដូច្នេះ​​អ្នក​គួរ​តែ​ព្យាយាម​ចាប់ផ្ដើម​ល្បែង​ពិតប្រាកដ​វិញ​ !</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "This is the last action of a game to check the result, when the user is "
+#| "done."
+#| msgid "Done!"
 msgctxt ""
-"This is the last action of a game to check the result, when the user is done."
+"@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
 msgstr "ធ្វើ​រួច !"
 
@@ -119,7 +140,9 @@ msgstr ""
 "ul><p>ចំណាំ​ថា វា​អាច​ចុច​នៅ​ទីនេះ ក្នុង​ករណី​ដែល​បាន​ដាក់​ចំនួន​បាល់​ត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ​ ។</p></qt>"
 
 #: kbbmainwindow.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Give up the game"
+msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr "បោះបង់​ល្បែង"
 
@@ -136,36 +159,49 @@ msgstr ""
 
 #: kbbmainwindow.cpp:103
 #, kde-format
-msgid "Enable highlight under mouse"
+msgctxt "@option:check"
+msgid "Enable Highlight under Mouse"
 msgstr ""
 
 #: kbbmainwindow.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "ផ្លាស់​ទី​ចុះ​ក្រោម"
 
 #: kbbmainwindow.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "ផ្លាស់​ទី​ឡើង​លើ"
 
 #: kbbmainwindow.cpp:155
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "ផ្លាស់​ទី​ទៅ​ឆ្វេង"
 
 #: kbbmainwindow.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "ផ្លាស់​ទី​ទៅ​ស្តាំ"
 
 #: kbbmainwindow.cpp:167
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch Ball or Shoot Laser"
+msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr "ប្ដូរ​បាល់ ឬ​បាញ់​ឡាស៊ែរ"
 
 #: kbbmainwindow.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch Marker"
+msgctxt "@action"
 msgid "Switch Marker"
 msgstr "ប្ដូរ​ឧបករណ៍​សម្គាល់"
 
@@ -220,8 +256,10 @@ msgstr ""
 "​សូម​បញ្ចប់​ការ​បង្រៀន​ជា​មុន​សិន ។"
 
 #: kbbmainwindow.cpp:329
-#, kde-format
-msgid "Check positions"
+#, fuzzy, kde-format
+#| msgid "Check positions"
+msgctxt "@title:window"
+msgid "Check Positions"
 msgstr "ពិនិត្យ​មើល​ទីតាំង"
 
 #: kbbmainwindow.cpp:336
@@ -260,7 +298,7 @@ msgid ""
 "new parameters?"
 msgstr "តើ​អ្នក​ចង់​បោះបង់​ល្បែង​ផ្ទាល់​ខ្លួន​បច្ចុប្បន្ន និង​ចាប់ផ្ដើម​ល្បែង​ថ្មី​មួយ ​ជា​មួយ​នឹង​ប៉ារ៉ាម៉ែត្រ​ថ្មី​ឬ ?"
 
-#: kbbmainwindow.cpp:392
+#: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
 #, fuzzy, kde-format
 #| msgid "Start new game"
 msgctxt "@action:button"
@@ -268,7 +306,9 @@ msgid "Start New Game"
 msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី"
 
 #: kbbmainwindow.cpp:408
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Custom Game"
+msgctxt "@title:tab"
 msgid "Custom Game"
 msgstr "ល្បែង​ផ្ទាល់​ខ្លួន"
 
@@ -278,7 +318,9 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "សូម​អភ័យ​ទោស​ អ្នក​ប្រហែល​ជា​មិន​អាច​បោះ​បង់​ល្បែង​​អំឡុង​ពេល​ការ​បង្រៀន​បាន​​ទេ​ ។"
 
 #: kbbmainwindow.cpp:427
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Solve"
+msgctxt "@title:window"
 msgid "Solve"
 msgstr "ដោះស្រាយ"
 
@@ -300,8 +342,10 @@ msgstr ""
 "ដូច្នេះ តើ​អ្នក​ពិត​ជា​ចង់​បោះបង់​ល្បែង​នេះ​មែនទេ ?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, kde-format
-msgid "Give up"
+#, fuzzy, kde-format
+#| msgid "Give up"
+msgctxt "@action:button"
+msgid "Give Up"
 msgstr "បោះបង់"
 
 #: kbbmainwindow.cpp:432
@@ -336,11 +380,6 @@ msgstr ""
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "នេះ​គឺ​ជា​ទី​បញ្ចប់​នៃ​ល្បែង​បច្ចុប្បន្ន !"
-
-#: kbbmainwindow.cpp:481
-#, kde-format
-msgid "Start new game"
-msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី"
 
 #: kbbscalablegraphicwidget.cpp:100
 #, kde-format
@@ -379,7 +418,9 @@ msgstr ""
 "li></ul></qt>"
 
 #: kbbtutorial.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tutorial"
+msgctxt "@title:group"
 msgid "Tutorial"
 msgstr "ការ​បង្រៀន"
 
@@ -394,8 +435,10 @@ msgid "Describes what you should do to reach the next tutorial step."
 msgstr "ពិពណ៌នា​នូវ​អ្វី​ដែល​អ្នក​គួរ​តែ​ធ្វើ​ ដើម្បី​ឈាន​ទៅ​ដល់​ជំហាន​បង្រៀន​បន្ទាប់​ ។"
 
 #: kbbtutorial.cpp:84
-#, kde-format
-msgctxt "Previous tutorial step"
+#, fuzzy, kde-format
+#| msgctxt "Previous tutorial step"
+#| msgid "&Previous"
+msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr "មុន"
 
@@ -405,8 +448,10 @@ msgid "Go back to the previous tutorial step."
 msgstr "ត្រឡប់​ទៅ​ជំហាន​បង្រៀន​ពីមុន ។"
 
 #: kbbtutorial.cpp:88
-#, kde-format
-msgctxt "Next tutorial step"
+#, fuzzy, kde-format
+#| msgctxt "Next tutorial step"
+#| msgid "&Next"
+msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr "បន្ទាប់"
 
@@ -736,6 +781,9 @@ msgstr "Johann Ollivier Lapeyre"
 #, kde-format
 msgid "Artist"
 msgstr "សិល្បករ"
+
+#~ msgid "Start new game"
+#~ msgstr "ចាប់ផ្ដើម​ល្បែង​ថ្មី"
 
 #~ msgid "Time: 00:00"
 #~ msgstr "ពេល​វេលា​៖ 00:00​"

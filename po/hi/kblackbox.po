@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-04-29 00:37+0000\n"
 "PO-Revision-Date: 2021-08-21 16:25+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -31,7 +31,7 @@ msgstr "raviratlami@aol.in"
 
 #: kbblevelconfigurationwidget.cpp:31
 #, fuzzy, kde-format
-msgctxt "A number between 1 and 99 is displayed in front of it."
+msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
 msgstr[0] "गेंद"
@@ -39,7 +39,7 @@ msgstr[1] "गेंद"
 
 #: kbblevelconfigurationwidget.cpp:40
 #, fuzzy, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
 msgstr[0] "स्तम्भ"
@@ -47,7 +47,7 @@ msgstr[1] "स्तम्भ"
 
 #: kbblevelconfigurationwidget.cpp:49
 #, fuzzy, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
 msgstr[0] "पंक्तियाँ"
@@ -61,11 +61,14 @@ msgstr ""
 
 #: kbbmainwindow.cpp:77
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Start Tutorial"
 msgstr "शिक्षण पाठ प्रारंभ करें"
 
 #: kbbmainwindow.cpp:79
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start tutorial"
+msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr "शिक्षण पाठ प्रारंभ करें"
 
@@ -78,11 +81,14 @@ msgstr ""
 
 #: kbbmainwindow.cpp:84
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "नया सेंडबाक्स खेल"
 
 #: kbbmainwindow.cpp:85
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start a new sandbox game"
+msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "नया सेंडबाक्स खेल प्रारंभ करें"
 
@@ -99,7 +105,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Done!"
 msgctxt ""
-"This is the last action of a game to check the result, when the user is done."
+"@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
 msgstr "सम्पन्न!"
 
@@ -115,7 +121,9 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Give up the game"
+msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr "खेल को छोड़ दें"
 
@@ -129,38 +137,49 @@ msgstr ""
 
 #: kbbmainwindow.cpp:103
 #, kde-format
-msgid "Enable highlight under mouse"
+msgctxt "@option:check"
+msgid "Enable Highlight under Mouse"
 msgstr ""
 
 #: kbbmainwindow.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "नीचे जाएँ"
 
 #: kbbmainwindow.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "ऊपर जाएँ"
 
 #: kbbmainwindow.cpp:155
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "बाएँ जाएँ"
 
 #: kbbmainwindow.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "दाएँ जाएँ"
 
 #: kbbmainwindow.cpp:167
 #, fuzzy, kde-format
 #| msgid "Switch ball or shoot laser"
+msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr "गेंद बदलें बाद में शूट करें"
 
 #: kbbmainwindow.cpp:173
 #, fuzzy, kde-format
 #| msgid "Switch marker"
+msgctxt "@action"
 msgid "Switch Marker"
 msgstr "मार्कर स्विच करें"
 
@@ -216,8 +235,10 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:329
-#, kde-format
-msgid "Check positions"
+#, fuzzy, kde-format
+#| msgid "Check positions"
+msgctxt "@title:window"
+msgid "Check Positions"
 msgstr "स्थिति जाँचें"
 
 #: kbbmainwindow.cpp:336
@@ -256,7 +277,7 @@ msgid ""
 "new parameters?"
 msgstr ""
 
-#: kbbmainwindow.cpp:392
+#: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
 #, fuzzy, kde-format
 #| msgid "Start new game"
 msgctxt "@action:button"
@@ -266,6 +287,7 @@ msgstr "नया खेल प्रारंभ करें"
 #: kbbmainwindow.cpp:408
 #, fuzzy, kde-format
 #| msgid "Custom game"
+msgctxt "@title:tab"
 msgid "Custom Game"
 msgstr "मनपसंद खेल"
 
@@ -276,7 +298,9 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "माफ कीजिए, आपको शिक्षण पाठ को छोड़ना नहीं चाहिए."
 
 #: kbbmainwindow.cpp:427
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Solve"
+msgctxt "@title:window"
 msgid "Solve"
 msgstr "हल करें"
 
@@ -290,8 +314,10 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, kde-format
-msgid "Give up"
+#, fuzzy, kde-format
+#| msgid "Give up"
+msgctxt "@action:button"
+msgid "Give Up"
 msgstr "छोड़ दें"
 
 #: kbbmainwindow.cpp:432
@@ -328,11 +354,6 @@ msgstr "टीप: सेंडबक्सा मोड में,<br />हल 
 msgid "This will be the end of the current game!"
 msgstr "यह इस मौज़ूदा खेल का अंत होगा!"
 
-#: kbbmainwindow.cpp:481
-#, kde-format
-msgid "Start new game"
-msgstr "नया खेल प्रारंभ करें"
-
 #: kbbscalablegraphicwidget.cpp:100
 #, kde-format
 msgid "Score"
@@ -360,7 +381,9 @@ msgid ""
 msgstr ""
 
 #: kbbtutorial.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tutorial"
+msgctxt "@title:group"
 msgid "Tutorial"
 msgstr "शिक्षण पाठ"
 
@@ -376,7 +399,7 @@ msgstr "बताता है कि अगले शिक्षण पाठ 
 
 #: kbbtutorial.cpp:84
 #, fuzzy, kde-format
-msgctxt "Previous tutorial step"
+msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr "पिछला (&P)"
 
@@ -387,7 +410,7 @@ msgstr "पिछले शिक्षण चरण पर जाएँ"
 
 #: kbbtutorial.cpp:88
 #, fuzzy, kde-format
-msgctxt "Next tutorial step"
+msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr "अगला (&N)"
 
@@ -682,6 +705,9 @@ msgstr "जोहान ओलिवर लापेरे"
 #, kde-format
 msgid "Artist"
 msgstr "कलाकार"
+
+#~ msgid "Start new game"
+#~ msgstr "नया खेल प्रारंभ करें"
 
 #~ msgid "Time: 00:00"
 #~ msgstr "समय:00:00"

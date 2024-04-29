@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-04-29 00:37+0000\n"
 "PO-Revision-Date: 2019-12-12 22:03+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -29,7 +29,7 @@ msgstr "shijualexonline@gmail.com,snalledam@dataone.in,vivekkj2004@gmail.com"
 
 #: kbblevelconfigurationwidget.cpp:31
 #, kde-format
-msgctxt "A number between 1 and 99 is displayed in front of it."
+msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
 msgstr[0] ""
@@ -37,7 +37,7 @@ msgstr[1] ""
 
 #: kbblevelconfigurationwidget.cpp:40
 #, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
 msgstr[0] ""
@@ -45,7 +45,7 @@ msgstr[1] ""
 
 #: kbblevelconfigurationwidget.cpp:49
 #, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
 msgstr[0] ""
@@ -59,11 +59,13 @@ msgstr ""
 
 #: kbbmainwindow.cpp:77
 #, kde-format
+msgctxt "@action"
 msgid "Start Tutorial"
 msgstr ""
 
 #: kbbmainwindow.cpp:79
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr ""
 
@@ -76,11 +78,13 @@ msgstr ""
 
 #: kbbmainwindow.cpp:84
 #, kde-format
+msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr ""
 
 #: kbbmainwindow.cpp:85
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr ""
 
@@ -96,7 +100,7 @@ msgstr ""
 #: kbbmainwindow.cpp:92
 #, kde-format
 msgctxt ""
-"This is the last action of a game to check the result, when the user is done."
+"@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
 msgstr ""
 
@@ -113,6 +117,7 @@ msgstr ""
 
 #: kbbmainwindow.cpp:97
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr ""
 
@@ -126,36 +131,43 @@ msgstr ""
 
 #: kbbmainwindow.cpp:103
 #, kde-format
-msgid "Enable highlight under mouse"
+msgctxt "@option:check"
+msgid "Enable Highlight under Mouse"
 msgstr ""
 
 #: kbbmainwindow.cpp:143
 #, kde-format
+msgctxt "@action"
 msgid "Move Down"
 msgstr ""
 
 #: kbbmainwindow.cpp:149
 #, kde-format
+msgctxt "@action"
 msgid "Move Up"
 msgstr ""
 
 #: kbbmainwindow.cpp:155
 #, kde-format
+msgctxt "@action"
 msgid "Move Left"
 msgstr ""
 
 #: kbbmainwindow.cpp:161
 #, kde-format
+msgctxt "@action"
 msgid "Move Right"
 msgstr ""
 
 #: kbbmainwindow.cpp:167
 #, kde-format
+msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr ""
 
 #: kbbmainwindow.cpp:173
 #, kde-format
+msgctxt "@action"
 msgid "Switch Marker"
 msgstr ""
 
@@ -209,7 +221,8 @@ msgstr ""
 
 #: kbbmainwindow.cpp:329
 #, kde-format
-msgid "Check positions"
+msgctxt "@title:window"
+msgid "Check Positions"
 msgstr ""
 
 #: kbbmainwindow.cpp:336
@@ -248,7 +261,7 @@ msgid ""
 "new parameters?"
 msgstr ""
 
-#: kbbmainwindow.cpp:392
+#: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
@@ -256,6 +269,7 @@ msgstr ""
 
 #: kbbmainwindow.cpp:408
 #, kde-format
+msgctxt "@title:tab"
 msgid "Custom Game"
 msgstr ""
 
@@ -266,6 +280,7 @@ msgstr ""
 
 #: kbbmainwindow.cpp:427
 #, kde-format
+msgctxt "@title:window"
 msgid "Solve"
 msgstr ""
 
@@ -280,7 +295,8 @@ msgstr ""
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
 #, kde-format
-msgid "Give up"
+msgctxt "@action:button"
+msgid "Give Up"
 msgstr ""
 
 #: kbbmainwindow.cpp:432
@@ -317,11 +333,6 @@ msgstr ""
 msgid "This will be the end of the current game!"
 msgstr ""
 
-#: kbbmainwindow.cpp:481
-#, kde-format
-msgid "Start new game"
-msgstr ""
-
 #: kbbscalablegraphicwidget.cpp:100
 #, kde-format
 msgid "Score"
@@ -350,6 +361,7 @@ msgstr ""
 
 #: kbbtutorial.cpp:36
 #, kde-format
+msgctxt "@title:group"
 msgid "Tutorial"
 msgstr ""
 
@@ -365,7 +377,7 @@ msgstr ""
 
 #: kbbtutorial.cpp:84
 #, kde-format
-msgctxt "Previous tutorial step"
+msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr ""
 
@@ -376,7 +388,7 @@ msgstr ""
 
 #: kbbtutorial.cpp:88
 #, kde-format
-msgctxt "Next tutorial step"
+msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr ""
 

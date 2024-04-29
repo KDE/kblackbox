@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-04-29 00:37+0000\n"
 "PO-Revision-Date: 2023-01-05 11:02+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -33,24 +33,33 @@ msgid "Your emails"
 msgstr "manolis@koppermind.homelinux.org"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, kde-format
-msgctxt "A number between 1 and 99 is displayed in front of it."
+#, fuzzy, kde-format
+#| msgctxt "A number between 1 and 99 is displayed in front of it."
+#| msgid " ball"
+#| msgid_plural " balls"
+msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
 msgstr[0] " μπάλα"
 msgstr[1] " μπάλες"
 
 #: kbblevelconfigurationwidget.cpp:40
-#, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+#, fuzzy, kde-format
+#| msgctxt "A number between 2 and 30 is displayed in front of it."
+#| msgid " column"
+#| msgid_plural " columns"
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
 msgstr[0] " στήλη"
 msgstr[1] " στήλες"
 
 #: kbblevelconfigurationwidget.cpp:49
-#, kde-format
-msgctxt "A number between 2 and 30 is displayed in front of it."
+#, fuzzy, kde-format
+#| msgctxt "A number between 2 and 30 is displayed in front of it."
+#| msgid " row"
+#| msgid_plural " rows"
+msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
 msgstr[0] " γραμμή"
@@ -63,12 +72,16 @@ msgid "Configurable"
 msgstr "Διαμορφώσιμο"
 
 #: kbbmainwindow.cpp:77
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start Tutorial"
+msgctxt "@action"
 msgid "Start Tutorial"
 msgstr "Έναρξη εκμάθησης"
 
 #: kbbmainwindow.cpp:79
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start tutorial"
+msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr "Έναρξη εκμάθησης"
 
@@ -83,12 +96,16 @@ msgstr ""
 "κανόνες!</qt>"
 
 #: kbbmainwindow.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Sandbox Game"
+msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "Νέο παιχνίδι προπόνησης"
 
 #: kbbmainwindow.cpp:85
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start a new sandbox game"
+msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "Έναρξη ενός νέου παιχνιδιού προπόνησης"
 
@@ -106,9 +123,13 @@ msgstr ""
 "δοκιμάσετε να ξεκινήσετε ένα πραγματικό παιχνίδι!</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "This is the last action of a game to check the result, when the user is "
+#| "done."
+#| msgid "Done!"
 msgctxt ""
-"This is the last action of a game to check the result, when the user is done."
+"@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
 msgstr "Έτοιμο!"
 
@@ -130,7 +151,9 @@ msgstr ""
 "μόνο αν έχετε τοποθετήσει το σωστό αριθμό μπαλών.</p></qt>"
 
 #: kbbmainwindow.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Give up the game"
+msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr "Εγκατάλειψη του παιχνιδιού"
 
@@ -146,37 +169,51 @@ msgstr ""
 "και δεν επιθυμείτε να τα παρατήσετε, επιλέξτε το \"Έτοιμο!\".</p></qt>"
 
 #: kbbmainwindow.cpp:103
-#, kde-format
-msgid "Enable highlight under mouse"
+#, fuzzy, kde-format
+#| msgid "Enable highlight under mouse"
+msgctxt "@option:check"
+msgid "Enable Highlight under Mouse"
 msgstr "Ενεργοποίηση τονισμού κάτω από το ποντίκι"
 
 #: kbbmainwindow.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Down"
+msgctxt "@action"
 msgid "Move Down"
 msgstr "Μετακίνηση κάτω"
 
 #: kbbmainwindow.cpp:149
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Up"
+msgctxt "@action"
 msgid "Move Up"
 msgstr "Μετακίνηση πάνω"
 
 #: kbbmainwindow.cpp:155
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Left"
+msgctxt "@action"
 msgid "Move Left"
 msgstr "Μετακίνηση αριστερά"
 
 #: kbbmainwindow.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Move Right"
+msgctxt "@action"
 msgid "Move Right"
 msgstr "Μετακίνηση δεξιά"
 
 #: kbbmainwindow.cpp:167
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch Ball or Shoot Laser"
+msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr "Εναλλαγή μπάλας ή ρίψη λέιζερ"
 
 #: kbbmainwindow.cpp:173
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch Marker"
+msgctxt "@action"
 msgid "Switch Marker"
 msgstr "Εναλλαγή σημαδιού"
 
@@ -237,8 +274,10 @@ msgstr ""
 "Παρακαλώ τελειώστε πρώτα την εκμάθηση."
 
 #: kbbmainwindow.cpp:329
-#, kde-format
-msgid "Check positions"
+#, fuzzy, kde-format
+#| msgid "Check positions"
+msgctxt "@title:window"
+msgid "Check Positions"
 msgstr "Έλεγχος θέσεων"
 
 #: kbbmainwindow.cpp:336
@@ -280,14 +319,16 @@ msgstr ""
 "Επιθυμείτε την ακύρωση του τρέχοντος προσαρμοσμένου παιχνιδιού και την "
 "έναρξη ενός νέου με άλλες παραμέτρους;"
 
-#: kbbmainwindow.cpp:392
+#: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Έναρξη νέου παιχνιδιού"
 
 #: kbbmainwindow.cpp:408
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Custom Game"
+msgctxt "@title:tab"
 msgid "Custom Game"
 msgstr "Προσαρμοσμένο παιχνίδι"
 
@@ -297,7 +338,9 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "Δυστυχώς, δεν μπορείτε να εγκαταλείψετε την εκμάθηση."
 
 #: kbbmainwindow.cpp:427
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Solve"
+msgctxt "@title:window"
 msgid "Solve"
 msgstr "Λύση"
 
@@ -315,8 +358,10 @@ msgstr ""
 "Επιθυμείτε πραγματικά την εγκατάλειψη του παιχνιδιού;"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, kde-format
-msgid "Give up"
+#, fuzzy, kde-format
+#| msgid "Give up"
+msgctxt "@action:button"
+msgid "Give Up"
 msgstr "Εγκατάλειψη"
 
 #: kbbmainwindow.cpp:432
@@ -354,11 +399,6 @@ msgstr ""
 #, kde-format
 msgid "This will be the end of the current game!"
 msgstr "Αυτό θα είναι το τέλος του τρέχοντος παιχνιδιού!"
-
-#: kbbmainwindow.cpp:481
-#, kde-format
-msgid "Start new game"
-msgstr "Έναρξη νέου παιχνιδιού"
 
 #: kbbscalablegraphicwidget.cpp:100
 #, kde-format
@@ -399,7 +439,9 @@ msgstr ""
 "<b>πληροφορίες αλληλεπίδρασης</b> αν τα χρησιμοποιήσετε.</li></ul></qt>"
 
 #: kbbtutorial.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tutorial"
+msgctxt "@title:group"
 msgid "Tutorial"
 msgstr "Εκμάθηση"
 
@@ -416,8 +458,10 @@ msgstr ""
 "εκμάθησης."
 
 #: kbbtutorial.cpp:84
-#, kde-format
-msgctxt "Previous tutorial step"
+#, fuzzy, kde-format
+#| msgctxt "Previous tutorial step"
+#| msgid "&Previous"
+msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr "&Προηγούμενο"
 
@@ -427,8 +471,10 @@ msgid "Go back to the previous tutorial step."
 msgstr "Μετάβαση στο προηγούμενο βήμα της εκμάθησης."
 
 #: kbbtutorial.cpp:88
-#, kde-format
-msgctxt "Next tutorial step"
+#, fuzzy, kde-format
+#| msgctxt "Next tutorial step"
+#| msgid "&Next"
+msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr "&Επόμενο"
 
@@ -787,6 +833,9 @@ msgstr "Johann Ollivier Lapeyre"
 #, kde-format
 msgid "Artist"
 msgstr "Καλλιτέχνης"
+
+#~ msgid "Start new game"
+#~ msgstr "Έναρξη νέου παιχνιδιού"
 
 #~ msgid "Time: 00:00"
 #~ msgstr "Χρόνος: 00:00"

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdegames-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-03-18 19:44+0300\n"
+"PO-Revision-Date: 2024-04-29 15:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -140,9 +140,9 @@ msgid ""
 "solution will be displayed.</p><p>If you placed all the balls and do not "
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
-"<qt><p>Şimdiki oyunu bırakmak istiyorsanız \"<b>Çöz</b>\"ü seçin, çözüm "
+"<qt><p>Şimdiki oyunu bırakmak istiyorsanız “<b>Çöz</b>”ü seçin, çözüm "
 "gösterilecektir.</p><p>Eğer topları yerleştirdiniz ve oyundan çıkmak "
-"istemiyorsanız \"Tamamlandı!\" seçeneğini seçin.</p></qt>"
+"istemiyorsanız “Tamamlandı!” seçeneğini seçin.</p></qt>"
 
 #: kbbmainwindow.cpp:103
 #, kde-format
@@ -230,7 +230,7 @@ msgid ""
 "the game before you reached the last step.\n"
 "Please first finish the tutorial."
 msgstr ""
-"\"Tamamlandı!\" seçeneğine tıklamak, topların konumlarını oyunun sonunda "
+"“Tamamlandı!” seçeneğine tıklamak, topların konumlarını oyunun sonunda "
 "kontrol etmek için normal yoldur. Ne var ki, öğretici oyunda son adıma "
 "gelmeden oyunu bitirmek mümkün değildir.\n"
 "Lütfen öncelikle öğretici oyunu bitirin."
@@ -267,7 +267,7 @@ msgstr "Son puanınız: %1.<br />Sanırım daha fazla pratik yapmanız gerekiyor
 #: kbbmainwindow.cpp:369
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
-msgstr "Oyun duraklatıldı.<br />Sürdürmek için \"%1\" düğmesine basın."
+msgstr "Oyun duraklatıldı.<br />Sürdürmek için “%1” düğmesine basın."
 
 #: kbbmainwindow.cpp:391
 #, kde-format
@@ -308,8 +308,8 @@ msgid ""
 "So, do you really want to give up this game?"
 msgstr ""
 "Bütün topları yerleştirdiniz. Güzel!\n"
-"Şimdi oyunu bitirmek için \"Tamamlandı!\" seçeneğine tıklamayın ve doğru "
-"tahmin edip etmediğinizi kontrol edin.\n"
+"Şimdi oyunu bitirmek için “Tamamlandı!” seçeneğine tıklamayın ve doğru "
+"tahmin edip etmediğinizi denetleyin.\n"
 "Evet, gerçekten oyunu bırakmak istiyor musunuz?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
@@ -373,12 +373,12 @@ msgid ""
 "another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
 "b> at the end of the game if you make a mistake.</p></qt>"
 msgstr ""
-"<qt><p>İşte <b>puanınız</b>. Mümkün olduğunca az puan almaya çalışmalısınız."
-"</p><p>Puan artışı<ul><li>zamanla: saniyede <b>1 puan</b>. </li><li>lazer "
+"<qt><p>İşte <b>puanınız</b>. Olabildiğince az puan almaya çalışmalısınız.</"
+"p><p>Puan artışı<ul><li>zamanla: saniyede <b>1 puan</b>. </li><li>lazer "
 "kullanımıyla<ul><li>lazer ışını bir topu ya da var olan bir noktayı "
 "vurursa<b>3 puan</b></li>,<li>başka bir noktada bulunuyorsa<b>9 puan</b></"
 "li>.</ul></li></ul></p><p>Herhangi bir hata yaparsanız oyunun sonunda "
-"puanınız <b>999</b>'a eşitlenecektir.</p></qt>"
+"puanınız <b>999</b>’a eşitlenecektir.</p></qt>"
 
 #: kbbscalablegraphicwidget.cpp:104
 #, kde-format
@@ -456,7 +456,7 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr "\"Sonraki\" seçeneğine tıklayınız"
+msgstr "“Sonraki” seçeneğine tıklayın"
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -497,9 +497,9 @@ msgid ""
 msgstr ""
 "Eğer bir lazer ışını kara kutunun içinde hiç bir topla etkileşime girmezse, "
 "girdiği noktanın tam ters yönünden dışarı çıkar. <br /><br />Örnek: Farz "
-"edelim ki görüldüğü gibi kutunun içinde 3 tane topumuz olsun. \"1\" nolu "
+"edelim ki görüldüğü gibi kutunun içinde 3 tane topumuz olsun. “1” numaralı "
 "lazer ışınından etkilenmeyecektir hiçbiri.<br /><br />Oyun ilerledikçe, her "
-"giriş/çıkış noktaları farklı bir numara ile işaretlenecektir."
+"giriş/çıkış noktaları farklı bir numara ile imlenecektir."
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -519,10 +519,10 @@ msgid ""
 "might have hit a ball at the position shown, but the exact position of the "
 "hit is not certain: There are many other possibilities."
 msgstr ""
-"Topa doğru direk bir çarpışma \"<b>vuruş</b>\" olarak adlandırılmaktadır. "
+"Topa doğru direk bir çarpışma “<b>vuruş</b>” olarak adlandırılmaktadır. "
 "Herhangi bir topa çarpan ışın kara kutu’dan dışarı <b>çıkmaz</b>.<br /><br /"
-"> Örnek: Işın şekilde görüldüğü gibi topa vurabilir, ama tam olarak nereden "
-"vurduğu kesin değildir: Birçok ihtimal olabilir."
+"> Örnek: Işın şekilde görüldüğü gibi topa vurabilir; ancak tam olarak "
+"nereden vurduğu kesin değildir: Birçok olasılık olabilir."
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -543,10 +543,10 @@ msgid ""
 "would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
 "possibility."
 msgstr ""
-"Aslında topa vuramayıp da topun bir yanına nişan alan ışınlara <b>\"yön sapma"
-"\"</b> diyoruz. Bir ışının yön sapma açısı her zaman <b>90 derecedir</b>."
-"<br /> <br />Örnek: Gösterilen top, görüldüğü üzere \"2\" numaralı ışını "
-"yukarı doğru saptırabilir, ama tek olasılık bu <b>değildir</b>."
+"Aslında topa vuramayıp da topun bir yanına nişan alan ışınlara “<b>yön "
+"sapma</b>” diyoruz. Bir ışının yön sapma açısı her zaman <b>90 derecedir</b>."
+"<br /> <br />Örnek: Gösterilen top, görüldüğü üzere “2” numaralı ışını "
+"yukarı doğru saptırabilir; ancak tek olasılık bu <b>değildir</b>."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -555,7 +555,7 @@ msgid ""
 "the laser beam as shown."
 msgstr ""
 "Lazer ışınını gösterildiği gibi saptıran başka bir top konumunu görmek için "
-"\"Sonraki\" düğmesine basınız."
+"“Sonraki” düğmesine basın."
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -570,7 +570,7 @@ msgid ""
 "deflected by this configuration of 3 balls."
 msgstr ""
 "Gördüğünüz gibi, kara kutu içindeki etkileşimler biraz karışık olabilir!<br /"
-">\"2\" numaralı konumdan giren ve çıkan lazer ışıkları, 3 topun bu şekilde "
+">“2” numaralı konumdan giren ve çıkan lazer ışıkları, 3 topun bu şekilde "
 "yerleştirilmesiyle yönünden sapabilirler."
 
 #: kbbtutorial.cpp:182
@@ -622,12 +622,12 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
-msgstr "Neredeyse tamamlandı. \"Sonraki\" seçeneğine tıklayın."
+msgstr "Neredeyse tamamlandı. “Sonraki” seçeneğine tıklayın."
 
 #: kbbtutorial.cpp:204
 #, kde-format
 msgid "Marker for \"free position\""
-msgstr "\"Boş konum\" için işaretleyici"
+msgstr "“Boş konum” için imleyici"
 
 #: kbbtutorial.cpp:204
 #, kde-format
@@ -638,16 +638,16 @@ msgid ""
 "(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
 "the first 2 columns."
 msgstr ""
-"İlk iki sütunda hiç top olmadığından eminiz. Eğer olsaydı, \"1\" numaralı "
+"İlk iki sütunda hiç top olmadığından eminiz. Eğer olsaydı, “1” numaralı "
 "konumdan giren ışın bir topa çarpabilir ya da ikinci sütundaki bir top "
-"tarafından yönünden saptırılabilirdi. Sağ fare tıkıyla \"boş konum\"u "
+"tarafından yönünden saptırılabilirdi. Sağ fare tıkıyla “boş konum”u "
 "işaretleyebilirsiniz (klavye kısayollarına da göz atın).<br /><br />Örnek: "
 "ilk iki sütunda 12 işaretçi vardır."
 
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr "\"Sonraki\"ne tıklayın."
+msgstr "“Sonraki”ye tıklayın."
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -665,10 +665,10 @@ msgid ""
 msgstr ""
 "Bir topun nerede olduğunu kestirmeye çalıştığınızda, lütfen onu işaretlemek "
 "için farenin sol düğmesini kullanın. Bu işareti kaldırmak için de yeniden "
-"fare sol tuşuna basın. Son İpucu: Eğer konumdan emin değilseniz topa sağ "
-"tıklayıp topu \"emin değil\" diye işaretleyebilirsiniz. (Klavye "
-"kısayollarına da göz atın.)<br /> <br />Örnek: Bir konumu emin olarak "
-"işaretleyip bir başkasını emin değil olarak işaretliyoruz."
+"fare sol tuşuna basın. Son ipucu: Eğer konumdan emin değilseniz topa sağ "
+"tıklayıp topu “emin değil” diye imleyebilirsiniz. (Klavye kısayollarına da "
+"göz atın.)<br /> <br />Örnek: Bir konumu emin olarak işaretleyip bir "
+"başkasını emin değil olarak imliyoruz."
 
 #: kbbtutorial.cpp:220
 #, kde-format
@@ -694,7 +694,7 @@ msgstr ""
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
 msgstr ""
-"Topları konumlandırmayı sonlandırıp, işiniz bittiğinde \"Tamamlandı!\" "
+"Topları konumlandırmayı sonlandırıp işiniz bittiğinde “Tamamlandı!” "
 "seçeneğine tıklayın!"
 
 #. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
@@ -742,7 +742,7 @@ msgid ""
 "(c) 1999-2000, Robert Cimrman"
 msgstr ""
 "(c) 2007, Nicolas Roffet\n"
-"(c) 1999-2000, Robert Cimrman"
+"(c) 1999–2000, Robert Cimrman"
 
 #: main.cpp:35
 #, kde-format

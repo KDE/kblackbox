@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:37+0000\n"
-"PO-Revision-Date: 2023-09-26 06:15+0200\n"
+"PO-Revision-Date: 2024-04-29 10:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -29,10 +29,7 @@ msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball"
-#| msgid_plural " balls"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
@@ -40,10 +37,7 @@ msgstr[0] " ბურთი"
 msgstr[1] " ბურთი"
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " column"
-#| msgid_plural " columns"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
@@ -51,10 +45,7 @@ msgstr[0] " სვეტი"
 msgstr[1] " სვეტი"
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " row"
-#| msgid_plural " rows"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
@@ -68,15 +59,13 @@ msgid "Configurable"
 msgstr "მორგებადი"
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
-#| msgid "Start Tutorial"
+#, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
 msgstr "სახელმძღვანელოს გაშვება"
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
-#| msgid "Start tutorial"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr "სახელმძღვანელოს გაშვება"
@@ -91,15 +80,13 @@ msgstr ""
 "გზაა თამაშის წესებს სასწავლად. დაიწყეთ, თუ არ იცით ისინი!</qt>"
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "New Sandbox Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "საცდელი თამაში"
 
 #: kbbmainwindow.cpp:85
-#, fuzzy, kde-format
-#| msgid "Start a new sandbox game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "ახალი საცდელი თამაშის დაწყება"
@@ -117,11 +104,7 @@ msgstr ""
 "ეს უკვე სახალისო აღარაა და ნამდვილი თამაში უნდა დაიწყოთ!</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the last action of a game to check the result, when the user is "
-#| "done."
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
@@ -145,8 +128,7 @@ msgstr ""
 "რაოდენობის ბირთები დაალაგეთ.</p></qt>"
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Give up the game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr "ვნებდები"
@@ -163,50 +145,43 @@ msgstr ""
 "აირჩით \"დასრულდა!\".<p></qt>"
 
 #: kbbmainwindow.cpp:103
-#, fuzzy, kde-format
-#| msgid "Enable highlight under mouse"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
 msgstr "თაგუნას ქვეშ გამოკვეთის ჩართვა"
 
 #: kbbmainwindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "ჩამოწევა"
 
 #: kbbmainwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "აწევა"
 
 #: kbbmainwindow.cpp:155
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "მარცხნივ გაწევა"
 
 #: kbbmainwindow.cpp:161
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "მარჯვნივ გაწევა"
 
 #: kbbmainwindow.cpp:167
-#, fuzzy, kde-format
-#| msgid "Switch Ball or Shoot Laser"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr "შეცვალეთ ბურთი ან ისროლეთ ლაზერი"
 
 #: kbbmainwindow.cpp:173
-#, fuzzy, kde-format
-#| msgid "Switch Marker"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
 msgstr "ჭდის გადართვა"
@@ -267,8 +242,7 @@ msgstr ""
 "დაასრულეთ სახელმძღვანელო."
 
 #: kbbmainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Check positions"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
 msgstr "მდებარეობების გადამოწმება"
@@ -318,11 +292,10 @@ msgid "Start New Game"
 msgstr "ახალი თამაშის დაწყება"
 
 #: kbbmainwindow.cpp:408
-#, fuzzy, kde-format
-#| msgid "Custom Game"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
-msgstr "თანაშის მორგება"
+msgstr "თამაშის მორგება"
 
 #: kbbmainwindow.cpp:427
 #, kde-format
@@ -330,8 +303,7 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "ვარჯიშის დროს ვერ დანებდებით."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
-#| msgid "Solve"
+#, kde-format
 msgctxt "@title:window"
 msgid "Solve"
 msgstr "ამოხსნა"
@@ -350,8 +322,7 @@ msgstr ""
 "ასე რომ, მართლა გნებავთ თამაშის დასრულება?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
-#| msgid "Give up"
+#, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
 msgstr "დანებება"
@@ -429,8 +400,7 @@ msgstr ""
 "qt>"
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
-#| msgid "Tutorial"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
 msgstr "სახელმძღვანელო"
@@ -447,9 +417,7 @@ msgstr ""
 "აღწერს, რა უნდა გააკეთოთ, რომ სახელმძღვანელოს შემდეგ საფეხურს მიაღწიოთ."
 
 #: kbbtutorial.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Previous tutorial step"
-#| msgid "&Previous"
+#, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr "&წინა"
@@ -460,9 +428,7 @@ msgid "Go back to the previous tutorial step."
 msgstr "სავარჯიშოს წინა ნაბიჯზე დაბრუნება."
 
 #: kbbtutorial.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "Next tutorial step"
-#| msgid "&Next"
+#, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr "&შემდეგი"

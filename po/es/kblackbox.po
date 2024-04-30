@@ -4,7 +4,7 @@
 #
 # Sofía Priego <spriego@darksylvania.net>, %Y.
 # Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008.
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2015, 2018, 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2015, 2018, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 # Huever, 2009.
 # Kira J. Fernandez <kirajfdez@gmail.com>, 2010, 2011, 2012.
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:37+0000\n"
-"PO-Revision-Date: 2023-10-02 20:38+0200\n"
+"PO-Revision-Date: 2024-04-29 18:10+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,10 +35,7 @@ msgstr ""
 "kirajfdez@gmail.com"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball"
-#| msgid_plural " balls"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
@@ -46,10 +43,7 @@ msgstr[0] " bola"
 msgstr[1] " bolas"
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " column"
-#| msgid_plural " columns"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
@@ -57,10 +51,7 @@ msgstr[0] " columna"
 msgstr[1] " columnas"
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " row"
-#| msgid_plural " rows"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
@@ -74,15 +65,13 @@ msgid "Configurable"
 msgstr "Configurable"
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
-#| msgid "Start Tutorial"
+#, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
 msgstr "Iniciar tutorial"
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
-#| msgid "Start tutorial"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr "Iniciar tutorial"
@@ -94,18 +83,16 @@ msgid ""
 "learn the rules of the game. Start it if you do not know them!</qt>"
 msgstr ""
 "<qt>El <b>tutorial</b> es una forma rápida, amigable e interactiva de "
-"aprender las reglas del juego. ¡Inícielo si no las conoce!</qt>"
+"aprender las reglas del juego. ¡Inícialo si no las conoces!</qt>"
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "New Sandbox Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "Nueva partida de prueba"
 
 #: kbbmainwindow.cpp:85
-#, fuzzy, kde-format
-#| msgid "Start a new sandbox game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "Empezar una nueva partida de prueba"
@@ -120,15 +107,11 @@ msgid ""
 msgstr ""
 "<qt><p>En una <b>partida de prueba</b>, la solución se muestra al principio "
 "de la partida. Es práctico para entender los principios del juego.</p> "
-"<p>Sin embargo, tras un tiempo, ya no resulta divertido y debería probar con "
-"una partida real.</p></qt>"
+"<p>Sin embargo, tras un tiempo, ya no resulta divertido y deberías probar "
+"con una partida real.</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the last action of a game to check the result, when the user is "
-#| "done."
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
@@ -144,16 +127,15 @@ msgid ""
 "li></ul><p>Note that it is only possible to click here if you have placed "
 "the correct number of balls.</p></qt>"
 msgstr ""
-"<qt><ul><li>Primero debe situar todas las bolas en la caja negra. Para "
+"<qt><ul><li>Primero debes situar todas las bolas en la caja negra. Para "
 "adivinar las posiciones correctas de las bolas y ver cómo interactúan con "
-"los disparos del láser, debería utilizar los láseres que se encuentran "
-"situados alrededor de la caja negra.</li><li><b>Cuando piense que ha "
-"terminado</b>, debería pulsar aquí.</li></ul><p>Tenga en cuenta que solo "
-"será podrá aquí si ha colocado el número correcto de bolas.</p></qt>"
+"los disparos del láser, deberías usar los láseres que se encuentran situados "
+"alrededor de la caja negra.</li><li><b>Cuando creas que has terminado</b>, "
+"deberías pulsar aquí.</li></ul><p>Ten en cuenta que solo podrás pulsar aquí "
+"si has colocado el número correcto de bolas.</p></qt>"
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Give up the game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr "Abandonar la partida"
@@ -165,55 +147,48 @@ msgid ""
 "solution will be displayed.</p><p>If you placed all the balls and do not "
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
-"<qt><p>Elija «<b>Resolver</b>» si desea abandonar la partida actual. Se "
-"mostrará la solución.</p><p>Si ha situado todas las bolas y no desea "
-"abandonar, elija «¡Hecho!».</p></qt>"
+"<qt><p>Elige «<b>Resolver</b>» si quieres abandonar la partida actual. Se "
+"mostrará la solución.</p><p>Si has colocado todas las bolas y no quieres "
+"abandonar, elige «¡Hecho!».</p></qt>"
 
 #: kbbmainwindow.cpp:103
-#, fuzzy, kde-format
-#| msgid "Enable highlight under mouse"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
 msgstr "Activar resaltado bajo el cursor del ratón"
 
 #: kbbmainwindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Bajar"
 
 #: kbbmainwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Subir"
 
 #: kbbmainwindow.cpp:155
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "A la izquierda"
 
 #: kbbmainwindow.cpp:161
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "A la derecha"
 
 #: kbbmainwindow.cpp:167
-#, fuzzy, kde-format
-#| msgid "Switch Ball or Shoot Laser"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr "Cambiar bola o disparar láser"
 
 #: kbbmainwindow.cpp:173
-#, fuzzy, kde-format
-#| msgid "Switch Marker"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
 msgstr "Cambiar marcador"
@@ -227,27 +202,27 @@ msgid ""
 "Note: You can change<br />the parameters of<br />custom games in the<br /"
 ">Settings dialog."
 msgstr ""
-"Nota: Puede cambiar<br />los parámetros de<br />las partidas "
+"Nota: Puedes cambiar<br />los parámetros de<br />las partidas "
 "personalizadas<br />en el diálogo «Preferencias»."
 
 #: kbbmainwindow.cpp:280
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
-msgstr[0] "Primero necesita eliminar 1 bola de la caja negra."
-msgstr[1] "Primero necesita eliminar %1 bolas de la caja negra."
+msgstr[0] "Primero tienes que eliminar 1 bola de la caja negra."
+msgstr[1] "Primero tienes que eliminar %1 bolas de la caja negra."
 
 #: kbbmainwindow.cpp:282
 #, kde-format
 msgid "To check if you successfully guessed the ball positions, click here!"
-msgstr "Para comprobar si ha adivinado la posición de las bolas, ¡pulse aquí!"
+msgstr "Pulsa aquí para comprobar si has adivinado la posición de las bolas."
 
 #: kbbmainwindow.cpp:284
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
-msgstr[0] "Necesita colocar 1 bola más en la caja negra."
-msgstr[1] "Necesita colocar %1 bolas más en la caja negra."
+msgstr[0] "Tienes que colocar 1 bola más en la caja negra."
+msgstr[1] "Tienes que colocar %1 bolas más en la caja negra."
 
 #: kbbmainwindow.cpp:288
 #, kde-format
@@ -268,13 +243,12 @@ msgid ""
 "Please first finish the tutorial."
 msgstr ""
 "Pulsar «¡Hecho!» es la forma normal de comprobar las posiciones de las bolas "
-"al final de la partida. Sin embargo, en el tutorial no es posible terminar "
-"la partida antes de llegar al último paso.\n"
-"Termine primero el tutorial."
+"al final de la partida. Sin embargo, en el tutorial se puede terminar la "
+"partida antes de llegar al último paso.\n"
+"Termina primero el tutorial."
 
 #: kbbmainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Check positions"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
 msgstr "Comprobar posiciones"
@@ -285,7 +259,7 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />You did really well!"
-msgstr "Su puntuación final es: %1<br />¡Lo ha hecho muy bien!"
+msgstr "Tu puntuación final es: %1<br />¡Lo has hecho muy bien!"
 
 #: kbbmainwindow.cpp:338
 #, kde-format
@@ -301,12 +275,12 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />I guess you need more practice."
-msgstr "Su puntuación final es: %1<br />Parece que necesita practicar más."
+msgstr "Tu puntuación final es: %1<br />Parece que necesitas practicar más."
 
 #: kbbmainwindow.cpp:369
 #, kde-format
 msgid "Game paused.<br />Press \"%1\" to resume."
-msgstr "Partida detenida.<br />Pulse «%1» para continuar."
+msgstr "Partida detenida.<br />Pulsa «%1» para continuar."
 
 #: kbbmainwindow.cpp:391
 #, kde-format
@@ -314,8 +288,8 @@ msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
 "new parameters?"
 msgstr ""
-"¿Desea cancelar la partida personalizada actual e iniciar una nueva con los "
-"nuevos parámetros?"
+"¿Quieres cancelar la partida personalizada actual e iniciar una nueva con "
+"los nuevos parámetros?"
 
 #: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
 #, kde-format
@@ -324,8 +298,7 @@ msgid "Start New Game"
 msgstr "Iniciar nueva partida"
 
 #: kbbmainwindow.cpp:408
-#, fuzzy, kde-format
-#| msgid "Custom Game"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
 msgstr "Partida personalizada"
@@ -333,11 +306,10 @@ msgstr "Partida personalizada"
 #: kbbmainwindow.cpp:427
 #, kde-format
 msgid "Sorry, you may not give up during the tutorial."
-msgstr "Lo sentimos: no puede abandonar mientras esté en el tutorial."
+msgstr "Lo siento: no puedes abandonar mientras estás en el tutorial."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
-#| msgid "Solve"
+#, kde-format
 msgctxt "@title:window"
 msgid "Solve"
 msgstr "Resolver"
@@ -350,14 +322,13 @@ msgid ""
 "correctly.\n"
 "So, do you really want to give up this game?"
 msgstr ""
-"Ha colocado todas las bolas. ¡Fantástico!\n"
-"Debería pulsar «¡Hecho!» para finalizar la partida y comprobar si el "
+"Has colocado todas las bolas. ¡Fantástico!\n"
+"Deberías pulsar «¡Hecho!» para finalizar la partida y comprobar si el "
 "resultado es correcto.\n"
-"¿Realmente desea abandonar esta partida?"
+"¿Realmente quieres abandonar esta partida?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
-#| msgid "Give up"
+#, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
 msgstr "Abandonar"
@@ -366,20 +337,20 @@ msgstr "Abandonar"
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
-msgstr[0] "¡Debería colocar %1 bola!\n"
-msgstr[1] "¡Debería colocar %1 bolas!\n"
+msgstr[0] "¡Tienes que colocar %1 bola!\n"
+msgstr[1] "¡Tienes que colocar %1 bolas!\n"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
-msgstr[0] "Ha colocado %1.\n"
-msgstr[1] "Ha colocado %1.\n"
+msgstr[0] "Has colocado %1.\n"
+msgstr[1] "Has colocado %1.\n"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
 msgid "Do you really want to give up this game?"
-msgstr "¿Realmente desea abandonar esta partida?"
+msgstr "¿Realmente quieres abandonar esta partida?"
 
 #: kbbmainwindow.cpp:442
 #, kde-format
@@ -390,7 +361,7 @@ msgid ""
 "Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
 "fun!"
 msgstr ""
-"Nota: En el modo de prueba<br />ya se muestra la solución.<br />¡Diviértase!"
+"Nota: En el modo de prueba<br />ya se muestra la solución.<br />¡Diviértete!"
 
 #: kbbmainwindow.cpp:481
 #, kde-format
@@ -412,12 +383,12 @@ msgid ""
 "another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
 "b> at the end of the game if you make a mistake.</p></qt>"
 msgstr ""
-"<qt><p>Esta es <b>su puntuación</b>. Debería conseguir la más baja posible.</"
-"p><p>La puntuación se incrementa:<ul><li>con el tiempo: <b>1 punto</b> por "
+"<qt><p>Esta es <b>tu puntuación</b>. Deberías conseguir la más baja posible."
+"</p><p>La puntuación se incrementa:<ul><li>con el tiempo: <b>1 punto</b> por "
 "segundo.</li><li>Con el uso de los láser:<ul><li><b>3 puntos</b> si el láser "
 "golpea una bola o sale por el punto de entrada,</li><li><b>9 puntos</b> si "
-"sale por otro punto de entrada.</li></ul></li></ul></p><p>Su puntuación se "
-"establecerá en <b>999</b> al final de la partida si comete un error.</p></qt>"
+"sale por otro punto de entrada.</li></ul></li></ul></p><p>Tu puntuación será "
+"<b>999</b> al final de la partida si has cometido algún error.</p></qt>"
 
 #: kbbscalablegraphicwidget.cpp:104
 #, kde-format
@@ -429,14 +400,13 @@ msgid ""
 "li></ul></qt>"
 msgstr ""
 "<qt><p>Esta es el <b>área principal de juego</b>.</p><ul><li>La <b>caja "
-"negra</b> está en el centro.</li><li>A la izquierda, están las <b>bolas</b> "
-"que debe colocar sobre la caja negra.</li><li>Alrededor de la caja negra se "
-"encuentran los <b>láseres</b> que se sustituirán con <b>información sobre la "
-"interacción</b> cuando los use.</li></ul></qt>"
+"negra</b> está en el centro.</li><li>A la izquierda están las <b>bolas</b> "
+"que tienes que colocar en la caja negra.</li><li>Alrededor de la caja negra "
+"se encuentran los <b>láseres</b> que se sustituirán con <b>información sobre "
+"la interacción</b> cuando los uses.</li></ul></qt>"
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
-#| msgid "Tutorial"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
 msgstr "Tutorial"
@@ -453,9 +423,7 @@ msgstr ""
 "Describe lo que debe hacer para alcanzar el siguiente paso del tutorial."
 
 #: kbbtutorial.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Previous tutorial step"
-#| msgid "&Previous"
+#, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr "&Anterior"
@@ -463,12 +431,10 @@ msgstr "&Anterior"
 #: kbbtutorial.cpp:85
 #, kde-format
 msgid "Go back to the previous tutorial step."
-msgstr "Salta al paso anterior del tutorial."
+msgstr "Ir al paso anterior del tutorial."
 
 #: kbbtutorial.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "Next tutorial step"
-#| msgid "&Next"
+#, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr "Siguie&nte"
@@ -476,7 +442,7 @@ msgstr "Siguie&nte"
 #: kbbtutorial.cpp:89
 #, kde-format
 msgid "Go to the next tutorial step."
-msgstr "Salta al paso siguiente del tutorial."
+msgstr "Ir al paso siguiente del tutorial."
 
 #: kbbtutorial.cpp:151
 #, kde-format
@@ -491,7 +457,7 @@ msgid ""
 "It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
 "><br />The goal is to <b>find the positions of the balls.</b>"
 msgstr ""
-"Este tutorial le enseñará cómo jugar con KBlackBox basándose en un ejemplo "
+"Este tutorial te enseñará cómo jugar con KBlackBox siguiendo un ejemplo "
 "sencillo.<br /><br />Estamos jugando con una caja negra cuadrada de 6 "
 "columnas y 6 filas con 3 bolas <b>ocultas</b> y 24 sondas láser alrededor. "
 "<br /><br />El objetivo es <b>encontrar la posición de las bolas.</b>"
@@ -499,7 +465,7 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr "Pulse en «Siguiente»"
+msgstr "Pulsea en «Siguiente»"
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -522,7 +488,7 @@ msgstr ""
 #: kbbtutorial.cpp:156
 #, kde-format
 msgid "Please click on the marked laser to shoot a beam into the black box."
-msgstr "Pulse en el láser marcado para disparar un rayo en la caja negra."
+msgstr "Pulsa en el láser marcado para disparar un rayo en la caja negra."
 
 #: kbbtutorial.cpp:161
 #, kde-format
@@ -538,16 +504,16 @@ msgid ""
 "><br />As the game progresses, each pair of entry/exit points is marked with "
 "a different number."
 msgstr ""
-"Si un rayo láser no interacciona con ninguna bola de la caja negra, sale en "
-"el lado opuesto al punto de entrada.<br /><br />Ejemplo: Suponga que tenemos "
-"3 bolas en la caja de la forma en que se muestra. No afectarán al rayo láser "
-"«1»<br /><br />A medida de que el juego progresa, cada par de los puntos de "
-"entrada/salida está marcada con un número diferente."
+"Si un rayo láser no interactúa con ninguna bola de la caja negra, sale por "
+"el lado opuesto al punto de entrada.<br /><br />Ejemplo: Imagina que tenemos "
+"3 bolas en la caja de la forma que se muestra. No afectarán al rayo láser "
+"«1»<br /><br />A medida de que el juego avanza, cada par de puntos de "
+"entrada/salida se marca con un número diferente."
 
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "Now shoot the marked laser to discover the first kind of interaction."
-msgstr "Dispare el láser marcado para descubrir el primer tipo de interacción."
+msgstr "Dispara el láser marcado para descubrir el primer tipo de interacción."
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -571,7 +537,7 @@ msgstr ""
 #, kde-format
 msgid "Shoot the marked laser to discover the second kind of interaction."
 msgstr ""
-"Dispare el láser marcado para descubrir el segundo tipo de interacción."
+"Dispara el láser marcado para descubrir el segundo tipo de interacción."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -589,9 +555,9 @@ msgid ""
 msgstr ""
 "La interacción resultante de un rayo que no golpea la bola, sino que apunta  "
 "a un lado de ella, es lo que se llama «<b>desviación</b>». El ángulo de la "
-"desviación del rayo es siempre de <b>90 grados</b>.<br /><br />Ejemplo: la "
-"bola mostrada desviará el rayo «2» hacia arriba, pero esta<b>no</b> es la "
-"única posibilidad."
+"desviación del rayo es siempre de <b>90 grados</b>.<br /><br />Ejemplo: La "
+"bola que se muestra desviará el rayo «2» hacia arriba, aunque esta <b>no</b> "
+"es la única posibilidad."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -599,7 +565,7 @@ msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
-"Pulse en «Siguiente» para ver otra posible combinación de posiciones de la "
+"Pulsa en «Siguiente» para ver otra posible combinación de posiciones de la "
 "bola que desvían el láser como se muestra."
 
 #: kbbtutorial.cpp:182
@@ -614,14 +580,14 @@ msgid ""
 ">A laser beam entering and exiting at the positions \"2\" might have been "
 "deflected by this configuration of 3 balls."
 msgstr ""
-"Como puede ver, ¡las interacciones en la caja negra pueden ser un poco  más "
+"Como puedes ver, ¡las interacciones en la caja negra pueden ser un poco más "
 "complicadas!<br />Un rayo láser que entre y salga por las posiciones «2» "
 "puede haber sido desviado por esta configuración de 3 bolas."
 
 #: kbbtutorial.cpp:182
 #, kde-format
 msgid "Shoot the marked laser to discover another kind of result."
-msgstr "Dispare el láser marcado para descubrir otro tipo de resultado."
+msgstr "Dispara el láser marcado para descubrir otro tipo de resultado."
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -637,13 +603,13 @@ msgid ""
 "reflection."
 msgstr ""
 "Si el rayo láser sale de la caja negra <b>por el punto de entrada</b>, es "
-"que  se ha reflejado hacia atrás dentro de la caja negra.<br /><br /"
-">Ejemplo: Situamos 2 bolas en una configuración que produzca esa reflexión."
+"que se ha reflejado hacia atrás dentro de la caja negra.<br /><br />Ejemplo: "
+"Situamos 2 bolas en una configuración que produzca dicha reflexión."
 
 #: kbbtutorial.cpp:190
 #, kde-format
 msgid "Shoot the marked laser to see another backward reflection case."
-msgstr "Dispare el láser marcado para ver otro caso de reflexión hacia atrás."
+msgstr "Dispara el láser marcado para ver otro caso de reflexión hacia atrás."
 
 #: kbbtutorial.cpp:197
 #, kde-format
@@ -666,7 +632,7 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
-msgstr "Ya casi está. Pulse en «Siguiente»."
+msgstr "Ya casi está. Pulsa en «Siguiente»."
 
 #: kbbtutorial.cpp:204
 #, kde-format
@@ -684,15 +650,15 @@ msgid ""
 msgstr ""
 "Estamos seguros de que no hay bolas en las 2 primeras columnas. Si hubiera "
 "alguna, los rayos que entrasen en la posición «1» golpearían una bola o se "
-"desviarían por la bola de la columna 2. Con una pulsación del botón derecho "
-"del ratón (consulte también los atajos de teclado), podrá colocar un "
-"marcador «posición libre».<br /><br />Ejemplo: colocaremos 12 marcadores en "
-"las 2 primeras columnas."
+"desviarían por la bola de la columna 2. Con un clic del botón derecho del "
+"ratón (consulta también los atajos de teclado), podrás colocar un marcador "
+"de «posición libre».<br /><br />Ejemplo: Colocaremos 12 marcadores en las 2 "
+"primeras columnas."
 
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr "Pulse en «Siguiente»."
+msgstr "Pulsa en «Siguiente»."
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -708,12 +674,12 @@ msgid ""
 "ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
 ">Example: We marked one position as sure, the other one as unsure."
 msgstr ""
-"Cuando haya averiguado dónde está una bola, use el botón izquierdo del ratón "
-"para marcarla. Para quitar una marca de la bola, use de nuevo el botón "
-"izquierdo. Última pista: si no está seguro de una posición, puede utilizar "
-"un click derecho sobre una bola para marcarla como «dudosa» (vea también los "
-"atajos de teclado).<br /><br />Ejemplo: hemos marcado una posición como "
-"segura, la otra como dudosa."
+"Cuando hayas averiguado dónde está una bola, usa el botón izquierdo del "
+"ratón para marcarla. Para quitar una marca de la bola, usa de nuevo el botón "
+"izquierdo. Última pista: si no estás seguro de una posición, puedes hacer un "
+"clic derecho sobre una bola para marcarla como «dudosa» (consulta también "
+"los atajos de teclado).<br /><br />Ejemplo: hemos marcado una posición como "
+"segura y la otra como dudosa."
 
 #: kbbtutorial.cpp:220
 #, kde-format
@@ -729,17 +695,16 @@ msgid ""
 "positions of the 3 balls with certainty. Of course, you can use some more "
 "shots if needed."
 msgstr ""
-"<b>¡Enhorabuena!</b> Ahora ya conoce <b>todas las reglas</b> de KBlackBox."
-"<br /><br /><b>Puede comenzar a jugar</b>: pruebe a finalizar este tutorial "
-"por sí mismo<br /><br />Pista: hemos disparado suficientes rayos contra la "
+"<b>¡Enhorabuena!</b> Ahora ya conoces <b>todas las reglas</b> de KBlackBox."
+"<br /><br /><b>Puedes empezar a jugar</b>: prueba a finalizar este tutorial "
+"por ti mismo<br /><br />Pista: hemos disparado suficientes rayos contra la "
 "caja negra para poder adivinar las posiciones de las 3 bolas sin errores. "
-"Por supuesto, puede utilizar más láseres si los necesita."
+"Por supuesto, puedes usar más láseres si los necesitas."
 
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
-msgstr ""
-"¡Termine de situar las bolas y pulse en «¡Hecho!» cuando haya finalizado!"
+msgstr "¡Termina de situar las bolas y pulsa «¡Hecho!» cuando hayas acabado!"
 
 #. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
 #: kblackbox.kcfg:9
@@ -778,7 +743,7 @@ msgstr "KBlackBox"
 #: main.cpp:30
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
-msgstr "¡Encuentre las bolas ocultas en la caja negra disparando rayos láser!"
+msgstr "¡Encuentra las bolas ocultas en la caja negra disparando rayos láser!"
 
 #: main.cpp:32
 #, kde-format

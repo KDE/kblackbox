@@ -801,6 +801,3 @@ msgstr "Johann Ollivier Lapeyre"
 #, kde-format
 msgid "Artist"
 msgstr "Kunstner"
-
-#~ msgid "Start new game"
-#~ msgstr "Start nytt spill"

@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:37+0000\n"
 "PO-Revision-Date: 2022-07-14 14:27+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -30,40 +30,31 @@ msgid "Your emails"
 msgstr "flidr@kky.zcu.cz, pavelfric@seznam.cz"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball"
-#| msgid_plural " balls"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
-msgstr[0] " kulička"
-msgstr[1] " kuličky"
-msgstr[2] " kuliček"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " column"
-#| msgid_plural " columns"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
-msgstr[0] " sloupec"
-msgstr[1] " sloupce"
-msgstr[2] " sloupců"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " row"
-#| msgid_plural " rows"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
-msgstr[0] " řádek"
-msgstr[1] " řádky"
-msgstr[2] " řádků"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: kbbmainwindow.cpp:67
 #, kde-format
@@ -72,18 +63,16 @@ msgid "Configurable"
 msgstr "Nastavitelné"
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
-#| msgid "Start Tutorial"
+#, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
-msgstr "Spustit výuku"
+msgstr ""
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
-#| msgid "Start tutorial"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
-msgstr "Spustit výuku"
+msgstr ""
 
 #: kbbmainwindow.cpp:80
 #, kde-format
@@ -95,18 +84,16 @@ msgstr ""
 "se naučit pravidlům hry. Pokud je neznáte, spusťte si ji!</qt>"
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "New Sandbox Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
-msgstr "Nové \"pískoviště\""
+msgstr ""
 
 #: kbbmainwindow.cpp:85
-#, fuzzy, kde-format
-#| msgid "Start a new sandbox game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
-msgstr "Spustit novou hru v \"pískovišti\""
+msgstr ""
 
 #: kbbmainwindow.cpp:86
 #, kde-format
@@ -121,15 +108,11 @@ msgstr ""
 "není zábava a měl byste tedy zkusit zahájit opravdovou hru!</p> </qt>"
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the last action of a game to check the result, when the user is "
-#| "done."
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
-msgstr "Hotovo!"
+msgstr ""
 
 #: kbbmainwindow.cpp:93
 #, kde-format
@@ -149,11 +132,10 @@ msgstr ""
 "když jste umístili správný počet kuliček.</p> </qt>"
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Give up the game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
-msgstr "Vzdát hru"
+msgstr ""
 
 #: kbbmainwindow.cpp:98
 #, kde-format
@@ -167,53 +149,46 @@ msgstr ""
 "si to vzdávat, zvolte \"Hotovo!\".</p></qt>"
 
 #: kbbmainwindow.cpp:103
-#, fuzzy, kde-format
-#| msgid "Enable highlight under mouse"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
-msgstr "Povolit zvýraznění pod kurzorem"
+msgstr ""
 
 #: kbbmainwindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Přesunout dolů"
+msgstr "Posunout dolů"
 
 #: kbbmainwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Přesunout nahoru"
+msgstr "Posunout nahoru"
 
 #: kbbmainwindow.cpp:155
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr "Přesunout doleva"
+msgstr "Posunout doleva"
 
 #: kbbmainwindow.cpp:161
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr "Přesunout doprava"
+msgstr "Posunout doprava"
 
 #: kbbmainwindow.cpp:167
-#, fuzzy, kde-format
-#| msgid "Switch Ball or Shoot Laser"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
-msgstr "Přepnout míček nebo vystřelit laser"
+msgstr ""
 
 #: kbbmainwindow.cpp:173
-#, fuzzy, kde-format
-#| msgid "Switch Marker"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
-msgstr "Přepnout značku"
+msgstr ""
 
 #: kbbmainwindow.cpp:247
 #, kde-format
@@ -273,11 +248,10 @@ msgstr ""
 "Prosím, nejprve dokončete výuku."
 
 #: kbbmainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Check positions"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
-msgstr "Zkontrolovat umístění"
+msgstr ""
 
 #: kbbmainwindow.cpp:336
 #, kde-format
@@ -323,11 +297,10 @@ msgid "Start New Game"
 msgstr "Spustit novou hru"
 
 #: kbbmainwindow.cpp:408
-#, fuzzy, kde-format
-#| msgid "Custom Game"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
-msgstr "Vlastní hra"
+msgstr ""
 
 #: kbbmainwindow.cpp:427
 #, kde-format
@@ -335,11 +308,10 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "Bohužel, během výuky se nemůžete vzdát."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
-#| msgid "Solve"
+#, kde-format
 msgctxt "@title:window"
 msgid "Solve"
-msgstr "Vyřešit"
+msgstr ""
 
 #: kbbmainwindow.cpp:430
 #, kde-format
@@ -355,11 +327,10 @@ msgstr ""
 "Takže, opravdu si přejete tuto hru vzdát?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
-#| msgid "Give up"
+#, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
-msgstr "Vzdát"
+msgstr ""
 
 #: kbbmainwindow.cpp:432
 #, kde-format
@@ -438,11 +409,10 @@ msgstr ""
 "qt>"
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
-#| msgid "Tutorial"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
-msgstr "Výuka"
+msgstr ""
 
 #: kbbtutorial.cpp:53
 #, kde-format
@@ -456,12 +426,10 @@ msgstr ""
 "Popisuje, co máte udělat, abyste se dostali k následujícímu kroku ve výuce."
 
 #: kbbtutorial.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Previous tutorial step"
-#| msgid "&Previous"
+#, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
-msgstr "&Předchozí"
+msgstr ""
 
 #: kbbtutorial.cpp:85
 #, kde-format
@@ -469,12 +437,10 @@ msgid "Go back to the previous tutorial step."
 msgstr "Jít zpět k předchozímu kroku ve výuce."
 
 #: kbbtutorial.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "Next tutorial step"
-#| msgid "&Next"
+#, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
-msgstr "&Následující"
+msgstr ""
 
 #: kbbtutorial.cpp:89
 #, kde-format
@@ -824,6 +790,3 @@ msgstr "Johann Ollivier Lapeyre"
 #, kde-format
 msgid "Artist"
 msgstr "Umělec"
-
-#~ msgid "Start new game"
-#~ msgstr "Spustit novou hru"

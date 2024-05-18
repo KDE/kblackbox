@@ -3,15 +3,15 @@
 # Copyright (C) 1998, 2007 Free Software Foundation, Inc.
 # Wolfram Diestel <diestel@rzaix340.rz.uni-leipzig.de>, 1998.
 # Pierre-Marie Pédrot <pedrotpmx@wanadoo.fr>, 2007.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2023-11-26 18:41+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-01 17:30+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Wolfram Diestel,Pierre-Marie Pédrot,Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "wolfram@steloj.de,pedrotpmx@wanadoo.fr,okellogg@users.sourceforge.net"
+msgstr "wolfram@steloj.de,pedrotpmx@wanadoo.fr,olivermkellogg@gmail.com"
 
 #: kbblevelconfigurationwidget.cpp:31
 #, kde-format
@@ -63,7 +63,7 @@ msgstr "Agordebla"
 #: kbbmainwindow.cpp:77
 #, kde-format
 msgid "Start Tutorial"
-msgstr "Lanĉi la lernilon"
+msgstr "Lanĉi Lernilon"
 
 #: kbbmainwindow.cpp:79
 #, kde-format
@@ -82,12 +82,12 @@ msgstr ""
 #: kbbmainwindow.cpp:84
 #, kde-format
 msgid "New Sandbox Game"
-msgstr "Nova nigrakesto-ludo"
+msgstr "Nova Sablokesto-ludo"
 
 #: kbbmainwindow.cpp:85
 #, kde-format
 msgid "Start a new sandbox game"
-msgstr "Komenci novan nigrakesto-ludon"
+msgstr "Komenci novan sablokesto-ludon"
 
 #: kbbmainwindow.cpp:86
 #, kde-format
@@ -107,7 +107,7 @@ msgstr ""
 msgctxt ""
 "This is the last action of a game to check the result, when the user is done."
 msgid "Done!"
-msgstr "Ek!"
+msgstr "Preta!"
 
 #: kbbmainwindow.cpp:93
 #, kde-format

@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kblackbox.po 1678928 2024-04-30 01:10:25Z scripty $
+# $Id: kblackbox.po 1681222 2024-05-30 19:06:17Z mkkdr $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006.
 # Petar Toushkov <pt.launchpad@gmail.com>, 2009, 2010.
@@ -796,6 +796,3 @@ msgstr "Johann Ollivier Lapeyre"
 #, kde-format
 msgid "Artist"
 msgstr "Художник"
-
-#~ msgid "Start new game"
-#~ msgstr "Започване на нова игра"

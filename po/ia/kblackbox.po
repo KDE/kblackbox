@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kblackbox package.
 #
-# giovanni <g.sora@tiscali.it>, 2023, 2024.
+# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:37+0000\n"
-"PO-Revision-Date: 2024-04-29 15:01+0200\n"
+"PO-Revision-Date: 2024-07-01 11:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -80,13 +80,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
-msgstr ""
+msgstr "Nove Joco de arenario"
 
 #: kbbmainwindow.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
-msgstr ""
+msgstr "Starta un nove joco de arenario"
 
 #: kbbmainwindow.cpp:86
 #, kde-format
@@ -208,7 +208,7 @@ msgstr "Joco Terminate"
 #: kbbmainwindow.cpp:290
 #, kde-format
 msgid "Game paused."
-msgstr ""
+msgstr "Joco In Pausa."
 
 #: kbbmainwindow.cpp:329
 #, kde-format
@@ -223,7 +223,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
-msgstr ""
+msgstr "Verifica positiones"
 
 #: kbbmainwindow.cpp:336
 #, kde-format
@@ -271,7 +271,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
-msgstr ""
+msgstr "Joco Personalisate"
 
 #: kbbmainwindow.cpp:427
 #, kde-format
@@ -414,7 +414,7 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr ""
+msgstr "Pulsa sur \"Proxime\""
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -458,7 +458,7 @@ msgstr ""
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Hit"
-msgstr ""
+msgstr "Colpite"
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -570,7 +570,7 @@ msgstr ""
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr ""
+msgstr "Pulsa sur \"Proxime\""
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -590,7 +590,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Let us play!"
-msgstr ""
+msgstr "Nos Joca!"
 
 #: kbbtutorial.cpp:220
 #, kde-format

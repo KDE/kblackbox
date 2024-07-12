@@ -1,27 +1,27 @@
 # Translation for kblackbox.po to Euskara/Basque (eu).
 # Copyright (C) 2003, 2005, 2006, 2009 Free Software Foundation, Inc.
-# Copyright (C) 2010-2022, This file is copyright:
+# Copyright (C) 2010-2024 This file is copyright:
 # This file is distributed under the same license as the kblackbox package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003.
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2005, 2006.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2020, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2020, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:37+0000\n"
-"PO-Revision-Date: 2022-07-25 16:49+0200\n"
+"PO-Revision-Date: 2024-07-11 11:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -35,10 +35,7 @@ msgid "Your emails"
 msgstr "marcos@euskalgnu.org,igaztanaga@gmail.com,xalba@euskalnet.net"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball"
-#| msgid_plural " balls"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
@@ -46,10 +43,7 @@ msgstr[0] " bola"
 msgstr[1] " bola"
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " column"
-#| msgid_plural " columns"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
@@ -57,10 +51,7 @@ msgstr[0] " zutabe"
 msgstr[1] " zutabe"
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " row"
-#| msgid_plural " rows"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
@@ -74,18 +65,16 @@ msgid "Configurable"
 msgstr "Konfiguragarria"
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
-#| msgid "Start Tutorial"
+#, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
-msgstr "Hasi tutoretza"
+msgstr "Abiatu tutoretza"
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
-#| msgid "Start tutorial"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
-msgstr "Hasi tutoretza"
+msgstr "Abiatu tutoretza"
 
 #: kbbmainwindow.cpp:80
 #, kde-format
@@ -94,18 +83,16 @@ msgid ""
 "learn the rules of the game. Start it if you do not know them!</qt>"
 msgstr ""
 "<qt><b>Tutoretza</b> jokoaren arauak ikasteko modu azkar, erraz eta "
-"elkarreragile bat da. Abiatu ezagutzen ez badituzu.</qt>"
+"elkarreragile bat da. Ezagutzen ez badituzu abiatu ezazu!</qt>"
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "New Sandbox Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "Trebatzeko joko berria"
 
 #: kbbmainwindow.cpp:85
-#, fuzzy, kde-format
-#| msgid "Start a new sandbox game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "Hasi trebatzeko joko berri bat"
@@ -119,16 +106,12 @@ msgid ""
 "start a real game!</p></qt>"
 msgstr ""
 "<qt><p><b>Trebatzeko joko</b> batean, ebazpena jokoaren hasieran azaltzen "
-"da. Hau baliagarria da jokoaren oinarriak ulertzeko.</p><p>Hala ere, denbora "
-"baten ondoren, aspergarria izan daiteke eta benetako jokoarekin saiatu "
-"beharko zenuke!</p></qt>"
+"da. Baliagarria jokoaren oinarriak ulertzeko.</p><p>Hala ere, denbora baten "
+"ondoren, aspergarria izan daiteke eta benetako jokoarekin saiatu beharko "
+"zenuke!</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the last action of a game to check the result, when the user is "
-#| "done."
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
@@ -152,11 +135,10 @@ msgstr ""
 "kokatu duzunean.</p></qt>"
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Give up the game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
-msgstr "Jokoari amore eman"
+msgstr "Jokoari uko egin"
 
 #: kbbmainwindow.cpp:98
 #, kde-format
@@ -165,58 +147,51 @@ msgid ""
 "solution will be displayed.</p><p>If you placed all the balls and do not "
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
-"<qt><p>Aukeratu «<b>Ebatzi</b>» uneko jokoari amore eman nahi badiozu. "
+"<qt><p>Aukeratu «<b>Ebatzi</b>» uneko jokoari uko egin nahi badiozu. "
 "Ebazpidea bistaratuko da.</p><p>Bola guztiak jarri, eta ez baduzu amore eman "
 "nahi, aukeratu «Eginda!».</p></qt>"
 
 #: kbbmainwindow.cpp:103
-#, fuzzy, kde-format
-#| msgid "Enable highlight under mouse"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
 msgstr "Gaitu saguaren azpikoa nabarmentzea"
 
 #: kbbmainwindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Eraman behera"
 
 #: kbbmainwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Eraman gora"
 
 #: kbbmainwindow.cpp:155
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Eraman ezkerrera"
 
 #: kbbmainwindow.cpp:161
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Eraman eskuinera"
 
 #: kbbmainwindow.cpp:167
-#, fuzzy, kde-format
-#| msgid "Switch Ball or Shoot Laser"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
-msgstr "Trukatu bola edo jaurti laserra"
+msgstr "Trukatu bola edo laserra jaurti"
 
 #: kbbmainwindow.cpp:173
-#, fuzzy, kde-format
-#| msgid "Switch Marker"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
-msgstr "Trukatu markatzailea"
+msgstr "Aldatu markatzailea"
 
 #: kbbmainwindow.cpp:247
 #, kde-format
@@ -273,8 +248,7 @@ msgstr ""
 "Aurrena, amaitu tutoretza."
 
 #: kbbmainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Check positions"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
 msgstr "Egiaztatu kokalekuak"
@@ -325,11 +299,10 @@ msgid "Start New Game"
 msgstr "Hasi joko berria"
 
 #: kbbmainwindow.cpp:408
-#, fuzzy, kde-format
-#| msgid "Custom Game"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
-msgstr "Norberak finkatutako jokoa"
+msgstr "Neurriko Jokoa"
 
 #: kbbmainwindow.cpp:427
 #, kde-format
@@ -337,8 +310,7 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "Tamalez, ezin duzu amore eman tutoretzan ari zarenean."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
-#| msgid "Solve"
+#, kde-format
 msgctxt "@title:window"
 msgid "Solve"
 msgstr "Ebatzi"
@@ -357,8 +329,7 @@ msgstr ""
 "Beraz, ziur zaude amore eman nahi duzula?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
-#| msgid "Give up"
+#, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
 msgstr "Amore eman"
@@ -437,8 +408,7 @@ msgstr ""
 "ordeztuko dira.</li></ul></qt>"
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
-#| msgid "Tutorial"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
 msgstr "Tutoretza"
@@ -455,9 +425,7 @@ msgstr ""
 "Tutoretzako hurrengo urratsera iristeko zer egin behar duzun azaltzen du."
 
 #: kbbtutorial.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Previous tutorial step"
-#| msgid "&Previous"
+#, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr "&Aurrekoa"
@@ -468,9 +436,7 @@ msgid "Go back to the previous tutorial step."
 msgstr "Itzuli tutoretzaren aurreko urratsera."
 
 #: kbbtutorial.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "Next tutorial step"
-#| msgid "&Next"
+#, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr "&Hurrengoa"
@@ -493,16 +459,15 @@ msgid ""
 "It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
 "><br />The goal is to <b>find the positions of the balls.</b>"
 msgstr ""
-"Tutoretza honek KBlackBox-en nola jokatzen den irakatsiko dizu, adibide "
-"erraz bat erabiliz.<br /><br />6 zutabe eta 6 errenkadako kutxa karratu "
-"beltz batekin  jokatzen ari gara. Bere baitan <b>ezkutatuan</b> 3 bola ditu, "
-"24 laser-zundaz inguratuta.<br /><br /> Helburua <b>bolen kokalekuak "
-"aurkitzea</b> da."
+"Tutoretza honek KBlackBox-era jokatzen irakatsiko dizu, adibide erraz bat "
+"erabiliz.<br /><br />6 zutabe eta 6 errenkadako kutxa karratu beltz batekin  "
+"jokatzen ari gara. Bere baitan <b>ezkutuan</b> 3 bola ditu, 24 laser-zundaz "
+"inguratuta.<br /><br /> Helburua <b>bolen kokalekuak aurkitzea</b> da."
 
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr "Egin klik «Hurrengoa»n"
+msgstr "Egin klik «Hurrengoa»ri"
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -541,22 +506,22 @@ msgid ""
 "><br />As the game progresses, each pair of entry/exit points is marked with "
 "a different number."
 msgstr ""
-"Laser izpi batek ez badu koadro beltzeko edozein bolekin elkarreragiten, "
-"kanpora irtetzen da sarrerako puntuaren bestaldean.<br /><br />Adibidez, "
-"demagun koadroan 3 bola daudela erakusten den bezala. Hauek ez dute \"1\" "
-"laser izpiarekin elkarreragiten.<br /><br />Jokoa aurrera doan heinean, "
-"sarrera/irteera puntu bikote bakoitza zenbaki desberdin batekin markatzen da."
+"Laser-izpi batek kutxa beltzeko bolekin elkarreragiten ez badu, sarrera "
+"puntuaren aurkako aldetik irteten da.<br /><br />Adibidea: Demagun, "
+"erakusten den bezala, koadroan 3 bola ditugula. Horiek ez diote \"1\" laser-"
+"izpiari eragingo.<br /><br />Jokoa aurrera doan heinean, sarrera/irteera "
+"puntu pare bakoitza zenbaki ezberdin batekin markatuta dago."
 
 #: kbbtutorial.cpp:161
 #, kde-format
 msgid "Now shoot the marked laser to discover the first kind of interaction."
 msgstr ""
-"Orain jaurti markatutako laserretik aurreneko elkarrekintza mota ikusteko."
+"Orain, jaurti markatutako laserretik aurreneko elkarrekintza mota ezagutzeko."
 
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Hit"
-msgstr "Jota"
+msgstr "Talka"
 
 #: kbbtutorial.cpp:169
 #, kde-format
@@ -566,7 +531,7 @@ msgid ""
 "might have hit a ball at the position shown, but the exact position of the "
 "hit is not certain: There are many other possibilities."
 msgstr ""
-"Bola baten zuzeneko talka bati «<b>Jota</b>» esaten zaio. Bola bat jotzen "
+"Bola baten zuzeneko talka bati «<b>talka</b>» esaten zaio. Bola bat jotzen "
 "duen izpi bat <b>ez</b> da kutxa beltzetik azaleratzen.<br /><br />Adibidea: "
 "Izpiak bola bat jo zezakeen adierazitako kokalekuan, baina talkaren kokaleku "
 "zehatza ez da ziurra: Beste aukera asko daude."
@@ -574,7 +539,8 @@ msgstr ""
 #: kbbtutorial.cpp:169
 #, kde-format
 msgid "Shoot the marked laser to discover the second kind of interaction."
-msgstr "Jaurti markatutako laserretik bigarren motako elkarrekintza ikusteko."
+msgstr ""
+"Jaurti markatutako laserretik bigarren motako elkarrekintza ezagutzeko."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -590,11 +556,11 @@ msgid ""
 "would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
 "possibility."
 msgstr ""
-"Bola bete-betean jo ez, baino alde batean egiten duen izpi baten "
-"elkarrekintzari, «<b>desbideratua</b>» esaten zaio. Izpiaren desbideratze "
-"angelua beti da <b>90 gradu</b>koa.<br /><br /> Adibidea: Erakusten den "
-"bolak \"2\" izpia gorantz desbideratuko luke, erakusten den bezala, baina "
-"hau <b>ez</b> da aukera bakarra."
+"Bola bete-betean jo beharrean albo batean jotzen duen elkarreraginari "
+"\"<b>desbideratua</b>\" esaten zaio. Izpiaren desbideratze angelua beti "
+"<b>90 gradu</b>koa da.<br /><br /> Adibidea: Erakusten den bolak \"2\" izpia "
+"gorantz desbideratuko luke, erakusten den bezala, baina hori <b>ez</b> da "
+"aukera bakarra."
 
 #: kbbtutorial.cpp:175
 #, kde-format
@@ -602,7 +568,7 @@ msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
-"Egin klik «Hurrengoa»n laser izpia erakusten den bezala desbideratzen duen "
+"Egin klik «Hurrengoa»ri laser izpia erakusten den bezala desbideratzen duen "
 "beste bola kokapen konbinazio bat ikusteko."
 
 #: kbbtutorial.cpp:182
@@ -624,7 +590,7 @@ msgstr ""
 #: kbbtutorial.cpp:182
 #, kde-format
 msgid "Shoot the marked laser to discover another kind of result."
-msgstr "Jaurti markatutako laserra beste motako emaitza bat aurkitzeko."
+msgstr "Jaurti markatutako laserra beste motako emaitza bat ezagutzeko."
 
 #: kbbtutorial.cpp:190
 #, kde-format
@@ -669,7 +635,7 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
-msgstr "Ia amaituta. Egin klik «Hurrengoa»n."
+msgstr "Ia amaituta. Egin klik «Hurrengoa»ri."
 
 #: kbbtutorial.cpp:204
 #, kde-format
@@ -694,7 +660,7 @@ msgstr ""
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr "Egin klik «Hurrengoa»n."
+msgstr "Egin klik «Hurrengoa»ri."
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -740,7 +706,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
-msgstr "Bolak jartzen bukatu eta egin klik «Eginda!» botoian burututakoan."
+msgstr "Bolak jartzen bukatu eta egin klik «Eginda!» botoiari burututakoan."
 
 #. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
 #: kblackbox.kcfg:9

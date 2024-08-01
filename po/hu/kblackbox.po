@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:37+0000\n"
-"PO-Revision-Date: 2024-01-09 11:24+0100\n"
+"PO-Revision-Date: 2024-07-31 22:20+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,10 +30,7 @@ msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball"
-#| msgid_plural " balls"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
@@ -41,10 +38,7 @@ msgstr[0] " golyó"
 msgstr[1] " golyó"
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " column"
-#| msgid_plural " columns"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
@@ -52,10 +46,7 @@ msgstr[0] " oszlop"
 msgstr[1] " oszlop"
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " row"
-#| msgid_plural " rows"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
@@ -69,15 +60,13 @@ msgid "Configurable"
 msgstr "Beállítható"
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
-#| msgid "Start Tutorial"
+#, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
 msgstr "Oktatójáték indítása"
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
-#| msgid "Start tutorial"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr "Oktatójáték indítása"
@@ -92,15 +81,13 @@ msgstr ""
 "játékszabályokat. Ha most játszik először, indítsa el!</qt>"
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "New Sandbox Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "Új oktatójáték"
 
 #: kbbmainwindow.cpp:85
-#, fuzzy, kde-format
-#| msgid "Start a new sandbox game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "Oktatójáték kezdése"
@@ -118,11 +105,7 @@ msgstr ""
 "szabályokkal, kezdjen bele egy igazi játékba!</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the last action of a game to check the result, when the user is "
-#| "done."
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
@@ -145,8 +128,7 @@ msgstr ""
 "idekattintani, ha a megfelelő számú golyó már el van helyezve.</p></qt>"
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Give up the game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr "A játék feladása"
@@ -163,53 +145,46 @@ msgstr ""
 "nem akarja feladni a játékot, kattintson a \"Kész\" gombra.</p></qt>"
 
 #: kbbmainwindow.cpp:103
-#, fuzzy, kde-format
-#| msgid "Enable highlight under mouse"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
 msgstr "Kiemelés bekapcsolása a kurzor alatt"
 
 #: kbbmainwindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Lefelé"
 
 #: kbbmainwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Felfelé"
 
 #: kbbmainwindow.cpp:155
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Balra"
 
 #: kbbmainwindow.cpp:161
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Jobbra"
 
 #: kbbmainwindow.cpp:167
-#, fuzzy, kde-format
-#| msgid "Switch Ball or Shoot Laser"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr "Másik golyóra váltás vagy a lézer bekapcsolása"
 
 #: kbbmainwindow.cpp:173
-#, fuzzy, kde-format
-#| msgid "Switch Marker"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
-msgstr "Kapcsolójel"
+msgstr "Jelölő váltása"
 
 #: kbbmainwindow.cpp:247
 #, kde-format
@@ -266,11 +241,10 @@ msgstr ""
 "Fejezze be az oktatójátékot."
 
 #: kbbmainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Check positions"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
-msgstr "A pozíciók ellenőrzése"
+msgstr "Pozíciók ellenőrzése"
 
 #: kbbmainwindow.cpp:336
 #, kde-format
@@ -317,11 +291,10 @@ msgid "Start New Game"
 msgstr "Új játék indítása"
 
 #: kbbmainwindow.cpp:408
-#, fuzzy, kde-format
-#| msgid "Custom Game"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
-msgstr "Egyedi játék"
+msgstr "Egyéni játék"
 
 #: kbbmainwindow.cpp:427
 #, kde-format
@@ -329,8 +302,7 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "Az oktatójátékot nem lehet feladni."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
-#| msgid "Solve"
+#, kde-format
 msgctxt "@title:window"
 msgid "Solve"
 msgstr "Megoldás"
@@ -349,11 +321,10 @@ msgstr ""
 "Biztosan fel szeretné adni a játékot?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
-#| msgid "Give up"
+#, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
-msgstr "Feladom..."
+msgstr "Feladás"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
@@ -430,11 +401,10 @@ msgstr ""
 "li></ul></qt>"
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
-#| msgid "Tutorial"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
-msgstr "Oktatójáték"
+msgstr "Gyakorlás"
 
 #: kbbtutorial.cpp:53
 #, kde-format
@@ -447,12 +417,10 @@ msgid "Describes what you should do to reach the next tutorial step."
 msgstr "Leírja, mi a teendő az oktatójáték következő lépésében."
 
 #: kbbtutorial.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Previous tutorial step"
-#| msgid "&Previous"
+#, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
-msgstr "&Vissza"
+msgstr "&Előző"
 
 #: kbbtutorial.cpp:85
 #, kde-format
@@ -460,12 +428,10 @@ msgid "Go back to the previous tutorial step."
 msgstr "Ugrás az oktatójáték előző lépésére."
 
 #: kbbtutorial.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "Next tutorial step"
-#| msgid "&Next"
+#, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
-msgstr "&Tovább"
+msgstr "&Következő"
 
 #: kbbtutorial.cpp:89
 #, kde-format

@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kblackbox.po 1694647 2024-11-09 20:06:53Z mkkdr $
+# $Id: kblackbox.po 1694711 2024-11-10 13:40:43Z mkkdr $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006.
 # Petar Toushkov <pt.launchpad@gmail.com>, 2009, 2010.
@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-29 00:37+0000\n"
-"PO-Revision-Date: 2024-11-09 20:04+0100\n"
+"PO-Revision-Date: 2024-11-10 12:29+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -390,7 +390,7 @@ msgstr ""
 "в секунда.</li><li>при употреба на лазери::<ul><li><b>3 точки</b> ако "
 "лазерният лъч докосне топка или излезе от входна точка,</li><li><b>9 точки</"
 "b> ако излезе от друга входна точка.</li></ul></li></ul></p><p>Ако допуснете "
-"грешка, резултатът ви в края на игратаще стане <b>999</b>.</p></qt>"
+"грешка, резултатът ви в края на играта ще стане <b>999</b>.</p></qt>"
 
 #: kbbscalablegraphicwidget.cpp:104
 #, kde-format

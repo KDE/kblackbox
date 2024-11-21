@@ -71,6 +71,7 @@ target_link_libraries(kblackbox
     KF6::TextWidgets
     KF6::DBusAddons
     KF6::Crash
+    KF6::IconThemes
     Qt6::Svg
     Qt6::SvgWidgets
     Qt6::Xml

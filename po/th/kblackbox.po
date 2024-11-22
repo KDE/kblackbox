@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:37+0000\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
 "PO-Revision-Date: 2010-03-28 18:14+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -758,17 +758,17 @@ msgstr "จำนวนคอลัมน์ของกระดาน เพ�
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "จำนวนแถวของกระดาน เพื่อปรับแต่งระดับความยากของเกมเอง"
 
-#: main.cpp:28
+#: main.cpp:45
 #, kde-format
 msgid "KBlackBox"
 msgstr "กล่องดำ-K"
 
-#: main.cpp:30
+#: main.cpp:47
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr "ค้นหาลูกบอลต่าง ๆ ที่ถูกซ่อนอยู่ในกล่องดำ ด้วยการยิงแสงเลเซอร์หาตำแหน่ง !"
 
-#: main.cpp:32
+#: main.cpp:49
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -777,32 +777,32 @@ msgstr ""
 "สงวนลิขสิทธิ์ (c) 2007, Nicolas Roffet\n"
 "สงวนลิขสิทธิ์ (c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:35
+#: main.cpp:52
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:35
+#: main.cpp:52
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "ผู้พัฒนา รุ่น 0.4"
 
-#: main.cpp:36
+#: main.cpp:53
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:36
+#: main.cpp:53
 #, kde-format
 msgid "Original developer"
 msgstr "ผู้พัฒนาแรกเริ่ม"
 
-#: main.cpp:37
+#: main.cpp:54
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:37
+#: main.cpp:54
 #, kde-format
 msgid "Artist"
 msgstr "ศิลปิน"

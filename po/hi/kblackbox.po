@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:37+0000\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
 "PO-Revision-Date: 2021-08-21 16:25+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -655,17 +655,17 @@ msgstr "मनपसंद कठिनाई स्तर के लिए ब�
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "मनपसंद कठिनाई स्तर के लिए बोर्ड के पंक्तियों की संख्या"
 
-#: main.cpp:28
+#: main.cpp:45
 #, kde-format
 msgid "KBlackBox"
 msgstr "के-ब्लेकबॉक्स"
 
-#: main.cpp:30
+#: main.cpp:47
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr "लेजर किरणों को शूट कर ब्लैक बक्से में छुपे गेंदों को ढूंढें!"
 
-#: main.cpp:32
+#: main.cpp:49
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -674,34 +674,34 @@ msgstr ""
 "(c) 2007, निकोलस रोफेट\n"
 "(c) 1999-2000, रॉबर्ट सिमरमेन"
 
-#: main.cpp:35
+#: main.cpp:52
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "निकोलस रोफेट"
 
-#: main.cpp:35
+#: main.cpp:52
 #, fuzzy, kde-format
 #| msgid "Developper of version 0.4."
 msgid "Developer of version 0.4."
 msgstr "संस्करण ०.४ के डेवलपर"
 
-#: main.cpp:36
+#: main.cpp:53
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "रॉबर्ट सिमरमेन"
 
-#: main.cpp:36
+#: main.cpp:53
 #, fuzzy, kde-format
 #| msgid "Original developper"
 msgid "Original developer"
 msgstr "मूल डेवलपर"
 
-#: main.cpp:37
+#: main.cpp:54
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "जोहान ओलिवर लापेरे"
 
-#: main.cpp:37
+#: main.cpp:54
 #, kde-format
 msgid "Artist"
 msgstr "कलाकार"

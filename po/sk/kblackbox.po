@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-29 00:37+0000\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
 "PO-Revision-Date: 2023-12-05 17:25+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -773,19 +773,19 @@ msgstr "Počet stĺpcov hracej dosky pre vlastnú úroveň obtiažnosti"
 msgid "Number of rows of the board for custom difficuty level"
 msgstr "Počet riadkov hracej dosky pre vlastnú úroveň obtiažnosti"
 
-#: main.cpp:28
+#: main.cpp:45
 #, kde-format
 msgid "KBlackBox"
 msgstr "O BlackBox"
 
-#: main.cpp:30
+#: main.cpp:47
 #, kde-format
 msgid "Find the balls hidden in the black box by shooting laser beams!"
 msgstr ""
 "Nájdite loptičky skryté v čiernej krabici pomocou vystreľovania laserových "
 "lúčov!"
 
-#: main.cpp:32
+#: main.cpp:49
 #, kde-format
 msgid ""
 "(c) 2007, Nicolas Roffet\n"
@@ -794,32 +794,32 @@ msgstr ""
 "(c) 2007, Nicolas Roffet\n"
 "(c) 1999-2000, Robert Cimrman"
 
-#: main.cpp:35
+#: main.cpp:52
 #, kde-format
 msgid "Nicolas Roffet"
 msgstr "Nicolas Roffet"
 
-#: main.cpp:35
+#: main.cpp:52
 #, kde-format
 msgid "Developer of version 0.4."
 msgstr "Vývojár verzie 0.4"
 
-#: main.cpp:36
+#: main.cpp:53
 #, kde-format
 msgid "Robert Cimrman"
 msgstr "Robert Cimrman"
 
-#: main.cpp:36
+#: main.cpp:53
 #, kde-format
 msgid "Original developer"
 msgstr "Pôvodný vývojár"
 
-#: main.cpp:37
+#: main.cpp:54
 #, kde-format
 msgid "Johann Ollivier Lapeyre"
 msgstr "Johann Ollivier Lapeyre"
 
-#: main.cpp:37
+#: main.cpp:54
 #, kde-format
 msgid "Artist"
 msgstr "Umelec"

@@ -77,6 +77,18 @@ target_link_libraries(kblackbox
     Qt6::Xml
 )
 
+if(APPLE)
+    set_target_properties(kblackbox PROPERTIES
+        MACOSX_BUNDLE_DISPLAY_NAME "KBlackbox"
+        MACOSX_BUNDLE_BUNDLE_NAME "KBlackbox"
+        MACOSX_BUNDLE_LONG_VERSION_STRING "KBlackbox ${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}"
+        MACOSX_BUNDLE_BUNDLE_VERSION "${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.kblackbox"
+        MACOSX_BUNDLE_COPYRIGHT "2024 The KBlackbox Developers")
+endif()
+
+
 install(TARGETS kblackbox  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kblackbox.desktop  DESTINATION  ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kblackbox.appdata.xml  DESTINATION  ${KDE_INSTALL_METAINFODIR})

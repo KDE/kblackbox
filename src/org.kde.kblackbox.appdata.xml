@@ -39,6 +39,7 @@
   <name xml:lang="pt">KBlackbox</name>
   <name xml:lang="pt-BR">KBlackbox</name>
   <name xml:lang="ru">KBlackbox</name>
+  <name xml:lang="sa">केब्लैकबॉक्स</name>
   <name xml:lang="sk">KBlackbox</name>
   <name xml:lang="sl">KBlackBox</name>
   <name xml:lang="sr">К‑црна‑кутија</name>
@@ -83,6 +84,7 @@
   <summary xml:lang="pt">Jogo de Lógica Blackbox</summary>
   <summary xml:lang="pt-BR">Jogo lógico de Caixa Preta</summary>
   <summary xml:lang="ru">Логическая игра о чёрном ящике</summary>
+  <summary xml:lang="sa">ब्लैकबॉक्स तर्क खेल</summary>
   <summary xml:lang="sk">Logická hra - čierna skrinka</summary>
   <summary xml:lang="sl">Logična igra KBlackBox</summary>
   <summary xml:lang="sr">Логичка игра црне кутије</summary>
@@ -128,6 +130,7 @@
     <p xml:lang="pt">O KBlackbox é um jogo de escondidas, jogado sobre uma grelha de caixas em que o computador escolheu diversas bolas. A posição das bolas escondidas pode ser deduzida se disparar raios para as caixas.</p>
     <p xml:lang="pt-BR">KBlackbox é um jogo de esconde-esconde, jogado sobre uma grade de caixas, onde o computador escolheu diversas bolas. A posição das bolas escondidas pode ser deduzida se disparar raios contra as caixas.</p>
     <p xml:lang="ru">KBlackbox — игра в прятки на прямоугольном поле, где компьютер установил несколько шаров. Расположение шаров можно определить, направляя на игровое поле световые лучи.</p>
+    <p xml:lang="sa">KBlackbox इति पेटीजालस्य उपरि क्रीड्यते यत्र सङ्गणकेन अनेकाः कन्दुकाः निगूढाः सन्ति । गुप्तकन्दुकानाम् स्थितिः पेटीयां मयूखान् निपातयित्वा निष्कर्षितुं शक्यते ।</p>
     <p xml:lang="sk">KBlackbox je hra na schovávačku hraná na mriežke polí, kde počítač má skrytých niekoľko guličiek. Polohu skrytých guliek môžete zistiť tým, že strieľate lúče do krabice.</p>
     <p xml:lang="sl">KBlackbox je igra skrivalnic, ki se igra na mreži škatel, v katere je računalnik skril številne žoge. Mesta skritih žog lahko uganete preko laserskih žarkov, ki jih streljate v škatle.</p>
     <p xml:lang="sr">К‑црна‑кутија је игра скривања и налажења на мрежи кутија где је рачунар сакрио неколико лоптица. Положај скривених лоптица изводи се на основу испаљивања зракова у кутије.</p>

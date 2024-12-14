@@ -1,0 +1,762 @@
+# Sanskrit translations for kblackbox package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kblackbox package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kblackbox\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kbblevelconfigurationwidget.cpp:31
+#, kde-format
+msgctxt "@item:valuesuffix to a number between 1 and 99"
+msgid " ball"
+msgid_plural " balls"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kbblevelconfigurationwidget.cpp:40
+#, kde-format
+msgctxt "@item:valuesuffix to a number between 2 and 30"
+msgid " column"
+msgid_plural " columns"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kbblevelconfigurationwidget.cpp:49
+#, kde-format
+msgctxt "@item:valuesuffix to a number between 2 and 30"
+msgid " row"
+msgid_plural " rows"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kbbmainwindow.cpp:67
+#, kde-format
+msgctxt "Difficulty level title"
+msgid "Configurable"
+msgstr ""
+
+#: kbbmainwindow.cpp:77
+#, kde-format
+msgctxt "@action"
+msgid "Start Tutorial"
+msgstr ""
+
+#: kbbmainwindow.cpp:79
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Start tutorial"
+msgstr ""
+
+#: kbbmainwindow.cpp:80
+#, kde-format
+msgid ""
+"<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
+"learn the rules of the game. Start it if you do not know them!</qt>"
+msgstr ""
+"<qt><b>पाठ्यक्रमः</b> क्रीडायाः नियमाः ज्ञातुं द्रुतः, उपयोक्तृ-अनुकूलः, अन्तरक्रियाशीलः च "
+"मार्गः अस्ति । यदि भवन्तः तान् न जानन्ति तर्हि तत् आरभत!</qt>"
+
+#: kbbmainwindow.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "New Sandbox Game"
+msgstr ""
+
+#: kbbmainwindow.cpp:85
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Start a new sandbox game"
+msgstr ""
+
+#: kbbmainwindow.cpp:86
+#, kde-format
+msgid ""
+"<qt><p>In a <b>sandbox game</b>, the solution is displayed at the beginning "
+"of the game. This is useful to understand the game principles.</"
+"p><p>However: after a while, it is not really fun and you should try to "
+"start a real game!</p></qt>"
+msgstr ""
+"<qt><p>In a <b>sandbox game</b> , समाधानं क्रीडायाः आरम्भे प्रदर्शितं भवति । एतत् "
+"क्रीडासिद्धान्तान् अवगन्तुं उपयोगी भवति ।</p><p> तथापि: किञ्चित्कालानन्तरं, तत् वस्तुतः "
+"मजेयम् नास्ति तथा च भवद्भिः वास्तविकं क्रीडां आरभ्य प्रयतितव्यम्!</p></qt>"
+
+#: kbbmainwindow.cpp:92
+#, kde-format
+msgctxt ""
+"@action the last action of a game to check the result, when the user is done"
+msgid "Done!"
+msgstr ""
+
+#: kbbmainwindow.cpp:93
+#, kde-format
+msgid ""
+"<qt><ul><li>First, you have to place all the balls on the black box. To "
+"guess the correct positions of the balls and see how they interact with "
+"laser beams, you should use the lasers that are positioned around the black "
+"box.</li><li><b>When you think you are done</b>, you should click here.</"
+"li></ul><p>Note that it is only possible to click here if you have placed "
+"the correct number of balls.</p></qt>"
+msgstr ""
+"<qt><ul><li>प्रथमं भवता सर्वाणि कन्दुकानि कृष्णपेटिकायां स्थापयितव्यानि । कन्दुकानाम् सम्यक् "
+"स्थानानि अनुमानयितुं, ते लेजर-किरणैः सह कथं परस्परं क्रियान्वयं कुर्वन्ति इति द्रष्टुं च भवन्तः "
+"कृष्णपेटिकायाः परितः स्थापितानां लेसरानाम् उपयोगं कुर्वन्तु ।</li><li> <b>यदा भवन्तः "
+"मन्यन्ते यत् भवन्तः कृतवन्तः</b> , तदा भवन्तः अत्र क्लिक् कुर्वन्तु।</li></ul><p> ध्यानं "
+"कुर्वन्तु यत् अत्र क्लिक् कर्तुं केवलं तदा एव सम्भवति यदा भवान् सम्यक् कन्दुकसङ्ख्यां स्थापितवान् "
+"अस्ति ।</p></qt>"
+
+#: kbbmainwindow.cpp:97
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Give up the game"
+msgstr ""
+
+#: kbbmainwindow.cpp:98
+#, kde-format
+msgid ""
+"<qt><p>Choose \"<b>Solve</b>\" if you want to give up the current game. The "
+"solution will be displayed.</p><p>If you placed all the balls and do not "
+"want to give up, choose \"Done!\".</p></qt>"
+msgstr ""
+"<qt><p>यदि भवान् वर्तमानक्रीडां त्यक्तुम् इच्छति तर्हि &quot; <b>Solve</b> &quot; इति "
+"चिनोतु । समाधानं प्रदर्शितं भविष्यति।</p><p> यदि भवन्तः सर्वाणि कन्दुकानि स्थापितवन्तः, "
+"त्यक्तुम् न इच्छन्ति च तर्हि &quot;Done!&quot;</p></qt>"
+
+#: kbbmainwindow.cpp:103
+#, kde-format
+msgctxt "@option:check"
+msgid "Enable Highlight under Mouse"
+msgstr ""
+
+#: kbbmainwindow.cpp:143
+#, kde-format
+msgctxt "@action"
+msgid "Move Down"
+msgstr ""
+
+#: kbbmainwindow.cpp:149
+#, kde-format
+msgctxt "@action"
+msgid "Move Up"
+msgstr ""
+
+#: kbbmainwindow.cpp:155
+#, kde-format
+msgctxt "@action"
+msgid "Move Left"
+msgstr ""
+
+#: kbbmainwindow.cpp:161
+#, kde-format
+msgctxt "@action"
+msgid "Move Right"
+msgstr ""
+
+#: kbbmainwindow.cpp:167
+#, kde-format
+msgctxt "@action"
+msgid "Switch Ball or Shoot Laser"
+msgstr ""
+
+#: kbbmainwindow.cpp:173
+#, kde-format
+msgctxt "@action"
+msgid "Switch Marker"
+msgstr ""
+
+#: kbbmainwindow.cpp:247
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: You can change<br />the parameters of<br />custom games in the<br /"
+">Settings dialog."
+msgstr ""
+
+#: kbbmainwindow.cpp:280
+#, kde-format
+msgid "First, you need to remove 1 ball from the black box."
+msgid_plural "First, you need to remove %1 balls from the black box."
+msgstr[0] ""
+msgstr[1] ""
+
+#: kbbmainwindow.cpp:282
+#, kde-format
+msgid "To check if you successfully guessed the ball positions, click here!"
+msgstr "भवन्तः कन्दुकस्थानानि सफलतया अनुमानितवन्तः वा इति ज्ञातुं अत्र क्लिक् कुर्वन्तु!"
+
+#: kbbmainwindow.cpp:284
+#, kde-format
+msgid "You need to place 1 more ball on the black box."
+msgid_plural "You need to place %1 more balls on the black box."
+msgstr[0] ""
+msgstr[1] ""
+
+#: kbbmainwindow.cpp:288
+#, kde-format
+msgid "Game over."
+msgstr "गेम ओवर।"
+
+#: kbbmainwindow.cpp:290
+#, kde-format
+msgid "Game paused."
+msgstr "क्रीडा विरमति स्म।"
+
+#: kbbmainwindow.cpp:329
+#, kde-format
+msgid ""
+"Clicking on \"Done!\" is the normal way to check the positions of the balls "
+"at the end of the game. However, it is not possible in the tutorial to end "
+"the game before you reached the last step.\n"
+"Please first finish the tutorial."
+msgstr ""
+"\"Done!\" क्रीडायाः अन्ते कन्दुकस्थानानि परीक्षितुं सामान्यः उपायः अस्ति । परन्तु अन्तिमपदं "
+"प्राप्तुं पूर्वं क्रीडायाः समाप्तिः पाठ्यक्रमे न सम्भवति ।\n"
+"कृपया प्रथमं पाठ्यक्रमं समाप्तं कुर्वन्तु।"
+
+#: kbbmainwindow.cpp:329
+#, kde-format
+msgctxt "@title:window"
+msgid "Check Positions"
+msgstr ""
+
+#: kbbmainwindow.cpp:336
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />You did really well!"
+msgstr ""
+
+#: kbbmainwindow.cpp:338
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "But it does not count<br />because <b>it is the sandbox!</b>"
+msgstr ""
+
+#: kbbmainwindow.cpp:340
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid "Your final score is: %1.<br />I guess you need more practice."
+msgstr ""
+
+#: kbbmainwindow.cpp:369
+#, kde-format
+msgid "Game paused.<br />Press \"%1\" to resume."
+msgstr "क्रीडा विरमति स्म।<br /> पुनः आरभ्यतुं &quot;%1&quot; नुदन्तु ।"
+
+#: kbbmainwindow.cpp:391
+#, kde-format
+msgid ""
+"Do you want to cancel the current custom game and start a new one with the "
+"new parameters?"
+msgstr "किं भवान् वर्तमानं कस्टम् क्रीडां रद्दं कृत्वा नूतनं मापदण्डैः सह नूतनं आरभतुम् इच्छति?"
+
+#: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
+#, kde-format
+msgctxt "@action:button"
+msgid "Start New Game"
+msgstr ""
+
+#: kbbmainwindow.cpp:408
+#, kde-format
+msgctxt "@title:tab"
+msgid "Custom Game"
+msgstr ""
+
+#: kbbmainwindow.cpp:427
+#, kde-format
+msgid "Sorry, you may not give up during the tutorial."
+msgstr "क्षम्यतां, पाठ्यक्रमस्य समये भवान् त्यक्तुं न शक्नोति।"
+
+#: kbbmainwindow.cpp:427
+#, kde-format
+msgctxt "@title:window"
+msgid "Solve"
+msgstr ""
+
+#: kbbmainwindow.cpp:430
+#, kde-format
+msgid ""
+"You placed all the balls. Great!\n"
+"You should now click on \"Done!\" to end the game and check if you guessed "
+"correctly.\n"
+"So, do you really want to give up this game?"
+msgstr ""
+"त्वया सर्वाणि कन्दुकानि स्थापितानि। महान्‌!\n"
+"इदानीं भवद्भिः \"Done!\" क्रीडायाः समाप्तिम् अपि च भवन्तः सम्यक् अनुमानं कृतवन्तः वा इति "
+"परीक्षितुं।\n"
+"अतः, किं भवन्तः वास्तवमेव एतत् क्रीडां त्यक्तुम् इच्छन्ति ?"
+
+#: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
+#, kde-format
+msgctxt "@action:button"
+msgid "Give Up"
+msgstr ""
+
+#: kbbmainwindow.cpp:432
+#, kde-format
+msgid "You should place %1 ball!\n"
+msgid_plural "You should place %1 balls!\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kbbmainwindow.cpp:432
+#, kde-format
+msgid "You have placed %1.\n"
+msgid_plural "You have placed %1.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kbbmainwindow.cpp:432
+#, kde-format
+msgid "Do you really want to give up this game?"
+msgstr "किं भवन्तः वास्तवमेव एतत् क्रीडां त्यक्तुम् इच्छन्ति ?"
+
+#: kbbmainwindow.cpp:442
+#, kde-format
+msgctxt ""
+"The text may not be too wide. So please use some HTML-BR-tags to have "
+"something more or less as wide as in english. Thanks!"
+msgid ""
+"Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
+"fun!"
+msgstr ""
+
+#: kbbmainwindow.cpp:481
+#, kde-format
+msgid "This will be the end of the current game!"
+msgstr "एतत् वर्तमानक्रीडायाः अन्तः भविष्यति!"
+
+#: kbbscalablegraphicwidget.cpp:100
+#, kde-format
+msgid "Score"
+msgstr "अंक"
+
+#: kbbscalablegraphicwidget.cpp:101
+#, kde-format
+msgid ""
+"<qt><p>This is <b>your score</b>. You should try to get the lowest possible."
+"</p><p>The score increases:<ul><li>with time: <b>1 point</b> per second.</"
+"li><li>with the use of lasers:<ul><li><b>3 points</b> if the laser beam hits "
+"a ball or exits at the entry point,</li><li><b>9 points</b> if it exits at "
+"another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
+"b> at the end of the game if you make a mistake.</p></qt>"
+msgstr ""
+"<qt><p>एषः <b>भवतः स्कोरः</b> अस्ति . भवता न्यूनतमं प्राप्तुं प्रयतितव्यम्।</p><p> स्कोरः "
+"वर्धते : १.<ul><li> समयेन सह : प्रति सेकण्ड् <b>१ बिन्दुः</b> ।</li><li> लेजरस्य उपयोगेन "
+"सह : १.<ul><li> <b>३ बिन्दुः</b> यदि लेजरपुञ्जः कन्दुकं प्रहरति अथवा प्रवेशबिन्दौ "
+"निर्गच्छति,</li><li> यदि अन्यस्मिन् प्रवेशबिन्दौ निर्गच्छति तर्हि <b>९ बिन्दुः</b> ।</"
+"li></ul></li></ul></p><p> यदि भवान् त्रुटिं करोति तर्हि क्रीडायाः अन्ते भवतः स्कोरः "
+"<b>९९९</b> इति सेट् भवति ।</p></qt>"
+
+#: kbbscalablegraphicwidget.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>This is the <b>main game area</b>.</p><ul><li>The <b>black box</b> is "
+"in the center.</li><li>On the left, there are the <b>balls</b> you have to "
+"place over the black box.</li><li>Around the black box, there are <b>lasers</"
+"b> that are replaced with <b>interaction information</b> if you use them.</"
+"li></ul></qt>"
+msgstr ""
+"<qt><p>एषः <b>मुख्यः क्रीडाक्षेत्रः</b> अस्ति .</p><ul><li> <b>कृष्णपेटी</b> केन्द्रे अस्ति।"
+"</li><li> वामे कृष्णपेटिकायाः उपरि भवता स्थापयितव्याः <b>कन्दुकाः</b> सन्ति ।</"
+"li><li> कृष्णपेटिकायाः परितः <b>लेसराः</b> सन्ति येषां स्थाने <b>अन्तरक्रियासूचना</b> "
+"भवति यदि भवान् तान् उपयुङ्क्ते ।</li></ul></qt>"
+
+#: kbbtutorial.cpp:36
+#, kde-format
+msgctxt "@title:group"
+msgid "Tutorial"
+msgstr ""
+
+#: kbbtutorial.cpp:53
+#, kde-format
+msgid "Displays the progress of the tutorial."
+msgstr "पाठ्यक्रमस्य प्रगतिम् प्रदर्शयति ।"
+
+#: kbbtutorial.cpp:75
+#, kde-format
+msgid "Describes what you should do to reach the next tutorial step."
+msgstr "अग्रिम-पाठ्यक्रम-पदं प्राप्तुं भवद्भिः किं कर्तव्यम् इति वर्णयति ।"
+
+#: kbbtutorial.cpp:84
+#, kde-format
+msgctxt "@action:button Previous tutorial step"
+msgid "&Previous"
+msgstr ""
+
+#: kbbtutorial.cpp:85
+#, kde-format
+msgid "Go back to the previous tutorial step."
+msgstr "पूर्वस्मिन् पाठ्यक्रमे पुनः गच्छन्तु ।"
+
+#: kbbtutorial.cpp:88
+#, kde-format
+msgctxt "@action:button Next tutorial step"
+msgid "&Next"
+msgstr ""
+
+#: kbbtutorial.cpp:89
+#, kde-format
+msgid "Go to the next tutorial step."
+msgstr "अग्रिमपाठ्यक्रमपदे गच्छन्तु ।"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Welcome!"
+msgstr "स्वागतम्‌!"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid ""
+"This tutorial will teach you how to play KBlackBox, using a simple example."
+"<br /><br />We are playing with a square black box of 6 columns and 6 rows. "
+"It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
+"><br />The goal is to <b>find the positions of the balls.</b>"
+msgstr ""
+"एतत् पाठ्यक्रमं सरलं उदाहरणं उपयुज्य, KBlackBox कथं क्रीडितव्यम् इति शिक्षयिष्यति ।<br /"
+"><br /> वयं ६ स्तम्भानां ६ पङ्क्तीनां च वर्गाकारकृष्णपेटिकायाः सह क्रीडामः । अस्य अन्तः ३ "
+"कन्दुकाः <b>निगूढाः</b> सन्ति, तस्य परितः २४ लेजर-अन्वेषकाः च सन्ति ।<br /><br /> "
+"लक्ष्यं <b>कन्दुकानां स्थानानि अन्वेष्टुं भवति ।</b>"
+
+#: kbbtutorial.cpp:151
+#, kde-format
+msgid "Click on \"Next\""
+msgstr "\"Next\" इत्यत्र क्लिक् कुर्वन्तु ।"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Black box principles"
+msgstr "कृष्णपेटीसिद्धान्ताः"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid ""
+"The balls are not visible, but we can shoot laser beams into the box at "
+"different entry points and observe if the laser beams leave the box, and if "
+"they do, where they come out.<br /><br />The laser beams interact with the "
+"balls in various ways."
+msgstr ""
+"कन्दुकाः न दृश्यन्ते, परन्तु वयं भिन्न-भिन्न-प्रवेश-बिन्दुषु लेजर-किरणाः पेटी-मध्ये निपातयितुं "
+"शक्नुमः, लेजर-किरणाः पेटीतः बहिः गच्छन्ति वा, यदि च गच्छन्ति तर्हि ते कुत्र बहिः आगच्छन्ति "
+"इति अवलोकयितुं शक्नुमः<br /><br /> लेजर-किरणाः कन्दुकैः सह विविधरीत्या अन्तरक्रियां "
+"कुर्वन्ति ।"
+
+#: kbbtutorial.cpp:156
+#, kde-format
+msgid "Please click on the marked laser to shoot a beam into the black box."
+msgstr "कृपया कृष्णपेटिकायां किरणं निपातयितुं चिह्नितं लेजरं क्लिक् कुर्वन्तु ।"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "No interaction"
+msgstr "न अन्तरक्रिया"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid ""
+"If a laser beam does not interact with any ball in the black box, it comes "
+"out at the point opposite the entry point.<br /><br />Example: Suppose we "
+"have 3 balls in the box as shown. They will not affect laser beam \"1\".<br /"
+"><br />As the game progresses, each pair of entry/exit points is marked with "
+"a different number."
+msgstr ""
+"यदि कृष्णपेटिकायां कस्यापि कन्दुकस्य सह लेजरपुञ्जः अन्तरक्रियां न करोति तर्हि "
+"प्रवेशबिन्दुविपरीतबिन्दौ बहिः आगच्छति ।<br /><br /> उदाहरणम् : यथा दर्शितं तथा अस्माकं "
+"पेटीयां ३ कन्दुकाः सन्ति इति कल्पयतु । ते लेजरपुञ्जं &quot;1&quot; न प्रभावितं करिष्यन्ति।"
+"<br /><br /> यथा यथा क्रीडा प्रगच्छति तथा तथा प्रत्येकं प्रवेश/निर्गमबिन्दुयुगलं "
+"भिन्नसङ्ख्यायाः सह चिह्नितं भवति ।"
+
+#: kbbtutorial.cpp:161
+#, kde-format
+msgid "Now shoot the marked laser to discover the first kind of interaction."
+msgstr "अधुना प्रथमप्रकारस्य अन्तरक्रियायाः आविष्कारार्थं चिह्नितं लेजरं शूटिंग् कुर्वन्तु ।"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Hit"
+msgstr "ताडनम्‌"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid ""
+"A direct impact on a ball is called a \"<b>hit</b>\". A beam that hits a "
+"ball does <b>not</b> emerge from the black box.<br /><br />Example: The beam "
+"might have hit a ball at the position shown, but the exact position of the "
+"hit is not certain: There are many other possibilities."
+msgstr ""
+"कन्दुकस्य उपरि प्रत्यक्षः आघातः &quot; <b>हिट्</b> &quot; इति उच्यते । कन्दुकं प्रहरति "
+"मयूखः कृष्णपेटिकातः <b>न</b> निर्गच्छति ।<br /><br /> उदाहरणम् : किरणः दर्शितस्थाने "
+"कन्दुकं प्रहारितवान् स्यात्, परन्तु प्रहारस्य सटीकं स्थानं निश्चितं नास्ति : अन्ये बहवः "
+"सम्भावनाः सन्ति"
+
+#: kbbtutorial.cpp:169
+#, kde-format
+msgid "Shoot the marked laser to discover the second kind of interaction."
+msgstr "द्वितीयप्रकारस्य अन्तरक्रियायाः आविष्कारार्थं चिह्नितं लेजरं शूटिंग् कुर्वन्तु।"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid "Simple deflection"
+msgstr "सरलं विक्षेपम्"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"The interaction of a beam that does not actually hit a ball, but aims to one "
+"side of it, is called a \"<b>deflection</b>\". The angle of deflection of "
+"the beam is always <b>90 degrees</b>.<br /><br />Example: The ball shown "
+"would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
+"possibility."
+msgstr ""
+"यः मयूखः वास्तवतः कन्दुकं न प्रहरति, परन्तु तस्य एकं पार्श्वे लक्ष्यं करोति, तस्य अन्तरक्रिया "
+"&quot; <b>विक्षेपः</b> &quot; इति उच्यते । मयूखस्य विक्षेपकोणः सर्वदा <b>९० अंशः</b> "
+"भवति |<br /><br /> उदाहरणम् : दर्शितः कन्दुकः &quot;२&quot; मयूखं ऊर्ध्वं "
+"विक्षेपयिष्यति, यथा दर्शितं, परन्तु एषा एव सम्भावना <b>नास्ति</b> ।"
+
+#: kbbtutorial.cpp:175
+#, kde-format
+msgid ""
+"Click on \"Next\" to see another combination of ball positions that deflects "
+"the laser beam as shown."
+msgstr ""
+"\"Next\" इत्यत्र क्लिक् कृत्वा अन्यं कन्दुकस्थानानां संयोजनं द्रष्टुं शक्यते यत् लेजर-किरणं यथा "
+"दर्शितं तथा विक्षेपयति ।"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Several deflections"
+msgstr "अनेकाः विक्षेपाः"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid ""
+"As you can see, interactions in the black box can be quite complicated!<br /"
+">A laser beam entering and exiting at the positions \"2\" might have been "
+"deflected by this configuration of 3 balls."
+msgstr ""
+"यथा भवन्तः पश्यन्ति, कृष्णपेटिकायां अन्तरक्रियाः अत्यन्तं जटिलाः भवितुम् अर्हन्ति!<br /> "
+"&quot;२&quot; स्थानेषु प्रविशन् निर्गच्छन् च लेजरपुञ्जः ३ कन्दुकस्य एतेन विन्यासेन विक्षिप्तः "
+"स्यात् ।"
+
+#: kbbtutorial.cpp:182
+#, kde-format
+msgid "Shoot the marked laser to discover another kind of result."
+msgstr "अन्यप्रकारस्य परिणामस्य आविष्कारार्थं चिह्नितं लेजरं शूटिंग् कुर्वन्तु।"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Reflection"
+msgstr "परावर्तन"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid ""
+"If the laser beam leaves the black box <b>at the entry point</b>, it has "
+"been reflected backward inside the black box.<br /><br />Example: We have "
+"placed 2 balls for you in a configuration that would lead to such a "
+"reflection."
+msgstr ""
+"यदि लेजर-किरणः <b>प्रवेशबिन्दौ</b> कृष्णपेटिकां त्यजति , तर्हि कृष्णपेटिकायाः अन्तः पश्चात् "
+"प्रतिबिम्बितम् अस्ति ।<br /><br /> उदाहरणम् : वयं भवतः कृते २ कन्दुकाः एतादृशे विन्यासे "
+"स्थापितवन्तः यत् एतादृशं प्रतिबिम्बं जनयिष्यति ।"
+
+#: kbbtutorial.cpp:190
+#, kde-format
+msgid "Shoot the marked laser to see another backward reflection case."
+msgstr "अन्यं पश्चात्तापप्रतिबिम्बप्रकरणं द्रष्टुं चिह्नितं लेजरं शूटिंग् कुर्वन्तु।"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Special reflection"
+msgstr "विशेष चिन्तन"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid ""
+"If a ball is <b>at the edge of the box</b> (with no other ball nearby), a "
+"beam which is aimed into the black box directly beside it causes a backward "
+"reflection.<br /><br />Example: The configuration shown can cause a backward "
+"reflection."
+msgstr ""
+"यदि कन्दुकः <b>पेटीयाः धारायाम्</b> अस्ति (समीपे अन्यः कन्दुकः नास्ति) तर्हि तस्य साक्षात् "
+"पार्श्वे कृष्णपेटिकायां लक्षितः मयूखः पश्चात्तापं जनयति<br /><br /> उदाहरणम् : दर्शितं "
+"विन्यासः पश्चात्तापं प्रतिबिम्बं जनयितुं शक्नोति ।"
+
+#: kbbtutorial.cpp:197
+#, kde-format
+msgid "Nearly done. Click on \"Next\"."
+msgstr "प्रायः कृतम् । \"Next\" इत्यत्र क्लिक् कुर्वन्तु ।"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid "Marker for \"free position\""
+msgstr "\"मुक्तस्थानम्\" इति चिह्नम् ।"
+
+#: kbbtutorial.cpp:204
+#, kde-format
+msgid ""
+"We are sure there are no balls in the first 2 columns. If there were any, "
+"the beam entering at position \"1\" would hit a ball or be deflected by a "
+"ball in column 2. You can mark a \"free position\" with a right mouse click "
+"(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
+"the first 2 columns."
+msgstr ""
+"प्रथमेषु २ स्तम्भेषु कन्दुकाः नास्ति इति वयं निश्चयेन स्मः । यदि केचन आसन् तर्हि "
+"&quot;1&quot; स्थाने प्रविशन् किरणः कन्दुकं मारयिष्यति अथवा स्तम्भ 2 मध्ये कन्दुकेन "
+"विक्षिप्तः भविष्यति।भवन्तः दक्षिणमूषकस्य क्लिक् इत्यनेन &quot;मुक्तस्थानं&quot; चिह्नितुं "
+"शक्नुवन्ति (कीबोर्डस्य शॉर्टकट् अपि पश्यन्तु)<br /><br /> उदाहरणम् : प्रथमेषु २ स्तम्भेषु १२ "
+"चिह्नानि सन्ति ।"
+
+#: kbbtutorial.cpp:204 kbbtutorial.cpp:213
+#, kde-format
+msgid "Click on \"Next\"."
+msgstr "\"Next\" इत्यत्र क्लिक् कुर्वन्तु ।"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid "Marking balls"
+msgstr "कन्दुकचिह्नीकरणम्"
+
+#: kbbtutorial.cpp:213
+#, kde-format
+msgid ""
+"When you have worked out where a ball is, please use the left mouse button "
+"to mark it. To remove a ball mark, use the left mouse button again. Last "
+"tip: If you are not sure about a position, you can use a right click on a "
+"ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
+">Example: We marked one position as sure, the other one as unsure."
+msgstr ""
+"यदा भवता कन्दुकः कुत्र अस्ति इति कार्यं कृत्वा तस्य चिह्नार्थं वाममूषकस्य बटन् उपयुज्यताम् । "
+"कन्दुकचिह्नं निष्कासयितुं पुनः वाममूषकस्य बटनस्य उपयोगं कुर्वन्तु । अन्तिमः युक्तिः : यदि भवान् "
+"कस्यापि स्थानस्य विषये निश्चितः नास्ति तर्हि कन्दुकस्य उपरि दक्षिणक्लिक् कृत्वा &quot;"
+"अनिश्चितः&quot; इति चिह्नितुं शक्नोति । (कीबोर्ड-शॉर्टकट् अपि पश्यन्तु ।)<br /><br /> "
+"उदाहरणम् : वयं एकं स्थानं निश्चितं, अपरं अनिश्चितं इति चिह्नितवन्तः।"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Let us play!"
+msgstr "क्रीडामः !"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid ""
+"<b>Congratulations!</b> You now know <b>all the rules</b> for KBlackBox.<br /"
+"><br /><b>You can start to play.</b> Try to finish this tutorial game by "
+"yourself!<br /><br />Tip: We have sent in enough beams to deduce the "
+"positions of the 3 balls with certainty. Of course, you can use some more "
+"shots if needed."
+msgstr ""
+"<b>अभिनन्दनम् !</b> इदानीं भवान् KBlackBox इत्यस्य <b>सर्वान् नियमान्</b> जानाति ।"
+"<br /><br /> <b>भवन्तः क्रीडितुं आरभुं शक्नुवन्ति।</b> स्वयमेव एतत् पाठ्यक्रमक्रीडां समाप्तुं "
+"प्रयतध्वम्!<br /><br /> युक्तिः - वयं पर्याप्तं किरणं प्रेषितवन्तः यत् ३ कन्दुकानाम् स्थानानि "
+"निश्चयेन निष्कर्षयितुं शक्नुमः । अवश्यं, आवश्यकतानुसारं भवन्तः केचन अधिकानि शॉट्-प्रयोगं कर्तुं "
+"शक्नुवन्ति ।"
+
+#: kbbtutorial.cpp:220
+#, kde-format
+msgid "Finish placing the balls and click on \"Done!\" when you are done!"
+msgstr "कन्दुकस्थापनं समाप्तं कृत्वा \"Done!\" यदा त्वं कृतः असि!"
+
+#. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
+#: kblackbox.kcfg:9
+#, kde-format
+msgid ""
+"File of the current theme of the graphic elements. (SVGZ file with path and "
+"file extension)"
+msgstr ""
+"चित्रात्मकतत्त्वानां वर्तमानविषयस्य सञ्चिका । (मार्गः सञ्चिकाविस्तारः च सह SVGZ सञ्चिका)"
+
+#. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
+#: kblackbox.kcfg:13
+#, kde-format
+msgid "Number of balls for custom difficulty level"
+msgstr "कस्टम् कठिनतास्तरस्य कृते कन्दुकसङ्ख्या"
+
+#. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
+#: kblackbox.kcfg:17
+#, kde-format
+msgid "Number of columns of the board for custom difficulty level"
+msgstr "कस्टम् कठिनतास्तरस्य कृते बोर्डस्य स्तम्भानां संख्या"
+
+#. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
+#: kblackbox.kcfg:21
+#, kde-format
+msgid "Number of rows of the board for custom difficuty level"
+msgstr "कस्टम् कठिनतास्तरस्य कृते बोर्डस्य पङ्क्तयः संख्या"
+
+#: main.cpp:45
+#, kde-format
+msgid "KBlackBox"
+msgstr "KBlackBox इति"
+
+#: main.cpp:47
+#, kde-format
+msgid "Find the balls hidden in the black box by shooting laser beams!"
+msgstr "लेजर-किरणं निपातयित्वा कृष्णपेटिकायां निगूढं कन्दुकं अन्वेष्टुम्!"
+
+#: main.cpp:49
+#, kde-format
+msgid ""
+"(c) 2007, Nicolas Roffet\n"
+"(c) 1999-2000, Robert Cimrman"
+msgstr ""
+"(ग) 2007, निकोलस रोफेट\n"
+"(ग) 1999-2000, राबर्ट सिमरमैन"
+
+#: main.cpp:52
+#, kde-format
+msgid "Nicolas Roffet"
+msgstr "निकोलस रोफेट्"
+
+#: main.cpp:52
+#, kde-format
+msgid "Developer of version 0.4."
+msgstr "0.4 संस्करणस्य विकासकः ।"
+
+#: main.cpp:53
+#, kde-format
+msgid "Robert Cimrman"
+msgstr "रोबर्ट् सिमरमैन्"
+
+#: main.cpp:53
+#, kde-format
+msgid "Original developer"
+msgstr "मूल विकासक"
+
+#: main.cpp:54
+#, kde-format
+msgid "Johann Ollivier Lapeyre"
+msgstr "जोहान ओलिवियर लापेयर"
+
+#: main.cpp:54
+#, kde-format
+msgid "Artist"
+msgstr "कलाकार"

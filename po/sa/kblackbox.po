@@ -3,71 +3,73 @@
 # This file is distributed under the same license as the kblackbox package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-14 01:08+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: kbblevelconfigurationwidget.cpp:31
 #, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " कन्दुक"
+msgstr[1] " कन्दुकं"
 
 #: kbblevelconfigurationwidget.cpp:40
 #, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " स्तम्भ:"
+msgstr[1] " स्तम्भाः"
 
 #: kbblevelconfigurationwidget.cpp:49
 #, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " पंक्ति"
+msgstr[1] " पङ्क्तयः"
 
 #: kbbmainwindow.cpp:67
 #, kde-format
 msgctxt "Difficulty level title"
 msgid "Configurable"
-msgstr ""
+msgstr "विन्यासयोग्यः"
 
 #: kbbmainwindow.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
-msgstr ""
+msgstr "ट्यूटोरियल आरभत"
 
 #: kbbmainwindow.cpp:79
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
-msgstr ""
+msgstr "पाठ्यक्रमं आरभत"
 
 #: kbbmainwindow.cpp:80
 #, kde-format
@@ -82,13 +84,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
-msgstr ""
+msgstr "नवीन रेतपेटी खेल"
 
 #: kbbmainwindow.cpp:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
-msgstr ""
+msgstr "नूतनं सैण्डबॉक्सक्रीडां आरभत"
 
 #: kbbmainwindow.cpp:86
 #, kde-format
@@ -107,7 +109,7 @@ msgstr ""
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
-msgstr ""
+msgstr "कृतम्‌!"
 
 #: kbbmainwindow.cpp:93
 #, kde-format
@@ -130,7 +132,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
-msgstr ""
+msgstr "क्रीडां त्यजतु"
 
 #: kbbmainwindow.cpp:98
 #, kde-format
@@ -147,43 +149,43 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
-msgstr ""
+msgstr "Mouse इत्यस्य अधः Highlight इत्येतत् सक्षमं कुर्वन्तु"
 
 #: kbbmainwindow.cpp:143
 #, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr ""
+msgstr "अधः गच्छतु"
 
 #: kbbmainwindow.cpp:149
 #, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr ""
+msgstr "उपरि गच्छतु"
 
 #: kbbmainwindow.cpp:155
 #, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr ""
+msgstr "वामभागे गच्छतु"
 
 #: kbbmainwindow.cpp:161
 #, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr ""
+msgstr "दक्षिणतः गच्छतु"
 
 #: kbbmainwindow.cpp:167
 #, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
-msgstr ""
+msgstr "स्विच बॉल अथवा शूट लेजर"
 
 #: kbbmainwindow.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
-msgstr ""
+msgstr "स्विच मार्कर"
 
 #: kbbmainwindow.cpp:247
 #, kde-format
@@ -194,13 +196,15 @@ msgid ""
 "Note: You can change<br />the parameters of<br />custom games in the<br /"
 ">Settings dialog."
 msgstr ""
+"नोटः- भवान् परिवर्तयितुं शक्नोति<br /> के पैरामीटर्स्<br /> रूढिगतक्रीडाः मध्ये<br /> "
+"सेटिंग्स् संवादः ।"
 
 #: kbbmainwindow.cpp:280
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "प्रथमं कृष्णपेटिकातः १ कन्दुकं निष्कासयितुं आवश्यकम् ।"
+msgstr[1] "प्रथमं भवद्भिः कृष्णपेटिकातः %1 कन्दुकानि निष्कासितव्यानि ।"
 
 #: kbbmainwindow.cpp:282
 #, kde-format
@@ -211,8 +215,8 @@ msgstr "भवन्तः कन्दुकस्थानानि सफल�
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "भवन्तः कृष्णपेटिकायां १ अधिकं कन्दुकं स्थापयितुं प्रवृत्ताः सन्ति ।"
+msgstr[1] "भवद्भिः कृष्णपेटिकायां %1 अधिकानि कन्दुकानि स्थापयितव्यानि ।"
 
 #: kbbmainwindow.cpp:288
 #, kde-format
@@ -240,7 +244,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
-msgstr ""
+msgstr "पदं पश्यन्तु"
 
 #: kbbmainwindow.cpp:336
 #, kde-format
@@ -248,7 +252,7 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />You did really well!"
-msgstr ""
+msgstr "भवतः अन्तिमः स्कोरः अस्ति : %1 ।<br /> भवता यथार्थतया उत्तमं कृतम्!"
 
 #: kbbmainwindow.cpp:338
 #, kde-format
@@ -256,7 +260,7 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
-msgstr ""
+msgstr "न तु गण्यते<br /> यतः <b>सः वालुकापेटी अस्ति!</b>"
 
 #: kbbmainwindow.cpp:340
 #, kde-format
@@ -265,6 +269,7 @@ msgctxt ""
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr ""
+"भवतः अन्तिमः स्कोरः अस्ति : %1 ।<br /> अनुमानं करोमि यत् भवतः अधिकः अभ्यासः आवश्यकः।"
 
 #: kbbmainwindow.cpp:369
 #, kde-format
@@ -282,13 +287,13 @@ msgstr "किं भवान् वर्तमानं कस्टम् �
 #, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr ""
+msgstr "नूतनं क्रीडां आरभत"
 
 #: kbbmainwindow.cpp:408
 #, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
-msgstr ""
+msgstr "कस्टम गेम"
 
 #: kbbmainwindow.cpp:427
 #, kde-format
@@ -299,7 +304,7 @@ msgstr "क्षम्यतां, पाठ्यक्रमस्य सम
 #, kde-format
 msgctxt "@title:window"
 msgid "Solve"
-msgstr ""
+msgstr "उत्तरयति"
 
 #: kbbmainwindow.cpp:430
 #, kde-format
@@ -318,21 +323,21 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
-msgstr ""
+msgstr "त्यजति"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "भवता %1 कन्दुकं स्थापयितव्यम्!\n"
+msgstr[1] "भवता %1 कन्दुकं स्थापयितव्यम्!\n"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "भवता %1 स्थापितं ।\n"
+msgstr[1] "भवता %1 स्थापितं ।\n"
 
 #: kbbmainwindow.cpp:432
 #, kde-format
@@ -347,7 +352,7 @@ msgctxt ""
 msgid ""
 "Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
 "fun!"
-msgstr ""
+msgstr "नोटः- सैण्डबॉक्स मोड् मध्ये, .<br /> समाधानं पूर्वमेव प्रदर्शितम् अस्ति।<br /> अश्!"
 
 #: kbbmainwindow.cpp:481
 #, kde-format
@@ -394,7 +399,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
-msgstr ""
+msgstr "पाठ्यक्रम"
 
 #: kbbtutorial.cpp:53
 #, kde-format
@@ -410,7 +415,7 @@ msgstr "अग्रिम-पाठ्यक्रम-पदं प्राप
 #, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
-msgstr ""
+msgstr "&पूर्वतनम्‌"
 
 #: kbbtutorial.cpp:85
 #, kde-format
@@ -421,7 +426,7 @@ msgstr "पूर्वस्मिन् पाठ्यक्रमे पु�
 #, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
-msgstr ""
+msgstr "&अग्रिम"
 
 #: kbbtutorial.cpp:89
 #, kde-format

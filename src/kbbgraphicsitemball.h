@@ -50,7 +50,6 @@ class KBBGraphicsItemBall : public KBBGraphicsItemOnBox
 	private:
 		void hoverEnterEvent (QGraphicsSceneHoverEvent*) override;
 		void hoverLeaveEvent (QGraphicsSceneHoverEvent*) override;
-		void init(KBBScalableGraphicWidget::itemType itemType, KBBThemeManager* themeManager);
 		void removeInteractionInfos() override;
 		
 		KBBGraphicsItemInteractionInfo* m_interactionInfos[8];

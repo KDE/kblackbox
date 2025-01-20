@@ -140,7 +140,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
-msgstr ""
+msgstr "启用在鼠标下突出显示"
 
 #: kbbmainwindow.cpp:143
 #, kde-format
@@ -231,7 +231,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
-msgstr ""
+msgstr "检查位置"
 
 #: kbbmainwindow.cpp:336
 #, kde-format
@@ -308,7 +308,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
-msgstr ""
+msgstr "放弃"
 
 #: kbbmainwindow.cpp:432
 #, kde-format

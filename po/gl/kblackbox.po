@@ -34,7 +34,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "veronicafernandezcouce@gmail.com, mvillarino@gmail.com, xosecalvo@gmail.com, "
-"adrian@chaves.io"
+"adrian@chaves.gal"
 
 #: kbblevelconfigurationwidget.cpp:31
 #, kde-format

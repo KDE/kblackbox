@@ -150,9 +150,9 @@ msgid ""
 "solution will be displayed.</p><p>If you placed all the balls and do not "
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
-"<qt><p>Escolliu «<b>Resol</b>» si voleu renunciar de la partida actual. Es "
+"<qt><p>Trieu «<b>Resol</b>» si voleu renunciar de la partida actual. Es "
 "mostrarà la solució.</p><p>Si heu emplaçat totes les boles però no voleu "
-"renunciar, escolliu «Fet!».</p></qt>"
+"renunciar, trieu «Fet!».</p></qt>"
 
 #: kbbmainwindow.cpp:103
 #, kde-format
@@ -188,13 +188,13 @@ msgstr "Mou cap a la dreta"
 #, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
-msgstr "Escolliu bola o tir làser"
+msgstr "Trieu bola o tir làser"
 
 #: kbbmainwindow.cpp:173
 #, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
-msgstr "Escolliu un marcador"
+msgstr "Trieu un marcador"
 
 #: kbbmainwindow.cpp:247
 #, kde-format
@@ -248,8 +248,9 @@ msgid ""
 "Please first finish the tutorial."
 msgstr ""
 "La manera normal d'assegurar les posicions de les boles al final de la "
-"partida és clicant «Fet!». De totes maneres, en la partida d'aprenentatge no "
-"és possible acabar-la abans que s'haja arribat a l'últim pas.\n"
+"partida és clicant damunt «Fet!». De totes maneres, en la partida "
+"d'aprenentatge no és possible acabar-la abans que s'haja arribat a l'últim "
+"pas.\n"
 "Per favor, acabeu primer la partida d'aprenentatge."
 
 #: kbbmainwindow.cpp:329
@@ -330,8 +331,8 @@ msgid ""
 "So, do you really want to give up this game?"
 msgstr ""
 "Heu emplaçat totes les boles. Magnífic!\n"
-"Ara heu de clicar en «Fet!» per a acabar el joc i comprovar si ho heu fet "
-"correctament.\n"
+"Ara heu de clicar damunt «Fet!» per a acabar el joc i comprovar si ho heu "
+"fet correctament.\n"
 "Llavors, segur que voleu abandonar esta partida?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
@@ -475,7 +476,7 @@ msgstr ""
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Click on \"Next\""
-msgstr "Cliqueu en «Següent»"
+msgstr "Cliqueu damunt «Següent»"
 
 #: kbbtutorial.cpp:156
 #, kde-format
@@ -499,7 +500,7 @@ msgstr ""
 #, kde-format
 msgid "Please click on the marked laser to shoot a beam into the black box."
 msgstr ""
-"Per favor, cliqueu sobre el làser marcat per a disparar un feix contra el "
+"Per favor, cliqueu damunt del làser marcat per a disparar un feix contra el "
 "quadro negre."
 
 #: kbbtutorial.cpp:161
@@ -577,8 +578,8 @@ msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
-"Cliqueu en «Següent» per a veure una altra combinació de boles que desvien "
-"el feix làser com es mostra."
+"Cliqueu damunt «Següent» per a veure una altra combinació de boles que "
+"desvien el feix làser com es mostra."
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -594,7 +595,7 @@ msgid ""
 msgstr ""
 "Com podeu veure, les interaccions dins del quadro negre són una mica "
 "complicades!<br />Un feix làser entrant i eixint a les posicions «2» pot "
-"haver estat desviat per esta combinació de 3 boles."
+"haver sigut desviat per esta combinació de 3 boles."
 
 #: kbbtutorial.cpp:182
 #, kde-format
@@ -644,7 +645,7 @@ msgstr ""
 #: kbbtutorial.cpp:197
 #, kde-format
 msgid "Nearly done. Click on \"Next\"."
-msgstr "Quasi acabat. Cliqueu en «Següent»."
+msgstr "Quasi acabat. Cliqueu damunt «Següent»."
 
 #: kbbtutorial.cpp:204
 #, kde-format
@@ -669,7 +670,7 @@ msgstr ""
 #: kbbtutorial.cpp:204 kbbtutorial.cpp:213
 #, kde-format
 msgid "Click on \"Next\"."
-msgstr "Cliqueu en «Següent»."
+msgstr "Cliqueu damunt «Següent»."
 
 #: kbbtutorial.cpp:213
 #, kde-format
@@ -715,7 +716,7 @@ msgstr ""
 #: kbbtutorial.cpp:220
 #, kde-format
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
-msgstr "Cliqueu en «Fet!» quan hàgeu acabat de col·locar les boles!"
+msgstr "Cliqueu damunt «Fet!» quan hàgeu acabat de col·locar les boles!"
 
 #. i18n: ectx: label, entry (theme), group (KBlackBox Setup)
 #: kblackbox.kcfg:9

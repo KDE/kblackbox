@@ -146,7 +146,7 @@
 <para
 >Si vous pensez que le placement des billes que vous avez effectué est correct, cliquez sur le bouton <guibutton
 >Terminé ! </guibutton
->. Une boîte de dialogue vous indiquera si le placement des billes est correct ou non, et vous donnera votre score. </para>
+>. Une boite de dialogue vous indiquera si le placement des billes est correct ou non, et vous donnera votre score. </para>
 <para
 >Si vous placez des billes de manière incorrecte, la bonne solution sera affichée. </para>
 
@@ -298,7 +298,7 @@ H * * * O - - - -         - - - - - - - -          - - - - - - - -
 <varlistentry>
 <term
 ><interface
->La grosse boîte noire sur le milieu</interface
+>La grosse boite noire sur le milieu</interface
 ></term>
 <listitem
 ><para

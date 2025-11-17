@@ -2,7 +2,7 @@
 # Translation of kblackbox.po to Slovenian
 # SLOVENIAN TRANSLATION OF KDEGAMES.
 # Copyright (C) 2001, 2004, 2006, 2007 Free Software Foundation, Inc.
-# $Id: kblackbox.po 1695692 2024-11-22 01:16:46Z scripty $
+# $Id: kblackbox.po 1723120 2025-11-17 15:24:07Z scripty $
 # $Source$
 #
 # Marko Samastur <markos@elite.org>, 1999.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-22 00:38+0000\n"
+"POT-Creation-Date: 2025-11-17 14:39+0000\n"
 "PO-Revision-Date: 2024-04-29 10:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"

@@ -28,46 +28,28 @@ msgid "Your emails"
 msgstr "seoc@iolfree.ie,kscanne@gmail.com"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball"
-#| msgid_plural " balls"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
-msgstr[0] " liathróid"
-msgstr[1] " liathróid"
-msgstr[2] " liathróid"
-msgstr[3] " liathróid"
-msgstr[4] " liathróid"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " column"
-#| msgid_plural " columns"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
-msgstr[0] " cholún"
-msgstr[1] " cholún"
-msgstr[2] " cholún"
-msgstr[3] " gcolún"
-msgstr[4] " colún"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " row"
-#| msgid_plural " rows"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
-msgstr[0] " ró"
-msgstr[1] " ró"
-msgstr[2] " ró"
-msgstr[3] " ró"
-msgstr[4] " ró"
+msgstr[0] ""
+msgstr[1] ""
 
 #: kbbmainwindow.cpp:67
 #, kde-format
@@ -76,18 +58,16 @@ msgid "Configurable"
 msgstr ""
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
-#| msgid "Start Tutorial"
+#, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
-msgstr "Tosaigh an Cúrsa Teagaisc"
+msgstr ""
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
-#| msgid "Start tutorial"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
-msgstr "Tosaigh an cúrsa teagaisc"
+msgstr ""
 
 #: kbbmainwindow.cpp:80
 #, kde-format
@@ -100,18 +80,16 @@ msgstr ""
 "qt>"
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "New Sandbox Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
-msgstr "Cluiche Nua Bosca Gainimh"
+msgstr ""
 
 #: kbbmainwindow.cpp:85
-#, fuzzy, kde-format
-#| msgid "Start a new sandbox game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
-msgstr "Tosaigh cluiche nua bosca gainimh"
+msgstr ""
 
 #: kbbmainwindow.cpp:86
 #, kde-format
@@ -126,15 +104,11 @@ msgstr ""
 "éis tamaill, áfach, ba chóir duit triail a bhaint as fíorchluiche!</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the last action of a game to check the result, when the user is "
-#| "done."
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
-msgstr "Críochnaithe!"
+msgstr ""
 
 #: kbbmainwindow.cpp:93
 #, kde-format
@@ -155,11 +129,10 @@ msgstr ""
 "suite agat.</p></qt>"
 
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Give up the game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
-msgstr "Éirigh as"
+msgstr ""
 
 #: kbbmainwindow.cpp:98
 #, kde-format
@@ -179,46 +152,40 @@ msgid "Enable Highlight under Mouse"
 msgstr ""
 
 #: kbbmainwindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
-msgstr "Bog Síos"
+msgstr ""
 
 #: kbbmainwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
-msgstr "Bog Suas"
+msgstr ""
 
 #: kbbmainwindow.cpp:155
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
-msgstr "Bog Faoi Chlé"
+msgstr ""
 
 #: kbbmainwindow.cpp:161
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
-msgstr "Bog Faoi Dheis"
+msgstr ""
 
 #: kbbmainwindow.cpp:167
-#, fuzzy, kde-format
-#| msgid "Switch Ball or Shoot Laser"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
-msgstr "Bog Liathróid nó Lámhach Léasar"
+msgstr ""
 
 #: kbbmainwindow.cpp:173
-#, fuzzy, kde-format
-#| msgid "Switch Marker"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
-msgstr "Aistrigh Marcóir"
+msgstr ""
 
 #: kbbmainwindow.cpp:247
 #, kde-format
@@ -278,11 +245,10 @@ msgid ""
 msgstr ""
 
 #: kbbmainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Check positions"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
-msgstr "Seiceáil an réiteach"
+msgstr ""
 
 #: kbbmainwindow.cpp:336
 #, kde-format
@@ -323,18 +289,16 @@ msgstr ""
 "thosú leis na paraiméadair nua?"
 
 #: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
-#, fuzzy, kde-format
-#| msgid "Start new game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
-msgstr "Tosaigh cluiche nua"
+msgstr ""
 
 #: kbbmainwindow.cpp:408
-#, fuzzy, kde-format
-#| msgid "Custom Game"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
-msgstr "Cluiche Saincheaptha"
+msgstr ""
 
 #: kbbmainwindow.cpp:427
 #, kde-format
@@ -342,36 +306,25 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "Tá brón orm, ní cheadaítear duit éirí as le linn an chúrsa teagaisc."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
-#| msgid "Solve"
+#, kde-format
 msgctxt "@title:window"
 msgid "Solve"
-msgstr "Réitigh"
+msgstr ""
 
 #: kbbmainwindow.cpp:430
-#, fuzzy, kde-format
-#| msgid ""
-#| "You placed all the balls. Great!\n"
-#| "You should now click on \"Done!\" to end the game and check if you "
-#| "guessed correctly.\n"
-#| "So, do you really want to give up this game?"
+#, kde-format
 msgid ""
 "You placed all the balls. Great!\n"
 "You should now click on \"Done!\" to end the game and check if you guessed "
 "correctly.\n"
 "So, do you really want to give up this game?"
 msgstr ""
-"Tá gach liathróid suite agat. Maith thú!\n"
-"Anois ba chóir duit \"Críochnaithe!\" a chliceáil chun an cluiche a "
-"chríochnú agus féachaint an bhfuil an réiteach ceart agat.\n"
-"An bhfuil tú cinnte gur mian leat éirí as an gcluiche seo mar sin féin?"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
-#| msgid "&Give Up"
+#, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
-msgstr "Éirigh &As"
+msgstr ""
 
 #: kbbmainwindow.cpp:432
 #, kde-format
@@ -442,11 +395,10 @@ msgid ""
 msgstr ""
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
-#| msgid "Tutorial"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
-msgstr "Cúrsa Teagaisc"
+msgstr ""
 
 #: kbbtutorial.cpp:53
 #, kde-format
@@ -459,12 +411,10 @@ msgid "Describes what you should do to reach the next tutorial step."
 msgstr ""
 
 #: kbbtutorial.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Previous tutorial step"
-#| msgid "&Previous"
+#, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
-msgstr "&Siar"
+msgstr ""
 
 #: kbbtutorial.cpp:85
 #, kde-format
@@ -472,12 +422,10 @@ msgid "Go back to the previous tutorial step."
 msgstr "Téigh siar go dtí an chéim roimhe seo sa chúrsa."
 
 #: kbbtutorial.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "Next tutorial step"
-#| msgid "&Next"
+#, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
-msgstr "&Ar Aghaidh"
+msgstr ""
 
 #: kbbtutorial.cpp:89
 #, kde-format
@@ -774,122 +722,3 @@ msgstr "Johann Ollivier Lapeyre"
 #, kde-format
 msgid "Artist"
 msgstr "Ealaíontóir"
-
-#~ msgid "Give up"
-#~ msgstr "Éirigh as"
-
-#~ msgid "Start new game"
-#~ msgstr "Tosaigh cluiche nua"
-
-#~ msgid "Time: 00:00"
-#~ msgstr "Am: 00:00"
-
-#~ msgid "Size: 00 x 00"
-#~ msgstr "Méid: 00 × 00"
-
-#~ msgid "1 ball too many!"
-#~ msgid_plural "%1 balls too many!"
-#~ msgstr[0] "1 liathróid thar ceal!"
-#~ msgstr[1] "%1 liathróid thar ceal!"
-#~ msgstr[2] "%1 liathróid thar ceal!"
-#~ msgstr[3] "%1 liathróid thar ceal!"
-#~ msgstr[4] "%1 liathróid thar ceal!"
-
-#~ msgid "No more balls to place"
-#~ msgstr "Níl aon liathróid eile le cur síos"
-
-#~ msgid "1 ball to place"
-#~ msgid_plural "%1 balls to place"
-#~ msgstr[0] "1 liathróid le cur"
-#~ msgstr[1] "%1 liathróid le cur"
-#~ msgstr[2] "%1 liathróid le cur"
-#~ msgstr[3] "%1 liathróid le cur"
-#~ msgstr[4] "%1 liathróid le cur"
-
-#~ msgid "Game over"
-#~ msgstr "Cluiche thart"
-
-#~ msgid "Time: %1"
-#~ msgstr "Am: %1"
-
-#~ msgid "Size: %1 x %2"
-#~ msgstr "Méid: %1 × %2"
-
-#~ msgid "Difficulty level"
-#~ msgstr "Leibhéal deacrachta"
-
-#~ msgctxt "A number between 1 and 99 is displayed in front of it."
-#~ msgid " ball(s)"
-#~ msgstr " liathróid"
-
-#~ msgid "Balls"
-#~ msgstr "Liathróidí"
-
-#~ msgid "Run: yesno"
-#~ msgstr "Rith: tá/níl"
-
-#~ msgid "Run: Tutorial"
-#~ msgstr "Rith: Cúrsa Teagaisc"
-
-#~ msgid "Move"
-#~ msgstr "Bog"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Príomhbharra Uirlisí"
-
-#~ msgid "Settings"
-#~ msgstr "Socruithe"
-
-#~ msgid "End game"
-#~ msgstr "Cuir cluiche i gcrích"
-
-#~ msgid "&Size"
-#~ msgstr "&Méid"
-
-#~ msgid "  8 x  8 "
-#~ msgstr "  8 ×  8 "
-
-#~ msgid " 10 x 10 "
-#~ msgstr " 10 × 10 "
-
-#~ msgid " 12 x 12 "
-#~ msgstr " 12 × 12 "
-
-#~ msgid " 18 x 12 "
-#~ msgstr " 18 × 12 "
-
-#~ msgid "&Balls"
-#~ msgstr "&Liathróidí"
-
-#~ msgid "8 balls"
-#~ msgstr "8 liathróid"
-
-#~ msgid "10 balls"
-#~ msgstr "10 liathróid"
-
-#~ msgid "Trigger Action"
-#~ msgstr "Gníomh truicir"
-
-#~ msgid "Score: 0000"
-#~ msgstr "Scór: 0000"
-
-#~ msgid "Placed: 00 / 00"
-#~ msgstr "Curtha: 00 / 00"
-
-#~ msgid "Size: "
-#~ msgstr "Méid: "
-
-#~ msgid "Placed: "
-#~ msgstr "Curtha: "
-
-#~ msgid "&Resize"
-#~ msgstr "&Athraigh an mhéid"
-
-#~ msgid " 4 "
-#~ msgstr " 4 "
-
-#~ msgid " 6 "
-#~ msgstr " 6 "
-
-#~ msgid " 8 "
-#~ msgstr " 8 "

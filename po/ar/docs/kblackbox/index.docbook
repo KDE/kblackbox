@@ -1,0 +1,623 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>دليل الصندوق الأسود ك</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>2021-06-24</date>
+<releaseinfo
+>ترس كيدي 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>يصف هذا التوثيق لعبة الصندوق الأسود ك الإصدارة 21.04</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>كيدي</keyword
+> <!-- do not change this! -->
+	<keyword
+>ألعاب كيدي</keyword
+> <!-- do not change this! -->
+	<keyword
+>لعبة</keyword
+> <!-- do not change this! -->
+	<keyword
+>الصندوق الأسود ك</keyword>
+	<keyword
+>أحجية</keyword>
+	<keyword
+>لوحة</keyword>
+	<keyword
+>كرات</keyword>
+	<keyword
+>شعاع</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>لاعب واحد</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>كرات مخفية</keyword>
+	<keyword
+>اعثر</keyword>
+	<keyword
+>ابحث</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>مقدمة</title
+> <!-- do not change this! -->
+	<note
+><title
+>نوع اللعبة:</title
+><para
+>أحجية، لوحة</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>عدد اللاعبين الممكنين:</title
+><para
+>واحد</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>الصندوق الأسود ك هي لعبة منطقية لطيفة، مستوحاة من لعبة إيماكس (Emacs) بلاك بوكس. يعتمد جزء كبير من ملف المساعدة هذا على مساعدة إيماكس الأصلية.</para>
+
+<para
+>الصندوق الأسود ك هي لعبة استغماية تُلعب على شبكة من الصناديق. أخفى الحاسوب عدة كرات داخل هذا الصندوق. عبر إطلاق الأشعة داخل الصندوق ومراقبة مكان خروجها، يمكن استنتاج مواقع الكرات المخفية.</para>
+<para
+>كلما استخدمت أشعة أقل وكنت أسرع في العثور على الكرات، كانت نتيجتك أفضل (أقل).</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>كيف تلعب</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>الهدف:</title
+><para
+>استخدم أشعة الليزر لاستنتاج أماكن الكرات داخل الصندوق الأسود.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>استخدم الليزر وضع الكرات والعلامات على لوحة اللعبة لاستنتاج موقع الكرات المخفية داخل الصندوق الأسود.</para>
+<para
+>تبدأ اللعبة بمجرد استخدامك لأول ليزر. قبل ذلك، الوقت لا يتحرك ولن تُحسب أي نقطة في النتيجة. </para>
+<para
+>يمكن تحريك المؤشر حول الصندوق بمفاتيح حركة المؤشر القياسية أو بالفأرة. يُجرى تشغيل الليزر أو وسم الصناديق السوداء بزر الفأرة الأيسر، أو بالضغط على مفتاح <keycap
+>Return</keycap
+> أو &Enter;.</para>
+
+<para
+>يمكنك أيضًا سحب وإسقاط الكرات والعلامات بالفأرة.</para>
+
+<para
+>يمكنك أيضاً وسم الحقول التي تعتقد أنه لا يمكن وجود كرة فيها. فقط اضغط على زر الفأرة الأيمن. يساعدك هذا غالباً في العثور على منطقة يحتمل وجود كرة فيها. لمسح أي علامة، اضغط على المفتاح نفسه أو زر الفأرة مجدداً.</para>
+
+<para
+>عندما تظن أن تكوين الكرات الذي وضعته صحيح، اضغط على زر <guibutton
+>انتهيت!</guibutton
+>. سيجري إخبارك إن كنت صحيحًا أم لا، وستعطى درجتك. </para>
+<para
+>إن وضعت أي كرات بشكل غير صحيح، فسيعرض الحل الصحيح. </para>
+
+<para
+>تزداد النتيجة مع الوقت (نقطة واحدة في الثانية) ومع استخدام الليزر: 3 نقاط إذا ضرب شعاع الليزر كرة أو خرج من نقطة الدخول و9 نقاط إذا خرج من نقطة دخول أخرى. إذا ارتكبت خطأ، تُضبط النتيجة في نهاية اللعبة على 999، وهي النتيجة القصوى. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>قواعد اللعبة واستراتيجياتها وتلميحاتها</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>قواعد اللعبة</title>
+
+<para
+>يجب أن تجد الكرات المخفية في الصندوق الأسود. وسائلك محدودة - يمكنك فقط إطلاق الليزر الموجود حول الصندوق. هناك ثلاث نتائج محتملة لكل شعاع ترسله إلى الصندوق: </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>انعطاف</term
+> 
+<listitem
+><para
+>ينحرف الشعاع ويظهر في مكان آخر غير المكان الذي أرسلته منه. في ساحة اللعب، يُشار إلى الانعطافات بأزواج متطابقة من الأرقام - واحد في مكان دخول الشعاع، والآخر في مكان خروجه.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>انعكاس</term>
+<listitem
+><para
+>ينعكس الشعاع ويظهر في المكان نفسه الذي أرسل منه. في ساحة اللعب، يُشار إلى الانعكاسات بعلامة خاصة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>ضربة</term>
+<listitem
+><para
+>يصطدم الشعاع بكرة ويُمتص. لا يخرج من الصندوق. في ساحة اللعب، يُشار إلى الضربات بعلامة خاصة.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>قواعد كيفية انحراف الأشعة بسبب الكرات بسيطة وأفضل ما يُمكن توضيحه هو عبر مثال.</para>
+
+<para
+>عندما يقترب الشعاع من كرة، ينحرف بمقدار تسعين درجة. يمكن للأشعة أن تنحرف عدة مرات. في المخططات أدناه، تمثل الشرطات مواقع الصناديق الفارغة ويمثل الحرف <guilabel
+>O</guilabel
+> كرة. تُوسم نقاط الدخول والخروج لكل شعاع بأرقام كما هو موضح تحت <link linkend="detour"
+>انعطاف</link
+> أعلاه. لاحظ أن نقاط الدخول والخروج قابلة للتبديل دائماً. تشير العلامة <guilabel
+>*</guilabel
+> إلى المسار الذي سلكه الشعاع.</para>
+
+<para
+>لاحظ بعناية المواقع النسبية للكرة والانحراف بمقدار تسعين درجة الذي تسببه.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>كما ذكرنا أعلاه، يحدث الانعكاس عندما يخرج الشعاع من النقطة نفسها التي أرسل منها. يمكن أن يحدث هذا بعدة طرق: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>في المثال الأول، ينحرف الشعاع للأسفل بفعل الكرة العلوية، ثم لليسار بفعل الكرة السفلية، وأخيراً يتتبع مساره عائداً إلى نقطة الأصل. المثال الثاني مشابه. المثال الثالث شاذ قليلاً ولكن يمكن تبريره بإدراك أن الشعاع لا تتاح له فرصة الدخول إلى الصندوق. بدلاً من ذلك، يمكن التفكير في الشعاع على أنه انحرف للأسفل وخرج فوراً من الصندوق.</para>
+
+<para
+>تحدث الضربة عندما يندفع الشعاع مباشرة نحو كرة:</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>تأكد من مقارنة المثال الثاني للضربة مع المثال الأول للانعكاس.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>نظرة عامة على الواجهة</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>وصف لوحة اللعبة</title>
+
+<screenshot>
+<screeninfo
+>لوحة لعبة الصندوق الأسود ك</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>لوحة لعبة الصندوق الأسود ك</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>توجد الأنواع التالية من الحقول على لوحة اللعبة: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>الصندوق الأسود الكبير في الوسط</interface
+></term>
+<listitem
+><para
+>هنا يجب أن تسم المواقع التي تعتقد أن هناك كرة فيها.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>أشعة الليزر حول الصندوق</interface
+></term>
+<listitem
+><para
+>تُطلق أشعة الليزر عند تشغيلها. ثم تختفي وتُستبدل بمعلومات حول تفاعلات شعاع الليزر مع الكرات في الصندوق الأسود.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>الكرات</interface
+></term>
+<listitem
+><para
+>تظن <quote
+>يجب أن تكون هناك واحدة هناك!</quote
+>. هذه تسم الأماكن التي تشتبه في وجود كرة فيها داخل الصندوق الأسود.</para>
+<para
+>في نهاية اللعبة، تُوسم المواقع الصحيحة والخاطئة للكرات أيضاً بـ <quote
+>كرات</quote
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>علامات لـ "موقع حر"</interface
+></term>
+<listitem
+><para
+>يمكنك استخدامها لوسم بعض المواقع التي تتأكد من عدم وجود كرة فيها.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>عناصر القائمة</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>جديد</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>يبدأ لعبة جديدة (ويتخلى عن اللعبة الحالية، إن وجدت).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>لبث</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>يلبث اللعبة الحالية أو يواصلها.</para
+><para
+>لاحظ أن نتائج التفاعل تُخفى في اللعبة الملبوثة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أظهر أعلى النتائج</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>يُظهر جداول أعلى النتائج.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>ابدأ البرنامج التعليمي</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>يبدأ البرنامج التعليمي للعبة. هذه طريقة سهلة لتعلم قواعد اللعبة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>لعبة رملية جديدة</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>في هذا النمط، يُعرض الحل في بداية اللعبة. هذا مفيد لفهم مبادئ اللعبة.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>يغلق هذا النافذة وينهي الصندوق الأسود ك.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>حركة</guimenu
+> <guimenuitem
+>حل</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>استخدمه للاستسلام في اللعبة. يظهر لك الحل: المواقع الصحيحة للكرات.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>حركة</guimenu
+> <guimenuitem
+>انتهيت!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>عندما تضع كل الكرات، اختر <guilabel
+>انتهيت!</guilabel
+> لإنهاء اللعبة الحالية، وحساب النتيجة النهائية وعرض المواقع الحقيقية للكرات.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guisubmenu
+>الصعوبة</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>اختر صعوبة اللعبة. الألعاب الأكثر صعوبة تحتوي على كرات أكثر وصندوق أسود أكبر من الألعاب الأسهل. يمكنك أيضاً اللعب بمستوى صعوبة مخصص يمكنك ضبطه في حوار إعدادات الصندوق الأسود ك.</para>
+<note>
+<para
+>الألعاب التي تحتوي على 4 كرات أو أقل يمكن حلها دائماً بيقين! ليس هذا هو الحال بالنسبة للألعاب التي تحتوي على 5 كرات أو أكثر.</para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>بالإضافة إلى ذلك، يحتوي الصندوق الأسود ك على عناصر قائمة كيدي الشائعة <guimenu
+>الإعدادات</guimenu
+> و <guimenu
+>مساعدة</guimenu
+>، لمزيد من المعلومات اقرأ الأقسام حول <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> و <ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> في أساسيات كيدي. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>الأسئلة الشائعة</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>هل يمكنني استخدام لوحة المفاتيح للعب هذه اللعبة؟ </para
+></question>
+ <answer
+><para
+>نعم. يمكنك استخدام مفاتيح الاتجاهات للتحكم في المؤشر، و &Enter; لوضع وإزالة الكرات، و &Space; لوضع علامات <quote
+>فارغة</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>يجب أن أخرج من اللعبة الآن، لكنني لم أنتهِ بعد. هل يمكنني حفظ تقدمي؟</para
+></question>
+  <answer
+><para
+>لا يملك الصندوق الأسود ك ميزة حفظ في الوقت الحالي.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>الحقوق والترخيص</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>الصندوق الأسود ك </para>
+<!--List all the copyright holders here-->
+<para
+>حقوق تأليف البرنامج 1999-2000 &Robert.Cimrman; &Robert.Cimrman.mail; و 2007 &Nicolas.Roffet; &Nicolas.Roffet.mail; </para>
+<para
+>حقوق تأليف التوثيق لـ &Robert.Cimrman;. حُدّث وحُوّل إلى Docbook لـ كيدي 2.0 بواسطة &Lauri.Watts; &Lauri.Watts.mail;. راجعه &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

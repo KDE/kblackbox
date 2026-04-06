@@ -464,7 +464,7 @@ msgstr "اذهب إلى الخطوة التالية من التدريب."
 #: kbbtutorial.cpp:151
 #, kde-format
 msgid "Welcome!"
-msgstr "مرحبا!"
+msgstr "مرحبًا!"
 
 #: kbbtutorial.cpp:151
 #, kde-format

@@ -48,6 +48,7 @@
   <name xml:lang="sr-ijekavianlatin">K‑crna‑kutija</name>
   <name xml:lang="sv">Svarta lådan</name>
   <name xml:lang="tr">K Kara Kutu</name>
+  <name xml:lang="ug">K قارا قۇتا</name>
   <name xml:lang="uk">KBlackbox</name>
   <name xml:lang="zh-CN">KBlackbox</name>
   <name xml:lang="zh-TW">KBlackBox</name>
@@ -92,6 +93,7 @@
   <summary xml:lang="sr-ijekavianlatin">Logička igra crne kutije</summary>
   <summary xml:lang="sv">Svart låda logiskt spel</summary>
   <summary xml:lang="tr">Karakutu Mantık Oyunu</summary>
+  <summary xml:lang="ug">قارا قۇتا لوگىكىلىق ئويۇنى</summary>
   <summary xml:lang="uk">Гра на логіку (чорний скринька)</summary>
   <summary xml:lang="zh-CN">黑箱逻辑游戏</summary>
   <summary xml:lang="zh-TW">黑盒子智力遊戲</summary>

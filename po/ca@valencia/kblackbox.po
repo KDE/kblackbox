@@ -339,7 +339,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
-msgstr "Renuncio"
+msgstr "Renuncie"
 
 #: kbbmainwindow.cpp:432
 #, kde-format

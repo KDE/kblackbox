@@ -277,8 +277,8 @@ msgctxt ""
 "something more or less as wide as in english. Thanks!"
 msgid "Your final score is: %1.<br />I guess you need more practice."
 msgstr ""
-"Ihre endgültige Punktzahl ist: %1.<br />Ich schätze, Sie brauchen noch etwas "
-"Übung."
+"Ihre endgültige Punktzahl ist: %1.<br />Ich schätze, Sie benötigen noch "
+"etwas Übung."
 
 #: kbbmainwindow.cpp:369
 #, kde-format
@@ -389,7 +389,7 @@ msgid ""
 msgstr ""
 "<qt><p>Dies ist <b>Ihre Punktzahl</b>. Sie sollten versuchen, so wenig "
 "Punkte wie möglich zu bekommen.</p><p>Die Punktzahl steigt wenn:<ul><li>die "
-"Zeit vergeht : <b>1 Punkt</b> pro Sekunde.</li><li>Lasergeräte benutzt "
+"Zeit vergeht : <b>1 Punkt</b> pro Sekunde.</li><li>Lasergeräte verwendet "
 "werden:<ul><li><b>3 Punkte</b> wenn der Laser einen Ball trifft oder am "
 "Eintrittspunkt wieder herauskommt,</li><li><b>9 Punkte</b> wenn der Laser an "
 "einem anderen Eintrittspunkt herauskommt.</li></ul></li></ul></p><p>Ihre "
@@ -409,7 +409,7 @@ msgstr ""
 "ist in der Mitte.</li><li>Links sind die <b>Bälle,</b> die sie auf der "
 "Blackbox platzieren müssen.</li><li>Um die Blackbox herum befinden sich die "
 "<b>Laser</b> die durch <b>Informationen zur Interaktion</b> ersetzt werden, "
-"wenn sie benutzt werden.</li></ul></qt>"
+"wenn sie verwendet werden.</li></ul></qt>"
 
 #: kbbtutorial.cpp:36
 #, kde-format

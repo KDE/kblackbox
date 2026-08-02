@@ -1,5 +1,6 @@
 # Translation of kblackbox to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2008, 2009, 2016, 2018, 2022, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"

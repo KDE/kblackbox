@@ -1,0 +1,625 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Russian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+ 
+<book id="kblackbox" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Руководство пользователя &kblackbox;</title
+> <!-- This is the title of the docbook. Leave as is unless change is necessary.-->
+<!-- List of immidiate authors begins here. -->
+<!--INPORTANT! - All other contributors: [to be determined] -->
+<authorgroup>
+<author
+>&Nicolas.Roffet; &Nicolas.Roffet.mail; </author>
+
+<author
+>&Robert.Cimrman; &Robert.Cimrman.mail; </author>
+
+<author
+>&Philip.Rodrigues; &Philip.Rodrigues.mail; </author>
+
+<othercredit role="reviewer"
+>&Lauri.Watts; &Lauri.Watts.mail; </othercredit>
+
+<othercredit role="translator"
+><firstname
+>Стас</firstname
+><surname
+>Иванов</surname
+><affiliation
+><address
+><email
+>f0ma@smtp.ru</email
+></address
+></affiliation
+><contrib
+>Перевод на русский</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Nicolas.Roffet;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice
+> 
+<date
+>24 июня 2021 г.</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+ 
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>В этом руководстве описывается игра &kblackbox; версии 21.04</para>
+</abstract>
+ 
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>игра</keyword
+> <!-- do not change this! -->
+	<keyword
+>KBlackBox</keyword>
+	<keyword
+>головоломка</keyword>
+	<keyword
+>настольная</keyword>
+	<keyword
+>шары</keyword>
+	<keyword
+>лучи</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>один игрок</keyword>
+<!--All other relevant keywords-->
+	<keyword
+>спрятанные шары</keyword>
+	<keyword
+>найти</keyword>
+	<keyword
+>поиск</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Введение</title
+> <!-- do not change this! -->
+	<note
+><title
+>Тип игры:</title
+><para
+>Головоломка, настольная</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Количество игроков:</title
+><para
+>Один</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+ 
+<!--Short game description starts here. 3-4 sentences (paragraphs)-->
+	<para
+>&kblackbox; — интересная логическая игра по мотивам игры blackbox из &Emacs;. Большая часть этого руководства основана на справке &Emacs;.</para>
+
+<para
+>&kblackbox; — игра в прятки на поле из клеток. Компьютер прячет в чёрном ящике несколько шаров. Направляя лучи в ящик и наблюдая, где они выходят, можно определить, где спрятаны шары.</para>
+<para
+>Чем меньше лучей понадобится и чем быстрее найдены шары, тем лучше (ниже) счёт.</para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Правила игры</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Цель:</title
+><para
+>С помощью лазерных лучей определите расположение шаров внутри чёрного ящика.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+
+<para
+>Чтобы определить положение скрытых шаров внутри чёрного ящика, используйте лазеры и размещайте шары и метки на игровом поле.</para>
+<para
+>Игра начинается с первого включённого лазера. До этого время не идёт и очки не начисляются. </para>
+<para
+>Курсор можно перемещать по игровому полю с помощью стрелок клавиатуры или с помощью мыши. Включение лазеров или установка меток на чёрном ящике выполняются левой кнопкой мыши, а также нажатием кнопки <keycap
+>Ввод</keycap
+>.</para>
+
+<para
+>Шары и метки также можно перетаскивать мышью.</para>
+
+<para
+>Можно также отмечать поля, на которых шара, по вашему мнению, точно нет: для этого щёлкните &RMB;. Это помогает сузить область, где может находиться шар. Чтобы снять пометку, нажмите ту же клавишу или кнопку мыши ещё раз.</para>
+
+<para
+>Если вы считаете, что шары расставлены верно, нажмите кнопку <guibutton
+>Готово!</guibutton
+>. Программа сообщит, правы ли вы, и покажет счёт. </para>
+<para
+>Если шары размещены неправильно, будет показано правильное решение. </para>
+
+<para
+>Счёт растёт со временем (1 очко в секунду) и с каждым использованным лазером: 3 очка, если луч попадает в шар или выходит в точке входа, и 9 очков, если он выходит в другой точке. Если допущена ошибка, в конце игры счёт становится равен 999 — максимальному значению. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Правила игры, стратегия и советы</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1 id="game-rules"
+><title
+>Правила игры</title>
+
+<para
+>Необходимо найти расположение шаров, скрытых в чёрном ящике. Для этого можно использовать только лучи лазеров, расположенных вокруг ящика. Для каждого луча, направленного в ящик, возможны три результата: </para>
+
+<anchor id="detour"/>
+<variablelist>
+
+<varlistentry>
+<term
+>Отклонение</term
+> 
+<listitem
+><para
+>Луч отклоняется и выходит не в том месте, куда был направлен. На игровом поле места входа и выхода отмечены одинаковыми цифрами — одна в месте, где луч вошёл в чёрный ящик, другая — в том месте, где он вышел.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Отражение</term>
+<listitem
+><para
+>Луч отражается и выходит в том же месте, где вошёл. На игровом поле отражения обозначаются особым знаком.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Поглощение</term>
+<listitem
+><para
+>Луч попадает в шар и поглощается, в результате чего он не выходит из ящика. На игровом поле попадания отмечаются особым знаком.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Правила отклонения лучей шарами просты, и лучше всего показать их на примере.</para>
+
+<para
+>При столкновении с шаром луч отклоняется на девяносто градусов. Лучи могут быть отклонены несколько раз. На схемах ниже чёрточки обозначают пустые ячейки, а буквой <guilabel
+>O</guilabel
+> обозначен шар. Точки входа и выхода каждого луча отмечены числами, как описано в пункте <link linkend="detour"
+>Отклонение</link
+> выше. Обратите внимание, что точки входа и выхода всегда взаимозаменяемы. Путь, пройденный лучом, обозначается <guilabel
+>*</guilabel
+>.</para>
+
+<para
+>Обратите внимание на положение шара и 90-градусное отклонение луча, которое он вызывает.</para>
+
+<screen
+>1
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+  - * - - - - - -         - - - - - - - -         - - - - - - - -       
+1 * * - - - - - -         - - - - - - - -         - O - - - - O -       
+  - - O - - - - -         - - O - - - - -         - - * * * * - -
+  - - - - - - - -         - - - * * * * * 2     3 * * * - - * - -
+  - - - - - - - -         - - - * - - - -         - - - O - * - -      
+  - - - - - - - -         - - - * - - - -         - - - - * * - -       
+  - - - - - - - -         - - - * - - - -         - - - - * - O -       
+                                2                         3
+</screen>
+
+<para
+>Как сказано выше, отражение означает, что луч выходит из той же точки, в которую он был направлен. Такая ситуация может возникнуть в нескольких случаях: </para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - O - - -         - - O - O - - -          - - - - - - - -
+R * * * * - - - -         - - - * - - - -          O - - - - - - -
+  - - - - O - - -         - - - * - - - -        R - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -         - - - * - - - -          - - - - - - - -
+  - - - - - - - -       R * * * * - - - -          - - - - - - - -
+  - - - - - - - -         - - - - O - - -          - - - - - - - -
+
+</screen>
+
+<para
+>В первом примере луч отклоняется вниз верхним шаром, затем влево нижним шаром, после чего возвращается в точку, из которой вышел. Второй пример подобен первому. Третий пример немного необычен, но может быть объяснён, если понять, что луч вообще не попадает в ящик. Либо можно считать, что луч отклоняется вниз и сразу же выходит из ящика.</para>
+
+<para
+>Поглощение происходит, когда луч попадает прямо в шар:</para>
+
+<screen
+>- - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - O - - -
+  - - - - - - - -         - - - - O - - -        H * * * * - - - -
+  - - - - - - - -       H * * * * O - - -          - - - * - - - -
+  - - - - - - - -         - - - - O - - -          - - - O - - - -
+H * * * O - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+  - - - - - - - -         - - - - - - - -          - - - - - - - -
+
+</screen>
+
+<para
+>Сравните второй пример поглощения с первым примером отражения.</para>
+
+</sect1>
+</chapter>
+  
+<chapter id="interface"
+><title
+>Обзор интерфейса</title
+> <!-- do not change this! -->
+<!-- This section has to do with menubar. Describe every single entry in order. Use <variablelist
+> and <varlistentry
+>. Split the chapter into sections using <sect1(2,3)
+> for better viewing.-->
+ <sect1 id="game-board-descritpion">
+<title
+>Описание игрового поля</title>
+
+<screenshot>
+<screeninfo
+>Игровое поле &kblackbox;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Игровое поле &kblackbox;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>На игровом поле состоит из следующих ячеек: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><interface
+>Большой чёрный ящик в центре</interface
+></term>
+<listitem
+><para
+>Здесь нужно отмечать клетки, в которых, по вашему мнению, находятся шары.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Лазеры вокруг ящика</interface
+></term>
+<listitem
+><para
+>При включении лазеры испускают лучи света. Затем они исчезают, а на их месте показывается информация о взаимодействии лазерного луча с шарами в чёрном ящике.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Шары</interface
+></term>
+<listitem
+><para
+><quote
+>Вы думаете, что шар находится именно здесь?</quote
+> Синим шаром (меткой) отмечается предположительное место нахождения шара в чёрном ящике.</para>
+<para
+>В конце игры правильные и неправильные положения шаров также отмечаются <quote
+>шарами</quote
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><interface
+>Метки «свободная клетка»</interface
+></term>
+<listitem
+><para
+>Ими можно отмечать клетки, где шара точно нет.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="menu">
+<title
+>Пункты меню</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Создать</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Начало новой игры (и прерывание текущей).</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Пауза</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Приостановить или продолжить текущую игру.</para
+><para
+>Учтите, что в приостановленной игре результаты взаимодействия скрыты.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Показать лучшие результаты</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Показать таблицы лучших результатов.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Начать обучение</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Начать обучение. Это удобный способ изучить правила игры.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Пробная игра</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>В этом режиме решение показывается с самого начала. Это помогает понять принцип игры.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Закрыть окно и выйти из &kblackbox;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ход</guimenu
+> <guimenuitem
+>Решение</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Используйте этот пункт, чтобы сдаться: будет показано решение — правильное расположение шаров.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ход</guimenu
+> <guimenuitem
+>Готово!</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Когда все шары расставлены, выберите <guilabel
+>Готово!</guilabel
+>, чтобы завершить текущую игру, подсчитать окончательный счёт и показать реальное расположение шаров.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+><guisubmenu
+>Уровень сложности</guisubmenu
+> </menuchoice>
+</term>
+<listitem>
+<para
+>Выбор уровня сложности. Чем выше уровень, тем больше шаров и больше чёрный ящик. Можно также играть на своём уровне сложности, который задаётся в диалоге настройки &kblackbox;.</para>
+<note>
+<para
+>Игру с 4 шарами и меньше всегда можно решить наверняка! С 5 шарами и больше это не так.</para>
+</note>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<para
+>Кроме того, в &kblackbox; есть стандартные для &kde; меню <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Справка</guimenu
+>, описанные в разделах <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Меню «Настройка»</ulink
+> и <ulink url="help:/fundamentals/menus.html#menus-help"
+>Меню «Справка»</ulink
+> руководства «Основы &kde;». </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Вопросы и ответы</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Можно ли играть в эту игру с помощью клавиатуры? </para
+></question>
+ <answer
+><para
+>Да. Для управления курсором служат клавиши со стрелками, для установки и удаления шаров — &Enter;, а для установки меток <quote
+>пусто</quote
+> — &Space;.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Мне нужно выйти из игры, но я ещё не закончил. Можно ли сохранить игру?</para
+></question>
+  <answer
+><para
+>Сейчас в &kblackbox; сохранить игру нельзя.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Авторские права и лицензия</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+ 
+<para
+>&kblackbox; </para>
+<!--List all the copyright holders here-->
+<para
+>© &Robert.Cimrman; &Robert.Cimrman.mail;, 1999–2000, &Nicolas.Roffet; &Nicolas.Roffet.mail;, 2007 (программа) </para>
+<para
+>© &Robert.Cimrman; (документация). Обновление и преобразование в формат DocBook для &kde; 2.0: &Lauri.Watts; &Lauri.Watts.mail;. Рецензирование: &Philip.Rodrigues; &Philip.Rodrigues.mail; </para>
+
+<para
+>Перевод на русский — Стас Иванов<email
+>f0ma@smtp.ru</email
+>, редактирование перевода — Николай Шафоростов<email
+>shafff@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+  
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

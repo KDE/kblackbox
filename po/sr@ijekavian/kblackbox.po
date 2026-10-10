@@ -4,13 +4,14 @@
 # Bojan Bozovic <bole89@infosky.net>, 2003.
 # Slobodan Simic <slsimic@gmail.com>, 2005, 2009.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2010.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:49+0000\n"
-"PO-Revision-Date: 2017-09-28 17:59+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-09 22:30+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
 "MIME-Version: 1.0\n"
@@ -26,18 +27,17 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Слободан Мишковић,Часлав Илић,Слободан Симић"
+msgstr "Слободан Мишковић,Часлав Илић,Слободан Симић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "yugoslavia@canada.com,caslav.ilic@gmx.net,slsimic@gmail.com"
+msgstr ""
+"yugoslavia@canada.com,caslav.ilic@gmx.net,slsimic@gmail.com,nemhirsl@gmail."
+"com"
 
 #: kbblevelconfigurationwidget.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "A number between 1 and 99 is displayed in front of it."
-#| msgid " ball"
-#| msgid_plural " balls"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 1 and 99"
 msgid " ball"
 msgid_plural " balls"
@@ -47,10 +47,7 @@ msgstr[2] " лоптица"
 msgstr[3] " лоптица"
 
 #: kbblevelconfigurationwidget.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " column"
-#| msgid_plural " columns"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " column"
 msgid_plural " columns"
@@ -60,10 +57,7 @@ msgstr[2] " колона"
 msgstr[3] " колона"
 
 #: kbblevelconfigurationwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "A number between 2 and 30 is displayed in front of it."
-#| msgid " row"
-#| msgid_plural " rows"
+#, kde-format
 msgctxt "@item:valuesuffix to a number between 2 and 30"
 msgid " row"
 msgid_plural " rows"
@@ -80,15 +74,13 @@ msgid "Configurable"
 msgstr "подесиво"
 
 #: kbbmainwindow.cpp:77
-#, fuzzy, kde-format
-#| msgid "Start Tutorial"
+#, kde-format
 msgctxt "@action"
 msgid "Start Tutorial"
 msgstr "Покрени туторијал"
 
 #: kbbmainwindow.cpp:79
-#, fuzzy, kde-format
-#| msgid "Start tutorial"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start tutorial"
 msgstr "Покрени туторијал"
@@ -103,15 +95,13 @@ msgstr ""
 "правила игре. Покрените га уколико их не знате!</qt>"
 
 #: kbbmainwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "New Sandbox Game"
+#, kde-format
 msgctxt "@action"
 msgid "New Sandbox Game"
 msgstr "Нова партија на полигону"
 
 #: kbbmainwindow.cpp:85
-#, fuzzy, kde-format
-#| msgid "Start a new sandbox game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start a new sandbox game"
 msgstr "Покрени нову партију на полигону"
@@ -130,11 +120,7 @@ msgstr ""
 "партију!</p></qt>"
 
 #: kbbmainwindow.cpp:92
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "This is the last action of a game to check the result, when the user is "
-#| "done."
-#| msgid "Done!"
+#, kde-format
 msgctxt ""
 "@action the last action of a game to check the result, when the user is done"
 msgid "Done!"
@@ -153,13 +139,12 @@ msgstr ""
 "<qt><ul><li>Прво морате да поставите све лоптице у црну кутију. Да бисте "
 "погодили исправан положај лоптица и видјели како реагују на ласерске зраке, "
 "користите ласере постављене око црне кутије.</li><li><i>Када вам се учини да "
-"сте завршили</i>, кликните овдје.</li></ul><p>Овде можете кликнути само "
+"сте завршили</i>, кликните овдје.</li></ul><p>Овдје можете кликнути само "
 "уколико сте поставили исправан број лопти.</p></qt>"
 
 # rewrite-msgid: /the game//
 #: kbbmainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "Give up the game"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Give up the game"
 msgstr "Одустајем"
@@ -171,54 +156,48 @@ msgid ""
 "solution will be displayed.</p><p>If you placed all the balls and do not "
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
-"<qt><p>Изаберите <i>Реши</i> уколико желите да одустанете од текуће партије, "
-"и приказаће вам се решење.</p><p>Ако сте поставили све лоптице и не желите "
-"да одустанете, изаберите <i>Готово!</i>.</p></qt>"
+"<qt><p>Изаберите <i>Ријеши</i> уколико желите да одустанете од текуће "
+"партије, и приказаће вам се рјешење.</p><p>Ако сте поставили све лоптице и "
+"не желите да одустанете, изаберите <i>Готово!</i>.</p></qt>"
 
 #: kbbmainwindow.cpp:103
 #, kde-format
 msgctxt "@option:check"
 msgid "Enable Highlight under Mouse"
-msgstr ""
+msgstr "Укључи истицање под мишем"
 
 #: kbbmainwindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Move Down"
+#, kde-format
 msgctxt "@action"
 msgid "Move Down"
 msgstr "Помјери надоље"
 
 #: kbbmainwindow.cpp:149
-#, fuzzy, kde-format
-#| msgid "Move Up"
+#, kde-format
 msgctxt "@action"
 msgid "Move Up"
 msgstr "Помјери нагоре"
 
 #: kbbmainwindow.cpp:155
-#, fuzzy, kde-format
-#| msgid "Move Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Left"
 msgstr "Помјери улијево"
 
 #: kbbmainwindow.cpp:161
-#, fuzzy, kde-format
-#| msgid "Move Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Right"
 msgstr "Помјери удесно"
 
 #: kbbmainwindow.cpp:167
-#, fuzzy, kde-format
-#| msgid "Switch Ball or Shoot Laser"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Ball or Shoot Laser"
 msgstr "Промијени лопту или опали ласер"
 
 #: kbbmainwindow.cpp:173
-#, fuzzy, kde-format
-#| msgid "Switch Marker"
+#, kde-format
 msgctxt "@action"
 msgid "Switch Marker"
 msgstr "Промијени маркер"
@@ -284,8 +263,7 @@ msgstr ""
 "qt>"
 
 #: kbbmainwindow.cpp:329
-#, fuzzy, kde-format
-#| msgid "Check positions"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Positions"
 msgstr "Провјери положаје"
@@ -329,15 +307,13 @@ msgstr ""
 "параметрима?"
 
 #: kbbmainwindow.cpp:392 kbbmainwindow.cpp:481
-#, fuzzy, kde-format
-#| msgid "Start new game"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start New Game"
 msgstr "Започни нову партију"
 
 #: kbbmainwindow.cpp:408
-#, fuzzy, kde-format
-#| msgid "Custom Game"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Custom Game"
 msgstr "Посебна партија"
@@ -348,11 +324,10 @@ msgid "Sorry, you may not give up during the tutorial."
 msgstr "Не можете одустати током туторијала."
 
 #: kbbmainwindow.cpp:427
-#, fuzzy, kde-format
-#| msgid "Solve"
+#, kde-format
 msgctxt "@title:window"
 msgid "Solve"
-msgstr "Реши"
+msgstr "Ријеши"
 
 #: kbbmainwindow.cpp:430
 #, kde-format
@@ -363,13 +338,12 @@ msgid ""
 "So, do you really want to give up this game?"
 msgstr ""
 "<qt><p>Поставили сте све лопте. Сјајно!</p><p>Сада треба да кликнете на "
-"<i>Готово!</i> за завршетак игре и проверу да ли сте исправно погодили "
+"<i>Готово!</i> за завршетак игре и провјеру да ли сте исправно погодили "
 "положаје.</p><p>Дакле, желите ли заиста да одустанете од ове партије?</p></"
 "qt>"
 
 #: kbbmainwindow.cpp:430 kbbmainwindow.cpp:432
-#, fuzzy, kde-format
-#| msgid "Give up"
+#, kde-format
 msgctxt "@action:button"
 msgid "Give Up"
 msgstr "Одустајем"
@@ -451,8 +425,7 @@ msgstr ""
 "замијењени <i>подацима интеракције</i> ако их користите.</li></ul></qt>"
 
 #: kbbtutorial.cpp:36
-#, fuzzy, kde-format
-#| msgid "Tutorial"
+#, kde-format
 msgctxt "@title:group"
 msgid "Tutorial"
 msgstr "Туторијал"
@@ -468,9 +441,7 @@ msgid "Describes what you should do to reach the next tutorial step."
 msgstr "Описује шта треба да урадите да бисте прешли на сљедећи корак."
 
 #: kbbtutorial.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Previous tutorial step"
-#| msgid "&Previous"
+#, kde-format
 msgctxt "@action:button Previous tutorial step"
 msgid "&Previous"
 msgstr "&Претходни"
@@ -481,9 +452,7 @@ msgid "Go back to the previous tutorial step."
 msgstr "Идите на претходни корак туторијала."
 
 #: kbbtutorial.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "Next tutorial step"
-#| msgid "&Next"
+#, kde-format
 msgctxt "@action:button Next tutorial step"
 msgid "&Next"
 msgstr "&Сљедећи"
@@ -507,7 +476,7 @@ msgid ""
 "><br />The goal is to <b>find the positions of the balls.</b>"
 msgstr ""
 "<p>Из овог туторијала сазнаћете како се К‑црна‑кутија игра, кроз једноставне "
-"примере.</p><p>Играћемо са квадратном црном кутијом подијељеном на 6 колона "
+"примјере.</p><p>Играћемо са квадратном црном кутијом подијељеном на 6 колона "
 "и 6 редова, која садржи 3 <i>скривене</i> лопте, а окружују је 24 ласерске "
 "сонде.</p><p>Циљ је <i>пронаћи положаје лопти.</i></p>"
 
@@ -651,7 +620,7 @@ msgid ""
 "reflection."
 msgstr ""
 "<p>Ако ласерски зрак напусти црну кутију <i>на тачки уласка</i>, значи да је "
-"одбијен уназад у њој.</p><p>Пример: Намјестили смо двије лопте у поставу "
+"одбијен уназад у њој.</p><p>Примјер: Намјестили смо двије лопте у поставу "
 "која би довела до таквог одбијања.</p>"
 
 #: kbbtutorial.cpp:190
@@ -675,7 +644,7 @@ msgid ""
 "reflection."
 msgstr ""
 "<p>Ако је лопта <i>уз ивицу кутије</i> (а нема других лопти у близини), доћи "
-"ће до повратног одбијања зрака усмереног у црну кутију тачно поред ње.</"
+"ће до повратног одбијања зрака усмјереног у црну кутију тачно поред ње.</"
 "p><p>Примјер: Приказана постава може довести до повратног одбијања.</p>"
 
 #: kbbtutorial.cpp:197
@@ -828,6 +797,3 @@ msgstr "Јохан Оливје Лапер"
 #, kde-format
 msgid "Artist"
 msgstr "Цртач"
-
-#~ msgid "Start new game"
-#~ msgstr "Започни нову партију"
